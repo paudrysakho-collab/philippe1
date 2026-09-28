@@ -1,0 +1,105 @@
+{# Gabarit UNIQUE des 40 fiches domaines. Aucune exception par domaine :
+   toutes les zones sont aux mêmes positions, dans le même ordre. #}
+{% macro tableau(t) %}
+  {% if t.titre %}<div class="titre-tableau">{{ t.titre }}</div>{% endif %}
+  <table class="tarif">
+    <colgroup>
+      <col style="width:var(--c-appellation)"><col style="width:var(--c-cuvee)">
+      <col style="width:var(--c-couleur)"><col style="width:var(--c-mill)">
+      <col style="width:var(--c-format)">
+      {% for p in t.paliers %}<col style="width:calc(var(--c-prix) / {{ t.paliers|length }})">{% endfor %}
+    </colgroup>
+    <thead>
+      <tr>
+        <th rowspan="2">Appellation</th><th rowspan="2">Cuvée</th>
+        <th rowspan="2">Couleur</th><th rowspan="2">Mill.</th><th rowspan="2">Format</th>
+        <th class="prix-groupe" colspan="{{ t.paliers|length }}">{{ t.entete_prix }}</th>
+      </tr>
+      <tr class="paliers">
+        {% for p in t.paliers %}
+          <th class="prix-col{% if loop.first %} premier{% endif %}">{{ p }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for l in t.lignes %}
+      <tr>
+        <td>{{ l.appellation }}</td>
+        <td><span class="cuvee-nom">{{ l.cuvee }}</span>
+            {% if l.note %}<span class="cuvee-note">{{ l.note }}</span>{% endif %}</td>
+        <td class="couleur"><span class="pastille {{ l.classe_couleur }}"></span>{{ l.couleur }}</td>
+        <td class="mill">{{ l.millesime }}</td>
+        <td class="format">{{ l.format }}</td>
+        {% for p in l.prix_cellules %}
+          <td class="prix{% if loop.first %} premier{% endif %}">{{ p }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
+
+<section class="page{% if f.dense %} dense{% endif %}">
+  <div class="onglet" style="background:{{ f.couleur_region }}; top:{{ f.onglet_top }}mm"><span>{{ f.region }}</span></div>
+
+  <footer class="pied">
+    <div class="contacts">Vos contacts&#8239;: Carline <a href="tel:+33649191675">06&#8239;49&#8239;19&#8239;16&#8239;75</a>
+      &middot; Laurent <a href="tel:+33680880755">06&#8239;80&#8239;88&#8239;07&#8239;55</a>
+      &middot; <a href="mailto:contact@agencescio.com">contact@agencescio.com</a></div>
+    <div class="legal">
+      <span>{{ f.pied_port }}</span>
+      <span>L&rsquo;abus d&rsquo;alcool est dangereux pour la santé, à consommer avec modération.</span>
+      <span class="folio">&nbsp;</span>
+    </div>
+  </footer>
+
+  <header class="entete">
+    <div class="gauche">
+      <span class="badge-num">N&#8239;{{ f.numero }}</span>
+      <span class="region">{{ f.region }}</span>
+      <span class="nom-courant">{{ f.nom }}</span>
+    </div>
+    <div class="droite">Tarifs cavistes &middot; Vendée &middot; septembre&#8239;2026
+      &nbsp;<span class="marque">Agence SCIO</span></div>
+  </header>
+
+  <div class="identite">
+    <div>
+      <h1 class="nom-domaine">{{ f.nom }}{% if f.suite %} — suite{% endif %}</h1>
+      {% if f.sous_titre %}<p class="sous-titre">{{ f.sous_titre }}</p>{% endif %}
+    </div>
+    <div class="labels">
+      {% for l in f.labels %}<span class="label{% if 'BIO' in l|upper %} bio{% endif %}">{{ l }}</span>{% endfor %}
+    </div>
+  </div>
+
+  {% if not f.suite %}
+  <div class="photos{% if not f.photo_second %} sans-second{% endif %}{% if f.logo %} avec-logo{% endif %}">
+    <figure class="ph-ambiance">{% if f.photo_ambiance %}<img src="{{ f.photo_ambiance }}">{% endif %}</figure>
+    {% if f.photo_second %}<figure class="ph-second"><img src="{{ f.photo_second }}"></figure>{% endif %}
+    {% if f.logo %}<figure class="cartouche-logo"><img src="{{ f.logo }}"></figure>{% endif %}
+  </div>
+
+  {% if f.texte %}<p class="presentation">{{ f.texte }}</p>{% endif %}
+
+  <div class="conditions">
+    {% for cle, val in f.cases %}
+    <div class="case">
+      <div class="cle">{{ cle }}</div>
+      <div class="val">{{ val|safe }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% for t in f.tables %}{{ tableau(t) }}{% endfor %}
+
+  {% if f.encadre_demande %}
+  <div class="sur-demande">
+    <div class="titre">Tarifs et offres sur demande</div>
+    <div class="detail">Carline 06&#8239;49&#8239;19&#8239;16&#8239;75 &middot; Laurent 06&#8239;80&#8239;88&#8239;07&#8239;55
+      &middot; contact@agencescio.com</div>
+  </div>
+  {% endif %}
+
+</section>

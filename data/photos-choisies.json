@@ -1,0 +1,6 @@
+{
+  "_note": "Choix vérifiés à l'œil pour les pages témoins. Le tri des 255 images du tarif est fait en phase 3 ; les captures d'écran des tableaux Excel ne sont jamais utilisées comme illustration.",
+  "3":  {"ambiance": "p06-00-x210.png", "second": null, "logo": "p06-04-x223.png"},
+  "32": {"ambiance": "p35-02-x1619.png", "second": "p35-01-x1617.png", "logo": null},
+  "40": {"ambiance": "p43-00-x2032.png", "second": "p43-01-x2034.png", "logo": "p43-02-x2036.png"}
+}

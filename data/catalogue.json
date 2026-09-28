@@ -1,0 +1,7263 @@
+{
+ "edition": "septembre 2026",
+ "departement": "Vendée (85)",
+ "devise": "EUR",
+ "agence": {
+  "nom": "Agence SCIO Vins & Spirits",
+  "adresse": "71 avenue de la Libération, 44400 Rezé",
+  "rcs": "843 151 663 RCS Nantes",
+  "site": "www.agencescio.com",
+  "email": "contact@agencescio.com",
+  "contacts": [
+   {
+    "prenom": "Carline",
+    "tel": "06 49 19 16 75"
+   },
+   {
+    "prenom": "Laurent",
+    "tel": "06 80 88 07 55"
+   }
+  ],
+  "forme_juridique": null,
+  "capital": null,
+  "tva_intra": null
+ },
+ "regions": [
+  "Loire",
+  "Alsace",
+  "Beaujolais",
+  "Bourgogne",
+  "Rhône",
+  "Sud-Ouest",
+  "Bordeaux",
+  "Provence",
+  "Languedoc",
+  "Champagne"
+ ],
+ "fiches": [
+  {
+   "numero": 1,
+   "nom": "François Reverdy",
+   "region": "Loire",
+   "sous_titre": "Anjou · Saumur · Chinon · Quincy · Sancerre",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Anjou · Saumur · Chinon · Quincy · Sancerre François Reverdy signe en agriculture biologique une gamme ligérienne qui court d’Anjou à Sancerre. Elle réunit cinq appellations (Anjou, Saumur, Chinon, Quincy et Sancerre), un grolleau noir en Vin de France et la ligne La Grange Jaumain en IGP Val de Loire, déclinée en chenin blanc et en rouge (Les Soudannes).",
+   "pages_maquette": [
+    6
+   ],
+   "page_source_tarif": 4,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "jusqu’à 36 bt · dès 48 bt · dès 120 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "François Reverdy"
+   ],
+   "descriptif_excel": "Vins biologiques certifiés FR-BIO-01 – vignobles jardins de Sancerre et de Roiffé",
+   "validite": "31/12/2026",
+   "paliers": [
+    "jusqu’à 36 bt",
+    "dès 48 bt",
+    "dès 120 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "jusqu’à 36 bt",
+      "dès 48 bt",
+      "dès 120 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Anjou",
+       "cuvee": "François Reverdy – Schistes Vert",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "14,75",
+        "13,25",
+        "12,25"
+       ],
+       "source": "excel:François Reverdy:L7"
+      },
+      {
+       "appellation": "AOP Saumur",
+       "cuvee": "François Reverdy – Tuffeau",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "16,00",
+        "14,50",
+        "13,50"
+       ],
+       "source": "excel:François Reverdy:L8"
+      },
+      {
+       "appellation": "AOP Chinon",
+       "cuvee": "François Reverdy – Franc / Graves",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021/24",
+       "format": "75 cl",
+       "prix": [
+        "14,75",
+        "13,75",
+        "12,85"
+       ],
+       "source": "excel:François Reverdy:L9"
+      },
+      {
+       "appellation": "AOP Quincy",
+       "cuvee": "François Reverdy – Graves Argileuses",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "19,95",
+        "17,85",
+        "16,50"
+       ],
+       "source": "excel:François Reverdy:L10"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "François Reverdy – Les Villaudes",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "19,00",
+        "18,00",
+        "16,50"
+       ],
+       "source": "excel:François Reverdy:L11"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "François Reverdy – Grolleau Noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "10,60",
+        "10,60",
+        "10,60"
+       ],
+       "source": "excel:François Reverdy:L12"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "La Grange Jaumain – Chenin Blanc",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "10,00",
+        "9,50",
+        "9,25"
+       ],
+       "source": "excel:François Reverdy:L13"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "La Grange Jaumain – Les Soudannes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "10,00",
+        "9,50",
+        "9,25"
+       ],
+       "source": "excel:François Reverdy:L14"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 2,
+   "nom": "Domaine de la Barbinière",
+   "region": "Loire",
+   "sous_titre": "Vincent et Alban Orion · Chantonnais · Fiefs Vendéens",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Vincent et Alban Orion · Chantonnais · Fiefs Vendéens Sur les reliefs bocagers du Chantonnais, Vincent et Alban Orion conduisent 30 hectares qui reflètent la diversité des terroirs chantonnaisiens. Travail manuel minutieux, attention portée à la faune et à la flore : cette démarche paysanne mène le domaine en agriculture biologique, des Fiefs Vendéens Chantonnay aux bulles de L’O*** et au pétillant naturel Pop’s.",
+   "pages_maquette": [
+    7
+   ],
+   "page_source_tarif": 5,
+   "departements": [
+    "16",
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "Méthode traditionnelle",
+       "cuvee": "L’O*** Brut",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "6,28"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Silex",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "—",
+       "prix": [
+        "4,43"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Amphibol",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "—",
+       "prix": [
+        "5,66"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Gorinières",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "7,84"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Silex",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2024",
+       "format": "—",
+       "prix": [
+        "3,96"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Pop’s",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "NM",
+       "format": "—",
+       "prix": [
+        "4,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Silex",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "4,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Gneiss",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "5,13"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Le Bois Bouquet",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "6,72"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fiefs Vendéens Chantonnay",
+       "cuvee": "Les Courbes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2018",
+       "format": "—",
+       "prix": [
+        "7,23"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 3,
+   "nom": "Domaine du Colombier",
+   "region": "Loire",
+   "sous_titre": "Jean-Yves Bretaudeau · Muscadet Sèvre et Maine",
+   "labels": [
+    "HVE"
+   ],
+   "texte": "Jean-Yves Bretaudeau · Muscadet Sèvre et Maine Quatre générations de passionnés et un adhérent historique des Vignerons Indépendants : Jean-Yves Bretaudeau allie bon sens paysan et précision œnologique. Certifié HVE, le domaine préserve ses paysages ligériens pour des vins friands et expressifs, du Muscadet Sèvre et Maine au cru Mouzillon-Tillières, jusqu’aux bag-in-box.",
+   "pages_maquette": [
+    8
+   ],
+   "page_source_tarif": 6,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "BIB 5 L et 10 L"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "Méthode traditionnelle",
+       "cuvee": "La perle",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Cuvée domaine",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "2,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Vins du Val de Loire",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "2,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Muscadet Sèvre et Maine sur lie",
+       "cuvee": "Cuvée des deux Colombes",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "75 cl",
+       "prix": [
+        "2,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Le Prestige de Beaulieu",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "3,10"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Muscadet Sèvre et Maine",
+       "cuvee": "CRU Mouzillon – Tillières",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "7,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Cabernet Franc",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "2,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Rouge au lèvres",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "3,45"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BIB",
+     "titre": "Bag-in-box",
+     "paliers": [
+      "5 L",
+      "10 L"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP",
+       "cuvee": "Sauvignon",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "12,50",
+        "19,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "12,50",
+        "19,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Muscadet",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "13,80",
+        "22,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Cabernet",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,50",
+        "18,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Merlot",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "12,50",
+        "19,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP",
+       "cuvee": "Cabernet",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "12,50",
+        "19,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 4,
+   "nom": "Domaine des Noëls",
+   "region": "Loire",
+   "sous_titre": "Faye-d’Anjou · Anjou · Coteaux du Layon · Crémant de Loire",
+   "labels": [],
+   "texte": "Faye-d’Anjou · Anjou · Coteaux du Layon · Crémant de Loire Depuis 1921 à Faye-d’Anjou, cinq générations se transmettent 24 hectares de coteaux argilo-schisteux remarquablement exposés. Le chenin y donne aussi bien les liquoreux du Coteaux du Layon que des Anjou blancs et des Crémant de Loire d’une minéralité tactile ; la gamme s’étend aux rosés de Loire et d’Anjou.",
+   "pages_maquette": [
+    9
+   ],
+   "page_source_tarif": 7,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 120 bt · dès 240 bt · dès 360 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Domaine des Noëls"
+   ],
+   "descriptif_excel": "Vins certifiés Agriculture Biologique (AB) – propriété familiale à Faye-d'Anjou depuis 1921",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 120 bt",
+    "dès 240 bt",
+    "dès 360 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 120 bt",
+      "dès 240 bt",
+      "dès 360 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Anjou",
+       "cuvee": "Promenade des Noëls",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "5,70",
+        "5,60",
+        "5,60"
+       ],
+       "source": "excel:Domaine des Noëls:L7"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Sauvignon",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "3,60",
+        "3,40",
+        "3,40"
+       ],
+       "source": "excel:Domaine des Noëls:L8"
+      },
+      {
+       "appellation": "AOP Coteaux du Layon",
+       "cuvee": "Coteaux du Layon",
+       "note": "moelleux",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "5,70",
+        "5,60",
+        "5,60"
+       ],
+       "source": "excel:Domaine des Noëls:L9"
+      },
+      {
+       "appellation": "AOP Coteaux du Layon Faye",
+       "cuvee": "Coteaux du Layon Faye",
+       "note": "moelleux",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "9,70",
+        "9,60",
+        "9,60"
+       ],
+       "source": "excel:Domaine des Noëls:L10"
+      },
+      {
+       "appellation": "AOP Crémant de Loire",
+       "cuvee": "Crémant de Loire",
+       "note": "brut",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "5,80",
+        "5,60",
+        "5,60"
+       ],
+       "source": "excel:Domaine des Noëls:L11"
+      },
+      {
+       "appellation": "AOP Crémant de Loire",
+       "cuvee": "Cuvée Prestige",
+       "note": "brut",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "7,50",
+        "7,30",
+        "7,30"
+       ],
+       "source": "excel:Domaine des Noëls:L12"
+      },
+      {
+       "appellation": "AOP Rosé de Loire",
+       "cuvee": "Rosé de Loire",
+       "note": "sec léger",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "3,50",
+        "3,30",
+        "3,30"
+       ],
+       "source": "excel:Domaine des Noëls:L13"
+      },
+      {
+       "appellation": "AOP Rosé d'Anjou",
+       "cuvee": "Rosé d'Anjou",
+       "note": "fruité",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "3,50",
+        "3,30",
+        "3,30"
+       ],
+       "source": "excel:Domaine des Noëls:L14"
+      },
+      {
+       "appellation": "AOP Cabernet d'Anjou",
+       "cuvee": "Cabernet d'Anjou",
+       "note": "demi-sec",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "3,60",
+        "3,40",
+        "3,40"
+       ],
+       "source": "excel:Domaine des Noëls:L15"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 5,
+   "nom": "Chai Berteaud Manceau",
+   "region": "Loire",
+   "sous_titre": "Mouilleron-le-Captif · IGP Val de Loire",
+   "labels": [],
+   "texte": "Mouilleron-le-Captif · IGP Val de Loire Premier chai urbain de La Roche-sur-Yon, installé à Mouilleron-le-Captif, le Chai Berteaud Manceau a été fondé par deux amis d’enfance vendéens, diplômés en ingénierie agricole à Angers. Leurs raisins proviennent de huit domaines partenaires du Val de Loire ; les levures indigènes donnent des vins digestes et éclatants.",
+   "pages_maquette": [
+    10
+   ],
+   "page_source_tarif": 8,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 60 bt · dès 120 bt · dès 240 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Chai Berteaud Manceau"
+   ],
+   "descriptif_excel": "Chai urbain à Mouilleron-le-Captif – raisins bio de 8 domaines partenaires, levures indigènes",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 60 bt",
+    "dès 120 bt",
+    "dès 240 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 60 bt",
+      "dès 120 bt",
+      "dès 240 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Courant – Chenin",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,45",
+        "5,95",
+        "5,75"
+       ],
+       "source": "excel:Chai Berteaud Manceau:L7"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Source – Melon B.",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "5,45",
+        "4,95",
+        "4,75"
+       ],
+       "source": "excel:Chai Berteaud Manceau:L8"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Reflet – Gamay",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "6,45",
+        "5,95",
+        "5,75"
+       ],
+       "source": "excel:Chai Berteaud Manceau:L9"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 6,
+   "nom": "Domaine Jean de Villebois",
+   "region": "Loire",
+   "sous_titre": "Sancerre · Pouilly-Fumé · Menetou-Salon · Quincy · Touraine",
+   "labels": [],
+   "texte": "Sancerre · Pouilly-Fumé · Menetou-Salon · Quincy · Touraine Spécialiste du sauvignon blanc ligérien, le Domaine Jean de Villebois explore les terroirs de Loire : Sancerre, Pouilly-Fumé, Menetou-Salon, Touraine. Techniques modernes et respect de la typicité des sols calcaires et de silex donnent des blancs d’une grande pureté, complétés par des rouges et un rosé de pinot noir.",
+   "pages_maquette": [
+    11
+   ],
+   "page_source_tarif": 9,
+   "departements": [
+    "35",
+    "44",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Avec n° 7 Divin No Low",
+    "PARTICULARITÉS": "Gamme complète sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Sauvignon",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "—",
+       "prix": [
+        "4,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Val de Loire",
+       "cuvee": "Chenin",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "—",
+       "prix": [
+        "4,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Touraine Chenonceaux",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "—",
+       "prix": [
+        "6,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Quincy",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "—",
+       "prix": [
+        "9,20"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Menetou-Salon",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "—",
+       "prix": [
+        "9,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pouilly-Fumé",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "—",
+       "prix": [
+        "11,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "—",
+       "prix": [
+        "12,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "Silex",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "—",
+       "prix": [
+        "18,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "Marnes Kimméridgiennes",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "—",
+       "prix": [
+        "18,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pouilly-Fumé",
+       "cuvee": "Les Silex Blancs",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "18,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "Chêne à la Rouline",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022/23",
+       "format": "—",
+       "prix": [
+        "25,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "Chêne Marchand",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "—",
+       "prix": [
+        "26,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Pinot noir",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "9,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Pinot noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024/25",
+       "format": "—",
+       "prix": [
+        "4,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "—",
+       "prix": [
+        "11,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sancerre",
+       "cuvee": "La Louisonne",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023/24",
+       "format": "—",
+       "prix": [
+        "25,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 7,
+   "nom": "Divin No Low",
+   "region": "Loire",
+   "sous_titre": "Vins sans alcool · Val de Loire",
+   "labels": [],
+   "texte": "Vins sans alcool · Val de Loire Sauvignon blanc, chenin et pinot noir, cépages polyvalents, se prêtent ici à des cuvées sans alcool. Issues de raisins cultivés près des châteaux de la Loire et élaborées par des vignerons ligériens, elles se déclinent en blanc, rosé et rouge, tranquilles ou pétillantes, dont deux cuvées à 0,5 % vol.",
+   "pages_maquette": [
+    12
+   ],
+   "page_source_tarif": 10,
+   "departements": [
+    "35",
+    "44",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Avec n° 6 Domaine Jean de Villebois",
+    "PARTICULARITÉS": "Sans alcool"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Divin No Low"
+   ],
+   "descriptif_excel": "Vins désalcoolisés et wine seltzer de Loire – possibilité de panacher avec les vins du Domaine Jean de Villebois",
+   "validite": "31/12/2026",
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "Vin sans alcool 0,5 %",
+       "cuvee": "Pinot Noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,40"
+       ],
+       "source": "excel:Divin No Low:L7"
+      },
+      {
+       "appellation": "Vin sans alcool 0,5 %",
+       "cuvee": "Sauvignon Blanc",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,40"
+       ],
+       "source": "excel:Divin No Low:L8"
+      },
+      {
+       "appellation": "Vin sans alcool",
+       "cuvee": "Sauvignon",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,80"
+       ],
+       "source": "excel:Divin No Low:L9"
+      },
+      {
+       "appellation": "Vin sans alcool",
+       "cuvee": "Chenin Blanc",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,80"
+       ],
+       "source": "excel:Divin No Low:L10"
+      },
+      {
+       "appellation": "Vin sans alcool",
+       "cuvee": "Rosé",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,80"
+       ],
+       "source": "excel:Divin No Low:L11"
+      },
+      {
+       "appellation": "Vin sans alcool",
+       "cuvee": "Pinot Noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,80"
+       ],
+       "source": "excel:Divin No Low:L12"
+      },
+      {
+       "appellation": "Vin sans alcool pétillant",
+       "cuvee": "Sauvignon Blanc",
+       "note": "pétillant",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "5,40"
+       ],
+       "source": "excel:Divin No Low:L13"
+      },
+      {
+       "appellation": "Vin sans alcool pétillant",
+       "cuvee": "Sauvignon Blanc Blush",
+       "note": "pétillant",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "5,40"
+       ],
+       "source": "excel:Divin No Low:L14"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 8,
+   "nom": "Domaine Boehler",
+   "region": "Alsace",
+   "sous_titre": "Julien et Aurélie · Molsheim · Alsace Grand Cru Bruderthal",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Julien et Aurélie · Molsheim · Alsace Grand Cru Bruderthal Berceau de tradition vigneronne à Molsheim, le Domaine Boehler entre dans une nouvelle ère sous l’impulsion de Julien et Aurélie. Converti à l’agriculture biologique, le tandem explore ses coteaux et le Grand Cru Bruderthal pour des vins verticaux, précis et profonds, du sylvaner au gewurztraminer et jusqu’au crémant brut nature.",
+   "pages_maquette": [
+    13
+   ],
+   "page_source_tarif": 11,
+   "departements": [],
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "port_source": null,
+   "pied_port": "Prix HT par bouteille, conditions de port sur demande",
+   "conditions": {
+    "PORT": "Sur demande",
+    "PALIERS": "dès 60 bt · dès 120 bt · dès 301 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Domaine Boehler"
+   ],
+   "descriptif_excel": "Vins certifiés Agriculture Biologique (AB) – Molsheim, coteaux et Grand Cru Bruderthal",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 60 bt",
+    "dès 120 bt",
+    "dès 301 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 60 bt",
+      "dès 120 bt",
+      "dès 301 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Molse Rouge (Pinot Noir)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,40",
+        "7,80",
+        "7,30"
+       ],
+       "source": "excel:Domaine Boehler:L7"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Seiler (Pinot Noir)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "10,30",
+        "9,90",
+        "9,50"
+       ],
+       "source": "excel:Domaine Boehler:L8"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Hahnenberg (Pinot Noir)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "12,50",
+        "12,10",
+        "11,60"
+       ],
+       "source": "excel:Domaine Boehler:L9"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Molse Blanc (Assemblage)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,80",
+        "6,40",
+        "5,90"
+       ],
+       "source": "excel:Domaine Boehler:L10"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Thomen (Assemblage)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "8,70",
+        "8,10",
+        "7,60"
+       ],
+       "source": "excel:Domaine Boehler:L11"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Leimen (Sylvaner)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,70",
+        "8,10",
+        "7,60"
+       ],
+       "source": "excel:Domaine Boehler:L12"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Taubenstein (Pinot Blanc)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,70",
+        "8,10",
+        "7,60"
+       ],
+       "source": "excel:Domaine Boehler:L13"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Pfann (Pinot Gris)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "9,10",
+        "8,80",
+        "8,40"
+       ],
+       "source": "excel:Domaine Boehler:L14"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Holderhurst (Riesling)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,70",
+        "8,10",
+        "7,60"
+       ],
+       "source": "excel:Domaine Boehler:L15"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Hahnenberg (Riesling)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "11,40",
+        "11,00",
+        "10,50"
+       ],
+       "source": "excel:Domaine Boehler:L16"
+      },
+      {
+       "appellation": "AOP Alsace Grand Cru",
+       "cuvee": "Bruderthal (Riesling)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "18,80",
+        "18,20",
+        "17,30"
+       ],
+       "source": "excel:Domaine Boehler:L17"
+      },
+      {
+       "appellation": "AOP Alsace Grand Cru",
+       "cuvee": "Bruderthal (Gewurztraminer)",
+       "note": "sec",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "15,40",
+        "14,90",
+        "14,20"
+       ],
+       "source": "excel:Domaine Boehler:L18"
+      },
+      {
+       "appellation": "AOP Crémant d'Alsace",
+       "cuvee": "Brut Nature",
+       "note": "brut nature",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,70",
+        "8,10",
+        "7,60"
+       ],
+       "source": "excel:Domaine Boehler:L19"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Saint-Georges (Pinot Gris)",
+       "note": "demi-sec",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,20",
+        "5,80",
+        "5,40"
+       ],
+       "source": "excel:Domaine Boehler:L20"
+      },
+      {
+       "appellation": "AOP Alsace",
+       "cuvee": "Saint-Georges (Gewurztraminer)",
+       "note": "demi-sec",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,20",
+        "5,80",
+        "5,40"
+       ],
+       "source": "excel:Domaine Boehler:L21"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 9,
+   "nom": "Domaine des Nugues",
+   "region": "Beaujolais",
+   "sous_titre": "Famille Gelin · Beaujolais-Lancié · Fleurie · Moulin-à-Vent",
+   "labels": [
+    "HVE"
+   ],
+   "texte": "Famille Gelin · Beaujolais-Lancié · Fleurie · Moulin-à-Vent En 1976, Gérard Gelin, fils et petit-fils de vigneron, achète le Clos des Nugues, qui donne son nom au domaine. Son fils s’associe à ses parents en 2000, puis reprend entièrement l’exploitation familiale en 2010 avec son épouse Magali, arrivée en 2008. Certifié HVE depuis 2018, le domaine s’est agrandi de parcelles voisines au fil des années.",
+   "pages_maquette": [
+    14
+   ],
+   "page_source_tarif": 12,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 60 bt · dès 120 bt · dès 240 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 60 bt",
+    "dès 120 bt",
+    "dès 240 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 60 bt",
+      "dès 120 bt",
+      "dès 240 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Beaujolais-Lancié",
+       "cuvee": "Les Grands Classiques",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "7,80",
+        "7,45",
+        "7,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Mâcon-Villages",
+       "cuvee": "Bourgogne",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "9,50",
+        "9,10",
+        "8,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Bourgogne",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "9,50",
+        "9,10",
+        "8,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Beaujolais-Lancié",
+       "cuvee": "Les Grands Classiques",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,10",
+        "5,80",
+        "5,55"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Beaujolais-Villages",
+       "cuvee": "Les Coups de Folies",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "6,10",
+        "5,80",
+        "5,55"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fleurie",
+       "cuvee": "Les Grands Classiques",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "8,65",
+        "8,25",
+        "7,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Moulin-à-Vent",
+       "cuvee": "Les Grands Classiques",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "8,85",
+        "8,50",
+        "8,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Moulin-à-Vent",
+       "cuvee": "Les Grands Classiques",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "150 cl",
+       "prix": [
+        "19,55",
+        "18,70",
+        "17,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 10,
+   "nom": "Domaine Sébastien Magnien",
+   "region": "Bourgogne",
+   "sous_titre": "Meursault · Côte de Beaune et Hautes-Côtes",
+   "labels": [],
+   "texte": "Meursault · Côte de Beaune et Hautes-Côtes Installé à Meursault depuis 2004, Sébastien Magnien conduit 12 hectares sur les terroirs de la Côte de Beaune et des Hautes-Côtes : Pommard, Volnay, Puligny, Saint-Romain. Vendanges manuelles et élevages en fûts de chêne signent des pinots noirs et des chardonnays d’élégance et de tension, jusqu’au Puligny-Montrachet 1er Cru Les Folatières.",
+   "pages_maquette": [
+    15
+   ],
+   "page_source_tarif": 13,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Sébastien Magnien"
+   ],
+   "descriptif_excel": "12 hectares à Meursault – Côte de Beaune et Hautes-Côtes, vendanges manuelles, élevage en fûts de chêne – Allocation",
+   "validite": "31/12/2026",
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Bourgogne Aligoté",
+       "cuvee": "Bourgogne Aligoté",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,50"
+       ],
+       "source": "excel:Sébastien Magnien:L7"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "13,50"
+       ],
+       "source": "excel:Sébastien Magnien:L8"
+      },
+      {
+       "appellation": "AOP Hautes-Côtes de Beaune",
+       "cuvee": "Hautes-Côtes",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "13,50"
+       ],
+       "source": "excel:Sébastien Magnien:L9"
+      },
+      {
+       "appellation": "AOP Saint-Romain",
+       "cuvee": "Sous le Château",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "19,00"
+       ],
+       "source": "excel:Sébastien Magnien:L10"
+      },
+      {
+       "appellation": "AOP Meursault",
+       "cuvee": "Les Grands Charrons",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "35,00"
+       ],
+       "source": "excel:Sébastien Magnien:L11"
+      },
+      {
+       "appellation": "AOP Meursault",
+       "cuvee": "Les Meix Chavaux",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "37,00"
+       ],
+       "source": "excel:Sébastien Magnien:L12"
+      },
+      {
+       "appellation": "AOP Beaune 1er Cru",
+       "cuvee": "Beaune 1er Cru",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "24,00"
+       ],
+       "source": "excel:Sébastien Magnien:L13"
+      },
+      {
+       "appellation": "AOP Puligny-Montrachet 1er Cru",
+       "cuvee": "Les Folatières",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "60,00"
+       ],
+       "source": "excel:Sébastien Magnien:L14"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Pinot Noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "11,75"
+       ],
+       "source": "excel:Sébastien Magnien:L15"
+      },
+      {
+       "appellation": "AOP Hautes-Côtes de Beaune",
+       "cuvee": "Vieilles Vignes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "12,75"
+       ],
+       "source": "excel:Sébastien Magnien:L16"
+      },
+      {
+       "appellation": "AOP Hautes-Côtes de Beaune",
+       "cuvee": "Clos de la Perrière",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "14,50"
+       ],
+       "source": "excel:Sébastien Magnien:L17"
+      },
+      {
+       "appellation": "AOP Beaune",
+       "cuvee": "Les Bons Feuvres",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "18,00"
+       ],
+       "source": "excel:Sébastien Magnien:L18"
+      },
+      {
+       "appellation": "AOP Pommard",
+       "cuvee": "Les Perrières",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "24,00"
+       ],
+       "source": "excel:Sébastien Magnien:L19"
+      },
+      {
+       "appellation": "AOP Pommard",
+       "cuvee": "Les Petits Noizons",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "26,00"
+       ],
+       "source": "excel:Sébastien Magnien:L20"
+      },
+      {
+       "appellation": "AOP Beaune 1er Cru",
+       "cuvee": "Les Aigrots",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "22,00"
+       ],
+       "source": "excel:Sébastien Magnien:L21"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 11,
+   "nom": "Domaine Nadine Ferrand",
+   "region": "Bourgogne",
+   "sous_titre": "Pouilly-Fuissé · Mâconnais",
+   "labels": [],
+   "texte": "Pouilly-Fuissé · Mâconnais Au cœur de l’appellation Pouilly-Fuissé, la tradition vigneronne familiale se perpétue depuis des générations. Rejoint par une nouvelle génération en 2012, le domaine s’est tourné vers l’export, puis a inauguré en 2018 un caveau de dégustation modernisé. Sa gamme de blancs va du Mâcon aux Pouilly-Fuissé 1er Cru.",
+   "pages_maquette": [
+    16
+   ],
+   "page_source_tarif": 14,
+   "departements": [
+    "44",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Mâcon",
+       "cuvee": "Nadine Ferrand",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "7,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Mâcon Solutré-Pouilly",
+       "cuvee": "Nadine Ferrand",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "8,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Mâcon Charnay-lès- Mâcon",
+       "cuvee": "Signature",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "9,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Véran",
+       "cuvee": "Nadine Ferrand",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "11,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Viré-Clessé",
+       "cuvee": "Nadine Ferrand",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "11,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pouilly-Fuissé 1er Cru",
+       "cuvee": "Lise-Marie",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "14,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pouilly-Fuissé 1er Cru",
+       "cuvee": "Pouilly",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "18,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 12,
+   "nom": "Maison André Goichot",
+   "region": "Bourgogne",
+   "sous_titre": "Maison familiale et indépendante depuis 1947 · Bourgogne",
+   "labels": [],
+   "texte": "Maison familiale et indépendante depuis 1947 · Bourgogne Fondée en 1947, la Maison André Goichot, familiale et indépendante, porte l’exigence des grands climats de Bourgogne. Sélections parcellaires méticuleuses et cuverie d’élevage inaugurée en 2020 servent une gamme qui court du Mâconnais au Chablisien et à la Côte de Nuits, jusqu’au Clos Vougeot Grand Cru.",
+   "pages_maquette": [
+    17,
+    18
+   ],
+   "page_source_tarif": 15,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 78 bt · dès 126 bt",
+    "PANACHAGE": "Avec n° 13 Château du Cray et n° 14 Domaine",
+    "PARTICULARITÉS": "Allocation sur 5 cuvées"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 78 bt",
+    "dès 126 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 78 bt",
+      "dès 126 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Saint-Bris",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "7,20",
+        "6,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Mâcon-Lugny",
+       "cuvee": "Les Genièvres",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "9,60",
+        "9,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Petit Chablis",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "9,60",
+        "9,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Véran",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "12,00",
+        "11,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Chablis",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "12,60",
+        "12,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Chablis 1er Cru",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023/24",
+       "format": "75 cl",
+       "prix": [
+        "23,60",
+        "23,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pouilly-Fuissé 1er Cru",
+       "cuvee": "Clos Reyssier",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "24,40",
+        "24,10"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Meursault",
+       "cuvee": "Les Vireuils",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "48,70",
+        "48,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Bourguignons",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "5,60",
+        "5,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne Hautes- Côtes de Beaune",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "10,60",
+        "10,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Rully",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "15,20",
+        "14,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Auxey-Duresses",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "15,60",
+        "15,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Givry",
+       "cuvee": "Champ La Dame",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "16,20",
+        "15,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Mercurey",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "16,20",
+        "15,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Romain",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "16,20",
+        "15,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 78 bt",
+      "dès 126 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Monthélie",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "16,70",
+        "16,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Givry 1er Cru",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "18,60",
+        "18,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fixin",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "20,90",
+        "20,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Chassagne-Montrachet",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "23,60",
+        "23,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Aloxe-Corton",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "25,40",
+        "25,10"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Gevrey-Chambertin",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "43,20",
+        "42,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corton Grand Cru",
+       "cuvee": "Les Maréchaudes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "88,70",
+        "88,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Clos Vougeot Grand Cru",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "138,00",
+        "137,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 13,
+   "nom": "Château du Cray",
+   "region": "Bourgogne",
+   "sous_titre": "Famille Goichot · Buxy · Saône-et-Loire",
+   "labels": [],
+   "texte": "Famille Goichot · Buxy · Saône-et-Loire Propriété de la famille Perret du Cray depuis 1798, le Château du Cray est conduit depuis 2016 par la famille Goichot. Au nord de Buxy, en Saône-et-Loire, ses 22 hectares entourent le château à mi-coteau, exposés est- sud-est. Le domaine possède un monopole, Le Cornevent, vinifié en Bourgogne pinot noir.",
+   "pages_maquette": [
+    19
+   ],
+   "page_source_tarif": 16,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "Franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 78 bt · dès 126 bt",
+    "PANACHAGE": "Avec n° 12 Maison André Goichot et n° 14 Domaine",
+    "PARTICULARITÉS": "Monopole Le Cornevent"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 78 bt",
+    "dès 126 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 78 bt",
+      "dès 126 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Bourgogne Aligoté",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,70",
+        "6,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "10,80",
+        "10,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Le Cornevent (Monopole)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "11,60",
+        "11,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 14,
+   "nom": "Domaine Les Guignottes",
+   "region": "Bourgogne",
+   "sous_titre": "Famille Goichot · Saint-Valérien · Côte chalonnaise",
+   "labels": [],
+   "texte": "Famille Goichot · Saint-Valérien · Côte chalonnaise Depuis 2015, la famille Goichot assure la distribution exclusive du Domaine Les Guignottes, une propriété de 10 hectares à Saint-Valérien, en Côte chalonnaise. Aligoté, pinot noir et chardonnay y reflètent leur terroir d’origine, avec une recherche de minéralité et de légèreté, jusqu’aux Maranges et Santenay de la gamme.",
+   "pages_maquette": [
+    20
+   ],
+   "page_source_tarif": 17,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "Franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 78 bt · dès 126 bt",
+    "PANACHAGE": "Avec n° 12 Maison André Goichot et n° 13 Château",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 78 bt",
+    "dès 126 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 78 bt",
+      "dès 126 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Bourgogne Aligoté",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024/25",
+       "format": "75 cl",
+       "prix": [
+        "7,60",
+        "7,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,60",
+        "8,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Pinot noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,60",
+        "8,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Maranges",
+       "cuvee": "Le Saugeot",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "15,20",
+        "14,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Santenay",
+       "cuvee": "Les Vaux Dessus",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "16,00",
+        "15,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 15,
+   "nom": "Domaine des Verchères",
+   "region": "Bourgogne",
+   "sous_titre": "Mancey · Mâconnais",
+   "labels": [
+    "HVE"
+   ],
+   "texte": "Mancey · Mâconnais Propriété familiale transmise depuis sept générations, le Domaine des Verchères est établi à Mancey, au cœur du Mâconnais. Certifié HVE, il limite rigoureusement ses intrants pour préserver la vie des sols et alimente sa cave en énergie solaire, pour des vins purs, gourmands et équilibrés, en Mâcon comme en Bourgogne.",
+   "pages_maquette": [
+    21
+   ],
+   "page_source_tarif": 18,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "départ chai.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 120 bt · dès 180 bt · dès 300 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Domaine des Verchères"
+   ],
+   "descriptif_excel": "Propriété familiale à Mancey depuis sept générations – certifiée HVE, cave alimentée en énergie solaire",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 120 bt",
+    "dès 180 bt",
+    "dès 300 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 120 bt",
+      "dès 180 bt",
+      "dès 300 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Mâcon",
+       "cuvee": "Mâcon Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,10",
+        "5,45",
+        "5,75"
+       ],
+       "source": "excel:Domaine des Verchères:L7"
+      },
+      {
+       "appellation": "AOP Mâcon Mancey",
+       "cuvee": "Mâcon Mancey",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "6,70",
+        "6,50",
+        "6,30"
+       ],
+       "source": "excel:Domaine des Verchères:L8"
+      },
+      {
+       "appellation": "AOP Mâcon Mancey",
+       "cuvee": "Mâcon Mancey",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "5,75",
+        "5,60",
+        "5,40"
+       ],
+       "source": "excel:Domaine des Verchères:L9"
+      },
+      {
+       "appellation": "AOP Bourgogne",
+       "cuvee": "Bourgogne",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "7,70",
+        "7,50",
+        "7,25"
+       ],
+       "source": "excel:Domaine des Verchères:L10"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 16,
+   "nom": "Domaine du Prieuré des Papes",
+   "region": "Rhône",
+   "sous_titre": "Maisons & Vignobles Strasser-Radziwill · Châteauneuf-du-Pape",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Maisons & Vignobles Strasser-Radziwill · Châteauneuf-du-Pape Au nord de Châteauneuf-du-Pape, dans le quartier de Cabrières, le Prieuré des Papes compte 12 hectares sur sols de sable, complétés par 8 hectares en Côtes du Rhône sur le terroir du Grès. Certifié en agriculture biologique, le vignoble est dominé par le grenache ; un Châteauneuf-du-Pape blanc confidentiel naît de moins d’un hectare.",
+   "pages_maquette": [
+    22
+   ],
+   "page_source_tarif": 19,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 300 bt · Palette",
+    "PANACHAGE": "Avec les n° 17, 18 et 19 (groupe Strasser-",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Prieuré des Papes"
+   ],
+   "descriptif_excel": "Vignoble certifié Agriculture Biologique – Châteauneuf-du-Pape, quartier de Cabrières",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 300 bt",
+    "Palette"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 300 bt",
+      "Palette"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Côtes du Rhône",
+       "cuvee": "Le Prieuré",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "5,80",
+        "5,50"
+       ],
+       "source": "excel:Prieuré des Papes:L7"
+      },
+      {
+       "appellation": "AOP Châteauneuf-du-Pape",
+       "cuvee": "Vieilles Vignes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "18,30",
+        "18,00"
+       ],
+       "source": "excel:Prieuré des Papes:L8"
+      },
+      {
+       "appellation": "AOP Châteauneuf-du-Pape",
+       "cuvee": "Vieilles Vignes",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "21,20",
+        "20,90"
+       ],
+       "source": "excel:Prieuré des Papes:L9"
+      }
+     ]
+    }
+   ],
+   "notes_source": [
+    "* Possibilité de panacher avec les vins du Domaine de Coyeux, du Domaine du Moulin Blanc et du",
+    "Domaine de La Pousterle."
+   ]
+  },
+  {
+   "numero": 17,
+   "nom": "Domaine de Coyeux",
+   "region": "Rhône",
+   "sous_titre": "Maisons & Vignobles Strasser-Radziwill · Beaumes-de-Venise",
+   "labels": [],
+   "texte": "Maisons & Vignobles Strasser-Radziwill · Beaumes-de-Venise Au pied des Dentelles de Montmirail, dans l’aire de Beaumes-de-Venise, le Domaine de Coyeux s’étend sur 120 hectares d’un seul tenant, entre bois, garrigue et vignes. Plantées sur le Trias, à 300 mètres d’altitude et exposées au sud, ses vignes de 40 à 70 ans donnent des vins élégants, du Gigondas au muscat.",
+   "pages_maquette": [
+    23
+   ],
+   "page_source_tarif": 20,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 198 bt · dès 300 bt · Palette",
+    "PANACHAGE": "Avec les n° 16, 18 et 19 (groupe Strasser-",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 198 bt",
+    "dès 300 bt",
+    "Palette"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 198 bt",
+      "dès 300 bt",
+      "Palette"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Méditerranée",
+       "cuvee": "Première Fleur",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "NM",
+       "format": "75 cl",
+       "prix": [
+        "5,25",
+        "4,80",
+        "4,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Méditerranée",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "5,25",
+        "4,80",
+        "4,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Beaumes-de-Venise",
+       "cuvee": "Les Jumelles",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "6,90",
+        "6,20",
+        "5,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Beaumes-de-Venise",
+       "cuvee": "Les Banquettes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "8,00",
+        "7,30",
+        "7,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Gigondas",
+       "cuvee": "Coyeux",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "13,20",
+        "12,20",
+        "11,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Muscat de Beaumes- de-Venise",
+       "cuvee": "Solera",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "NM",
+       "format": "75 cl",
+       "prix": [
+        "6,90",
+        "6,30",
+        "6,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Muscat de Beaumes- de-Venise",
+       "cuvee": "Vintage",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2013",
+       "format": "75 cl",
+       "prix": [
+        "10,00",
+        "9,30",
+        "9,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 18,
+   "nom": "Domaine du Moulin Blanc",
+   "region": "Rhône",
+   "sous_titre": "Maisons & Vignobles Strasser-Radziwill · Tavel · Côtes du Rhône",
+   "labels": [],
+   "texte": "Maisons & Vignobles Strasser-Radziwill · Tavel · Côtes du Rhône Membre des Maisons & Vignobles Strasser-Radziwill, le Domaine du Moulin Blanc cultive ses vignes dans le respect de l’environnement et du cycle naturel de la vigne. Sa gamme resserrée réunit un Tavel rosé et des Côtes du Rhône en blanc et en rouge, à panacher avec les trois autres domaines du groupe.",
+   "pages_maquette": [
+    24
+   ],
+   "page_source_tarif": 21,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 198 bt · dès 300 bt · Palette",
+    "PANACHAGE": "Avec les n° 16, 17 et 19 (groupe Strasser-",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 198 bt",
+    "dès 300 bt",
+    "Palette"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 198 bt",
+      "dès 300 bt",
+      "Palette"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Côtes du Rhône",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "5,80",
+        "5,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Tavel",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "7,00",
+        "6,20",
+        "5,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Côtes du Rhône",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "5,80",
+        "5,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 19,
+   "nom": "Domaine de la Pousterle",
+   "region": "Rhône",
+   "sous_titre": "Maisons & Vignobles Strasser-Radziwill · Vallée du Rhône · Luberon",
+   "labels": [],
+   "texte": "Maisons & Vignobles Strasser-Radziwill · Vallée du Rhône · Luberon Domaine viticole familial de la vallée du Rhône, la Pousterle travaille les cépages typiques de la région sur des collines ensoleillées, balayées par le mistral, en alliant traditions viticoles et pratiques respectueuses de l’environnement. Sa gamme va des Vins de France, en blanc et en syrah, aux Luberon Terroir d’Ansouis.",
+   "pages_maquette": [
+    25
+   ],
+   "page_source_tarif": 22,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 198 bt · dès 300 bt · Palette",
+    "PANACHAGE": "Avec les n° 16, 17 et 18 (groupe Strasser-",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 198 bt",
+    "dès 300 bt",
+    "Palette"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 198 bt",
+      "dès 300 bt",
+      "Palette"
+     ],
+     "lignes": [
+      {
+       "appellation": "Vin de France",
+       "cuvee": "La Pousterle",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "5,00",
+        "4,75",
+        "4,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Luberon",
+       "cuvee": "Terroir d’Ansouis",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "5,25",
+        "5,00",
+        "4,75"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Luberon",
+       "cuvee": "Terroir d’Ansouis",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "5,25",
+        "5,00",
+        "4,75"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "La Pousterle",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "5,00",
+        "4,75",
+        "4,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Luberon",
+       "cuvee": "Terroir d’Ansouis",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "5,00",
+        "5,25",
+        "5,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 20,
+   "nom": "Domaine des Pasquiers",
+   "region": "Rhône",
+   "sous_titre": "Plan de Dieu · Sablet · Gigondas",
+   "labels": [],
+   "texte": "Plan de Dieu · Sablet · Gigondas Depuis 1935, le Domaine des Pasquiers s’étend sur 87 hectares au cœur de la vallée du Rhône méridionale, entre Plan de Dieu, Sablet et Gigondas. Transmise sur quatre générations, la propriété s’oriente vers une viticulture biologique, pour des vins qui vont du Vaucluse aux Côtes du Rhône Villages et au Gigondas.",
+   "pages_maquette": [
+    26
+   ],
+   "page_source_tarif": 23,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Côtes du Rhône Villages Sablet",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "7,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Vaucluse",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Côtes du Rhône",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "4,30"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Côtes du Rhône Villages Plan de Dieu",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Côtes du Rhône Villages Sablet",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Gigondas",
+       "cuvee": "—",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "12,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 21,
+   "nom": "Domaine Trichon",
+   "region": "Rhône",
+   "sous_titre": "Claire et Stéphane · Côtes du Rhône · Vacqueyras",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Claire et Stéphane · Côtes du Rhône · Vacqueyras Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique : les Côtes du Rhône méridionales (grenache, syrah, mourvèdre, clairette, muscat, viognier) et le Bugey (chardonnay, altesse, gamay, pinot noir, mondeuse). Claire et Stéphane y allient leurs savoir-faire, de la vigne à la création des cuvées.",
+   "pages_maquette": [
+    27
+   ],
+   "page_source_tarif": 24,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "départ cave.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 120 bt · dès 300 bt · dès 600 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Domaine Trichon (Rhône)",
+    "Domaine Trichon (Savoie)"
+   ],
+   "descriptif_excel": "Vignobles Trichon-Bernard – vins en biodynamie, certifiés Agriculture Biologique / Vignobles Trichon-Bernard – vins en biodynamie, certifiés Agriculture Biologique",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 120 bt",
+    "dès 300 bt",
+    "dès 600 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": "Rhône",
+     "paliers": [
+      "dès 120 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Côtes du Rhône",
+       "cuvee": "Côtes du Rhône",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "4,80",
+        "4,67",
+        "4,54"
+       ],
+       "source": "excel:Domaine Trichon (Rhône):L7"
+      },
+      {
+       "appellation": "AOP Vacqueyras",
+       "cuvee": "Vacqueyras",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "9,55",
+        "9,12",
+        "8,68"
+       ],
+       "source": "excel:Domaine Trichon (Rhône):L8"
+      },
+      {
+       "appellation": "AOP Vacqueyras",
+       "cuvee": "Vacqueyras",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "9,35",
+        "8,93",
+        "8,50"
+       ],
+       "source": "excel:Domaine Trichon (Rhône):L9"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": "Savoie",
+     "paliers": [
+      "dès 120 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Vin des Allobroges",
+       "cuvee": "Chardonnay",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "7,25",
+        "6,80",
+        "6,35"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L7"
+      },
+      {
+       "appellation": "IGP Vin des Allobroges",
+       "cuvee": "Gamay",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "5,85",
+        "5,59",
+        "5,32"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L8"
+      },
+      {
+       "appellation": "IGP Vin des Allobroges",
+       "cuvee": "Pinot Noir",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "6,99",
+        "6,67",
+        "6,35"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L9"
+      },
+      {
+       "appellation": "IGP Vin des Allobroges",
+       "cuvee": "Mondeuse",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "7,38",
+        "6,98",
+        "6,58"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L10"
+      },
+      {
+       "appellation": "AOP Bugey",
+       "cuvee": "Bugey Extra-Brut méthode trad.",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "NC",
+       "format": "75 cl",
+       "prix": [
+        "7,43",
+        "6,90",
+        "6,73"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L11"
+      },
+      {
+       "appellation": "AOP Bugey",
+       "cuvee": "Bugey Brut méthode trad.",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "NC",
+       "format": "75 cl",
+       "prix": [
+        "7,43",
+        "6,90",
+        "6,73"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L12"
+      },
+      {
+       "appellation": "Sans alcool",
+       "cuvee": "Pétillant de Jus de Raisin",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "5,08",
+        "5,08",
+        "5,08"
+       ],
+       "source": "excel:Domaine Trichon (Savoie):L13"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 22,
+   "nom": "Domaine Stratéus",
+   "region": "Sud-Ouest",
+   "sous_titre": "Simon Ribert · Madiran · Pacherenc-du-Vic-Bilh",
+   "labels": [],
+   "texte": "Simon Ribert · Madiran · Pacherenc-du-Vic-Bilh Né de la transmission d’une vigne de 80 ans en Madiran par son grand-père, le projet de Simon cultive la rareté : produire peu pour produire sain. Environ six hectares en Madiran et Pacherenc-du-Vic-Bilh, en symbiose avec un élevage de bœufs Angus sur la ferme, pour des cuvées en quantités limitées.",
+   "pages_maquette": [
+    28
+   ],
+   "page_source_tarif": 25,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "Franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 36 bt · dès 60 bt · dès 120 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 36 bt",
+    "dès 60 bt",
+    "dès 120 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 36 bt",
+      "dès 60 bt",
+      "dès 120 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Pacherenc du Vic-Bilh",
+       "cuvee": "Strateus",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "12,00",
+        "11,45",
+        "11,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Koloss",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "6,50",
+        "6,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Madiran",
+       "cuvee": "Koloss",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "6,50",
+        "6,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Madiran",
+       "cuvee": "Strateus",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "12,00",
+        "11,45",
+        "11,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Madiran",
+       "cuvee": "Néolitik",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "15,00",
+        "14,00",
+        "12,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Strateus",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "12,00",
+        "11,45",
+        "11,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 23,
+   "nom": "Domaine Haut Marin",
+   "region": "Sud-Ouest",
+   "sous_titre": "Familles Jegerlehner et Prataviera · Gondrin · Côtes de Gascogne",
+   "labels": [],
+   "texte": "Familles Jegerlehner et Prataviera · Gondrin · Côtes de Gascogne En plein cœur de la Gascogne, à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous- sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline, des IGP Côtes de Gascogne aux Bas-Armagnacs, jusqu’aux bag-in-box.",
+   "pages_maquette": [
+    29,
+    30
+   ],
+   "page_source_tarif": 26,
+   "departements": [
+    "16",
+    "17",
+    "44",
+    "79",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 72 bt · dès 300 bt · dès 600 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "BIB · Armagnac · offres sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 72 bt",
+    "dès 300 bt",
+    "dès 600 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 72 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "Vin de France",
+       "cuvee": "N°10",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,00",
+        "3,90",
+        "3,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "N°10",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,00",
+        "3,90",
+        "3,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°1 Littorine",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "2,68",
+        "2,60",
+        "2,28"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°2 Amande",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "2,79",
+        "2,70",
+        "2,38"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°6 Fossiles",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "2,99",
+        "2,91",
+        "2,56"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Cuvée Denise",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,74",
+        "3,63",
+        "3,18"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°3 Gulf Stream",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "2,99",
+        "2,91",
+        "2,56"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°4 Triton",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "2,99",
+        "2,91",
+        "2,56"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Cuvée Philippe",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "3,31",
+        "3,22",
+        "2,84"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°7 Venus",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,45",
+        "3,35",
+        "3,08"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "N°8 Grand Pavois",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "3,98",
+        "3,87",
+        "3,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "Blanche Armagnac",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "70 cl",
+       "prix": [
+        "22,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "Réserve",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "70 cl",
+       "prix": [
+        "25,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "V.S.O.P.",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "70 cl",
+       "prix": [
+        "28,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "X.O.",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "70 cl",
+       "prix": [
+        "30,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "Hors d’Age",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "70 cl",
+       "prix": [
+        "33,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "Millésimés",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "2000",
+       "format": "70 cl",
+       "prix": [
+        "39,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bas-Armagnac",
+       "cuvee": "Millésimés",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "1990",
+       "format": "70 cl",
+       "prix": [
+        "49,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BIB",
+     "titre": "Bag-in-box",
+     "paliers": [],
+     "lignes": [
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Amande",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "7,75"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Gulf Stream",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Triton",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "20,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Amande",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "7,75"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Gulf Stream",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Amande",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "7,75"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Gulf Stream",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,40"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Côtes de Gascogne",
+       "cuvee": "Triton",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "20,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 24,
+   "nom": "Fabien Castaing",
+   "region": "Sud-Ouest",
+   "sous_titre": "Domaine de Moulin-Pouzy · Dordogne · Bergerac et Monbazillac",
+   "labels": [],
+   "texte": "Domaine de Moulin-Pouzy · Dordogne · Bergerac et Monbazillac Ancré en Dordogne, le Domaine de Moulin-Pouzy est l’héritage des Castaing depuis 1898. Fabien Castaing, cinquième génération, perpétue les traditions et les valeurs familiales : attachement au terroir, respect de l’environnement et savoir-faire vigneron, de Monbazillac à Pécharmant, avec une incursion à Cahors et Fronton et une gamme de bières.",
+   "pages_maquette": [
+    31
+   ],
+   "page_source_tarif": 27,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 120 bt · dès 180 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Bières · gamme complète sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 120 bt",
+    "dès 180 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 120 bt",
+      "dès 180 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Périgord",
+       "cuvee": "Adn 24",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,10",
+        "2,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "—",
+       "cuvee": "Fines Bulles",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "6,00",
+        "5,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Périgord",
+       "cuvee": "Adn 24",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,10",
+        "2,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Périgord",
+       "cuvee": "Adn 24",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,10",
+        "2,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Cahors",
+       "cuvee": "L’esprit Sud-Ouest",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "—",
+       "prix": [
+        "3,55",
+        "3,45"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Fronton",
+       "cuvee": "L’esprit Sud-Ouest",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "—",
+       "prix": [
+        "3,55",
+        "3,45"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bergerac",
+       "cuvee": "Les Classiques",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "4,05",
+        "3,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pécharmant",
+       "cuvee": "Les Hauts des Olivoux",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "5,70",
+        "5,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Périgord",
+       "cuvee": "Adn 24",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,10",
+        "2,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Monbazillac",
+       "cuvee": "Les Classiques",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "5,80",
+        "5,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Bière",
+       "cuvee": "La Barbe Blanche",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "—",
+       "prix": [
+        "1,85",
+        "1,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Bière",
+       "cuvee": "La Barbe Blonde",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "—",
+       "prix": [
+        "1,85",
+        "1,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Bière",
+       "cuvee": "La Barbe Ambrée",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "—",
+       "prix": [
+        "1,85",
+        "1,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 25,
+   "nom": "La Passion des Terroirs",
+   "region": "Bordeaux",
+   "sous_titre": "Famille Lucien Lurton · Bordeaux, toutes appellations",
+   "labels": [],
+   "texte": "Famille Lucien Lurton · Bordeaux, toutes appellations Depuis trois générations, la famille Lucien Lurton compte parmi les principaux propriétaires de châteaux du Bordelais. Personnalité, respect de la terre, exigence et indépendance : cette maison familiale distribue des vins de toutes les appellations bordelaises, de Pessac-Léognan à Pomerol, en passant par Margaux et Saint-Julien.",
+   "pages_maquette": [
+    32,
+    33
+   ],
+   "page_source_tarif": 28,
+   "departements": [
+    "35",
+    "49",
+    "85"
+   ],
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "port_source": null,
+   "pied_port": "Prix HT par bouteille, conditions de port sur demande",
+   "conditions": {
+    "PORT": "Sur demande",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Offres sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Pessac-Léognan",
+       "cuvee": "Petit Valoux",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pessac-Léognan",
+       "cuvee": "Château Lamothe Bouscaut",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "11,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Bordeaux",
+       "cuvee": "La Petite Echoppe",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "2,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "L’Étoile de Villegeorge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "5,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "Esprit de Doyac",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "6,10"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Georges-Saint- Émilion",
+       "cuvee": "Château Macquin",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "75 cl",
+       "prix": [
+        "6,60"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Listrac-Médoc",
+       "cuvee": "N°2 de Fourcas Dupré",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "6,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Graves",
+       "cuvee": "Graves de Bouscaut",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "6,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pessac-Léognan",
+       "cuvee": "Château Valoux",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "7,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Lalande-de-Pomerol",
+       "cuvee": "Château la Croix Saint-André",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "7,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Émilion Grand Cru",
+       "cuvee": "Château du Cauze",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "8,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "Château Doyac",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "9,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "Château de Villegeorge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2015",
+       "format": "75 cl",
+       "prix": [
+        "10,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "La Petite Tour de Bessan",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "10,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pessac-Léognan",
+       "cuvee": "Château Lamothe Bouscaut",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "11,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Estèphe",
+       "cuvee": "Les Hauts de Pez",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "12,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Moulis-en-Médoc",
+       "cuvee": "L’Oratoire de Chasse-Spleen",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "13,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Médoc",
+       "cuvee": "Cérès de Haut-Bages Libéral",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "14,20"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Julien",
+       "cuvee": "Éléonore du Château Teynac",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "14,25"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Estèphe",
+       "cuvee": "Charme de Cos Labory",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "14,80"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pomerol",
+       "cuvee": "Château Feytit-Guillot",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "14,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "Château la Tour de Bessan",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "15,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Pauillac",
+       "cuvee": "La Fleur de Haut-Bages Libéral",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "17,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Julien",
+       "cuvee": "Château les Ormes",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2017",
+       "format": "75 cl",
+       "prix": [
+        "18,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "Les Plantes de Durfort-Vivens",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "19,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "Château Doyac",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2015",
+       "format": "75 cl",
+       "prix": [
+        "19,10"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "Le Plateau de Durfort-Vivens",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "22,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "Le Hameau de Durfort-Vivens",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "22,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Haut-Médoc",
+       "cuvee": "Château de Villegeorge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2015",
+       "format": "150 cl",
+       "prix": [
+        "25,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Margaux",
+       "cuvee": "Le Hameau de Durfort-Vivens",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "150 cl",
+       "prix": [
+        "44,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Sauternes",
+       "cuvee": "Château Du Mayne",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "10,95"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 26,
+   "nom": "Château La Gorce",
+   "region": "Bordeaux",
+   "sous_titre": "Emmanuel et Mana Martin · Médoc",
+   "labels": [],
+   "texte": "Emmanuel et Mana Martin · Médoc En activité depuis 1822 et reconnu cru bourgeois dans le classement de 1932, le Château La Gorce a été repris en 2018 par Emmanuel et Mana Martin. Ils engagent aussitôt la conversion de ses quarante-huit hectares à l’agriculture biologique, achevée sur toutes les cuvées depuis le millésime 2022, en AOP Médoc.",
+   "pages_maquette": [
+    34
+   ],
+   "page_source_tarif": 29,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85",
+    "53"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 90 bt · dès 120 bt · dès 300 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Bio certifié par cuvée"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Château la Gorce"
+   ],
+   "descriptif_excel": "Cru Bourgeois (classement 1932) – conversion bio achevée sur toutes les cuvées depuis le millésime 2022",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 90 bt",
+    "dès 120 bt",
+    "dès 300 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 90 bt",
+      "dès 120 bt",
+      "dès 300 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Médoc Cru Bourgeois",
+       "cuvee": "Château la Gorce",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "7,05",
+        "7,00",
+        "6,90"
+       ],
+       "source": "excel:Château la Gorce:L7"
+      },
+      {
+       "appellation": "AOP Médoc Cru Bourgeois",
+       "cuvee": "Château la Gorce",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "1,5 L",
+       "prix": [
+        "14,15",
+        "14,10",
+        "14,00"
+       ],
+       "source": "excel:Château la Gorce:L8"
+      },
+      {
+       "appellation": "AOP Médoc Cru Bourgeois (AB)",
+       "cuvee": "Château la Gorce",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "7,05",
+        "7,00",
+        "6,90"
+       ],
+       "source": "excel:Château la Gorce:L9"
+      },
+      {
+       "appellation": "AOP Médoc Cru Bourgeois (AB)",
+       "cuvee": "Château la Gorce",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "1,5 L",
+       "prix": [
+        "14,15",
+        "14,10",
+        "14,00"
+       ],
+       "source": "excel:Château la Gorce:L10"
+      },
+      {
+       "appellation": "AOP Médoc – Série limitée",
+       "cuvee": "Préface",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2013",
+       "format": "75 cl",
+       "prix": [
+        "5,55",
+        "5,50",
+        "5,40"
+       ],
+       "source": "excel:Château la Gorce:L11"
+      },
+      {
+       "appellation": "AOP Médoc (AB)",
+       "cuvee": "Prétexte",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "6,60",
+        "6,55",
+        "6,45"
+       ],
+       "source": "excel:Château la Gorce:L12"
+      },
+      {
+       "appellation": "AOP Médoc (AB)",
+       "cuvee": "Rouge Intense – sans sulfites ajoutés",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "6,25",
+        "6,20",
+        "6,10"
+       ],
+       "source": "excel:Château la Gorce:L13"
+      },
+      {
+       "appellation": "AOP Médoc (AB)",
+       "cuvee": "L'An 022 – élevé en amphore",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "9,80",
+        "9,75",
+        "9,65"
+       ],
+       "source": "excel:Château la Gorce:L14"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Rosé DADA",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "6,45",
+        "6,40",
+        "6,30"
+       ],
+       "source": "excel:Château la Gorce:L15"
+      },
+      {
+       "appellation": "AOP Médoc (AB)",
+       "cuvee": "La Bonne Résolution",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "6,35",
+        "6,30",
+        "6,20"
+       ],
+       "source": "excel:Château la Gorce:L16"
+      },
+      {
+       "appellation": "AOP Médoc (AB)",
+       "cuvee": "Château Canteloup",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "5,10",
+        "5,05",
+        "4,95"
+       ],
+       "source": "excel:Château la Gorce:L17"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 27,
+   "nom": "Château Falfas",
+   "region": "Bordeaux",
+   "sous_titre": "John et Véronique Cochran · Bayon · Côtes de Bourg",
+   "labels": [
+    "BIODYNAMIE"
+   ],
+   "texte": "John et Véronique Cochran · Bayon · Côtes de Bourg Sentinelle édifiée en 1612 sur les coteaux argilo-calcaires de Bayon, Falfas est une référence pionnière de la biodynamie bordelaise et un membre fondateur de Biodyvin, sous la houlette de John et Véronique Cochran. Vingt hectares vendangés à la main donnent des Côtes de Bourg racés et de longue garde.",
+   "pages_maquette": [
+    35
+   ],
+   "page_source_tarif": 30,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Château Falfas"
+   ],
+   "descriptif_excel": "Vins Bio et Biodynamie depuis 1988 – certifié Ecocert et Biodyvin, membre fondateur de Biodyvin",
+   "validite": "31/12/2026",
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Côtes de Bourg",
+       "cuvee": "Les Demoiselles de Falfas",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "9,50"
+       ],
+       "source": "excel:Château Falfas:L7"
+      },
+      {
+       "appellation": "AOP Côtes de Bourg",
+       "cuvee": "Château Falfas",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "12,40"
+       ],
+       "source": "excel:Château Falfas:L8"
+      },
+      {
+       "appellation": "AOP Côtes de Bourg",
+       "cuvee": "Château Falfas Le Chevalier (Vieilles Vignes)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "22,50"
+       ],
+       "source": "excel:Château Falfas:L9"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 28,
+   "nom": "Château Pré la Lande",
+   "region": "Bordeaux",
+   "sous_titre": "Vallée de la Dordogne · Sainte-Foy Côtes de Bordeaux",
+   "labels": [
+    "BIODYNAMIE"
+   ],
+   "texte": "Vallée de la Dordogne · Sainte-Foy Côtes de Bordeaux Perchée à 120 mètres au-dessus de la vallée de la Dordogne, cette propriété de 1860 conduit une biodynamie certifiée Demeter. Vinifications douces, sulfites au strict minimum, élevages en barriques et en amphores : des vins vivants, d’une grande vibration minérale, en AOP Sainte-Foy Côtes de Bordeaux.",
+   "pages_maquette": [
+    36
+   ],
+   "page_source_tarif": 31,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "départ chai.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Château Pré la Lande"
+   ],
+   "descriptif_excel": "Vins Bio depuis 2007, Biodynamie certifiée Demeter depuis 2016 – sulfites au strict minimum",
+   "validite": "31/12/2026",
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
+       "cuvee": "Cuvée Diane / Le Vin Cœur",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "9,90"
+       ],
+       "source": "excel:Château Pré la Lande:L7"
+      },
+      {
+       "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
+       "cuvee": "Cuvée TerraCotta / L'An Fort des Haltères",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "8,90"
+       ],
+       "source": "excel:Château Pré la Lande:L8"
+      },
+      {
+       "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
+       "cuvee": "Cuvée des Fontenelles / Y'a Rien qui Presse",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "7,50"
+       ],
+       "source": "excel:Château Pré la Lande:L9"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 29,
+   "nom": "Château Balac",
+   "region": "Bordeaux",
+   "sous_titre": "Famille Touchais · Saint-Laurent-Médoc",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Famille Touchais · Saint-Laurent-Médoc Au cœur d’une forêt de deux cents hectares, la famille Touchais veille depuis 1964 sur dix hectares de vignes à Saint-Laurent-Médoc. Classé Cru Bourgeois Supérieur et certifié bio, Château Balac cultive autour de sa chartreuse du XVIIIe siècle des vins de caractère, dont une cuvée sans sulfites et une syrah.",
+   "pages_maquette": [
+    37
+   ],
+   "page_source_tarif": 32,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "jusqu’à 120 bt · dès 120 bt · dès 180 bt · dès 300 bt · dès 600 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "5 paliers de prix"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Château Balac"
+   ],
+   "descriptif_excel": "Cru Bourgeois Supérieur – vins certifiés Agriculture Biologique (AB) – Saint-Laurent-Médoc",
+   "validite": "31/12/2026",
+   "paliers": [
+    "jusqu’à 120 bt",
+    "dès 120 bt",
+    "dès 180 bt",
+    "dès 300 bt",
+    "dès 600 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "jusqu’à 120 bt",
+      "dès 120 bt",
+      "dès 180 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Inopine (100 % Merlot)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "6,40",
+        "6,30",
+        "6,20",
+        "6,10",
+        "6,00"
+       ],
+       "source": "excel:Château Balac:L7"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Balac Sans Sulfites (100 % Merlot)",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "7,00",
+        "6,90",
+        "6,80",
+        "6,70",
+        "6,60"
+       ],
+       "source": "excel:Château Balac:L8"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Syrah de Balac",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "8,60",
+        "8,50",
+        "8,40",
+        "8,30",
+        "8,10"
+       ],
+       "source": "excel:Château Balac:L9"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 30,
+   "nom": "Château l’Escarderie",
+   "region": "Bordeaux",
+   "sous_titre": "Mélanie et Thomas · Saint-Germain-de-la-Rivière · Fronsac",
+   "labels": [],
+   "texte": "Mélanie et Thomas · Saint-Germain-de-la-Rivière · Fronsac À Saint-Germain-de-la-Rivière, en AOP Fronsac, le Château l’Escarderie renaît sous la conduite de Mélanie et Thomas. Vendanges manuelles, fermentations spontanées, sulfites mesurés et élevages sur mesure (barriques, béton, amphores) donnent des merlots et des cabernets francs veloutés et floraux, ainsi qu’un clairet et un pétillant.",
+   "pages_maquette": [
+    38
+   ],
+   "page_source_tarif": 33,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 180
+   },
+   "port_source": "départ, franco à partir de 180 bouteilles.",
+   "pied_port": "Prix HT par bouteille, franco dès 180 bt",
+   "conditions": {
+    "PORT": "Franco dès 180 bt",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Château l'Escarderie"
+   ],
+   "descriptif_excel": "Vins certifiés Agriculture Biologique (AB) – AOP Fronsac, Saint-Germain-de-la-Rivière (Thomas et Mélanie Haguenin)",
+   "validite": "31/12/2026",
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Fronsac",
+       "cuvee": "Passion de Château l'Escarderie",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "6,90"
+       ],
+       "source": "excel:Château l'Escarderie:L7"
+      },
+      {
+       "appellation": "AOP Fronsac",
+       "cuvee": "Passion de Château l'Escarderie",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "6,10"
+       ],
+       "source": "excel:Château l'Escarderie:L8"
+      },
+      {
+       "appellation": "AOP Fronsac",
+       "cuvee": "Château l'Escarderie",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "10,30"
+       ],
+       "source": "excel:Château l'Escarderie:L9"
+      },
+      {
+       "appellation": "AOP Fronsac",
+       "cuvee": "Amphora de Château l'Escarderie",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020/21",
+       "format": "75 cl",
+       "prix": [
+        "10,10"
+       ],
+       "source": "excel:Château l'Escarderie:L10"
+      },
+      {
+       "appellation": "AOP Bordeaux Clairet",
+       "cuvee": "Clair de Lune de l'Escarderie",
+       "note": "Clairet",
+       "couleur": "—",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "6,77"
+       ],
+       "source": "excel:Château l'Escarderie:L11"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Pétillant de l'Escarderie",
+       "note": "pétillant naturel",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "6,77"
+       ],
+       "source": "excel:Château l'Escarderie:L12"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "La Confiance de l'Escarderie",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "8,45"
+       ],
+       "source": "excel:Château l'Escarderie:L13"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "La Demoiselle de Saint-Germain",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "5,80"
+       ],
+       "source": "excel:Château l'Escarderie:L14"
+      }
+     ]
+    }
+   ],
+   "notes_source": [
+    "* Carton de 6 bouteilles, palette de 600. Commande par couche de 11 cartons (Passion, Amphora,",
+    "Pétillant Naturel, La Confiance) ou de 5 cartons (Château l'Escarderie). Règlement à 45 jours",
+    "(loi LME)."
+   ]
+  },
+  {
+   "numero": 31,
+   "nom": "Bastide de Blacailloux",
+   "region": "Provence",
+   "sous_titre": "Famille Chamoin · Tourves · Coteaux Varois en Provence",
+   "labels": [],
+   "texte": "Famille Chamoin · Tourves · Coteaux Varois en Provence Écrin préservé à Tourves, Blacailloux incarne la Provence Verte depuis plus d’un siècle, conduit par la quatrième génération de la famille Chamoin. Chai bioclimatique à toit végétalisé et énergie photovoltaïque accompagnent des cuvées AOP Coteaux Varois en Provence et IGP Var, fraîches et aériennes.",
+   "pages_maquette": [
+    39
+   ],
+   "page_source_tarif": 34,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 60 bt · dès 120 bt · dès 180 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Magnums · BIB 5 L"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 60 bt",
+    "dès 120 bt",
+    "dès 180 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 60 bt",
+      "dès 120 bt",
+      "dès 180 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Var Sainte-Baume",
+       "cuvee": "Saint Probace",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "5,65",
+        "5,50",
+        "5,35"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Varois en Provence",
+       "cuvee": "Joio",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "6,30",
+        "6,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Varois en Provence",
+       "cuvee": "Joio",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "150 cl",
+       "prix": [
+        "14,85",
+        "14,45",
+        "14,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Var Sainte-Baume",
+       "cuvee": "Saint Probace",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "5,40",
+        "5,30",
+        "5,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Varois en Provence",
+       "cuvee": "Joio",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,50",
+        "6,30",
+        "6,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Varois en Provence",
+       "cuvee": "Joio",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "150 cl",
+       "prix": [
+        "14,85",
+        "14,45",
+        "14,15"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Coteaux Varois en Provence",
+       "cuvee": "Joio",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "6,90",
+        "6,70",
+        "6,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BIB",
+     "titre": "Bag-in-box",
+     "paliers": [],
+     "lignes": [
+      {
+       "appellation": "IGP Var",
+       "cuvee": "Blacailloux",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "BIB",
+       "prix": [
+        "19,50"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 32,
+   "nom": "Famille d’Exea",
+   "region": "Languedoc",
+   "sous_titre": "Pays d’Oc · Corbières · Minervois",
+   "labels": [
+    "AB · BIO"
+   ],
+   "texte": "Pays d’Oc · Corbières · Minervois Depuis plusieurs générations, la famille d’Exea façonne sur les terroirs solaires du Languedoc des vins biologiques vibrants et sincères, qui allient pureté du fruit et convivialité. La gamme couvre le Pays d’Oc, les Corbières et le Minervois, des Vins de France à 9,5° et des bag-in-box, à panacher avec les jus de cépage.",
+   "pages_maquette": [
+    40,
+    41
+   ],
+   "page_source_tarif": 35,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "85"
+   ],
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "port_source": null,
+   "pied_port": "Prix HT par bouteille, conditions de port sur demande",
+   "conditions": {
+    "PORT": "Sur demande",
+    "PALIERS": "dès 144 bt · dès 300 bt · dès 600 bt",
+    "PANACHAGE": "Avec n° 33 Famille d’Exea – Jus de cépages",
+    "PARTICULARITÉS": "BIB · sous 144 bt : sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 144 bt",
+    "dès 300 bt",
+    "dès 600 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 144 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Petit Jardin",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "3,43",
+        "3,16",
+        "2,71"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Le Muscaris",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,30",
+        "3,96",
+        "3,39"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Sauvignon 9,5°",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,30",
+        "3,96",
+        "3,39"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Jardins de Corbières",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,74",
+        "4,36",
+        "4,08"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Blanc Sérame",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "7,78",
+        "7,16",
+        "6,13"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Carduelis",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "14,00",
+        "14,00",
+        "14,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Oena",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "14,00",
+        "14,00",
+        "14,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Petit Jardin",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "3,43",
+        "3,16",
+        "2,71"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Le Souvignier Gris",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,30",
+        "3,96",
+        "3,39"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Grenache Gris 9,5°",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,30",
+        "3,96",
+        "3,39"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Rose Sérame",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "7,78",
+        "7,16",
+        "6,13"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Petit Jardin",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "3,43",
+        "3,16",
+        "2,71"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Jardins de Corbières",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "4,74",
+        "4,36",
+        "4,08"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Rouge Sérame",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "7,78",
+        "7,16",
+        "6,13"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Minervois",
+       "cuvee": "Chant de Lune",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "7,78",
+        "7,16",
+        "6,13"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Lullula",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "9,57",
+        "8,80",
+        "7,54"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Minervois",
+       "cuvee": "Chant Libre",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "9,57",
+        "8,80",
+        "7,54"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 144 bt",
+      "dès 300 bt",
+      "dès 600 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Minervois",
+       "cuvee": "Chant de Lumière",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "14,00",
+        "14,00",
+        "14,00"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BIB",
+     "titre": "Bag-in-box",
+     "paliers": [
+      "dès 50 bt",
+      "dès 100 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Pergola d’Exea",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,85",
+        "11,65"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Pergola d’Exea",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,85",
+        "11,65"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "IGP Pays d’Oc",
+       "cuvee": "Pergola d’Exea",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "BIB",
+       "prix": [
+        "11,85",
+        "11,65"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 33,
+   "nom": "Famille d’Exea – Jus de cépages",
+   "region": "Languedoc",
+   "sous_titre": "Pur jus de raisin · 50 et 25 cl",
+   "labels": [],
+   "texte": "Pur jus de raisin · 50 et 25 cl Issus des vignes de la famille d’Exea, ces purs jus de cépage expriment leur terroir d’origine. Élaborés sans filtration ni additif, ils préservent la pureté aromatique de chaque cépage pour une dégustation fruitée, fraîche et élégante, à tout moment de la journée, et se panachent avec les vins du domaine.",
+   "pages_maquette": [
+    42
+   ],
+   "page_source_tarif": 36,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "85"
+   ],
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "port_source": null,
+   "pied_port": "Prix HT par bouteille, conditions de port sur demande",
+   "conditions": {
+    "PORT": "Sur demande",
+    "PALIERS": "dès 144 bt · dès 300 bt",
+    "PANACHAGE": "Avec n° 32 Famille d’Exea",
+    "PARTICULARITÉS": "Jus · sous 144 bt : sur demande"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 144 bt",
+    "dès 300 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 144 bt",
+      "dès 300 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Sauvignon",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "50 cl",
+       "prix": [
+        "2,39",
+        "2,19"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Carignan",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "50 cl",
+       "prix": [
+        "2,39",
+        "2,19"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Chardonnay",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "50 cl",
+       "prix": [
+        "2,39",
+        "2,19"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Grenache",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "50 cl",
+       "prix": [
+        "2,39",
+        "2,19"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "La Syrah",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "50 cl",
+       "prix": [
+        "2,39",
+        "2,19"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    },
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 144 bt",
+      "dès 320 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Chardonnay",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "25 cl",
+       "prix": [
+        "1,84",
+        "1,74"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "Le Grenache",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "25 cl",
+       "prix": [
+        "1,84",
+        "1,74"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Pur jus de raisin",
+       "cuvee": "La Syrah",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "25 cl",
+       "prix": [
+        "1,84",
+        "1,74"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 34,
+   "nom": "Château de Gragnos",
+   "region": "Languedoc",
+   "sous_titre": "Alain et Patricia · Saint-Chinian",
+   "labels": [
+    "CONVERSION"
+   ],
+   "texte": "Alain et Patricia · Saint-Chinian Alain, Patricia et leurs fils révèlent l’âme de Gragnos par un soin méticuleux apporté à chaque pied de vigne. Engagé dans une conversion biologique, le domaine privilégie un accompagnement doux du végétal pour laisser rayonner l’identité du terroir sans le contraindre, en Saint-Chinian comme en Vin de France.",
+   "pages_maquette": [
+    43
+   ],
+   "page_source_tarif": 37,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 180
+   },
+   "port_source": "franco de port à partir de 180 bouteilles.",
+   "pied_port": "Prix HT par bouteille, franco dès 180 bt",
+   "conditions": {
+    "PORT": "Franco dès 180 bt",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "Grain de Blanc",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "6,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "Cosmos",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "4,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "Henri",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "4,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Léon",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "4,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "Lou Daro",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "6,70"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "BDM",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "8,85"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Vin de France",
+       "cuvee": "Syrah Nature",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "10,45"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Saint-Chinian",
+       "cuvee": "Dolmen",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "14,45"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 35,
+   "nom": "Domaine Les Lys",
+   "region": "Languedoc",
+   "sous_titre": "Uzès · Duché d’Uzès · Cévennes",
+   "labels": [],
+   "texte": "Uzès · Duché d’Uzès · Cévennes Situé entre vignes et garrigues, près d’Uzès, face aux Cévennes, le Domaine Les Lys produit des vins d’une grande fraîcheur minérale. Dans le respect de la biodiversité, ses parcelles relèvent des appellations AOP Duché d’Uzès et IGP Cévennes, en blanc comme en rouge, de La Soif à la cuvée Caillasses.",
+   "pages_maquette": [
+    44
+   ],
+   "page_source_tarif": 38,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "hors frais de transport.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "dès 120 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Domaine Les Lys"
+   ],
+   "descriptif_excel": "Vins certifiés Agriculture Biologique (AB) – près d'Uzès, face aux Cévennes – AOP Duché d'Uzès et IGP Cévennes",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 120 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 120 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "IGP Cévennes",
+       "cuvee": "Aillargues",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "5,70"
+       ],
+       "source": "excel:Domaine Les Lys:L7"
+      },
+      {
+       "appellation": "IGP Cévennes",
+       "cuvee": "Saint Anastasie",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "8,90"
+       ],
+       "source": "excel:Domaine Les Lys:L8"
+      },
+      {
+       "appellation": "IGP Cévennes",
+       "cuvee": "La Petite Syrah",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "4,50"
+       ],
+       "source": "excel:Domaine Les Lys:L9"
+      },
+      {
+       "appellation": "AOP Duché d'Uzès",
+       "cuvee": "Duché",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "5,95"
+       ],
+       "source": "excel:Domaine Les Lys:L10"
+      },
+      {
+       "appellation": "AOP Duché d'Uzès",
+       "cuvee": "Librotte",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2019",
+       "format": "75 cl",
+       "prix": [
+        "8,90"
+       ],
+       "source": "excel:Domaine Les Lys:L11"
+      },
+      {
+       "appellation": "IGP Cévennes",
+       "cuvee": "Caillasses",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "14,90"
+       ],
+       "source": "excel:Domaine Les Lys:L12"
+      },
+      {
+       "appellation": "IGP Cévennes",
+       "cuvee": "La Soif",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "3,90"
+       ],
+       "source": "excel:Domaine Les Lys:L13"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 36,
+   "nom": "Prieuré Sainte-Marie d’Albas",
+   "region": "Languedoc",
+   "sous_titre": "Laurence et Vincent Licciardi-Pirot · Corbières",
+   "labels": [],
+   "texte": "Laurence et Vincent Licciardi-Pirot · Corbières Au pied de la montagne d’Alaric, au cœur des Corbières, Laurence et Vincent Licciardi-Pirot cultivent des vignes en terrasses balayées par le cers. Les vins sont élevés dans une ancienne cave de village à demi enterrée : rouges chaleureux du Midi, blancs et rosés tout en fraîcheur, en AOP Corbières et IGP Pays d’Oc.",
+   "pages_maquette": [
+    45
+   ],
+   "page_source_tarif": 39,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "port_source": "départ cave.",
+   "pied_port": "Prix HT par bouteille, transport en sus",
+   "conditions": {
+    "PORT": "Port en sus",
+    "PALIERS": "Prix unique",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Magnums · BIB 3 L"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Ste-Marie d'Albas"
+   ],
+   "descriptif_excel": "Corbières, au pied de la Montagne d'Alaric – vignes en terrasses, élevage en cave de village semi-enterrée",
+   "validite": null,
+   "paliers": [
+    "Prix unique"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "Prix unique"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Clos de Cassis – élevé en fûts de chêne",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "8,30"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L7"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Clos de Cassis – élevé en fûts de chêne",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/23",
+       "format": "Magnum 1,5 L",
+       "prix": [
+        "20,80"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L8"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Tempo – élevé en fûts de chêne",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "7,20"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L9"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Terre Rouge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/24",
+       "format": "75 cl",
+       "prix": [
+        "7,20"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L10"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Terre Rouge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2022/24",
+       "format": "Magnum 1,5 L",
+       "prix": [
+        "17,90"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L11"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "4 Saisons",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "5,40"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L12"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "4 Saisons",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023/24",
+       "format": "Magnum 1,5 L",
+       "prix": [
+        "13,40"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L13"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Sonate",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2021",
+       "format": "75 cl",
+       "prix": [
+        "4,50"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L14"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "La Potion",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2024",
+       "format": "75 cl",
+       "prix": [
+        "3,40"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L15"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Arlequin",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "2025",
+       "format": "75 cl",
+       "prix": [
+        "4,70"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L16"
+      },
+      {
+       "appellation": "IGP Pays d'Oc",
+       "cuvee": "Pinot 100 % – vinification égrappée",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "7,10"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L17"
+      },
+      {
+       "appellation": "IGP Pays d'Oc",
+       "cuvee": "Blanc Albas",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2023",
+       "format": "75 cl",
+       "prix": [
+        "4,70"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L18"
+      },
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Corbières Rouge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "—",
+       "format": "BIB 3 L",
+       "prix": [
+        "8,90"
+       ],
+       "source": "excel:Ste-Marie d'Albas:L19"
+      }
+     ]
+    },
+    {
+     "type": "BIB",
+     "titre": "Bag-in-box",
+     "paliers": [],
+     "lignes": [
+      {
+       "appellation": "AOP Corbières",
+       "cuvee": "Corbières Rouge",
+       "note": "",
+       "couleur": "Rouge",
+       "millesime": "NM",
+       "format": "BIB",
+       "prix": [
+        "8,90"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": [
+    "* Toutes les références en 0,75 L sont conditionnées en cartons de 6 bouteilles. Expédition sous",
+    "48 à 72 heures sauf rupture de stock. La Potion : commande minimum 300 bouteilles, étiquette",
+    "personnalisée."
+   ]
+  },
+  {
+   "numero": 37,
+   "nom": "Champagne Dekeyne",
+   "region": "Champagne",
+   "sous_titre": "Ferme de La Voglonière · Champagne",
+   "labels": [
+    "CONVERSION"
+   ],
+   "texte": "Ferme de La Voglonière · Champagne Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan en extra-brut, à la vibrante énergie de sol, ainsi qu’un vieux ratafia champenois.",
+   "pages_maquette": [
+    46
+   ],
+   "page_source_tarif": 40,
+   "departements": [
+    "44",
+    "85"
+   ],
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 48
+   },
+   "port_source": "franco de port à partir de 48 bouteilles.",
+   "pied_port": "Prix HT par bouteille, franco dès 48 bt",
+   "conditions": {
+    "PORT": "Franco dès 48 bt",
+    "PALIERS": "dès 48 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation · Ratafia"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Champagne Dekeyne"
+   ],
+   "descriptif_excel": "Ferme de La Voglonière depuis 1919 – en conversion Agriculture Biologique – Allocation",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 48 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 48 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Chardonnay Vignes de 1962",
+       "note": "extra brut",
+       "couleur": "Blanc",
+       "millesime": "75 cl",
+       "format": "26.48",
+       "prix": [
+        "26,48"
+       ],
+       "source": "excel:Champagne Dekeyne:L7"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Nature",
+       "note": "extra brut",
+       "couleur": "Blanc",
+       "millesime": "75 cl",
+       "format": "25.41",
+       "prix": [
+        "25,41"
+       ],
+       "source": "excel:Champagne Dekeyne:L8"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Voglonniers",
+       "note": "extra brut",
+       "couleur": "Blanc",
+       "millesime": "75 cl",
+       "format": "19.96",
+       "prix": [
+        "19,96"
+       ],
+       "source": "excel:Champagne Dekeyne:L9"
+      },
+      {
+       "appellation": "IGP Ratafia Champenois",
+       "cuvee": "Vieux Ratafia",
+       "note": "Vin de liqueur",
+       "couleur": "—",
+       "millesime": "75 cl",
+       "format": "27.07",
+       "prix": [
+        "27,07"
+       ],
+       "source": "excel:Champagne Dekeyne:L10"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 38,
+   "nom": "Champagne Denis Frézier",
+   "region": "Champagne",
+   "sous_titre": "Monthelon · Champagne",
+   "labels": [
+    "CONVERSION"
+   ],
+   "texte": "Monthelon · Champagne Enracinée depuis sept générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle signe les cuvées Trois Crus, Terroir Noir et Terroir Blanc, un Grand Cru Exception et un vieux ratafia.",
+   "pages_maquette": [
+    47
+   ],
+   "page_source_tarif": 41,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 66 bt · dès 126 bt · dès 186 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "Allocation · Ratafia"
+   },
+   "origine_prix": "maquette",
+   "feuilles_excel": [],
+   "descriptif_excel": "",
+   "validite": null,
+   "paliers": [
+    "dès 66 bt",
+    "dès 126 bt",
+    "dès 186 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 66 bt",
+      "dès 126 bt",
+      "dès 186 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Trois Crus Brut",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "37,5 cl",
+       "prix": [
+        "9,37",
+        "9,19",
+        "9,02"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Trois Crus Brut",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "15,76",
+        "15,45",
+        "15,16"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Trois Crus Extra-Dry",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "15,76",
+        "15,45",
+        "15,16"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Trois Crus Demi-Sec",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "15,76",
+        "15,45",
+        "15,16"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Esprit Rose",
+       "note": "",
+       "couleur": "Rosé",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "16,87",
+        "16,54",
+        "16,23"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Terroir Blanc",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "17,54",
+        "17,20",
+        "16,87"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Terroir Noir",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "17,54",
+        "17,20",
+        "16,87"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Terroir Meunier",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "17,54",
+        "17,20",
+        "16,87"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "AOP Champagne",
+       "cuvee": "Grand Cru Exception",
+       "note": "",
+       "couleur": "Blanc",
+       "millesime": "2016",
+       "format": "75 cl",
+       "prix": [
+        "24,09",
+        "23,62",
+        "23,17"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      },
+      {
+       "appellation": "Ratafia champenois",
+       "cuvee": "Vieux Ratafia",
+       "note": "—",
+       "couleur": "—",
+       "millesime": "—",
+       "format": "75 cl",
+       "prix": [
+        "14,16",
+        "13,88",
+        "13,62"
+       ],
+       "source": "maquette (à contrôler sur image)"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 39,
+   "nom": "Champagne Solemme",
+   "region": "Champagne",
+   "sous_titre": "Olivier Langlais · Villers-aux-Nœuds · Premier Cru",
+   "labels": [],
+   "texte": "Olivier Langlais · Villers-aux-Nœuds · Premier Cru À Villers-aux-Nœuds, sur les terroirs Premier Cru de la Montagne de Reims, Olivier Langlais conduit 6 hectares en biodynamie. En cave, vinifications douces, sans chaptalisation ni filtration : des champagnes d’émotion, minéraux et d’une lumineuse franchise de terroir, du brut au brut nature, en Premier Cru.",
+   "pages_maquette": [
+    48
+   ],
+   "page_source_tarif": 42,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 60 bt · dès 120 bt · dès 240 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Champagne Solemme"
+   ],
+   "descriptif_excel": "Premier Cru – Villers-aux-Nœuds, biodynamie, certifié bio, sans chaptalisation ni dosage",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 60 bt",
+    "dès 120 bt",
+    "dès 240 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 60 bt",
+      "dès 120 bt",
+      "dès 240 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Terre de Solemme",
+       "note": "brut",
+       "couleur": "Blanc",
+       "millesime": "BSA",
+       "format": "75 cl",
+       "prix": [
+        "21,20",
+        "20,50",
+        "20,00"
+       ],
+       "source": "excel:Champagne Solemme:L7"
+      },
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Plénitude de Solemme",
+       "note": "extra brut",
+       "couleur": "Blanc",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "22,10",
+        "21,60",
+        "21,10"
+       ],
+       "source": "excel:Champagne Solemme:L8"
+      },
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Esprit de Solemme",
+       "note": "brut nature",
+       "couleur": "Blanc",
+       "millesime": "2020",
+       "format": "75 cl",
+       "prix": [
+        "25,80",
+        "25,10",
+        "24,50"
+       ],
+       "source": "excel:Champagne Solemme:L9"
+      },
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Nature de Solemme",
+       "note": "brut nature",
+       "couleur": "Blanc",
+       "millesime": "2018",
+       "format": "75 cl",
+       "prix": [
+        "32,00",
+        "31,20",
+        "30,50"
+       ],
+       "source": "excel:Champagne Solemme:L10"
+      },
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Ambre de Solemme",
+       "note": "brut nature",
+       "couleur": "Blanc",
+       "millesime": "2018",
+       "format": "75 cl",
+       "prix": [
+        "33,50",
+        "32,60",
+        "31,85"
+       ],
+       "source": "excel:Champagne Solemme:L11"
+      },
+      {
+       "appellation": "AOP Champagne Premier Cru",
+       "cuvee": "Rose de Solemme",
+       "note": "brut nature",
+       "couleur": "Rosé",
+       "millesime": "2022",
+       "format": "75 cl",
+       "prix": [
+        "36,00",
+        "35,10",
+        "34,20"
+       ],
+       "source": "excel:Champagne Solemme:L12"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  },
+  {
+   "numero": 40,
+   "nom": "Champagne Vazart-Coquart & Fils",
+   "region": "Champagne",
+   "sous_titre": "Jean-Pierre et Caroline · Chouilly · Champagne Grand Cru",
+   "labels": [
+    "HVE"
+   ],
+   "texte": "Jean-Pierre et Caroline · Chouilly · Champagne Grand Cru À Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France, la maison décline six champagnes Grand Cru, de la Cuvée Camille au Parcellaire AD 191.",
+   "pages_maquette": [
+    49
+   ],
+   "page_source_tarif": 43,
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "port_source": "franco de port.",
+   "pied_port": "Prix HT par bouteille, franco de port",
+   "conditions": {
+    "PORT": "Franco",
+    "PALIERS": "dès 48 bt · dès 78 bt · dès 96 bt",
+    "PANACHAGE": "Toute la gamme",
+    "PARTICULARITÉS": "—"
+   },
+   "origine_prix": "excel",
+   "feuilles_excel": [
+    "Champagne Vazart-Coquart"
+   ],
+   "descriptif_excel": "Grand Cru – Chouilly, Côte des Blancs – Troisième domaine certifié HVE de France",
+   "validite": "31/12/2026",
+   "paliers": [
+    "dès 48 bt",
+    "dès 78 bt",
+    "dès 96 bt"
+   ],
+   "tables": [
+    {
+     "type": "BT",
+     "titre": null,
+     "paliers": [
+      "dès 48 bt",
+      "dès 78 bt",
+      "dès 96 bt"
+     ],
+     "lignes": [
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "Cuvée Camille",
+       "note": "brut · base 2023",
+       "couleur": "Blanc",
+       "millesime": "NM",
+       "format": "75 cl",
+       "prix": [
+        "20,10",
+        "19,90",
+        "19,60"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L7"
+      },
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "Brut Réserve",
+       "note": "de Blancs · base 2022",
+       "couleur": "Blanc",
+       "millesime": "NM",
+       "format": "75 cl",
+       "prix": [
+        "20,80",
+        "20,60",
+        "20,30"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L8"
+      },
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "Extra Brut",
+       "note": "de Blancs · base 2020",
+       "couleur": "Blanc",
+       "millesime": "NM",
+       "format": "75 cl",
+       "prix": [
+        "25,00",
+        "24,80",
+        "24,50"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L9"
+      },
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "Special Club",
+       "note": "de Blancs",
+       "couleur": "Blanc",
+       "millesime": "2017",
+       "format": "75 cl",
+       "prix": [
+        "41,10",
+        "40,90",
+        "40,60"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L10"
+      },
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "TC",
+       "note": "de Blancs",
+       "couleur": "Blanc",
+       "millesime": "2018",
+       "format": "75 cl",
+       "prix": [
+        "46,40",
+        "46,20",
+        "45,90"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L11"
+      },
+      {
+       "appellation": "AOP Champagne Grand Cru",
+       "cuvee": "Parcellaire AD 191",
+       "note": "de Blancs",
+       "couleur": "Blanc",
+       "millesime": "2016",
+       "format": "75 cl",
+       "prix": [
+        "49,10",
+        "48,90",
+        "48,60"
+       ],
+       "source": "excel:Champagne Vazart-Coquart:L12"
+      }
+     ]
+    }
+   ],
+   "notes_source": []
+  }
+ ],
+ "alertes": [
+  {
+   "type": "degressivite_inversee",
+   "fiche": 15,
+   "cuvee": "Mâcon Chardonnay 75 cl",
+   "prix": [
+    "6,10",
+    "5,45",
+    "5,75"
+   ],
+   "source": "excel:Domaine des Verchères:L7"
+  },
+  {
+   "type": "degressivite_inversee",
+   "fiche": 19,
+   "cuvee": "Terroir d’Ansouis 75 cl",
+   "prix": [
+    "5,00",
+    "5,25",
+    "5,00"
+   ],
+   "source": "maquette (à contrôler sur image)"
+  }
+ ],
+ "feuilles_excel_non_rattachees": []
+}

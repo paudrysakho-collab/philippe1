@@ -1,0 +1,203 @@
+/* ===========================================================================
+   Catalogue Agence SCIO — charte et gabarit unique
+   A4 portrait 210 × 297 mm, marges 15 mm, largeur utile 180 mm.
+   Toutes les largeurs de colonnes sont figées ici, une fois pour les 40 fiches :
+   c'est ce qui garantit que deux pages posées côte à côte se superposent.
+   =========================================================================== */
+
+@font-face { font-family:'Fraunces'; src:url('../../assets/fonts/Fraunces-Regular.ttf'); font-weight:400; }
+@font-face { font-family:'Fraunces'; src:url('../../assets/fonts/Fraunces-SemiBold.ttf'); font-weight:600; }
+@font-face { font-family:'Fraunces'; src:url('../../assets/fonts/Fraunces-Italic.ttf'); font-weight:400; font-style:italic; }
+@font-face { font-family:'Inter'; src:url('../../assets/fonts/Inter-Regular.ttf'); font-weight:400; }
+@font-face { font-family:'Inter'; src:url('../../assets/fonts/Inter-Medium.ttf'); font-weight:500; }
+@font-face { font-family:'Inter'; src:url('../../assets/fonts/Inter-SemiBold.ttf'); font-weight:600; }
+@font-face { font-family:'Inter'; src:url('../../assets/fonts/Inter-Bold.ttf'); font-weight:700; }
+
+:root{
+  --lie:#6F1D3B; --lie-fonce:#4E1229; --or:#C6A15B; --ivoire:#F6F1E8;
+  --encre:#221E1F; --gris:#6B635B; --filet:#E4DACB; --zebrure:#FAF6EF;
+  --vert:#3F6B3A; --blanc:#FFFFFF;
+  /* largeurs de colonnes figées — total 180 mm */
+  --c-appellation:39mm; --c-cuvee:42mm; --c-couleur:17mm;
+  --c-mill:14mm; --c-format:15mm; --c-prix:53mm;
+}
+
+@page{
+  size:A4; margin:15mm 15mm 22mm;
+  /* Les boîtes de marge portent l'en-tête courant et le pied : le contenu peut
+     alors couler sur deux pages sans jamais passer dessous, et l'en-tête se
+     répète à l'identique sur la page de suite. */
+  @top-center{ content:element(entete); width:180mm; vertical-align:bottom;
+               padding-bottom:3mm; }
+  @bottom-center{ content:element(pied); width:180mm; vertical-align:top;
+                  padding-top:2mm; }
+}
+@page:first{ margin:0; @top-center{content:none} @bottom-center{content:none} }
+
+html{ font-family:'Inter',sans-serif; font-size:9.5pt; color:var(--encre);
+      line-height:1.4; }
+body{ margin:0; background:var(--ivoire); }
+.page{ position:relative; page-break-after:always; }
+.page:last-child{ page-break-after:auto; }
+
+/* ---------- en-tête courant, identique sur toutes les pages intérieures ---- */
+.entete{ position:running(entete); width:100%; display:flex; justify-content:space-between; align-items:baseline;
+         border-bottom:0.6pt solid var(--lie); padding-bottom:2mm; }
+.entete .gauche{ display:flex; align-items:baseline; gap:3mm; }
+.badge-num{ background:var(--lie); color:var(--blanc); font-size:7.5pt;
+            font-weight:600; letter-spacing:.06em; padding:1mm 2mm; }
+.entete .region{ font-family:'Fraunces',serif; font-style:italic; font-size:11pt;
+                 color:var(--lie); }
+.entete .droite{ font-size:7.5pt; color:var(--gris); white-space:nowrap; }
+.entete .nom-courant{ font-size:8pt; color:var(--gris); white-space:nowrap; }
+.entete .gauche{ flex-shrink:0; }
+.marque{ font-family:'Fraunces',serif; font-weight:600; color:var(--lie);
+         letter-spacing:.04em; }
+
+/* ---------- onglet de région sur le bord extérieur ------------------------ */
+/* Onglet de région sur le bord extérieur : on retrouve une région en feuilletant
+   la tranche. Décalé verticalement d'une région à l'autre. */
+.onglet{ position:absolute; right:-6mm; width:6mm; height:38mm; overflow:hidden; }
+/* Le texte est tourné par transformation plutôt qu'en mode d'écriture vertical :
+   le moteur de rendu mesure mal ce dernier et rognait le nom de la région. */
+.onglet span{ position:absolute; top:16mm; left:-16mm; width:38mm; height:6mm;
+              line-height:6mm; text-align:center; color:var(--blanc);
+              font-size:6.2pt; letter-spacing:.12em; font-weight:600;
+              text-transform:uppercase; white-space:nowrap;
+              transform:rotate(-90deg); }
+
+/* ---------- identité du domaine ------------------------------------------- */
+.identite{ display:flex; justify-content:space-between; align-items:flex-start;
+           margin-top:5mm; gap:4mm; }
+.nom-domaine{ font-family:'Fraunces',serif; font-size:26pt; line-height:1.05;
+              margin:0; color:var(--encre); }
+.sous-titre{ font-size:9pt; color:var(--gris); margin:1.5mm 0 0; }
+.labels{ display:flex; gap:1.5mm; flex-shrink:0; padding-top:2mm; }
+.label{ border:0.5pt solid var(--filet); background:var(--blanc); color:var(--gris);
+        font-size:6.5pt; font-weight:600; letter-spacing:.08em; padding:1mm 1.8mm;
+        white-space:nowrap; }
+.label.bio{ color:var(--vert); border-color:var(--vert); }
+
+/* ---------- bandeau photos : hauteur fixe, identique sur chaque fiche ------ */
+/* Hauteur de bande identique sur toutes les fiches. Les figures prennent
+   explicitement cette hauteur : sans quoi l'image garde sa hauteur naturelle et
+   déborde sous le texte de présentation. */
+.photos{ display:flex; gap:4mm; margin-top:4mm; height:58mm; align-items:flex-start; }
+.photos figure{ margin:0; overflow:hidden; background:var(--filet); height:100%; }
+.ph-ambiance{ width:108mm; }
+.ph-second{ width:52mm; }
+/* Sans seconde photo, l'ambiance occupe la place libérée : la hauteur de bande ne
+   bouge pas, et aucune case vide ne reste à l'écran. */
+.photos.sans-second .ph-ambiance{ width:164mm; }
+.photos.sans-second.avec-logo .ph-ambiance{ width:136mm; }
+.photos.avec-logo .ph-ambiance{ width:108mm; }
+.photos img{ width:100%; height:100%; object-fit:cover; display:block; }
+.cartouche-logo{ width:24mm; height:18mm; background:var(--blanc);
+                 border:0.5pt solid var(--filet); display:flex; align-items:center;
+                 justify-content:center; padding:2mm; box-sizing:border-box;
+                 margin-left:auto; }
+.cartouche-logo img{ width:100%; height:100%; object-fit:contain; }
+
+/* Fiche dense (plus de 12 lignes) : seule la bande photo se réduit. La taille de
+   police du tableau ne change jamais — c'est une règle absolue du cahier des
+   charges, sinon deux pages ne se comparent plus. */
+.page.dense .photos{ height:30mm; }
+/* un tableau ne se coupe jamais en laissant une ou deux lignes isolées */
+table.tarif tbody{ orphans:3; widows:3; }
+.titre-tableau{ page-break-after:avoid; }
+/* On ne rogne jamais le texte : sur une fiche dense, c'est la bande photo qui
+   cède la place, pas la phrase du vigneron. Si un texte est trop long, il est
+   raccourci dans la base, pas coupé à l'affichage. */
+
+/* ---------- texte de présentation ----------------------------------------- */
+.presentation{ margin:4mm 0 0; font-size:9pt; line-height:1.45; max-width:168mm; }
+
+/* ---------- barre Conditions : toujours 4 cases, toujours dans cet ordre --- */
+.conditions{ display:flex; margin-top:4mm; background:var(--blanc);
+             border:0.5pt solid var(--filet); }
+.conditions .case{ flex:1; padding:2mm 2.5mm; border-right:0.5pt solid var(--filet); }
+.conditions .case:last-child{ border-right:none; }
+.conditions .cle{ font-size:6.5pt; font-weight:600; letter-spacing:.1em;
+                  color:var(--lie); margin-bottom:1mm; }
+.conditions .val{ font-size:8pt; line-height:1.3; }
+.franco{ color:var(--vert); font-weight:600; }
+
+/* ---------- tableaux : la pièce maîtresse --------------------------------- */
+.titre-tableau{ font-size:7.5pt; font-weight:600; letter-spacing:.12em;
+                color:var(--lie); margin:4mm 0 1.5mm; }
+table.tarif{ width:180mm; table-layout:fixed; border-collapse:collapse;
+             margin-top:3mm; font-size:8.5pt;
+             font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1; }
+table.tarif + table.tarif{ margin-top:4mm; }
+table.tarif th, table.tarif td{ padding:1.2mm 1.6mm; vertical-align:top;
+                                text-align:left; }
+table.tarif thead{ display:table-header-group; }
+table.tarif tbody tr{ page-break-inside:avoid; }
+table.tarif thead th{ background:var(--lie); color:var(--blanc); font-size:7pt;
+                      font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+table.tarif thead th.prix-groupe{ text-align:center; border-left:0.5pt solid var(--blanc); }
+/* Sous-en-têtes de paliers : casse normale et pas d'interlettrage, pour qu'ils
+   tiennent sur une seule ligne dans la sous-colonne. C'est le défaut n° 1 de la
+   maquette d'origine, où ils s'entremêlaient sur deux lignes. */
+table.tarif thead tr.paliers th{ background:var(--lie-fonce); font-size:6.8pt;
+                                 text-align:right; letter-spacing:0;
+                                 text-transform:none; font-weight:500;
+                                 white-space:nowrap; }
+table.tarif thead tr.paliers th.vide{ background:var(--lie); }
+table.tarif tbody tr{ background:var(--blanc); }
+table.tarif tbody tr:nth-child(even){ background:var(--zebrure); }
+table.tarif tbody td{ border-bottom:0.4pt solid var(--filet); height:6mm; }
+td.prix{ text-align:right; white-space:nowrap; }
+td.prix.premier, th.prix-col.premier{ border-left:0.5pt solid var(--filet); }
+td.couleur, td.mill, td.format{ white-space:nowrap; }
+.cuvee-nom{ font-weight:600; }
+.cuvee-note{ display:block; font-size:7pt; color:var(--gris); line-height:1.25; }
+
+/* pastilles de couleur : toujours accompagnées du mot, pour rester lisible
+   même imprimé en noir et blanc */
+.pastille{ display:inline-block; width:2.2mm; height:2.2mm; border-radius:50%;
+           margin-right:1.2mm; vertical-align:middle; }
+.pastille.blanc{ background:#E8D27A; border:0.4pt solid #B89C3A; }
+.pastille.rose{ background:#E7A1A8; }
+.pastille.rouge{ background:#7A1830; }
+.pastille.orange{ background:#D98A3D; }
+.pastille.autre{ background:#9A928A; }
+
+/* ---------- encadré « sur demande » --------------------------------------- */
+.sur-demande{ border:0.5pt solid var(--or); background:var(--blanc);
+              padding:5mm; margin-top:4mm; text-align:center; }
+.sur-demande .titre{ font-family:'Fraunces',serif; font-size:12pt; color:var(--lie); }
+.sur-demande .detail{ font-size:8.5pt; color:var(--gris); margin-top:2mm; }
+
+/* ---------- pied de page --------------------------------------------------- */
+.pied{ position:running(pied); width:100%; }
+.pied .contacts{ text-align:center; font-size:7.5pt; color:var(--gris);
+                 padding-bottom:1.5mm; }
+.pied .legal{ display:flex; justify-content:space-between; font-size:7pt;
+              color:var(--gris); border-top:0.5pt solid var(--filet);
+              padding-top:1.5mm; }
+.pied .folio{ font-family:'Fraunces',serif; font-size:9pt; color:var(--lie); }
+@page{ @bottom-right{ content:counter(page); font-family:'Fraunces',serif;
+                      font-size:9pt; color:#6F1D3B; vertical-align:top;
+                      padding-top:7mm; } }
+@page:first{ @bottom-right{ content:none; } }
+a{ color:inherit; text-decoration:none; }
+
+/* ---------- couverture ------------------------------------------------------ */
+.couverture{ height:297mm; width:210mm; background:var(--lie-fonce);
+             color:var(--ivoire); display:flex; flex-direction:column;
+             justify-content:space-between; padding:26mm 22mm; box-sizing:border-box; }
+.couverture .haut{ text-align:center; }
+.couverture .sur-titre{ font-size:9pt; letter-spacing:.34em; color:var(--or);
+                        text-transform:uppercase; }
+.couverture h1{ font-family:'Fraunces',serif; font-size:42pt; font-weight:400;
+                line-height:1.08; margin:8mm 0 0; }
+.couverture .edition{ font-family:'Fraunces',serif; font-style:italic;
+                      font-size:15pt; color:var(--or); margin-top:4mm; }
+.filet-or{ width:46mm; height:0.8pt; background:var(--or); margin:9mm auto; }
+.couverture .accroche{ font-size:10pt; line-height:1.6; max-width:118mm;
+                       margin:0 auto; text-align:center; color:#E8DFD2; }
+.couverture .bas{ text-align:center; font-size:8.5pt; color:#CFC3B2; }
+.couverture .bas .marque-cv{ font-family:'Fraunces',serif; font-size:16pt;
+                             color:var(--ivoire); letter-spacing:.04em; }
+.couverture .mentions{ margin-top:6mm; font-size:7.5pt; color:#B5A897; }

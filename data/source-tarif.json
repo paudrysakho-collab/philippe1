@@ -1,0 +1,2996 @@
+{
+ "source": "sources/tarif-2026-source.pdf",
+ "fiches": [
+  {
+   "numero": 1,
+   "page_source": 4,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "François Reverdy"
+  },
+  {
+   "numero": 2,
+   "page_source": 5,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "16",
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine de la Barbinière Loire ur les reliefs bocagers du Chantonnais, Vincent et Alban Orion sculptent 30 hectares reflétant la diversité des terroirs chantonnaisiens. Une démarche paysanne faite de travail manuel minutieux et d’attention à la faune et à la flore, qui porte le domaine en agriculture biologique."
+  },
+  {
+   "numero": 3,
+   "page_source": 6,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "uatre générations de passionnés et adhérent historique des Vignerons Indépendants : Jean-Yves Bretaudeau allie bon sens paysan et précision œnologique. Certifié HVE, le domaine préserve ses paysages ligériens pour des vins friands et expressifs. Domaine du Colombier/J.Y Bretaudeau"
+  },
+  {
+   "numero": 4,
+   "page_source": 7,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "epuis 1921 à Faye-d’Anjou, cinq générations se transmettent 24 hectares de coteaux argilo-schisteux remarquablement exposés. Le Chenin donne aussi bien les liquoreux du Coteaux du Layon que des Anjou Blanc et Crémant de Loire d’une minéralité tactile. D Domaine des Noëls Loire"
+  },
+  {
+   "numero": 5,
+   "page_source": 8,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Chai Berteaud Manceau remier chai urbain de La Roche-sur-Yon, à Mouilleron-le-Captif, fondé par deux amis d’enfance vendéens diplômés en ingénierie agricole à Angers. Les raisins proviennent de 8 domaines partenaires du Val de Loire. Levures indigènes : des jus digestes et éclatants. P"
+  },
+  {
+   "numero": 6,
+   "page_source": 9,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine Jean de Villlebois Loire pécialiste du Sauvignon Blanc ligérien, le domaine explore les plus beaux terroirs de Loire (Sancerre, Pouilly-Fumé, Menetou-Salon, Touraine). Techniques modernes et respect de la typicité des sols calcaires et de silex pour des blancs d’une grande pureté. S"
+  },
+  {
+   "numero": 7,
+   "page_source": 10,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "56",
+    "85"
+   ],
+   "texte_source": "e Sauvignon Blanc, le Chenin et le Pinot Noir sont des cépages polyvalents appréciés à tout moment de la journée ou de la nuit. À partir de raisins cultivés près des célèbres châteaux de la Loire, 7 cuvées sans alcool de qualité sont élaborées par des vignerons dévoués. L Divin No Low"
+  },
+  {
+   "numero": 8,
+   "page_source": 11,
+   "port_source": null,
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "departements": [],
+   "texte_source": "erceau de tradition vigneronne à Molsheim, le Domaine Boehler aborde une nouvelle ère sous l’impulsion de Julien et Aurélie. Converti à l’agriculture biologique, le tandem explore ses coteaux et le prestigieux Grand Cru Bruderthal pour des vins verticaux, précis et profonds. B Domaine Boehler Alsace"
+  },
+  {
+   "numero": 9,
+   "page_source": 12,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "n 1976, mon père, Gérard Gelin, fils et petit-fils de vigneron a acheté « le Clos des Nugues », c’est de la que vient le nom du Domaine. En 2000, je me suis associé avec mes parents afin de poursuivre le développement de l’exploitation. Puis, en 2008, vient le départ en retraite de mon père et l’arrivée de mon épouse Magali. En 2010, reprise totale du Domaine familial. En 2018, certification HVE ( Haute Valeur Environnementale) de notre exploitation. Depuis 1976 et au fil des années, nous avons acheté des parcelles à proximité du Domaine. Domaine Des Nugues Beaujolais"
+  },
+  {
+   "numero": 10,
+   "page_source": 13,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "nstallé à Meursault depuis 2004, Sébastien Magnien conduit 12 hectares sur les terroirs d’élite de la Côte de Beaune et des Hautes-Côtes (Pommard, Volnay, Puligny, Saint-Romain). Vendanges manuelles et élevages en fûts de chêne signent des Pinots et Chardonnays d’élégance et de tension. I Domaine Sébastien Magnien"
+  },
+  {
+   "numero": 11,
+   "page_source": 14,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "44",
+    "85"
+   ],
+   "texte_source": "epuis des générations, la tradition familiale vigneronne est perpétuée au cœur de l'appellation Pouilly Fuissé. Rejoint par une nouvelle génération en 2012, le domaine a mis en place une stratégie d'exportation ambitieuse qui a propulsé ses vins vers une renommée mondiale. En 2018, l'inauguration d'un caveau de dégustation modernisé a ouvert les portes du domaine à une clientèle internationale, offrant une expérience unique et mémorable. D Nadine ferrand"
+  },
+  {
+   "numero": 12,
+   "page_source": 15,
+   "port_source": "franco de port",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "leuron familial et indépendant fondé en 1947, la Maison André Goichot porte l’exigence des grands climats de Bourgogne. Sélections parcellaires méticuleuses et cuverie d’élevage de pointe inaugurée en 2020. Maison et Domaine André Goichot Bourgogne"
+  },
+  {
+   "numero": 13,
+   "page_source": 16,
+   "port_source": "Franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "epuis 2016, la famille Goichot est aux commandes de ce charmant domaine , précieuse propriété de la famille Perret du Cray depuis 1798. Situé au nord de Buxy, en Saône-et-Loire, le Château du Cray s’étend sur un domaine viticole de 22 hectares. Les vignes s’étendent autour du château, au milieu du coteau et bénéficient d’une exposition privilégiée Est-Sud-Est. Le domaine bénéficie d’un MONOPOLE : Le Cornevent Château du Cray Bourgogne Possibilité de panacher avec les vins de la Maison A. Goichot et domaine Les Guignottes"
+  },
+  {
+   "numero": 14,
+   "page_source": 17,
+   "port_source": "Franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85"
+   ],
+   "texte_source": "epuis 2015, la famille Goichot est fière de diriger la distribution exclusive du Domaine des Guignottes, une propriété de 10 hectares à Saint-Valérien en Côte Châlonnaise. Avec une palette de cépage incluant l’Aligoté, Le Pinot Noir et le Chardonnay, les vins du domaine reflètent avec élégance leur terroir d’origine. En harmonie avec les tendance actuelles, ils mettent en valeur la minéralité et la légèreté, une expérience qui célèbre la tradition et la qualité de la Côte Châlonnaise. Domaine Les Guignottes Bourgogne Possibilité de panacher avec les vins de la Maison A.Goichot et Maison du Cray !"
+  },
+  {
+   "numero": 15,
+   "page_source": 18,
+   "port_source": "départ chai.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine des Verchères ropriété familiale transmise depuis sept générations, établie à Mancey au cœur du Mâconnais. Certifié HVE, le domaine limite rigoureusement ses intrants pour préserver la vie des sols et alimente sa cave en énergie solaire, pour des vins purs, gourmands et équilibrés. P"
+  },
+  {
+   "numero": 16,
+   "page_source": 19,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine Le Prieuré Des Papes (Strasser Radziwill)"
+  },
+  {
+   "numero": 17,
+   "page_source": 20,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "ropriété du groupe Maisons & Vignobles Strasser-Radziwill depuis 2022, le Domaine de Coyeux niché au pied des Dentelles de Montmirail s’étend sur 120 hectares d’un seul tenant, au sein de l’aire de l’appellation viticole Beaumes-de-Venise. Dans ce superbe environnement naturel, le domaine est constitué de bois, de garrigue et de vignes. Le vignoble du Domaine de Coyeux s’étend sur la formation géologique du Trias, un sol très ancien qui confère aux vins une qualité exceptionnelle. Les premières vignes du domaine de Coyeux datent des années 1950. Aujourd’hui, les vins sont issus d’un vignoble âgé de 40 à 70 ans et de parcelles plus récentes. Le domaine bénéficie de l’abri naturel de la colline. Son exposition au sud favorise un ensoleillement idéal. À 300 mètres d’altitude, la température est plus fraîche et participe à l’élégance des vins de Coyeux. Possibilité de panacher avec les vins du Domaine Le Prieuré Des Papes, du Domaine du Moulin Blanc et du Domaine de La Pousterle Rhône Domaine De Coyeux (Strasser Radziwill)"
+  },
+  {
+   "numero": 18,
+   "page_source": 21,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "itué au cœur d’un terroir d’exception, le Domaine du Moulin Blanc incarne l’authenticité et le savoir-faire viticole transmis de génération en génération. Alliant tradition et modernité, le domaine cultive ses vignes avec passion et rigueur pour produire des vins reflétant toute la richesse de leur origines. Le vignoble s’étend sur un sol généreux, bénéficiant d’un climat idéal, propice à l’expression de cépages nobles et typiques. Chaque cuvée est élaborée avec soin, dans le respect de l’environnement et du cycle naturel de la vigne, pour offrir des vins équilibrés, élégants et sincères. Rhône Domaine Du Moulin Blanc (Strasser Radziwill) Possibilité de panacher avec les vins du Domaine Le Prieuré Des Papes, du Domaine du Coyeux et du Domaine de La Pousterle"
+  },
+  {
+   "numero": 19,
+   "page_source": 22,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "itué au cœur de la vallée du Rhône le Domaine de la Pousterle est un domaine viticole familial qui incarne l’authenticité et la diversité de cette région emblématique. Entouré de collines baignées de soleil et bercé par le mistral, le vignoble bénéficie de conditions idéales pour l’élaboration de vins généreux, expressifs et empreints de caractère. Le domaine cultive avec soins des cépages typiques de la région en alliant traditions viticoles et pratiques respectueuse de l’environnement. Chaque cuvée reflète l’identité du terroir et le savoir faire transmis au fil des générations. Rhône"
+  },
+  {
+   "numero": 20,
+   "page_source": 23,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine des Pasquiers"
+  },
+  {
+   "numero": 21,
+   "page_source": 24,
+   "port_source": "départ cave.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine Trichon es Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane allient leurs savoir-faire à la vigne et dans la création des cuvées. L"
+  },
+  {
+   "numero": 22,
+   "page_source": 25,
+   "port_source": "Franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "é de la transmission d’une vigne de 80 ans en Madiran par son grand-père, le projet de Simon cultive la rareté : produire peu pour produire sain. Environ six hectares en Madiran et Pacherenc-du-Vic-Bilh, en symbiose avec un élevage de bœufs Angus sur la ferme. Domaine Stratéus Sud-Ouest"
+  },
+  {
+   "numero": 23,
+   "page_source": 26,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "16",
+    "17",
+    "44",
+    "79",
+    "85"
+   ],
+   "texte_source": "n plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas- Armagnacs. E Domaine Haut Marin"
+  },
+  {
+   "numero": 24,
+   "page_source": 27,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Fabien Castaing e Domaine de Moulin-Pouzy, ancré en Dordogne, est l'héritage historique des Castaing depuis 1898, résultant d'un art viticole transmis avec flamme. Fabien Castaing, digne représentant de la 5ème génération, s'engage avec ferveur à perpétuer les traditions et les valeurs familiales : une passion profonde pour le terroir, un profond respect de l'environnement et un savoir-faire vigneron authentique. L Sud-Ouest"
+  },
+  {
+   "numero": 25,
+   "page_source": 28,
+   "port_source": null,
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "49",
+    "85"
+   ],
+   "texte_source": "ne recherche constante de l’excellence et de la meilleure expression des Terroirs. Depuis 3 générations, la famille Lurton est un des principaux propriétaires de Châteaux de la région de Bordeaux. Personnalité, respect de la terre, exigence, indépendance ; l’essentiel du caractère de la famille Lucien Lurton, distributrice des vins de toutes les appellations bordelaises. U La Passion des Terroirs Bordeaux * Demander le tarif et offre."
+  },
+  {
+   "numero": 26,
+   "page_source": 29,
+   "port_source": "franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85",
+    "53"
+   ],
+   "texte_source": "Château la Gorce n activité depuis 1822, reconnu cru bourgeois dans le classement de 1932, le domaine a été repris en 2018 par Emmanuel et Mana Martin qui initièrent immédiatement la conversion de l’intégralité des quarante-huit hectares vers l’agriculture biologique, désormais achevée sur toutes les cuvées depuis le millésime 2022. E"
+  },
+  {
+   "numero": 27,
+   "page_source": 30,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "entinelle édifiée en 1612 sur les coteaux argilo-calcaires de Bayon, Falfas est une référence pionnière de la biodynamie bordelaise, membre fondateur de Biodyvin sous la houlette de John et Véronique Cochran. Vingt hectares vendangés à la main pour des Côtes de Bourg racés et de longue garde. Château Falfas S"
+  },
+  {
+   "numero": 28,
+   "page_source": 31,
+   "port_source": "départ chai.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Château Pré la Lande erchée à 120 mètres au-dessus de la vallée de la Dordogne, cette propriété de 1860 conduit une biodynamie certifiée Demeter d’une remarquable précision. Vinifications douces, sulfites au strict minimum, élevages en barriques et amphores : des vins vivants, d’une grande vibration minérale. P"
+  },
+  {
+   "numero": 29,
+   "page_source": 32,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "u cœur d’une forêt de deux cents hectares, la famille Touchais veille depuis 1964 sur dix hectares de vignes à Saint-Laurent-Médoc. Classé Cru Bourgeois Supérieur et certifié bio, Balac cultive autour de sa chartreuse du XVIIIe siècle des vins de caractère et d’élégance. Château Balac A"
+  },
+  {
+   "numero": 30,
+   "page_source": 33,
+   "port_source": "départ, franco à partir de 180 bouteilles.",
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 180
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Château l’Escarderie oyau intimiste à Saint-Germain-de-la-Rivière, en AOP Fronsac, qui renaît sous la conduite de Mélanie et Thomas. Vendanges manuelles, fermentations spontanées, sulfites mesurés et élevage sur-mesure (barriques, béton, amphores) pour des Merlots et Cabernets Francs veloutés et floraux. J"
+  },
+  {
+   "numero": 31,
+   "page_source": 34,
+   "port_source": "franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "56",
+    "85"
+   ],
+   "texte_source": "crin préservé à Tourves, Blacailloux incarne la Provence Verte depuis plus d’un siècle, conduit par la quatrième génération de la famille Chamoin. Chai bioclimatique à toit végétalisé et énergie photovoltaïque. Cuvées AOP Coteaux Varois et IGP Var, fraîches et aériennes. É Bastide de Blacailloux"
+  },
+  {
+   "numero": 32,
+   "page_source": 35,
+   "port_source": null,
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "85"
+   ],
+   "texte_source": "Famille d’Exea Languedoc epuis plusieurs générations, la famille d’Exea façonne sur les terroirs solaires du Languedoc des vins biologiques vibrants et sincères, alliant pureté du fruit et convivialité. D Franco de port à partir de 72 bouteilles"
+  },
+  {
+   "numero": 33,
+   "page_source": 36,
+   "port_source": null,
+   "port": {
+    "type": "inconnu",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "85"
+   ],
+   "texte_source": "Famille d’Exea (Jus de Cépages)Languedoc ssu des plus belles vignes du domaine, ces pur jus sont une expression authentique du terroir. Élaborés sans filtration ni additif, ils préservent la pureté des arômes du cépage, offrant une expérience de dégustation fruitée, fraîche et élégante. Parfait pour les amateurs de boissons saines et raffinées, ils se dégustent à tout moment de la journée. I Franco de port à partir de 72 bouteilles"
+  },
+  {
+   "numero": 34,
+   "page_source": 37,
+   "port_source": "franco de port à partir de 180 bouteilles.",
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 180
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Château De Gragnos lain, Patricia et leurs fils révèlent l’âme de Gragnos par un soin méticuleux apporté à chaque pied de vigne. Engagé dans une conversion biologique, le domaine privilégie un accompagnement doux du végétal pour laisser rayonner l’identité du terroir sans le contraindre. A"
+  },
+  {
+   "numero": 35,
+   "page_source": 38,
+   "port_source": "hors frais de transport.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Domaine Les Lys itué entre vignes et garrigues, le domaine près d'Uzès, face aux Cévennes, produit des vins d'une fraîcheur minérale incomparable. En respectant la biodiversité, ces parcelles sont reconnues par les appellations AOP Duché d’Uzès et IGP Cévennes. S"
+  },
+  {
+   "numero": 36,
+   "page_source": 39,
+   "port_source": "départ cave.",
+   "port": {
+    "type": "port_en_sus",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Prieuré Sainte-Marie d’Albas u pied de la Montagne d’Alaric, au cœur des Corbières, Laurence et Vincent Licciardi-Pirot cultivent des vignes plantées en terrasses et balayées par le vent du Cers. Les vins sont élevés dans une ancienne cave de village à demi enterrée : des rouges chaleureux du Midi, des blancs et des rosés tout en fraîcheur. AOP Corbières et IGP Pays d’Oc. A"
+  },
+  {
+   "numero": 37,
+   "page_source": 40,
+   "port_source": "franco de port à partir de 48 bouteilles.",
+   "port": {
+    "type": "franco_seuil",
+    "seuil": 48
+   },
+   "departements": [
+    "44",
+    "85"
+   ],
+   "texte_source": "Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan à la vibrante énergie de sol. Champagne Dekeyne"
+  },
+  {
+   "numero": 38,
+   "page_source": 41,
+   "port_source": "franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "nracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées Trois Crus, Terroir Noir et Terroir Blanc. E Champagne Denis Frézier"
+  },
+  {
+   "numero": 39,
+   "page_source": 42,
+   "port_source": "franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Villers-aux-Nœuds, sur les terroirs Premier Cru de la Montagne de Reims, Olivier Langlais conduit 6 hectares en biodynamie. En cave, vinifications douces, sans chaptalisation, sans filtration et sans dosage : une Champagne d’émotion, minérale et d’une lumineuse franchise de terroir. À"
+  },
+  {
+   "numero": 40,
+   "page_source": 43,
+   "port_source": "franco de port.",
+   "port": {
+    "type": "franco",
+    "seuil": null
+   },
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
+   "texte_source": "Vazart-Coquart & Fils aison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart- Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France. M"
+  }
+ ],
+ "images": [
+  {
+   "fichier": "p04-01-x139.png",
+   "page_source": 4,
+   "fiche": 1,
+   "px_l": 389,
+   "px_h": 310,
+   "mm_300dpi": 32.9,
+   "mm_200dpi": 49.4
+  },
+  {
+   "fichier": "p04-02-x142.png",
+   "page_source": 4,
+   "fiche": 1,
+   "px_l": 631,
+   "px_h": 383,
+   "mm_300dpi": 53.4,
+   "mm_200dpi": 80.1
+  },
+  {
+   "fichier": "p04-03-x144.png",
+   "page_source": 4,
+   "fiche": 1,
+   "px_l": 588,
+   "px_h": 385,
+   "mm_300dpi": 49.8,
+   "mm_200dpi": 74.7
+  },
+  {
+   "fichier": "p04-04-x146.png",
+   "page_source": 4,
+   "fiche": 1,
+   "px_l": 1241,
+   "px_h": 410,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p05-01-x169.png",
+   "page_source": 5,
+   "fiche": 2,
+   "px_l": 137,
+   "px_h": 125,
+   "mm_300dpi": 11.6,
+   "mm_200dpi": 17.4
+  },
+  {
+   "fichier": "p05-02-x172.png",
+   "page_source": 5,
+   "fiche": 2,
+   "px_l": 237,
+   "px_h": 309,
+   "mm_300dpi": 20.1,
+   "mm_200dpi": 30.1
+  },
+  {
+   "fichier": "p05-03-x175.png",
+   "page_source": 5,
+   "fiche": 2,
+   "px_l": 275,
+   "px_h": 346,
+   "mm_300dpi": 23.3,
+   "mm_200dpi": 34.9
+  },
+  {
+   "fichier": "p05-04-x178.png",
+   "page_source": 5,
+   "fiche": 2,
+   "px_l": 294,
+   "px_h": 318,
+   "mm_300dpi": 24.9,
+   "mm_200dpi": 37.3
+  },
+  {
+   "fichier": "p05-05-x181.png",
+   "page_source": 5,
+   "fiche": 2,
+   "px_l": 1241,
+   "px_h": 422,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p06-00-x210.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 462,
+   "px_h": 301,
+   "mm_300dpi": 39.1,
+   "mm_200dpi": 58.7
+  },
+  {
+   "fichier": "p06-01-x214.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 103,
+   "px_h": 314,
+   "mm_300dpi": 8.7,
+   "mm_200dpi": 13.1
+  },
+  {
+   "fichier": "p06-02-x217.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 94,
+   "px_h": 314,
+   "mm_300dpi": 8.0,
+   "mm_200dpi": 11.9
+  },
+  {
+   "fichier": "p06-03-x220.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 91,
+   "px_h": 314,
+   "mm_300dpi": 7.7,
+   "mm_200dpi": 11.6
+  },
+  {
+   "fichier": "p06-04-x223.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 111,
+   "px_h": 66,
+   "mm_300dpi": 9.4,
+   "mm_200dpi": 14.1
+  },
+  {
+   "fichier": "p06-05-x226.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 830,
+   "px_h": 431,
+   "mm_300dpi": 70.3,
+   "mm_200dpi": 105.4
+  },
+  {
+   "fichier": "p06-06-x229.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 831,
+   "px_h": 429,
+   "mm_300dpi": 70.4,
+   "mm_200dpi": 105.5
+  },
+  {
+   "fichier": "p06-07-x232.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 824,
+   "px_h": 151,
+   "mm_300dpi": 69.8,
+   "mm_200dpi": 104.6
+  },
+  {
+   "fichier": "p06-08-x260.png",
+   "page_source": 6,
+   "fiche": 3,
+   "px_l": 267,
+   "px_h": 248,
+   "mm_300dpi": 22.6,
+   "mm_200dpi": 33.9
+  },
+  {
+   "fichier": "p07-01-x277.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 310,
+   "px_h": 189,
+   "mm_300dpi": 26.2,
+   "mm_200dpi": 39.4
+  },
+  {
+   "fichier": "p07-02-x280.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 349,
+   "px_h": 257,
+   "mm_300dpi": 29.5,
+   "mm_200dpi": 44.3
+  },
+  {
+   "fichier": "p07-03-x282.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 348,
+   "px_h": 257,
+   "mm_300dpi": 29.5,
+   "mm_200dpi": 44.2
+  },
+  {
+   "fichier": "p07-04-x287.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 255,
+   "px_h": 264,
+   "mm_300dpi": 21.6,
+   "mm_200dpi": 32.4
+  },
+  {
+   "fichier": "p07-05-x293.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 256,
+   "px_h": 266,
+   "mm_300dpi": 21.7,
+   "mm_200dpi": 32.5
+  },
+  {
+   "fichier": "p07-06-x296.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 1238,
+   "px_h": 445,
+   "mm_300dpi": 104.8,
+   "mm_200dpi": 157.2
+  },
+  {
+   "fichier": "p07-07-x306.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 339,
+   "px_h": 352,
+   "mm_300dpi": 28.7,
+   "mm_200dpi": 43.1
+  },
+  {
+   "fichier": "p07-08-x312.png",
+   "page_source": 7,
+   "fiche": 4,
+   "px_l": 339,
+   "px_h": 352,
+   "mm_300dpi": 28.7,
+   "mm_200dpi": 43.1
+  },
+  {
+   "fichier": "p08-00-x339.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 503,
+   "px_h": 337,
+   "mm_300dpi": 42.6,
+   "mm_200dpi": 63.9
+  },
+  {
+   "fichier": "p08-01-x345.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 258,
+   "px_h": 164,
+   "mm_300dpi": 21.8,
+   "mm_200dpi": 32.8
+  },
+  {
+   "fichier": "p08-03-x347.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 461,
+   "px_h": 308,
+   "mm_300dpi": 39.0,
+   "mm_200dpi": 58.5
+  },
+  {
+   "fichier": "p08-04-x353.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 277,
+   "px_h": 277,
+   "mm_300dpi": 23.5,
+   "mm_200dpi": 35.2
+  },
+  {
+   "fichier": "p08-05-x359.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 277,
+   "px_h": 277,
+   "mm_300dpi": 23.5,
+   "mm_200dpi": 35.2
+  },
+  {
+   "fichier": "p08-06-x365.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 277,
+   "px_h": 277,
+   "mm_300dpi": 23.5,
+   "mm_200dpi": 35.2
+  },
+  {
+   "fichier": "p08-07-x368.png",
+   "page_source": 8,
+   "fiche": 5,
+   "px_l": 1241,
+   "px_h": 234,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p09-00-x396.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 452,
+   "px_h": 311,
+   "mm_300dpi": 38.3,
+   "mm_200dpi": 57.4
+  },
+  {
+   "fichier": "p09-01-x398.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 419,
+   "px_h": 288,
+   "mm_300dpi": 35.5,
+   "mm_200dpi": 53.2
+  },
+  {
+   "fichier": "p09-02-x403.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 96,
+   "px_h": 291,
+   "mm_300dpi": 8.1,
+   "mm_200dpi": 12.2
+  },
+  {
+   "fichier": "p09-03-x409.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 81,
+   "px_h": 271,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.3
+  },
+  {
+   "fichier": "p09-04-x415.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 85,
+   "px_h": 289,
+   "mm_300dpi": 7.2,
+   "mm_200dpi": 10.8
+  },
+  {
+   "fichier": "p09-05-x418.png",
+   "page_source": 9,
+   "fiche": 6,
+   "px_l": 1241,
+   "px_h": 633,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p10-00-x449.png",
+   "page_source": 10,
+   "fiche": 7,
+   "px_l": 446,
+   "px_h": 297,
+   "mm_300dpi": 37.8,
+   "mm_200dpi": 56.6
+  },
+  {
+   "fichier": "p10-01-x452.png",
+   "page_source": 10,
+   "fiche": 7,
+   "px_l": 218,
+   "px_h": 129,
+   "mm_300dpi": 18.5,
+   "mm_200dpi": 27.7
+  },
+  {
+   "fichier": "p10-02-x455.png",
+   "page_source": 10,
+   "fiche": 7,
+   "px_l": 275,
+   "px_h": 411,
+   "mm_300dpi": 23.3,
+   "mm_200dpi": 34.9
+  },
+  {
+   "fichier": "p10-03-x460.png",
+   "page_source": 10,
+   "fiche": 7,
+   "px_l": 111,
+   "px_h": 111,
+   "mm_300dpi": 9.4,
+   "mm_200dpi": 14.1
+  },
+  {
+   "fichier": "p10-04-x463.png",
+   "page_source": 10,
+   "fiche": 7,
+   "px_l": 1241,
+   "px_h": 352,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p11-01-x513.png",
+   "page_source": 11,
+   "fiche": 8,
+   "px_l": 631,
+   "px_h": 420,
+   "mm_300dpi": 53.4,
+   "mm_200dpi": 80.1
+  },
+  {
+   "fichier": "p11-02-x515.png",
+   "page_source": 11,
+   "fiche": 8,
+   "px_l": 311,
+   "px_h": 311,
+   "mm_300dpi": 26.3,
+   "mm_200dpi": 39.5
+  },
+  {
+   "fichier": "p11-03-x521.png",
+   "page_source": 11,
+   "fiche": 8,
+   "px_l": 177,
+   "px_h": 313,
+   "mm_300dpi": 15.0,
+   "mm_200dpi": 22.5
+  },
+  {
+   "fichier": "p11-04-x527.png",
+   "page_source": 11,
+   "fiche": 8,
+   "px_l": 109,
+   "px_h": 324,
+   "mm_300dpi": 9.2,
+   "mm_200dpi": 13.8
+  },
+  {
+   "fichier": "p11-05-x530.png",
+   "page_source": 11,
+   "fiche": 8,
+   "px_l": 1241,
+   "px_h": 656,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p12-00-x558.png",
+   "page_source": 12,
+   "fiche": 9,
+   "px_l": 212,
+   "px_h": 200,
+   "mm_300dpi": 17.9,
+   "mm_200dpi": 26.9
+  },
+  {
+   "fichier": "p12-01-x561.png",
+   "page_source": 12,
+   "fiche": 9,
+   "px_l": 266,
+   "px_h": 470,
+   "mm_300dpi": 22.5,
+   "mm_200dpi": 33.8
+  },
+  {
+   "fichier": "p12-02-x564.png",
+   "page_source": 12,
+   "fiche": 9,
+   "px_l": 314,
+   "px_h": 470,
+   "mm_300dpi": 26.6,
+   "mm_200dpi": 39.9
+  },
+  {
+   "fichier": "p12-03-x567.png",
+   "page_source": 12,
+   "fiche": 9,
+   "px_l": 431,
+   "px_h": 427,
+   "mm_300dpi": 36.5,
+   "mm_200dpi": 54.7
+  },
+  {
+   "fichier": "p12-04-x574.png",
+   "page_source": 12,
+   "fiche": 9,
+   "px_l": 1241,
+   "px_h": 410,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p13-00-x596.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 466,
+   "px_h": 286,
+   "mm_300dpi": 39.5,
+   "mm_200dpi": 59.2
+  },
+  {
+   "fichier": "p13-01-x599.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 155,
+   "px_h": 133,
+   "mm_300dpi": 13.1,
+   "mm_200dpi": 19.7
+  },
+  {
+   "fichier": "p13-02-x602.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 88,
+   "px_h": 263,
+   "mm_300dpi": 7.5,
+   "mm_200dpi": 11.2
+  },
+  {
+   "fichier": "p13-03-x605.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 79,
+   "px_h": 264,
+   "mm_300dpi": 6.7,
+   "mm_200dpi": 10.0
+  },
+  {
+   "fichier": "p13-04-x608.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 78,
+   "px_h": 264,
+   "mm_300dpi": 6.6,
+   "mm_200dpi": 9.9
+  },
+  {
+   "fichier": "p13-05-x611.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 74,
+   "px_h": 261,
+   "mm_300dpi": 6.3,
+   "mm_200dpi": 9.4
+  },
+  {
+   "fichier": "p13-06-x617.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 170,
+   "px_h": 170,
+   "mm_300dpi": 14.4,
+   "mm_200dpi": 21.6
+  },
+  {
+   "fichier": "p13-07-x620.png",
+   "page_source": 13,
+   "fiche": 10,
+   "px_l": 1240,
+   "px_h": 597,
+   "mm_300dpi": 105.0,
+   "mm_200dpi": 157.5
+  },
+  {
+   "fichier": "p14-00-x650.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 637,
+   "px_h": 460,
+   "mm_300dpi": 53.9,
+   "mm_200dpi": 80.9
+  },
+  {
+   "fichier": "p14-01-x653.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 235,
+   "px_h": 174,
+   "mm_300dpi": 19.9,
+   "mm_200dpi": 29.8
+  },
+  {
+   "fichier": "p14-02-x659.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 124,
+   "px_h": 340,
+   "mm_300dpi": 10.5,
+   "mm_200dpi": 15.7
+  },
+  {
+   "fichier": "p14-03-x665.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 106,
+   "px_h": 351,
+   "mm_300dpi": 9.0,
+   "mm_200dpi": 13.5
+  },
+  {
+   "fichier": "p14-04-x668.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 112,
+   "px_h": 112,
+   "mm_300dpi": 9.5,
+   "mm_200dpi": 14.2
+  },
+  {
+   "fichier": "p14-05-x671.png",
+   "page_source": 14,
+   "fiche": 11,
+   "px_l": 1241,
+   "px_h": 317,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p15-00-x706.png",
+   "page_source": 15,
+   "fiche": 12,
+   "px_l": 253,
+   "px_h": 181,
+   "mm_300dpi": 21.4,
+   "mm_200dpi": 32.1
+  },
+  {
+   "fichier": "p15-01-x709.png",
+   "page_source": 15,
+   "fiche": 12,
+   "px_l": 217,
+   "px_h": 255,
+   "mm_300dpi": 18.4,
+   "mm_200dpi": 27.6
+  },
+  {
+   "fichier": "p15-02-x712.png",
+   "page_source": 15,
+   "fiche": 12,
+   "px_l": 260,
+   "px_h": 283,
+   "mm_300dpi": 22.0,
+   "mm_200dpi": 33.0
+  },
+  {
+   "fichier": "p15-03-x715.png",
+   "page_source": 15,
+   "fiche": 12,
+   "px_l": 223,
+   "px_h": 80,
+   "mm_300dpi": 18.9,
+   "mm_200dpi": 28.3
+  },
+  {
+   "fichier": "p15-04-x718.png",
+   "page_source": 15,
+   "fiche": 12,
+   "px_l": 1238,
+   "px_h": 935,
+   "mm_300dpi": 104.8,
+   "mm_200dpi": 157.2
+  },
+  {
+   "fichier": "p16-00-x738.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 221,
+   "px_h": 188,
+   "mm_300dpi": 18.7,
+   "mm_200dpi": 28.1
+  },
+  {
+   "fichier": "p16-01-x741.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 689,
+   "px_h": 266,
+   "mm_300dpi": 58.3,
+   "mm_200dpi": 87.5
+  },
+  {
+   "fichier": "p16-02-x747.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 108,
+   "px_h": 404,
+   "mm_300dpi": 9.1,
+   "mm_200dpi": 13.7
+  },
+  {
+   "fichier": "p16-03-x753.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 108,
+   "px_h": 405,
+   "mm_300dpi": 9.1,
+   "mm_200dpi": 13.7
+  },
+  {
+   "fichier": "p16-04-x765.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 408,
+   "px_h": 293,
+   "mm_300dpi": 34.5,
+   "mm_200dpi": 51.8
+  },
+  {
+   "fichier": "p16-05-x772.png",
+   "page_source": 16,
+   "fiche": 13,
+   "px_l": 1241,
+   "px_h": 234,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p17-00-x793.png",
+   "page_source": 17,
+   "fiche": 14,
+   "px_l": 706,
+   "px_h": 245,
+   "mm_300dpi": 59.8,
+   "mm_200dpi": 89.7
+  },
+  {
+   "fichier": "p17-01-x796.png",
+   "page_source": 17,
+   "fiche": 14,
+   "px_l": 361,
+   "px_h": 233,
+   "mm_300dpi": 30.6,
+   "mm_200dpi": 45.8
+  },
+  {
+   "fichier": "p17-02-x799.png",
+   "page_source": 17,
+   "fiche": 14,
+   "px_l": 295,
+   "px_h": 268,
+   "mm_300dpi": 25.0,
+   "mm_200dpi": 37.5
+  },
+  {
+   "fichier": "p17-03-x765.png",
+   "page_source": 17,
+   "fiche": 14,
+   "px_l": 408,
+   "px_h": 293,
+   "mm_300dpi": 34.5,
+   "mm_200dpi": 51.8
+  },
+  {
+   "fichier": "p17-04-x814.png",
+   "page_source": 17,
+   "fiche": 14,
+   "px_l": 1241,
+   "px_h": 305,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p18-00-x832.png",
+   "page_source": 18,
+   "fiche": 15,
+   "px_l": 520,
+   "px_h": 349,
+   "mm_300dpi": 44.0,
+   "mm_200dpi": 66.0
+  },
+  {
+   "fichier": "p18-01-x834.png",
+   "page_source": 18,
+   "fiche": 15,
+   "px_l": 600,
+   "px_h": 344,
+   "mm_300dpi": 50.8,
+   "mm_200dpi": 76.2
+  },
+  {
+   "fichier": "p18-02-x839.png",
+   "page_source": 18,
+   "fiche": 15,
+   "px_l": 450,
+   "px_h": 254,
+   "mm_300dpi": 38.1,
+   "mm_200dpi": 57.1
+  },
+  {
+   "fichier": "p18-03-x842.png",
+   "page_source": 18,
+   "fiche": 15,
+   "px_l": 600,
+   "px_h": 427,
+   "mm_300dpi": 50.8,
+   "mm_200dpi": 76.2
+  },
+  {
+   "fichier": "p18-04-x844.png",
+   "page_source": 18,
+   "fiche": 15,
+   "px_l": 1238,
+   "px_h": 268,
+   "mm_300dpi": 104.8,
+   "mm_200dpi": 157.2
+  },
+  {
+   "fichier": "p19-00-x872.png",
+   "page_source": 19,
+   "fiche": 16,
+   "px_l": 450,
+   "px_h": 300,
+   "mm_300dpi": 38.1,
+   "mm_200dpi": 57.1
+  },
+  {
+   "fichier": "p19-01-x875.png",
+   "page_source": 19,
+   "fiche": 16,
+   "px_l": 452,
+   "px_h": 302,
+   "mm_300dpi": 38.3,
+   "mm_200dpi": 57.4
+  },
+  {
+   "fichier": "p19-02-x878.png",
+   "page_source": 19,
+   "fiche": 16,
+   "px_l": 320,
+   "px_h": 254,
+   "mm_300dpi": 27.1,
+   "mm_200dpi": 40.6
+  },
+  {
+   "fichier": "p19-04-x881.png",
+   "page_source": 19,
+   "fiche": 16,
+   "px_l": 933,
+   "px_h": 135,
+   "mm_300dpi": 79.0,
+   "mm_200dpi": 118.5
+  },
+  {
+   "fichier": "p20-00-x909.png",
+   "page_source": 20,
+   "fiche": 17,
+   "px_l": 317,
+   "px_h": 302,
+   "mm_300dpi": 26.8,
+   "mm_200dpi": 40.3
+  },
+  {
+   "fichier": "p20-01-x912.png",
+   "page_source": 20,
+   "fiche": 17,
+   "px_l": 372,
+   "px_h": 260,
+   "mm_300dpi": 31.5,
+   "mm_200dpi": 47.2
+  },
+  {
+   "fichier": "p20-02-x915.png",
+   "page_source": 20,
+   "fiche": 17,
+   "px_l": 334,
+   "px_h": 250,
+   "mm_300dpi": 28.3,
+   "mm_200dpi": 42.4
+  },
+  {
+   "fichier": "p20-04-x924.png",
+   "page_source": 20,
+   "fiche": 17,
+   "px_l": 1241,
+   "px_h": 375,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p21-00-x943.png",
+   "page_source": 21,
+   "fiche": 18,
+   "px_l": 448,
+   "px_h": 238,
+   "mm_300dpi": 37.9,
+   "mm_200dpi": 56.9
+  },
+  {
+   "fichier": "p21-02-x950.png",
+   "page_source": 21,
+   "fiche": 18,
+   "px_l": 480,
+   "px_h": 252,
+   "mm_300dpi": 40.6,
+   "mm_200dpi": 61.0
+  },
+  {
+   "fichier": "p21-03-x953.png",
+   "page_source": 21,
+   "fiche": 18,
+   "px_l": 1241,
+   "px_h": 234,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p22-00-x971.png",
+   "page_source": 22,
+   "fiche": 19,
+   "px_l": 448,
+   "px_h": 390,
+   "mm_300dpi": 37.9,
+   "mm_200dpi": 56.9
+  },
+  {
+   "fichier": "p22-01-x974.png",
+   "page_source": 22,
+   "fiche": 19,
+   "px_l": 548,
+   "px_h": 361,
+   "mm_300dpi": 46.4,
+   "mm_200dpi": 69.6
+  },
+  {
+   "fichier": "p22-03-x981.png",
+   "page_source": 22,
+   "fiche": 19,
+   "px_l": 1241,
+   "px_h": 305,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p23-00-x997.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 308,
+   "px_h": 102,
+   "mm_300dpi": 26.1,
+   "mm_200dpi": 39.1
+  },
+  {
+   "fichier": "p23-01-x1007.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 117,
+   "px_h": 355,
+   "mm_300dpi": 9.9,
+   "mm_200dpi": 14.9
+  },
+  {
+   "fichier": "p23-02-x1013.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 97,
+   "px_h": 355,
+   "mm_300dpi": 8.2,
+   "mm_200dpi": 12.3
+  },
+  {
+   "fichier": "p23-03-x1019.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 103,
+   "px_h": 360,
+   "mm_300dpi": 8.7,
+   "mm_200dpi": 13.1
+  },
+  {
+   "fichier": "p23-04-x1022.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 344,
+   "px_h": 229,
+   "mm_300dpi": 29.1,
+   "mm_200dpi": 43.7
+  },
+  {
+   "fichier": "p23-06-x1025.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 1241,
+   "px_h": 283,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p23-07-x1000.png",
+   "page_source": 23,
+   "fiche": 20,
+   "px_l": 912,
+   "px_h": 356,
+   "mm_300dpi": 77.2,
+   "mm_200dpi": 115.8
+  },
+  {
+   "fichier": "p24-00-x1053.png",
+   "page_source": 24,
+   "fiche": 21,
+   "px_l": 250,
+   "px_h": 48,
+   "mm_300dpi": 21.2,
+   "mm_200dpi": 31.8
+  },
+  {
+   "fichier": "p24-02-x1055.png",
+   "page_source": 24,
+   "fiche": 21,
+   "px_l": 488,
+   "px_h": 325,
+   "mm_300dpi": 41.3,
+   "mm_200dpi": 62.0
+  },
+  {
+   "fichier": "p24-03-x1058.png",
+   "page_source": 24,
+   "fiche": 21,
+   "px_l": 488,
+   "px_h": 307,
+   "mm_300dpi": 41.3,
+   "mm_200dpi": 62.0
+  },
+  {
+   "fichier": "p24-04-x1061.png",
+   "page_source": 24,
+   "fiche": 21,
+   "px_l": 1241,
+   "px_h": 234,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p25-00-x1088.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 81,
+   "px_h": 278,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.3
+  },
+  {
+   "fichier": "p25-01-x1091.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 78,
+   "px_h": 275,
+   "mm_300dpi": 6.6,
+   "mm_200dpi": 9.9
+  },
+  {
+   "fichier": "p25-02-x1094.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 94,
+   "px_h": 275,
+   "mm_300dpi": 8.0,
+   "mm_200dpi": 11.9
+  },
+  {
+   "fichier": "p25-03-x1097.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 163,
+   "px_h": 120,
+   "mm_300dpi": 13.8,
+   "mm_200dpi": 20.7
+  },
+  {
+   "fichier": "p25-04-x1105.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 337,
+   "px_h": 258,
+   "mm_300dpi": 28.5,
+   "mm_200dpi": 42.8
+  },
+  {
+   "fichier": "p25-05-x1111.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 87,
+   "px_h": 232,
+   "mm_300dpi": 7.4,
+   "mm_200dpi": 11.0
+  },
+  {
+   "fichier": "p25-07-x1138.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 1036,
+   "px_h": 207,
+   "mm_300dpi": 87.7,
+   "mm_200dpi": 131.6
+  },
+  {
+   "fichier": "p25-08-x1100.png",
+   "page_source": 25,
+   "fiche": 22,
+   "px_l": 971,
+   "px_h": 367,
+   "mm_300dpi": 82.2,
+   "mm_200dpi": 123.3
+  },
+  {
+   "fichier": "p26-00-x1144.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 87,
+   "px_h": 75,
+   "mm_300dpi": 7.4,
+   "mm_200dpi": 11.0
+  },
+  {
+   "fichier": "p26-01-x1147.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 83,
+   "px_h": 245,
+   "mm_300dpi": 7.0,
+   "mm_200dpi": 10.5
+  },
+  {
+   "fichier": "p26-02-x1150.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 95,
+   "px_h": 240,
+   "mm_300dpi": 8.0,
+   "mm_200dpi": 12.1
+  },
+  {
+   "fichier": "p26-03-x1153.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 82,
+   "px_h": 240,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.4
+  },
+  {
+   "fichier": "p26-04-x1156.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 82,
+   "px_h": 236,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.4
+  },
+  {
+   "fichier": "p26-05-x1164.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 74,
+   "px_h": 259,
+   "mm_300dpi": 6.3,
+   "mm_200dpi": 9.4
+  },
+  {
+   "fichier": "p26-06-x1167.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 86,
+   "px_h": 278,
+   "mm_300dpi": 7.3,
+   "mm_200dpi": 10.9
+  },
+  {
+   "fichier": "p26-07-x1170.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 69,
+   "px_h": 253,
+   "mm_300dpi": 5.8,
+   "mm_200dpi": 8.8
+  },
+  {
+   "fichier": "p26-08-x1173.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 77,
+   "px_h": 290,
+   "mm_300dpi": 6.5,
+   "mm_200dpi": 9.8
+  },
+  {
+   "fichier": "p26-09-x1176.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 113,
+   "px_h": 120,
+   "mm_300dpi": 9.6,
+   "mm_200dpi": 14.4
+  },
+  {
+   "fichier": "p26-10-x1179.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 135,
+   "px_h": 135,
+   "mm_300dpi": 11.4,
+   "mm_200dpi": 17.1
+  },
+  {
+   "fichier": "p26-11-x1182.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 753,
+   "px_h": 174,
+   "mm_300dpi": 63.8,
+   "mm_200dpi": 95.6
+  },
+  {
+   "fichier": "p26-12-x1185.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 755,
+   "px_h": 89,
+   "mm_300dpi": 63.9,
+   "mm_200dpi": 95.9
+  },
+  {
+   "fichier": "p26-13-x1188.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 832,
+   "px_h": 212,
+   "mm_300dpi": 70.4,
+   "mm_200dpi": 105.7
+  },
+  {
+   "fichier": "p26-14-x1159.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 1039,
+   "px_h": 261,
+   "mm_300dpi": 88.0,
+   "mm_200dpi": 132.0
+  },
+  {
+   "fichier": "p26-15-x1219.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 198,
+   "px_h": 184,
+   "mm_300dpi": 16.8,
+   "mm_200dpi": 25.1
+  },
+  {
+   "fichier": "p26-16-x1227.png",
+   "page_source": 26,
+   "fiche": 23,
+   "px_l": 313,
+   "px_h": 184,
+   "mm_300dpi": 26.5,
+   "mm_200dpi": 39.8
+  },
+  {
+   "fichier": "p27-00-x1247.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 216,
+   "px_h": 216,
+   "mm_300dpi": 18.3,
+   "mm_200dpi": 27.4
+  },
+  {
+   "fichier": "p27-01-x1250.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 248,
+   "px_h": 367,
+   "mm_300dpi": 21.0,
+   "mm_200dpi": 31.5
+  },
+  {
+   "fichier": "p27-02-x1176.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 113,
+   "px_h": 120,
+   "mm_300dpi": 9.6,
+   "mm_200dpi": 14.4
+  },
+  {
+   "fichier": "p27-04-x1256.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 82,
+   "px_h": 237,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.4
+  },
+  {
+   "fichier": "p27-05-x1259.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 68,
+   "px_h": 264,
+   "mm_300dpi": 5.8,
+   "mm_200dpi": 8.6
+  },
+  {
+   "fichier": "p27-06-x1262.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 71,
+   "px_h": 277,
+   "mm_300dpi": 6.0,
+   "mm_200dpi": 9.0
+  },
+  {
+   "fichier": "p27-07-x1265.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 77,
+   "px_h": 277,
+   "mm_300dpi": 6.5,
+   "mm_200dpi": 9.8
+  },
+  {
+   "fichier": "p27-08-x1268.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 658,
+   "px_h": 146,
+   "mm_300dpi": 55.7,
+   "mm_200dpi": 83.6
+  },
+  {
+   "fichier": "p27-09-x1271.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 1024,
+   "px_h": 304,
+   "mm_300dpi": 86.7,
+   "mm_200dpi": 130.0
+  },
+  {
+   "fichier": "p27-10-x1295.png",
+   "page_source": 27,
+   "fiche": 24,
+   "px_l": 202,
+   "px_h": 158,
+   "mm_300dpi": 17.1,
+   "mm_200dpi": 25.7
+  },
+  {
+   "fichier": "p28-01-x1305.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 916,
+   "px_h": 272,
+   "mm_300dpi": 77.6,
+   "mm_200dpi": 116.3
+  },
+  {
+   "fichier": "p28-02-x1308.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 322,
+   "px_h": 136,
+   "mm_300dpi": 27.3,
+   "mm_200dpi": 40.9
+  },
+  {
+   "fichier": "p28-03-x1314.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 212,
+   "px_h": 82,
+   "mm_300dpi": 17.9,
+   "mm_200dpi": 26.9
+  },
+  {
+   "fichier": "p28-04-x1317.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 199,
+   "px_h": 83,
+   "mm_300dpi": 16.8,
+   "mm_200dpi": 25.3
+  },
+  {
+   "fichier": "p28-05-x1323.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 189,
+   "px_h": 67,
+   "mm_300dpi": 16.0,
+   "mm_200dpi": 24.0
+  },
+  {
+   "fichier": "p28-06-x1336.png",
+   "page_source": 28,
+   "fiche": 25,
+   "px_l": 844,
+   "px_h": 780,
+   "mm_300dpi": 71.5,
+   "mm_200dpi": 107.2
+  },
+  {
+   "fichier": "p29-00-x1356.png",
+   "page_source": 29,
+   "fiche": 26,
+   "px_l": 408,
+   "px_h": 314,
+   "mm_300dpi": 34.5,
+   "mm_200dpi": 51.8
+  },
+  {
+   "fichier": "p29-01-x1358.png",
+   "page_source": 29,
+   "fiche": 26,
+   "px_l": 408,
+   "px_h": 314,
+   "mm_300dpi": 34.5,
+   "mm_200dpi": 51.8
+  },
+  {
+   "fichier": "p29-02-x1360.png",
+   "page_source": 29,
+   "fiche": 26,
+   "px_l": 408,
+   "px_h": 314,
+   "mm_300dpi": 34.5,
+   "mm_200dpi": 51.8
+  },
+  {
+   "fichier": "p29-04-x1362.png",
+   "page_source": 29,
+   "fiche": 26,
+   "px_l": 1241,
+   "px_h": 516,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p30-01-x1392.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 479,
+   "px_h": 354,
+   "mm_300dpi": 40.6,
+   "mm_200dpi": 60.8
+  },
+  {
+   "fichier": "p30-02-x1395.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 571,
+   "px_h": 349,
+   "mm_300dpi": 48.3,
+   "mm_200dpi": 72.5
+  },
+  {
+   "fichier": "p30-03-x1401.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 116,
+   "px_h": 399,
+   "mm_300dpi": 9.8,
+   "mm_200dpi": 14.7
+  },
+  {
+   "fichier": "p30-04-x1407.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 116,
+   "px_h": 399,
+   "mm_300dpi": 9.8,
+   "mm_200dpi": 14.7
+  },
+  {
+   "fichier": "p30-05-x1410.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 1241,
+   "px_h": 177,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p30-06-x1388.png",
+   "page_source": 30,
+   "fiche": 27,
+   "px_l": 302,
+   "px_h": 203,
+   "mm_300dpi": 25.6,
+   "mm_200dpi": 38.4
+  },
+  {
+   "fichier": "p31-00-x1430.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 480,
+   "px_h": 323,
+   "mm_300dpi": 40.6,
+   "mm_200dpi": 61.0
+  },
+  {
+   "fichier": "p31-01-x1432.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 610,
+   "px_h": 349,
+   "mm_300dpi": 51.6,
+   "mm_200dpi": 77.5
+  },
+  {
+   "fichier": "p31-02-x1438.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 109,
+   "px_h": 109,
+   "mm_300dpi": 9.2,
+   "mm_200dpi": 13.8
+  },
+  {
+   "fichier": "p31-04-x1440.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 130,
+   "px_h": 450,
+   "mm_300dpi": 11.0,
+   "mm_200dpi": 16.5
+  },
+  {
+   "fichier": "p31-05-x1442.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 130,
+   "px_h": 450,
+   "mm_300dpi": 11.0,
+   "mm_200dpi": 16.5
+  },
+  {
+   "fichier": "p31-06-x1444.png",
+   "page_source": 31,
+   "fiche": 28,
+   "px_l": 1240,
+   "px_h": 177,
+   "mm_300dpi": 105.0,
+   "mm_200dpi": 157.5
+  },
+  {
+   "fichier": "p32-00-x1468.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 512,
+   "px_h": 345,
+   "mm_300dpi": 43.3,
+   "mm_200dpi": 65.0
+  },
+  {
+   "fichier": "p32-01-x1470.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 538,
+   "px_h": 307,
+   "mm_300dpi": 45.6,
+   "mm_200dpi": 68.3
+  },
+  {
+   "fichier": "p32-02-x1476.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 237,
+   "px_h": 107,
+   "mm_300dpi": 20.1,
+   "mm_200dpi": 30.1
+  },
+  {
+   "fichier": "p32-04-x1482.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 338,
+   "px_h": 410,
+   "mm_300dpi": 28.6,
+   "mm_200dpi": 42.9
+  },
+  {
+   "fichier": "p32-05-x1488.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 344,
+   "px_h": 417,
+   "mm_300dpi": 29.1,
+   "mm_200dpi": 43.7
+  },
+  {
+   "fichier": "p32-06-x1495.png",
+   "page_source": 32,
+   "fiche": 29,
+   "px_l": 1240,
+   "px_h": 218,
+   "mm_300dpi": 105.0,
+   "mm_200dpi": 157.5
+  },
+  {
+   "fichier": "p33-00-x1515.png",
+   "page_source": 33,
+   "fiche": 30,
+   "px_l": 390,
+   "px_h": 262,
+   "mm_300dpi": 33.0,
+   "mm_200dpi": 49.5
+  },
+  {
+   "fichier": "p33-01-x1517.png",
+   "page_source": 33,
+   "fiche": 30,
+   "px_l": 584,
+   "px_h": 333,
+   "mm_300dpi": 49.4,
+   "mm_200dpi": 74.2
+  },
+  {
+   "fichier": "p33-03-x1524.png",
+   "page_source": 33,
+   "fiche": 30,
+   "px_l": 757,
+   "px_h": 170,
+   "mm_300dpi": 64.1,
+   "mm_200dpi": 96.1
+  },
+  {
+   "fichier": "p33-04-x1527.png",
+   "page_source": 33,
+   "fiche": 30,
+   "px_l": 1240,
+   "px_h": 352,
+   "mm_300dpi": 105.0,
+   "mm_200dpi": 157.5
+  },
+  {
+   "fichier": "p33-05-x1540.png",
+   "page_source": 33,
+   "fiche": 30,
+   "px_l": 52,
+   "px_h": 181,
+   "mm_300dpi": 4.4,
+   "mm_200dpi": 6.6
+  },
+  {
+   "fichier": "p34-00-x1558.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 554,
+   "px_h": 367,
+   "mm_300dpi": 46.9,
+   "mm_200dpi": 70.4
+  },
+  {
+   "fichier": "p34-01-x1561.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 264,
+   "px_h": 120,
+   "mm_300dpi": 22.4,
+   "mm_200dpi": 33.5
+  },
+  {
+   "fichier": "p34-02-x1564.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 89,
+   "px_h": 308,
+   "mm_300dpi": 7.5,
+   "mm_200dpi": 11.3
+  },
+  {
+   "fichier": "p34-03-x1567.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 82,
+   "px_h": 296,
+   "mm_300dpi": 6.9,
+   "mm_200dpi": 10.4
+  },
+  {
+   "fichier": "p34-04-x1570.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 79,
+   "px_h": 284,
+   "mm_300dpi": 6.7,
+   "mm_200dpi": 10.0
+  },
+  {
+   "fichier": "p34-06-x1578.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 1015,
+   "px_h": 278,
+   "mm_300dpi": 85.9,
+   "mm_200dpi": 128.9
+  },
+  {
+   "fichier": "p34-07-x1573.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 160,
+   "px_h": 168,
+   "mm_300dpi": 13.5,
+   "mm_200dpi": 20.3
+  },
+  {
+   "fichier": "p34-08-x1609.png",
+   "page_source": 34,
+   "fiche": 31,
+   "px_l": 242,
+   "px_h": 226,
+   "mm_300dpi": 20.5,
+   "mm_200dpi": 30.7
+  },
+  {
+   "fichier": "p35-01-x1617.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 524,
+   "px_h": 308,
+   "mm_300dpi": 44.4,
+   "mm_200dpi": 66.5
+  },
+  {
+   "fichier": "p35-02-x1619.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 597,
+   "px_h": 329,
+   "mm_300dpi": 50.5,
+   "mm_200dpi": 75.8
+  },
+  {
+   "fichier": "p35-03-x1621.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 830,
+   "px_h": 241,
+   "mm_300dpi": 70.3,
+   "mm_200dpi": 105.4
+  },
+  {
+   "fichier": "p35-04-x1624.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 110,
+   "px_h": 283,
+   "mm_300dpi": 9.3,
+   "mm_200dpi": 14.0
+  },
+  {
+   "fichier": "p35-05-x1626.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 155,
+   "px_h": 291,
+   "mm_300dpi": 13.1,
+   "mm_200dpi": 19.7
+  },
+  {
+   "fichier": "p35-06-x1628.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 66,
+   "px_h": 259,
+   "mm_300dpi": 5.6,
+   "mm_200dpi": 8.4
+  },
+  {
+   "fichier": "p35-07-x1631.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 83,
+   "px_h": 272,
+   "mm_300dpi": 7.0,
+   "mm_200dpi": 10.5
+  },
+  {
+   "fichier": "p35-08-x1634.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 999,
+   "px_h": 422,
+   "mm_300dpi": 84.6,
+   "mm_200dpi": 126.9
+  },
+  {
+   "fichier": "p35-09-x1637.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 998,
+   "px_h": 420,
+   "mm_300dpi": 84.5,
+   "mm_200dpi": 126.7
+  },
+  {
+   "fichier": "p35-10-x1640.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 677,
+   "px_h": 128,
+   "mm_300dpi": 57.3,
+   "mm_200dpi": 86.0
+  },
+  {
+   "fichier": "p35-11-x1662.png",
+   "page_source": 35,
+   "fiche": 32,
+   "px_l": 383,
+   "px_h": 338,
+   "mm_300dpi": 32.4,
+   "mm_200dpi": 48.6
+  },
+  {
+   "fichier": "p36-01-x1619.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 597,
+   "px_h": 329,
+   "mm_300dpi": 50.5,
+   "mm_200dpi": 75.8
+  },
+  {
+   "fichier": "p36-02-x1670.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 569,
+   "px_h": 325,
+   "mm_300dpi": 48.2,
+   "mm_200dpi": 72.3
+  },
+  {
+   "fichier": "p36-03-x1698.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 796,
+   "px_h": 327,
+   "mm_300dpi": 67.4,
+   "mm_200dpi": 101.1
+  },
+  {
+   "fichier": "p36-04-x1675.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 184,
+   "px_h": 351,
+   "mm_300dpi": 15.6,
+   "mm_200dpi": 23.4
+  },
+  {
+   "fichier": "p36-05-x1681.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 184,
+   "px_h": 351,
+   "mm_300dpi": 15.6,
+   "mm_200dpi": 23.4
+  },
+  {
+   "fichier": "p36-06-x1687.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 184,
+   "px_h": 351,
+   "mm_300dpi": 15.6,
+   "mm_200dpi": 23.4
+  },
+  {
+   "fichier": "p36-07-x1693.png",
+   "page_source": 36,
+   "fiche": 33,
+   "px_l": 180,
+   "px_h": 345,
+   "mm_300dpi": 15.2,
+   "mm_200dpi": 22.9
+  },
+  {
+   "fichier": "p37-00-x1723.png",
+   "page_source": 37,
+   "fiche": 34,
+   "px_l": 320,
+   "px_h": 320,
+   "mm_300dpi": 27.1,
+   "mm_200dpi": 40.6
+  },
+  {
+   "fichier": "p37-02-x1726.png",
+   "page_source": 37,
+   "fiche": 34,
+   "px_l": 541,
+   "px_h": 361,
+   "mm_300dpi": 45.8,
+   "mm_200dpi": 68.7
+  },
+  {
+   "fichier": "p37-03-x1728.png",
+   "page_source": 37,
+   "fiche": 34,
+   "px_l": 270,
+   "px_h": 361,
+   "mm_300dpi": 22.9,
+   "mm_200dpi": 34.3
+  },
+  {
+   "fichier": "p37-04-x1730.png",
+   "page_source": 37,
+   "fiche": 34,
+   "px_l": 402,
+   "px_h": 360,
+   "mm_300dpi": 34.0,
+   "mm_200dpi": 51.1
+  },
+  {
+   "fichier": "p37-05-x1732.png",
+   "page_source": 37,
+   "fiche": 34,
+   "px_l": 997,
+   "px_h": 260,
+   "mm_300dpi": 84.4,
+   "mm_200dpi": 126.6
+  },
+  {
+   "fichier": "p38-00-x1761.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 159,
+   "px_h": 147,
+   "mm_300dpi": 13.5,
+   "mm_200dpi": 20.2
+  },
+  {
+   "fichier": "p38-01-x1764.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 102,
+   "px_h": 96,
+   "mm_300dpi": 8.6,
+   "mm_200dpi": 13.0
+  },
+  {
+   "fichier": "p38-02-x1767.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 468,
+   "px_h": 268,
+   "mm_300dpi": 39.6,
+   "mm_200dpi": 59.4
+  },
+  {
+   "fichier": "p38-03-x1770.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 956,
+   "px_h": 290,
+   "mm_300dpi": 80.9,
+   "mm_200dpi": 121.4
+  },
+  {
+   "fichier": "p38-04-x1776.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 70,
+   "px_h": 256,
+   "mm_300dpi": 5.9,
+   "mm_200dpi": 8.9
+  },
+  {
+   "fichier": "p38-05-x1782.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 78,
+   "px_h": 261,
+   "mm_300dpi": 6.6,
+   "mm_200dpi": 9.9
+  },
+  {
+   "fichier": "p38-06-x1788.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 73,
+   "px_h": 261,
+   "mm_300dpi": 6.2,
+   "mm_200dpi": 9.3
+  },
+  {
+   "fichier": "p38-07-x1756.png",
+   "page_source": 38,
+   "fiche": 35,
+   "px_l": 519,
+   "px_h": 350,
+   "mm_300dpi": 43.9,
+   "mm_200dpi": 65.9
+  },
+  {
+   "fichier": "p39-00-x1812.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 380,
+   "px_h": 332,
+   "mm_300dpi": 32.2,
+   "mm_200dpi": 48.3
+  },
+  {
+   "fichier": "p39-01-x1814.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 387,
+   "px_h": 332,
+   "mm_300dpi": 32.8,
+   "mm_200dpi": 49.1
+  },
+  {
+   "fichier": "p39-02-x1816.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 341,
+   "px_h": 324,
+   "mm_300dpi": 28.9,
+   "mm_200dpi": 43.3
+  },
+  {
+   "fichier": "p39-03-x1818.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 237,
+   "px_h": 237,
+   "mm_300dpi": 20.1,
+   "mm_200dpi": 30.1
+  },
+  {
+   "fichier": "p39-04-x1824.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 98,
+   "px_h": 286,
+   "mm_300dpi": 8.3,
+   "mm_200dpi": 12.4
+  },
+  {
+   "fichier": "p39-05-x1830.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 73,
+   "px_h": 243,
+   "mm_300dpi": 6.2,
+   "mm_200dpi": 9.3
+  },
+  {
+   "fichier": "p39-06-x1836.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 75,
+   "px_h": 288,
+   "mm_300dpi": 6.3,
+   "mm_200dpi": 9.5
+  },
+  {
+   "fichier": "p39-07-x1842.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 75,
+   "px_h": 288,
+   "mm_300dpi": 6.3,
+   "mm_200dpi": 9.5
+  },
+  {
+   "fichier": "p39-08-x1845.png",
+   "page_source": 39,
+   "fiche": 36,
+   "px_l": 954,
+   "px_h": 362,
+   "mm_300dpi": 80.8,
+   "mm_200dpi": 121.2
+  },
+  {
+   "fichier": "p40-00-x1871.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 178,
+   "px_h": 178,
+   "mm_300dpi": 15.1,
+   "mm_200dpi": 22.6
+  },
+  {
+   "fichier": "p40-01-x1874.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 381,
+   "px_h": 255,
+   "mm_300dpi": 32.3,
+   "mm_200dpi": 48.4
+  },
+  {
+   "fichier": "p40-02-x1880.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 73,
+   "px_h": 257,
+   "mm_300dpi": 6.2,
+   "mm_200dpi": 9.3
+  },
+  {
+   "fichier": "p40-04-x1883.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 1238,
+   "px_h": 269,
+   "mm_300dpi": 104.8,
+   "mm_200dpi": 157.2
+  },
+  {
+   "fichier": "p40-05-x1876.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 1020,
+   "px_h": 246,
+   "mm_300dpi": 86.4,
+   "mm_200dpi": 129.5
+  },
+  {
+   "fichier": "p40-06-x1912.png",
+   "page_source": 40,
+   "fiche": 37,
+   "px_l": 256,
+   "px_h": 182,
+   "mm_300dpi": 21.7,
+   "mm_200dpi": 32.5
+  },
+  {
+   "fichier": "p41-00-x1922.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 524,
+   "px_h": 291,
+   "mm_300dpi": 44.4,
+   "mm_200dpi": 66.5
+  },
+  {
+   "fichier": "p41-01-x1924.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 254,
+   "px_h": 140,
+   "mm_300dpi": 21.5,
+   "mm_200dpi": 32.3
+  },
+  {
+   "fichier": "p41-02-x1927.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 420,
+   "px_h": 316,
+   "mm_300dpi": 35.6,
+   "mm_200dpi": 53.3
+  },
+  {
+   "fichier": "p41-03-x1933.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 98,
+   "px_h": 326,
+   "mm_300dpi": 8.3,
+   "mm_200dpi": 12.4
+  },
+  {
+   "fichier": "p41-05-x1939.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 259,
+   "px_h": 349,
+   "mm_300dpi": 21.9,
+   "mm_200dpi": 32.9
+  },
+  {
+   "fichier": "p41-06-x1942.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 1038,
+   "px_h": 357,
+   "mm_300dpi": 87.9,
+   "mm_200dpi": 131.8
+  },
+  {
+   "fichier": "p41-07-x1966.png",
+   "page_source": 41,
+   "fiche": 38,
+   "px_l": 256,
+   "px_h": 181,
+   "mm_300dpi": 21.7,
+   "mm_200dpi": 32.5
+  },
+  {
+   "fichier": "p42-01-x1978.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 123,
+   "px_h": 372,
+   "mm_300dpi": 10.4,
+   "mm_200dpi": 15.6
+  },
+  {
+   "fichier": "p42-02-x1984.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 123,
+   "px_h": 372,
+   "mm_300dpi": 10.4,
+   "mm_200dpi": 15.6
+  },
+  {
+   "fichier": "p42-03-x1990.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 123,
+   "px_h": 372,
+   "mm_300dpi": 10.4,
+   "mm_200dpi": 15.6
+  },
+  {
+   "fichier": "p42-04-x1993.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 511,
+   "px_h": 330,
+   "mm_300dpi": 43.3,
+   "mm_200dpi": 64.9
+  },
+  {
+   "fichier": "p42-05-x2001.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 371,
+   "px_h": 193,
+   "mm_300dpi": 31.4,
+   "mm_200dpi": 47.1
+  },
+  {
+   "fichier": "p42-06-x2004.png",
+   "page_source": 42,
+   "fiche": 39,
+   "px_l": 1241,
+   "px_h": 341,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  },
+  {
+   "fichier": "p43-00-x2032.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 420,
+   "px_h": 283,
+   "mm_300dpi": 35.6,
+   "mm_200dpi": 53.3
+  },
+  {
+   "fichier": "p43-01-x2034.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 607,
+   "px_h": 348,
+   "mm_300dpi": 51.4,
+   "mm_200dpi": 77.1
+  },
+  {
+   "fichier": "p43-02-x2036.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 198,
+   "px_h": 186,
+   "mm_300dpi": 16.8,
+   "mm_200dpi": 25.1
+  },
+  {
+   "fichier": "p43-03-x2042.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 191,
+   "px_h": 262,
+   "mm_300dpi": 16.2,
+   "mm_200dpi": 24.3
+  },
+  {
+   "fichier": "p43-04-x2048.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 220,
+   "px_h": 302,
+   "mm_300dpi": 18.6,
+   "mm_200dpi": 27.9
+  },
+  {
+   "fichier": "p43-05-x2051.png",
+   "page_source": 43,
+   "fiche": 40,
+   "px_l": 1241,
+   "px_h": 341,
+   "mm_300dpi": 105.1,
+   "mm_200dpi": 157.6
+  }
+ ]
+}
