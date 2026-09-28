@@ -123,24 +123,47 @@ Domaine du Colombier (le 5 L est bien moins cher que le 10 L, sur les six lignes
 
 ## 4. Photos : le point le plus préoccupant
 
-Les images récupérables dans l'ancien tarif sont **trop petites pour un catalogue
-imprimé**. Les meilleures plafonnent à 1 241 pixels de large, soit 105 mm à 300 dpi.
-Les photographies réellement exploitables tournent entre **420 et 607 pixels**.
+### 4.1 Correction d'une estimation que je vous avais donnée
 
-| Fiche témoin | Photo d'ambiance | Résolution à la taille d'impression |
-|---|---|---|
-| n° 40 Vazart-Coquart | vignoble | 420 px → **99 dpi** à 108 mm |
-| n° 3 Colombier | le vigneron au chai | 462 px → **86 dpi** à 136 mm |
-| n° 32 Famille d'Exea | la propriété | 597 px → **140 dpi** à 108 mm |
+Je vous avais indiqué qu'un **bandeau haut** permettrait d'atteindre 200 dpi sur la
+couverture. **C'est faux et je le corrige** : un bandeau à fond perdu reste large de
+210 mm, donc sa résolution est la même qu'en pleine page, soit **145 dpi**. Seule une
+photo posée à 152 mm de large ou moins atteindrait 200 dpi. La couverture livrée est
+donc immersive comme vous l'avez demandé, mais **sous le minimum d'impression**.
 
-Le minimum acceptable est 200 dpi, l'idéal 300. **Il faut les fichiers d'origine.**
-Sans eux, le catalogue sera correct à l'écran et décevant à l'impression.
+### 4.2 Bonne nouvelle : la maquette contient de meilleures images que l'ancien tarif
 
-**La couverture** est pour cette raison entièrement typographique dans cette version :
-une photo pleine page demanderait une image d'au moins 2 480 pixels de large, et la
-meilleure disponible tomberait à 150 dpi. La variante photo est prête côté code.
+En inventoriant les 107 images de la maquette 52 pages, j'ai trouvé nettement mieux que
+dans l'ancien tarif, notamment **un packshot de cinq bouteilles François Reverdy en
+1883 × 2353 px** — la plus belle image du dossier, soit 443 dpi à la taille d'usage.
 
----
+J'ai aussi trouvé ce que l'audit déclarait absent : **des packshots bouteilles existent
+bel et bien** (Vazart-Coquart, Colombier, Famille d'Exea, jus de cépages). L'affirmation
+« 0 packshot bouteille sur l'ensemble des pages » est donc inexacte.
+
+### 4.3 Résolution réelle des photos posées sur les pages témoins
+
+| Fiche | Rôle | Pixels | Posée à | Résolution | État |
+|---|---|---|---|---|---|
+| Couverture | vignoble | 1200 × 800 | 210 mm | **145 dpi** | sous le minimum |
+| n° 40 Vazart | ambiance | 640 × 427 | 120 mm | **135 dpi** | sous le minimum |
+| n° 40 Vazart | bouteilles | 264 × 331 | 56 mm | **120 dpi** | sous le minimum |
+| n° 3 Colombier | ambiance | 464 × 303 | 53 mm | 222 dpi | OK |
+| n° 3 Colombier | bouteilles | 359 × 448 | 26 mm | 351 dpi | OK |
+| n° 32 Exea | ambiance | 1182 × 788 | 53 mm | 566 dpi | OK |
+| n° 32 Exea | bouteilles | 340 × 425 | 26 mm | 332 dpi | OK |
+
+Les fiches denses s'en sortent parce que leurs visuels y sont plus petits. **La fiche
+standard, elle, demande des fichiers d'au moins 950 px de large** pour l'ambiance.
+Il me faut les originaux.
+
+### 4.4 Deux réserves éditoriales sur la couverture
+
+- La photo montre des moutons dans des **vignes nues, en hiver**, pour une édition de
+  **septembre**, en pleine période de vendanges. L'audit le signalait et c'est exact.
+- C'est la photo d'un seul domaine. Elle reste assez peu identifiable pour faire une
+  image de terroir générique, et elle sert bien le positionnement « respectueux de la
+  nature ». Mais une photo de vendanges serait plus juste pour une édition de septembre.
 
 ## 5. Ce que le nouveau gabarit corrige
 
@@ -194,3 +217,37 @@ Contrôles automatiques au dernier passage : **8 sur 8 au vert.**
 - La règle d'ordre des lignes (effervescents, blancs, rosés, rouges, moelleux, autres,
   puis bag-in-box) n'est **pas encore appliquée** : les lignes suivent l'ordre des
   sources. Ce sera fait en phase 3, et tout changement d'ordre sera signalé.
+
+---
+
+## 8. Refonte esthétique des pages témoins (2ᵉ passe)
+
+Le premier jet était juste sur les données mais son rendu tenait du formulaire.
+Reprise complète, en suivant la compétence de direction artistique `impeccable`.
+
+| Reproche | Correction apportée |
+|---|---|
+| Couverture : mur bordeaux vide à 80 % | Photo immersive sur les deux tiers supérieurs, à fond perdu, voile dégradé sous le titre |
+| Sur-titre « AGENCE SCIO · VINS & SPIRITS » au-dessus du titre | **Supprimé.** La charte de direction artistique le bannit sans exception : le titre porte son propre poids |
+| Recadrage brutal, visages coupés | Cadres aux **ratios natifs des sources** : 1,71:1 pour l'ambiance (les photos sont en 3:2), 4:5 pour les packshots. Résultat : **plus aucun recadrage**. Le packshot est posé en entier, du culot à la capsule |
+| Troisième cadre beige avec logo miniature | **Supprimé.** Le logo accompagne désormais le nom du domaine, sans encadré, hauteur optique harmonisée |
+| Deux blocs sans symétrie | Ambiance à gauche, bouteilles à droite, **même hauteur au millimètre**, alignées sur la même ligne de base |
+| Tableau « tableur Excel » | Plus d'aplat lie-de-vin massif : petites capitales lie-de-vin sur ivoire, filet or, filets horizontaux à 0,3 pt, **prix en semi-bold**, zébrure très adoucie |
+| Texte pleine largeur | Mesure de lecture ramenée à **130 mm**, soit environ 72 signes par ligne. Au-delà de 75, l'œil perd la ligne suivante |
+| Fiche dense mal résolue | Visuels et barre Conditions partagent une rangée : le Domaine du Colombier, avec ses 14 références et son bag-in-box, **tient désormais sur une seule page** |
+
+### Écart assumé à votre cahier des charges
+
+Votre cahier des charges impose « en-tête : fond lie-de-vin, texte blanc en petites
+capitales ». Vous avez demandé ensuite d'alléger pour sortir du registre tableur.
+**J'ai suivi votre demande la plus récente** : l'en-tête est désormais typographique,
+sur fond ivoire. C'est réversible en une ligne de feuille de style.
+
+### Signalement de l'outil de contrôle
+
+Le scan mécanique ne remonte qu'**un seul type de point** : Fraunces et Inter sont des
+polices jugées trop répandues. Votre cahier des charges les nomme pourtant
+explicitement, et la règle est que le brief l'emporte : je les ai conservées. Si vous
+voulez une voix plus singulière, votre cahier des charges cite lui-même des
+alternatives : **Cormorant Garamond ou Playfair Display** pour les titres, **IBM Plex
+Sans ou Source Sans 3** pour le texte. Le changement prend quelques minutes.

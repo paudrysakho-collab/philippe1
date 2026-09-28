@@ -1,6 +1,10 @@
 {
-  "_note": "Choix vérifiés à l'œil pour les pages témoins. Le tri des 255 images du tarif est fait en phase 3 ; les captures d'écran des tableaux Excel ne sont jamais utilisées comme illustration.",
-  "3":  {"ambiance": "p06-00-x210.png", "second": null, "logo": "p06-04-x223.png"},
-  "32": {"ambiance": "p35-02-x1619.png", "second": "p35-01-x1617.png", "logo": null},
-  "40": {"ambiance": "p43-00-x2032.png", "second": "p43-01-x2034.png", "logo": "p43-02-x2036.png"}
+  "_note": "Choix vérifiés à l'œil. Les images viennent de la maquette 52 pages, de meilleure résolution que l'ancien tarif. Les ambiances y sont nativement en 3:2 et les packshots en 4:5 : le cadrage ne coupe donc rien. Le point focal est réglé photo par photo.",
+  "_couverture": "assets/photos/maquette/m01-x5-1200x800.png",
+  "3":  {"ambiance": "maquette/m08-x249-464x303.png",  "bouteilles": "maquette/m08-x250-359x448.png",
+         "logo": "maquette/m08-x251-113x113.png", "focal": "center 38%"},
+  "32": {"ambiance": "maquette/m40-x556-1182x788.png", "bouteilles": "maquette/m40-x557-340x425.png",
+         "logo": null, "focal": "center 52%"},
+  "40": {"ambiance": "maquette/m49-x637-640x427.png",  "bouteilles": "maquette/m49-x638-264x331.png",
+         "logo": "maquette/m49-x639-200x188.png", "focal": "center 50%"}
 }

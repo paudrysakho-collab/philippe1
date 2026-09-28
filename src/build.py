@@ -46,7 +46,8 @@ def prepare_table(t):
         prix += ["—"] * (n - len(prix))
         lignes.append({**l, "prix_cellules": prix,
                        "classe_couleur": classe_couleur(l["couleur"])})
-    return {**t, "paliers": paliers, "lignes": lignes, "entete_prix": entete_prix(t)}
+    return {**t, "paliers": paliers, "lignes": lignes,
+            "entete_prix": entete_prix(t), "sous_tableau": t["type"] == "BIB"}
 
 
 def prepare_fiche(f, folio, ordre_region):
@@ -55,7 +56,7 @@ def prepare_fiche(f, folio, ordre_region):
     sel = choisies.get(str(f["numero"]), {})
 
     def chemin(nom):
-        return os.path.join(RACINE, "assets", "photos", "source", nom) if nom else None
+        return os.path.join(RACINE, "assets", "photos", nom) if nom else None
 
     cases = []
     port = f["conditions"]["PORT"]
@@ -82,7 +83,8 @@ def prepare_fiche(f, folio, ordre_region):
         "cases": cases,
         "tables": [prepare_table(t) for t in f["tables"]],
         "photo_ambiance": chemin(sel.get("ambiance")),
-        "photo_second": chemin(sel.get("second")),
+        "photo_bouteilles": chemin(sel.get("bouteilles")),
+        "focal_ambiance": sel.get("focal", "center 45%"),
         "logo": chemin(sel.get("logo")),
         "encadre_demande": f["port"]["type"] == "inconnu",
     }
@@ -101,6 +103,8 @@ def main():
                       autoescape=select_autoescape(["html"]))
     morceaux = []
     if a.couverture:
+        choisies = json.load(open(os.path.join(RACINE, "data", "photos-choisies.json")))
+        cat = {**cat, "photo_couverture": os.path.join(RACINE, choisies["_couverture"])}
         morceaux.append(env.get_template("couverture.html").render(cat=cat))
 
     tpl = env.get_template("fiche.html")

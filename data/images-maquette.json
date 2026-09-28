@@ -1,0 +1,1075 @@
+{
+ "source": "sources/maquette-52p.pdf",
+ "images": [
+  {
+   "fichier": "m01-x5-1200x800.png",
+   "page": 1,
+   "fiche": null,
+   "l": 1200,
+   "h": 800,
+   "ratio": 1.5,
+   "dpi_a_110mm": 277,
+   "dpi_a_66mm": 462
+  },
+  {
+   "fichier": "m06-x229-389x371.png",
+   "page": 6,
+   "fiche": 1,
+   "l": 389,
+   "h": 371,
+   "ratio": 1.05,
+   "dpi_a_110mm": 90,
+   "dpi_a_66mm": 150
+  },
+  {
+   "fichier": "m06-x230-1883x2353.png",
+   "page": 6,
+   "fiche": 1,
+   "l": 1883,
+   "h": 2353,
+   "ratio": 0.8,
+   "dpi_a_110mm": 435,
+   "dpi_a_66mm": 725
+  },
+  {
+   "fichier": "m06-x231-660x434.png",
+   "page": 6,
+   "fiche": 1,
+   "l": 660,
+   "h": 434,
+   "ratio": 1.52,
+   "dpi_a_110mm": 152,
+   "dpi_a_66mm": 254
+  },
+  {
+   "fichier": "m07-x239-302x318.png",
+   "page": 7,
+   "fiche": 2,
+   "l": 302,
+   "h": 318,
+   "ratio": 0.95,
+   "dpi_a_110mm": 70,
+   "dpi_a_66mm": 116
+  },
+  {
+   "fichier": "m07-x240-281x352.png",
+   "page": 7,
+   "fiche": 2,
+   "l": 281,
+   "h": 352,
+   "ratio": 0.8,
+   "dpi_a_110mm": 65,
+   "dpi_a_66mm": 108
+  },
+  {
+   "fichier": "m07-x241-137x125.png",
+   "page": 7,
+   "fiche": 2,
+   "l": 137,
+   "h": 125,
+   "ratio": 1.1,
+   "dpi_a_110mm": 32,
+   "dpi_a_66mm": 53
+  },
+  {
+   "fichier": "m08-x249-464x303.png",
+   "page": 8,
+   "fiche": 3,
+   "l": 464,
+   "h": 303,
+   "ratio": 1.53,
+   "dpi_a_110mm": 107,
+   "dpi_a_66mm": 179
+  },
+  {
+   "fichier": "m08-x250-359x448.png",
+   "page": 8,
+   "fiche": 3,
+   "l": 359,
+   "h": 448,
+   "ratio": 0.8,
+   "dpi_a_110mm": 83,
+   "dpi_a_66mm": 138
+  },
+  {
+   "fichier": "m08-x251-113x113.png",
+   "page": 8,
+   "fiche": 3,
+   "l": 113,
+   "h": 113,
+   "ratio": 1.0,
+   "dpi_a_110mm": 26,
+   "dpi_a_66mm": 43
+  },
+  {
+   "fichier": "m09-x258-640x480.png",
+   "page": 9,
+   "fiche": 4,
+   "l": 640,
+   "h": 480,
+   "ratio": 1.33,
+   "dpi_a_110mm": 148,
+   "dpi_a_66mm": 246
+  },
+  {
+   "fichier": "m09-x259-573x717.png",
+   "page": 9,
+   "fiche": 4,
+   "l": 573,
+   "h": 717,
+   "ratio": 0.8,
+   "dpi_a_110mm": 132,
+   "dpi_a_66mm": 221
+  },
+  {
+   "fichier": "m09-x260-310x189.png",
+   "page": 9,
+   "fiche": 4,
+   "l": 310,
+   "h": 189,
+   "ratio": 1.64,
+   "dpi_a_110mm": 72,
+   "dpi_a_66mm": 119
+  },
+  {
+   "fichier": "m10-x268-536x768.png",
+   "page": 10,
+   "fiche": 5,
+   "l": 536,
+   "h": 768,
+   "ratio": 0.7,
+   "dpi_a_110mm": 124,
+   "dpi_a_66mm": 206
+  },
+  {
+   "fichier": "m10-x269-270x337.png",
+   "page": 10,
+   "fiche": 5,
+   "l": 270,
+   "h": 337,
+   "ratio": 0.8,
+   "dpi_a_110mm": 62,
+   "dpi_a_66mm": 104
+  },
+  {
+   "fichier": "m10-x270-258x164.png",
+   "page": 10,
+   "fiche": 5,
+   "l": 258,
+   "h": 164,
+   "ratio": 1.57,
+   "dpi_a_110mm": 60,
+   "dpi_a_66mm": 99
+  },
+  {
+   "fichier": "m11-x277-1200x800.png",
+   "page": 11,
+   "fiche": 6,
+   "l": 1200,
+   "h": 800,
+   "ratio": 1.5,
+   "dpi_a_110mm": 277,
+   "dpi_a_66mm": 462
+  },
+  {
+   "fichier": "m11-x278-288x360.png",
+   "page": 11,
+   "fiche": 6,
+   "l": 288,
+   "h": 360,
+   "ratio": 0.8,
+   "dpi_a_110mm": 67,
+   "dpi_a_66mm": 111
+  },
+  {
+   "fichier": "m12-x290-800x1200.png",
+   "page": 12,
+   "fiche": 7,
+   "l": 800,
+   "h": 1200,
+   "ratio": 0.67,
+   "dpi_a_110mm": 185,
+   "dpi_a_66mm": 308
+  },
+  {
+   "fichier": "m12-x291-660x440.png",
+   "page": 12,
+   "fiche": 7,
+   "l": 660,
+   "h": 440,
+   "ratio": 1.5,
+   "dpi_a_110mm": 152,
+   "dpi_a_66mm": 254
+  },
+  {
+   "fichier": "m12-x292-220x147.png",
+   "page": 12,
+   "fiche": 7,
+   "l": 220,
+   "h": 147,
+   "ratio": 1.5,
+   "dpi_a_110mm": 51,
+   "dpi_a_66mm": 85
+  },
+  {
+   "fichier": "m13-x300-906x604.png",
+   "page": 13,
+   "fiche": 8,
+   "l": 906,
+   "h": 604,
+   "ratio": 1.5,
+   "dpi_a_110mm": 209,
+   "dpi_a_66mm": 349
+  },
+  {
+   "fichier": "m13-x301-459x574.png",
+   "page": 13,
+   "fiche": 8,
+   "l": 459,
+   "h": 574,
+   "ratio": 0.8,
+   "dpi_a_110mm": 106,
+   "dpi_a_66mm": 177
+  },
+  {
+   "fichier": "m13-x302-313x313.png",
+   "page": 13,
+   "fiche": 8,
+   "l": 313,
+   "h": 313,
+   "ratio": 1.0,
+   "dpi_a_110mm": 72,
+   "dpi_a_66mm": 120
+  },
+  {
+   "fichier": "m14-x310-640x427.png",
+   "page": 14,
+   "fiche": 9,
+   "l": 640,
+   "h": 427,
+   "ratio": 1.5,
+   "dpi_a_110mm": 148,
+   "dpi_a_66mm": 246
+  },
+  {
+   "fichier": "m14-x311-266x473.png",
+   "page": 14,
+   "fiche": 9,
+   "l": 266,
+   "h": 473,
+   "ratio": 0.56,
+   "dpi_a_110mm": 61,
+   "dpi_a_66mm": 102
+  },
+  {
+   "fichier": "m14-x312-212x212.png",
+   "page": 14,
+   "fiche": 9,
+   "l": 212,
+   "h": 212,
+   "ratio": 1.0,
+   "dpi_a_110mm": 49,
+   "dpi_a_66mm": 82
+  },
+  {
+   "fichier": "m15-x319-689x423.png",
+   "page": 15,
+   "fiche": 10,
+   "l": 689,
+   "h": 423,
+   "ratio": 1.63,
+   "dpi_a_110mm": 159,
+   "dpi_a_66mm": 265
+  },
+  {
+   "fichier": "m15-x320-365x456.png",
+   "page": 15,
+   "fiche": 10,
+   "l": 365,
+   "h": 456,
+   "ratio": 0.8,
+   "dpi_a_110mm": 84,
+   "dpi_a_66mm": 140
+  },
+  {
+   "fichier": "m15-x321-158x158.png",
+   "page": 15,
+   "fiche": 10,
+   "l": 158,
+   "h": 158,
+   "ratio": 1.0,
+   "dpi_a_110mm": 36,
+   "dpi_a_66mm": 61
+  },
+  {
+   "fichier": "m16-x329-637x460.png",
+   "page": 16,
+   "fiche": 11,
+   "l": 637,
+   "h": 460,
+   "ratio": 1.38,
+   "dpi_a_110mm": 147,
+   "dpi_a_66mm": 245
+  },
+  {
+   "fichier": "m16-x330-307x384.png",
+   "page": 16,
+   "fiche": 11,
+   "l": 307,
+   "h": 384,
+   "ratio": 0.8,
+   "dpi_a_110mm": 71,
+   "dpi_a_66mm": 118
+  },
+  {
+   "fichier": "m16-x331-286x176.png",
+   "page": 16,
+   "fiche": 11,
+   "l": 286,
+   "h": 176,
+   "ratio": 1.62,
+   "dpi_a_110mm": 66,
+   "dpi_a_66mm": 110
+  },
+  {
+   "fichier": "m17-x338-246x255.png",
+   "page": 17,
+   "fiche": 12,
+   "l": 246,
+   "h": 255,
+   "ratio": 0.96,
+   "dpi_a_110mm": 57,
+   "dpi_a_66mm": 95
+  },
+  {
+   "fichier": "m17-x339-295x306.png",
+   "page": 17,
+   "fiche": 12,
+   "l": 295,
+   "h": 306,
+   "ratio": 0.96,
+   "dpi_a_110mm": 68,
+   "dpi_a_66mm": 114
+  },
+  {
+   "fichier": "m17-x340-225x225.png",
+   "page": 17,
+   "fiche": 12,
+   "l": 225,
+   "h": 225,
+   "ratio": 1.0,
+   "dpi_a_110mm": 52,
+   "dpi_a_66mm": 87
+  },
+  {
+   "fichier": "m19-x357-221x228.png",
+   "page": 19,
+   "fiche": 13,
+   "l": 221,
+   "h": 228,
+   "ratio": 0.97,
+   "dpi_a_110mm": 51,
+   "dpi_a_66mm": 85
+  },
+  {
+   "fichier": "m19-x358-368x461.png",
+   "page": 19,
+   "fiche": 13,
+   "l": 368,
+   "h": 461,
+   "ratio": 0.8,
+   "dpi_a_110mm": 85,
+   "dpi_a_66mm": 142
+  },
+  {
+   "fichier": "m20-x368-791x406.png",
+   "page": 20,
+   "fiche": 14,
+   "l": 791,
+   "h": 406,
+   "ratio": 1.95,
+   "dpi_a_110mm": 183,
+   "dpi_a_66mm": 304
+  },
+  {
+   "fichier": "m20-x369-295x306.png",
+   "page": 20,
+   "fiche": 14,
+   "l": 295,
+   "h": 306,
+   "ratio": 0.96,
+   "dpi_a_110mm": 68,
+   "dpi_a_66mm": 114
+  },
+  {
+   "fichier": "m20-x370-371x233.png",
+   "page": 20,
+   "fiche": 14,
+   "l": 371,
+   "h": 233,
+   "ratio": 1.59,
+   "dpi_a_110mm": 86,
+   "dpi_a_66mm": 143
+  },
+  {
+   "fichier": "m21-x379-600x400.png",
+   "page": 21,
+   "fiche": 15,
+   "l": 600,
+   "h": 400,
+   "ratio": 1.5,
+   "dpi_a_110mm": 139,
+   "dpi_a_66mm": 231
+  },
+  {
+   "fichier": "m21-x380-600x428.png",
+   "page": 21,
+   "fiche": 15,
+   "l": 600,
+   "h": 428,
+   "ratio": 1.4,
+   "dpi_a_110mm": 139,
+   "dpi_a_66mm": 231
+  },
+  {
+   "fichier": "m22-x388-576x385.png",
+   "page": 22,
+   "fiche": 16,
+   "l": 576,
+   "h": 385,
+   "ratio": 1.5,
+   "dpi_a_110mm": 133,
+   "dpi_a_66mm": 222
+  },
+  {
+   "fichier": "m22-x389-320x288.png",
+   "page": 22,
+   "fiche": 16,
+   "l": 320,
+   "h": 288,
+   "ratio": 1.11,
+   "dpi_a_110mm": 74,
+   "dpi_a_66mm": 123
+  },
+  {
+   "fichier": "m22-x390-450x300.png",
+   "page": 22,
+   "fiche": 16,
+   "l": 450,
+   "h": 300,
+   "ratio": 1.5,
+   "dpi_a_110mm": 104,
+   "dpi_a_66mm": 173
+  },
+  {
+   "fichier": "m23-x398-475x250.png",
+   "page": 23,
+   "fiche": 17,
+   "l": 475,
+   "h": 250,
+   "ratio": 1.9,
+   "dpi_a_110mm": 110,
+   "dpi_a_66mm": 183
+  },
+  {
+   "fichier": "m23-x399-409x387.png",
+   "page": 23,
+   "fiche": 17,
+   "l": 409,
+   "h": 387,
+   "ratio": 1.06,
+   "dpi_a_110mm": 94,
+   "dpi_a_66mm": 157
+  },
+  {
+   "fichier": "m24-x408-480x252.png",
+   "page": 24,
+   "fiche": 18,
+   "l": 480,
+   "h": 252,
+   "ratio": 1.9,
+   "dpi_a_110mm": 111,
+   "dpi_a_66mm": 185
+  },
+  {
+   "fichier": "m24-x409-448x238.png",
+   "page": 24,
+   "fiche": 18,
+   "l": 448,
+   "h": 238,
+   "ratio": 1.88,
+   "dpi_a_110mm": 103,
+   "dpi_a_66mm": 172
+  },
+  {
+   "fichier": "m25-x417-448x403.png",
+   "page": 25,
+   "fiche": 19,
+   "l": 448,
+   "h": 403,
+   "ratio": 1.11,
+   "dpi_a_110mm": 103,
+   "dpi_a_66mm": 172
+  },
+  {
+   "fichier": "m25-x418-548x361.png",
+   "page": 25,
+   "fiche": 19,
+   "l": 548,
+   "h": 361,
+   "ratio": 1.52,
+   "dpi_a_110mm": 127,
+   "dpi_a_66mm": 211
+  },
+  {
+   "fichier": "m26-x427-1152x864.png",
+   "page": 26,
+   "fiche": 20,
+   "l": 1152,
+   "h": 864,
+   "ratio": 1.33,
+   "dpi_a_110mm": 266,
+   "dpi_a_66mm": 443
+  },
+  {
+   "fichier": "m26-x428-360x450.png",
+   "page": 26,
+   "fiche": 20,
+   "l": 360,
+   "h": 450,
+   "ratio": 0.8,
+   "dpi_a_110mm": 83,
+   "dpi_a_66mm": 139
+  },
+  {
+   "fichier": "m26-x429-310x104.png",
+   "page": 26,
+   "fiche": 20,
+   "l": 310,
+   "h": 104,
+   "ratio": 2.98,
+   "dpi_a_110mm": 72,
+   "dpi_a_66mm": 119
+  },
+  {
+   "fichier": "m27-x436-488x366.png",
+   "page": 27,
+   "fiche": 21,
+   "l": 488,
+   "h": 366,
+   "ratio": 1.33,
+   "dpi_a_110mm": 113,
+   "dpi_a_66mm": 188
+  },
+  {
+   "fichier": "m27-x437-488x366.png",
+   "page": 27,
+   "fiche": 21,
+   "l": 488,
+   "h": 366,
+   "ratio": 1.33,
+   "dpi_a_110mm": 113,
+   "dpi_a_66mm": 188
+  },
+  {
+   "fichier": "m28-x446-1122x563.png",
+   "page": 28,
+   "fiche": 22,
+   "l": 1122,
+   "h": 563,
+   "ratio": 1.99,
+   "dpi_a_110mm": 259,
+   "dpi_a_66mm": 432
+  },
+  {
+   "fichier": "m28-x447-344x430.png",
+   "page": 28,
+   "fiche": 22,
+   "l": 344,
+   "h": 430,
+   "ratio": 0.8,
+   "dpi_a_110mm": 79,
+   "dpi_a_66mm": 132
+  },
+  {
+   "fichier": "m28-x448-242x180.png",
+   "page": 28,
+   "fiche": 22,
+   "l": 242,
+   "h": 180,
+   "ratio": 1.34,
+   "dpi_a_110mm": 56,
+   "dpi_a_66mm": 93
+  },
+  {
+   "fichier": "m29-x455-452x301.png",
+   "page": 29,
+   "fiche": 23,
+   "l": 452,
+   "h": 301,
+   "ratio": 1.5,
+   "dpi_a_110mm": 104,
+   "dpi_a_66mm": 174
+  },
+  {
+   "fichier": "m29-x456-255x319.png",
+   "page": 29,
+   "fiche": 23,
+   "l": 255,
+   "h": 319,
+   "ratio": 0.8,
+   "dpi_a_110mm": 59,
+   "dpi_a_66mm": 98
+  },
+  {
+   "fichier": "m31-x472-248x367.png",
+   "page": 31,
+   "fiche": 24,
+   "l": 248,
+   "h": 367,
+   "ratio": 0.68,
+   "dpi_a_110mm": 57,
+   "dpi_a_66mm": 95
+  },
+  {
+   "fichier": "m31-x473-377x471.png",
+   "page": 31,
+   "fiche": 24,
+   "l": 377,
+   "h": 471,
+   "ratio": 0.8,
+   "dpi_a_110mm": 87,
+   "dpi_a_66mm": 145
+  },
+  {
+   "fichier": "m31-x474-270x270.png",
+   "page": 31,
+   "fiche": 24,
+   "l": 270,
+   "h": 270,
+   "ratio": 1.0,
+   "dpi_a_110mm": 62,
+   "dpi_a_66mm": 104
+  },
+  {
+   "fichier": "m32-x484-936x236.png",
+   "page": 32,
+   "fiche": 25,
+   "l": 936,
+   "h": 236,
+   "ratio": 3.97,
+   "dpi_a_110mm": 216,
+   "dpi_a_66mm": 360
+  },
+  {
+   "fichier": "m32-x485-172x215.png",
+   "page": 32,
+   "fiche": 25,
+   "l": 172,
+   "h": 215,
+   "ratio": 0.8,
+   "dpi_a_110mm": 40,
+   "dpi_a_66mm": 66
+  },
+  {
+   "fichier": "m32-x486-332x140.png",
+   "page": 32,
+   "fiche": 25,
+   "l": 332,
+   "h": 140,
+   "ratio": 2.37,
+   "dpi_a_110mm": 77,
+   "dpi_a_66mm": 128
+  },
+  {
+   "fichier": "m34-x502-480x321.png",
+   "page": 34,
+   "fiche": 26,
+   "l": 480,
+   "h": 321,
+   "ratio": 1.5,
+   "dpi_a_110mm": 111,
+   "dpi_a_66mm": 185
+  },
+  {
+   "fichier": "m34-x503-480x321.png",
+   "page": 34,
+   "fiche": 26,
+   "l": 480,
+   "h": 321,
+   "ratio": 1.5,
+   "dpi_a_110mm": 111,
+   "dpi_a_66mm": 185
+  },
+  {
+   "fichier": "m35-x510-759x506.png",
+   "page": 35,
+   "fiche": 27,
+   "l": 759,
+   "h": 506,
+   "ratio": 1.5,
+   "dpi_a_110mm": 175,
+   "dpi_a_66mm": 292
+  },
+  {
+   "fichier": "m35-x511-446x558.png",
+   "page": 35,
+   "fiche": 27,
+   "l": 446,
+   "h": 558,
+   "ratio": 0.8,
+   "dpi_a_110mm": 103,
+   "dpi_a_66mm": 172
+  },
+  {
+   "fichier": "m35-x512-1226x828.png",
+   "page": 35,
+   "fiche": 27,
+   "l": 1226,
+   "h": 828,
+   "ratio": 1.48,
+   "dpi_a_110mm": 283,
+   "dpi_a_66mm": 472
+  },
+  {
+   "fichier": "m36-x520-768x441.png",
+   "page": 36,
+   "fiche": 28,
+   "l": 768,
+   "h": 441,
+   "ratio": 1.74,
+   "dpi_a_110mm": 177,
+   "dpi_a_66mm": 296
+  },
+  {
+   "fichier": "m36-x521-363x454.png",
+   "page": 36,
+   "fiche": 28,
+   "l": 363,
+   "h": 454,
+   "ratio": 0.8,
+   "dpi_a_110mm": 84,
+   "dpi_a_66mm": 140
+  },
+  {
+   "fichier": "m37-x528-512x384.png",
+   "page": 37,
+   "fiche": 29,
+   "l": 512,
+   "h": 384,
+   "ratio": 1.33,
+   "dpi_a_110mm": 118,
+   "dpi_a_66mm": 197
+  },
+  {
+   "fichier": "m37-x529-608x761.png",
+   "page": 37,
+   "fiche": 29,
+   "l": 608,
+   "h": 761,
+   "ratio": 0.8,
+   "dpi_a_110mm": 140,
+   "dpi_a_66mm": 234
+  },
+  {
+   "fichier": "m37-x530-237x107.png",
+   "page": 37,
+   "fiche": 29,
+   "l": 237,
+   "h": 107,
+   "ratio": 2.21,
+   "dpi_a_110mm": 55,
+   "dpi_a_66mm": 91
+  },
+  {
+   "fichier": "m38-x538-615x410.png",
+   "page": 38,
+   "fiche": 30,
+   "l": 615,
+   "h": 410,
+   "ratio": 1.5,
+   "dpi_a_110mm": 142,
+   "dpi_a_66mm": 237
+  },
+  {
+   "fichier": "m38-x539-416x623.png",
+   "page": 38,
+   "fiche": 30,
+   "l": 416,
+   "h": 623,
+   "ratio": 0.67,
+   "dpi_a_110mm": 96,
+   "dpi_a_66mm": 160
+  },
+  {
+   "fichier": "m39-x546-660x440.png",
+   "page": 39,
+   "fiche": 31,
+   "l": 660,
+   "h": 440,
+   "ratio": 1.5,
+   "dpi_a_110mm": 152,
+   "dpi_a_66mm": 254
+  },
+  {
+   "fichier": "m39-x547-281x351.png",
+   "page": 39,
+   "fiche": 31,
+   "l": 281,
+   "h": 351,
+   "ratio": 0.8,
+   "dpi_a_110mm": 65,
+   "dpi_a_66mm": 108
+  },
+  {
+   "fichier": "m39-x548-266x122.png",
+   "page": 39,
+   "fiche": 31,
+   "l": 266,
+   "h": 122,
+   "ratio": 2.18,
+   "dpi_a_110mm": 61,
+   "dpi_a_66mm": 102
+  },
+  {
+   "fichier": "m40-x556-1182x788.png",
+   "page": 40,
+   "fiche": 32,
+   "l": 1182,
+   "h": 788,
+   "ratio": 1.5,
+   "dpi_a_110mm": 273,
+   "dpi_a_66mm": 455
+  },
+  {
+   "fichier": "m40-x557-340x425.png",
+   "page": 40,
+   "fiche": 32,
+   "l": 340,
+   "h": 425,
+   "ratio": 0.8,
+   "dpi_a_110mm": 79,
+   "dpi_a_66mm": 131
+  },
+  {
+   "fichier": "m42-x572-1080x720.png",
+   "page": 42,
+   "fiche": 33,
+   "l": 1080,
+   "h": 720,
+   "ratio": 1.5,
+   "dpi_a_110mm": 249,
+   "dpi_a_66mm": 416
+  },
+  {
+   "fichier": "m42-x573-902x1127.png",
+   "page": 42,
+   "fiche": 33,
+   "l": 902,
+   "h": 1127,
+   "ratio": 0.8,
+   "dpi_a_110mm": 208,
+   "dpi_a_66mm": 347
+  },
+  {
+   "fichier": "m43-x581-1095x730.png",
+   "page": 43,
+   "fiche": 34,
+   "l": 1095,
+   "h": 730,
+   "ratio": 1.5,
+   "dpi_a_110mm": 253,
+   "dpi_a_66mm": 421
+  },
+  {
+   "fichier": "m43-x582-320x320.png",
+   "page": 43,
+   "fiche": 34,
+   "l": 320,
+   "h": 320,
+   "ratio": 1.0,
+   "dpi_a_110mm": 74,
+   "dpi_a_66mm": 123
+  },
+  {
+   "fichier": "m44-x590-691x474.png",
+   "page": 44,
+   "fiche": 35,
+   "l": 691,
+   "h": 474,
+   "ratio": 1.46,
+   "dpi_a_110mm": 160,
+   "dpi_a_66mm": 266
+  },
+  {
+   "fichier": "m44-x591-271x338.png",
+   "page": 44,
+   "fiche": 35,
+   "l": 271,
+   "h": 338,
+   "ratio": 0.8,
+   "dpi_a_110mm": 63,
+   "dpi_a_66mm": 104
+  },
+  {
+   "fichier": "m44-x592-159x147.png",
+   "page": 44,
+   "fiche": 35,
+   "l": 159,
+   "h": 147,
+   "ratio": 1.08,
+   "dpi_a_110mm": 37,
+   "dpi_a_66mm": 61
+  },
+  {
+   "fichier": "m45-x599-778x437.png",
+   "page": 45,
+   "fiche": 36,
+   "l": 778,
+   "h": 437,
+   "ratio": 1.78,
+   "dpi_a_110mm": 180,
+   "dpi_a_66mm": 299
+  },
+  {
+   "fichier": "m45-x600-311x388.png",
+   "page": 45,
+   "fiche": 36,
+   "l": 311,
+   "h": 388,
+   "ratio": 0.8,
+   "dpi_a_110mm": 72,
+   "dpi_a_66mm": 120
+  },
+  {
+   "fichier": "m45-x601-237x237.png",
+   "page": 45,
+   "fiche": 36,
+   "l": 237,
+   "h": 237,
+   "ratio": 1.0,
+   "dpi_a_110mm": 55,
+   "dpi_a_66mm": 91
+  },
+  {
+   "fichier": "m46-x609-1200x800.png",
+   "page": 46,
+   "fiche": 37,
+   "l": 1200,
+   "h": 800,
+   "ratio": 1.5,
+   "dpi_a_110mm": 277,
+   "dpi_a_66mm": 462
+  },
+  {
+   "fichier": "m46-x610-228x286.png",
+   "page": 46,
+   "fiche": 37,
+   "l": 228,
+   "h": 286,
+   "ratio": 0.8,
+   "dpi_a_110mm": 53,
+   "dpi_a_66mm": 88
+  },
+  {
+   "fichier": "m46-x611-180x180.png",
+   "page": 46,
+   "fiche": 37,
+   "l": 180,
+   "h": 180,
+   "ratio": 1.0,
+   "dpi_a_110mm": 42,
+   "dpi_a_66mm": 69
+  },
+  {
+   "fichier": "m47-x618-960x533.png",
+   "page": 47,
+   "fiche": 38,
+   "l": 960,
+   "h": 533,
+   "ratio": 1.8,
+   "dpi_a_110mm": 222,
+   "dpi_a_66mm": 369
+  },
+  {
+   "fichier": "m47-x619-388x485.png",
+   "page": 47,
+   "fiche": 38,
+   "l": 388,
+   "h": 485,
+   "ratio": 0.8,
+   "dpi_a_110mm": 90,
+   "dpi_a_66mm": 149
+  },
+  {
+   "fichier": "m47-x620-256x197.png",
+   "page": 47,
+   "fiche": 38,
+   "l": 256,
+   "h": 197,
+   "ratio": 1.3,
+   "dpi_a_110mm": 59,
+   "dpi_a_66mm": 99
+  },
+  {
+   "fichier": "m48-x628-515x333.png",
+   "page": 48,
+   "fiche": 39,
+   "l": 515,
+   "h": 333,
+   "ratio": 1.55,
+   "dpi_a_110mm": 119,
+   "dpi_a_66mm": 198
+  },
+  {
+   "fichier": "m48-x629-378x472.png",
+   "page": 48,
+   "fiche": 39,
+   "l": 378,
+   "h": 472,
+   "ratio": 0.8,
+   "dpi_a_110mm": 87,
+   "dpi_a_66mm": 145
+  },
+  {
+   "fichier": "m48-x630-371x193.png",
+   "page": 48,
+   "fiche": 39,
+   "l": 371,
+   "h": 193,
+   "ratio": 1.92,
+   "dpi_a_110mm": 86,
+   "dpi_a_66mm": 143
+  },
+  {
+   "fichier": "m49-x637-640x427.png",
+   "page": 49,
+   "fiche": 40,
+   "l": 640,
+   "h": 427,
+   "ratio": 1.5,
+   "dpi_a_110mm": 148,
+   "dpi_a_66mm": 246
+  },
+  {
+   "fichier": "m49-x638-264x331.png",
+   "page": 49,
+   "fiche": 40,
+   "l": 264,
+   "h": 331,
+   "ratio": 0.8,
+   "dpi_a_110mm": 61,
+   "dpi_a_66mm": 102
+  },
+  {
+   "fichier": "m49-x639-200x188.png",
+   "page": 49,
+   "fiche": 40,
+   "l": 200,
+   "h": 188,
+   "ratio": 1.06,
+   "dpi_a_110mm": 46,
+   "dpi_a_66mm": 77
+  }
+ ]
+}

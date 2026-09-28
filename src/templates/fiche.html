@@ -2,7 +2,7 @@
    toutes les zones sont aux mêmes positions, dans le même ordre. #}
 {% macro tableau(t) %}
   {% if t.titre %}<div class="titre-tableau">{{ t.titre }}</div>{% endif %}
-  <table class="tarif">
+  <table class="tarif{% if t.sous_tableau %} sous-tableau{% endif %}">
     <colgroup>
       <col style="width:var(--c-appellation)"><col style="width:var(--c-cuvee)">
       <col style="width:var(--c-couleur)"><col style="width:var(--c-mill)">
@@ -10,12 +10,13 @@
       {% for p in t.paliers %}<col style="width:calc(var(--c-prix) / {{ t.paliers|length }})">{% endfor %}
     </colgroup>
     <thead>
-      <tr>
+      <tr class="colonnes">
         <th rowspan="2">Appellation</th><th rowspan="2">Cuvée</th>
         <th rowspan="2">Couleur</th><th rowspan="2">Mill.</th><th rowspan="2">Format</th>
         <th class="prix-groupe" colspan="{{ t.paliers|length }}">{{ t.entete_prix }}</th>
       </tr>
       <tr class="paliers">
+        {% if t.sous_tableau %}<th colspan="5" class="amorce"></th>{% endif %}
         {% for p in t.paliers %}
           <th class="prix-col{% if loop.first %} premier{% endif %}">{{ p }}</th>
         {% endfor %}
@@ -24,7 +25,7 @@
     <tbody>
       {% for l in t.lignes %}
       <tr>
-        <td>{{ l.appellation }}</td>
+        <td class="appellation">{{ l.appellation }}</td>
         <td><span class="cuvee-nom">{{ l.cuvee }}</span>
             {% if l.note %}<span class="cuvee-note">{{ l.note }}</span>{% endif %}</td>
         <td class="couleur"><span class="pastille {{ l.classe_couleur }}"></span>{{ l.couleur }}</td>
@@ -66,7 +67,10 @@
   <div class="identite">
     <div>
       <h1 class="nom-domaine">{{ f.nom }}{% if f.suite %} — suite{% endif %}</h1>
-      {% if f.sous_titre %}<p class="sous-titre">{{ f.sous_titre }}</p>{% endif %}
+      <div class="ligne-sous-titre">
+        {% if f.logo %}<img class="logo-domaine" src="{{ f.logo }}">{% endif %}
+        {% if f.sous_titre %}<p class="sous-titre">{{ f.sous_titre }}</p>{% endif %}
+      </div>
     </div>
     <div class="labels">
       {% for l in f.labels %}<span class="label{% if 'BIO' in l|upper %} bio{% endif %}">{{ l }}</span>{% endfor %}
@@ -74,22 +78,26 @@
   </div>
 
   {% if not f.suite %}
-  <div class="photos{% if not f.photo_second %} sans-second{% endif %}{% if f.logo %} avec-logo{% endif %}">
-    <figure class="ph-ambiance">{% if f.photo_ambiance %}<img src="{{ f.photo_ambiance }}">{% endif %}</figure>
-    {% if f.photo_second %}<figure class="ph-second"><img src="{{ f.photo_second }}"></figure>{% endif %}
-    {% if f.logo %}<figure class="cartouche-logo"><img src="{{ f.logo }}"></figure>{% endif %}
+  {# Sur une fiche dense, les visuels et la barre Conditions partagent une même
+     rangée : la fiche gagne la hauteur d'une bande pleine largeur. #}
+  <div class="zone-haute">
+    <div class="visuels">
+      <figure class="ph-ambiance">{% if f.photo_ambiance %}<img src="{{ f.photo_ambiance }}"
+        style="object-position:{{ f.focal_ambiance }}">{% endif %}</figure>
+      <figure class="ph-bouteilles">{% if f.photo_bouteilles %}<img src="{{ f.photo_bouteilles }}">{% endif %}</figure>
+    </div>
+
+    <div class="conditions">
+      {% for cle, val in f.cases %}
+      <div class="case">
+        <div class="cle">{{ cle }}</div>
+        <div class="val">{{ val|safe }}</div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 
   {% if f.texte %}<p class="presentation">{{ f.texte }}</p>{% endif %}
-
-  <div class="conditions">
-    {% for cle, val in f.cases %}
-    <div class="case">
-      <div class="cle">{{ cle }}</div>
-      <div class="val">{{ val|safe }}</div>
-    </div>
-    {% endfor %}
-  </div>
   {% endif %}
 
   {% for t in f.tables %}{{ tableau(t) }}{% endfor %}
