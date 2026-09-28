@@ -222,6 +222,20 @@ def main():
                                 "paliers": [norm_palier(x) for x in t["libelles"]],
                                 "lignes": lignes})
 
+        # L'extraction sépare parfois un tableau en deux parce que la maquette
+        # répétait son en-tête en haut de la page suivante. Deux tableaux de même
+        # type et de mêmes paliers sont un seul tableau : on les recolle, sinon une
+        # cuvée isolée se retrouve sous un en-tête complet pour elle seule.
+        fusion = []
+        for t in f["tables"]:
+            if (fusion and fusion[-1]["type"] == t["type"]
+                    and fusion[-1]["paliers"] == t["paliers"]
+                    and not t.get("titre") and not fusion[-1].get("titre")):
+                fusion[-1]["lignes"] += t["lignes"]
+            else:
+                fusion.append(t)
+        f["tables"] = fusion
+
         f["paliers"] = f["tables"][0]["paliers"] if f["tables"] else ["Prix unique"]
         f["conditions"]["PALIERS"] = (" · ".join(f["paliers"])
                                       if f["paliers"] != ["Prix unique"] else "Prix unique")

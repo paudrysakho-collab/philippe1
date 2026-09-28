@@ -4,10 +4,12 @@
   {% if t.titre %}<div class="titre-tableau">{{ t.titre }}</div>{% endif %}
   <table class="tarif{% if t.sous_tableau %} sous-tableau{% endif %}">
     <colgroup>
-      <col style="width:var(--c-appellation)"><col style="width:var(--c-cuvee)">
-      <col style="width:var(--c-couleur)"><col style="width:var(--c-mill)">
-      <col style="width:var(--c-format)">
-      {% for p in t.paliers %}<col style="width:calc(var(--c-prix) / {{ t.paliers|length }})">{% endfor %}
+      <col style="width:{{ t.colonnes_mm.appellation }}mm">
+      <col style="width:{{ t.colonnes_mm.cuvee }}mm">
+      <col style="width:{{ t.colonnes_mm.couleur }}mm">
+      <col style="width:{{ t.colonnes_mm.millesime }}mm">
+      <col style="width:{{ t.colonnes_mm.format }}mm">
+      {% for p in t.paliers %}<col style="width:{{ t.largeur_palier_mm }}mm">{% endfor %}
     </colgroup>
     <thead>
       <tr class="colonnes">
@@ -78,26 +80,26 @@
   </div>
 
   {% if not f.suite %}
-  {# Sur une fiche dense, les visuels et la barre Conditions partagent une même
-     rangée : la fiche gagne la hauteur d'une bande pleine largeur. #}
+  {# Succession verticale invariante : bandeau visuel pleine largeur, puis texte,
+     puis barre Conditions pleine largeur. Rien n'est posé à côté du bandeau. #}
   <div class="zone-haute">
     <div class="visuels">
       <figure class="ph-ambiance">{% if f.photo_ambiance %}<img src="{{ f.photo_ambiance }}"
         style="object-position:{{ f.focal_ambiance }}">{% endif %}</figure>
       <figure class="ph-bouteilles">{% if f.photo_bouteilles %}<img src="{{ f.photo_bouteilles }}">{% endif %}</figure>
     </div>
-
-    <div class="conditions">
-      {% for cle, val in f.cases %}
-      <div class="case">
-        <div class="cle">{{ cle }}</div>
-        <div class="val">{{ val|safe }}</div>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 
   {% if f.texte %}<p class="presentation">{{ f.texte }}</p>{% endif %}
+
+  <div class="conditions">
+    {% for cle, val in f.cases %}
+    <div class="case">
+      <div class="cle">{{ cle }}</div>
+      <div class="val">{{ val|safe }}</div>
+    </div>
+    {% endfor %}
+  </div>
   {% endif %}
 
   {% for t in f.tables %}{{ tableau(t) }}{% endfor %}
@@ -109,5 +111,22 @@
       &middot; contact@agencescio.com</div>
   </div>
   {% endif %}
+
+  {% if f.fin_de_fiche %}
+  <div class="fin-de-fiche{% if not f.photo_pleine_page %} sans-photo{% endif %}">
+    {% if f.photo_pleine_page %}
+    <figure class="grande-photo"><img src="{{ f.photo_pleine_page }}"
+      style="object-position:{{ f.focal_pleine_page }}"></figure>
+    {% endif %}
+    <div class="fin-contact">
+      <div class="fin-nom">{{ f.nom }}</div>
+      {% if f.sous_titre %}<div class="fin-sous">{{ f.sous_titre }}</div>{% endif %}
+      <div class="fin-coords">Pour commander&#8239;: Carline 06&#8239;49&#8239;19&#8239;16&#8239;75
+        &middot; Laurent 06&#8239;80&#8239;88&#8239;07&#8239;55 &middot; contact@agencescio.com</div>
+    </div>
+  </div>
+  {% endif %}
+
+
 
 </section>

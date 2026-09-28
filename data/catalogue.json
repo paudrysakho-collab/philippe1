@@ -2325,17 +2325,7 @@
         "15,90"
        ],
        "source": "maquette (à contrôler sur image)"
-      }
-     ]
-    },
-    {
-     "type": "BT",
-     "titre": null,
-     "paliers": [
-      "dès 78 bt",
-      "dès 126 bt"
-     ],
-     "lignes": [
+      },
       {
        "appellation": "AOP Monthélie",
        "cuvee": "—",
@@ -4578,16 +4568,7 @@
         "12,80"
        ],
        "source": "maquette (à contrôler sur image)"
-      }
-     ]
-    },
-    {
-     "type": "BT",
-     "titre": null,
-     "paliers": [
-      "Prix unique"
-     ],
-     "lignes": [
+      },
       {
        "appellation": "AOP Moulis-en-Médoc",
        "cuvee": "L’Oratoire de Chasse-Spleen",
@@ -5890,18 +5871,7 @@
         "7,54"
        ],
        "source": "maquette (à contrôler sur image)"
-      }
-     ]
-    },
-    {
-     "type": "BT",
-     "titre": null,
-     "paliers": [
-      "dès 144 bt",
-      "dès 300 bt",
-      "dès 600 bt"
-     ],
-     "lignes": [
+      },
       {
        "appellation": "AOP Minervois",
        "cuvee": "Chant de Lumière",

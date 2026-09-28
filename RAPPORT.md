@@ -251,3 +251,42 @@ explicitement, et la règle est que le brief l'emporte : je les ai conservées. 
 voulez une voix plus singulière, votre cahier des charges cite lui-même des
 alternatives : **Cormorant Garamond ou Playfair Display** pour les titres, **IBM Plex
 Sans ou Source Sans 3** pour le texte. Le changement prend quelques minutes.
+
+---
+
+## 9. Passage en guide d'édition papier (3ᵉ passe)
+
+Suppression de toute logique de conteneur web. Le texte et les tableaux sont
+désormais posés directement sur le papier.
+
+| Règle | Application, mesurée dans le PDF |
+|---|---|
+| Aucun encadré, aucune bordure fermée | Barre Conditions ouverte, tenue par un filet or et de simples séparateurs. Encadré « sur demande » réduit à deux filets. Plus aucun fond blanc |
+| Aucun cadre autour des photos | Supprimés. Les images sont posées sur l'ivoire |
+| Bandeau visuel pleine largeur | **117 mm + 63 mm = 180 mm**, hauteur **50 mm**, soit 65 / 35 % |
+| Bouteilles entières, sans rognage | Packshots calés en `contain` : affichés **40 × 50 mm**, flacon entier du culot au bouchon, 168 à 227 dpi |
+| Tableau pleine largeur | **180,0 mm exactement** : colonnes mesurées à 48 · 39 · 16 · 15 · 13 mm, bloc Prix de 49 mm en parts égales |
+| Lignes ≥ 7 mm | Respecté. Une ligne à appellation longue monte à 11,6 mm, ce qui est voulu |
+| En-tête sobre souligné d'un filet or | Petites capitales lie-de-vin, filet `#C6A15B` de 0,7 pt. Plus d'aplat |
+| Zébrure | **Supprimée.** Sur un guide papier, les filets à 0,3 pt suffisent ; une trame une ligne sur deux ramenait le tableur |
+| Page 2 jamais vide | Composition de fin généralisée à **toute fiche longue**, pas seulement Exea |
+
+### Deux problèmes techniques résolus en chemin
+
+- **Les largeurs de colonnes ne tenaient pas.** Le moteur d'impression ne résout pas
+  `calc()` dans la largeur d'une colonne de tableau : les colonnes se redistribuaient
+  en silence et le tableau faisait 173 mm au lieu de 180. Les largeurs sont désormais
+  calculées en amont, et **vérifiées par mesure dans le PDF produit**.
+- **Les packshots gardaient un rectangle blanc.** Le moteur ne gère pas les modes de
+  fusion. `tools/detourer.py` remplace donc le fond blanc par l'ivoire de la page, avec
+  un bord progressif qui préserve les ombres du flacon.
+
+### Réserves
+
+- Le **Domaine du Colombier n'a aucune photo exploitable en grand** : la meilleure fait
+  464 px, soit 65 dpi à 180 mm. Sa page de suite est donc composée typographiquement
+  plutôt qu'avec un agrandissement flou.
+- Son **packshot est photographié sur fond sombre**, pas détouré à la source : il se lit
+  comme un bloc foncé. Un packshot sur fond neutre serait préférable.
+- La **photo de la Famille d'Exea est reprise en grand en page 2** (167 dpi), avec deux
+  cadrages différents pour que la reprise se lise comme un rappel voulu.

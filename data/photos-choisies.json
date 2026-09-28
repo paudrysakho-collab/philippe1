@@ -1,10 +1,26 @@
 {
-  "_note": "Choix vérifiés à l'œil. Les images viennent de la maquette 52 pages, de meilleure résolution que l'ancien tarif. Les ambiances y sont nativement en 3:2 et les packshots en 4:5 : le cadrage ne coupe donc rien. Le point focal est réglé photo par photo.",
-  "_couverture": "assets/photos/maquette/m01-x5-1200x800.png",
-  "3":  {"ambiance": "maquette/m08-x249-464x303.png",  "bouteilles": "maquette/m08-x250-359x448.png",
-         "logo": "maquette/m08-x251-113x113.png", "focal": "center 38%"},
-  "32": {"ambiance": "maquette/m40-x556-1182x788.png", "bouteilles": "maquette/m40-x557-340x425.png",
-         "logo": null, "focal": "center 52%"},
-  "40": {"ambiance": "maquette/m49-x637-640x427.png",  "bouteilles": "maquette/m49-x638-264x331.png",
-         "logo": "maquette/m49-x639-200x188.png", "focal": "center 50%"}
+ "_note": "Le bandeau visuel impose à l'ambiance un cadre 117 x 50 mm, soit 2,34:1, alors que les sources sont en 3:2. Le recadrage est donc panoramique : le point focal est réglé photo par photo pour qu'aucun sujet ne soit coupé. Les packshots, eux, sont posés sans rognage (calage contain).",
+ "_couverture": "assets/photos/maquette/m01-x5-1200x800.png",
+ "3": {
+  "ambiance": "maquette/m08-x249-464x303.png",
+  "bouteilles": "detoures/m08-x250-359x448.png",
+  "logo": "detoures/m08-x251-113x113.png",
+  "focal": "center 30%"
+ },
+ "32": {
+  "ambiance": "maquette/m40-x556-1182x788.png",
+  "bouteilles": "detoures/m40-x557-340x425.png",
+  "logo": null,
+  "focal": "center 62%",
+  "pleine_page": "maquette/m40-x556-1182x788.png",
+  "focal_pleine_page": "center 38%"
+ },
+ "40": {
+  "ambiance": "maquette/m49-x637-640x427.png",
+  "bouteilles": "detoures/m49-x638-264x331.png",
+  "logo": "detoures/m49-x639-200x188.png",
+  "focal": "center 46%"
+ },
+ "_note_fin": "Le Domaine du Colombier n'a aucune photo dépassant 464 px de large : à 180 mm elle tomberait à 65 dpi. Sa page de suite est donc composée typographiquement, sans image, plutôt qu'avec un agrandissement flou.",
+ "_note_detourage": "Les packshots et les logos sont détourés en amont par tools/detourer.py : leur fond blanc est remplacé par l'ivoire de la page, avec un bord progressif. Le moteur d'impression ne gère pas les modes de fusion, d'où ce traitement en amont."
 }

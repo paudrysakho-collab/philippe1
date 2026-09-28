@@ -9,6 +9,15 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TPL = os.path.join(RACINE, "src", "templates")
 
+# Largeurs de colonnes, figées une fois pour les 40 fiches (total 180 mm).
+# Elles sont calculées ici plutôt qu'en CSS : le moteur de rendu ne résout pas
+# calc() dans la largeur d'une colonne de tableau, et les colonnes se
+# redistribuaient silencieusement.
+COLONNES_MM = {"appellation": 48, "cuvee": 39, "couleur": 16,
+               "millesime": 15, "format": 13}
+BLOC_PRIX_MM = 49
+
+
 # Une teinte sourde par région, réservée à l'onglet de bord de page et à la puce
 # du sommaire. Jamais dans les tableaux, pour ne pas concurrencer le lie-de-vin.
 COULEURS_REGION = {
@@ -47,7 +56,11 @@ def prepare_table(t):
         lignes.append({**l, "prix_cellules": prix,
                        "classe_couleur": classe_couleur(l["couleur"])})
     return {**t, "paliers": paliers, "lignes": lignes,
-            "entete_prix": entete_prix(t), "sous_tableau": t["type"] == "BIB"}
+            "entete_prix": entete_prix(t), "sous_tableau": t["type"] == "BIB",
+            "colonnes_mm": COLONNES_MM,
+            # le bloc Prix garde une largeur totale constante, divisée en parts
+            # égales : c'est ce qui aligne les 40 fiches au millimètre
+            "largeur_palier_mm": round(BLOC_PRIX_MM / n, 3)}
 
 
 def prepare_fiche(f, folio, ordre_region):
@@ -85,8 +98,18 @@ def prepare_fiche(f, folio, ordre_region):
         "photo_ambiance": chemin(sel.get("ambiance")),
         "photo_bouteilles": chemin(sel.get("bouteilles")),
         "focal_ambiance": sel.get("focal", "center 45%"),
+        # Grande photo de fin : elle ne sert que si la fiche déborde sur une
+        # deuxième page, pour que celle-ci soit composée et non laissée vide.
+        # Une fiche longue porte une composition de fin : sa dernière page ne doit
+        # jamais rester vide aux trois quarts.
+        "fin_de_fiche": n_lignes > 12,
+        "photo_pleine_page": chemin(sel.get("pleine_page")),
+        "focal_pleine_page": sel.get("focal_pleine_page", "center 50%"),
         "logo": chemin(sel.get("logo")),
-        "encadre_demande": f["port"]["type"] == "inconnu",
+        # L'encadré « sur demande » remplace un tableau absent : il n'a pas lieu
+        # d'être quand la fiche porte déjà sa grille de prix. Une condition de port
+        # inconnue se lit dans la barre Conditions, pas dans un second encadré.
+        "encadre_demande": n_lignes == 0,
     }
 
 
