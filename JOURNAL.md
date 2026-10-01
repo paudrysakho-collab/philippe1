@@ -181,3 +181,50 @@ pleine page de la coupe.
 
 Deux PDF dans `dist/`, un contrôle qui passe au vert, et les questions encore ouvertes
 dans `QUESTIONS.md`.
+
+
+## Les photos des domaines
+
+**Demande :** deux images par domaine — une ronde (logo ou personne) et une bouteille.
+
+### Ce que j'ai fait
+
+**Trouver les sites.** Sonder 408 URL candidates construites à partir des noms, puis vérifier
+chaque réponse sur le titre de sa page d'accueil, puis compléter par recherche. **La
+vérification était indispensable** : `domaineducolombier.com` est un hôtel de la Drôme,
+`domainelys.fr` un château-hôtel de Loire-Atlantique, `papes.fr` un site sur la papauté.
+Attribuer leur photo à nos domaines aurait été une faute grave dans un document commercial.
+**29 sites retenus, 19 exploitables.**
+
+**Moissonner.** Chromium ne faisait pas confiance au certificat du proxy sortant
+(`ERR_CERT_AUTHORITY_INVALID`) et l'installation de l'autorité dans le magasin NSS n'a jamais
+abouti — elle a été arrêtée au bout de son délai. **Contourné en passant la collecte en curl**,
+qui lit le proxy sans problème : page d'accueil plus sept pages internes par site,
+images, `srcset` (plus grande variante annoncée), `og:image` et fonds CSS. ~700 images.
+
+**Choisir à l'œil.** Une planche de contact par domaine, regardée une par une. C'est là que
+se trient les photos de mariage, les visuels de promotion, les photos de banque d'images
+glissées dans un gabarit — et surtout **les images interdites par la loi Évin** : verres levés,
+scènes de dégustation, trinquages. Il y en avait sur presque tous les sites.
+
+### Essayé, raté, corrigé
+
+- **Les logos sortaient rognés.** Un logo ne se recadre pas : il entre en entier. Mode
+  « contenir » ajouté, sur une réserve de la couleur de son propre bord.
+- **Les bouteilles de blanc disparaissaient.** Un seuil sur l'écart au fond effaçait le corps
+  de la bouteille, presque aussi clair que le blanc derrière. Remplacé par un **remplissage
+  depuis les bords** : seul le fond *atteint depuis l'extérieur* est retiré, et la tolérance
+  se resserre automatiquement si le résultat garde trop peu de matière.
+- **Un logo PNG clair devenait invisible** une fois aplati sur du crème. L'aplatissement
+  choisit désormais son fond selon la clarté du logo.
+- **Deux images écartées après coup** : un portrait d'époque qui ressortait délavé (remplacé),
+  une bouteille de blanc sur blanc que le détourage mangeait quand même (retirée).
+
+### Le résultat
+
+**30 images sur 19 domaines**, dont **11 avec les deux images demandées**.
+Le rond est **cerclé d'un anneau du sol de sa région** : la photo entre dans le concept au lieu
+de s'y poser. La bouteille est **détourée**, sans cadre — aucun carré blanc sur le papier.
+Les 30 passent par **la même fonction de traitement**, pour qu'elles sortent d'une même main.
+
+Le catalogue passe de 68 à **72 pages**, toujours multiple de 4, tous contrôles au vert.

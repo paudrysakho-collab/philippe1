@@ -5,7 +5,8 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 
 ## Où en est le projet
 
-**Terminé.** Concept retenu : **« Sous nos pieds »**. 68 pages, 210 × 260 mm.
+**Terminé.** Concept retenu : **« Sous nos pieds »**. **72 pages**, 210 × 260 mm,
+avec 30 photographies sur 19 domaines.
 
 | Livrable | Où |
 |---|---|
@@ -40,6 +41,7 @@ npm run epreuve      # régénère epreuves/epreuve-tarifs.pdf
 npm run recadrages   # re-détecte les tableaux sur les rendus du PDF source
 npm run polices      # recopie les polices OFL depuis node_modules
 npm run concepts     # régénère les trois maquettes de l'étape 2
+npm run photos       # re-prépare les images (détourage, cadrage rond, traitement)
 ```
 
 `npm run build` sort en erreur si un contrôle échoue : il est utilisable en intégration continue.
@@ -72,12 +74,15 @@ sert de garde-fou contre une perte silencieuse de domaine.
 | 3 | Comment lire ce catalogue (la tranche, le bloc de prix, les pictos, les mentions, les paliers, le pied de page) |
 | 4 | **La coupe** — sommaire des dix régions |
 | 5 | **Les quatre alliances** — ce qui se panache entre domaines |
-| 6 – 61 | Les dix régions : une ouverture pleine page, puis ses domaines |
-| 62 – 64 | Index des vins par type, de A à Z |
-| 65 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
-| 66 | Les quarante domaines, de A à Z |
-| 67 | Planche : la coupe pleine page |
-| 68 | Contacts, lexique, mentions légales, crédits, message sanitaire |
+| 6 – 65 | Les dix régions : une ouverture pleine page, puis ses domaines |
+| 66 – 68 | Index des vins par type, de A à Z |
+| 69 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
+| 70 | Les quarante domaines, de A à Z |
+| 71 | Planche : la coupe pleine page |
+| 72 | Contacts, lexique, mentions légales, crédits, message sanitaire |
+
+*(La pagination est recalculée à chaque fabrication ; `build/plan.json` donne la page de
+chaque domaine.)*
 
 ## Arborescence
 
@@ -87,8 +92,8 @@ reference/   catalogue concurrent (inspiration design, lecture seule)
 docs/        pièges du PDF, notes sur le concurrent, présentation des compétences
 data/        catalogue.json, fiches/, corrections.md, pages/ (rendus 200 dpi), recadrages/
 concepts/    les trois pistes (HTML, PDF, PNG)
-src/         concepts/, styles/, images/, fonts/ (polices OFL embarquées)
-scripts/     assemblage, vérifications, recadrages, épreuve, maquettes
+src/         concepts/, styles/, gabarits/, images/, fonts/ (polices OFL), photos/
+scripts/     assemblage, vérifications, recadrages, épreuve, maquettes, photos
 epreuves/    épreuve de contrôle des tarifs
 dist/        PDF finaux (à venir, étape 6)
 archive-v1/  travail d'une session précédente, conduite sous un autre cahier des charges

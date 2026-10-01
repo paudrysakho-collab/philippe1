@@ -10,7 +10,9 @@
     "concepts": "node scripts/concepts.mjs",
     "catalogue": "node scripts/construire.mjs",
     "controle": "node scripts/controler.mjs",
-    "build": "npm run donnees && npm run catalogue && npm run controle"
+    "build": "npm run donnees && npm run catalogue && npm run controle",
+    "photos": "python3 scripts/preparer-photos.py",
+    "moisson": "python3 scripts/moissonner.py"
   },
   "dependencies": {
     "playwright": "1.56.1"

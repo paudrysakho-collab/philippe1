@@ -100,7 +100,7 @@ Je ne les inventerai pas. À vous de dire s'il faut les ajouter, et avec quelles
   « Agence SCIO Vins et spirits 843 151 663 RCS Nantes » ;
 - **nouveautés de la saison** : aucune cuvée n'est signalée comme nouvelle.
 
-## Photos — ✅ CADRE FIXÉ
+## Photos — ✅ POSÉES, DEUX DEMANDES À FAIRE
 
 L'agence a répondu « un peu de tout » : je combine les trois sources autorisées par le brief
 — photos des sites officiels des domaines, photos libres de droits pour les sujets génériques,
