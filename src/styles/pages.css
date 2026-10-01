@@ -15,20 +15,24 @@
 }
 
 /* ——————————————————————————————————————————————— couverture ——— */
-.couverture .coupe { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 148mm; }
-.logo-couv { position: absolute; left: var(--marge-int); top: 17mm; width: 62mm; }
+.couverture .coupe {
+  position: absolute; left: 0; right: 0; bottom: 0; width: 100%;
+  height: calc(148mm + var(--fp));
+}
+.logo-couv { position: absolute; left: calc(var(--marge-int) + var(--fp)); top: calc(17mm + var(--fp)); width: 62mm; }
 .titre-couv {
-  position: absolute; left: var(--marge-int); top: 44mm; width: 160mm;
+  position: absolute; left: calc(var(--marge-int) + var(--fp)); top: calc(44mm + var(--fp)); width: 160mm;
   font-family: var(--titre); font-size: 46pt; line-height: .92;
   color: var(--silex); letter-spacing: -.012em;
 }
 .titre-couv em { font-style: normal; color: var(--violet); }
 .sous-couv {
-  position: absolute; left: var(--marge-int); top: 96mm; width: 120mm;
+  position: absolute; left: calc(var(--marge-int) + var(--fp)); top: calc(96mm + var(--fp)); width: 120mm;
   font-size: 10.5pt; line-height: 1.5; color: var(--silex); opacity: .85;
 }
 .pied-couv {
-  position: absolute; left: 0; bottom: 20mm; padding: 5mm 7mm 4mm var(--marge-int);
+  position: absolute; left: 0; bottom: calc(20mm + var(--fp));
+  padding: 5mm 7mm 4mm calc(var(--marge-int) + var(--fp));
   background: var(--tuffeau); border-radius: 0 3mm 3mm 0;
 }
 .pied-couv .cible {
@@ -39,7 +43,7 @@
   font-family: var(--titre); font-size: 34pt; line-height: 1; color: var(--violet); display: block;
 }
 .sanitaire-couv {
-  left: var(--marge-int); bottom: 8mm; color: var(--craie); opacity: .9;
+  left: calc(var(--marge-int) + var(--fp)); bottom: calc(8mm + var(--fp)); color: var(--craie); opacity: .9;
 }
 
 /* ——————————————————————————————————————————————— l'agence ——— */
@@ -176,10 +180,10 @@
 .page.recto .ouv-haut { justify-content: flex-start; }   /* la carotte est à droite */
 .page.verso .ouv-haut { justify-content: flex-end; }     /* la carotte est à gauche */
 .ouv-carotte {
-  position: absolute; top: var(--marge-haut); right: var(--marge-ext); width: 46mm; height: 118mm;
+  position: absolute; top: calc(var(--marge-haut) + var(--fp)); right: calc(var(--marge-ext) + var(--fp)); width: 46mm; height: 118mm;
   border-radius: 23mm; overflow: hidden; box-shadow: 0 0 0 .7mm rgba(251,248,241,.35);
 }
-.page.verso .ouv-carotte { right: auto; left: var(--marge-ext); }
+.page.verso .ouv-carotte { right: auto; left: calc(var(--marge-ext) + var(--fp)); }
 .ouv-carotte svg { width: 100%; height: 100%; display: block; }
 .ouv-types {
   display: flex; flex-wrap: wrap; gap: 2mm 5mm; margin-bottom: 6mm;

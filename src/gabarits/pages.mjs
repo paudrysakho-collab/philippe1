@@ -14,7 +14,14 @@ export function page({ corps, region = null, folio = null, classe = '', sanitair
   return { region, folio, classe, corps, sanitaire };
 }
 
-export function rendrePage(p, numero) {
+/** Quatre équerres dans le fond perdu : l'imprimeur coupe dessus. */
+const TRAITS = `<div class="traits">
+  <i class="h hg t"></i><i class="v vh g"></i>
+  <i class="h hd t"></i><i class="v vh d"></i>
+  <i class="h hg b"></i><i class="v vb g"></i>
+  <i class="h hd b"></i><i class="v vb d"></i></div>`;
+
+export function rendrePage(p, numero, { traits = false } = {}) {
   const verso = numero % 2 === 0;
   const cls = ['page', verso ? 'verso' : 'recto', p.classe].filter(Boolean).join(' ');
   const bande = p.region
@@ -22,20 +29,17 @@ export function rendrePage(p, numero) {
     : '';
   const folio = p.folio === false ? '' : `<div class="folio">${numero}</div>`;
   const san = p.sanitaire ? `<div class="sanitaire">${esc(SANITAIRE)}</div>` : '';
-  return `<section class="${cls}" id="p${numero}" data-page="${numero}">${bande}${p.corps}${folio}${san}</section>`;
+  return `<section class="${cls}" id="p${numero}" data-page="${numero}">${bande}${p.corps}${folio}${san}${traits ? TRAITS : ''}</section>`;
 }
 
 export function document({ pages, ecran }) {
-  const corps = pages.map((p, i) => rendrePage(p, i + 1)).join('\n');
+  const corps = pages.map((p, i) => rendrePage(p, i + 1, { traits: !ecran })).join('\n');
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <title>Agence SCIO — Sous nos pieds — Tarifs cavistes Vendée (85) 2026</title>
 <link rel="stylesheet" href="../src/styles/systeme.css">
 <link rel="stylesheet" href="../src/styles/pages.css">
-<style>:root { --fond-perdu: ${ecran ? '0mm' : '3mm'}; }
-@page { size: ${ecran ? '210mm 260mm' : '216mm 266mm'}; margin: 0; }
-.page { ${ecran ? '' : 'margin: 3mm; box-shadow: 0 0 0 .2mm rgba(0,0,0,.25);'} }
-${ecran ? '' : '.traits-coupe { display: block; }'}
-</style></head><body class="${ecran ? 'ecran' : 'imprimeur'}">
+<style>:root { --fp: ${ecran ? '0mm' : '3mm'}; }</style>
+</head><body class="${ecran ? 'ecran' : 'imprimeur'}">
 ${defsTrames()}
 ${corps}
 </body></html>`;

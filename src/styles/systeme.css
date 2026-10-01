@@ -25,7 +25,7 @@
   /* ——— Page ——— */
   --page-l: 210mm;
   --page-h: 260mm;
-  --fond-perdu: 3mm;
+  --fp: 0mm;                 /* fond perdu : 0 à l'écran, 3 mm pour l'imprimeur */
   --marge-haut: 15mm;
   --marge-bas: 13mm;
   --marge-int: 17mm;         /* côté reliure */
@@ -60,14 +60,16 @@ a { color: inherit; text-decoration: none; }
    LA PAGE
    ========================================================================= */
 @page {
-  size: var(--page-l) var(--page-h);
+  size: calc(var(--page-l) + 2 * var(--fp)) calc(var(--page-h) + 2 * var(--fp));
   margin: 0;
 }
 
+/* La page porte le fond perdu : tout ce qui est « à fond perdu » (inset: 0) déborde
+   donc réellement de 3 mm au-delà du trait de coupe, comme l'imprimeur l'attend. */
 .page {
   position: relative;
-  width: var(--page-l);
-  height: var(--page-h);
+  width: calc(var(--page-l) + 2 * var(--fp));
+  height: calc(var(--page-h) + 2 * var(--fp));
   overflow: hidden;
   background: var(--tuffeau);
   break-after: page;
@@ -78,45 +80,49 @@ a { color: inherit; text-decoration: none; }
 /* Le contenu vit dans le cadre : la carotte occupe la tranche, côté extérieur. */
 .cadre {
   position: absolute;
-  top: var(--marge-haut);
-  bottom: var(--marge-bas);
-  left: var(--marge-int);
-  right: calc(var(--marge-ext) + var(--carotte-l));
+  top: calc(var(--marge-haut) + var(--fp));
+  bottom: calc(var(--marge-bas) + var(--fp));
+  left: calc(var(--marge-int) + var(--fp));
+  right: calc(var(--marge-ext) + var(--carotte-l) + var(--fp));
 }
 .page.verso .cadre {
-  left: calc(var(--marge-ext) + var(--carotte-l));
-  right: var(--marge-int);
+  left: calc(var(--marge-ext) + var(--carotte-l) + var(--fp));
+  right: calc(var(--marge-int) + var(--fp));
 }
 
 /* ——— La carotte : bande de tranche indexée sur les dix régions ——— */
-.carotte { position: absolute; top: 0; bottom: 0; right: 0; width: var(--carotte-l); }
+.carotte {
+  position: absolute; top: 0; bottom: 0; right: 0;
+  width: calc(var(--carotte-l) + var(--fp));   /* la bande part à fond perdu */
+}
 .page.verso .carotte { right: auto; left: 0; }
 .carotte svg { width: 100%; height: 100%; display: block; }
 .carotte-nom {
-  position: absolute; top: 50%; right: 2.1mm;
+  position: absolute; top: 50%; right: calc(2.1mm + var(--fp));
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
   font: 600 6.6pt var(--technique);
   letter-spacing: var(--interlettre); text-transform: uppercase;
   color: var(--craie);
 }
-.page.verso .carotte-nom { right: auto; left: 2.1mm; transform: translateY(-50%); }
+.page.verso .carotte-nom { right: auto; left: calc(2.1mm + var(--fp)); transform: translateY(-50%); }
 
 /* ——— Folio ——— */
 .folio {
-  position: absolute; bottom: 6.5mm; right: calc(var(--marge-ext) + var(--carotte-l));
+  position: absolute; bottom: calc(6.5mm + var(--fp));
+  right: calc(var(--marge-ext) + var(--carotte-l) + var(--fp));
   font: 500 7.5pt var(--technique); color: var(--silex); opacity: .72;
   font-variant-numeric: tabular-nums;
 }
-.page.verso .folio { right: auto; left: calc(var(--marge-ext) + var(--carotte-l)); }
+.page.verso .folio { right: auto; left: calc(var(--marge-ext) + var(--carotte-l) + var(--fp)); }
 
 /* ——— Message sanitaire : présent sur chaque page ——— */
 .sanitaire {
-  position: absolute; bottom: 6.5mm; left: var(--marge-int);
+  position: absolute; bottom: calc(6.5mm + var(--fp)); left: calc(var(--marge-int) + var(--fp));
   font: 400 5.6pt var(--technique); letter-spacing: .03em;
   color: var(--silex); opacity: .55; text-transform: uppercase;
 }
-.page.verso .sanitaire { left: auto; right: var(--marge-int); text-align: right; }
+.page.verso .sanitaire { left: auto; right: calc(var(--marge-int) + var(--fp)); text-align: right; }
 
 /* ============================================================================
    FICHE DOMAINE
@@ -257,3 +263,23 @@ td { padding: 1.2mm 1.3mm; vertical-align: middle; }
 }
 .respire-sol { position: relative; width: 100%; flex: 1; overflow: hidden; border-radius: 1.5mm; }
 .respire-sol svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+
+/* ============================================================================
+   TRAITS DE COUPE — version imprimeur seulement.
+   Quatre équerres posées dans le fond perdu, à 1 mm du format fini.
+   ========================================================================= */
+.traits { position: absolute; inset: 0; pointer-events: none; }
+.traits i {
+  position: absolute; background: #000; display: block;
+}
+.traits .h { width: calc(var(--fp) - 1mm); height: .1mm; }
+.traits .v { width: .1mm; height: calc(var(--fp) - 1mm); }
+.traits .hg { left: 0; }
+.traits .hd { right: 0; }
+.traits .vh { top: 0; }
+.traits .vb { bottom: 0; }
+.traits .t { top: var(--fp); }
+.traits .b { bottom: var(--fp); }
+.traits .g { left: var(--fp); }
+.traits .d { right: var(--fp); }

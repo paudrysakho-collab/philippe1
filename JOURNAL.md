@@ -101,7 +101,83 @@ Gorce** pour les trois, avec son vrai texte, ses 11 lignes et ses 3 paliers. Ill
 dessinées en SVG dans le dépôt, génératives à graine fixe. Polices OFL copiées dans
 `src/fonts/`, **toutes incorporées** (vérifié à `pdffonts`).
 
-## À suivre
+## Point d'arrêt — les arbitrages de l'agence
 
-Point d'arrêt : en attente du choix de concept.
-Étapes 3 à 6 (système, production, contrôle, livraison) démarrent après.
+| Question | Réponse |
+|---|---|
+| Concept | **1 — Sous nos pieds** |
+| Excel et maquette de la session précédente | **à ignorer**, le PDF fait seul foi |
+| Tableau de champagnes du Colombier | **retiré** de la fiche n°3 (copier-coller de la n°40) |
+| Photos | « un peu de tout » : sites des domaines, libres de droits, et fichiers de l'agence |
+
+## Étape 3 — Le système
+
+`src/styles/systeme.css` tient les variables (sept couleurs de terre plus le violet et l'or
+de l'agence, trois typographies, la grille, le fond perdu) ; `src/styles/pages.css` tient les
+gabarits ; `src/gabarits/pieces.mjs` tient les pièces dessinées.
+
+**Décision tranchée : comment cohabitent le rêve et les prix.**
+Dans `CONCEPTS.md` je recommandais un **cahier de tarifs détachable**. **Je ne l'ai pas fait**,
+et voici pourquoi. Le brief impose qu'un caviste trouve en cinq secondes le domaine, le vin,
+le prix et le palier. Un cahier séparé l'oblige à feuilleter entre l'histoire et le tarif :
+il gagne une réimpression par an et perd l'essentiel. La maquette que vous avez validée
+montrait d'ailleurs le texte et le tableau sur la même page.
+
+La réponse retenue sépare donc **par zone, pas par page** :
+
+- **le rêve occupe les ouvertures de région** (pleine page, à fond perdu, le sol de la région
+  en carotte verticale) **et le haut de chaque fiche** (la coupe du sol du domaine, son texte) ;
+- **le prix occupe une zone basse continue**, toujours de la même largeur (bloc de 52 mm)
+  et toujours au même endroit sur les quarante fiches.
+
+Ce qui change chaque saison est donc **un seul composant, alimenté par un seul fichier**.
+Et le cahier détachable reste possible sans rien redessiner : il suffirait de changer
+l'assemblage dans `scripts/construire.mjs`, pas la maquette.
+
+## Étape 4 — La production
+
+**La pagination est mesurée, pas estimée.** Une première passe charge toutes les fiches dans
+Chromium et relève la hauteur réelle de chaque en-tête, de chaque ligne de tableau et de
+chaque pied. La découpe se fait ensuite sur ces millimètres.
+
+**Corrigé en route, et c'était un vrai bug.** Les premiers blocs étaient mesurés 11 mm trop
+courts : les marges des enfants *sortaient* de la boîte mesurée (fusion des marges). Résultat,
+l'encart de panachage de la Maison Goichot chevauchait la dernière ligne de son tableau.
+`display: flow-root` sur les témoins de mesure a réglé le problème. Une marge de sécurité de
+2 mm a été ajoutée : on ne remplit jamais au millimètre.
+
+**Équilibrage.** Une fiche qui tient sur deux pages rabote son budget page par page jusqu'à ce
+que les deux soient également remplies. Le Domaine Boehler passait de 11 + 4 lignes à 8 + 7.
+
+**Règles de coupe.** Jamais une ligne seule sous un en-tête de tableau ; jamais une dernière
+ligne orpheline sur la page suivante.
+
+## Étape 5 — Le contrôle
+
+`scripts/controler.mjs` fait ce qu'une machine fait mieux que l'œil : débordements hors cadre
+mesurés dans Chromium, planchers de corps, pages multiples de 4, format et fond perdu,
+polices incorporées, poids des fichiers, et **les 715 prix du JSON retrouvés un par un dans
+le texte du PDF**.
+
+**La découverte de l'étape.** Mon propre catalogue reproduisait le défaut que je reprochais au
+PDF source : l'**interlettrage cassait la couche texte**. « BORDEAUX » sortait en
+« BORD E AU X », introuvable au Ctrl+F. J'ai mesuré le seuil — à 8 pt, au-delà de **0,03 em**,
+Chromium insère des espaces parasites — et bridé tout le catalogue à cette valeur, désormais
+tenue par une variable (`--interlettre`) et vérifiée automatiquement.
+
+**Ce que le regard a trouvé, et que la machine ne voyait pas.** La planche de contact des
+68 pages a montré que le bandeau de sol, posé en bas des fiches courtes, **était devenu du
+papier peint** : le même dégradé de quatre couleurs sur presque toutes les pages. Il est
+désormais **monochrome, teinté par la région** — bleu en Loire, ocre en Bourgogne, rouge en
+Bordeaux — plafonné à 40 mm sur les pages denses, et la craie de Champagne, trop claire pour
+teinter un fond crème, bascule sur le silex.
+
+**Les trois pages de bourrage** (pour atteindre un multiple de 4) sont devenues utiles :
+*les produits à part* (bag-in-box, sans alcool, jus de cépages, bières, armagnacs et ratafias,
+que le brief veut bien visibles), *l'index des quarante domaines de A à Z*, et une planche
+pleine page de la coupe.
+
+## Étape 6 — La livraison
+
+Deux PDF dans `dist/`, un contrôle qui passe au vert, et les questions encore ouvertes
+dans `QUESTIONS.md`.
