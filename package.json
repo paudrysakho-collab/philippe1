@@ -4,19 +4,26 @@
   "type": "module",
   "scripts": {
     "donnees": "python3 scripts/assembler.py && scripts/verifier-donnees",
+    "recadrages": "python3 scripts/recadrer-tableaux.py",
     "epreuve": "node scripts/epreuve.mjs",
-    "build": "npm run donnees && npm run epreuve"
+    "polices": "node scripts/polices.mjs",
+    "concepts": "node scripts/concepts.mjs",
+    "catalogue": "node scripts/construire.mjs",
+    "controle": "node scripts/controler.mjs",
+    "build": "npm run donnees && npm run catalogue && npm run controle"
   },
   "dependencies": {
-    "@fontsource/archivo": "^5.3.0",
-    "@fontsource/bricolage-grotesque": "^5.3.0",
-    "@fontsource/faustina": "^5.3.0",
-    "@fontsource/fraunces": "^5.3.0",
-    "@fontsource/hanken-grotesk": "^5.3.0",
-    "@fontsource/ibm-plex-sans": "^5.3.0",
-    "@fontsource/literata": "^5.3.0",
-    "@fontsource/spectral": "^5.3.0",
-    "@fontsource/young-serif": "^5.3.0",
-    "playwright": "^1.56.1"
+    "playwright": "1.56.1"
+  },
+  "devDependencies": {
+    "@fontsource/archivo": "^5",
+    "@fontsource/bricolage-grotesque": "^5",
+    "@fontsource/faustina": "^5",
+    "@fontsource/fraunces": "^5",
+    "@fontsource/hanken-grotesk": "^5",
+    "@fontsource/ibm-plex-sans": "^5",
+    "@fontsource/literata": "^5",
+    "@fontsource/spectral": "^5",
+    "@fontsource/young-serif": "^5"
   }
 }
