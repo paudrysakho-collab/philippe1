@@ -1,0 +1,94 @@
+{
+  "_note": "Deux images par domaine quand le site officiel en fournit : une ronde (portrait du vigneron, logo du domaine ou lieu) et une bouteille. Un domaine absent n'avait pas d'image exploitable sur un site officiel vérifié : sa fiche garde son dessin de sol. Rien n'est inventé, rien n'est pris ailleurs.",
+  "2": {
+    "rond": "061",
+    "rond_quoi": "vendanges dans les vignes du domaine"
+  },
+  "5": {
+    "rond": "004",
+    "rond_quoi": "les deux fondateurs du chai",
+    "bouteille": "011"
+  },
+  "7": {
+    "rond": "030",
+    "rond_quoi": "vinification en cuverie",
+    "bouteille": "073"
+  },
+  "9": {
+    "rond": "089",
+    "rond_quoi": "portrait des vignerons",
+    "bouteille": "014"
+  },
+  "15": {
+    "rond": "012",
+    "rond_quoi": "portrait du vigneron"
+  },
+  "20": {
+    "rond": "048",
+    "rond_quoi": "portrait de la famille",
+    "bouteille": "062"
+  },
+  "21": {
+    "rond": "013",
+    "rond_quoi": "mise en bouteille au domaine"
+  },
+  "23": {
+    "rond": "018",
+    "rond_quoi": "logo du domaine",
+    "bouteille": "040",
+    "mode": "contenir"
+  },
+  "24": {
+    "rond": "035",
+    "rond_quoi": "portrait du vigneron dans ses vignes",
+    "bouteille": "010"
+  },
+  "25": {
+    "rond": "008",
+    "rond_quoi": "portrait de famille d'époque",
+    "bouteille": "035"
+  },
+  "26": {
+    "rond": "017",
+    "rond_quoi": "portrait des vignerons",
+    "bouteille": "013"
+  },
+  "28": {
+    "rond": "006",
+    "rond_quoi": "vendanges au domaine",
+    "bouteille": "010"
+  },
+  "29": {
+    "rond": "057",
+    "rond_quoi": "portrait des vignerons"
+  },
+  "31": {
+    "rond": "069",
+    "rond_quoi": "borie en pierre sèche du domaine"
+  },
+  "32": {
+    "rond": "007",
+    "rond_quoi": "logo de la maison",
+    "bouteille": "021",
+    "mode": "contenir"
+  },
+  "33": {
+    "rond": "007",
+    "rond_quoi": "logo de la maison",
+    "mode": "contenir"
+  },
+  "34": {
+    "rond": "002",
+    "rond_quoi": "grappes à la vigne",
+    "bouteille": "023"
+  },
+  "39": {
+    "rond": "001",
+    "rond_quoi": "logo de la maison",
+    "mode": "contenir"
+  },
+  "40": {
+    "rond": "000",
+    "rond_quoi": "la maison de champagne"
+  }
+}

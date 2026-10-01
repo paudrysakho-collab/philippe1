@@ -1,6 +1,6 @@
 /* Les gabarits de page du catalogue « Sous nos pieds ». */
 import {
-  catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine,
+  catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
   NOM_FAMILLE, effectifs,
 } from './pieces.mjs';
@@ -280,7 +280,26 @@ export function hautDomaine(d) {
     ? `<div class="texte-dom"><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
     : `<div class="texte-dom sans-texte">Le tarif de l'Agence SCIO ne donne pas de présentation
          pour ce domaine. Nous n'en inventons pas.</div>`;
-  return `<div class="haut-dom">${carotteRonde(d)}${texte}</div>`;
+  return `<div class="haut-dom">${vignetteDomaine(d)}${texte}${bouteilleDomaine(d)}</div>`;
+}
+
+/** Le rond du domaine : sa photo cerclée d'un anneau du sol de sa région, ou le sol seul. */
+export function vignetteDomaine(d) {
+  const ph = photoDe(d, 'rond');
+  if (!ph) return carotteRonde(d);
+  const s = STRATES[d.region];
+  return `<div class="rond-photo">
+    <div class="rond-anneau trame trame-${s.t}" style="--strate:${s.hex}"></div>
+    <img src="../${esc(ph.fichier)}" alt="${esc(ph.sujet)} — ${esc(d.nom)}">
+  </div>`;
+}
+
+/** La bouteille du domaine, détourée : aucun carré blanc posé sur le papier. */
+export function bouteilleDomaine(d) {
+  const ph = photoDe(d, 'bouteille');
+  if (!ph) return '';
+  return `<div class="bouteille"><img src="../${esc(ph.fichier)}"
+    alt="Une bouteille du domaine ${esc(d.nom)}"></div>`;
 }
 
 /** Quand une fiche courte laisse un vide, on y pose le sol de sa région, en coupe. */

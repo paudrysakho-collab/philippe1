@@ -1,0 +1,479 @@
+[
+ {
+  "numero": 2,
+  "url": "https://www.domainedelabarbiniere.com/",
+  "titre": "Le Domaine de La Barbinière - AOC Fiefs Vendéens Chantonnay",
+  "description": "Domaine de la Barbinière - AOC Fiefs Vendéens Chantonnay - Famille Orion, vignerons-récoltants en Vendée. Domaine familial de 30 hectares dans le Bocage Vendéen",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 3,
+  "url": "https://colombier.com/",
+  "titre": "Packaging and paper solutions - Colombier",
+  "description": "Our vision is to produce sustainable packaging materials that are fully recyclable and spare resources and make single-use plastic redundant.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 3,
+  "url": "https://domaine-colombier.com/fr/",
+  "titre": "→ Domaine du Colombier Malataverne · Hôtel Restaurant Drôme",
+  "description": "SITE OFFICIEL | Domaine du Colombier à Malataverne ✓ Hôtel-Restaurant dans la Drôme ✓ Parking Privé ✓ Piscine Chauffée ✓ Réservez votre séjour au Meilleur Tarif",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 3,
+  "url": "https://domaineducolombier.com/",
+  "titre": "Accueil - Domaine du Colombier",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 3,
+  "url": "https://www.sandaya.fr/nos-campings/domaine-du-colombier",
+  "titre": "Camping Domaine du Colombier | 5 étoiles | Fréjus, Var (PACA)",
+  "description": "Envie de mer ? Réservez votre séjour au camping Domaine du Colombier 5★ à Fréjus, sur la Côte d’Azur !",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 4,
+  "url": "https://www.noels.com/",
+  "titre": "Noel's Mercedes Benz Longblock Engines",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 4,
+  "url": "https://www.noels.fr/",
+  "titre": "Dovendi - Domain for sale",
+  "description": "This domain is available for sale. Check out price, information and more on Dovendi.com",
+  "nom_trouve": false,
+  "vocabulaire_vin": true,
+  "verdict": "vin mais nom absent"
+ },
+ {
+  "numero": 5,
+  "url": "https://chai-berteaud-manceau.com/",
+  "titre": "Chai Berteaud Manceau - Chai Berteaud Manceau - Créateurs de vins contemporains",
+  "description": "Berteaud Manceau - 1er vinificateur à la Roche-sur-Yon en Vendée. Visite de cave pour particuliers et entreprises. Dégustation de vins locaux et éthiques.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 5,
+  "url": "https://www.chai-berteaud-manceau.fr/",
+  "titre": "Index of /",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 7,
+  "url": "https://www.divinnolow.com/",
+  "titre": "DIVIN : All the excellence of Sauvignon Blanc in an instant...",
+  "description": "DIVIN : It's divinely good ! DIVIN : a range of alcohol-free Seltzer and Sauvignon Blanc to accompany you everywhere, all day long...",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 7,
+  "url": "https://www.divinnolow.fr/",
+  "titre": "DIVIN : Toute l’excellence du Sauvignon blanc en un instant…",
+  "description": "DIVIN : C’est divinement bon ! DIVIN : c'est une gamme de Pinot noir, Chenin et Sauvignon Blanc sans alcool pour vous accompagner partout, toute la journée...",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 8,
+  "url": "https://www.domaine-boehler.com/",
+  "titre": "Domaine Boehler, Vigneron independant",
+  "description": "Vignerons indépendants à Molsheim, la cité Bugatti située à 15 km de Strasbourg, la famille Boehler développe son savoir-faire en produisant des vins blancs et ",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 8,
+  "url": "https://boehler.com/",
+  "titre": "www.boehler.com – Breitband | Kommunikation | Consulting",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 8,
+  "url": "https://www.boehler.fr/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 9,
+  "url": "https://nugues.fr/",
+  "titre": "les sites de Régis NUGUES - Les sites gérés par Régis NUGUES",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 9,
+  "url": "https://www.domainedesnugues.com/",
+  "titre": "Domaine des Nugues",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 9,
+  "url": "https://www.nugues.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 13,
+  "url": "https://www.cray.fr/",
+  "titre": "Dovendi - Domain for sale",
+  "description": "This domain is available for sale. Check out price, information and more on Dovendi.com",
+  "nom_trouve": false,
+  "vocabulaire_vin": true,
+  "verdict": "vin mais nom absent"
+ },
+ {
+  "numero": 15,
+  "url": "https://www.domainedesvercheres.com/",
+  "titre": "Domaine Des Verchères | Vin de Bourgogne – Mâcon – Vente & Dégustation",
+  "description": "Découvrez le Domaine des Verchères en Bourgogne : vins certifiés HVE, savoir-faire familial, dégustation et vente au caveau.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 16,
+  "url": "https://www.papes.fr/",
+  "titre": "Origine, rôle et histoire des papes",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 16,
+  "url": "https://www.papes.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 17,
+  "url": "https://www.coyeux.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 17,
+  "url": "https://www.domainedecoyeux.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 18,
+  "url": "https://domainedumoulinblanc.fr/",
+  "titre": "Domaine du Moulin Blanc | Votre lieu d'exception",
+  "description": "Niché au cœur d'un parc d'un hectare, le Domaine du Moulin Blanc est un lieu de mariage et de réception chargé d'histoire et de poésie.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 18,
+  "url": "https://www.domainemoulinblanc.fr/",
+  "titre": "Parcelles à vendre en PRL — Gironde, 35 min de Bordeaux",
+  "description": "Devenez propriétaire d'une parcelle au Domaine des Lacs du Moulin Blanc, PRL à Saint-Savin en Gironde. Parcelles dès 36 500 €, ouvert toute l'année.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 18,
+  "url": "https://moulin-blanc.com/",
+  "titre": "Moulin Blanc Elite Dating Luxury Companions",
+  "description": "Moulin Blanc Elite Dating Luxury Companions is your key to Europe and worldwide access to exclusive elite models for dates, luxury top class female companions ,",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 20,
+  "url": "https://domainedespasquiers.fr/",
+  "titre": "Domaine des Pasquiers | Vignoble de la Vallée du Rhône",
+  "description": "Domaine des Pasquiers : C’est au cœur des Côtes du Rhône que la famille Lambert se consacre à la vigne depuis 4 générations.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 21,
+  "url": "https://domaine-trichon.fr/",
+  "titre": "Domaine de la Trichon le blogue du vin et de la gastronomie",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 21,
+  "url": "https://domainetrichon.fr/",
+  "titre": "Vignoble Belley - Vins de Bugey Bio AOC | Domaine TRICHON",
+  "description": "Le Domaine Trichon, gîte vigneron à Belley, vous accueille dans un cadre naturel et calme pour passer de paisibles moments de détente en famille ou entre amis.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 21,
+  "url": "https://trichon.fr/en-gb",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 21,
+  "url": "https://www.trichon.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 23,
+  "url": "https://www.domaine-hautmarin.com/",
+  "titre": "Domaine Haut Marin – Vins et armagnac",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 24,
+  "url": "https://www.fabiencastaing.com/",
+  "titre": "Fabien Castaing - Fabien Castaing",
+  "description": "Vignobles Fabien Castaing : L'Esprit Sud-Ouest en Bouteille. Du Domaine de Moulin-Pouzy au Château Les Mailleries, explorez une collection de vins, bulles et…",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 25,
+  "url": "https://lapassiondesterroirs.com/",
+  "titre": "La Passion des Terroirs, négociant en vins de Bordeaux",
+  "description": "La Passion des Terroirs : Maison de négoce familiale bordelaise depuis 1993 est spécialisé dans la sélection et la distribution des grands vins de Bordeaux.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 25,
+  "url": "https://www.passion-terroirs.com/",
+  "titre": "Passion de nos terroirs - 1ER RENDEZ-VOUS D’AFFAIRES DES PROFESSIONNELS DES CIRCUITS ET PRODUITS ALIMENTAIRES DE NOS TERRITOIRES",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 26,
+  "url": "https://www.chateaulagorce.com/",
+  "titre": "Château La Gorce",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 26,
+  "url": "https://gorce.com/",
+  "titre": "GORCE.COM MAY BE AVAILABLE!",
+  "description": "Premium domains like gorce.com can help to achieve instant brand recognition, significantly lower marketing expenses, maximise brand trust, and accelerate value",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 26,
+  "url": "https://www.chateaulagorce.fr/",
+  "titre": "Site en construction",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 26,
+  "url": "https://www.gorce.fr/",
+  "titre": "Elagage, abattage, débroussaillage à Villeneuve 34 | G.Gorce",
+  "description": "Spécialiste de l",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 27,
+  "url": "https://www.chateaufalfas.com/index.php/fr/",
+  "titre": "Chateau Falfas",
+  "description": "Château Falfas, vin des Cotes de Bourg cultivé en biodynamie",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 27,
+  "url": "https://www.arbre-blanc.fr/",
+  "titre": "Arbre Blanc · Le bon, le vrai, le naturel",
+  "description": "Carnet éditorial bien-vivre méditerranéen. Producteurs, vins natures, recettes du sud, soins simples et art de vivre, par Pierre Marchetti.",
+  "nom_trouve": false,
+  "vocabulaire_vin": true,
+  "verdict": "vin mais nom absent"
+ },
+ {
+  "numero": 29,
+  "url": "https://balac.fr/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 29,
+  "url": "https://chateaubalac.com/",
+  "titre": "Château Balac – Cru Bourgeois Haut-Médoc & Œnotourisme​",
+  "description": "Découvrez le Château Balac, cru bourgeois du Haut-Médoc. Visites, dégustations et vente directe de nos vins à la propriété.​",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 31,
+  "url": "https://blacailloux.fr/",
+  "titre": "Domaine viticole en Provence dans le Var | Blacailloux",
+  "description": "Réservez votre échappée d’exception au pied de la Sainte-Baume : vins bio, bastides, table et événements, dans un domaine viticole en Provence dans le Var.",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 31,
+  "url": "https://www.blacailloux.com/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 32,
+  "url": "https://www.laboutiquedexea.com/",
+  "titre": "Les Domaines d’Exéa | La Boutique d’Exea",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 32,
+  "url": "https://www.exea.com/",
+  "titre": "Exea",
+  "description": "We are the Holding and Family Office of the Puig family business group. We uphold the values that have guided the group’s trajectory since its founding...",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 32,
+  "url": "https://www.exea.fr/",
+  "titre": "Accueil | Exea",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 33,
+  "url": "https://www.exea.com/",
+  "titre": "Exea",
+  "description": "We are the Holding and Family Office of the Puig family business group. We uphold the values that have guided the group’s trajectory since its founding...",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 33,
+  "url": "https://www.exea.fr/",
+  "titre": "Accueil | Exea",
+  "description": "",
+  "nom_trouve": true,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ },
+ {
+  "numero": 34,
+  "url": "https://www.chateaudegragnos.com/en_GB",
+  "titre": "Château de Gragnos",
+  "description": "Le Château de Gragnos a été fondé en 1710. Le Vignoble est situé dans le Languedoc au coeur de la prestigieuse région de Saint-Chinian. Le Château de Gragnos pr",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 35,
+  "url": "https://www.domainelys.fr/fr/",
+  "titre": "→ Domaine des Lys · Château Hôtel 4 étoiles à Ancenis · Loire-Atlantique",
+  "description": "OFFICIEL | Découvrez le Domaine des Lys ✓ Château Hôtel de Luxe 4 étoiles à Ancenis en Loire-Atlantique ✓ Restaurant ✓ Séminaires ✓ Mariages & Réceptions près d",
+  "nom_trouve": true,
+  "vocabulaire_vin": true,
+  "verdict": "probable"
+ },
+ {
+  "numero": 39,
+  "url": "https://www.champagnesolemme.fr/",
+  "titre": "",
+  "description": "",
+  "nom_trouve": false,
+  "vocabulaire_vin": false,
+  "verdict": "hors sujet"
+ }
+]

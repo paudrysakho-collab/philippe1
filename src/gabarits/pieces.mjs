@@ -6,6 +6,14 @@ import { fileURLToPath } from 'node:url';
 
 export const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const catalogue = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.json'), 'utf8'));
+
+/** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */
+const _photos = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-preparees.json'), 'utf8'));
+export const photos = _photos.reduce((m, p) => {
+  (m[p.numero] ||= {})[p.role] = p;
+  return m;
+}, {});
+export const photoDe = (d, role) => photos[d.numero]?.[role] || null;
 export const REGIONS = catalogue.agence.regions;
 
 export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) =>

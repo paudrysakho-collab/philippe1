@@ -1,0 +1,272 @@
+[
+ {
+  "numero": 2,
+  "role": "rond",
+  "fichier": "src/photos/rond/d02.jpg",
+  "source_url": "https://static.wixstatic.com/media/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_2500,h_1666,al_c/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg",
+  "source_px": "2500x1666",
+  "ppi": 1245,
+  "sujet": "vendanges dans les vignes du domaine"
+ },
+ {
+  "numero": 5,
+  "role": "rond",
+  "fichier": "src/photos/rond/d05.jpg",
+  "source_url": "https://chai-berteaud-manceau.com/wp-content/uploads/2024/01/DSC8855-edited-scaled.jpg",
+  "source_px": "1784x2560",
+  "ppi": 1333,
+  "sujet": "les deux fondateurs du chai"
+ },
+ {
+  "numero": 5,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d05.png",
+  "source_url": "https://chai-berteaud-manceau.com/wp-content/uploads/2024/06/COURANT-Chenin-2023-768x2654.webp",
+  "source_px": "768x2654",
+  "ppi": 750,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 7,
+  "role": "rond",
+  "fichier": "src/photos/rond/d07.jpg",
+  "source_url": "https://www.divinnolow.fr/wp-content/uploads/2025/02/divin_officiel_alessandro_juin_24_158.png.webp",
+  "source_px": "2000x1333",
+  "ppi": 996,
+  "sujet": "vinification en cuverie"
+ },
+ {
+  "numero": 7,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d07.png",
+  "source_url": "https://www.divinnolow.fr/wp-content/uploads/2024/02/divin_0.5_chardonnay_vigneron_25.png.webp",
+  "source_px": "800x2560",
+  "ppi": 782,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 9,
+  "role": "rond",
+  "fichier": "src/photos/rond/d09.jpg",
+  "source_url": "https://www.domainedesnugues.com/wp-content/uploads/2020/02/DSC_8874-1-1-370x555.jpg",
+  "source_px": "370x555",
+  "ppi": 276,
+  "sujet": "portrait des vignerons"
+ },
+ {
+  "numero": 9,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d09.png",
+  "source_url": "https://www.domainedesnugues.com/wp-content/uploads/2022/04/Moulin-a-Vent.png",
+  "source_px": "576x1879",
+  "ppi": 563,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 15,
+  "role": "rond",
+  "fichier": "src/photos/rond/d15.jpg",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/4120efd3-8e74-45e3-99eb-7111ee3b897e/IMG_3840.JPG",
+  "source_px": "2500x2199",
+  "ppi": 1643,
+  "sujet": "portrait du vigneron"
+ },
+ {
+  "numero": 20,
+  "role": "rond",
+  "fichier": "src/photos/rond/d20.jpg",
+  "source_url": "https://domainedespasquiers.fr/wp-content/uploads/2021/04/Famille-Lambert.jpg",
+  "source_px": "1920x1440",
+  "ppi": 1076,
+  "sujet": "portrait de la famille"
+ },
+ {
+  "numero": 20,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d20.png",
+  "source_url": "https://domainedespasquiers.fr/wp-content/uploads/2020/01/Domaine-des-Pasquiers-vins-plan-de-dieu-rouge.jpg",
+  "source_px": "818x1500",
+  "ppi": 799,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 21,
+  "role": "rond",
+  "fichier": "src/photos/rond/d21.jpg",
+  "source_url": "https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg",
+  "source_px": "2560x1920",
+  "ppi": 1434,
+  "sujet": "mise en bouteille au domaine"
+ },
+ {
+  "numero": 23,
+  "role": "rond",
+  "fichier": "src/photos/rond/d23.jpg",
+  "source_url": "https://www.domaine-hautmarin.com/wp-content/uploads/2025/12/Logo-Haut-Marin.png",
+  "source_px": "1056x594",
+  "ppi": 789,
+  "sujet": "logo du domaine"
+ },
+ {
+  "numero": 23,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d23.png",
+  "source_url": "https://www.domaine-hautmarin.com/wp-content/uploads/2026/01/littorine-1.png",
+  "source_px": "492x2048",
+  "ppi": 481,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 24,
+  "role": "rond",
+  "fichier": "src/photos/rond/d24.jpg",
+  "source_url": "https://www.fabiencastaing.com/wp-content/uploads/2021/04/2-Genealogie-2015-fabien-scaled.jpg",
+  "source_px": "1920x2560",
+  "ppi": 1434,
+  "sujet": "portrait du vigneron dans ses vignes"
+ },
+ {
+  "numero": 24,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d24.png",
+  "source_url": "https://www.fabiencastaing.com/wp-content/uploads/2023/06/PDBADN-2.jpg",
+  "source_px": "541x764",
+  "ppi": 529,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 25,
+  "role": "rond",
+  "fichier": "src/photos/rond/d25.jpg",
+  "source_url": "https://lapassiondesterroirs.com/wp-content/uploads/lucien-lurton-1.png",
+  "source_px": "685x1086",
+  "ppi": 512,
+  "sujet": "portrait de famille d'époque"
+ },
+ {
+  "numero": 25,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d25.png",
+  "source_url": "https://lapassiondesterroirs.com/wp-content/uploads/BOUT-DOYAC.png",
+  "source_px": "1039x4242",
+  "ppi": 1015,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 26,
+  "role": "rond",
+  "fichier": "src/photos/rond/d26.jpg",
+  "source_url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
+  "source_px": "1000x1500",
+  "ppi": 747,
+  "sujet": "portrait des vignerons"
+ },
+ {
+  "numero": 26,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d26.png",
+  "source_url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_BouteilleLaGorce.jpg",
+  "source_px": "766x1500",
+  "ppi": 748,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 28,
+  "role": "rond",
+  "fichier": "src/photos/rond/d28.jpg",
+  "source_url": "https://www.prelalande.com/images/background/methode.jpg",
+  "source_px": "800x640",
+  "ppi": 478,
+  "sujet": "vendanges au domaine"
+ },
+ {
+  "numero": 28,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d28.png",
+  "source_url": "https://www.prelalande.com/images/portfolio/Famille.png",
+  "source_px": "2500x2500",
+  "ppi": 2442,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 29,
+  "role": "rond",
+  "fichier": "src/photos/rond/d29.jpg",
+  "source_url": "https://chateaubalac.com/wp-content/uploads/2025/03/portrait-chateau-balac_04.jpg",
+  "source_px": "886x591",
+  "ppi": 442,
+  "sujet": "portrait des vignerons"
+ },
+ {
+  "numero": 31,
+  "role": "rond",
+  "fichier": "src/photos/rond/d31.jpg",
+  "source_url": "https://blacailloux.fr/wp-content/uploads/2026/07/art-de-rehabiliter-scaled.jpg.webp",
+  "source_px": "2560x1709",
+  "ppi": 1277,
+  "sujet": "borie en pierre sèche du domaine"
+ },
+ {
+  "numero": 32,
+  "role": "rond",
+  "fichier": "src/photos/rond/d32.jpg",
+  "source_url": "https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600",
+  "source_px": "600x533",
+  "ppi": 448,
+  "sujet": "logo de la maison"
+ },
+ {
+  "numero": 32,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d32.png",
+  "source_url": "https://www.laboutiquedexea.com/cdn/shop/files/EXEA_Gamme_Petit_Jardin__Rouge_348efe16-6744-44f7-85e9-4575c6479904.png?v=1762210848&width=1080",
+  "source_px": "922x1364",
+  "ppi": 901,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 33,
+  "role": "rond",
+  "fichier": "src/photos/rond/d33.jpg",
+  "source_url": "https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600",
+  "source_px": "600x533",
+  "ppi": 448,
+  "sujet": "logo de la maison"
+ },
+ {
+  "numero": 34,
+  "role": "rond",
+  "fichier": "src/photos/rond/d34.jpg",
+  "source_url": "https://www.chateaudegragnos.com/web/image/9841-9b4b7150/DSCF4018.JPG",
+  "source_px": "1280x1920",
+  "ppi": 956,
+  "sujet": "grappes à la vigne"
+ },
+ {
+  "numero": 34,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d34.png",
+  "source_url": "https://www.chateaudegragnos.com/web/image/9323-649a41c7/Design%20sans%20titre%20%2810%29.png",
+  "source_px": "1654x1654",
+  "ppi": 1616,
+  "sujet": "bouteille du domaine"
+ },
+ {
+  "numero": 39,
+  "role": "rond",
+  "fichier": "src/photos/rond/d39.jpg",
+  "source_url": "https://www.champagnesolemme.fr/wp-content/uploads/2022/10/champagne-solemme-logo-clair_4D4D4D.png",
+  "source_px": "530x275",
+  "ppi": 396,
+  "sujet": "logo de la maison"
+ },
+ {
+  "numero": 40,
+  "role": "rond",
+  "fichier": "src/photos/rond/d40.jpg",
+  "source_url": "https://www.champagnevazartcoquart.com/wp-content/uploads/2020/10/maison-champagne-vazart-coquart.jpg",
+  "source_px": "1920x950",
+  "ppi": 710,
+  "sujet": "la maison de champagne"
+ }
+]
