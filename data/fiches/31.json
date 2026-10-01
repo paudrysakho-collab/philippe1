@@ -1,0 +1,33 @@
+{
+  "numero": 31, "page_source": 34, "region": "Provence",
+  "nom": "Bastide de Blacailloux", "nom_sommaire": "BASTIDE DE BLACAILLOUX",
+  "texte_source": "Écrin préservé à Tourves, Blacailloux incarne la Provence Verte depuis plus d’un siècle, conduit par la quatrième génération de la famille Chamoin. Chai bioclimatique à toit végétalisé et énergie photovoltaïque. Cuvées AOP Coteaux Varois et IGP Var, fraîches et aériennes.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.34" }],
+  "allocation": false, "mentions": ["BIBS"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port.",
+  "departements": ["35", "44", "49", "56", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 60 bts", "À partir de 120 bts", "À partir de 180 bts"],
+      "lignes": [
+        { "appellation": "IGP Var Sainte Baume", "cuvee": "SAINT PROBACE", "couleur": "Rosé", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [540, 530, 515], "note": null },
+        { "appellation": "IGP Var Sainte Baume", "cuvee": "SAINT PROBACE", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [565, 550, 535], "note": null },
+        { "appellation": "AOP Coteaux Varois en Provence", "cuvee": "JOIO", "couleur": "Rosé", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [650, 630, 615], "note": null },
+        { "appellation": "AOP Coteaux Varois en Provence", "cuvee": "JOIO", "couleur": "Rosé", "millesime": "2025", "contenance": "150 cl", "prix_centimes": [1485, 1445, 1415], "note": null },
+        { "appellation": "AOP Coteaux Varois en Provence", "cuvee": "JOIO", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [650, 630, 615], "note": null },
+        { "appellation": "AOP Coteaux Varois en Provence", "cuvee": "JOIO", "couleur": "Blanc", "millesime": "2025", "contenance": "150 cl", "prix_centimes": [1485, 1445, 1415], "note": null },
+        { "appellation": "AOP Coteaux Varois en Provence", "cuvee": "JOIO", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [690, 670, 650], "note": null }
+      ]
+    },
+    {
+      "intitule": "BIB",
+      "famille": "Bag-in-box",
+      "paliers": ["Tarif"],
+      "lignes": [
+        { "appellation": "IGP Var", "cuvee": "BLACAILLOUX", "couleur": "Rosé", "millesime": "2025", "contenance": "5 L", "prix_centimes": [1950], "note": null }
+      ]
+    }
+  ]
+}

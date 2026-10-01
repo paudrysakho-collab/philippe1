@@ -1,0 +1,19 @@
+{
+  "numero": 27, "page_source": 30, "region": "Bordeaux",
+  "nom": "Château Falfas", "nom_sommaire": "CHÂTEAU FALFAS",
+  "texte_source": "Sentinelle édifiée en 1612 sur les coteaux argilo-calcaires de Bayon, Falfas est une référence pionnière de la biodynamie bordelaise, membre fondateur de Biodyvin sous la houlette de John et Véronique Cochran. Vingt hectares vendangés à la main pour des Côtes de Bourg racés et de longue garde.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.30" }, { "label": "Biodyvin", "preuve": "« membre fondateur de Biodyvin » dans le texte p.30" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Côtes de Bourg", "cuvee": "Les Demoiselles de Falfas", "couleur": "Rouge", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [950], "note": null },
+      { "appellation": "AOP Côtes de Bourg", "cuvee": "Château Falfas", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1240], "note": null },
+      { "appellation": "AOP Côtes de Bourg", "cuvee": "Château Falfas Le Chevalier (Vieilles Vignes)", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [2250], "note": null }
+    ]
+  }]
+}

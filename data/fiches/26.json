@@ -1,0 +1,27 @@
+{
+  "numero": 26, "page_source": 29, "region": "Bordeaux",
+  "nom": "Château la Gorce", "nom_sommaire": "CHÂTEAU LA GORCE",
+  "texte_source": "En activité depuis 1822, reconnu cru bourgeois dans le classement de 1932, le domaine a été repris en 2018 par Emmanuel et Mana Martin qui initièrent immédiatement la conversion de l’intégralité des quarante-huit hectares vers l’agriculture biologique, désormais achevée sur toutes les cuvées depuis le millésime 2022.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.29" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 90 bts", "À partir de 120 bts", "À partir de 300 bts"],
+    "lignes": [
+      { "appellation": "AOP Médoc Cru Bourgeois", "cuvee": "Château la Gorce", "couleur": "Rouge", "millesime": "2019", "contenance": "75 cl", "prix_centimes": [705, 700, 690], "note": null },
+      { "appellation": "AOP Médoc Cru Bourgeois", "cuvee": "Château la Gorce", "couleur": "Rouge", "millesime": "2019", "contenance": "1,5 L", "prix_centimes": [1415, 1410, 1400], "note": null },
+      { "appellation": "AOP Médoc Cru Bourgeois (AB)", "cuvee": "Château la Gorce", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [705, 700, 690], "note": null },
+      { "appellation": "AOP Médoc Cru Bourgeois (AB)", "cuvee": "Château la Gorce", "couleur": "Rouge", "millesime": "2020", "contenance": "1,5 L", "prix_centimes": [1415, 1410, 1400], "note": null },
+      { "appellation": "AOP Médoc – Série limitée", "cuvee": "Préface", "couleur": "Rouge", "millesime": "2013", "contenance": "75 cl", "prix_centimes": [555, 550, 540], "note": null },
+      { "appellation": "AOP Médoc (AB)", "cuvee": "Prétexte", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [660, 655, 645], "note": null },
+      { "appellation": "AOP Médoc (AB)", "cuvee": "Rouge Intense – sans sulfites ajoutés", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [625, 620, 610], "note": null },
+      { "appellation": "AOP Médoc (AB)", "cuvee": "L'An 022 – élevé en amphore", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [980, 975, 965], "note": null },
+      { "appellation": "Vin de France", "cuvee": "Rosé DADA", "couleur": "Rosé", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [645, 640, 630], "note": null },
+      { "appellation": "AOP Médoc (AB)", "cuvee": "La Bonne Résolution", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [635, 630, 620], "note": null },
+      { "appellation": "AOP Médoc (AB)", "cuvee": "Château Canteloup", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [510, 505, 495], "note": null }
+    ]
+  }]
+}

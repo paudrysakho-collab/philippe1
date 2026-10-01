@@ -1,0 +1,19 @@
+{
+  "numero": 29, "page_source": 32, "region": "Bordeaux",
+  "nom": "Château Balac", "nom_sommaire": "CHÂTEAU BALAC",
+  "texte_source": "Au cœur d’une forêt de deux cents hectares, la famille Touchais veille depuis 1964 sur dix hectares de vignes à Saint-Laurent-Médoc. Classé Cru Bourgeois Supérieur et certifié bio, Balac cultive autour de sa chartreuse du XVIIIe siècle des vins de caractère et d’élégance.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.32 ; « certifié bio » dans le texte" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 120 bts", "À partir de 180 bts", "À partir de 300 bts"],
+    "lignes": [
+      { "appellation": "Vin de France", "cuvee": "Inopine (100 % Merlot)", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [630, 620, 610], "note": null },
+      { "appellation": "Vin de France", "cuvee": "Balac Sans Sulfites (100 % Merlot)", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [690, 680, 670], "note": null },
+      { "appellation": "Vin de France", "cuvee": "Syrah de Balac", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [850, 840, 830], "note": null }
+    ]
+  }]
+}

@@ -1,0 +1,19 @@
+{
+  "numero": 28, "page_source": 31, "region": "Bordeaux",
+  "nom": "Château Pré la Lande", "nom_sommaire": "CHÂTEAU PRÉ LA LANDE",
+  "texte_source": "Perchée à 120 mètres au-dessus de la vallée de la Dordogne, cette propriété de 1860 conduit une biodynamie certifiée Demeter d’une remarquable précision. Vinifications douces, sulfites au strict minimum, élevages en barriques et amphores : des vins vivants, d’une grande vibration minérale.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.31" }, { "label": "Demeter", "preuve": "« biodynamie certifiée Demeter » dans le texte p.31" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. départ chai.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Sainte-Foy Côtes de Bordeaux", "cuvee": "Cuvée Diane / Le Vin Cœur", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [990], "note": null },
+      { "appellation": "AOP Sainte-Foy Côtes de Bordeaux", "cuvee": "Cuvée TerraCotta / L'An Fort des Haltères", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [890], "note": null },
+      { "appellation": "AOP Sainte-Foy Côtes de Bordeaux", "cuvee": "Cuvée des Fontenelles / Y'a Rien qui Presse", "couleur": "Rouge", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [750], "note": null }
+    ]
+  }]
+}

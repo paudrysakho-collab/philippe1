@@ -1,0 +1,24 @@
+{
+  "numero": 30, "page_source": 33, "region": "Bordeaux",
+  "nom": "Château l’Escarderie", "nom_sommaire": "CHÂTEAU L’ESCARDERIE",
+  "texte_source": "Joyau intimiste à Saint-Germain-de-la-Rivière, en AOP Fronsac, qui renaît sous la conduite de Mélanie et Thomas. Vendanges manuelles, fermentations spontanées, sulfites mesurés et élevage sur-mesure (barriques, béton, amphores) pour des Merlots et Cabernets Francs veloutés et floraux.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.33" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. départ, franco à partir de 180 bouteilles.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Fronsac", "cuvee": "Passion de Château l'Escarderie", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [690], "note": null },
+      { "appellation": "AOP Fronsac", "cuvee": "Passion de Château l'Escarderie", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [610], "note": null },
+      { "appellation": "AOP Fronsac", "cuvee": "Château l'Escarderie", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [1030], "note": null },
+      { "appellation": "AOP Fronsac", "cuvee": "Amphora de Château l'Escarderie", "couleur": "Rouge", "millesime": "2020/2021", "contenance": "75 cl", "prix_centimes": [1010], "note": null },
+      { "appellation": "AOP Bordeaux Clairet", "cuvee": "Clair de Lune de l'Escarderie", "couleur": "Clairet", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [677], "note": null },
+      { "appellation": "Vin de France", "cuvee": "Pétillant de l'Escarderie", "couleur": "Rosé pétillant naturel", "millesime": "—", "contenance": "75 cl", "prix_centimes": [677], "note": null },
+      { "appellation": "Vin de France", "cuvee": "La Confiance de l'Escarderie", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [845], "note": null },
+      { "appellation": "Vin de France", "cuvee": "La Demoiselle de Saint-Germain", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [580], "note": null }
+    ]
+  }]
+}
