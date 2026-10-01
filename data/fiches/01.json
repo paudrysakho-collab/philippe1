@@ -1,0 +1,24 @@
+{
+  "numero": 1, "page_source": 4, "region": "Loire",
+  "nom": "François Reverdy", "nom_sommaire": "FRANÇOIS REVERDY",
+  "texte_source": "",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.4" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Jusqu'à 36 bts", "À partir de 48 bts", "À partir de 120 bts"],
+    "lignes": [
+      { "appellation": "AOP Anjou", "cuvee": "François Reverdy – Schistes Vert", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1475, 1325, 1225], "note": null },
+      { "appellation": "AOP Saumur", "cuvee": "François Reverdy – Tuffeau", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1600, 1450, 1350], "note": null },
+      { "appellation": "AOP Chinon", "cuvee": "François Reverdy – Franc / Graves", "couleur": "Rouge", "millesime": "2021/2024", "contenance": "75 cl", "prix_centimes": [1475, 1375, 1285], "note": null },
+      { "appellation": "AOP Quincy", "cuvee": "François Reverdy – Graves Argileuses", "couleur": "Blanc", "millesime": "2023/2024", "contenance": "75 cl", "prix_centimes": [1995, 1785, 1650], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": "François Reverdy – Les Villaudes", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [1900, 1800, 1650], "note": null },
+      { "appellation": "Vin de France", "cuvee": "François Reverdy – Grolleau Noir", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1060, 1060, 1060], "note": null },
+      { "appellation": "IGP Val de Loire", "cuvee": "La Grange Jaumain – Chenin Blanc", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1000, 950, 925], "note": null },
+      { "appellation": "IGP Val de Loire", "cuvee": "La Grange Jaumain – Les Soudannes", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1000, 950, 925], "note": null }
+    ]
+  }]
+}

@@ -1,0 +1,19 @@
+{
+  "numero": 5, "page_source": 8, "region": "Loire",
+  "nom": "Chai Berteaud Manceau", "nom_sommaire": "CHAI BERTEAUD MANCEAU",
+  "texte_source": "Premier chai urbain de La Roche-sur-Yon, à Mouilleron-le-Captif, fondé par deux amis d’enfance vendéens diplômés en ingénierie agricole à Angers. Les raisins proviennent de 8 domaines partenaires du Val de Loire. Levures indigènes : des jus digestes et éclatants.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.8" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 60 bts", "À partir de 120 bts", "À partir de 240 bts"],
+    "lignes": [
+      { "appellation": "IGP Val de Loire", "cuvee": "Courant – Chenin", "couleur": "Blanc sec", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [645, 595, 575], "note": null },
+      { "appellation": "IGP Val de Loire", "cuvee": "Source – Melon B.", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [545, 495, 475], "note": null },
+      { "appellation": "IGP Val de Loire", "cuvee": "Reflet – Gamay", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [645, 595, 575], "note": null }
+    ]
+  }]
+}

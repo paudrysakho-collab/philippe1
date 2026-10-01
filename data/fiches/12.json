@@ -1,0 +1,41 @@
+{
+  "numero": 12, "page_source": 15, "region": "Bourgogne",
+  "nom": "Maison et Domaine André Goichot", "nom_sommaire": "MAISON ANDRÉ GOICHOT",
+  "texte_source": "Fleuron familial et indépendant fondé en 1947, la Maison André Goichot porte l’exigence des grands climats de Bourgogne. Sélections parcellaires méticuleuses et cuverie d’élevage de pointe inaugurée en 2020.",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": true,
+  "mentions": ["ALLOCATION *", "Possibilité de panacher avec les vins de la Maison du Cray et Domaine Les Guignottes !"],
+  "panachage_groupe": "goichot-cray-guignottes",
+  "note_prix": "* Prix de la bouteille H.T. franco de port",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 78 bts", "À partir de 126 bts"],
+    "lignes": [
+      { "appellation": "AOP Mâcon-Lugny", "cuvee": "Les Genièvres", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [960, 930], "note": null },
+      { "appellation": "AOP Saint-Véran", "cuvee": null, "couleur": "Blanc", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [1200, 1170], "note": null },
+      { "appellation": "AOP Pouilly-Fuissé 1er Cru", "cuvee": "Clos Reyssier", "couleur": "Blanc", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [2440, 2410], "note": null },
+      { "appellation": "AOP Saint-Bris", "cuvee": null, "couleur": "Blanc", "millesime": "2023/2024", "contenance": "75 cl", "prix_centimes": [720, 690], "note": null },
+      { "appellation": "AOP Petit Chablis", "cuvee": null, "couleur": "Blanc", "millesime": "2023/2024", "contenance": "75 cl", "prix_centimes": [960, 930], "note": null },
+      { "appellation": "AOP Chablis", "cuvee": null, "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1260, 1230], "note": null },
+      { "appellation": "AOP Coteaux Bourguignons", "cuvee": null, "couleur": "Rouge", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [560, 530], "note": null },
+      { "appellation": "AOP Givry", "cuvee": "Champ La Dame", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1620, 1590], "note": null },
+      { "appellation": "AOP Givry 1er Cru", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1860, 1830], "note": null },
+      { "appellation": "AOP Mercurey", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1620, 1590], "note": null },
+      { "appellation": "AOP Saint-Romain", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1620, 1590], "note": null },
+      { "appellation": "AOP Monthélie", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1670, 1640], "note": null },
+      { "appellation": "AOP Chassagne-Montrachet", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [2360, 2330], "note": null },
+      { "appellation": "AOP Aloxe-Corton", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [2540, 2510], "note": null },
+      { "appellation": "AOP Auxey-Duresses", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1560, 1530], "note": null },
+      { "appellation": "AOP Gevrey-Chambertin", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [4320, 4290], "note": null },
+      { "appellation": "AOP Fixin", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [2090, 2060], "note": null },
+      { "appellation": "AOP Clos Vougeot Grand Cru", "cuvee": null, "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [13800, 13770], "note": null },
+      { "appellation": "AOP Meursault", "cuvee": "Les Vireuils", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [4870, 4840], "note": "*" },
+      { "appellation": "AOP Chablis 1er Cru", "cuvee": null, "couleur": "Blanc", "millesime": "2023/2024", "contenance": "75 cl", "prix_centimes": [2360, 2330], "note": "*" },
+      { "appellation": "AOP Bourgogne Hautes-Côtes de Beaune", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1060, 1030], "note": "*" },
+      { "appellation": "AOP Rully", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1520, 1490], "note": "*" },
+      { "appellation": "AOP Corton Grand Cru", "cuvee": "Les Maréchaudes", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [8870, 8840], "note": "*" }
+    ]
+  }]
+}

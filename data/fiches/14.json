@@ -1,0 +1,23 @@
+{
+  "numero": 14, "page_source": 17, "region": "Bourgogne",
+  "nom": "Domaine Les Guignottes", "nom_sommaire": "DOMAINE LES GUIGNOTTES",
+  "texte_source": "Depuis 2015, la famille Goichot est fière de diriger la distribution exclusive du Domaine Les Guignottes, une propriété de 10 hectares à Saint-Valérien en Côte Châlonnaise. Avec une palette de cépage incluant l’Aligoté, Le Pinot Noir et le Chardonnay, les vins du domaine reflètent avec élégance leur terroir d’origine. En harmonie avec les tendances actuelles, ils mettent en valeur la minéralité et la légèreté, une expérience qui célèbre la tradition et la qualité de la Côte Châlonnaise.",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins de la Maison A. Goichot et Château du Cray !"],
+  "panachage_groupe": "goichot-cray-guignottes",
+  "note_prix": "Prix de la bouteille H.T. Franco de port.",
+  "departements": ["35", "44", "49", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 78 bts", "À partir de 126 bts"],
+    "lignes": [
+      { "appellation": "Bourgogne Aligoté", "cuvee": null, "couleur": "Blanc", "millesime": "2024/2025", "contenance": "75 cl", "prix_centimes": [760, 730], "note": null },
+      { "appellation": "Bourgogne Chardonnay", "cuvee": null, "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [860, 830], "note": null },
+      { "appellation": "Bourgogne Pinot Noir", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [860, 830], "note": null },
+      { "appellation": "Maranges", "cuvee": "Le Saugeot", "couleur": "Rouge", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [1520, 1490], "note": null },
+      { "appellation": "Santenay", "cuvee": "Les Vaux Dessus", "couleur": "Rouge", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [1600, 1570], "note": null }
+    ]
+  }]
+}

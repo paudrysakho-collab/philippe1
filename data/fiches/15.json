@@ -1,0 +1,20 @@
+{
+  "numero": 15, "page_source": 18, "region": "Bourgogne",
+  "nom": "Domaine des Verchères", "nom_sommaire": "DOMAINE DES VERCHÈRES",
+  "texte_source": "Propriété familiale transmise depuis sept générations, établie à Mancey au cœur du Mâconnais. Certifié HVE, le domaine limite rigoureusement ses intrants pour préserver la vie des sols et alimente sa cave en énergie solaire, pour des vins purs, gourmands et équilibrés.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "HVE", "preuve": "mention « Certifié HVE » dans le texte p.18" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. départ chai.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 120 bts", "À partir de 180 bts", "À partir de 300 bts"],
+    "lignes": [
+      { "appellation": "AOP Mâcon", "cuvee": "Mâcon Chardonnay", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [610, 545, 575], "note": "dégressivité inversée dans la source — voir QUESTIONS.md" },
+      { "appellation": "AOP Mâcon Mancey", "cuvee": "Mâcon Mancey", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [670, 650, 630], "note": null },
+      { "appellation": "AOP Mâcon Mancey", "cuvee": "Mâcon Mancey", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [575, 560, 540], "note": null },
+      { "appellation": "AOP Bourgogne", "cuvee": "Bourgogne", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [770, 750, 725], "note": null }
+    ]
+  }]
+}

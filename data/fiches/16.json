@@ -1,0 +1,21 @@
+{
+  "numero": 16, "page_source": 19, "region": "Rhône",
+  "nom": "Domaine Le Prieuré des Papes", "nom_sommaire": "DOMAINE LE PRIEURÉ DES PAPES (STRASSER RADZIWILL)",
+  "texte_source": "Au nord de l’appellation Châteauneuf-du-Pape, dans le quartier de Cabrières, le domaine du Prieuré des Papes compte 12 hectares de vignes étendues sur des sols de sable. S’ajoutent à cela, 8 hectares répartis entre Côtes du Rhône sur le terroir du Grès. Le nom de domaine a été choisi en référence au bâtiment emblématique du village de Châteauneuf du Pape situé au pied du Château et ancienne résidence papale. La majorité de nos vins sont des vins rouges avec une dominance de grenache. Nous produisons un Châteauneuf du Pape blanc confidentiel sur une parcelle de moins d’un hectare. Notre vignoble, certifié Agriculture Biologique, bénéficie d’un environnement doux et préservé offrant aux vins une chair déliée et de grand raffinement.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.19 ; « certifié Agriculture Biologique » dans le texte" }],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins du Domaine de Coyeux, du Domaine du Moulin Blanc et du Domaine de La Pousterle"],
+  "panachage_groupe": "strasser-radziwill",
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 300 bts", "Palette"],
+    "lignes": [
+      { "appellation": "AOP Côtes du Rhône", "cuvee": "Le Prieuré", "couleur": "Rouge", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [580, 550], "note": null },
+      { "appellation": "AOP Châteauneuf-du-Pape", "cuvee": "Vieilles Vignes", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [1830, 1800], "note": null },
+      { "appellation": "AOP Châteauneuf-du-Pape", "cuvee": "Vieilles Vignes", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [2120, 2090], "note": null }
+    ]
+  }]
+}

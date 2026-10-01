@@ -1,0 +1,21 @@
+{
+  "numero": 13, "page_source": 16, "region": "Bourgogne",
+  "nom": "Château du Cray", "nom_sommaire": "CHÂTEAU DU CRAY",
+  "texte_source": "Depuis 2016, la famille Goichot est aux commandes de ce charmant domaine, précieuse propriété de la famille Perret du Cray depuis 1798. Situé au nord de Buxy, en Saône-et-Loire, le Château du Cray s’étend sur un domaine viticole de 22 hectares. Les vignes s’étendent autour du château, au milieu du coteau et bénéficient d’une exposition privilégiée Est-Sud-Est. Le domaine bénéficie d’un MONOPOLE : Le Cornevent",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins de la Maison A. Goichot et domaine Les Guignottes"],
+  "panachage_groupe": "goichot-cray-guignottes",
+  "note_prix": "* Prix de la bouteille H.T. Franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 78 bts", "À partir de 126 bts"],
+    "lignes": [
+      { "appellation": "Bourgogne Aligoté", "cuvee": null, "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [670, 640], "note": null },
+      { "appellation": "Bourgogne Chardonnay", "cuvee": null, "couleur": "Blanc", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1080, 1050], "note": null },
+      { "appellation": "Bourgogne Pinot Noir", "cuvee": "Le Cornevent MONOPOLE", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1160, 1130], "note": null }
+    ]
+  }]
+}

@@ -1,0 +1,26 @@
+{
+  "numero": 2, "page_source": 5, "region": "Loire",
+  "nom": "Domaine de la Barbinière", "nom_sommaire": "DOMAINE DE LA BARBINIERE",
+  "texte_source": "Sur les reliefs bocagers du Chantonnais, Vincent et Alban Orion sculptent 30 hectares reflétant la diversité des terroirs chantonnaisiens. Une démarche paysanne faite de travail manuel minutieux et d’attention à la faune et à la flore, qui porte le domaine en agriculture biologique.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.5" }],
+  "allocation": true, "mentions": ["ALLOCATION!"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["16", "35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Silex", "couleur": "Blanc", "millesime": "2024", "contenance": null, "prix_centimes": [443], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Silex", "couleur": "Rosé", "millesime": "2024", "contenance": null, "prix_centimes": [396], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Silex", "couleur": "Rouge", "millesime": "2023", "contenance": null, "prix_centimes": [425], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Gorinières", "couleur": "Blanc", "millesime": "2023", "contenance": null, "prix_centimes": [784], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Courbes", "couleur": "Rouge", "millesime": "2018", "contenance": null, "prix_centimes": [723], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Amphibol", "couleur": "Blanc", "millesime": "2024", "contenance": null, "prix_centimes": [566], "note": null },
+      { "appellation": "AOC Fiefs Vendéens Chantonnay", "cuvee": "Les Gneiss", "couleur": "Rouge", "millesime": "2023", "contenance": null, "prix_centimes": [513], "note": null },
+      { "appellation": "IGP Val de Loire Pinot Noir", "cuvee": "Le Bois Bouquet", "couleur": "Rouge", "millesime": "2023", "contenance": null, "prix_centimes": [672], "note": null },
+      { "appellation": "Méthode Traditionnelle (Extra)", "cuvee": "L’O*** Brut", "couleur": "Blanc", "millesime": "2023", "contenance": null, "prix_centimes": [628], "note": null },
+      { "appellation": "Vin de France – Pétillant Naturel", "cuvee": "Pop’s", "couleur": "Rosé", "millesime": "—", "contenance": null, "prix_centimes": [485], "note": null }
+    ]
+  }]
+}

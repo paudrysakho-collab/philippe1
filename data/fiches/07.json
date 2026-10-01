@@ -1,0 +1,26 @@
+{
+  "numero": 7, "page_source": 10, "region": "Loire",
+  "nom": "Divin No Low", "nom_sommaire": "DIVIN NO LOW",
+  "texte_source": "Le Sauvignon Blanc, le Chenin et le Pinot Noir sont des cépages polyvalents appréciés à tout moment de la journée ou de la nuit. À partir de raisins cultivés près des célèbres châteaux de la Loire, 7 cuvées sans alcool de qualité sont élaborées par des vignerons dévoués.",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins du domaine Villebois !", "ALERT! VINS DÉSALCOOLISÉS", "0 % alc."],
+  "panachage_groupe": "villebois-divin",
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "Vin sans alcool 0,5 %", "cuvee": "Pinot Noir", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [840], "note": null },
+      { "appellation": "Vin sans alcool 0,5 %", "cuvee": "Sauvignon Blanc", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [840], "note": null },
+      { "appellation": "Vin sans alcool", "cuvee": "Sauvignon", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [480], "note": null },
+      { "appellation": "Vin sans alcool", "cuvee": "Chenin Blanc", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [480], "note": null },
+      { "appellation": "Vin sans alcool", "cuvee": "Rosé", "couleur": "Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [480], "note": null },
+      { "appellation": "Vin sans alcool", "cuvee": "Pinot Noir", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [480], "note": null },
+      { "appellation": "Vin sans alcool pétillant", "cuvee": "Sauvignon Blanc", "couleur": "Blanc pétillant", "millesime": "—", "contenance": "75 cl", "prix_centimes": [540], "note": null },
+      { "appellation": "Vin sans alcool pétillant", "cuvee": "Sauvignon Blanc Blush", "couleur": "Rosé pétillant", "millesime": "—", "contenance": "75 cl", "prix_centimes": [540], "note": null }
+    ]
+  }]
+}

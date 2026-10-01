@@ -1,0 +1,25 @@
+{
+  "numero": 4, "page_source": 7, "region": "Loire",
+  "nom": "Domaine des Noëls", "nom_sommaire": "DOMAINE DES NOËLS",
+  "texte_source": "Depuis 1921 à Faye-d’Anjou, cinq générations se transmettent 24 hectares de coteaux argilo-schisteux remarquablement exposés. Le Chenin donne aussi bien les liquoreux du Coteaux du Layon que des Anjou Blanc et Crémant de Loire d’une minéralité tactile.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.7" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 120 bts", "À partir de 240 bts", "À partir de 360 bts"],
+    "lignes": [
+      { "appellation": "AOP Anjou", "cuvee": "Promenade des Noëls", "couleur": "Blanc sec", "millesime": "—", "contenance": "75 cl", "prix_centimes": [570, 560, 560], "note": null },
+      { "appellation": "IGP Val de Loire", "cuvee": "Sauvignon", "couleur": "Blanc sec", "millesime": "—", "contenance": "75 cl", "prix_centimes": [360, 340, 340], "note": null },
+      { "appellation": "AOP Coteaux du Layon", "cuvee": "Coteaux du Layon", "couleur": "Blanc moelleux", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [570, 560, 560], "note": null },
+      { "appellation": "AOP Coteaux du Layon Faye", "cuvee": "Coteaux du Layon Faye", "couleur": "Blanc moelleux", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [970, 960, 960], "note": null },
+      { "appellation": "AOP Crémant de Loire", "cuvee": "Crémant de Loire", "couleur": "Blanc brut", "millesime": "—", "contenance": "75 cl", "prix_centimes": [580, 560, 560], "note": null },
+      { "appellation": "AOP Crémant de Loire", "cuvee": "Cuvée Prestige", "couleur": "Blanc brut", "millesime": "—", "contenance": "75 cl", "prix_centimes": [750, 730, 730], "note": null },
+      { "appellation": "AOP Rosé de Loire", "cuvee": "Rosé de Loire", "couleur": "Rosé sec léger", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [350, 330, 330], "note": null },
+      { "appellation": "AOP Rosé d’Anjou", "cuvee": "Rosé d’Anjou", "couleur": "Rosé fruité", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [350, 330, 330], "note": null },
+      { "appellation": "AOP Cabernet d’Anjou", "cuvee": "Cabernet d’Anjou", "couleur": "Rosé demi-sec", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [360, 340, 340], "note": null }
+    ]
+  }]
+}

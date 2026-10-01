@@ -1,0 +1,23 @@
+{
+  "numero": 11, "page_source": 14, "region": "Bourgogne",
+  "nom": "Domaine Nadine Ferrand", "nom_sommaire": "DOMAINE NADINE FERRAND",
+  "texte_source": "Depuis des générations, la tradition familiale vigneronne est perpétuée au cœur de l'appellation Pouilly Fuissé. Rejoint par une nouvelle génération en 2012, le domaine a mis en place une stratégie d'exportation ambitieuse qui a propulsé ses vins vers une renommée mondiale. En 2018, l'inauguration d'un caveau de dégustation modernisé a ouvert les portes du domaine à une clientèle internationale, offrant une expérience unique et mémorable.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "AOP", "preuve": "logo AOP p.14" }],
+  "allocation": true, "mentions": ["ALLOCATION!"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["44", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Pouilly-Fuissé 1er Cru", "cuvee": "Pouilly", "couleur": "Blanc", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1880], "note": null },
+      { "appellation": "AOP Pouilly-Fuissé 1er Cru", "cuvee": "Lise-Marie", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1400], "note": null },
+      { "appellation": "AOP Viré-Clessé", "cuvee": "Nadine Ferrand", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1190], "note": null },
+      { "appellation": "AOP Saint-Véran", "cuvee": "Nadine Ferrand", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1100], "note": null },
+      { "appellation": "AOP Mâcon Solutré-Pouilly", "cuvee": "Nadine Ferrand", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [890], "note": null },
+      { "appellation": "AOP Mâcon Charnay-lès-Mâcon", "cuvee": "Signature", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [980], "note": null },
+      { "appellation": "AOP Mâcon", "cuvee": "Nadine Ferrand", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [770], "note": null }
+    ]
+  }]
+}

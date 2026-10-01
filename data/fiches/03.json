@@ -1,0 +1,51 @@
+{
+  "numero": 3, "page_source": 6, "region": "Loire",
+  "nom": "Domaine du Colombier / J.Y Bretaudeau", "nom_sommaire": "DOMAINE DU COLOMBIER",
+  "texte_source": "Quatre générations de passionnés et adhérent historique des Vignerons Indépendants : Jean-Yves Bretaudeau allie bon sens paysan et précision œnologique. Certifié HVE, le domaine préserve ses paysages ligériens pour des vins friands et expressifs.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "HVE", "preuve": "mention « Certifié HVE » dans le texte p.6" }],
+  "allocation": false, "mentions": ["BIBS"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 48 bts", "À partir de 78 bts", "À partir de 96 bts"],
+      "avertissement": "Tableau identique à celui de Vazart-Coquart (n°40, p.43) — voir QUESTIONS.md",
+      "lignes": [
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "Cuvée Camille", "couleur": "Blanc brut", "millesime": "Base 2023", "contenance": "75 cl", "prix_centimes": [2010, 1990, 1960], "note": null },
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "Brut Réserve", "couleur": "Blanc de Blancs", "millesime": "Base 2022", "contenance": "75 cl", "prix_centimes": [2080, 2060, 2030], "note": null },
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "Extra Brut", "couleur": "Blanc de Blancs", "millesime": "Base 2020", "contenance": "75 cl", "prix_centimes": [2500, 2480, 2450], "note": null },
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "Special Club", "couleur": "Blanc de Blancs", "millesime": "2017", "contenance": "75 cl", "prix_centimes": [4110, 4090, 4060], "note": null },
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "TC", "couleur": "Blanc de Blancs", "millesime": "2018", "contenance": "75 cl", "prix_centimes": [4640, 4620, 4590], "note": null },
+        { "appellation": "AOP Champagne Grand Cru", "cuvee": "Parcellaire AD 191", "couleur": "Blanc de Blancs", "millesime": "2016", "contenance": "75 cl", "prix_centimes": [4910, 4890, 4860], "note": null }
+      ]
+    },
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["Tarif"],
+      "lignes": [
+        { "appellation": "AOP Muscadet Sèvre et Maine sur lie", "cuvee": "Cuvée des deux Colombes", "couleur": "Blanc", "millesime": "2024-2025", "contenance": "75 cl", "prix_centimes": [295], "note": null },
+        { "appellation": "AOP Muscadet Sèvre et Maine", "cuvee": "CRU Mouzillon – Tillières", "couleur": "Blanc", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [730], "note": null },
+        { "appellation": "IGP Chardonnay", "cuvee": "Le Prestige de Beaulieu", "couleur": "Blanc", "millesime": "2023-24", "contenance": "75 cl", "prix_centimes": [310], "note": null },
+        { "appellation": "IGP Sauvignon Gris", "cuvee": "Cuvée domaine", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [285], "note": null },
+        { "appellation": "IGP Sauvignon Blanc", "cuvee": "Vins du Val de Loire", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [285], "note": null },
+        { "appellation": "IGP", "cuvee": "Cabernet Franc", "couleur": "Rosé", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [250], "note": null },
+        { "appellation": "IGP", "cuvee": "Rouge au lèvres", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [345], "note": "graphie du PDF conservée — voir QUESTIONS.md" },
+        { "appellation": "Méthode traditionnelle", "cuvee": "La perle", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [460], "note": null }
+      ]
+    },
+    {
+      "intitule": "BIBS",
+      "paliers": ["5 Litres", "10 Litres"],
+      "lignes": [
+        { "appellation": "AOP Muscadet", "cuvee": null, "couleur": "Blanc", "millesime": null, "contenance": null, "prix_centimes": [1380, 2270], "note": null },
+        { "appellation": "IGP Sauvignon", "cuvee": null, "couleur": "Blanc", "millesime": null, "contenance": null, "prix_centimes": [1250, 1940], "note": null },
+        { "appellation": "IGP Chardonnay", "cuvee": null, "couleur": "Blanc", "millesime": null, "contenance": null, "prix_centimes": [1250, 1940], "note": null },
+        { "appellation": "IGP Merlot", "cuvee": null, "couleur": "Rouge", "millesime": null, "contenance": null, "prix_centimes": [1250, 1940], "note": null },
+        { "appellation": "IGP Cabernet", "cuvee": null, "couleur": "Rouge", "millesime": null, "contenance": null, "prix_centimes": [1250, 1940], "note": null },
+        { "appellation": "IGP Cabernet", "cuvee": null, "couleur": "Rosé", "millesime": null, "contenance": null, "prix_centimes": [1150, 1840], "note": null }
+      ]
+    }
+  ]
+}

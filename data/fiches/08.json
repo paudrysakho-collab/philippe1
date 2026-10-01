@@ -1,0 +1,31 @@
+{
+  "numero": 8, "page_source": 11, "region": "Alsace",
+  "nom": "Domaine Boehler", "nom_sommaire": "DOMAINE BOEHLER",
+  "texte_source": "Berceau de tradition vigneronne à Molsheim, le Domaine Boehler aborde une nouvelle ère sous l’impulsion de Julien et Aurélie. Converti à l’agriculture biologique, le tandem explore ses coteaux et le prestigieux Grand Cru Bruderthal pour des vins verticaux, précis et profonds.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.11" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": null,
+  "departements": [],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["De 60 à 120 bts", "De 120 à 300 bts", "Plus de 300 bts"],
+    "lignes": [
+      { "appellation": "AOP Alsace", "cuvee": "Molse Rouge (Pinot Noir)", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [840, 780, 730], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Seiler (Pinot Noir)", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1030, 990, 950], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Hahnenberg (Pinot Noir)", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [1250, 1210, 1160], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Molse Blanc (Assemblage)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [680, 640, 590], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Thomen (Assemblage)", "couleur": "Blanc sec", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [870, 810, 760], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Leimen (Sylvaner)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [870, 810, 760], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Taubenstein (Pinot Blanc)", "couleur": "Blanc sec", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [870, 810, 760], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Pfann (Pinot Gris)", "couleur": "Blanc sec", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [910, 880, 840], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Holderhurst (Riesling)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [870, 810, 760], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Hahnenberg (Riesling)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1140, 1100, 1050], "note": null },
+      { "appellation": "AOP Alsace Grand Cru", "cuvee": "Bruderthal (Riesling)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1880, 1820, 1730], "note": null },
+      { "appellation": "AOP Alsace Grand Cru", "cuvee": "Bruderthal (Gewurztraminer)", "couleur": "Blanc sec", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1540, 1490, 1420], "note": null },
+      { "appellation": "AOP Crémant d’Alsace", "cuvee": "Brut Nature", "couleur": "Blanc brut nature", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [870, 810, 760], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Saint-Georges (Pinot Gris)", "couleur": "Blanc demi-sec", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [620, 580, 540], "note": null },
+      { "appellation": "AOP Alsace", "cuvee": "Saint-Georges (Gewurztraminer)", "couleur": "Blanc demi-sec", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [620, 580, 540], "note": null }
+    ]
+  }]
+}

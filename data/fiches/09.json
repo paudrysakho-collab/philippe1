@@ -1,0 +1,24 @@
+{
+  "numero": 9, "page_source": 12, "region": "Beaujolais",
+  "nom": "Domaine des Nugues", "nom_sommaire": "DOMAINE DES NUGUES",
+  "texte_source": "En 1976, mon père, Gérard Gelin, fils et petit-fils de vigneron a acheté « le Clos des Nugues », c’est de là que vient le nom du Domaine. En 2000, je me suis associé avec mes parents afin de poursuivre le développement de l’exploitation. Puis, en 2008, vient le départ en retraite de mon père et l’arrivée de mon épouse Magali. En 2010, reprise totale du Domaine familial. En 2018, certification HVE (Haute Valeur Environnementale) de notre exploitation. Depuis 1976 et au fil des années, nous avons acheté des parcelles à proximité du Domaine.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "HVE", "preuve": "mention « certification HVE » dans le texte p.12" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 60 bts", "À partir de 120 bts", "À partir de 240 bts"],
+    "lignes": [
+      { "appellation": "AOP Beaujolais-Lancié", "cuvee": "Les Grands Classiques", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [780, 745, 715], "note": null },
+      { "appellation": "AOP Beaujolais-Lancié", "cuvee": "Les Grands Classiques", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [610, 580, 555], "note": null },
+      { "appellation": "AOP Fleurie", "cuvee": "Les Grands Classiques", "couleur": "Rouge", "millesime": "2023/2024", "contenance": "75 cl", "prix_centimes": [865, 825, 790], "note": null },
+      { "appellation": "AOP Moulin-à-Vent", "cuvee": "Les Grands Classiques", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [885, 850, 815], "note": null },
+      { "appellation": "AOP Moulin-à-Vent", "cuvee": "Les Grands Classiques", "couleur": "Rouge", "millesime": "2022", "contenance": "150 cl", "prix_centimes": [1955, 1870, 1790], "note": null },
+      { "appellation": "AOP Beaujolais-Villages sans soufre", "cuvee": "Les Coups de Folies", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [610, 580, 555], "note": null },
+      { "appellation": "AOP Mâcon-Villages", "cuvee": "Bourgogne", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [950, 910, 870], "note": null },
+      { "appellation": "AOP Bourgogne Chardonnay", "cuvee": "Bourgogne", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [950, 910, 870], "note": null }
+    ]
+  }]
+}

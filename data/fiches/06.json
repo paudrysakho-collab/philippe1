@@ -1,0 +1,34 @@
+{
+  "numero": 6, "page_source": 9, "region": "Loire",
+  "nom": "Domaine Jean de Villebois", "nom_sommaire": "DOMAINE JEAN DE VILLEBOIS",
+  "texte_source": "Spécialiste du Sauvignon Blanc ligérien, le domaine explore les plus beaux terroirs de Loire (Sancerre, Pouilly-Fumé, Menetou-Salon, Touraine). Techniques modernes et respect de la typicité des sols calcaires et de silex pour des blancs d’une grande pureté.",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins Divin No Low!", "Pour l’ensemble des vins, les tarifs et offres consultez-nous"],
+  "panachage_groupe": "villebois-divin",
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Sancerre", "cuvee": "Chêne Marchand", "couleur": "Blanc", "millesime": "2023/2024", "contenance": null, "prix_centimes": [2660], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": "Chêne à la Rouline", "couleur": "Blanc", "millesime": "2022/2023", "contenance": null, "prix_centimes": [2540], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": "Silex", "couleur": "Blanc", "millesime": "2023/2024", "contenance": null, "prix_centimes": [1850], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": "Marnes Kimméridgiennes", "couleur": "Blanc", "millesime": "2023/2024", "contenance": null, "prix_centimes": [1850], "note": null },
+      { "appellation": "AOP Pouilly-Fumé", "cuvee": "Les Silex Blancs", "couleur": "Blanc", "millesime": "2023", "contenance": null, "prix_centimes": [1850], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": null, "couleur": "Blanc", "millesime": "2024/2025", "contenance": null, "prix_centimes": [1200], "note": null },
+      { "appellation": "AOP Pouilly-Fumé", "cuvee": null, "couleur": "Blanc", "millesime": "2024/2025", "contenance": null, "prix_centimes": [1150], "note": null },
+      { "appellation": "AOP Menetou-Salon", "cuvee": null, "couleur": "Blanc", "millesime": "2024/2025", "contenance": null, "prix_centimes": [925], "note": null },
+      { "appellation": "AOP Quincy", "cuvee": null, "couleur": "Blanc", "millesime": "2023/2024", "contenance": null, "prix_centimes": [920], "note": null },
+      { "appellation": "AOP Touraine Chenonceaux", "cuvee": null, "couleur": "Blanc", "millesime": "2024/2025", "contenance": null, "prix_centimes": [615], "note": null },
+      { "appellation": "IGP Val de Loire Sauvignon", "cuvee": null, "couleur": "Blanc", "millesime": "2025", "contenance": null, "prix_centimes": [470], "note": null },
+      { "appellation": "IGP Val de Loire Chenin", "cuvee": null, "couleur": "Blanc", "millesime": "2025", "contenance": null, "prix_centimes": [470], "note": null },
+      { "appellation": "Vin de France Pinot Noir", "cuvee": null, "couleur": "Rosé", "millesime": "2023", "contenance": null, "prix_centimes": [960], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": "La Louisonne", "couleur": "Rouge", "millesime": "2023/2024", "contenance": null, "prix_centimes": [2540], "note": null },
+      { "appellation": "AOP Sancerre", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": null, "prix_centimes": [1190], "note": null },
+      { "appellation": "Vin de France Pinot Noir", "cuvee": null, "couleur": "Rouge", "millesime": "2024/2025", "contenance": null, "prix_centimes": [450], "note": null }
+    ]
+  }]
+}
