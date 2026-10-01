@@ -1,0 +1,22 @@
+{
+  "numero": 39, "page_source": 42, "region": "Champagne",
+  "nom": "Champagne Solemme", "nom_sommaire": "CHAMPAGNE SOLEMME",
+  "texte_source": "À Villers-aux-Nœuds, sur les terroirs Premier Cru de la Montagne de Reims, Olivier Langlais conduit 6 hectares en biodynamie. En cave, vinifications douces, sans chaptalisation, sans filtration et sans dosage : une Champagne d’émotion, minérale et d’une lumineuse franchise de terroir.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.42" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 60 bts", "À partir de 120 bts", "À partir de 240 bts"],
+    "lignes": [
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Terre de Solemme", "couleur": "Blanc brut", "millesime": "BSA", "contenance": "75 cl", "prix_centimes": [2120, 2050, 2000], "note": null },
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Plénitude de Solemme", "couleur": "Blanc extra brut", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [2210, 2160, 2110], "note": null },
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Esprit de Solemme", "couleur": "Blanc brut nature", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [2580, 2510, 2450], "note": null },
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Nature de Solemme", "couleur": "Blanc brut nature", "millesime": "2018", "contenance": "75 cl", "prix_centimes": [3200, 3120, 3050], "note": null },
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Ambre de Solemme", "couleur": "Blanc brut nature", "millesime": "2018", "contenance": "75 cl", "prix_centimes": [3350, 3260, 3185], "note": null },
+      { "appellation": "AOP Champagne Premier Cru", "cuvee": "Rose de Solemme", "couleur": "Rosé brut nature", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [3600, 3510, 3420], "note": null }
+    ]
+  }]
+}

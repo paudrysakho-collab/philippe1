@@ -1,0 +1,13 @@
+{
+  "name": "catalogue-scio-2026",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "donnees": "python3 scripts/assembler.py && scripts/verifier-donnees",
+    "epreuve": "node scripts/epreuve.mjs",
+    "build": "npm run donnees && npm run epreuve"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}

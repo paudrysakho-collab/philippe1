@@ -1,0 +1,22 @@
+{
+  "numero": 40, "page_source": 43, "region": "Champagne",
+  "nom": "Vazart-Coquart & Fils", "nom_sommaire": "CHAMPAGNE VAZART-COQUART",
+  "texte_source": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "HVE", "preuve": "« Troisième domaine certifié HVE de France » dans le texte p.43" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 48 bts", "À partir de 78 bts", "À partir de 96 bts"],
+    "lignes": [
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "Cuvée Camille", "couleur": "Blanc brut", "millesime": "Base 2023", "contenance": "75 cl", "prix_centimes": [2010, 1990, 1960], "note": null },
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "Brut Réserve", "couleur": "Blanc de Blancs", "millesime": "Base 2022", "contenance": "75 cl", "prix_centimes": [2080, 2060, 2030], "note": null },
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "Extra Brut", "couleur": "Blanc de Blancs", "millesime": "Base 2020", "contenance": "75 cl", "prix_centimes": [2500, 2480, 2450], "note": null },
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "Special Club", "couleur": "Blanc de Blancs", "millesime": "2017", "contenance": "75 cl", "prix_centimes": [4110, 4090, 4060], "note": null },
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "TC", "couleur": "Blanc de Blancs", "millesime": "2018", "contenance": "75 cl", "prix_centimes": [4640, 4620, 4590], "note": null },
+      { "appellation": "AOP Champagne Grand Cru", "cuvee": "Parcellaire AD 191", "couleur": "Blanc de Blancs", "millesime": "2016", "contenance": "75 cl", "prix_centimes": [4910, 4890, 4860], "note": null }
+    ]
+  }]
+}

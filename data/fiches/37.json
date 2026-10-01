@@ -1,0 +1,20 @@
+{
+  "numero": 37, "page_source": 40, "region": "Champagne",
+  "nom": "Champagne Dekeyne", "nom_sommaire": "CHAMPAGNE DEKEYNE",
+  "texte_source": "Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan à la vibrante énergie de sol.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.40 ; « en conversion biologique » dans le texte" }],
+  "allocation": true, "mentions": ["RATAFIA", "ALLOCATION!"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port à partir de 48 bouteilles.",
+  "departements": ["44", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 48 bts"],
+    "lignes": [
+      { "appellation": "AOP Champagne", "cuvee": "Chardonnay Vignes de 1962", "couleur": "Blanc extra brut", "millesime": "—", "contenance": "75 cl", "prix_centimes": [2648], "note": null },
+      { "appellation": "AOP Champagne", "cuvee": "Nature", "couleur": "Blanc extra brut", "millesime": "—", "contenance": "75 cl", "prix_centimes": [2541], "note": null },
+      { "appellation": "AOP Champagne", "cuvee": "Voglonniers", "couleur": "Blanc extra brut", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1996], "note": "le texte écrit « La Voglonière » — voir QUESTIONS.md" },
+      { "appellation": "IGP Ratafia Champenois", "cuvee": "Vieux Ratafia", "couleur": "Vin de liqueur", "millesime": "—", "contenance": "75 cl", "prix_centimes": [2707], "note": null }
+    ]
+  }]
+}

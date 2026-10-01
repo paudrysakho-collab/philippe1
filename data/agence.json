@@ -1,0 +1,29 @@
+{
+  "edition": "2026",
+  "cible": "Tarifs cavistes Vendée (85)",
+  "titre_source": "VINS ET CHAMPAGNES",
+  "accroche_source": "Notre sélection Riche et Audacieuse",
+  "presentation": "L’AGENCE SCIO, C’EST PARTAGER NOTRE SAVOIR ET NOTRE PASSION en vous proposant des vignerons de tous horizons, avant-gardistes et respectueux de la nature. Découvrez notre sélection. Laissez-vous guider et conseiller",
+  "contacts": {
+    "laurent": "06 80 88 07 55",
+    "carline": "06 49 19 16 75",
+    "adresse": "71 avenue de la Libération — 44400 Rezé",
+    "email": "contact@agencescio.com",
+    "site": "www.agencescio.com"
+  },
+  "mentions_legales": "Photos non contractuelles, suggestions de présentation. Dans la limite des stocks disponibles. Les Millésimes peuvent évoluer en fonction de l’avancé de l’année. Sauf erreurs typographiques. Prix H.T. Agence SCIO Vins et spirits 843 151 663 RCS Nantes. Crédits photos : viticulteurs et Adobe Stock. NE PAS JETER SUR LA VOIE PUBLIQUE.",
+  "lexique": [
+    { "sigle": "AOP", "definition": "Appellation d’Origine Protégée" },
+    { "sigle": "IGP", "definition": "Indication Géographique Protégée" },
+    { "sigle": "VDF", "definition": "Vin de France" },
+    { "sigle": "HVE", "definition": "Haute Valeur Environnementale" }
+  ],
+  "message_sanitaire": "L’ABUS D’ALCOOL EST DANGEREUX POUR LA SANTÉ. À CONSOMMER AVEC MODÉRATION.",
+  "regions": ["Loire", "Alsace", "Beaujolais", "Bourgogne", "Rhône", "Sud-Ouest", "Bordeaux", "Provence", "Languedoc", "Champagne"],
+  "groupes_panachage": [
+    { "id": "villebois-divin", "libelle": "Domaine Jean de Villebois et Divin No Low", "domaines": [6, 7] },
+    { "id": "goichot-cray-guignottes", "libelle": "Maison André Goichot, Château du Cray et Domaine Les Guignottes", "domaines": [12, 13, 14] },
+    { "id": "strasser-radziwill", "libelle": "Les quatre domaines Strasser Radziwill", "domaines": [16, 17, 18, 19] },
+    { "id": "exea", "libelle": "Famille d’Exea : les vins et les jus de cépages", "domaines": [32, 33] }
+  ]
+}

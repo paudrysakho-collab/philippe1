@@ -1,0 +1,48 @@
+{
+  "numero": 32, "page_source": 35, "region": "Languedoc",
+  "nom": "Famille d’Exea", "nom_sommaire": "FAMILLE D’EXEA",
+  "texte_source": "Depuis plusieurs générations, la famille d’Exea façonne sur les terroirs solaires du Languedoc des vins biologiques vibrants et sincères, alliant pureté du fruit et convivialité.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.35" }],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher les vins avec les jus de Cépages !", "BIBS"],
+  "panachage_groupe": "exea",
+  "note_prix": "Franco de port à partir de 72 bouteilles",
+  "departements": ["35", "44", "49", "53", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 144 bts", "À partir de 300 bts", "À partir de 600 bts"],
+      "lignes": [
+        { "appellation": "IGP Pays d'Oc", "cuvee": "PETIT JARDIN", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [343, 316, 271], "note": null },
+        { "appellation": "IGP Pays d'Oc", "cuvee": "PETIT JARDIN", "couleur": "Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [343, 316, 271], "note": null },
+        { "appellation": "IGP Pays d'Oc", "cuvee": "PETIT JARDIN", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [343, 316, 271], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "JARDINS DE CORBIÈRES", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [474, 436, 408], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "JARDINS DE CORBIÈRES", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [474, 436, 408], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "BLANC SÉRAME", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [778, 716, 613], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "ROSE SÉRAME", "couleur": "Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [778, 716, 613], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "ROUGE SÉRAME", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [778, 716, 613], "note": null },
+        { "appellation": "AOP Corbières", "cuvee": "LULLULA", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [957, 880, 754], "note": "*" },
+        { "appellation": "AOP Corbières", "cuvee": "CARDUELIS", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1400, 1400, 1400], "note": "*" },
+        { "appellation": "AOP Corbières", "cuvee": "OENA", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1400, 1400, 1400], "note": "*" },
+        { "appellation": "AOP Minervois", "cuvee": "CHANT DE LUNE", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [778, 716, 613], "note": null },
+        { "appellation": "AOP Minervois", "cuvee": "CHANT LIBRE", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [957, 880, 754], "note": null },
+        { "appellation": "AOP Minervois", "cuvee": "CHANT DE LUMIÈRE", "couleur": "Rouge", "millesime": "—", "contenance": "75 cl", "prix_centimes": [1400, 1400, 1400], "note": null },
+        { "appellation": "Vin de France", "cuvee": "LE MUSCARIS", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [430, 396, 339], "note": null },
+        { "appellation": "Vin de France", "cuvee": "LE SOUVIGNIER GRIS", "couleur": "Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [430, 396, 339], "note": null },
+        { "appellation": "Vin de France", "cuvee": "SAUVIGNON 9,5°", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [430, 396, 339], "note": null },
+        { "appellation": "Vin de France", "cuvee": "GRENACHE GRIS 9,5°", "couleur": "Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [430, 396, 339], "note": null }
+      ]
+    },
+    {
+      "intitule": "BIB",
+      "famille": "Bag-in-box",
+      "paliers": ["50 BIB demi pal", "100 BIB palette"],
+      "lignes": [
+        { "appellation": "IGP Pays d'Oc", "cuvee": "Pergola D'Exea", "couleur": null, "millesime": null, "contenance": "5 L", "prix_centimes": [1185, 1165], "note": "couleur non renseignée dans la source — voir QUESTIONS.md" },
+        { "appellation": "IGP Pays d'Oc", "cuvee": "Pergola D'Exea", "couleur": null, "millesime": null, "contenance": "5 L", "prix_centimes": [1185, 1165], "note": "couleur non renseignée dans la source — voir QUESTIONS.md" },
+        { "appellation": "IGP Pays d'Oc", "cuvee": "Pergola D'Exea", "couleur": null, "millesime": null, "contenance": "5 L", "prix_centimes": [1185, 1165], "note": "couleur non renseignée dans la source — voir QUESTIONS.md" }
+      ]
+    }
+  ]
+}

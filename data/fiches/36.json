@@ -1,0 +1,29 @@
+{
+  "numero": 36, "page_source": 39, "region": "Languedoc",
+  "nom": "Prieuré Sainte-Marie d’Albas", "nom_sommaire": "PRIEURÉ SAINTE-MARIE D’ALBAS",
+  "texte_source": "Au pied de la Montagne d’Alaric, au cœur des Corbières, Laurence et Vincent Licciardi-Pirot cultivent des vignes plantées en terrasses et balayées par le vent du Cers. Les vins sont élevés dans une ancienne cave de village à demi enterrée : des rouges chaleureux du Midi, des blancs et des rosés tout en fraîcheur. AOP Corbières et IGP Pays d’Oc.",
+  "texte_catalogue": "",
+  "labels": [],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. départ cave.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "AOP Corbières", "cuvee": "Clos de Cassis – élevé en fûts de chêne", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [830], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Clos de Cassis – élevé en fûts de chêne", "couleur": "Rouge", "millesime": "2022/2023", "contenance": "Magnum 1,5 L", "prix_centimes": [2080], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Tempo – élevé en fûts de chêne", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [720], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Terre Rouge", "couleur": "Rouge", "millesime": "2022/2024", "contenance": "75 cl", "prix_centimes": [720], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Terre Rouge", "couleur": "Rouge", "millesime": "2022/2024", "contenance": "Magnum 1,5 L", "prix_centimes": [1790], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "4 Saisons", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [540], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "4 Saisons", "couleur": "Rouge", "millesime": "2023/2024", "contenance": "Magnum 1,5 L", "prix_centimes": [1340], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Sonate", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [450], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "La Potion", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [340], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Arlequin", "couleur": "Rosé", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [470], "note": null },
+      { "appellation": "IGP Pays d'Oc", "cuvee": "Pinot 100 % – vinification égrappée", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [710], "note": null },
+      { "appellation": "IGP Pays d'Oc", "cuvee": "Blanc Albas", "couleur": "Blanc", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [470], "note": null },
+      { "appellation": "AOP Corbières", "cuvee": "Corbières Rouge", "couleur": "Rouge", "millesime": "—", "contenance": "BIB 3 L", "prix_centimes": [890], "note": null }
+    ]
+  }]
+}

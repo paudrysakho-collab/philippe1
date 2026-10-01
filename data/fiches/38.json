@@ -1,0 +1,35 @@
+{
+  "numero": 38, "page_source": 41, "region": "Champagne",
+  "nom": "Champagne Denis Frézier", "nom_sommaire": "CHAMPAGNE DENIS FRÉZIER",
+  "texte_source": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées Trois Crus, Terroir Noir et Terroir Blanc.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.41 ; « en conversion biologique » dans le texte" }, { "label": "HVE", "preuve": "« Certifiée HVE et VDC » dans le texte p.41" }],
+  "allocation": true, "mentions": ["RATAFIA", "ALLOCATION!"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 66 bts", "À partir de 126 bts", "À partir de 186 bts"],
+      "lignes": [
+        { "appellation": "AOP Champagne", "cuvee": "Grand Cru Exception", "couleur": null, "millesime": "2016", "contenance": "75 cl", "prix_centimes": [2409, 2362, 2317], "note": "* astérisque non expliqué dans la source — voir QUESTIONS.md" },
+        { "appellation": "AOP Champagne", "cuvee": "Terroir Blanc", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1754, 1720, 1687], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Terroir Noir", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1754, 1720, 1687], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Terroir Meunier", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1754, 1720, 1687], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Esprit Rose", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1687, 1654, 1623], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Trois Crus Brut", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1576, 1545, 1516], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Trois Crus Brut", "couleur": null, "millesime": "—", "contenance": "37,5 cl", "prix_centimes": [937, 919, 902], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Trois Crus Extra-Dry", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1576, 1545, 1516], "note": null },
+        { "appellation": "AOP Champagne", "cuvee": "Trois Crus Demi-Sec", "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1576, 1545, 1516], "note": null }
+      ]
+    },
+    {
+      "intitule": "Ratafia",
+      "famille": "Ratafia",
+      "paliers": ["À partir de 66 bts", "À partir de 126 bts", "À partir de 186 bts"],
+      "lignes": [
+        { "appellation": "IGP Vieux Ratafia Champenois", "cuvee": null, "couleur": null, "millesime": "—", "contenance": "75 cl", "prix_centimes": [1416, 1388, 1362], "note": null }
+      ]
+    }
+  ]
+}

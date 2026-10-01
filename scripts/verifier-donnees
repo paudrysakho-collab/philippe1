@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+"""Contrôles automatiques sur data/catalogue.json. Sort en erreur au moindre écart."""
+import json, pathlib, sys, re
+
+RACINE = pathlib.Path(__file__).resolve().parent.parent
+cat = json.loads((RACINE / "data/catalogue.json").read_text(encoding="utf-8"))
+domaines = cat["domaines"]
+erreurs, avertissements = [], []
+
+def err(m): erreurs.append(m)
+def avt(m): avertissements.append(m)
+
+# 1. Effectifs attendus, relevés à la main dans docs/pieges-du-pdf.md
+ATTENDU = {"Loire": 7, "Alsace": 1, "Beaujolais": 1, "Bourgogne": 6, "Rhône": 6,
+           "Sud-Ouest": 3, "Bordeaux": 6, "Provence": 1, "Languedoc": 5, "Champagne": 4}
+
+if len(domaines) != 40:
+    err(f"40 domaines attendus, {len(domaines)} trouvés")
+
+numeros = [d["numero"] for d in domaines]
+if numeros != list(range(1, 41)):
+    err(f"numérotation 1..40 attendue, trouvé {numeros}")
+
+effectifs = {}
+for d in domaines:
+    effectifs[d["region"]] = effectifs.get(d["region"], 0) + 1
+for region, n in ATTENDU.items():
+    if effectifs.get(region, 0) != n:
+        err(f"région {region} : {n} domaines attendus, {effectifs.get(region, 0)} trouvés")
+for region in effectifs:
+    if region not in ATTENDU:
+        err(f"région inconnue : {region}")
+
+# 2. Le domaine n est en page n+3
+for d in domaines:
+    if d["page_source"] != d["numero"] + 3:
+        err(f"n°{d['numero']} : page_source {d['page_source']}, attendu {d['numero'] + 3}")
+
+# 3. Les régions se suivent sans entrelacement
+ordre = []
+for d in domaines:
+    if not ordre or ordre[-1] != d["region"]:
+        ordre.append(d["region"])
+if len(ordre) != len(set(ordre)):
+    err(f"les régions ne sont pas groupées : {ordre}")
+
+# 4. Prix : autant de prix que de paliers, centimes entiers et positifs
+nb_lignes = nb_prix = 0
+for d in domaines:
+    if not d["tableaux"]:
+        avt(f"n°{d['numero']} {d['nom']} : aucun tableau")
+    for t in d["tableaux"]:
+        paliers = t["paliers"]
+        if not paliers:
+            err(f"n°{d['numero']} : tableau « {t['intitule']} » sans palier")
+        for i, l in enumerate(t["lignes"], 1):
+            nb_lignes += 1
+            prix = l["prix_centimes"]
+            if len(prix) != len(paliers):
+                err(f"n°{d['numero']} « {t['intitule']} » ligne {i} : "
+                    f"{len(prix)} prix pour {len(paliers)} paliers")
+            for p in prix:
+                nb_prix += 1
+                if not isinstance(p, int):
+                    err(f"n°{d['numero']} ligne {i} : prix non entier ({p!r})")
+                elif p <= 0:
+                    err(f"n°{d['numero']} ligne {i} : prix nul ou négatif ({p})")
+                elif p > 100000:
+                    avt(f"n°{d['numero']} ligne {i} : prix très élevé ({p/100:.2f} €)")
+            if not l.get("appellation"):
+                err(f"n°{d['numero']} « {t['intitule']} » ligne {i} : appellation vide")
+
+# 5. Champs obligatoires, sauf les absences relevées dans docs/pieges-du-pdf.md
+SANS_TEXTE = {1}            # n°1 François Reverdy n'a pas de présentation
+SANS_NOTE_NI_DEPT = {8}     # n°8 Domaine Boehler n'a ni note de prix ni départements
+for d in domaines:
+    if not d["nom"]:
+        err(f"n°{d['numero']} : nom vide")
+    if not d["texte_source"] and d["numero"] not in SANS_TEXTE:
+        err(f"n°{d['numero']} {d['nom']} : texte_source vide (absence non justifiée)")
+    if d["texte_source"] and d["numero"] in SANS_TEXTE:
+        err(f"n°{d['numero']} : texte_source renseigné alors que la source n'en a pas")
+    if not d["note_prix"] and d["numero"] not in SANS_NOTE_NI_DEPT:
+        err(f"n°{d['numero']} {d['nom']} : note_prix vide (absence non justifiée)")
+    if not d["departements"] and d["numero"] not in SANS_NOTE_NI_DEPT:
+        err(f"n°{d['numero']} {d['nom']} : départements vides (absence non justifiée)")
+    for dep in d["departements"]:
+        if not re.fullmatch(r"\d{2}", dep):
+            err(f"n°{d['numero']} : département mal formé ({dep!r})")
+    if d["departements"] != sorted(d["departements"]):
+        err(f"n°{d['numero']} : départements non triés ({d['departements']})")
+
+# 6. Allocations et groupes de panachage relevés à la main
+ALLOC = {2, 10, 11, 12, 22, 37, 38}
+trouvees = {d["numero"] for d in domaines if d["allocation"]}
+if trouvees != ALLOC:
+    err(f"allocations : attendu {sorted(ALLOC)}, trouvé {sorted(trouvees)}")
+
+for g in cat["agence"]["groupes_panachage"]:
+    membres = {d["numero"] for d in domaines if d.get("panachage_groupe") == g["id"]}
+    if membres != set(g["domaines"]):
+        err(f"groupe {g['id']} : attendu {sorted(g['domaines'])}, trouvé {sorted(membres)}")
+
+# 7. Dégressivité : on signale sans jamais corriger.
+#    Les paliers qui désignent un contenant (5 L / 10 L) ne sont pas une quantité :
+#    le prix y monte légitimement avec le volume.
+def paliers_de_quantite(paliers):
+    return not any(re.search(r"\bL\b|litre", p, re.I) for p in paliers)
+
+for d in domaines:
+    for t in d["tableaux"]:
+        if not paliers_de_quantite(t["paliers"]):
+            continue
+        for i, l in enumerate(t["lignes"], 1):
+            p = l["prix_centimes"]
+            if len(p) > 1 and any(p[k] < p[k + 1] for k in range(len(p) - 1)):
+                avt(f"n°{d['numero']} {d['nom']} ligne {i} « {l.get('cuvee') or l['appellation']} » : "
+                    f"dégressivité inversée {[f'{x/100:.2f}' for x in p]} (signalé, non corrigé)")
+
+print(f"{len(domaines)} domaines · {nb_lignes} lignes de tarif · {nb_prix} prix")
+for a in avertissements:
+    print(f"  avertissement : {a}")
+for e in erreurs:
+    print(f"  ERREUR : {e}")
+print("— vérification échouée —" if erreurs else "— tout est au vert —")
+sys.exit(1 if erreurs else 0)

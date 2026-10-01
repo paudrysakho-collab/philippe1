@@ -1,0 +1,23 @@
+{
+  "numero": 35, "page_source": 38, "region": "Languedoc",
+  "nom": "Domaine Les Lys", "nom_sommaire": "DOMAINE LES LYS",
+  "texte_source": "Situé entre vignes et garrigues, le domaine près d'Uzès, face aux Cévennes, produit des vins d'une fraîcheur minérale incomparable. En respectant la biodiversité, ces parcelles sont reconnues par les appellations AOP Duché d’Uzès et IGP Cévennes.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logo AB p.38" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 120 bts"],
+    "lignes": [
+      { "appellation": "IGP Cévennes", "cuvee": "Aillargues", "couleur": "Blanc", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [570], "note": null },
+      { "appellation": "IGP Cévennes", "cuvee": "Saint Anastasie", "couleur": "Blanc", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [890], "note": null },
+      { "appellation": "IGP Cévennes", "cuvee": "La Petite Syrah", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [450], "note": null },
+      { "appellation": "AOP Duché d'Uzès", "cuvee": "Duché", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [595], "note": null },
+      { "appellation": "AOP Duché d'Uzès", "cuvee": "Librotte", "couleur": "Rouge", "millesime": "2019", "contenance": "75 cl", "prix_centimes": [890], "note": null },
+      { "appellation": "IGP Cévennes", "cuvee": "Caillasses", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [1490], "note": null },
+      { "appellation": "IGP Cévennes", "cuvee": "La Soif", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [390], "note": null }
+    ]
+  }]
+}
