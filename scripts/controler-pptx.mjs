@@ -69,7 +69,7 @@ plan.descripteurs.forEach((desc, i) => {
     }
   });
 });
-dire(fautes.length === 0, `40 fiches : ${posees} images posées, ${80 - posees} emplacements réservés, ni doublon ni trou${
+dire(fautes.length === 0, `40 fiches : ${posees} images posées, ${80 - posees} emplacement${80 - posees > 1 ? "s" : ""} réservé${80 - posees > 1 ? "s" : ""}, ni doublon ni trou${
   fautes.length ? ` (${fautes.join(' ; ')})` : ''}`);
 
 // Les systèmes reconnaissent un PowerPoint en lisant le premier élément de l'archive :

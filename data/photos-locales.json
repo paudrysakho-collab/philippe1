@@ -251,6 +251,14 @@
    "url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/4120efd3-8e74-45e3-99eb-7111ee3b897e/IMG_3840.JPG",
    "sujet": "portrait du vigneron",
    "mode": "couvrir"
+  },
+  "bouteille": {
+   "fichier": "web/d15-bouteille.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.domainedesvercheres.com/nos-vins",
+   "url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/01e061e8-8638-4911-9403-316f431e4a60/IMG_3517+4+-+copie.jpg",
+   "detourage": "modele",
+   "sujet": "bouteille Mâcon Chardonnay"
   }
  },
  "16": {
@@ -328,12 +336,36 @@
  },
  "21": {
   "rond": {
-   "fichier": "web/d21-rond.jpg",
+   "diptyque": [
+    {
+     "fichier": "web/d21-rond-couple.jpg",
+     "url": "https://lh3.googleusercontent.com/pw/AP1GczOwhUdoCWgFdCxSik5VFvSe97Fl3gXOWPtwWJlx1fc07msALKWnAzVYB-HCaEfzcSGJoHc9jqFmY7wiMJ9j4nPGBIw96UQIIASnpA_DfgZRsnGoQjX2=d",
+     "centre": [
+      0.29,
+      0.25
+     ],
+     "cote": 0.45
+    },
+    {
+     "fichier": "web/d21-rond-couple.jpg",
+     "url": "https://lh3.googleusercontent.com/pw/AP1GczOwhUdoCWgFdCxSik5VFvSe97Fl3gXOWPtwWJlx1fc07msALKWnAzVYB-HCaEfzcSGJoHc9jqFmY7wiMJ9j4nPGBIw96UQIIASnpA_DfgZRsnGoQjX2=d",
+     "centre": [
+      0.67,
+      0.21
+     ],
+     "cote": 0.45
+    }
+   ],
+   "provenance": "album photo envoyé par le domaine à l'agence pour le catalogue (mail du 18 septembre 2026)",
+   "page": "https://photos.app.goo.gl/H2oPFoVLM4vPUt6p7",
+   "sujet": "les deux vignerons, recadrés sur leurs visages"
+  },
+  "bouteille": {
+   "fichier": "web/d21-bouteille.png",
    "provenance": "site officiel du domaine",
    "page": "https://domainetrichon.fr/",
-   "url": "https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg",
-   "sujet": "mise en bouteille au domaine",
-   "mode": "couvrir"
+   "url": "https://domainetrichon.fr/wp-content/uploads/2021/06/Mondeuse_02-removebg-preview.png",
+   "sujet": "bouteille de Mondeuse du Bugey (cuvée du domaine absente du tarif)"
   }
  },
  "22": {
@@ -371,7 +403,11 @@
   "bouteille": {
    "fichier": "canva/d24-p27-214.png",
    "provenance": "Canva de l'agence « Tarif septembre 2026 », page 27",
-   "sujet": "bouteille ADN 24 rouge"
+   "sujet": "bouteille ADN 24 rouge",
+   "tolerances": [
+    4,
+    3
+   ]
   },
   "rond": {
    "fichier": "web/d24-rond.jpg",
@@ -433,7 +469,13 @@
    "provenance": "site officiel du domaine",
    "page": "https://www.prelalande.com/",
    "url": "https://www.prelalande.com/images/portfolio/Famille.png",
-   "sujet": "bouteille du domaine"
+   "sujet": "bouteille du domaine",
+   "zone": [
+    0.33,
+    0.0,
+    0.67,
+    0.95
+   ]
   },
   "rond": {
    "fichier": "web/d28-rond.jpg",
@@ -501,10 +543,11 @@
    "mode": "couvrir"
   },
   "bouteille": {
-   "fichier": "d31/014.webp",
+   "fichier": "web/d31-joio-rose.jpg",
    "provenance": "site officiel du domaine",
    "page": "https://blacailloux.fr/",
-   "url": "https://blacailloux.fr/wp-content/uploads/2026/05/WINE-8.png.webp",
+   "url": "https://blacailloux.fr/wp-content/uploads/2026/06/joio-rose.jpg",
+   "detourage": "modele",
    "sujet": "bouteille JOIO rosé"
   }
  },

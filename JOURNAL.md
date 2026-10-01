@@ -369,7 +369,7 @@ Comparaison notice par notice avec nos 40 fiches :
   catalogue affiche les labels du tarif. Une mention de certification engage l'agence, elle
   ne se décide pas sans elle. Table complète dans `QUESTIONS.md`, point 22.
 
-### Les images des fiches : 77 sur 80
+### Les images des fiches : 77 sur 80, puis 79
 
 L'agence a validé la table de ses propres dossiers (29 images), puis demandé de remplir tout
 le reste : chercher sur les sites des domaines, reprendre les 30 images repérées en 2026, et
@@ -395,3 +395,38 @@ remplacée.
   calculée depuis ce qui est posé (`creditPhotos()`), dans le PDF comme dans le `.pptx`.
 
 Restent vides : les bouteilles n°15, 18 et 21 (aucune photo détourable trouvée).
+
+### Nuit du 1er au 2 octobre : chaque bouteille regardée
+
+L'agence a tout validé, puis demandé de pousser jusqu'au bout : des bouteilles « vraiment
+découpées, pas découpées bizarrement ». Les 39 bouteilles ont été regardées une à une, à
+grande taille, sur fond sombre, puis passées à un test automatique de symétrie (une
+bouteille est symétrique ; un bouchon mangé d'un côté ne l'est plus).
+
+- **n°24 ADN 24** : le bouchon blanc, sur fond blanc, partait à moitié avec le fond. Le
+  remplissage à tolérance large (24) le mangeait ; à tolérance 4 il reste entier. Option
+  `tolerances` ajoutée.
+- **n°15 Verchères** : la bouteille, photographiée devant une caisse en bois, n'était pas
+  détourable par remplissage. Le modèle de segmentation `rembg` (isnet-general-use) la
+  détoure ; il laissait deux lettres du logo de la caisse collées aux épaules. Corrigé par
+  la géométrie de la bouteille : axe ajusté en droite (la photo est un peu de biais),
+  symétrie autour de cet axe, médiane glissante du profil, et une bouteille ne s'élargit
+  jamais en remontant vers le goulot. Essayé et rejeté : le seuil d'alpha seul, et la
+  symétrie autour d'un axe vertical (décalé de 10 px, il laissait passer la lettre).
+- **n°24 avec le modèle** : rejeté, le modèle voit la bouteille sombre comme à moitié
+  transparente. Le remplissage serré est meilleur pour ce cas.
+- **n°28 Pré la Lande** : le reflet sous la bouteille est coupé par un recadrage au ras du
+  pied.
+- **n°31 JOIO** : la petite image (156 px) est remplacée par la version 2000 px trouvée dans
+  la médiathèque WordPress du domaine, détourée par le modèle.
+- **n°21 Trichon** : le rond passe d'une photo de mise en bouteille au couple de vignerons,
+  tiré de l'album que le domaine a envoyé à l'agence pour le catalogue, recadré au-dessus
+  des diplômes de médailles qu'ils tiennent (aucune médaille n'est dans notre tarif). La
+  bouteille : une Mondeuse du Bugey du site, faute de Rhône (signalé dans `QUESTIONS.md`).
+- **n°18 Moulin Blanc** : cherché sur le site du groupe, dans les médiathèques, dans le
+  Drive, dans quatre designs Canva et dans la messagerie ; la seule piste est une pièce
+  jointe de mail illisible d'ici. Reste vide.
+
+Faux positifs du test de symétrie, vérifiés à l'œil et laissés tels quels : n°11 et n°15
+(photos légèrement de biais), n°14 (texte de capsule qui fait le tour du goulot), n°26
+(pli réel de la capsule).

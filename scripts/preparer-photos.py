@@ -281,11 +281,14 @@ def reculer(im, cadre):
 
 def diptyque(entree):
     """Deux portraits séparés de deux personnes nommées ensemble : chacun occupe une moitié
-    du rond, son visage au milieu de sa moitié, avec un mince filet clair entre les deux."""
+    du rond, son visage au milieu de sa moitié, avec un mince filet clair entre les deux.
+    Les deux moitiés peuvent venir d'une même photo ; 'cote', en fraction du petit côté,
+    resserre alors le carré autour de chaque visage (pour laisser hors champ ce qui doit
+    l'être)."""
     moities, cotes = [], []
     for e in entree["diptyque"]:
         im = traitement(recadrer(ouvrir(BRUT / e["fichier"]), e))
-        c = min(im.size)
+        c = round(min(im.size) * e.get("cote", 1.0))
         cx, cy = e.get("centre", [0.5, 0.4])
         g = max(0, min(im.width - c, round(cx * im.width - c / 2)))
         h = max(0, min(im.height - c, round(cy * im.height - c / 2)))
@@ -372,11 +375,68 @@ def rond_logo(im, forme=None, fond=None):
 
 # ——————————————————————————————————————————————————————— la bouteille ———
 
+def detourer_au_modele(im):
+    """Une bouteille posée devant un décor (une caisse, un mur) ne se détoure pas par
+    remplissage depuis les bords. 'detourage': 'modele' la confie à un modèle de
+    segmentation (rembg, modèle isnet-general-use, à installer : pip install rembg
+    onnxruntime). On ne garde ensuite que le corps de la bouteille : la plus grande pièce
+    opaque d'un seul tenant ; les restes pâles du décor sont effacés."""
+    try:
+        from rembg import new_session, remove
+    except ImportError:
+        raise Ecartee("détourage au modèle demandé, mais rembg n'est pas installé "
+                      "(pip install rembg onnxruntime)")
+    rgba = remove(im.convert("RGB"), session=new_session("isnet-general-use")).convert("RGBA")
+    alpha = rgba.getchannel("A")
+    plein = alpha.point(lambda a: 255 if a > 128 else 0)
+    coeur = alpha.point(lambda a: 255 if a > 200 else 0).getbbox()
+    if not coeur:
+        raise Ecartee("le modèle n'a pas trouvé de bouteille")
+    graine = ((coeur[0] + coeur[2]) // 2, coeur[1] + (coeur[3] - coeur[1]) * 2 // 3)
+    if plein.getpixel(graine) != 255:
+        raise Ecartee("détourage au modèle incertain : le centre de la bouteille n'est pas plein")
+    ImageDraw.floodfill(plein, graine, 128)
+    corps = plein.point(lambda v: 255 if v == 128 else 0)
+    # Une bouteille est symétrique : ligne par ligne, on ne garde que ce qui l'est autour
+    # de son axe. Un reste du décor collé à l'épaule (une lettre, un coin de caisse) tombe.
+    l, h = corps.size
+    lignes = []
+    for y in range(h):
+        b = corps.crop((0, y, l, y + 1)).getbbox()
+        lignes.append((b[0], b[2] - 1) if b else None)
+    # l'axe n'est pas tout à fait vertical (photo à main levée) : on l'ajuste en droite,
+    # par la médiane des pentes, qu'un reste du décor ne fait pas dévier
+    pts = [(y, (r[0] + r[1]) / 2) for y, r in enumerate(lignes) if r][::max(1, h // 300)]
+    pentes = sorted((m2 - m1) / (y2 - y1) for i, (y1, m1) in enumerate(pts)
+                    for (y2, m2) in pts[i + len(pts) // 3:])
+    pente = pentes[len(pentes) // 2] if pentes else 0.0
+    origines = sorted(m - pente * y for y, m in pts)
+    origine = origines[len(origines) // 2]
+    axe = [origine + pente * y for y in range(h)]
+    demis = [min(axe[y] - r[0], r[1] - axe[y]) if r else -1 for y, r in enumerate(lignes)]
+    # et elle ne s'élargit jamais en remontant vers le goulot : au-dessus de sa ligne la
+    # plus large, chaque ligne est au plus aussi large que celle du dessous
+    large = max(range(h), key=lambda y: demis[y])
+    for y in range(large - 1, -1, -1):
+        if demis[y] > demis[y + 1] >= 0:
+            demis[y] = demis[y + 1]
+    garde = Image.new("L", corps.size, 0)
+    d = ImageDraw.Draw(garde)
+    for y, demi in enumerate(demis):
+        if demi >= 0:
+            d.line((round(axe[y] - demi - 2), y, round(axe[y] + demi + 2), y), fill=255)
+    corps = ImageChops.multiply(corps, garde).filter(ImageFilter.MaxFilter(5))
+    rgba.putalpha(ImageChops.multiply(alpha, corps))
+    return rgba
+
+
 def faire_bouteille(numero, entree):
     src = BRUT / entree["fichier"]
     im = ouvrir(src)
     l0, h0 = im.size
     im = recadrer(im, entree)
+    if entree.get("detourage") == "modele":
+        im = detourer_au_modele(im)
 
     if a_de_la_transparence(im):
         # déjà détourée : on garde son alpha tel quel
@@ -393,7 +453,9 @@ def faire_bouteille(numero, entree):
         f = min(1.0, 1200 / max(rgb.size))
         travail = rgb.resize((round(rgb.width * f), round(rgb.height * f)), Image.LANCZOS) \
             if f < 1 else rgb
-        alpha, tolerance, garde = detourer(travail)
+        # 'tolerances' resserre le remplissage : un bouchon blanc sur fond blanc ne survit
+        # qu'à une tolérance de quelques niveaux
+        alpha, tolerance, garde = detourer(travail, tuple(entree.get("tolerances", (24, 16, 11, 7))))
         if alpha is None:
             if garde > 0.92:
                 raise Ecartee("fond non uni : le détourage ne trouve pas la bouteille "

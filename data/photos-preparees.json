@@ -319,6 +319,17 @@
   "sujet": "portrait du vigneron"
  },
  {
+  "numero": 15,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d15.png",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/01e061e8-8638-4911-9403-316f431e4a60/IMG_3517+4+-+copie.jpg",
+  "page": "https://www.domainedesvercheres.com/nos-vins",
+  "provenance": "site officiel du domaine",
+  "source_px": "2500x3333",
+  "ppi": 1216,
+  "sujet": "bouteille Mâcon Chardonnay"
+ },
+ {
   "numero": 16,
   "role": "rond",
   "fichier": "src/photos/rond/d16.jpg",
@@ -421,12 +432,23 @@
   "numero": 21,
   "role": "rond",
   "fichier": "src/photos/rond/d21.jpg",
-  "source_url": "https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg",
+  "source_url": "https://lh3.googleusercontent.com/pw/AP1GczOwhUdoCWgFdCxSik5VFvSe97Fl3gXOWPtwWJlx1fc07msALKWnAzVYB-HCaEfzcSGJoHc9jqFmY7wiMJ9j4nPGBIw96UQIIASnpA_DfgZRsnGoQjX2=d + https://lh3.googleusercontent.com/pw/AP1GczOwhUdoCWgFdCxSik5VFvSe97Fl3gXOWPtwWJlx1fc07msALKWnAzVYB-HCaEfzcSGJoHc9jqFmY7wiMJ9j4nPGBIw96UQIIASnpA_DfgZRsnGoQjX2=d",
+  "page": "https://photos.app.goo.gl/H2oPFoVLM4vPUt6p7",
+  "provenance": "album photo envoyé par le domaine à l'agence pour le catalogue (mail du 18 septembre 2026)",
+  "source_px": "4096x3072 + 4096x3072",
+  "ppi": 878,
+  "sujet": "les deux vignerons, recadrés sur leurs visages"
+ },
+ {
+  "numero": 21,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d21.png",
+  "source_url": "https://domainetrichon.fr/wp-content/uploads/2021/06/Mondeuse_02-removebg-preview.png",
   "page": "https://domainetrichon.fr/",
   "provenance": "site officiel du domaine",
-  "source_px": "2560x1920",
-  "ppi": 1219,
-  "sujet": "mise en bouteille au domaine"
+  "source_px": "433x577",
+  "ppi": 202,
+  "sujet": "bouteille de Mondeuse du Bugey (cuvée du domaine absente du tarif)"
  },
  {
   "numero": 22,
@@ -579,7 +601,7 @@
   "page": "https://www.prelalande.com/",
   "provenance": "site officiel du domaine",
   "source_px": "2500x2500",
-  "ppi": 961,
+  "ppi": 910,
   "sujet": "bouteille du domaine"
  },
  {
@@ -641,11 +663,11 @@
   "numero": 31,
   "role": "bouteille",
   "fichier": "src/photos/bouteille/d31.png",
-  "source_url": "https://blacailloux.fr/wp-content/uploads/2026/05/WINE-8.png.webp",
+  "source_url": "https://blacailloux.fr/wp-content/uploads/2026/06/joio-rose.jpg",
   "page": "https://blacailloux.fr/",
   "provenance": "site officiel du domaine",
-  "source_px": "156x536",
-  "ppi": 202,
+  "source_px": "2000x2000",
+  "ppi": 752,
   "sujet": "bouteille JOIO rosé"
  },
  {

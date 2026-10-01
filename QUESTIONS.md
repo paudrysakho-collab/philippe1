@@ -187,15 +187,20 @@ catalogue reste sur le tarif.
 Elle ne contient ni tarif, ni palier, ni millésime, ni contenance : rien n'en a été repris
 de ce côté. Elle ne couvre que 26 des 40 domaines.
 
-### 24. Images des fiches : trois points à confirmer
+### 24. Images des fiches — **réglé avec l'agence le 1er octobre 2026**
 
-- **Deux ronds partent d'une photo où un verre est tenu en main** : n°10 Sébastien Magnien
-  (portrait au chai) et n°18 Moulin Blanc (le couple). Ils sont recadrés au-dessus du verre,
-  qui n'apparaît pas dans le cercle. *Ce que je propose :* les garder ; si vous préférez ne
-  pas partir de ces photos, on retire leurs deux lignes de `data/photos-locales.json` et les
-  ronds redeviennent pointillés.
-- **28 images viennent des sites officiels des domaines** (liste et adresses dans
-  `credits.md`). *Ce que je propose :* demander l'accord de chaque domaine avant impression.
-- **Trois bouteilles manquent** : n°15 Verchères, n°18 Moulin Blanc, n°21 Trichon. Il faut
-  une bouteille détourée (PNG transparent) ou photographiée sur fond uni, d'au moins 488 px
-  de haut. Déposée dans `Bouteilles_de_vin/<Domaine>/`, elle entre au prochain `npm run photos`.
+L'agence a donné son accord sur tout : les ronds n°10 et n°18, recadrés au-dessus d'un verre
+tenu en main, restent ; les images des sites officiels restent (l'accord de chaque domaine
+est à demander avant impression, liste et adresses dans `credits.md`).
+
+Restent deux points, sans urgence :
+
+- **n°18 Domaine du Moulin Blanc : pas de bouteille.** Ni le site du groupe
+  Strasser-Radziwill, ni le Canva, ni le Drive n'en ont. Le « Catalogue VSR.pdf » joint au
+  mail de Thomas Bounias (Strasser-Radziwill, 4 juin 2025, transféré le 12 juillet 2025) en
+  contient sans doute une, mais une pièce jointe de mail ne se lit pas d'ici. *Ce que je
+  propose :* déposer ce PDF (ou une photo de bouteille) dans le Drive ; elle entre au
+  prochain `npm run photos`.
+- **n°21 Domaine Trichon : la bouteille posée est une Mondeuse du Bugey**, cuvée du domaine
+  absente du tarif (le site ne montre aucun de ses Côtes du Rhône ni Vacqueyras). *Ce que je
+  propose :* la garder tant qu'il n'y a pas mieux ; une photo d'un Vacqueyras la remplacerait.

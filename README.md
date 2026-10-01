@@ -7,8 +7,8 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 
 **Terminé.** Concept retenu : **« Sous nos pieds »**. **76 pages**, 210 × 260 mm.
 Chaque fiche domaine porte **deux images** : un rond de 40 mm pour le vigneron ou le logo,
-une bande de 24 × 62 mm pour la bouteille. **77 des 80 sont posées** ; les trois bouteilles
-qui manquent (n°15, 18, 21) gardent leur repère pointillé. Provenance et droits, image par
+une bande de 24 × 62 mm pour la bouteille. **79 des 80 sont posées** ; la bouteille qui
+manque (n°18, Moulin Blanc) garde son repère pointillé. Provenance et droits, image par
 image : `credits.md`.
 
 | Livrable | Où |
@@ -125,7 +125,10 @@ Options d'une entrée de la table : `zone` (isoler une bouteille dans une photo 
 `centre` (déplacer le carré d'un portrait), `cadre` (reculer pour faire tenir plusieurs
 têtes entières dans le rond), `diptyque` (deux portraits séparés, une moitié chacun),
 `mode: contenir` (un logo, jamais rogné), `forme: rond` (un logo déjà rond), `fond` (couleur
-de réserve imposée sous un logo).
+de réserve imposée sous un logo), `tolerances` (resserrer le détourage d'une bouteille au
+bouchon blanc sur fond blanc), `detourage: modele` (une bouteille photographiée devant un
+décor : détourage par le modèle de segmentation de `rembg`, à installer une fois avec
+`pip install rembg onnxruntime` ; le modèle, 180 Mo, se télécharge au premier usage).
 
 ## Ajouter ou retirer un domaine
 
