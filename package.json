@@ -13,7 +13,7 @@
     "catalogue": "node scripts/construire.mjs",
     "controle": "node scripts/controler.mjs",
     "deco": "node scripts/deco.mjs",
-    "pptx": "npm run deco && node scripts/pptx.mjs && node scripts/controler-pptx.mjs",
+    "pptx": "npm run deco && node scripts/pptx.mjs && python3 scripts/ranger-pptx.py dist/catalogue-scio-2026-canva.pptx && node scripts/controler-pptx.mjs",
     "build": "npm run donnees && npm run catalogue && npm run controle && npm run pptx",
     "photos": "python3 scripts/preparer-photos.py",
     "moisson": "python3 scripts/moissonner.py"

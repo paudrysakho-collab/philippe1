@@ -297,6 +297,16 @@ nommés, les contacts et le message sanitaire présents, aucune diapositive vide
   paquet `libreoffice-impress` manquait sur la machine. Ce n'était pas le .pptx — un fichier
   d'essai de deux lignes échouait pareil.
 
+- **Le fichier s'ouvrait dans un lecteur vidéo.** pptxgenjs écrit l'archive en commençant par
+  des entrées de dossier et laisse `[Content_Types].xml` en 19ᵉ position. PowerPoint,
+  LibreOffice et Canva s'en accommodent, mais Windows, macOS et les navigateurs identifient un
+  fichier en lisant son **premier** élément : `file` répondait « Zip archive data » au lieu de
+  « Microsoft PowerPoint 2007+ », et le système confiait le fichier au premier lecteur venu.
+  `scripts/ranger-pptx.py` réécrit l'archive avec la carte d'identité en tête, non compressée,
+  et sans entrées de dossier — comme le fait PowerPoint. Le contrôle le vérifie désormais.
+  Effet de bord bienvenu : pptxgenjs stockait les images sans compression, le fichier passe de
+  **13,3 à 6,0 Mo**.
+
 ### Les polices
 
 Canva ne connaît ni Young Serif, ni Spectral, ni IBM Plex Sans : sans elles, il substitue et

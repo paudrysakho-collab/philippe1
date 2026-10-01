@@ -45,6 +45,12 @@ const vides = textes.map((t, i) => [i + 1, t.trim().length]).filter(([, n]) => n
 dire(vides.length === 0, `aucune diapositive quasi vide${
   vides.length ? ` (${vides.map(([i]) => i).join(', ')})` : ''}`);
 
+// Les systèmes reconnaissent un PowerPoint en lisant le premier élément de l'archive :
+// enfoui, le fichier n'est plus identifié et s'ouvre dans n'importe quel lecteur.
+const premier = execFileSync('unzip', ['-Z1', FICHIER], { encoding: 'utf8' }).split('\n')[0];
+dire(premier === '[Content_Types].xml',
+  `archive rangée, elle commence par [Content_Types].xml (et non « ${premier} »)`);
+
 const octets = fs.statSync(FICHIER).size;
 dire(octets < 50 * 1024 * 1024, `${(octets / 1e6).toFixed(1)} Mo, sous la limite de 50 Mo`);
 
