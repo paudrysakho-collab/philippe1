@@ -83,6 +83,7 @@ export function pageAgence() {
         <p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>
         <p><a href="https://${esc(c.site)}">${esc(c.site)}</a></p>
       </div>
+      <div class="bandeau-coupe">${coupe({ largeur: 600, hauteur: 110, graineN: 2, etiquettes: false })}</div>
       <div class="chiffres">
         <div><strong>40</strong> domaines</div>
         <div><strong>10</strong> régions</div>
@@ -283,16 +284,45 @@ export function respireSol(d, hauteurMm) {
   const s = STRATES[d.region];
   return `<div class="respire" style="height:${hauteurMm.toFixed(1)}mm">
     <div class="legende-sol">${esc(d.region)} — ${esc(s.mot)}</div>
-    <div class="respire-sol">${solRegion(d.region, d.numero)}</div></div>`;
+    <div class="respire-sol">${solTeinte(d.region, d.numero)}</div></div>`;
+}
+
+/** Le même sol, mais dans la seule teinte de la région : discret, et différent d'une région à l'autre. */
+export function solTeinte(region, graineN) {
+  const r = graine(graineN * 23 + 11);
+  const s = STRATES[region];
+  // La craie de Champagne est trop claire pour teinter un fond crème :
+  // on prend alors le silex, et la trame pointillée garde l'identité de la région.
+  const luminance = (h) => {
+    const [rr, gg, bb] = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
+    return 0.2126 * rr + 0.7152 * gg + 0.0722 * bb;
+  };
+  const hex = luminance(s.hex) > 0.8 ? '#46606E' : s.hex;
+  // Quatre tons d'une seule couleur : le bandeau dit la région sans crier.
+  const tons = [0.16, 0.34, 0.56, 0.82].map((a) => ({ hex, a }));
+  let y = 0, out = '<rect x="-20" y="-5" width="660" height="115" fill="#FBF8F1"/>';
+  tons.forEach(({ hex: c, a }) => {
+    const h = 100 / tons.length + (r() - 0.5) * 7;
+    const pts = [];
+    for (let x = 0; x <= 620; x += 100) pts.push(`${x} ${(y + (r() - 0.5) * 5).toFixed(1)}`);
+    const d = `M-20 ${y.toFixed(1)} ${pts.map((q) => 'L' + q).join(' ')} L620 ${y.toFixed(1)}
+               L620 ${(y + h + 2).toFixed(1)} L-20 ${(y + h + 2).toFixed(1)} Z`;
+    out += `<path d="${d}" fill="${c}" opacity="${a}"/>`;
+    y += h;
+  });
+  return `<svg viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">${out}</svg>
+    <div class="trame trame-${s.t}" style="opacity:.3"></div>`;
 }
 
 /** Le sol d'une région : quatre couches dans sa palette, tirées d'une graine fixe. */
-export function solRegion(region, graineN) {
+export function solRegion(region, graineN, { fond = '#FBF8F1' } = {}) {
   const r = graine(graineN * 17 + 3);
   const s = STRATES[region];
+  // La couleur de la région passe en tête, puis les autres terres : quatre couches
+  // toujours distinctes du fond de la page.
   const palette = [s.hex, '#D08C3C', '#46606E', '#A8515F', '#3C5B47']
     .filter((c, i, a) => a.indexOf(c) === i).slice(0, 4);
-  let y = 0, out = '';
+  let y = 0, out = `<rect x="-20" y="-5" width="660" height="115" fill="${fond}"/>`;
   palette.forEach((col, i) => {
     const h = 100 / palette.length + (r() - 0.5) * 8;
     const pts = [];
@@ -398,6 +428,75 @@ export function pagesIndex(groupesIndex, parPage, poidsTitre = 3) {
   return pages;
 }
 
+/* ————————————————————————————————————— les produits à part ——— */
+
+/** BIB, armagnacs, bières, vins sans alcool, jus de cépages, ratafias : le brief les veut visibles. */
+export function produitsAPart(pagesParDomaine) {
+  const bacs = {
+    bib: { titre: 'Bag-in-box', mot: 'le vin au litre, de 3 à 10 litres', lignes: [] },
+    sansalcool: { titre: 'Vins sans alcool', mot: 'désalcoolisés, tranquilles et pétillants', lignes: [] },
+    jus: { titre: 'Jus de cépages', mot: 'purs jus, sans filtration ni additif', lignes: [] },
+    biere: { titre: 'Bières', mot: 'blanche, blonde, ambrée', lignes: [] },
+    spiritueux: { titre: 'Armagnacs et ratafias', mot: 'Bas-Armagnac et ratafia champenois', lignes: [] },
+  };
+  catalogue.domaines.forEach((d) => d.tableaux.forEach((t) => t.lignes.forEach((l) => {
+    // Un bag-in-box, c'est 3 L et plus. Un magnum de 1,5 L n'en est pas un.
+    const litres = /(\d+(?:[.,]\d+)?)\s*L\b/.exec(l.contenance || '');
+    const estBib = /bib/i.test(t.intitule) || /bib/i.test(t.famille || '')
+      || /bib/i.test(l.contenance || '')
+      || (!!litres && !/magnum/i.test(l.contenance || '')
+          && parseFloat(litres[1].replace(',', '.')) >= 3);
+    const f = famille(l, t);
+    const bac = estBib ? 'bib' : (bacs[f] ? f : null);
+    if (!bac) return;
+    bacs[bac].lignes.push({ l, t, d });
+  })));
+  const bloc = (cle) => {
+    const b = bacs[cle];
+    if (!b.lignes.length) return '';
+    return `<div class="part-bloc">
+      <h3>${picto(cle === 'bib' ? 'autre' : cle)} ${esc(b.titre)}
+        <span>${esc(b.mot)}</span><b>${b.lignes.length}</b></h3>
+      <div class="part-lignes">${b.lignes.map(({ l, t, d }) => `
+        <a class="part-ligne" href="#p${pagesParDomaine.get(d.numero)}">
+          <span class="pl-dom">${d.numero}</span>
+          <span class="pl-nom">${esc(l.cuvee || l.appellation)}</span>
+          <span class="pl-dom-nom">${esc(d.nom)}</span>
+          <span class="pl-fmt">${esc(l.contenance
+            || (t.paliers.some((q) => /litre|\bL\b/i.test(q)) ? t.paliers.join(' · ') : '—'))}</span>
+          <span class="pl-pg">p.&nbsp;${pagesParDomaine.get(d.numero)}</span></a>`).join('')}</div>
+    </div>`;
+  };
+  return page({
+    classe: 'part',
+    corps: `<div class="cadre">
+      <h2 class="titre-section">Les produits à part<span>ce qui n'est pas une bouteille de 75 cl</span></h2>
+      ${['bib', 'sansalcool', 'jus', 'biere', 'spiritueux'].map(bloc).join('')}
+    </div>`,
+  });
+}
+
+/* ———————————————————————————————— index des domaines A → Z ——— */
+
+export function indexDomaines(pagesParDomaine) {
+  const tries = [...catalogue.domaines].sort((a, b) =>
+    a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' }));
+  return page({
+    classe: 'index-dom',
+    corps: `<div class="cadre">
+      <h2 class="titre-section">Les quarante domaines<span>de A à Z</span></h2>
+      <div class="idom-flux">${tries.map((d) => `
+        <a class="idom-ligne" href="#p${pagesParDomaine.get(d.numero)}">
+          <span class="idom-n">${d.numero}</span>
+          <span class="idom-nom">${esc(d.nom)}</span>
+          <span class="idom-reg">${esc(d.region)}</span>
+          <span class="idom-nb">${nbReferences(d)}</span>
+          <span class="idom-pg">${pagesParDomaine.get(d.numero)}</span></a>`).join('')}</div>
+      <p class="idom-pied">Le chiffre avant la page est le nombre de références au tarif.</p>
+    </div>`,
+  });
+}
+
 /* ——————————————————————————————————————————— page finale ——— */
 
 export function pageFinale(nbPhotos) {
@@ -417,6 +516,7 @@ export function pageFinale(nbPhotos) {
         <a href="mailto:${esc(c.email)}">${esc(c.email)}</a> ·
         <a href="https://${esc(c.site)}">${esc(c.site)}</a></p>
 
+      <div class="bandeau-coupe bandeau-fin">${coupe({ largeur: 600, hauteur: 110, graineN: 68, etiquettes: false })}</div>
       <div class="fin-cols">
         <div><h3>Lexique</h3>
           <dl class="lexique">${AG.lexique.map((l) =>
@@ -438,14 +538,13 @@ export function pageFinale(nbPhotos) {
   });
 }
 
-/* ——————————————————————————————————————————— page de respiration ——— */
+/* ————————————————————————————— planche : la coupe, pleine page ——— */
 
-export function respiration(region) {
-  const s = STRATES[region];
+/** Une page de respiration qui dit quelque chose : les dix sols, en coupe, pleine page. */
+export function planche(numero = 0) {
   return page({
-    region, classe: 'respiration',
-    corps: `<div class="resp-fond" style="--strate:${s.hex}">
-      <div class="ouv-trame trame trame-${s.t}"></div></div>
-      <div class="cadre"><p class="resp-mot">${esc(s.mot)}</p></div>`,
+    classe: 'planche',
+    corps: `<div class="planche-fond">${coupe({ largeur: 600, hauteur: 430, graineN: 99 + numero })}</div>
+      <div class="cadre"><p class="planche-mot">Dix régions,<br>dix sols,<br>quarante domaines.</p></div>`,
   });
 }

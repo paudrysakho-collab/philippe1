@@ -19,7 +19,8 @@ const PX_PAR_MM = 96 / 25.4;
 const CADRE_H = 260 - 15 - 13;          // hauteur utile d'une page, en mm
 const ECART_TABLEAUX = 4.5;             // margin-top entre deux tableaux, en mm
 const SECURITE = 2;                     // marge de sécurité : on ne remplit jamais au millimètre
-const VIDE_MIN = 32;                    // au-delà, une fiche courte reçoit la coupe de son sol
+const VIDE_MIN = 30;                    // au-delà, une fiche courte reçoit la coupe de son sol
+const VIDE_MAX = 40;                    // discret : le bandeau ne doit pas devenir du papier peint
 
 /* ———————————————————————————————————————— 1. passe de mesure ——— */
 
@@ -94,8 +95,22 @@ async function mesurer(navigateur) {
 
 /* ——————————————————————————————————————————— 2. pagination ——— */
 
-/** Découpe les tableaux d'un domaine en pages, sans jamais laisser une ligne orpheline. */
+/** Découpe un domaine, puis rééquilibre : deux pages dont l'une est vide, c'est laid. */
 function decouper(d, m) {
+  const premier = decouperAvecBudget(d, m, Infinity);
+  if (premier.pages.length < 2) return premier;
+  // On vise des pages également remplies : on rabote le budget jusqu'à ce que ça déborde.
+  let meilleur = premier;
+  for (let rabot = 2; rabot <= 60; rabot += 2) {
+    const essai = decouperAvecBudget(d, m, rabot);
+    if (essai.pages.length > premier.pages.length) break;
+    meilleur = essai;
+  }
+  return meilleur;
+}
+
+/** `rabot` retire des millimètres au budget de chaque page pour répartir les lignes. */
+function decouperAvecBudget(d, m, rabot) {
   const entete = m.blocs[`entete-${d.numero}`];
   const enteteSuite = m.blocs[`enteteSuite-${d.numero}`];
   const haut = m.blocs[`haut-${d.numero}`];
@@ -109,13 +124,14 @@ function decouper(d, m) {
 
   const pages = [];
   let courante = { morceaux: [], premiere: true };
-  let reste = CADRE_H - SECURITE - entete - haut - pied;
+  const rab = Number.isFinite(rabot) ? rabot : 0;
+  let reste = CADRE_H - SECURITE - rab - entete - haut - pied;
 
   const nouvellePage = () => {
-    courante.reste = reste;
+    courante.reste = reste + rab;   // le rabot n'est pas du vide : il revient à la page
     pages.push(courante);
     courante = { morceaux: [], premiere: false };
-    reste = CADRE_H - SECURITE - enteteSuite - pied;
+    reste = CADRE_H - SECURITE - rab - enteteSuite - pied;
   };
 
   for (const tb of tableaux) {
@@ -132,7 +148,13 @@ function decouper(d, m) {
         dispo -= tb.lignes[i].h;
         prises.push(tb.lignes[i++]);
       }
-      // Pas d'orpheline : si une seule ligne resterait pour la page suivante, on la repousse avec sa voisine.
+      // Jamais une ligne seule sous son en-tête : on repousse le tableau entier.
+      if (prises.length === 1 && tb.lignes.length > 1 && courante.morceaux.length) {
+        i -= prises.length;
+        nouvellePage();
+        continue;
+      }
+      // Pas d'orpheline non plus de l'autre côté : une dernière ligne seule part avec sa voisine.
       if (tb.lignes.length - i === 1 && prises.length > 1) {
         i--; dispo += prises.pop().h;
       }
@@ -142,7 +164,7 @@ function decouper(d, m) {
       if (i < tb.lignes.length) nouvellePage();
     }
   }
-  courante.reste = reste;
+  courante.reste = reste + rab;
   pages.push(courante);
   return { pages, entete, enteteSuite, haut, pied };
 }
@@ -156,7 +178,9 @@ function pagesDomaine(d, m, pagesParDomaine) {
       ${pg.premiere ? G.hautDomaine(d) : ''}
       <div class="corps-tableaux">${pg.morceaux.map((mo) =>
         tableauHtmlImport(mo.t, mo.lignes, { suite: mo.suite, cleTableau: mo.cle })).join('')}
-        ${pg.reste >= VIDE_MIN ? G.respireSol(d, pg.reste - 5) : ''}</div>
+        ${pg.reste >= VIDE_MIN
+          ? G.respireSol(d, Math.min(pg.reste - 5, Math.max(VIDE_MAX, pg.reste * 0.6)))
+          : ''}</div>
       ${G.piedDomaine(d, pagesParDomaine)}
     </div>`,
   }));
@@ -208,11 +232,13 @@ function construirePages(m) {
   const parPage = Math.floor(3 * (CADRE_H - SECURITE - 24) / hLigne);
   const pagesIdx = G.pagesIndex(entrees, parPage, poidsTitre);
   pages.push(...pagesIdx);
+  pages.push(G.produitsAPart(parDomaine));
+  pages.push(G.indexDomaines(parDomaine));
 
   // Un multiple de 4, en ajoutant des respirations avant la page finale.
   let total = pages.length + 1;
   const manque = (4 - (total % 4)) % 4;
-  for (let i = 0; i < manque; i++) pages.push(G.respiration(REGIONS[(i * 3) % REGIONS.length]));
+  for (let i = 0; i < manque; i++) pages.push(G.planche(i));
   pages.push(G.pageFinale(0));
 
   return { pages, parDomaine, apresDomaines };

@@ -44,6 +44,7 @@
 
 /* ——————————————————————————————————————————————— l'agence ——— */
 .agence .cadre { display: flex; flex-direction: column; }
+.agence .coordonnees { margin-bottom: 0; }
 .logo-agence { width: 74mm; margin-bottom: 14mm; }
 .credo {
   font-family: var(--titre); font-size: 17pt; line-height: 1.34; color: var(--silex);
@@ -139,7 +140,7 @@
   font-weight: 600; min-width: 5mm; text-align: right; opacity: .72;
   font-variant-numeric: tabular-nums;
 }
-.som-liste .nom { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.som-liste .nom { flex: 1; }
 .som-liste .pg { font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* ——————————————————————————————————————————————— alliances ——— */
@@ -166,18 +167,19 @@
 }
 
 /* ——————————————————————————————————— ouverture de région ——— */
-.ouverture .ouv-fond, .respiration .resp-fond {
-  position: absolute; inset: 0; background: var(--strate);
-}
+.ouverture .ouv-fond { position: absolute; inset: 0; background: var(--strate); }
 .ouv-trame { position: absolute; inset: 0; opacity: .5; }
 .ouverture .cadre { color: var(--craie); display: flex; flex-direction: column; }
 .ouverture.claire .cadre { color: var(--silex); }
-.ouv-haut { margin-bottom: auto; position: relative; z-index: 2; }
+.ouverture.claire .ouv-carotte { box-shadow: 0 0 0 .7mm rgba(70,96,110,.38); }
+.ouv-haut { margin-bottom: auto; position: relative; z-index: 2; display: flex; }
+.page.recto .ouv-haut { justify-content: flex-start; }   /* la carotte est à droite */
+.page.verso .ouv-haut { justify-content: flex-end; }     /* la carotte est à gauche */
 .ouv-carotte {
-  position: absolute; top: var(--marge-haut); right: 0; width: 46mm; height: 118mm;
-  border-radius: 23mm; overflow: hidden; box-shadow: 0 0 0 .8mm rgba(251,248,241,.3);
+  position: absolute; top: var(--marge-haut); right: var(--marge-ext); width: 46mm; height: 118mm;
+  border-radius: 23mm; overflow: hidden; box-shadow: 0 0 0 .7mm rgba(251,248,241,.35);
 }
-.page.verso .ouv-carotte { right: auto; left: 0; }
+.page.verso .ouv-carotte { right: auto; left: var(--marge-ext); }
 .ouv-carotte svg { width: 100%; height: 100%; display: block; }
 .ouv-types {
   display: flex; flex-wrap: wrap; gap: 2mm 5mm; margin-bottom: 6mm;
@@ -212,17 +214,18 @@
 .ouv-liste .n { font-family: var(--titre); font-size: 11pt; min-width: 6mm; }
 .ouv-liste .nom { flex: 1; }
 .ouv-liste .pg { font-weight: 600; font-variant-numeric: tabular-nums; }
-.ouverture .sanitaire, .respiration .sanitaire, .ouverture .folio, .respiration .folio {
-  color: var(--craie); opacity: .8;
-}
+.ouverture .sanitaire, .ouverture .folio { color: var(--craie); opacity: .8; }
 .ouverture.claire .sanitaire, .ouverture.claire .folio { color: var(--silex); }
 
-/* ——————————————————————————————————————————— respiration ——— */
-.respiration .cadre { display: flex; align-items: flex-end; }
-.resp-mot {
-  font-family: var(--titre); font-size: 20pt; color: var(--craie); opacity: .92;
-  max-width: 120mm; line-height: 1.2;
+/* ——————————————————————————————————————————— planche ——— */
+.planche-fond { position: absolute; inset: 0; }
+.planche-fond .coupe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.planche .cadre { display: flex; align-items: flex-end; }
+.planche-mot {
+  font-family: var(--titre); font-size: 26pt; line-height: 1.12; color: var(--craie);
+  text-shadow: 0 0 6mm rgba(42, 57, 66, .55);
 }
+.planche .folio, .planche .sanitaire { color: var(--craie); opacity: .85; }
 
 /* ——————————————————————————————————————————————— fiche ——— */
 .fiche .cadre { display: flex; flex-direction: column; }
@@ -299,3 +302,56 @@
   border-top: .7pt solid var(--silex); padding-top: 2mm;
 }
 .me-fig-pied .demo-dep strong { color: var(--violet); font-weight: 600; }
+
+/* ——— bandeau de coupe, pour que les pages d'ouverture et de fin ne soient pas vides ——— */
+.bandeau-coupe {
+  position: relative; width: 100%; height: 42mm; border-radius: 1.5mm; overflow: hidden;
+  margin: 8mm 0 7mm;
+}
+.bandeau-coupe .coupe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bandeau-fin { height: 34mm; margin: 6mm 0 6mm; }
+
+/* ——— les produits à part ——— */
+.part-bloc { margin-bottom: 5mm; break-inside: avoid; }
+.part-bloc h3 {
+  display: flex; align-items: center; gap: 2mm; font-family: var(--titre); font-size: 12pt;
+  color: var(--violet); border-bottom: .8pt solid var(--violet); padding-bottom: 1.4mm; margin-bottom: 2mm;
+}
+.part-bloc h3 .picto { width: 3.6mm; height: 3.6mm; }
+.part-bloc h3 span {
+  flex: 1; font-family: var(--courant); font-size: 8.5pt; font-style: italic; color: var(--gneiss);
+}
+.part-bloc h3 b {
+  font-family: var(--technique); font-size: 8pt; font-weight: 600; color: var(--craie);
+  background: var(--violet); border-radius: 4mm; padding: .5mm 2.2mm;
+}
+.part-lignes { columns: 2; column-gap: 7mm; }
+.part-ligne {
+  display: flex; align-items: baseline; gap: 1.8mm; padding: .9mm 0; break-inside: avoid;
+  border-bottom: .25pt solid rgba(70,96,110,.2); font: 400 7.4pt var(--technique);
+}
+.pl-dom {
+  font-weight: 600; color: var(--violet); min-width: 4.5mm; text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.pl-nom { font-weight: 500; }
+.pl-dom-nom { flex: 1; color: rgba(70,96,110,.65); font-size: 6.8pt;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-fmt { color: var(--gneiss); font-size: 6.8pt; white-space: nowrap; }
+.pl-pg { font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ——— index des domaines ——— */
+.idom-flux { columns: 2; column-gap: 8mm; }
+.idom-ligne {
+  display: flex; align-items: baseline; gap: 2mm; padding: 1.5mm 0; break-inside: avoid;
+  border-bottom: .3pt solid rgba(70,96,110,.22); font: 400 8.4pt var(--technique);
+}
+.idom-n { font-family: var(--titre); font-size: 11pt; color: var(--violet); min-width: 6mm; }
+.idom-nom { flex: 1; font-weight: 500; }
+.idom-reg { color: var(--gneiss); font-size: 7pt; }
+.idom-nb {
+  color: rgba(70,96,110,.6); font-size: 7pt; min-width: 5mm; text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.idom-pg { font-weight: 600; min-width: 5mm; text-align: right; font-variant-numeric: tabular-nums; }
+.idom-pied { margin-top: 4mm; font-size: 8pt; color: rgba(70,96,110,.8); }
