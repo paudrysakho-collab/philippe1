@@ -411,95 +411,6 @@
     {
      "intitule": "Possibilité de panacher",
      "paliers": [
-      "À partir de 48 bts",
-      "À partir de 78 bts",
-      "À partir de 96 bts"
-     ],
-     "avertissement": "Tableau identique à celui de Vazart-Coquart (n°40, p.43) — voir QUESTIONS.md",
-     "lignes": [
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "Cuvée Camille",
-       "couleur": "Blanc brut",
-       "millesime": "Base 2023",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        2010,
-        1990,
-        1960
-       ],
-       "note": null
-      },
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "Brut Réserve",
-       "couleur": "Blanc de Blancs",
-       "millesime": "Base 2022",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        2080,
-        2060,
-        2030
-       ],
-       "note": null
-      },
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "Extra Brut",
-       "couleur": "Blanc de Blancs",
-       "millesime": "Base 2020",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        2500,
-        2480,
-        2450
-       ],
-       "note": null
-      },
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "Special Club",
-       "couleur": "Blanc de Blancs",
-       "millesime": "2017",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        4110,
-        4090,
-        4060
-       ],
-       "note": null
-      },
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "TC",
-       "couleur": "Blanc de Blancs",
-       "millesime": "2018",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        4640,
-        4620,
-        4590
-       ],
-       "note": null
-      },
-      {
-       "appellation": "AOP Champagne Grand Cru",
-       "cuvee": "Parcellaire AD 191",
-       "couleur": "Blanc de Blancs",
-       "millesime": "2016",
-       "contenance": "75 cl",
-       "prix_centimes": [
-        4910,
-        4890,
-        4860
-       ],
-       "note": null
-      }
-     ]
-    },
-    {
-     "intitule": "Possibilité de panacher",
-     "paliers": [
       "Tarif"
      ],
      "lignes": [
@@ -674,7 +585,8 @@
       }
      ]
     }
-   ]
+   ],
+   "arbitrage": "Tableau de six Champagne Grand Cru retire le 1er octobre 2026 sur arbitrage de l'agence : copier-colle depuis la fiche n°40 Vazart-Coquart (p.43 du PDF source). Il reste transcrit sur la fiche n°40."
   },
   {
    "numero": 4,

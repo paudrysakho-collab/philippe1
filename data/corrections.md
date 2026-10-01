@@ -79,3 +79,14 @@ p.41 « **E**nracinée… », p.43 « **M**aison de référence… ».
 **p.15, Maison André Goichot** : la pastille rose de panachage recouvre une partie de la
 présentation. La couche texte donne le passage complet : « …cuverie d'élevage de **pointe
 inaugurée en 2020**. » Le catalogue rétablit la phrase entière.
+
+## Arbitrages de l'agence (1er octobre 2026)
+
+Ce ne sont pas des corrections évidentes : ce sont des décisions prises par l'agence sur des
+points que je ne pouvais pas trancher seul.
+
+| Décision | Effet |
+|---|---|
+| **n°3 Domaine du Colombier** : le tableau de six Champagne Grand Cru est un copier-coller de la fiche n°40 | **Retiré** de la fiche n°3. Le tableau reste sur la fiche n°40 Vazart-Coquart. Le Colombier passe de 20 à 14 références |
+| L'Excel et la maquette 52 pages de la session précédente ne sont pas des sources | `archive-v1/` reste consultable mais n'alimente rien. Le PDF fait seul foi |
+| Photos : « un peu de tout » | Sites officiels des domaines + images libres de droits pour les sujets génériques + fichiers fournis par l'agence, qui priment |

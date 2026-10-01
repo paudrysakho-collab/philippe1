@@ -22,13 +22,13 @@ Le palier 300 bts est plus cher que le palier 198 bts, la palette revient au pri
 J'ai transcrit « 75 cl » et je le signale ici plutôt que de laisser un montant en euros
 dans une colonne de contenance. **Confirmez-moi.**
 
-### 4. Tableau en double — n°3 Domaine du Colombier (p.6) et n°40 Vazart-Coquart (p.43)
+### 4. Tableau en double — n°3 Domaine du Colombier (p.6) — ✅ TRANCHÉ
 Le premier tableau du Colombier (six Champagne Grand Cru : Cuvée Camille, Brut Réserve,
 Extra Brut, Special Club, TC, Parcellaire AD 191, aux mêmes prix et aux mêmes trois paliers)
-est **identique à celui de Vazart-Coquart**. Le Colombier est un domaine de Loire ; ces
-champagnes y paraissent déplacés.
-*Ce que je propose :* un copier-coller à retirer de la fiche du Colombier. Je l'ai conservé
-tel quel dans les données, assorti d'un avertissement. **Dois-je le supprimer de la fiche n°3 ?**
+était **identique à celui de Vazart-Coquart** (n°40, p.43).
+**Arbitrage de l'agence, 1er octobre 2026 : copier-coller, retiré de la fiche n°3.**
+Le tableau reste transcrit sur la fiche n°40. La fiche du Colombier conserve ses Muscadet,
+IGP et BIB, soit 14 références au lieu de 20.
 
 ### 5. Prix affichés mais « tarif sur demande » — n°25 La Passion des Terroirs (p.28)
 Trente-et-une lignes portent un prix, mais la note de prix dit « * Demander le tarif et offre. »
@@ -100,14 +100,17 @@ Je ne les inventerai pas. À vous de dire s'il faut les ajouter, et avec quelles
   « Agence SCIO Vins et spirits 843 151 663 RCS Nantes » ;
 - **nouveautés de la saison** : aucune cuvée n'est signalée comme nouvelle.
 
-## Photos
+## Photos — ✅ CADRE FIXÉ
 
-Aucune photo n'est encore posée. Le brief autorise les photos prises sur le **site officiel
+L'agence a répondu « un peu de tout » : je combine les trois sources autorisées par le brief
+— photos des sites officiels des domaines, photos libres de droits pour les sujets génériques,
+et les fichiers que l'agence déposera dans `sources/`. Tout passe par `credits.md` et par la
+compétence `photos-domaines`. Restent à trancher : Le brief autorise les photos prises sur le **site officiel
 de chaque domaine** et des images libres de droits pour les sujets génériques. Deux points
 à trancher avant l'étape 4 :
 
-- **Autorisez-vous la sortie réseau** vers les sites des domaines ? L'environnement filtre
-  les domaines sortants ; si la collecte est bloquée, je vous dirai lesquels autoriser.
-- **Avez-vous des photos HD** (domaines, paysages) et une **version vectorielle du logo**
-  (PDF, SVG, EPS ou AI) ? Le JPG fourni fait 1030 × 251 px, soit **87 mm de large au
-  maximum** à 300 dpi. Au-delà, il faut du vectoriel.
+- **La sortie réseau** vers les sites des domaines : si elle est bloquée, je vous donnerai
+  la liste exacte des domaines à autoriser dans votre environnement.
+- **Vos photos HD** et une **version vectorielle du logo** (PDF, SVG, EPS ou AI) : déposez-les
+  dans `sources/`, elles passent en priorité sur tout le reste. Le JPG fourni fait
+  1030 × 251 px, soit **87 mm de large au maximum** à 300 dpi.
