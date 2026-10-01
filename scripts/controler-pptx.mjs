@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { catalogue, euros } from '../src/gabarits/pieces.mjs';
+import { catalogue, euros, photoDe } from '../src/gabarits/pieces.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const FICHIER = path.join(RACINE, 'dist/catalogue-scio-2026-canva.pptx');
@@ -44,6 +44,33 @@ const AG = catalogue.agence;
 const vides = textes.map((t, i) => [i + 1, t.trim().length]).filter(([, n]) => n < 20);
 dire(vides.length === 0, `aucune diapositive quasi vide${
   vides.length ? ` (${vides.map(([i]) => i).join(', ')})` : ''}`);
+
+// Sur la première page de chaque domaine, chaque emplacement porte SOIT son image, SOIT
+// sa forme pointillée et son étiquette : jamais les deux (le pointillé s'imprimerait sous
+// l'image), jamais aucun (un trou), et toujours ce que dit data/photos-preparees.json.
+const xmls = liste.map((n) => execFileSync('unzip', ['-p', FICHIER, n], { encoding: 'utf8' }));
+const fautes = [];
+let posees = 0;
+plan.descripteurs.forEach((desc, i) => {
+  if (desc.type !== 'fiche' || !desc.premiere) return;
+  const d = catalogue.domaines.find((x) => x.numero === desc.domaine);
+  const xml = xmls[i];
+  const nom = d.nom.replace(/&/g, '&amp;');
+  const descr = [...xml.matchAll(/<p:cNvPr [^>]*descr="([^"]*)"/g)].map((m) => m[1]);
+  [['rond', 'ROND', (t) => t.endsWith(` — ${nom}`)],
+    ['bouteille', 'BOUTEILLE', (t) => t === `Une bouteille du domaine ${nom}`]].forEach(([role, mot, estLaSienne]) => {
+    const attendue = !!photoDe(d, role);
+    const image = descr.some(estLaSienne);
+    const reserve = xml.includes(`<a:t>${mot}</a:t>`);
+    if (image) posees += 1;
+    if (image === reserve || image !== attendue) {
+      fautes.push(`n°${d.numero} ${role} (diapositive ${i + 1}) : ${image ? 'image' : "pas d'image"}, ${
+        reserve ? 'pointillé' : 'pas de pointillé'}${image !== attendue ? ', contraire à photos-preparees.json' : ''}`);
+    }
+  });
+});
+dire(fautes.length === 0, `40 fiches : ${posees} images posées, ${80 - posees} emplacements réservés, ni doublon ni trou${
+  fautes.length ? ` (${fautes.join(' ; ')})` : ''}`);
 
 // Les systèmes reconnaissent un PowerPoint en lisant le premier élément de l'archive :
 // enfoui, le fichier n'est plus identifié et s'ouvre dans n'importe quel lecteur.

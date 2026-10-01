@@ -1,21 +1,81 @@
 #!/usr/bin/env python3
-"""Prépare les images retenues : un cadrage rond, une bouteille détourée, un traitement unique.
+"""Prépare les images des fiches : un cadrage rond, une bouteille détourée, un traitement unique.
+
+D'où viennent les images : les dossiers de l'agence, copiés tels quels dans src/photos/brut/
+(chemin ignoré par git : les originaux restent en local, seules les images traitées sont
+versionnées).
+
+    src/photos/brut/Bouteilles_de_vin/<Nom_du_domaine>/…       → la bouteille
+    src/photos/brut/Domaines_et_vignerons/<Nom_du_domaine>/…   → le rond (vigneron ou logo)
+
+Le nom du dossier est le nom du domaine. L'appariement dossier → domaine, et le choix d'une
+image dans chaque dossier, sont écrits dans data/photos-locales.json une fois validés par
+l'agence : ce script ne devine rien, il applique cette table et rien d'autre.
+
+    python3 scripts/preparer-photos.py --inventaire   liste brut/, propose une correspondance,
+                                                      fait une planche de contact par dossier
+    python3 scripts/preparer-photos.py                prépare les images de la table validée
+
+Sorties : src/photos/rond/dNN.jpg (pour le PDF, cerclé par la feuille de style),
+src/photos/rond/dNN-cercle.png (le même, déjà masqué en cercle, pour le .pptx),
+src/photos/bouteille/dNN.png (détourée, fond transparent) et data/photos-preparees.json.
+Ce qui est écarté (trop petit, non détourable) l'est dans data/photos-ecartees.json, avec
+la raison : l'emplacement garde alors son repère pointillé.
 
 Le traitement est appliqué par cette seule fonction, à toutes les images : c'est ce qui
 les fait appartenir au même catalogue plutôt qu'à quarante univers différents.
 """
-import json, pathlib
-from PIL import Image, ImageEnhance, ImageChops, ImageFilter
+import io, json, math, pathlib, re, sys, unicodedata
+from PIL import (Image, ImageChops, ImageCms, ImageDraw, ImageEnhance, ImageFilter, ImageOps,
+                 ImageStat)
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-inv = json.loads((RACINE / "data/images-moissonnees.json").read_text(encoding="utf-8"))
-choix = json.loads((RACINE / "data/photos-choisies.json").read_text(encoding="utf-8"))
-ROND = RACINE / "src/photos/rond"; ROND.mkdir(parents=True, exist_ok=True)
-BOUT = RACINE / "src/photos/bouteille"; BOUT.mkdir(parents=True, exist_ok=True)
+BRUT = RACINE / "src/photos/brut"
+ARBRES = {"bouteille": "Bouteilles_de_vin", "rond": "Domaines_et_vignerons"}
+TABLE = RACINE / "data/photos-locales.json"
+ROND = RACINE / "src/photos/rond"
+BOUT = RACINE / "src/photos/bouteille"
+EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".bmp", ".gif", ".heic"}
 
-# Tailles d'usage, à 300 ppi : le rond fait 34 mm, la bouteille 26 mm de large.
-PX_ROND = round(34 / 25.4 * 300)        # 402 px
-PX_BOUT_L = round(26 / 25.4 * 300)      # 307 px
+# Les emplacements, en millimètres : ils ne bougent pas, l'agence compte dessus.
+MM_ROND = 40
+MM_BOUT_L, MM_BOUT_H = 24, 62
+PPI_CIBLE, PPI_PLANCHER = 300, 200
+def px(mm, ppi=PPI_CIBLE):
+    return round(mm / 25.4 * ppi)
+PX_ROND = px(MM_ROND)                   # 472 px
+PX_BOUT_L = px(MM_BOUT_L)               # 283 px
+PX_BOUT_H = px(MM_BOUT_H)               # 732 px
+
+
+class Ecartee(Exception):
+    """Une image qu'on ne pose pas : l'emplacement reste vide, avec sa raison."""
+
+
+def ouvrir(chemin):
+    """Ouvre une image comme on la voit : redressée selon l'EXIF, ramenée en sRGB."""
+    im = Image.open(chemin)
+    im = ImageOps.exif_transpose(im)
+    icc = im.info.get("icc_profile")
+    if im.mode == "P":
+        im = im.convert("RGBA")
+    if icc and im.mode in ("RGB", "RGBA", "CMYK"):
+        try:
+            sortie = "RGBA" if im.mode == "RGBA" else "RGB"
+            im = ImageCms.profileToProfile(im, ImageCms.ImageCmsProfile(io.BytesIO(icc)),
+                                           ImageCms.createProfile("sRGB"), outputMode=sortie)
+        except Exception:
+            pass
+    if im.mode == "LA":
+        im = im.convert("RGBA")
+    if im.mode not in ("RGB", "RGBA"):
+        im = im.convert("RGB")
+    return im
+
+
+def a_de_la_transparence(im):
+    return im.mode == "RGBA" and im.getchannel("A").getextrema()[0] < 250
+
 
 def aplatir(im):
     """Un logo en PNG transparent doit retomber sur un fond qui le laisse lisible :
@@ -23,19 +83,20 @@ def aplatir(im):
     if im.mode not in ("RGBA", "LA", "P"):
         return im.convert("RGB")
     im = im.convert("RGBA")
-    pixels = [p for p in im.getdata() if p[3] > 60]
-    if not pixels:
+    opaque = im.getchannel("A").point(lambda a: 255 if a > 60 else 0)
+    if not opaque.getbbox():
         return im.convert("RGB")
-    clarte = sum(0.2126 * p[0] + 0.7152 * p[1] + 0.0722 * p[2] for p in pixels) / len(pixels)
+    r, v, b = ImageStat.Stat(im.convert("RGB"), mask=opaque).mean
+    clarte = 0.2126 * r + 0.7152 * v + 0.0722 * b
     fond = (70, 96, 110) if clarte > 150 else (251, 248, 241)
     plat = Image.new("RGB", im.size, fond)
     plat.paste(im, (0, 0), im)
     return plat
 
-def traitement(im):
+
+def etalonner(im):
     """Le traitement unique : légèrement désaturé, réchauffé, contraste tenu.
-    Les photos viennent de vingt sites différents ; elles doivent sortir d'une même main."""
-    im = aplatir(im)
+    Les images viennent de quarante domaines ; elles doivent sortir d'une même main."""
     im = ImageEnhance.Color(im).enhance(0.82)
     im = ImageEnhance.Contrast(im).enhance(1.06)
     r, v, b = im.split()
@@ -43,111 +104,364 @@ def traitement(im):
     b = b.point(lambda x: max(0, int(x * 0.965)))
     return Image.merge("RGB", (r, v, b))
 
+
+def traitement(im):
+    return etalonner(aplatir(im))
+
+
 def remplir_depuis_les_bords(proche, taille):
     """On ne retire que le fond ATTEINT DEPUIS LES BORDS. Sans cela, le corps d'une
     bouteille de blanc, presque aussi clair que son fond, serait effacé lui aussi."""
     larg, haut = taille
-    masque = proche.load()
+    masque = proche.tobytes()
     vus = bytearray(larg * haut)
     pile = []
-    for x in range(larg):
-        for y in (0, haut - 1):
-            if masque[x, y] and not vus[y * larg + x]:
-                vus[y * larg + x] = 1; pile.append((x, y))
-    for y in range(haut):
-        for x in (0, larg - 1):
-            if masque[x, y] and not vus[y * larg + x]:
-                vus[y * larg + x] = 1; pile.append((x, y))
+    for i in list(range(larg)) + list(range((haut - 1) * larg, haut * larg)) \
+            + list(range(0, haut * larg, larg)) + list(range(larg - 1, haut * larg, larg)):
+        if masque[i] and not vus[i]:
+            vus[i] = 1; pile.append(i)
     while pile:
-        x, y = pile.pop()
-        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-            a, b = x + dx, y + dy
-            if 0 <= a < larg and 0 <= b < haut and not vus[b * larg + a] and masque[a, b]:
-                vus[b * larg + a] = 1; pile.append((a, b))
-    return Image.frombytes("L", taille, bytes(0 if v else 255 for v in vus))
+        i = pile.pop()
+        x = i % larg
+        for j in ((i + 1) if x < larg - 1 else -1, (i - 1) if x > 0 else -1,
+                  i + larg if i + larg < larg * haut else -1, i - larg):
+            if j >= 0 and not vus[j] and masque[j]:
+                vus[j] = 1; pile.append(j)
+    return Image.frombytes("L", taille, bytes(vus)).point(lambda v: 0 if v else 255)
 
-def chemin_source(numero, index):
-    d = inv[str(numero)]
-    for i in d["images"]:
-        if pathlib.Path(i["fichier"]).stem == index:
-            return RACINE / i["fichier"], i
-    raise SystemExit(f"n°{numero} : image {index} introuvable")
 
-def faire_rond(numero, index, mode="couvrir"):
-    src, info = chemin_source(numero, index)
-    im = Image.open(src)
-    im = traitement(im)
-    if mode == "contenir":
-        # Un logo ne se recadre pas : il entre en entier, sur une réserve claire.
-        c = max(im.size)
-        bord = im.getpixel((1, 1))
-        fond = Image.new("RGB", (c, c), bord)
-        marge = round(c * 0.10)
-        copie = im.copy()
-        copie.thumbnail((c - 2 * marge, c - 2 * marge), Image.LANCZOS)
-        fond.paste(copie, ((c - copie.width) // 2, (c - copie.height) // 2))
-        im = fond
-    else:
-        # Carré centré, sans déformation : on ne coupe jamais au hasard, on prend le centre.
-        c = min(im.size)
-        g = (im.width - c) // 2
-        h = (im.height - c) // 3      # un tiers plutôt que la moitié : les visages sont hauts
-        im = im.crop((g, h, g + c, h + c))
-    im = im.resize((PX_ROND, PX_ROND), Image.LANCZOS)
-    sortie = ROND / f"d{int(numero):02d}.jpg"
-    im.save(sortie, "JPEG", quality=86, optimize=True, progressive=True)
-    return sortie, info, c
-
-def faire_bouteille(numero, index):
-    src, info = chemin_source(numero, index)
-    im = Image.open(src).convert("RGB")
-    im = traitement(im)
-    # Le fond uni (blanc, noir ou gris) est retiré : pas de gros carré posé sur le papier.
+def couleur_des_coins(im):
     coins = [im.getpixel(p) for p in
              ((2, 2), (im.width - 3, 2), (2, im.height - 3), (im.width - 3, im.height - 3))]
-    fond = tuple(sum(c[i] for c in coins) // 4 for i in range(3))
-    diff = ImageChops.difference(im, Image.new("RGB", im.size, fond)).convert("L")
+    return tuple(sum(c[i] for c in coins) // 4 for i in range(3))
 
-    def alpha_pour(tolerance):
-        proche = diff.point(lambda x: 255 if x < tolerance else 0)
-        return remplir_depuis_les_bords(proche, im.size)
 
-    # Une bouteille de blanc sur fond blanc se confond avec son fond : si le détourage
-    # en garde trop peu, on resserre la tolérance jusqu'à retrouver un objet plausible.
-    for tolerance in (24, 16, 11, 7):
-        alpha = alpha_pour(tolerance)
-        garde = sum(alpha.point(lambda x: 1 if x else 0).getdata())
-        if garde > 0.06 * im.width * im.height:
+def silhouette(alpha):
+    """Une bouteille vue de face n'a, sur chaque ligne, qu'une seule largeur pleine, et son
+    corps est régulier. Le remplissage depuis les bords peut entrer dans l'objet quand une
+    étiquette blanche touche le bord du verre : il la mange avec le fond blanc, et le papier
+    apparaît au travers. On remplit donc chaque ligne d'un bord à l'autre, puis on vérifie le
+    corps (la moitié basse) : une ligne nettement plus étroite que les autres dit que le
+    détourage a creusé la bouteille. Rend l'alpha rempli, ou None si la silhouette est creusée.
+    Au pied, la première ligne plus large que le corps est une ombre portée : la silhouette
+    s'arrête là, quitte à perdre un ou deux pixels de fond de bouteille."""
+    l, h = alpha.size
+    donnees = alpha.tobytes()
+    lignes = []
+    for y in range(h):
+        rang = donnees[y * l:(y + 1) * l]
+        a = rang.find(255)
+        lignes.append((a, rang.rfind(255)) if a >= 0 else None)
+    pleines = [y for y, r in enumerate(lignes) if r]
+    if not pleines:
+        return None
+    haut, bas = pleines[0], pleines[-1]
+    corps = range(haut + (bas - haut) // 2, bas - (bas - haut) // 50)
+    largeurs = sorted(lignes[y][1] - lignes[y][0] + 1 for y in corps if lignes[y])
+    if not largeurs:
+        return None
+    mediane = largeurs[len(largeurs) // 2]
+    creusees = sum(1 for y in corps if not lignes[y] or lignes[y][1] - lignes[y][0] + 1 < 0.85 * mediane)
+    if creusees > max(2, 0.005 * len(corps)):
+        return None
+    for y in range(bas - (bas - haut) // 12, bas + 1):
+        if lignes[y] and lignes[y][1] - lignes[y][0] + 1 > 1.12 * mediane:
+            bas = y - 1
             break
+    sortie = bytearray(l * h)
+    for y in range(haut, bas + 1):
+        if lignes[y]:
+            a, b = lignes[y]
+            sortie[y * l + a:y * l + b + 1] = b"\xff" * (b - a + 1)
+    return Image.frombytes("L", (l, h), bytes(sortie))
 
-    # On lisse le bord : un détourage dur se voit à l'impression.
-    alpha = alpha.filter(ImageFilter.GaussianBlur(0.9)).point(lambda x: 0 if x < 120 else 255)
-    alpha = alpha.filter(ImageFilter.GaussianBlur(0.6))
+
+def detourer(im, tolerances=(24, 16, 11, 7), fond=None):
+    """Retire le fond uni (blanc, noir ou gris) atteint depuis les bords. Rend l'alpha, la
+    tolérance retenue et la part gardée ; l'alpha vaut None si aucune tolérance ne donne
+    une bouteille entière. Le fond se lit dans les coins de l'image entière : au second
+    passage, sur la bouteille recadrée, un coin peut tomber dans l'ombre portée."""
+    fond = fond or couleur_des_coins(im)
+    diff = ImageChops.difference(im, Image.new("RGB", im.size, fond)).convert("L")
+    garde = 0.0
+    for tolerance in tolerances:
+        proche = diff.point(lambda x, t=tolerance: 255 if x < t else 0)
+        alpha = remplir_depuis_les_bords(proche, im.size)
+        garde = alpha.histogram()[255] / (im.width * im.height)
+        # Une bouteille de blanc sur fond blanc se confond avec son fond : si le détourage
+        # en garde trop peu, ou s'il creuse la bouteille, on resserre la tolérance.
+        if garde <= 0.06 or garde > 0.92:
+            continue
+        plein = silhouette(alpha)
+        if plein is not None:
+            return plein, tolerance, garde
+    return None, None, garde
+
+
+def cercle(im):
+    """Le rond, déjà masqué : pour le .pptx, où un masque de forme n'est pas sûr de survivre
+    à l'import. Le bord est lissé par suréchantillonnage."""
+    n, k = im.width, 4
+    m = Image.new("L", (n * k, n * k), 0)
+    ImageDraw.Draw(m).ellipse((0, 0, n * k - 1, n * k - 1), fill=255)
     rgba = im.convert("RGBA")
-    rgba.putalpha(alpha)
-    boite = rgba.getbbox()
-    if boite:
+    rgba.putalpha(m.resize((n, n), Image.LANCZOS))
+    return rgba
+
+
+# ——————————————————————————————————————————————————————————— le rond ———
+
+def faire_rond(numero, entree):
+    src = BRUT / entree["fichier"]
+    im = ouvrir(src)
+    l0, h0 = im.size
+    if entree.get("mode", "couvrir") == "contenir":
+        im, ppi = rond_logo(im)
+    else:
+        im = traitement(im)
+        # Carré sans déformation. Par défaut on centre en largeur et on prend le tiers
+        # haut plutôt que la moitié : les visages sont hauts. La table peut fixer le centre.
+        c = min(im.size)
+        ppi = c / (MM_ROND / 25.4)
+        if ppi < PPI_PLANCHER:
+            raise Ecartee(f"trop petite : {c} px de côté utile, {ppi:.0f} ppi à {MM_ROND} mm "
+                          f"(plancher {PPI_PLANCHER} ppi, soit {px(MM_ROND, PPI_PLANCHER)} px)")
+        cx, cy = entree.get("centre", [None, None])
+        g = (im.width - c) // 2 if cx is None else round(cx * im.width - c / 2)
+        h = (im.height - c) // 3 if cy is None else round(cy * im.height - c / 2)
+        g = max(0, min(im.width - c, g)); h = max(0, min(im.height - c, h))
+        im = im.crop((g, h, g + c, h + c))
+        # on ne grandit jamais une image : sous 300 ppi, elle garde ses pixels
+        cote = min(PX_ROND, c)
+        im = im.resize((cote, cote), Image.LANCZOS)
+    sortie = ROND / f"d{int(numero):02d}.jpg"
+    im.save(sortie, "JPEG", quality=88, optimize=True, progressive=True)
+    cercle(im).save(ROND / f"d{int(numero):02d}-cercle.png", "PNG", optimize=True)
+    return sortie, f"{l0}x{h0}", round(ppi)
+
+
+def rond_logo(im):
+    """Un logo ne se recadre jamais : il entre en entier, centré, à l'échelle, sur une
+    réserve claire. C'est sa diagonale qui doit tenir dans le cercle, pas sa largeur :
+    un logo carré posé au plus large aurait ses coins rognés par le masque."""
+    plat = traitement(im)
+    fond = couleur_des_coins(plat)
+    diff = ImageChops.difference(plat, Image.new("RGB", plat.size, fond)).convert("L")
+    boite = diff.point(lambda x: 255 if x > 18 else 0).getbbox() or (0, 0, *plat.size)
+    logo = plat.crop(boite)
+    lw, lh = logo.size
+    # la diagonale du logo occupe 86 % du diamètre : un peu d'air tout autour
+    s = 0.86 * PX_ROND / math.hypot(lw, lh)
+    ppi = PPI_CIBLE / s
+    if ppi < PPI_PLANCHER:
+        raise Ecartee(f"logo trop petit : {lw}x{lh} px utiles, {ppi:.0f} ppi une fois posé "
+                      f"(plancher {PPI_PLANCHER} ppi)")
+    # sous 300 ppi, c'est le cercle qui se resserre autour du logo, jamais le logo qui grossit
+    cote = round(PX_ROND / max(1.0, s))
+    echelle = min(1.0, s)
+    logo = logo.resize((max(1, round(lw * echelle)), max(1, round(lh * echelle))), Image.LANCZOS)
+    reserve = Image.new("RGB", (cote, cote), fond)
+    reserve.paste(logo, ((cote - logo.width) // 2, (cote - logo.height) // 2))
+    return reserve, ppi
+
+
+# ——————————————————————————————————————————————————————— la bouteille ———
+
+def faire_bouteille(numero, entree):
+    src = BRUT / entree["fichier"]
+    im = ouvrir(src)
+    l0, h0 = im.size
+
+    if a_de_la_transparence(im):
+        # déjà détourée : on garde son alpha tel quel
+        alpha = im.getchannel("A")
+        rgb = etalonner(im.convert("RGB"))
+        boite = alpha.point(lambda a: 255 if a > 24 else 0).getbbox()
+        if not boite:
+            raise Ecartee("image entièrement transparente")
+        rgba = rgb.convert("RGBA"); rgba.putalpha(alpha)
         rgba = rgba.crop(boite)
-    ratio = PX_BOUT_L / rgba.width
-    rgba = rgba.resize((PX_BOUT_L, max(1, round(rgba.height * ratio))), Image.LANCZOS)
+    else:
+        rgb = etalonner(im.convert("RGB"))
+        # Premier passage sur une copie réduite : il trouve la tolérance et la bouteille.
+        f = min(1.0, 1200 / max(rgb.size))
+        travail = rgb.resize((round(rgb.width * f), round(rgb.height * f)), Image.LANCZOS) \
+            if f < 1 else rgb
+        alpha, tolerance, garde = detourer(travail)
+        if alpha is None:
+            if garde > 0.92:
+                raise Ecartee("fond non uni : le détourage ne trouve pas la bouteille "
+                              f"(il garde {garde:.0%} de l'image)")
+            if garde <= 0.06:
+                raise Ecartee("le détourage n'a presque rien gardé (fond et bouteille confondus)")
+            raise Ecartee("détourage incertain : l'étiquette ou le verre se confond avec le "
+                          "fond et la bouteille sortirait trouée ; il faut une version détourée "
+                          "(PNG transparent) ou sur un fond qui tranche")
+        b = alpha.getbbox()
+        marge = round(0.03 * max(rgb.size))
+        boite = (max(0, round(b[0] / f) - marge), max(0, round(b[1] / f) - marge),
+                 min(rgb.width, round(b[2] / f) + marge), min(rgb.height, round(b[3] / f) + marge))
+        # Second passage, sur la bouteille seule, à une fois et demie la taille d'usage :
+        # le bord est net, et une petite bouteille dans une grande image garde ses pixels.
+        zone = rgb.crop(boite)
+        k = min(1.0, 1.6 * min(PX_BOUT_L / zone.width, PX_BOUT_H / zone.height))
+        if k < 1:
+            zone = zone.resize((round(zone.width * k), round(zone.height * k)), Image.LANCZOS)
+        alpha, _, _ = detourer(zone, (tolerance,), couleur_des_coins(travail))
+        if alpha is None:
+            raise Ecartee("détourage incertain au second passage")
+        # On lisse le bord : un détourage dur se voit à l'impression.
+        alpha = alpha.filter(ImageFilter.GaussianBlur(0.9)).point(lambda x: 0 if x < 120 else 255)
+        alpha = alpha.filter(ImageFilter.GaussianBlur(0.6))
+        rgba = zone.convert("RGBA"); rgba.putalpha(alpha)
+        b2 = rgba.getbbox()
+        if not b2:
+            raise Ecartee("le détourage n'a rien gardé")
+        rgba = rgba.crop(b2)
+        rgba.info["natif"] = (rgba.width / k, rgba.height / k)
+
+    # Contenue dans 24 × 62 mm, sans déformation : c'est l'axe limitant qui fixe la résolution.
+    nl, nh = rgba.info.get("natif", rgba.size)
+    s = min(PX_BOUT_L / nl, PX_BOUT_H / nh)      # échelle qui donnerait 300 ppi
+    ppi = PPI_CIBLE / s
+    if ppi < PPI_PLANCHER:
+        raise Ecartee(f"trop petite : bouteille de {nl:.0f}x{nh:.0f} px, {ppi:.0f} ppi "
+                      f"dans {MM_BOUT_L}x{MM_BOUT_H} mm (plancher {PPI_PLANCHER} ppi)")
+    # jamais agrandie : sous 300 ppi elle garde ses pixels, au-dessus elle descend à 300
+    cible = (max(1, round(nl * min(1.0, s))), max(1, round(nh * min(1.0, s))))
+    rgba = rgba.resize(cible, Image.LANCZOS)
     sortie = BOUT / f"d{int(numero):02d}.png"
     rgba.save(sortie, "PNG", optimize=True)
-    return sortie, info, rgba.size
+    return sortie, f"{l0}x{h0}", round(ppi)
 
-lignes = []
-for n, c in sorted(((k, v) for k, v in choix.items() if not k.startswith("_")), key=lambda kv: int(kv[0])):
-    s, info, cote = faire_rond(n, c["rond"], c.get("mode", "couvrir"))
-    ppi = round(cote / (34 / 25.4))
-    lignes.append((int(n), "rond", s, info, ppi, c.get("rond_quoi", "")))
-    print(f"n°{int(n):>2} rond      {s.name}  source {info['l']}x{info['h']}  {ppi} ppi à 34 mm")
-    if "bouteille" in c:
-        s, info, taille = faire_bouteille(n, c["bouteille"])
-        ppi = round(info["l"] / (26 / 25.4))
-        lignes.append((int(n), "bouteille", s, info, ppi, "bouteille du domaine"))
-        print(f"n°{int(n):>2} bouteille {s.name}  source {info['l']}x{info['h']}  {ppi} ppi à 26 mm")
 
-(RACINE / "data/photos-preparees.json").write_text(json.dumps(
-    [{"numero": n, "role": r, "fichier": str(s.relative_to(RACINE)),
-      "source_url": i["url"], "source_px": f"{i['l']}x{i['h']}", "ppi": p, "sujet": q}
-     for n, r, s, i, p, q in lignes], ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print(f"\n{len(lignes)} images préparées → data/photos-preparees.json")
+# ——————————————————————————————————————————————————————— l'inventaire ———
+
+MOTS_VIDES = {"domaine", "domaines", "chateau", "champagne", "maison", "famille", "et", "de",
+              "du", "des", "la", "le", "les", "l", "d", "fils", "vins", "vin", "vignobles", "jus",
+              "cepages", "sa", "sas", "earl", "scea", "gaec"}
+
+
+def mots(texte):
+    t = unicodedata.normalize("NFD", texte).encode("ascii", "ignore").decode().lower()
+    return [m for m in re.split(r"[^a-z0-9]+", t) if m]
+
+
+def proposer(dossier, domaines):
+    """Une proposition, jamais une décision : la table se valide à l'œil, par l'agence."""
+    plie = "".join(mots(dossier))
+    meilleurs = []
+    for d in domaines:
+        cles = [m for m in mots(d["nom"]) if m not in MOTS_VIDES and len(m) > 1]
+        if not cles:
+            continue
+        trouves = sum(1 for m in cles if m in plie)
+        if trouves:
+            meilleurs.append((trouves / len(cles), d["numero"], d["nom"]))
+    meilleurs.sort(key=lambda t: (-t[0], t[1]))
+    return meilleurs[:3]
+
+
+def images_de(dossier):
+    return sorted(p for p in dossier.rglob("*")
+                  if p.is_file() and p.suffix.lower() in EXTENSIONS and not p.name.startswith("."))
+
+
+def planche(dossier, fichiers, sortie, vign=220, cols=6):
+    lignes = math.ceil(len(fichiers) / cols) or 1
+    feuille = Image.new("RGB", (cols * (vign + 10) + 10, lignes * (vign + 34) + 10), "#3a3a3a")
+    dess = ImageDraw.Draw(feuille)
+    for k, p in enumerate(fichiers):
+        x, y = 10 + (k % cols) * (vign + 10), 10 + (k // cols) * (vign + 34)
+        try:
+            im = ouvrir(p)
+            l, h = im.size
+            if im.mode == "RGBA":   # damier sous la transparence : on voit si c'est détouré
+                fond = Image.new("RGB", im.size, "#d8d8d8")
+                d2 = ImageDraw.Draw(fond)
+                pas = max(8, max(im.size) // 40)
+                for i in range(0, im.width, pas):
+                    for j in range(0, im.height, pas):
+                        if (i // pas + j // pas) % 2:
+                            d2.rectangle((i, j, i + pas - 1, j + pas - 1), fill="#ffffff")
+                fond.paste(im, (0, 0), im); im = fond
+            im.thumbnail((vign, vign), Image.LANCZOS)
+            feuille.paste(im, (x + (vign - im.width) // 2, y + (vign - im.height) // 2))
+            etiquette = f"{k + 1}. {p.name[:26]}  {l}x{h}"
+        except Exception as e:
+            etiquette = f"{k + 1}. {p.name[:26]}  illisible"
+        dess.text((x, y + vign + 6), etiquette, fill="#f0f0f0")
+    feuille.save(sortie, "JPEG", quality=82)
+
+
+def inventaire():
+    domaines = json.loads((RACINE / "data/catalogue.json").read_text(encoding="utf-8"))["domaines"]
+    if not BRUT.is_dir():
+        raise SystemExit(f"{BRUT.relative_to(RACINE)} n'existe pas : copiez-y les deux arborescences.")
+    planches = RACINE / "build/planches"; planches.mkdir(parents=True, exist_ok=True)
+    rapport = ["| Arborescence | Dossier | Images | Proposition (à valider) | Plus grande image |",
+               "|---|---|---|---|---|"]
+    for arbre in sorted(p for p in BRUT.iterdir() if p.is_dir()):
+        for dossier in sorted(p for p in arbre.iterdir() if p.is_dir()):
+            fichiers = images_de(dossier)
+            props = proposer(dossier.name, domaines)
+            prop = "; ".join(f"n°{n} {nom} ({score:.0%})" for score, n, nom in props) or "aucune"
+            plus = "—"
+            if fichiers:
+                tailles = []
+                for p in fichiers:
+                    try:
+                        with Image.open(p) as im:
+                            tailles.append((im.size[0] * im.size[1], f"{im.size[0]}x{im.size[1]}"))
+                    except Exception:
+                        pass
+                plus = max(tailles)[1] if tailles else "illisible"
+                planche(dossier, fichiers, planches / f"{arbre.name}--{dossier.name}.jpg")
+            rapport.append(f"| {arbre.name} | {dossier.name} | {len(fichiers)} | {prop} | {plus} |")
+        en_vrac = [p for p in arbre.iterdir() if p.is_file() and p.suffix.lower() in EXTENSIONS]
+        if en_vrac:
+            rapport.append(f"| {arbre.name} | (fichiers hors dossier) | {len(en_vrac)} | — | — |")
+    texte = "\n".join(rapport) + "\n"
+    (RACINE / "build/inventaire-photos.md").write_text(texte, encoding="utf-8")
+    print(texte)
+    print(f"planches de contact → {planches.relative_to(RACINE)}/")
+
+
+# ——————————————————————————————————————————————————————— la préparation ———
+
+def preparer():
+    table = json.loads(TABLE.read_text(encoding="utf-8")) if TABLE.exists() else {}
+    ROND.mkdir(parents=True, exist_ok=True); BOUT.mkdir(parents=True, exist_ok=True)
+    # Ce script possède ces deux dossiers : une image d'un passage précédent qui n'est plus
+    # dans la table ne doit pas survivre, sinon elle finirait sur la mauvaise fiche.
+    for p in list(ROND.glob("d*.*")) + list(BOUT.glob("d*.*")):
+        p.unlink()
+    posees, ecartees = [], []
+    for n, entree in sorted(((k, v) for k, v in table.items() if not k.startswith("_")),
+                            key=lambda kv: int(kv[0])):
+        for role, faire in (("rond", faire_rond), ("bouteille", faire_bouteille)):
+            e = entree.get(role)
+            if not e:
+                continue
+            try:
+                sortie, source_px, ppi = faire(n, e)
+            except Ecartee as raison:
+                ecartees.append({"numero": int(n), "role": role, "fichier": e["fichier"],
+                                 "raison": str(raison)})
+                print(f"n°{int(n):>2} {role:<9} ÉCARTÉE  {e['fichier']} — {raison}")
+                continue
+            posees.append({"numero": int(n), "role": role,
+                           "fichier": str(sortie.relative_to(RACINE)),
+                           "source_url": f"src/photos/brut/{e['fichier']}",
+                           "source_px": source_px, "ppi": ppi, "sujet": e.get("sujet", "")})
+            print(f"n°{int(n):>2} {role:<9} {sortie.name:<8} source {source_px:>10}  {ppi} ppi")
+    (RACINE / "data/photos-preparees.json").write_text(
+        json.dumps(posees, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (RACINE / "data/photos-ecartees.json").write_text(
+        json.dumps(ecartees, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"\n{len(posees)} images préparées → data/photos-preparees.json"
+          f"\n{len(ecartees)} écartées → data/photos-ecartees.json")
+
+
+if __name__ == "__main__":
+    inventaire() if "--inventaire" in sys.argv else preparer()

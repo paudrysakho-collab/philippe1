@@ -1,12 +1,13 @@
 /* Fabrique le catalogue en .pptx, importable dans Canva, texte et tableaux modifiables.
    Même contenu, même pagination et même maquette que le PDF : tout vient de build/plan.json.
-   Les deux emplacements d'image sont des formes vides, à remplacer dans Canva. */
+   Les deux emplacements d'image prennent l'image préparée quand il y en a une
+   (data/photos-preparees.json) ; sinon ce sont des formes vides, à remplacer dans Canva. */
 import fs from 'node:fs';
 import path from 'node:path';
 import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
-  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM,
+  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, figuresModeEmploi, BLOCS_MODE_EMPLOI, PIED_MODE_EMPLOI }
   from '../src/gabarits/pages.mjs';
@@ -40,6 +41,8 @@ const CADRE_H = PAGE_H - MARGE.haut - MARGE.bas;            // 232 mm
 const cle = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^A-Za-z0-9]+/g, '-').toLowerCase();
 const img = (nom) => path.join(DECO, `${nom}.png`);
+/** Largeur et hauteur d'un PNG, lues dans son en-tête IHDR. */
+const taillePng = (f) => { const b = fs.readFileSync(f); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
 
 /** Largeur d'une chaîne en millimètres, d'après les chasses de la police livrée. */
 function largeur(texte, face, taillePt) {
@@ -226,23 +229,42 @@ function slideFiche(s, numero, desc) {
   y += mm(8.6);
 
   if (desc.premiere) {
-    // ——— les deux emplacements réservés, et le texte entre les deux.
+    // ——— les deux emplacements, et le texte entre les deux. L'image prend la place de
+    // la forme pointillée quand il y en a une ; sinon l'emplacement reste réservé.
     // La bande fait la hauteur mesurée dans Chromium : la même que dans le PDF.
     const { rond, bouteille, ecart } = EMPLACEMENT;
     const bande = (mesures.blocs[`haut-${d.numero}`] ?? 66.5) - 4.5;
-    s.addShape(pres.ShapeType.ellipse, { x, y, w: mm(rond), h: mm(rond),
-      fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' } });
-    s.addText('ROND\nVIGNERON\nOU LOGO', { x, y, w: mm(rond), h: mm(rond), margin: 0,
-      align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
-      color: C.silex, transparency: 50, lineSpacingMultiple: 1.25 });
+    const phRond = photoDe(d, 'rond');
+    if (phRond) {
+      // déjà masquée en cercle par preparer-photos.py : rien ne dépend de l'import
+      s.addImage({ path: path.join(RACINE, phRond.fichier.replace(/\.jpg$/, '-cercle.png')),
+        x, y, w: mm(rond), h: mm(rond), altText: `${phRond.sujet} — ${d.nom}` });
+    } else {
+      s.addShape(pres.ShapeType.ellipse, { x, y, w: mm(rond), h: mm(rond),
+        fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' } });
+      s.addText('ROND\nVIGNERON\nOU LOGO', { x, y, w: mm(rond), h: mm(rond), margin: 0,
+        align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
+        color: C.silex, transparency: 50, lineSpacingMultiple: 1.25 });
+    }
 
     const xb = gauche + CADRE_L - bouteille.l;
-    s.addShape(pres.ShapeType.roundRect, { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h),
-      fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' },
-      rectRadius: 0.02 });
-    s.addText('BOUTEILLE', { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h), margin: 0,
-      align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
-      color: C.silex, transparency: 50 });
+    const phBout = photoDe(d, 'bouteille');
+    if (phBout) {
+      // contenue dans 24 × 62 mm, proportions gardées, posée sur le bas comme dans le PDF
+      const fichier = path.join(RACINE, phBout.fichier);
+      const [lpx, hpx] = taillePng(fichier);
+      const k = Math.min(bouteille.l / lpx, bouteille.h / hpx);
+      const [lb, hb] = [lpx * k, hpx * k];
+      s.addImage({ path: fichier, x: mm(xb + (bouteille.l - lb) / 2), y: y + mm(bouteille.h - hb),
+        w: mm(lb), h: mm(hb), altText: `Une bouteille du domaine ${d.nom}` });
+    } else {
+      s.addShape(pres.ShapeType.roundRect, { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h),
+        fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' },
+        rectRadius: 0.02 });
+      s.addText('BOUTEILLE', { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h), margin: 0,
+        align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
+        color: C.silex, transparency: 50 });
+    }
 
     // le corps grandit pour remplir la bande, et le texte s'y centre : voir corpsDomaine()
     const texte = d.texte_source

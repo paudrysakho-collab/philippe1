@@ -303,11 +303,31 @@ export function hautDomaine(d) {
     ? `<div class="texte-dom"${corps}><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
     : `<div class="texte-dom sans-texte">Le tarif de l'Agence SCIO ne donne pas de présentation
          pour ce domaine. Nous n'en inventons pas.</div>`;
-  return `<div class="haut-dom">${emplacementRond()}${texte}${emplacementBouteille()}</div>`;
+  return `<div class="haut-dom">${rondDomaine(d)}${texte}${bouteilleDomaine(d)}</div>`;
 }
 
-/* Les deux emplacements sont RÉSERVÉS, pas remplis : l'agence y pose elle-même
-   le rond du vigneron et la bouteille. Le repère pointillé est un guide de montage. */
+/* Les deux emplacements ont une taille et une place fixes : l'image s'y pose quand
+   data/photos-preparees.json en a une pour ce domaine, à la même taille exactement.
+   Sinon l'emplacement reste RÉSERVÉ, avec son repère pointillé : une case vide, pas un trou. */
+
+/** Le rond : la photo, déjà carrée, masquée en cercle ; ou le logo, déjà posé sur sa réserve. */
+export function rondDomaine(d) {
+  const ph = photoDe(d, 'rond');
+  if (!ph) return emplacementRond();
+  return `<div class="photo photo-rond"
+    style="width:${EMPLACEMENT.rond}mm;height:${EMPLACEMENT.rond}mm">
+    <img src="../${esc(ph.fichier)}" alt="${esc(ph.sujet)} — ${esc(d.nom)}"></div>`;
+}
+
+/** La bouteille détourée, contenue dans sa case sans déformation, posée sur le bas. */
+export function bouteilleDomaine(d) {
+  const ph = photoDe(d, 'bouteille');
+  if (!ph) return emplacementBouteille();
+  return `<div class="photo photo-bouteille"
+    style="width:${EMPLACEMENT.bouteille.l}mm;height:${EMPLACEMENT.bouteille.h}mm">
+    <img src="../${esc(ph.fichier)}" alt="Une bouteille du domaine ${esc(d.nom)}"></div>`;
+}
+
 
 export function emplacementRond() {
   return `<div class="emplacement emplacement-rond"

@@ -302,3 +302,10 @@ td { padding: 1.2mm 1.3mm; vertical-align: middle; }
 }
 .emplacement-rond { border-radius: 50%; }   /* taille donnée par EMPLACEMENT.rond */
 .emplacement-bouteille { width: 24mm; height: 62mm; border-radius: 1.5mm; }
+
+/* L'image posée prend exactement la boîte de l'emplacement : rien ne bouge autour. */
+.photo { flex: none; }
+.photo img { display: block; width: 100%; height: 100%; }
+.photo-rond { border-radius: 50%; overflow: hidden; }
+.photo-rond img { object-fit: cover; }
+.photo-bouteille img { object-fit: contain; object-position: 50% 100%; }

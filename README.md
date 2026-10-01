@@ -89,6 +89,27 @@ si les polices changent, car ses deux sorties sont versionnées.
 et le contrôle vérifie que les 715 prix du JSON se retrouvent dans le texte des deux PDF
 **et** dans celui des diapositives.
 
+## Poser les images des domaines
+
+Les images se posent **dans la source**, jamais dans le `.pptx` : `npm run build` les fait
+entrer d'un coup dans les deux PDF et dans le `.pptx`, et un changement de prix ne les perd pas.
+
+1. Copier les deux arborescences de l'agence dans `src/photos/brut/` (ignoré par git :
+   les originaux restent en local) : `Bouteilles_de_vin/<Domaine>/` et
+   `Domaines_et_vignerons/<Domaine>/`. **Le nom du dossier est le nom du domaine.**
+2. `python3 scripts/preparer-photos.py --inventaire` liste les dossiers, propose un
+   appariement avec les 40 domaines et fait une planche de contact par dossier
+   (`build/planches/`). C'est une proposition : **on la valide à l'œil.**
+3. Écrire la table validée dans `data/photos-locales.json` (format décrit en tête du fichier).
+4. `npm run photos` prépare les images retenues (traitement unique, rond de 40 mm, bouteille
+   détourée dans 24 × 62 mm, 300 ppi visés, jamais agrandies, refus sous 200 ppi), puis
+   `npm run build`.
+
+Un domaine sans image garde ses deux emplacements pointillés. Les images écartées, et
+pourquoi, sont dans `data/photos-ecartees.json`. Les 30 images repérées en 2026 sur les sites
+des domaines, retirées de la maquette à la demande de l'agence, restent en réserve dans
+`src/photos/reserve-web/` (voir `credits.md`) ; elles ne sont pas posées.
+
 ## Ajouter ou retirer un domaine
 
 Ajouter `data/fiches/NN.json` sur le modèle des existants, puis ajuster le relevé d'effectifs
