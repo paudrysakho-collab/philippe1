@@ -169,8 +169,15 @@ function decouperAvecBudget(d, m, rabot) {
   return { pages, entete, enteteSuite, haut, pied };
 }
 
-function pagesDomaine(d, m, pagesParDomaine) {
+function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
   const { pages } = decouper(d, m);
+  pages.forEach((pg, i) => descripteurs.push({
+    type: 'fiche', domaine: d.numero, premiere: pg.premiere, reste: pg.reste,
+    morceaux: pg.morceaux.map((mo) => ({
+      tableau: Number(mo.cle.split('-')[1]), suite: mo.suite,
+      lignes: mo.lignes.map((l) => Number(l.cle.split('-')[2])),
+    })),
+  }));
   return pages.map((pg, i) => G.page({
     region: d.region, classe: 'fiche',
     corps: `<div class="cadre">
@@ -209,6 +216,9 @@ function plan(m) {
 function construirePages(m) {
   const { parDomaine, apresDomaines } = plan(m);
 
+  // Le descripteur décrit chaque page : il sert à fabriquer le PPTX à l'identique.
+  const descripteurs = [{ type: 'couverture' }, { type: 'agence' }, { type: 'mode-emploi' },
+    { type: 'sommaire' }, { type: 'alliances' }];
   const pages = [
     G.couverture(),
     G.pageAgence(),
@@ -218,8 +228,9 @@ function construirePages(m) {
   ];
   for (const region of REGIONS) {
     pages.push(G.ouvertureRegion(region, parDomaine));
+    descripteurs.push({ type: 'ouverture', region });
     for (const d of catalogue.domaines.filter((x) => x.region === region)) {
-      pages.push(...pagesDomaine(d, m, parDomaine));
+      pages.push(...pagesDomaine(d, m, parDomaine, descripteurs));
     }
   }
 
@@ -231,17 +242,27 @@ function construirePages(m) {
   const poidsTitre = Math.ceil(hTitre / hLigne);
   const parPage = Math.floor(3 * (CADRE_H - SECURITE - 24) / hLigne);
   const pagesIdx = G.pagesIndex(entrees, parPage, poidsTitre);
+  const blocsIdx = G.blocsIndex(entrees, parPage, poidsTitre);
   pages.push(...pagesIdx);
+  blocsIdx.forEach((b, i) => descripteurs.push({ type: 'index-vins', premiere: i === 0, blocs: b }));
   pages.push(G.produitsAPart(parDomaine));
+  descripteurs.push({ type: 'produits' });
   pages.push(G.indexDomaines(parDomaine));
+  descripteurs.push({ type: 'index-domaines' });
 
   // Un multiple de 4, en ajoutant des respirations avant la page finale.
   let total = pages.length + 1;
   const manque = (4 - (total % 4)) % 4;
-  for (let i = 0; i < manque; i++) pages.push(G.planche(i));
-  pages.push(G.pageFinale(0));
+  // Des pages de notes, puis la planche en coupe juste avant la page finale :
+  // trois fois la même planche se lisait comme une erreur d'impression.
+  for (let i = 0; i < manque; i++) {
+    if (i === manque - 1) { pages.push(G.planche(0)); descripteurs.push({ type: 'planche' }); }
+    else { pages.push(G.pageNotes()); descripteurs.push({ type: 'notes' }); }
+  }
+  pages.push(G.pageFinale());
+  descripteurs.push({ type: 'finale' });
 
-  return { pages, parDomaine, apresDomaines };
+  return { pages, parDomaine, apresDomaines, descripteurs };
 }
 
 /* ——————————————————————————————————————————————— 5. rendu ——— */
@@ -263,7 +284,7 @@ const navigateur = await chromium.launch();
 console.log('· mesure des blocs dans Chromium…');
 const m = await mesurer(navigateur);
 console.log('· pagination…');
-const { pages, parDomaine } = construirePages(m);
+const { pages, parDomaine, descripteurs } = construirePages(m);
 console.log(`· ${pages.length} pages (multiple de 4 : ${pages.length % 4 === 0 ? 'oui' : 'NON'})`);
 console.log('· rendu écran…');
 await rendre(navigateur, G.document({ pages, ecran: true }),
@@ -276,6 +297,7 @@ await navigateur.close();
 fs.writeFileSync(path.join(BUILD, 'plan.json'), JSON.stringify({
   pages: pages.length,
   domaines: Object.fromEntries(parDomaine),
+  descripteurs,
 }, null, 1));
 console.log('✓ dist/catalogue-scio-2026-ecran.pdf');
 console.log('✓ dist/catalogue-scio-2026-imprimeur.pdf');

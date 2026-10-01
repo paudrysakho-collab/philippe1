@@ -99,64 +99,85 @@ export function pageAgence() {
 
 /* ——————————————————————————————————— comment lire ce catalogue ——— */
 
-export function modeEmploi() {
+/** Les six vignettes du mode d'emploi, partagées entre le PDF et l'export .pptx. */
+export function figuresModeEmploi() {
   const toutes = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'sansalcool', 'jus', 'biere', 'spiritueux'];
+  return [
+    { nom: 'me-tranche', hauteur: 23, html:
+      `<div class="me-fig me-fig-tranche">${coupe({ largeur: 60, hauteur: 300, graineN: 3, etiquettes: false })}
+        <span class="me-doigt">Dix bandes sur la tranche, une par région. Celle où vous êtes
+          est pleine et marquée d'or.</span></div>` },
+    { nom: 'me-prix', hauteur: 23, html:
+      `<div class="me-fig me-fig-prix">
+        <div class="demo-bloc"><span>jusqu'à&nbsp;36</span><span>dès&nbsp;48</span><span>dès&nbsp;120</span></div>
+        <div class="demo-bloc demo-prix"><span>14,75&nbsp;€</span><span>13,25&nbsp;€</span><span>12,25&nbsp;€</span></div>
+      </div>` },
+    { nom: 'me-pictos', hauteur: 32, html:
+      `<div class="me-fig me-fig-pictos">${toutes.map((f) => picto(f, 'picto gros')).join('')}</div>
+       <div class="me-legende">${toutes.map((f) =>
+         `<span>${picto(f)} ${esc(NOM_FAMILLE[f])}</span>`).join('')}</div>` },
+    { nom: 'me-jetons', hauteur: 23, html:
+      `<div class="me-fig me-fig-jetons">
+        <span class="jeton bio">Bio</span><span class="jeton alloc">Allocation</span>
+        <span class="jeton panachage">Panachage</span><span class="jeton consulter">Consultez-nous</span></div>` },
+    { nom: 'me-paliers', hauteur: 23, html:
+      `<div class="me-fig me-fig-paliers">
+        <span>jusqu'à 36 bts</span><span>à partir de 198 bts</span><span>Palette</span>
+        <span>120 cols</span><span>50 BIB demi pal</span><span>Plus de 300 bts</span>
+        <span>Tarif unique</span></div>` },
+    { nom: 'me-pied', hauteur: 23, html:
+      `<div class="me-fig me-fig-pied">
+        <span class="demo-note">* Prix de la bouteille H.T. franco de port.</span>
+        <span class="demo-dep"><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</span></div>` },
+  ];
+}
+
+/** Les six blocs du mode d'emploi : titre, texte, et la vignette qui va avec. */
+export const BLOCS_MODE_EMPLOI = [
+  ['La tranche vous emmène',
+    "Dix régions, dix strates. Sur le bord de chaque page, la strate de la région où vous êtes est "
+    + "pleine et marquée d'or. Catalogue fermé, la tranche affiche les dix bandes : vous ouvrez "
+    + 'directement à la bonne région.'],
+  ['Le prix tombe toujours au même endroit',
+    "Le bloc de prix a la même largeur sur les quarante fiches, divisé en autant de parts qu'il y a "
+    + 'de paliers. Les paliers, eux, sont ceux de chaque domaine : nous ne les avons pas harmonisés. '
+    + "Un domaine à tarif unique n'a qu'une part."],
+  ['Les pictos sont les nôtres',
+    'Une forme par type : bulles, blanc, rosé, rouge, doux, sans alcool, jus de cépages, bière, '
+    + 'spiritueux. Ce sont <strong>nos</strong> pictos, dessinés pour ce catalogue : ce ne sont pas '
+    + 'les logos officiels des organismes certificateurs.'],
+  ['Les mentions',
+    '<strong>Allocation</strong> : quantités limitées, à réserver. <strong>Panachage</strong> : vous '
+    + "pouvez mélanger à l'intérieur du domaine, et parfois entre plusieurs domaines — les quatre "
+    + 'alliances sont page 7. <strong>Consultez-nous</strong> : le domaine communique ses tarifs et '
+    + 'ses offres au cas par cas.'],
+  ['Les paliers sont ceux du domaine',
+    'Treize notations différentes dans cette sélection, toutes recopiées telles quelles : bouteilles, '
+    + "cols, bag-in-box, demi-palette, palette, ou tarif unique. <strong>Nous n'avons harmonisé aucun "
+    + 'seuil</strong> — une quantité approximative serait une erreur de commande.'],
+  ['Le bas de page dit le reste',
+    "À gauche, les conditions exactes du domaine : hors transport, franco de port, départ chai, "
+    + "départ cave, ou franco à partir d'une quantité. À droite, les départements où ce domaine est "
+    + "distribué. Les deux changent d'une fiche à l'autre."],
+];
+
+export const PIED_MODE_EMPLOI = 'Tous les prix sont <strong>hors taxes, par bouteille</strong>. '
+  + "Les conditions de port diffèrent d'un domaine à l'autre : elles sont écrites en bas de chaque "
+  + 'fiche, avec les départements de distribution.';
+
+export function modeEmploi() {
+  const figures = figuresModeEmploi();
   return page({
     classe: 'mode-emploi',
     corps: `<div class="cadre">
       <h2 class="titre-section">Comment lire ce catalogue</h2>
       <div class="me-grille">
-        <div class="me-item"><div class="me-fig me-fig-tranche">${coupe({ largeur: 60, hauteur: 300, graineN: 3, etiquettes: false })}
-            <span class="me-doigt">Dix bandes sur la tranche, une par région. Celle où vous êtes
-              est pleine et marquée d'or.</span></div>
-          <h3>La tranche vous emmène</h3>
-          <p>Dix régions, dix strates. Sur le bord de chaque page, la strate de la région où vous
-            êtes est pleine et marquée d'or. Catalogue fermé, la tranche affiche les dix bandes :
-            vous ouvrez directement à la bonne région.</p></div>
-        <div class="me-item"><div class="me-fig me-fig-prix">
-            <div class="demo-bloc"><span>jusqu'à&nbsp;36</span><span>dès&nbsp;48</span><span>dès&nbsp;120</span></div>
-            <div class="demo-bloc demo-prix"><span>14,75&nbsp;€</span><span>13,25&nbsp;€</span><span>12,25&nbsp;€</span></div>
-          </div>
-          <h3>Le prix tombe toujours au même endroit</h3>
-          <p>Le bloc de prix a la même largeur sur les quarante fiches, divisé en autant de parts
-            qu'il y a de paliers. Les paliers, eux, sont ceux de chaque domaine : nous ne les avons
-            pas harmonisés. Un domaine à tarif unique n'a qu'une part.</p></div>
-        <div class="me-item"><div class="me-fig me-fig-pictos">
-            ${toutes.map((f) => picto(f, 'picto gros')).join('')}</div>
-          <h3>Les pictos sont les nôtres</h3>
-          <p>Une forme par type : bulles, blanc, rosé, rouge, doux, sans alcool, jus de cépages,
-            bière, spiritueux. Ce sont <strong>nos</strong> pictos, dessinés pour ce catalogue :
-            ce ne sont pas les logos officiels des organismes certificateurs.</p>
-          <div class="me-legende">${toutes.map((f) =>
-            `<span>${picto(f)} ${esc(NOM_FAMILLE[f])}</span>`).join('')}</div></div>
-        <div class="me-item"><div class="me-fig me-fig-jetons">
-            <span class="jeton bio">Bio</span><span class="jeton alloc">Allocation</span>
-            <span class="jeton panachage">Panachage</span><span class="jeton consulter">Consultez-nous</span></div>
-          <h3>Les mentions</h3>
-          <p><strong>Allocation</strong> : quantités limitées, à réserver. <strong>Panachage</strong> :
-            vous pouvez mélanger à l'intérieur du domaine, et parfois entre plusieurs domaines —
-            les quatre alliances sont page 7. <strong>Consultez-nous</strong> : le domaine
-            communique ses tarifs et ses offres au cas par cas.</p></div>
-        <div class="me-item"><div class="me-fig me-fig-paliers">
-            <span>jusqu'à 36 bts</span><span>à partir de 198 bts</span><span>Palette</span>
-            <span>120 cols</span><span>50 BIB demi pal</span><span>Plus de 300 bts</span>
-            <span>Tarif unique</span></div>
-          <h3>Les paliers sont ceux du domaine</h3>
-          <p>Treize notations différentes dans cette sélection, toutes recopiées telles quelles :
-            bouteilles, cols, bag-in-box, demi-palette, palette, ou tarif unique.
-            <strong>Nous n'avons harmonisé aucun seuil</strong> — une quantité approximative
-            serait une erreur de commande.</p></div>
-        <div class="me-item"><div class="me-fig me-fig-pied">
-            <span class="demo-note">* Prix de la bouteille H.T. franco de port.</span>
-            <span class="demo-dep"><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</span></div>
-          <h3>Le bas de page dit le reste</h3>
-          <p>À gauche, les conditions exactes du domaine : hors transport, franco de port,
-            départ chai, départ cave, ou franco à partir d'une quantité. À droite, les
-            départements où ce domaine est distribué. Les deux changent d'une fiche à l'autre.</p></div>
+        ${BLOCS_MODE_EMPLOI.map(([titre, texte], i) => `<div class="me-item">
+          ${figures[i].html}
+          <h3>${titre}</h3>
+          <p>${texte}</p></div>`).join('')}
       </div>
-      <p class="me-pied">Tous les prix sont <strong>hors taxes, par bouteille</strong>. Les conditions
-        de port diffèrent d'un domaine à l'autre : elles sont écrites en bas de chaque fiche, avec
-        les départements de distribution.</p>
+      <p class="me-pied">${PIED_MODE_EMPLOI}</p>
     </div>`,
   });
 }
@@ -280,26 +301,20 @@ export function hautDomaine(d) {
     ? `<div class="texte-dom"><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
     : `<div class="texte-dom sans-texte">Le tarif de l'Agence SCIO ne donne pas de présentation
          pour ce domaine. Nous n'en inventons pas.</div>`;
-  return `<div class="haut-dom">${vignetteDomaine(d)}${texte}${bouteilleDomaine(d)}</div>`;
+  return `<div class="haut-dom">${emplacementRond()}${texte}${emplacementBouteille()}</div>`;
 }
 
-/** Le rond du domaine : sa photo cerclée d'un anneau du sol de sa région, ou le sol seul. */
-export function vignetteDomaine(d) {
-  const ph = photoDe(d, 'rond');
-  if (!ph) return carotteRonde(d);
-  const s = STRATES[d.region];
-  return `<div class="rond-photo">
-    <div class="rond-anneau trame trame-${s.t}" style="--strate:${s.hex}"></div>
-    <img src="../${esc(ph.fichier)}" alt="${esc(ph.sujet)} — ${esc(d.nom)}">
-  </div>`;
+/* Les deux emplacements sont RÉSERVÉS, pas remplis : l'agence y pose elle-même
+   le rond du vigneron et la bouteille. Le repère pointillé est un guide de montage. */
+
+export function emplacementRond() {
+  return `<div class="emplacement emplacement-rond">
+    <span>rond<br>vigneron<br>ou logo</span></div>`;
 }
 
-/** La bouteille du domaine, détourée : aucun carré blanc posé sur le papier. */
-export function bouteilleDomaine(d) {
-  const ph = photoDe(d, 'bouteille');
-  if (!ph) return '';
-  return `<div class="bouteille"><img src="../${esc(ph.fichier)}"
-    alt="Une bouteille du domaine ${esc(d.nom)}"></div>`;
+export function emplacementBouteille() {
+  return `<div class="emplacement emplacement-bouteille">
+    <span>bouteille</span></div>`;
 }
 
 /** Quand une fiche courte laisse un vide, on y pose le sol de sa région, en coupe. */
@@ -417,6 +432,29 @@ export function entreesIndex(pagesParDomaine) {
   }));
 }
 
+/** La même découpe que pagesIndex, mais rendue en données : le PPTX s'en sert. */
+export function blocsIndex(groupesIndex, parPage, poidsTitre = 3) {
+  const blocs = [];
+  groupesIndex.forEach((g) => {
+    blocs.push({ type: 'titre', famille: g.famille, poids: poidsTitre });
+    g.entrees.forEach((e) => blocs.push({ type: 'entree', e, famille: g.famille, poids: 1 }));
+  });
+  const pages = [];
+  let i = 0, premiere = true;
+  while (i < blocs.length) {
+    let reste = parPage - (premiere ? 18 : 0);
+    const bloc = [];
+    while (i < blocs.length && reste - blocs[i].poids >= 0) {
+      reste -= blocs[i].poids;
+      bloc.push(blocs[i++]);
+    }
+    if (!bloc.length) bloc.push(blocs[i++]);
+    pages.push(bloc);
+    premiere = false;
+  }
+  return pages;
+}
+
 /** Les pages d'index : un flux en trois colonnes, coupé en autant de pages qu'il faut. */
 export function pagesIndex(groupesIndex, parPage, poidsTitre = 3) {
   const blocs = [];
@@ -522,7 +560,7 @@ export function indexDomaines(pagesParDomaine) {
 
 /* ——————————————————————————————————————————— page finale ——— */
 
-export function pageFinale(nbPhotos) {
+export function pageFinale() {
   const c = AG.contacts;
   return page({
     classe: 'finale', sanitaire: false,
@@ -549,14 +587,24 @@ export function pageFinale(nbPhotos) {
           <p class="fin-mentions">${esc(AG.mentions_legales)}</p>
         </div>
         <div><h3>Crédits</h3>
-          <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO.
-            Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo
-            officiel d'organisme certificateur.
-            ${nbPhotos ? `Photographies : voir <em>credits.md</em>.`
-              : `Ce catalogue ne contient aucune photographie : toutes les illustrations sont dessinées.`}</p>
+          <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme certificateur. Les deux emplacements d'image de chaque fiche sont livrés vides : les photographies qui y seront posées restent à créditer, voir <em>credits.md</em>.</p>
         </div>
       </div>
       <p class="fin-sanitaire">${esc(SANITAIRE)}</p>
+    </div>`,
+  });
+}
+
+/* ——————————————————————————————————————— notes : page de travail ——— */
+
+/** Une page réglée : le caviste note ses quantités en lisant les tarifs. */
+export function pageNotes() {
+  return page({
+    classe: 'notes',
+    corps: `<div class="cadre">
+      <h2 class="notes-titre">Vos notes</h2>
+      <p class="notes-sous">Quantités, paliers, dates de livraison</p>
+      <div class="notes-lignes"></div>
     </div>`,
   });
 }

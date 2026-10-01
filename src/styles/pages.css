@@ -228,7 +228,18 @@
 .planche-mot {
   font-family: var(--titre); font-size: 26pt; line-height: 1.12; color: var(--craie);
   text-shadow: 0 0 6mm rgba(42, 57, 66, .55);
+  /* la légende remonte dans la strate sombre : au ras du bas, elle était rognée */
+  margin-bottom: 18mm;
 }
+
+/* ——————————————————————————————————————————————— notes ——— */
+.notes-titre { font-family: var(--titre); font-size: 20pt; color: var(--violet); margin: 0 0 2mm; }
+.notes-sous {
+  font-family: var(--technique); font-size: 7.5pt; font-weight: 600; color: var(--gneiss);
+  letter-spacing: var(--interlettre); text-transform: uppercase; margin: 0 0 9mm;
+}
+.notes-lignes { height: 187mm; background-image: repeating-linear-gradient(
+  to bottom, transparent 0 8.2mm, rgba(70, 96, 110, .34) 8.2mm 8.5mm); }
 .planche .folio, .planche .sanitaire { color: var(--craie); opacity: .85; }
 
 /* ——————————————————————————————————————————————— fiche ——— */

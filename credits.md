@@ -2,13 +2,20 @@
 
 ## 1. Photographies des domaines
 
-**30 images, 19 domaines sur 40.** Toutes viennent du **site officiel du
+> **Aucune de ces images n'est posée dans le catalogue livré.** Chaque fiche domaine réserve
+> deux emplacements vides — le rond du vigneron, la bande de la bouteille — que l'agence
+> remplit elle-même dans Canva. Cette table est le dossier de travail qui va avec : les
+> images repérées, leur domaine, leur adresse exacte et leur résolution.
+
+**30 images repérées, sur 19 domaines des 40.** Toutes viennent du **site officiel du
 domaine**, trouvé par recherche et vérifié page d'accueil à l'appui. Aucune ne vient de notre
 PDF source, du catalogue concurrent, d'un caviste ou d'un distributeur.
 
-> **À faire par l'agence avant impression : demander l'autorisation à chaque domaine.**
+> **À faire par l'agence avant de les utiliser : demander l'autorisation à chaque domaine.**
 > Ces images appartiennent aux domaines. Les afficher dans un catalogue de distribution est
 > l'usage, mais il se demande. Cette table est faite pour cela : une ligne, un domaine, une URL.
+> Les fichiers préparés (détourés, cadrés, traités) restent dans `src/photos/` : ils sont prêts
+> à être glissés dans les emplacements, une fois l'accord obtenu.
 
 | Fichier | Domaine | Rôle et sujet | Site officiel | URL de l'image | Résolution à la taille imprimée | Licence / statut |
 |---|---|---|---|---|---|---|

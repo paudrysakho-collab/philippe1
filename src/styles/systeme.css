@@ -286,21 +286,17 @@ td { padding: 1.2mm 1.3mm; vertical-align: middle; }
 .traits .d { right: var(--fp); }
 
 /* ============================================================================
-   LES IMAGES DE DOMAINE
-   Le rond : la photo du domaine, cerclée d'un anneau du sol de sa région.
-   La bouteille : détourée, posée sans cadre — jamais un carré blanc sur le papier.
+   LES DEUX EMPLACEMENTS D'IMAGE
+   Réservés sur les 40 fiches, à la même place et à la même taille.
+   L'agence y pose elle-même le rond du vigneron et la bouteille.
+   Le pointillé est un guide de montage : il disparaît dès qu'une image est posée.
    ========================================================================= */
-.rond-photo {
-  position: relative; width: 32mm; height: 32mm; flex: none;
-  border-radius: 50%; overflow: hidden;
+.emplacement {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  border: .4mm dashed rgba(70, 96, 110, .38);
+  color: rgba(70, 96, 110, .5);
+  font: 500 6.2pt var(--technique); line-height: 1.25; text-align: center;
+  letter-spacing: var(--interlettre); text-transform: uppercase;
 }
-.rond-anneau {
-  position: absolute; inset: 0; border-radius: 50%; background-color: var(--strate);
-}
-.rond-photo img {
-  position: absolute; inset: 1.6mm;            /* l'anneau de sol reste visible tout autour */
-  width: calc(100% - 3.2mm); height: calc(100% - 3.2mm);
-  border-radius: 50%; object-fit: cover; display: block;
-}
-.bouteille { flex: none; width: 24mm; display: flex; align-items: flex-start; justify-content: center; }
-.bouteille img { width: 100%; height: auto; max-height: 62mm; object-fit: contain; display: block; }
+.emplacement-rond { width: 32mm; height: 32mm; border-radius: 50%; }
+.emplacement-bouteille { width: 24mm; height: 62mm; border-radius: 1.5mm; }

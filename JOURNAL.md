@@ -228,3 +228,86 @@ de s'y poser. La bouteille est **détourée**, sans cadre — aucun carré blanc
 Les 30 passent par **la même fonction de traitement**, pour qu'elles sortent d'une même main.
 
 Le catalogue passe de 68 à **72 pages**, toujours multiple de 4, tous contrôles au vert.
+
+---
+
+## Les emplacements réservés et le fichier Canva
+
+L'agence préfère poser elle-même les ronds de vigneron et les bouteilles, dans Canva, où elle
+pourra aussi corriger un texte. Deux conséquences.
+
+### 1. Les images sortent, les emplacements restent
+
+Les 30 photos sont retirées de la maquette. À leur place, sur les quarante fiches, **deux
+formes vides au contour pointillé** : le rond de 32 mm en haut à gauche, la bande de
+24 × 62 mm à droite, aux mêmes coordonnées partout. Une image s'y pose sans rien déplacer.
+
+Le travail sur les photos n'est pas perdu : les fichiers préparés restent dans `src/photos/`
+et `credits.md` garde les 30 lignes — domaine, sujet, site officiel, URL exacte, résolution,
+statut d'autorisation. C'est le dossier à ouvrir au moment de remplir les emplacements.
+
+La ligne « Crédits » de la dernière page le dit maintenant explicitement : le catalogue est
+livré avec ses emplacements vides, les photos qui y seront posées restent à créditer.
+
+### 2. Le .pptx n'est pas une capture, c'est le même plan
+
+`scripts/pptx.mjs` ne redessine rien et ne re-paginie rien : il lit **le même
+`build/plan.json`** que les PDF, un descripteur par page, et **les mêmes hauteurs mesurées**
+dans `build/mesures.json`. Les tableaux sont de vrais tableaux PowerPoint (donc modifiables
+dans Canva), les textes de vrais blocs de texte, les dessins des PNG à 300 ppi exportés par
+`scripts/deco.mjs` depuis le HTML du catalogue. Les 715 prix viennent du JSON comme ailleurs.
+
+Un second contrôle, `scripts/controler-pptx.mjs`, relit le texte des 76 diapositives dans le
+XML du fichier : autant de diapositives que de pages, les 715 prix retrouvés, les 40 domaines
+nommés, les contacts et le message sanitaire présents, aucune diapositive vide, moins de 50 Mo.
+`npm run build` enchaîne maintenant données → PDF → contrôle → .pptx → contrôle.
+
+### Essayé, raté, corrigé
+
+- **Les hauteurs de tableau étaient estimées** (`9 + n × 7,2 mm`). Dans LibreOffice, les
+  rangées font en réalité 10,7 mm quand l'appellation et la cuvée tiennent sur deux lignes :
+  sur les fiches à plusieurs tableaux (Haut Marin, Fabien Castaing), l'en-tête du second
+  tableau **recouvrait la dernière ligne du premier**. Remplacé par les hauteurs mesurées
+  dans Chromium, ligne par ligne, passées en `rowH`. Plus aucune estimation.
+- **Les titres longs passaient à la ligne** et le filet violet barrait le second rang
+  (« Domaine du Colombier / J.Y Bretaudeau »). Plutôt que de descendre tout le contenu —
+  ce qui aurait décalé une pagination calculée au millimètre — le corps du titre **se réduit
+  juste assez pour tenir sur une ligne**, jamais sous 15 pt, et le « (suite) » repasse en
+  italique 11 pt comme dans le PDF. Dix titres concernés, le plus serré descend à 17 pt.
+- **Pour cela, il fallait savoir mesurer une chaîne hors du navigateur.** `scripts/metriques.py`
+  relève les chasses des polices livrées dans `src/fonts/metriques.json` (versionné) ; le
+  générateur calcule largeurs et retours à la ligne avec les vraies métriques. Les jetons
+  (Bio, Allocation, Panachage…) y ont gagné aussi : leur largeur était estimée au nombre de
+  caractères, elle est maintenant juste.
+- **Trois planches identiques en fin de catalogue.** Les pages de calage vers le multiple de 4
+  répétaient la même coupe pleine page — ça se lisait comme une erreur d'impression. Elles
+  deviennent **deux pages « Vos notes » réglées** (un caviste commande en lisant), la coupe
+  restant une seule fois, juste avant la page finale.
+- **La légende de la planche était rognée** par le bas de page, en blanc sur la bande claire
+  de Champagne. Elle remonte de 18 mm, dans la strate sombre.
+- **Les deux sorties avaient divergé sur la page 3.** Le .pptx expliquait les emplacements
+  d'image là où le PDF expliquait les pictogrammes. C'est le PDF qui avait raison : une fois
+  les images posées, un encart décrivant des cases vides n'a plus de sens. Les six blocs du
+  mode d'emploi, leurs textes et leurs six vignettes sont désormais **une seule source**
+  (`figuresModeEmploi`, `BLOCS_MODE_EMPLOI`), lue par le HTML et par le .pptx.
+- **Un sélecteur trop resserré a vidé les capsules** des dix ouvertures de région dans le
+  .pptx, le temps d'une fabrication : en passant `.bloc svg` à `.bloc > svg` pour corriger
+  une vignette, j'ai cessé d'atteindre le dessin imbriqué du sol. Vu au rendu, corrigé.
+- **LibreOffice refusait d'ouvrir le fichier** (« source file could not be loaded ») : le
+  paquet `libreoffice-impress` manquait sur la machine. Ce n'était pas le .pptx — un fichier
+  d'essai de deux lignes échouait pareil.
+
+### Les polices
+
+Canva ne connaît ni Young Serif, ni Spectral, ni IBM Plex Sans : sans elles, il substitue et
+les tableaux se déforment. `polices-canva/` contient les six `.ttf` à téléverser, avec leur
+mode d'emploi et leurs licences (OFL, usage commercial autorisé). Ils sont fabriqués par
+`npm run polices-ttf` à partir des paquets `@fontsource`, en **réunissant les sous-jeux latin
+et latin-ext** (le sous-jeu `latin-ext` seul n'a ni « é », ni « € », ni « œ ») et en déclarant
+les graisses SemiBold comme le **gras** de leur famille, pour que le bouton gras de Canva
+tombe sur le vrai dessin et non sur un faux gras.
+
+### Ce qui reste vrai
+
+76 pages, multiple de 4. Tous les contrôles au vert des deux côtés, les 715 prix retrouvés
+dans le texte des deux PDF **et** des 76 diapositives.
