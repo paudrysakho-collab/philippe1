@@ -368,3 +368,30 @@ Comparaison notice par notice avec nos 40 fiches :
   le tarif et HVE au salon, les deux ne peuvent pas être vrais. **Rien n'a été changé** : le
   catalogue affiche les labels du tarif. Une mention de certification engage l'agence, elle
   ne se décide pas sans elle. Table complète dans `QUESTIONS.md`, point 22.
+
+### Les images des fiches : 77 sur 80
+
+L'agence a validé la table de ses propres dossiers (29 images), puis demandé de remplir tout
+le reste : chercher sur les sites des domaines, reprendre les 30 images repérées en 2026, et
+puiser dans son Canva « Tarif septembre 2026 ». Règle de priorité retenue : dossier de
+l'agence, puis site officiel, puis Canva ; une image validée par l'agence n'est jamais
+remplacée.
+
+- **Le Canva** ne donne que des vignettes par son interface. Un export PDF « pro » du design,
+  en lecture seule, en contient les images incorporées ; `scripts/extraire-canva.py` les
+  range par domaine. La photo d'une page de domaine ne sert qu'à ce domaine. Les noms de
+  fichiers ont permis d'écarter deux images générées par IA (portrait Solemme, bouteille
+  Noëls).
+- **Deux personnes dans un rond** : à la demande de l'agence, on recule au lieu de recadrer
+  serré, pour qu'aucune tête ne soit coupée (n°18, n°37). Quand le carré déborde de la photo,
+  la marge prend la couleur médiane du bord : un premier essai avec la photo floutée en fond
+  faisait réapparaître un visage fantôme au-dessus des têtes, rejeté.
+- **Deux portraits séparés** d'un couple ou d'une équipe (n°12, n°30) : un rond partagé en
+  deux moitiés, plutôt que de choisir l'un des deux.
+- **Le site du n°3** était un homonyme (un lieu de réception en Hauts-de-France) : retiré.
+- **Loi Évin** : sept photos de dégustation écartées ; deux ronds (n°10, n°18) recadrés
+  au-dessus d'un verre tenu en main, signalés dans `QUESTIONS.md`.
+- La mention de dernière page qui disait les emplacements « livrés vides » est désormais
+  calculée depuis ce qui est posé (`creditPhotos()`), dans le PDF comme dans le `.pptx`.
+
+Restent vides : les bouteilles n°15, 18 et 21 (aucune photo détourable trouvée).

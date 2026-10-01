@@ -25,7 +25,7 @@ la raison : l'emplacement garde alors son repère pointillé.
 Le traitement est appliqué par cette seule fonction, à toutes les images : c'est ce qui
 les fait appartenir au même catalogue plutôt qu'à quarante univers différents.
 """
-import io, json, math, pathlib, re, sys, unicodedata
+import io, json, math, pathlib, re, subprocess, sys, unicodedata
 from PIL import (Image, ImageChops, ImageCms, ImageDraw, ImageEnhance, ImageFilter, ImageOps,
                  ImageStat)
 
@@ -88,9 +88,10 @@ def a_de_la_transparence(im):
     return im.mode == "RGBA" and im.getchannel("A").getextrema()[0] < 250
 
 
-def aplatir(im):
+def aplatir(im, fond=None):
     """Un logo en PNG transparent doit retomber sur un fond qui le laisse lisible :
-    clair sous un logo sombre, sombre sous un logo clair."""
+    clair sous un logo sombre, sombre sous un logo clair. La table peut imposer ce fond
+    ('fond': '#ffffff'), quand le logo porte déjà son propre cartouche clair."""
     if im.mode not in ("RGBA", "LA", "P"):
         return im.convert("RGB")
     im = im.convert("RGBA")
@@ -99,7 +100,8 @@ def aplatir(im):
         return im.convert("RGB")
     r, v, b = ImageStat.Stat(im.convert("RGB"), mask=opaque).mean
     clarte = 0.2126 * r + 0.7152 * v + 0.0722 * b
-    fond = (70, 96, 110) if clarte > 150 else (251, 248, 241)
+    if fond is None:
+        fond = (70, 96, 110) if clarte > 150 else (251, 248, 241)
     plat = Image.new("RGB", im.size, fond)
     plat.paste(im, (0, 0), im)
     return plat
@@ -116,8 +118,8 @@ def etalonner(im):
     return Image.merge("RGB", (r, v, b))
 
 
-def traitement(im):
-    return etalonner(aplatir(im))
+def traitement(im, fond=None):
+    return etalonner(aplatir(im, fond))
 
 
 def remplir_depuis_les_bords(proche, taille):
@@ -227,27 +229,112 @@ def cercle(im):
 
 # ——————————————————————————————————————————————————————————— le rond ———
 
+def plancher_rond(c):
+    ppi = c / (MM_ROND / 25.4)
+    if ppi < PPI_PLANCHER:
+        raise Ecartee(f"trop petite : {c} px de côté utile, {ppi:.0f} ppi à {MM_ROND} mm "
+                      f"(plancher {PPI_PLANCHER} ppi, soit {px(MM_ROND, PPI_PLANCHER)} px)")
+    return ppi
+
+
+def reculer(im, cadre):
+    """Plusieurs personnes : on ne recadre pas serré, on recule, pour que toutes les têtes
+    tiennent dans le cercle. 'cadre' [x0, y0, x1, y1], en fractions de l'image, désigne ce
+    qui doit entrer ; le carré qui l'entoure peut déborder de la photo. Ce qui manque alors
+    est rempli de la couleur du bord de la photo (le ciel, le plafond, l'herbe), et le
+    raccord est fondu : le cercle reste plein et rien de net n'est inventé."""
+    W, H = im.size
+    x0, y0, x1, y1 = cadre[0] * W, cadre[1] * H, cadre[2] * W, cadre[3] * H
+    c = round(max(x1 - x0, y1 - y0))
+    g, h = round((x0 + x1 - c) / 2), round((y0 + y1 - c) / 2)
+    if g >= 0 and h >= 0 and g + c <= W and h + c <= H:
+        return im.crop((g, h, g + c, h + c)), c
+    part = im.crop((max(0, g), max(0, h), min(W, g + c), min(H, h + c)))
+    pw, ph = part.size
+    L, T = max(0, -g), max(0, -h)
+    R, B = c - L - pw, c - T - ph
+    # chaque marge prend la couleur médiane du bord qu'elle prolonge : une tête qui touche
+    # le bord ne s'étire pas en traînée dans le ciel
+    k = max(3, min(pw, ph) // 40)
+    mediane = lambda bande: tuple(round(v) for v in ImageStat.Stat(bande).median)
+    fond = Image.new("RGB", (c, c), mediane(part))
+    if T:
+        fond.paste(mediane(part.crop((0, 0, pw, k))), (0, 0, c, T))
+    if B:
+        fond.paste(mediane(part.crop((0, ph - k, pw, ph))), (0, T + ph, c, c))
+    if L:
+        fond.paste(mediane(part.crop((0, 0, k, ph))), (0, T, L, T + ph))
+    if R:
+        fond.paste(mediane(part.crop((pw - k, 0, pw, ph))), (L + pw, T, c, T + ph))
+    fond.paste(part, (L, T))
+    net = fond.copy()
+    fond = fond.filter(ImageFilter.GaussianBlur(c / 30))
+    # le masque de la photo nette, fondu sur les seuls bords qui tombent dans le carré
+    f = max(2, c // 40)
+    masque = Image.new("L", (c, c), 0)
+    ImageDraw.Draw(masque).rectangle((L + (f if L else -f), T + (f if T else -f),
+                                      L + pw - 1 - (f if R else -f), T + ph - 1 - (f if B else -f)),
+                                     fill=255)
+    masque = masque.filter(ImageFilter.GaussianBlur(f / 2))
+    return Image.composite(net, fond, masque), c
+
+
+def diptyque(entree):
+    """Deux portraits séparés de deux personnes nommées ensemble : chacun occupe une moitié
+    du rond, son visage au milieu de sa moitié, avec un mince filet clair entre les deux."""
+    moities, cotes = [], []
+    for e in entree["diptyque"]:
+        im = traitement(recadrer(ouvrir(BRUT / e["fichier"]), e))
+        c = min(im.size)
+        cx, cy = e.get("centre", [0.5, 0.4])
+        g = max(0, min(im.width - c, round(cx * im.width - c / 2)))
+        h = max(0, min(im.height - c, round(cy * im.height - c / 2)))
+        moities.append((im.crop((g, h, g + c, h + c)), (cx * im.width - g) / c))
+        cotes.append(c)
+    c = min(cotes)
+    ppi = plancher_rond(c)
+    cote = min(PX_ROND, c)
+    rond = Image.new("RGB", (cote, cote), (251, 248, 241))
+    demi = cote // 2
+    for i, (carre, fx) in enumerate(moities):
+        carre = carre.resize((cote, cote), Image.LANCZOS)
+        g = max(0, min(cote - demi, round(fx * cote - demi / 2)))
+        rond.paste(carre.crop((g, 0, g + demi, cote)), (i * (cote - demi), 0))
+    filet = max(2, cote // 160)
+    ImageDraw.Draw(rond).rectangle((demi - filet // 2, 0, demi + filet - filet // 2 - 1, cote),
+                                   fill=(251, 248, 241))
+    return rond, ppi
+
+
 def faire_rond(numero, entree):
+    if entree.get("diptyque"):
+        im, ppi = diptyque(entree)
+        sortie = ROND / f"d{int(numero):02d}.jpg"
+        im.save(sortie, "JPEG", quality=88, optimize=True, progressive=True)
+        cercle(im).save(ROND / f"d{int(numero):02d}-cercle.png", "PNG", optimize=True)
+        return sortie, " + ".join("x".join(map(str, Image.open(BRUT / e["fichier"]).size))
+                                  for e in entree["diptyque"]), round(ppi)
     src = BRUT / entree["fichier"]
     im = ouvrir(src)
     l0, h0 = im.size
     im = recadrer(im, entree)
     if entree.get("mode", "couvrir") == "contenir":
-        im, ppi = rond_logo(im)
+        im, ppi = rond_logo(im, entree.get("forme"), entree.get("fond"))
     else:
         im = traitement(im)
-        # Carré sans déformation. Par défaut on centre en largeur et on prend le tiers
-        # haut plutôt que la moitié : les visages sont hauts. La table peut fixer le centre.
-        c = min(im.size)
-        ppi = c / (MM_ROND / 25.4)
-        if ppi < PPI_PLANCHER:
-            raise Ecartee(f"trop petite : {c} px de côté utile, {ppi:.0f} ppi à {MM_ROND} mm "
-                          f"(plancher {PPI_PLANCHER} ppi, soit {px(MM_ROND, PPI_PLANCHER)} px)")
-        cx, cy = entree.get("centre", [None, None])
-        g = (im.width - c) // 2 if cx is None else round(cx * im.width - c / 2)
-        h = (im.height - c) // 3 if cy is None else round(cy * im.height - c / 2)
-        g = max(0, min(im.width - c, g)); h = max(0, min(im.height - c, h))
-        im = im.crop((g, h, g + c, h + c))
+        if entree.get("cadre"):
+            im, c = reculer(im, entree["cadre"])
+            ppi = plancher_rond(c)
+        else:
+            # Carré sans déformation. Par défaut on centre en largeur et on prend le tiers
+            # haut plutôt que la moitié : les visages sont hauts. La table peut fixer le centre.
+            c = min(im.size)
+            ppi = plancher_rond(c)
+            cx, cy = entree.get("centre", [None, None])
+            g = (im.width - c) // 2 if cx is None else round(cx * im.width - c / 2)
+            h = (im.height - c) // 3 if cy is None else round(cy * im.height - c / 2)
+            g = max(0, min(im.width - c, g)); h = max(0, min(im.height - c, h))
+            im = im.crop((g, h, g + c, h + c))
         # on ne grandit jamais une image : sous 300 ppi, elle garde ses pixels
         cote = min(PX_ROND, c)
         im = im.resize((cote, cote), Image.LANCZOS)
@@ -257,18 +344,19 @@ def faire_rond(numero, entree):
     return sortie, f"{l0}x{h0}", round(ppi)
 
 
-def rond_logo(im):
+def rond_logo(im, forme=None, fond=None):
     """Un logo ne se recadre jamais : il entre en entier, centré, à l'échelle, sur une
     réserve claire. C'est sa diagonale qui doit tenir dans le cercle, pas sa largeur :
-    un logo carré posé au plus large aurait ses coins rognés par le masque."""
-    plat = traitement(im)
+    un logo carré posé au plus large aurait ses coins rognés par le masque. Un logo déjà
+    rond ('forme': 'rond') tient par son diamètre, avec un liseré d'air."""
+    plat = traitement(im, fond)
     fond = couleur_des_coins(plat)
     diff = ImageChops.difference(plat, Image.new("RGB", plat.size, fond)).convert("L")
     boite = diff.point(lambda x: 255 if x > 18 else 0).getbbox() or (0, 0, *plat.size)
     logo = plat.crop(boite)
     lw, lh = logo.size
     # la diagonale du logo occupe 86 % du diamètre : un peu d'air tout autour
-    s = 0.86 * PX_ROND / math.hypot(lw, lh)
+    s = (0.92 * PX_ROND / max(lw, lh)) if forme == "rond" else 0.86 * PX_ROND / math.hypot(lw, lh)
     ppi = PPI_CIBLE / s
     if ppi < PPI_PLANCHER:
         raise Ecartee(f"logo trop petit : {lw}x{lh} px utiles, {ppi:.0f} ppi une fois posé "
@@ -447,6 +535,20 @@ def inventaire():
 
 # ——————————————————————————————————————————————————————— la préparation ———
 
+def obtenir(e):
+    """Une image prise sur un site garde son adresse dans la table : si l'original manque
+    dans brut/ (autre machine, dossier vidé), on le retélécharge tel quel. Les images de
+    l'agence et du Canva, elles, se recopient à la main (voir README)."""
+    chemin = BRUT / e["fichier"]
+    if chemin.exists() or not e.get("url"):
+        return
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["curl", "-sS", "-L", "--max-time", "60", "-A", "Mozilla/5.0", "-o",
+                    str(chemin), e["url"]], check=False)
+    if chemin.exists() and chemin.stat().st_size < 2000:
+        chemin.unlink()
+
+
 def preparer():
     table = json.loads(TABLE.read_text(encoding="utf-8")) if TABLE.exists() else {}
     ROND.mkdir(parents=True, exist_ok=True); BOUT.mkdir(parents=True, exist_ok=True)
@@ -461,16 +563,23 @@ def preparer():
             e = entree.get(role)
             if not e:
                 continue
+            sources = e.get("diptyque") or [e]
+            for s in sources:
+                obtenir(s)
+            fichiers = " + ".join(s["fichier"] for s in sources)
             try:
                 sortie, source_px, ppi = faire(n, e)
-            except Ecartee as raison:
-                ecartees.append({"numero": int(n), "role": role, "fichier": e["fichier"],
+            except (Ecartee, FileNotFoundError) as raison:
+                ecartees.append({"numero": int(n), "role": role, "fichier": fichiers,
                                  "raison": str(raison)})
-                print(f"n°{int(n):>2} {role:<9} ÉCARTÉE  {e['fichier']} — {raison}")
+                print(f"n°{int(n):>2} {role:<9} ÉCARTÉE  {fichiers} — {raison}")
                 continue
             posees.append({"numero": int(n), "role": role,
                            "fichier": str(sortie.relative_to(RACINE)),
-                           "source_url": f"src/photos/brut/{e['fichier']}",
+                           "source_url": " + ".join(s.get("url") or f"src/photos/brut/{s['fichier']}"
+                                                    for s in sources),
+                           "page": e.get("page") or sources[0].get("page"),
+                           "provenance": e.get("provenance", "dossier de l'agence"),
                            "source_px": source_px, "ppi": ppi, "sujet": e.get("sujet", "")})
             print(f"n°{int(n):>2} {role:<9} {sortie.name:<8} source {source_px:>10}  {ppi} ppi")
     (RACINE / "data/photos-preparees.json").write_text(
@@ -479,6 +588,59 @@ def preparer():
         json.dumps(ecartees, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"\n{len(posees)} images préparées → data/photos-preparees.json"
           f"\n{len(ecartees)} écartées → data/photos-ecartees.json")
+    ecrire_credits(posees)
+
+
+def ecrire_credits(posees):
+    """Les deux tables de credits.md (une ligne par image, puis le récapitulatif par
+    domaine) se réécrivent ici, entre leurs repères : elles ne peuvent pas dériver de ce
+    qui est réellement posé."""
+    chemin = RACINE / "credits.md"
+    if not chemin.exists():
+        return
+    texte = chemin.read_text(encoding="utf-8")
+    debut, fin = "<!-- images:debut -->", "<!-- images:fin -->"
+    if debut not in texte or fin not in texte:
+        return
+    noms = {d["numero"]: d["nom"] for d in
+            json.loads((RACINE / "data/catalogue.json").read_text(encoding="utf-8"))["domaines"]}
+    taille = {"rond": f"{MM_ROND} mm", "bouteille": f"{MM_BOUT_L} × {MM_BOUT_H} mm"}
+
+    def court(p):
+        pr = p.get("provenance", "")
+        return "site du domaine" if "site officiel" in pr else ("Canva de l'agence" if "Canva" in pr
+                                                                 else "dossier de l'agence")
+
+    lignes = ["| n° | Domaine | Image | Sujet | Provenance | Source | Résolution | Droits |",
+              "|---|---|---|---|---|---|---|---|"]
+    for p in posees:
+        if "site officiel" in p.get("provenance", ""):
+            source = f"page {p['page']} — image " + " + ".join(
+                f"<{u}>" for u in p["source_url"].split(" + "))
+            droits = "**autorisation à demander au domaine**"
+        else:
+            source = " + ".join(f"`{u.replace('src/photos/brut/', '')}`"
+                                for u in p["source_url"].split(" + "))
+            droits = "photothèque de l'agence"
+        lignes.append(f"| {p['numero']} | {noms[p['numero']]} | {p['role']} (`{p['fichier']}`) | "
+                      f"{p['sujet']} | {p.get('provenance', '')} | {source} | "
+                      f"{p['source_px']} px → {p['ppi']} ppi à {taille[p['role']]} | {droits} |")
+    par = {}
+    for p in posees:
+        par.setdefault(p["numero"], {})[p["role"]] = p
+    recap = ["| n° | Domaine | Rond (40 mm) | Bouteille (24 × 62 mm) |", "|---|---|---|---|"]
+    for n in sorted(noms):
+        cases = []
+        for role in ("rond", "bouteille"):
+            p = par.get(n, {}).get(role)
+            cases.append(f"{p['sujet']} — {court(p)}, {p['ppi']} ppi" if p else "**vide** (pointillé)")
+        recap.append(f"| {n} | {noms[n]} | {cases[0]} | {cases[1]} |")
+    bloc = (f"{debut}\n\n**{len(posees)} images posées sur 80 emplacements.**\n\n"
+            "### Image par image\n\n" + "\n".join(lignes) +
+            "\n\n### Récapitulatif par domaine\n\n" + "\n".join(recap) + f"\n\n{fin}")
+    a, b = texte.index(debut), texte.index(fin) + len(fin)
+    chemin.write_text(texte[:a] + bloc + texte[b:], encoding="utf-8")
+    print("credits.md → tables des images réécrites")
 
 
 if __name__ == "__main__":

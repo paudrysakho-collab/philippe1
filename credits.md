@@ -1,77 +1,210 @@
 # Crédits images
 
-## 1. Photographies des domaines
+## 1. Photographies des fiches domaines
 
-> **Aucune de ces images n'est posée dans le catalogue livré.** Chaque fiche domaine réserve
-> deux emplacements vides — le rond de 40 mm du vigneron, la bande de 24 × 62 mm de la
-> bouteille — que l'agence
-> remplit elle-même dans Canva. Cette table est le dossier de travail qui va avec : les
-> images repérées, leur domaine, leur adresse exacte et leur résolution.
+**77 images posées sur les 80 emplacements des 40 fiches** : 40 ronds (vigneron, logo ou lieu)
+et 37 bouteilles. Les trois emplacements restés vides gardent leur repère pointillé (voir
+section 2). Les images entrent par la source : `data/photos-locales.json` dit quelle image va
+sur quelle fiche, `npm run photos` les prépare, `npm run build` les pose dans les deux PDF et
+dans le `.pptx`. Les tables ci-dessous sont réécrites par `npm run photos` : elles disent
+toujours ce qui est réellement posé.
 
-**30 images repérées, sur 19 domaines des 40.** Toutes viennent du **site officiel du
-domaine**, trouvé par recherche et vérifié page d'accueil à l'appui. Aucune ne vient de notre
-PDF source, du catalogue concurrent, d'un caviste ou d'un distributeur.
+**D'où elles viennent, par ordre de priorité**
 
-> **À faire par l'agence avant de les utiliser : demander l'autorisation à chaque domaine.**
-> Ces images appartiennent aux domaines. Les afficher dans un catalogue de distribution est
-> l'usage, mais il se demande. Cette table est faite pour cela : une ligne, un domaine, une URL.
-> Les fichiers préparés (détourés, cadrés, traités) restent dans `src/photos/reserve-web/` : ils sont prêts
-> à être glissés dans les emplacements, une fois l'accord obtenu.
+1. **Les dossiers de l'agence** (`Bouteilles_de_vin/`, `Domaines_et_vignerons/`) : 29 images,
+   selon la table validée par l'agence. Le nom du fichier d'origine figure dans la colonne
+   « Source ».
+2. **Les sites officiels des domaines** : 28 images, dont 22 des 30 repérées en 2026 (les
+   huit autres doublaient une image de l'agence déjà validée, ou le logo d'Exea, qui ne sert
+   qu'au n°32). **L'autorisation de chaque domaine reste à demander** avant impression : une
+   ligne, un domaine, une adresse exacte.
+3. **Le Canva de l'agence, « Tarif septembre 2026 »** : 20 images, prises à la demande de
+   l'agence. La photo d'une page de domaine ne sert que pour ce domaine. Les fichiers viennent
+   d'un export PDF qualité « pro » du design, en lecture seule : le design n'a pas été modifié.
+   Canva réduit un peu les images à l'export ; la résolution indiquée est celle de l'export,
+   donc la résolution réelle est égale ou meilleure.
 
-| Fichier | Domaine | Rôle et sujet | Site officiel | URL de l'image | Résolution à la taille imprimée | Licence / statut |
-|---|---|---|---|---|---|---|
-| `src/photos/reserve-web/rond/d02.jpg` | n°2 Domaine de la Barbinière | Rond (en-tête de fiche) — vendanges dans les vignes du domaine | https://www.domainedelabarbiniere.com/ | https://static.wixstatic.com/media/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_2500,h_1666,al_c/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg | 2500x1666 → 1245 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d05.png` | n°5 Chai Berteaud Manceau | Bouteille — bouteille du domaine | https://chai-berteaud-manceau.com/ | https://chai-berteaud-manceau.com/wp-content/uploads/2024/06/COURANT-Chenin-2023-768x2654.webp | 768x2654 → 750 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d05.jpg` | n°5 Chai Berteaud Manceau | Rond (en-tête de fiche) — les deux fondateurs du chai | https://chai-berteaud-manceau.com/ | https://chai-berteaud-manceau.com/wp-content/uploads/2024/01/DSC8855-edited-scaled.jpg | 1784x2560 → 1333 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d07.png` | n°7 Divin No Low | Bouteille — bouteille du domaine | https://www.divinnolow.fr/ | https://www.divinnolow.fr/wp-content/uploads/2024/02/divin_0.5_chardonnay_vigneron_25.png.webp | 800x2560 → 782 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d07.jpg` | n°7 Divin No Low | Rond (en-tête de fiche) — vinification en cuverie | https://www.divinnolow.fr/ | https://www.divinnolow.fr/wp-content/uploads/2025/02/divin_officiel_alessandro_juin_24_158.png.webp | 2000x1333 → 996 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d09.png` | n°9 Domaine des Nugues | Bouteille — bouteille du domaine | https://www.domainedesnugues.com/ | https://www.domainedesnugues.com/wp-content/uploads/2022/04/Moulin-a-Vent.png | 576x1879 → 563 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d09.jpg` | n°9 Domaine des Nugues | Rond (en-tête de fiche) — portrait des vignerons | https://www.domainedesnugues.com/ | https://www.domainedesnugues.com/wp-content/uploads/2020/02/DSC_8874-1-1-370x555.jpg | 370x555 → 276 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d15.jpg` | n°15 Domaine des Verchères | Rond (en-tête de fiche) — portrait du vigneron | https://www.domainedesvercheres.com/ | https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/4120efd3-8e74-45e3-99eb-7111ee3b897e/IMG_3840.JPG | 2500x2199 → 1643 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d20.png` | n°20 Domaine des Pasquiers | Bouteille — bouteille du domaine | https://domainedespasquiers.fr/ | https://domainedespasquiers.fr/wp-content/uploads/2020/01/Domaine-des-Pasquiers-vins-plan-de-dieu-rouge.jpg | 818x1500 → 799 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d20.jpg` | n°20 Domaine des Pasquiers | Rond (en-tête de fiche) — portrait de la famille | https://domainedespasquiers.fr/ | https://domainedespasquiers.fr/wp-content/uploads/2021/04/Famille-Lambert.jpg | 1920x1440 → 1076 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d21.jpg` | n°21 Domaine Trichon | Rond (en-tête de fiche) — mise en bouteille au domaine | https://domainetrichon.fr/ | https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg | 2560x1920 → 1434 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d23.png` | n°23 Domaine Haut Marin | Bouteille — bouteille du domaine | https://www.domaine-hautmarin.com/ | https://www.domaine-hautmarin.com/wp-content/uploads/2026/01/littorine-1.png | 492x2048 → 481 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d23.jpg` | n°23 Domaine Haut Marin | Rond (en-tête de fiche) — logo du domaine | https://www.domaine-hautmarin.com/ | https://www.domaine-hautmarin.com/wp-content/uploads/2025/12/Logo-Haut-Marin.png | 1056x594 → 789 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d24.png` | n°24 Fabien Castaing | Bouteille — bouteille du domaine | https://www.fabiencastaing.com/ | https://www.fabiencastaing.com/wp-content/uploads/2023/06/PDBADN-2.jpg | 541x764 → 529 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d24.jpg` | n°24 Fabien Castaing | Rond (en-tête de fiche) — portrait du vigneron dans ses vignes | https://www.fabiencastaing.com/ | https://www.fabiencastaing.com/wp-content/uploads/2021/04/2-Genealogie-2015-fabien-scaled.jpg | 1920x2560 → 1434 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d25.png` | n°25 La Passion des Terroirs | Bouteille — bouteille du domaine | https://lapassiondesterroirs.com/ | https://lapassiondesterroirs.com/wp-content/uploads/BOUT-DOYAC.png | 1039x4242 → 1015 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d25.jpg` | n°25 La Passion des Terroirs | Rond (en-tête de fiche) — portrait de famille d'époque | https://lapassiondesterroirs.com/ | https://lapassiondesterroirs.com/wp-content/uploads/lucien-lurton-1.png | 685x1086 → 512 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d26.png` | n°26 Château la Gorce | Bouteille — bouteille du domaine | https://www.chateaulagorce.com/ | https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_BouteilleLaGorce.jpg | 766x1500 → 748 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d26.jpg` | n°26 Château la Gorce | Rond (en-tête de fiche) — portrait des vignerons | https://www.chateaulagorce.com/ | https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg | 1000x1500 → 747 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d28.png` | n°28 Château Pré la Lande | Bouteille — bouteille du domaine | https://www.prelalande.com/ | https://www.prelalande.com/images/portfolio/Famille.png | 2500x2500 → 2442 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d28.jpg` | n°28 Château Pré la Lande | Rond (en-tête de fiche) — vendanges au domaine | https://www.prelalande.com/ | https://www.prelalande.com/images/background/methode.jpg | 800x640 → 478 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d29.jpg` | n°29 Château Balac | Rond (en-tête de fiche) — portrait des vignerons | https://chateaubalac.com/ | https://chateaubalac.com/wp-content/uploads/2025/03/portrait-chateau-balac_04.jpg | 886x591 → 442 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d31.jpg` | n°31 Bastide de Blacailloux | Rond (en-tête de fiche) — borie en pierre sèche du domaine | https://blacailloux.fr/ | https://blacailloux.fr/wp-content/uploads/2026/07/art-de-rehabiliter-scaled.jpg.webp | 2560x1709 → 1277 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d32.png` | n°32 Famille d’Exea | Bouteille — bouteille du domaine | https://www.laboutiquedexea.com/ | https://www.laboutiquedexea.com/cdn/shop/files/EXEA_Gamme_Petit_Jardin__Rouge_348efe16-6744-44f7-85e9-4575c6479904.png?v=1762210848&width=1080 | 922x1364 → 901 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d32.jpg` | n°32 Famille d’Exea | Rond (en-tête de fiche) — logo de la maison | https://www.laboutiquedexea.com/ | https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600 | 600x533 → 448 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d33.jpg` | n°33 Famille d’Exea — Jus de Cépages | Rond (en-tête de fiche) — logo de la maison | https://www.laboutiquedexea.com/ | https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600 | 600x533 → 448 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/bouteille/d34.png` | n°34 Château de Gragnos | Bouteille — bouteille du domaine | https://www.chateaudegragnos.com/ | https://www.chateaudegragnos.com/web/image/9323-649a41c7/Design%20sans%20titre%20%2810%29.png | 1654x1654 → 1616 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d34.jpg` | n°34 Château de Gragnos | Rond (en-tête de fiche) — grappes à la vigne | https://www.chateaudegragnos.com/ | https://www.chateaudegragnos.com/web/image/9841-9b4b7150/DSCF4018.JPG | 1280x1920 → 956 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d39.jpg` | n°39 Champagne Solemme | Rond (en-tête de fiche) — logo de la maison | https://www.champagnesolemme.com/ | https://www.champagnesolemme.fr/wp-content/uploads/2022/10/champagne-solemme-logo-clair_4D4D4D.png | 530x275 → 396 ppi | site officiel du domaine — **autorisation à demander** |
-| `src/photos/reserve-web/rond/d40.jpg` | n°40 Vazart-Coquart & Fils | Rond (en-tête de fiche) — la maison de champagne | https://www.champagnevazartcoquart.com/ | https://www.champagnevazartcoquart.com/wp-content/uploads/2020/10/maison-champagne-vazart-coquart.jpg | 1920x950 → 710 ppi | site officiel du domaine — **autorisation à demander** |
+**Résolution.** Toutes sont au-dessus du plancher de 200 ppi à leur taille imprimée, aucune
+n'a été agrandie. Les plus justes : rond n°3 (213 ppi), rond n°35 (217 ppi), bouteille n°31
+(202 ppi). Une version plus grande de ces trois-là améliorerait l'impression.
 
-**Résolution.** Toutes sont au-dessus du minimum de 200 ppi à leur taille d'usage
-(rond 34 mm, bouteille 26 mm). La plus juste est celle du Champagne Solemme, à 396 ppi.
+**Traitement.** Une seule fonction pour toutes (`scripts/preparer-photos.py`) : saturation
+0,82, contraste 1,06, rouge réchauffé, bleu refroidi. Rien n'est déformé.
 
-**Traitement.** Les 30 images passent par la **même fonction** de
-`scripts/preparer-photos.py` : saturation ramenée à 0,82, contraste à 1,06, rouge réchauffé,
-bleu refroidi. C'est ce qui les fait appartenir au même catalogue plutôt qu'à vingt univers
-différents. Les ronds sont cadrés au centre, au tiers supérieur pour que les visages tombent
-juste ; **aucune n'est déformée**. Les bouteilles sont **détourées** par remplissage depuis les
-bords, pour qu'aucun carré blanc ne traîne sur le papier.
+- **Un portrait** est recadré au carré puis masqué en cercle.
+- **Plusieurs personnes** (n°18, n°37) : on recule au lieu de recadrer serré, pour que toutes
+  les têtes tiennent entières dans le cercle. Si le carré dépasse la photo, la marge prend la
+  couleur du bord (ciel, plafond), fondue.
+- **Deux portraits séparés de deux personnes** (n°12, n°30) : chacun occupe une moitié du
+  rond, séparées par un filet clair.
+- **Un logo** n'est jamais rogné : il entre en entier, centré, sur une réserve claire (ou
+  sombre sous un logo blanc).
+- **Une bouteille** est détourée sur fond transparent et contenue dans 24 × 62 mm.
 
-## 2. Les 21 domaines sans photographie
+**Loi Évin.** Aucun verre levé, porté à la bouche ou trinqué, aucune scène de dégustation.
+Écartées pour cette raison : les photos de dégustation des n°2, 6, 8, 30, 31, 35 et 39 (sites
+ou Canva). **Deux ronds sont recadrés au-dessus d'un verre tenu en main**, qui n'apparaît pas
+dans le cercle : n°10 (portrait au chai) et n°18 (le couple). Si l'agence préfère ne pas
+partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-locales.json`.
 
-n°1 François Reverdy, n°3 Domaine du Colombier / J.Y Bretaudeau, n°4 Domaine des Noëls, n°6 Domaine Jean de Villebois, n°8 Domaine Boehler, n°10 Domaine Sébastien Magnien, n°11 Domaine Nadine Ferrand, n°12 Maison et Domaine André Goichot, n°13 Château du Cray, n°14 Domaine Les Guignottes, n°16 Domaine Le Prieuré des Papes, n°17 Domaine de Coyeux, n°18 Domaine du Moulin Blanc, n°19 Domaine de la Pousterle, n°22 Domaine Stratéus, n°27 Château Falfas, n°30 Château l’Escarderie, n°35 Domaine Les Lys, n°36 Prieuré Sainte-Marie d’Albas, n°37 Champagne Dekeyne, n°38 Champagne Denis Frézier.
+**Autres images écartées.**
+- Images générées par IA, signalées par leur nom de fichier : le portrait du Canva de la page
+  Solemme, la bouteille de la page Noëls, et celles déjà écartées des dossiers de l'agence.
+- Le site trouvé pour le n°3 (`domaineducolombier.com`) est un homonyme, un lieu de réception
+  en Hauts-de-France : il a été retiré de `data/sites-domaines.json`.
+- Le logo Denis Frézier du Canva : 256 × 197 px, soit 187 ppi, sous le plancher.
 
-Pour ceux-là, **aucun site officiel joignable et vérifiable** n'a été trouvé — soit le domaine
-n'en a pas, soit il est distribué sous une marque de négoce, soit les seuls sites portant ce
-nom appartiennent à des homonymes sans rapport avec le vin. **Rien n'a été inventé et rien n'a
-été pris ailleurs** : leur fiche garde son dessin de sol, qui tient très bien la page.
+<!-- images:debut -->
 
-*Le plus sûr pour les compléter : demander leur dossier de presse aux domaines. L'agence a
-les contacts, pas nous.*
+**77 images posées sur 80 emplacements.**
+
+### Image par image
+
+| n° | Domaine | Image | Sujet | Provenance | Source | Résolution | Droits |
+|---|---|---|---|---|---|---|---|
+| 1 | François Reverdy | rond (`src/photos/rond/d01.jpg`) | portrait du vigneron, noir et blanc | dossier de l'agence | `Domaines_et_vignerons/Francois_Reverdy/Francois_Reverdy_Portrait_vigneron.png` | 486x463 px → 294 ppi à 40 mm | photothèque de l'agence |
+| 1 | François Reverdy | bouteille (`src/photos/bouteille/d01.png`) | bouteille de Chinon, 3e de la photo de gamme | dossier de l'agence | `Bouteilles_de_vin/Francois_Reverdy/Francois_Reverdy_Gamme_5_bouteilles.jpg` | 8256x5505 px → 1865 ppi à 24 × 62 mm | photothèque de l'agence |
+| 2 | Domaine de la Barbinière | rond (`src/photos/rond/d02.jpg`) | vendanges dans les vignes du domaine | site officiel du domaine | page https://www.domainedelabarbiniere.com/ — image <https://static.wixstatic.com/media/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_2500,h_1666,al_c/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg> | 2500x1666 px → 1058 ppi à 40 mm | **autorisation à demander au domaine** |
+| 2 | Domaine de la Barbinière | bouteille (`src/photos/bouteille/d02.png`) | bouteille Les Amphibol | dossier de l'agence | `Bouteilles_de_vin/Domaine_de_la_Barbiniere/Domaine_de_la_Barbiniere_Fiefs_Vendeens_Les_Amphibol_2022_v2.jpg` | 1686x3000 px → 910 ppi à 24 × 62 mm | photothèque de l'agence |
+| 3 | Domaine du Colombier / J.Y Bretaudeau | rond (`src/photos/rond/d03.jpg`) | le vigneron au chai | Canva de l'agence « Tarif septembre 2026 », page 6 | `canva/d03-p06-021.png` | 515x336 px → 213 ppi à 40 mm | photothèque de l'agence |
+| 3 | Domaine du Colombier / J.Y Bretaudeau | bouteille (`src/photos/bouteille/d03.png`) | bouteille Rouge au lèvres | dossier de l'agence | `Bouteilles_de_vin/Domaine_du_Colombier_JY_Bretaudeau/Domaine_du_Colombier_JY_Bretaudeau_Rouge_aux_levres_Val_de_Loire.jpg` | 1686x3000 px → 911 ppi à 24 × 62 mm | photothèque de l'agence |
+| 4 | Domaine des Noëls | rond (`src/photos/rond/d04.jpg`) | portrait | Canva de l'agence « Tarif septembre 2026 », page 7 | `canva/d04-p07-038.png` | 994x1325 px → 631 ppi à 40 mm | photothèque de l'agence |
+| 4 | Domaine des Noëls | bouteille (`src/photos/bouteille/d04.png`) | bouteille Promenade des Noëls, Anjou blanc | dossier de l'agence | `Bouteilles_de_vin/Domaine_des_Noels/Domaine_des_Noels_Anjou_Blanc_Promenade_des_Noels.jpg` | 2113x2195 px → 862 ppi à 24 × 62 mm | photothèque de l'agence |
+| 5 | Chai Berteaud Manceau | rond (`src/photos/rond/d05.jpg`) | les deux fondateurs du chai | site officiel du domaine | page https://chai-berteaud-manceau.com/ — image <https://chai-berteaud-manceau.com/wp-content/uploads/2024/01/DSC8855-edited-scaled.jpg> | 1784x2560 px → 1133 ppi à 40 mm | **autorisation à demander au domaine** |
+| 5 | Chai Berteaud Manceau | bouteille (`src/photos/bouteille/d05.png`) | bouteille du domaine | site officiel du domaine | page https://chai-berteaud-manceau.com/ — image <https://chai-berteaud-manceau.com/wp-content/uploads/2024/06/COURANT-Chenin-2023-768x2654.webp> | 768x2654 px → 1071 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 6 | Domaine Jean de Villebois | rond (`src/photos/rond/d06.jpg`) | dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 9 | `canva/d06-p09-059.png` | 1800x1200 px → 762 ppi à 40 mm | photothèque de l'agence |
+| 6 | Domaine Jean de Villebois | bouteille (`src/photos/bouteille/d06.png`) | bouteille Pouilly-Fumé Les Silex Blancs | site officiel du domaine | page https://www.jdevillebois.com/ — image <https://www.jdevillebois.fr/wp-content/uploads/2023/08/jdevillebois_pouillyfume_silexblancs_blanc_23.webp> | 237x861 px → 353 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 7 | Divin No Low | rond (`src/photos/rond/d07.jpg`) | vinification en cuverie | site officiel du domaine | page https://www.divinnolow.fr/ — image <https://www.divinnolow.fr/wp-content/uploads/2025/02/divin_officiel_alessandro_juin_24_158.png.webp> | 2000x1333 px → 846 ppi à 40 mm | **autorisation à demander au domaine** |
+| 7 | Divin No Low | bouteille (`src/photos/bouteille/d07.png`) | bouteille du domaine | site officiel du domaine | page https://www.divinnolow.fr/ — image <https://www.divinnolow.fr/wp-content/uploads/2024/02/divin_0.5_chardonnay_vigneron_25.png.webp> | 800x2560 px → 1025 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 8 | Domaine Boehler | rond (`src/photos/rond/d08.jpg`) | logo du domaine | Canva de l'agence « Tarif septembre 2026 », page 11 | `canva/d08-p11-077.png` | 447x447 px → 447 ppi à 40 mm | photothèque de l'agence |
+| 8 | Domaine Boehler | bouteille (`src/photos/bouteille/d08.png`) | bouteille Molse blanc | dossier de l'agence | `Bouteilles_de_vin/Domaine_Boehler/Domaine_Boehler_Alsace_Molse_Blanc.jpg` | 1503x2672 px → 1036 ppi à 24 × 62 mm | photothèque de l'agence |
+| 9 | Domaine des Nugues | rond (`src/photos/rond/d09.jpg`) | portrait des vignerons | site officiel du domaine | page https://www.domainedesnugues.com/ — image <https://www.domainedesnugues.com/wp-content/uploads/2020/02/DSC_8874-1-1-370x555.jpg> | 370x555 px → 235 ppi à 40 mm | **autorisation à demander au domaine** |
+| 9 | Domaine des Nugues | bouteille (`src/photos/bouteille/d09.png`) | bouteille Moulin-à-Vent 2022 | dossier de l'agence | `Bouteilles_de_vin/Domaine_des_Nugues/Domaine_des_Nugues_Moulin-a-Vent_2022_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 10 | Domaine Sébastien Magnien | rond (`src/photos/rond/d10.jpg`) | portrait au chai, recadré au-dessus du verre | Canva de l'agence « Tarif septembre 2026 », page 13 | `canva/d10-p13-088.png` | 1378x845 px → 258 ppi à 40 mm | photothèque de l'agence |
+| 10 | Domaine Sébastien Magnien | bouteille (`src/photos/bouteille/d10.png`) | bouteille Bourgogne Pinot Noir 2023 | dossier de l'agence | `Bouteilles_de_vin/Domaine_Sebastien_Magnien/Domaine_Sebastien_Magnien_Bourgogne_Pinot_Noir_2023.png` | 1080x1920 px → 670 ppi à 24 × 62 mm | photothèque de l'agence |
+| 11 | Domaine Nadine Ferrand | rond (`src/photos/rond/d11.jpg`) | les vigneronnes au chai, noir et blanc | dossier de l'agence | `Domaines_et_vignerons/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Vigneronnes_au_chai.jpg` | 1920x1080 px → 686 ppi à 40 mm | photothèque de l'agence |
+| 11 | Domaine Nadine Ferrand | bouteille (`src/photos/bouteille/d11.png`) | bouteille Mâcon Charnay-lès-Mâcon | dossier de l'agence | `Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg` | 2266x4032 px → 1112 ppi à 24 × 62 mm | photothèque de l'agence |
+| 12 | Maison et Domaine André Goichot | rond (`src/photos/rond/d12.jpg`) | deux portraits de la maison, côte à côte | Canva de l'agence « Tarif septembre 2026 », page 15 | `canva/d12-p15-107.png` + `canva/d12-p15-108.png` | 491x510 + 491x510 px → 312 ppi à 40 mm | photothèque de l'agence |
+| 12 | Maison et Domaine André Goichot | bouteille (`src/photos/bouteille/d12.png`) | bouteille Givry Champ la Dame 2023 | dossier de l'agence | `Bouteilles_de_vin/Maison_Andre_Goichot/Maison_Andre_Goichot_Givry_Champ_la_Dame_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 13 | Château du Cray | rond (`src/photos/rond/d13.jpg`) | le vignoble du Château du Cray (bannière de sa page) | site officiel du domaine | page https://www.maisongoichot.com/fr/content/chateau-du-cray — image <https://www.maisongoichot.com/sites/default/files/styles/banner_md/public/banner-cray_0.jpg?itok=kYMCGWkV> | 1130x663 px → 421 ppi à 40 mm | **autorisation à demander au domaine** |
+| 13 | Château du Cray | bouteille (`src/photos/bouteille/d13.png`) | bouteille Mercurey blanc Les Doues (cuvée absente du tarif) | dossier de l'agence | `Bouteilles_de_vin/Chateau_du_Cray/Chateau_du_Cray_Mercurey_Blanc_Les_Doues.png` | 180x673 px → 272 ppi à 24 × 62 mm | photothèque de l'agence |
+| 14 | Domaine Les Guignottes | rond (`src/photos/rond/d14.jpg`) | nom du domaine sur ses vignes | Canva de l'agence « Tarif septembre 2026 », page 17 | `canva/d14-p17-122.png` | 530x332 px → 337 ppi à 40 mm | photothèque de l'agence |
+| 14 | Domaine Les Guignottes | bouteille (`src/photos/bouteille/d14.png`) | bouteille Bourgogne Chardonnay 2023 | dossier de l'agence | `Bouteilles_de_vin/Domaine_des_Guignottes/Domaine_des_Guignottes_Bourgogne_Chardonnay_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 15 | Domaine des Verchères | rond (`src/photos/rond/d15.jpg`) | portrait du vigneron | site officiel du domaine | page https://www.domainedesvercheres.com/ — image <https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/4120efd3-8e74-45e3-99eb-7111ee3b897e/IMG_3840.JPG> | 2500x2199 px → 1396 ppi à 40 mm | **autorisation à demander au domaine** |
+| 16 | Domaine Le Prieuré des Papes | rond (`src/photos/rond/d16.jpg`) | logo du domaine | Canva de l'agence « Tarif septembre 2026 », page 19 | `canva/d16-p19-133.png` | 750x500 px → 549 ppi à 40 mm | photothèque de l'agence |
+| 16 | Domaine Le Prieuré des Papes | bouteille (`src/photos/bouteille/d16.png`) | bouteille Châteauneuf-du-Pape Vieilles Vignes | dossier de l'agence | `Bouteilles_de_vin/Le_Prieure_des_Papes/Le_Prieure_des_Papes_Chateauneuf-du-Pape_Vieilles_Vignes_2022_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 17 | Domaine de Coyeux | rond (`src/photos/rond/d17.jpg`) | le domaine | Canva de l'agence « Tarif septembre 2026 », page 20 | `canva/d17-p20-140.png` | 817x774 px → 491 ppi à 40 mm | photothèque de l'agence |
+| 17 | Domaine de Coyeux | bouteille (`src/photos/bouteille/d17.png`) | bouteille Les Jumelles, Beaumes-de-Venise | dossier de l'agence | `Bouteilles_de_vin/Domaine_de_Coyeux/Domaine_de_Coyeux_Beaumes-de-Venise_Les_Jumelles_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 18 | Domaine du Moulin Blanc | rond (`src/photos/rond/d18.jpg`) | le couple, recadré au-dessus du verre | Canva de l'agence « Tarif septembre 2026 », page 21 | `canva/d18-p21-149.png` | 1200x630 px → 320 ppi à 40 mm | photothèque de l'agence |
+| 19 | Domaine de la Pousterle | rond (`src/photos/rond/d19.jpg`) | vendanges dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 22 | `canva/d19-p22-151.png` | 640x575 px → 365 ppi à 40 mm | photothèque de l'agence |
+| 19 | Domaine de la Pousterle | bouteille (`src/photos/bouteille/d19.png`) | bouteille Terroir d'Ansouis blanc 2021 | dossier de l'agence | `Bouteilles_de_vin/Domaine_de_la_Pousterle/Domaine_de_la_Pousterle_Luberon_Terroir_dAnsouis_Blanc_2021.png` | 1080x1920 px → 674 ppi à 24 × 62 mm | photothèque de l'agence |
+| 20 | Domaine des Pasquiers | rond (`src/photos/rond/d20.jpg`) | portrait de la famille | site officiel du domaine | page https://domainedespasquiers.fr/ — image <https://domainedespasquiers.fr/wp-content/uploads/2021/04/Famille-Lambert.jpg> | 1920x1440 px → 914 ppi à 40 mm | **autorisation à demander au domaine** |
+| 20 | Domaine des Pasquiers | bouteille (`src/photos/bouteille/d20.png`) | bouteille Plan de Dieu 2023 | dossier de l'agence | `Bouteilles_de_vin/Domaine_des_Pasquiers/Domaine_des_Pasquiers_Cotes-du-Rhone_Villages_Plan_de_Dieu_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 21 | Domaine Trichon | rond (`src/photos/rond/d21.jpg`) | mise en bouteille au domaine | site officiel du domaine | page https://domainetrichon.fr/ — image <https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg> | 2560x1920 px → 1219 ppi à 40 mm | **autorisation à demander au domaine** |
+| 22 | Domaine Stratéus | rond (`src/photos/rond/d22.jpg`) | logo du domaine | site officiel du domaine | page https://www.strateus-madiran.com/ — image <https://static.wixstatic.com/media/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png/v1/fill/w_586,h_586,al_c/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png> | 586x586 px → 405 ppi à 40 mm | **autorisation à demander au domaine** |
+| 22 | Domaine Stratéus | bouteille (`src/photos/bouteille/d22.png`) | bouteille Madiran Strateus | dossier de l'agence | `Bouteilles_de_vin/Strateus/Strateus_Madiran_Strateus_2021.png` | 1080x1920 px → 668 ppi à 24 × 62 mm | photothèque de l'agence |
+| 23 | Domaine Haut Marin | rond (`src/photos/rond/d23.jpg`) | logo du domaine | site officiel du domaine | page https://www.domaine-hautmarin.com/ — image <https://www.domaine-hautmarin.com/wp-content/uploads/2025/12/Logo-Haut-Marin.png> | 1056x594 px → 698 ppi à 40 mm | **autorisation à demander au domaine** |
+| 23 | Domaine Haut Marin | bouteille (`src/photos/bouteille/d23.png`) | bouteille N°4 Triton 2024 | dossier de l'agence | `Bouteilles_de_vin/Domaine_Haut-Marin/Domaine_Haut-Marin_IGP_Cotes_de_Gascogne_Triton_2024_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 24 | Fabien Castaing | rond (`src/photos/rond/d24.jpg`) | portrait du vigneron dans ses vignes | site officiel du domaine | page https://www.fabiencastaing.com/ — image <https://www.fabiencastaing.com/wp-content/uploads/2021/04/2-Genealogie-2015-fabien-scaled.jpg> | 1920x2560 px → 1219 ppi à 40 mm | **autorisation à demander au domaine** |
+| 24 | Fabien Castaing | bouteille (`src/photos/bouteille/d24.png`) | bouteille ADN 24 rouge | Canva de l'agence « Tarif septembre 2026 », page 27 | `canva/d24-p27-214.png` | 225x699 px → 286 ppi à 24 × 62 mm | photothèque de l'agence |
+| 25 | La Passion des Terroirs | rond (`src/photos/rond/d25.jpg`) | portrait de famille d'époque | site officiel du domaine | page https://lapassiondesterroirs.com/ — image <https://lapassiondesterroirs.com/wp-content/uploads/lucien-lurton-1.png> | 685x1086 px → 435 ppi à 40 mm | **autorisation à demander au domaine** |
+| 25 | La Passion des Terroirs | bouteille (`src/photos/bouteille/d25.png`) | bouteille du domaine | site officiel du domaine | page https://lapassiondesterroirs.com/ — image <https://lapassiondesterroirs.com/wp-content/uploads/BOUT-DOYAC.png> | 1039x4242 px → 1737 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 26 | Château la Gorce | rond (`src/photos/rond/d26.jpg`) | portrait des vignerons | site officiel du domaine | page https://www.chateaulagorce.com/ — image <https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg> | 1000x1500 px → 635 ppi à 40 mm | **autorisation à demander au domaine** |
+| 26 | Château la Gorce | bouteille (`src/photos/bouteille/d26.png`) | bouteille La Bonne Résolution 2022 | dossier de l'agence | `Bouteilles_de_vin/Chateau_La_Gorce/Chateau_La_Gorce_Medoc_La_Bonne_Resolution_2022.png` | 1080x1920 px → 671 ppi à 24 × 62 mm | photothèque de l'agence |
+| 27 | Château Falfas | rond (`src/photos/rond/d27.jpg`) | logo du château | dossier de l'agence | `Domaines_et_vignerons/Chateau_Falfas/Chateau_Falfas_Logo.png` | 470x311 px → 391 ppi à 40 mm | photothèque de l'agence |
+| 27 | Château Falfas | bouteille (`src/photos/bouteille/d27.png`) | bouteille Château Falfas | Canva de l'agence « Tarif septembre 2026 », page 30 | `canva/d27-p30-244.png` | 302x1040 px → 400 ppi à 24 × 62 mm | photothèque de l'agence |
+| 28 | Château Pré la Lande | rond (`src/photos/rond/d28.jpg`) | vendanges au domaine | site officiel du domaine | page https://www.prelalande.com/ — image <https://www.prelalande.com/images/background/methode.jpg> | 800x640 px → 406 ppi à 40 mm | **autorisation à demander au domaine** |
+| 28 | Château Pré la Lande | bouteille (`src/photos/bouteille/d28.png`) | bouteille du domaine | site officiel du domaine | page https://www.prelalande.com/ — image <https://www.prelalande.com/images/portfolio/Famille.png> | 2500x2500 px → 961 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 29 | Château Balac | rond (`src/photos/rond/d29.jpg`) | portrait des vignerons | site officiel du domaine | page https://chateaubalac.com/ — image <https://chateaubalac.com/wp-content/uploads/2025/03/portrait-chateau-balac_04.jpg> | 886x591 px → 375 ppi à 40 mm | **autorisation à demander au domaine** |
+| 29 | Château Balac | bouteille (`src/photos/bouteille/d29.png`) | bouteille Château Balac Haut-Médoc (cuvée absente du tarif) | dossier de l'agence | `Bouteilles_de_vin/Chateau_Balac/Chateau_Balac_Medoc_Cru_Bourgeois_Superieur_2022_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 30 | Château l’Escarderie | rond (`src/photos/rond/d30.jpg`) | les deux vignerons, deux portraits côte à côte | site officiel du domaine | page https://lescarderievins.com/ — image <https://lescarderievins.com/wp-content/uploads/2023/03/melanie-lescarderie-chateau-fronsac.png> + <https://lescarderievins.com/wp-content/uploads/2023/03/thomas-vignoble-fronsac-bordeaux-saint-emillion.png> | 492x492 + 492x492 px → 312 ppi à 40 mm | **autorisation à demander au domaine** |
+| 30 | Château l’Escarderie | bouteille (`src/photos/bouteille/d30.png`) | bouteille Château l'Escarderie | site officiel du domaine | page https://lescarderievins.com/ — image <https://lescarderievins.com/wp-content/uploads/2020/11/produit-chateau-lescarderie.png> | 683x1024 px → 394 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 31 | Bastide de Blacailloux | rond (`src/photos/rond/d31.jpg`) | borie en pierre sèche du domaine | site officiel du domaine | page https://blacailloux.fr/ — image <https://blacailloux.fr/wp-content/uploads/2026/07/art-de-rehabiliter-scaled.jpg.webp> | 2560x1709 px → 1085 ppi à 40 mm | **autorisation à demander au domaine** |
+| 31 | Bastide de Blacailloux | bouteille (`src/photos/bouteille/d31.png`) | bouteille JOIO rosé | site officiel du domaine | page https://blacailloux.fr/ — image <https://blacailloux.fr/wp-content/uploads/2026/05/WINE-8.png.webp> | 156x536 px → 202 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 32 | Famille d’Exea | rond (`src/photos/rond/d32.jpg`) | logo de la maison | site officiel du domaine | page https://www.laboutiquedexea.com/ — image <https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600> | 600x533 px → 468 ppi à 40 mm | **autorisation à demander au domaine** |
+| 32 | Famille d’Exea | bouteille (`src/photos/bouteille/d32.png`) | bouteille Jardins de Corbières rouge | dossier de l'agence | `Bouteilles_de_vin/Famille_dExea/Famille_dExea_Jardin_de_Corbieres_Rouge.png` | 1080x1920 px → 670 ppi à 24 × 62 mm | photothèque de l'agence |
+| 33 | Famille d’Exea — Jus de Cépages | rond (`src/photos/rond/d33.jpg`) | brebis dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 36 | `canva/d33-p36-303.png` | 1800x1200 px → 762 ppi à 40 mm | photothèque de l'agence |
+| 33 | Famille d’Exea — Jus de Cépages | bouteille (`src/photos/bouteille/d33.png`) | bouteille de jus de Grenache | Canva de l'agence « Tarif septembre 2026 », page 36 | `canva/d33-p36-306.png` | 535x1024 px → 358 ppi à 24 × 62 mm | photothèque de l'agence |
+| 34 | Château de Gragnos | rond (`src/photos/rond/d34.jpg`) | grappes à la vigne | site officiel du domaine | page https://www.chateaudegragnos.com/ — image <https://www.chateaudegragnos.com/web/image/9841-9b4b7150/DSCF4018.JPG> | 1280x1920 px → 813 ppi à 40 mm | **autorisation à demander au domaine** |
+| 34 | Château de Gragnos | bouteille (`src/photos/bouteille/d34.png`) | bouteille Lou Daro 2022 | dossier de l'agence | `Bouteilles_de_vin/Chateau_de_Gragnos/Chateau_de_Gragnos_Saint-Chinian_Lou_Daro_2022_v2.png` | 1080x1920 px → 699 ppi à 24 × 62 mm | photothèque de l'agence |
+| 35 | Domaine Les Lys | rond (`src/photos/rond/d35.jpg`) | logo du domaine | Canva de l'agence « Tarif septembre 2026 », page 38 | `canva/d35-p38-321.png` | 265x245 px → 217 ppi à 40 mm | photothèque de l'agence |
+| 35 | Domaine Les Lys | bouteille (`src/photos/bouteille/d35.png`) | bouteille Duché | dossier de l'agence | `Bouteilles_de_vin/Domaine_Les_Lys/Domaine_Les_Lys_Duche_dUzes_Duche_Rouge.png` | 1080x1920 px → 671 ppi à 24 × 62 mm | photothèque de l'agence |
+| 36 | Prieuré Sainte-Marie d’Albas | rond (`src/photos/rond/d36.jpg`) | les deux vignerons et leur rosé, noir et blanc | dossier de l'agence | `Domaines_et_vignerons/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Vignerons_avec_rose_NB.jpg` | 1181x1181 px → 750 ppi à 40 mm | photothèque de l'agence |
+| 36 | Prieuré Sainte-Marie d’Albas | bouteille (`src/photos/bouteille/d36.png`) | bouteille 4 Saisons | dossier de l'agence | `Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png` | 172x605 px → 232 ppi à 24 × 62 mm | photothèque de l'agence |
+| 37 | Champagne Dekeyne | rond (`src/photos/rond/d37.jpg`) | les deux frères dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 40 | `canva/d37-p40-345.png` | 1800x1200 px → 914 ppi à 40 mm | photothèque de l'agence |
+| 37 | Champagne Dekeyne | bouteille (`src/photos/bouteille/d37.png`) | bouteille Chardonnay | dossier de l'agence | `Bouteilles_de_vin/Champagne_Dekeyne/Champagne_Dekeyne_Chardonnay_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 38 | Champagne Denis Frézier | rond (`src/photos/rond/d38.jpg`) | le village dans ses vignes | Canva de l'agence « Tarif septembre 2026 », page 41 | `canva/d38-p41-355.png` | 1024x768 px → 488 ppi à 40 mm | photothèque de l'agence |
+| 38 | Champagne Denis Frézier | bouteille (`src/photos/bouteille/d38.png`) | bouteille Les Trois Crus | dossier de l'agence | `Bouteilles_de_vin/Champagne_Denis_Frezier/Champagne_Denis_Frezier_Les_Trois_Crus_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
+| 39 | Champagne Solemme | rond (`src/photos/rond/d39.jpg`) | logo de la maison | site officiel du domaine | page https://www.champagnesolemme.com/ — image <https://www.champagnesolemme.fr/wp-content/uploads/2022/10/champagne-solemme-logo-clair_4D4D4D.png> | 530x275 px → 437 ppi à 40 mm | **autorisation à demander au domaine** |
+| 39 | Champagne Solemme | bouteille (`src/photos/bouteille/d39.png`) | bouteille Nature de Solemme | Canva de l'agence « Tarif septembre 2026 », page 42 | `canva/d39-p42-367.png` | 250x750 px → 307 ppi à 24 × 62 mm | photothèque de l'agence |
+| 40 | Vazart-Coquart & Fils | rond (`src/photos/rond/d40.jpg`) | la maison de champagne | site officiel du domaine | page https://www.champagnevazartcoquart.com/ — image <https://www.champagnevazartcoquart.com/wp-content/uploads/2020/10/maison-champagne-vazart-coquart.jpg> | 1920x950 px → 603 ppi à 40 mm | **autorisation à demander au domaine** |
+| 40 | Vazart-Coquart & Fils | bouteille (`src/photos/bouteille/d40.png`) | bouteille Special Club | Canva de l'agence « Tarif septembre 2026 », page 43 | `canva/d40-p43-382.png` | 466x640 px → 238 ppi à 24 × 62 mm | photothèque de l'agence |
+
+### Récapitulatif par domaine
+
+| n° | Domaine | Rond (40 mm) | Bouteille (24 × 62 mm) |
+|---|---|---|---|
+| 1 | François Reverdy | portrait du vigneron, noir et blanc — dossier de l'agence, 294 ppi | bouteille de Chinon, 3e de la photo de gamme — dossier de l'agence, 1865 ppi |
+| 2 | Domaine de la Barbinière | vendanges dans les vignes du domaine — site du domaine, 1058 ppi | bouteille Les Amphibol — dossier de l'agence, 910 ppi |
+| 3 | Domaine du Colombier / J.Y Bretaudeau | le vigneron au chai — Canva de l'agence, 213 ppi | bouteille Rouge au lèvres — dossier de l'agence, 911 ppi |
+| 4 | Domaine des Noëls | portrait — Canva de l'agence, 631 ppi | bouteille Promenade des Noëls, Anjou blanc — dossier de l'agence, 862 ppi |
+| 5 | Chai Berteaud Manceau | les deux fondateurs du chai — site du domaine, 1133 ppi | bouteille du domaine — site du domaine, 1071 ppi |
+| 6 | Domaine Jean de Villebois | dans les vignes — Canva de l'agence, 762 ppi | bouteille Pouilly-Fumé Les Silex Blancs — site du domaine, 353 ppi |
+| 7 | Divin No Low | vinification en cuverie — site du domaine, 846 ppi | bouteille du domaine — site du domaine, 1025 ppi |
+| 8 | Domaine Boehler | logo du domaine — Canva de l'agence, 447 ppi | bouteille Molse blanc — dossier de l'agence, 1036 ppi |
+| 9 | Domaine des Nugues | portrait des vignerons — site du domaine, 235 ppi | bouteille Moulin-à-Vent 2022 — dossier de l'agence, 574 ppi |
+| 10 | Domaine Sébastien Magnien | portrait au chai, recadré au-dessus du verre — Canva de l'agence, 258 ppi | bouteille Bourgogne Pinot Noir 2023 — dossier de l'agence, 670 ppi |
+| 11 | Domaine Nadine Ferrand | les vigneronnes au chai, noir et blanc — dossier de l'agence, 686 ppi | bouteille Mâcon Charnay-lès-Mâcon — dossier de l'agence, 1112 ppi |
+| 12 | Maison et Domaine André Goichot | deux portraits de la maison, côte à côte — Canva de l'agence, 312 ppi | bouteille Givry Champ la Dame 2023 — dossier de l'agence, 574 ppi |
+| 13 | Château du Cray | le vignoble du Château du Cray (bannière de sa page) — site du domaine, 421 ppi | bouteille Mercurey blanc Les Doues (cuvée absente du tarif) — dossier de l'agence, 272 ppi |
+| 14 | Domaine Les Guignottes | nom du domaine sur ses vignes — Canva de l'agence, 337 ppi | bouteille Bourgogne Chardonnay 2023 — dossier de l'agence, 574 ppi |
+| 15 | Domaine des Verchères | portrait du vigneron — site du domaine, 1396 ppi | **vide** (pointillé) |
+| 16 | Domaine Le Prieuré des Papes | logo du domaine — Canva de l'agence, 549 ppi | bouteille Châteauneuf-du-Pape Vieilles Vignes — dossier de l'agence, 574 ppi |
+| 17 | Domaine de Coyeux | le domaine — Canva de l'agence, 491 ppi | bouteille Les Jumelles, Beaumes-de-Venise — dossier de l'agence, 574 ppi |
+| 18 | Domaine du Moulin Blanc | le couple, recadré au-dessus du verre — Canva de l'agence, 320 ppi | **vide** (pointillé) |
+| 19 | Domaine de la Pousterle | vendanges dans les vignes — Canva de l'agence, 365 ppi | bouteille Terroir d'Ansouis blanc 2021 — dossier de l'agence, 674 ppi |
+| 20 | Domaine des Pasquiers | portrait de la famille — site du domaine, 914 ppi | bouteille Plan de Dieu 2023 — dossier de l'agence, 574 ppi |
+| 21 | Domaine Trichon | mise en bouteille au domaine — site du domaine, 1219 ppi | **vide** (pointillé) |
+| 22 | Domaine Stratéus | logo du domaine — site du domaine, 405 ppi | bouteille Madiran Strateus — dossier de l'agence, 668 ppi |
+| 23 | Domaine Haut Marin | logo du domaine — site du domaine, 698 ppi | bouteille N°4 Triton 2024 — dossier de l'agence, 574 ppi |
+| 24 | Fabien Castaing | portrait du vigneron dans ses vignes — site du domaine, 1219 ppi | bouteille ADN 24 rouge — Canva de l'agence, 286 ppi |
+| 25 | La Passion des Terroirs | portrait de famille d'époque — site du domaine, 435 ppi | bouteille du domaine — site du domaine, 1737 ppi |
+| 26 | Château la Gorce | portrait des vignerons — site du domaine, 635 ppi | bouteille La Bonne Résolution 2022 — dossier de l'agence, 671 ppi |
+| 27 | Château Falfas | logo du château — dossier de l'agence, 391 ppi | bouteille Château Falfas — Canva de l'agence, 400 ppi |
+| 28 | Château Pré la Lande | vendanges au domaine — site du domaine, 406 ppi | bouteille du domaine — site du domaine, 961 ppi |
+| 29 | Château Balac | portrait des vignerons — site du domaine, 375 ppi | bouteille Château Balac Haut-Médoc (cuvée absente du tarif) — dossier de l'agence, 574 ppi |
+| 30 | Château l’Escarderie | les deux vignerons, deux portraits côte à côte — site du domaine, 312 ppi | bouteille Château l'Escarderie — site du domaine, 394 ppi |
+| 31 | Bastide de Blacailloux | borie en pierre sèche du domaine — site du domaine, 1085 ppi | bouteille JOIO rosé — site du domaine, 202 ppi |
+| 32 | Famille d’Exea | logo de la maison — site du domaine, 468 ppi | bouteille Jardins de Corbières rouge — dossier de l'agence, 670 ppi |
+| 33 | Famille d’Exea — Jus de Cépages | brebis dans les vignes — Canva de l'agence, 762 ppi | bouteille de jus de Grenache — Canva de l'agence, 358 ppi |
+| 34 | Château de Gragnos | grappes à la vigne — site du domaine, 813 ppi | bouteille Lou Daro 2022 — dossier de l'agence, 699 ppi |
+| 35 | Domaine Les Lys | logo du domaine — Canva de l'agence, 217 ppi | bouteille Duché — dossier de l'agence, 671 ppi |
+| 36 | Prieuré Sainte-Marie d’Albas | les deux vignerons et leur rosé, noir et blanc — dossier de l'agence, 750 ppi | bouteille 4 Saisons — dossier de l'agence, 232 ppi |
+| 37 | Champagne Dekeyne | les deux frères dans les vignes — Canva de l'agence, 914 ppi | bouteille Chardonnay — dossier de l'agence, 574 ppi |
+| 38 | Champagne Denis Frézier | le village dans ses vignes — Canva de l'agence, 488 ppi | bouteille Les Trois Crus — dossier de l'agence, 574 ppi |
+| 39 | Champagne Solemme | logo de la maison — site du domaine, 437 ppi | bouteille Nature de Solemme — Canva de l'agence, 307 ppi |
+| 40 | Vazart-Coquart & Fils | la maison de champagne — site du domaine, 603 ppi | bouteille Special Club — Canva de l'agence, 238 ppi |
+
+<!-- images:fin -->
+
+## 2. Les emplacements vides, et ce qu'il faudrait
+
+| n° | Domaine | Emplacement | Pourquoi | Ce qu'il faut |
+|---|---|---|---|---|
+| 15 | Domaine des Verchères | bouteille | le site ne montre ses bouteilles que posées dans les vignes : fond non détourable | une bouteille détourée (PNG transparent) ou sur fond uni, au moins 488 px de haut |
+| 18 | Domaine du Moulin Blanc | bouteille | ni le site du groupe Strasser-Radziwill ni le Canva n'en ont | idem |
+| 21 | Domaine Trichon | bouteille | le site n'a qu'une pyramide de bouteilles sur fond rouge et des photos d'illustration | idem |
+
+### Dossiers de l'agence qui ne correspondent à aucun des 40 domaines
+
+Ignorés, rien n'en est tiré. `Bouteilles_de_vin/` : Chateau_Daugay, Chateau_David_Beaulieu,
+Chateau_de_Set, Chateau_Fourcas-Borie, Chateau_Jalousie_Beaulieu, Chateau_La_Croix_Saint-Vincent,
+Chateau_Lagrave, Chateau_Le_Coteau, Chateau_Mouresse, Chateau_Pascaud, Chateau_Queyssard,
+Champagne_JM_Gobillard_et_Fils, Champagne_Leguedard, Domaine_Augeron, Domaine_Charpentier,
+Domaine_de_la_Motte, Domaine_du_Rochouard, Fleur_des_Marguis, New_folder.
+`Domaines_et_vignerons/` : Chateau_de_la_Rairie_lieu_salon, Chateau_Mouresse,
+Domaine_Charpentier, Domaine_de_la_Motte, _A_identifier. Le dossier `_A_verifier` n'a pas
+été ouvert.
 
 ## 3. Le logo de l'Agence SCIO
 

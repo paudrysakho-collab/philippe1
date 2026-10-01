@@ -1,10 +1,12 @@
 {
  "_lisez-moi": "Table de correspondance VALIDÉE PAR L'AGENCE, lue par scripts/preparer-photos.py. Une clé par numéro de domaine (1 à 40). Pour chaque rôle, le chemin de l'image retenue, relatif à src/photos/brut/ : 'rond' vient de Domaines_et_vignerons/<dossier>/, 'bouteille' de Bouteilles_de_vin/<dossier>/. 'mode' vaut 'couvrir' (une photo, recadrée au carré) ou 'contenir' (un logo, jamais recadré). 'centre' [x, y], facultatif, en fractions de l'image, déplace le carré d'une photo. 'sujet' décrit l'image pour credits.md. Un domaine absent, ou un rôle absent, garde son emplacement pointillé. Exemple : \"17\": {\"rond\": {\"fichier\": \"Domaines_et_vignerons/Domaine_de_Coyeux/famille.jpg\", \"mode\": \"couvrir\", \"sujet\": \"la famille dans les vignes\"}, \"bouteille\": {\"fichier\": \"Bouteilles_de_vin/Domaine_de_Coyeux/jumelles.png\", \"sujet\": \"bouteille de la cuvée Les Jumelles\"}}",
+ "_statut": "PROPOSITION en attente de validation par l'agence : rien n'est posé tant qu'elle n'est pas validée (npm run photos, puis npm run build).",
  "1": {
   "rond": {
    "fichier": "Domaines_et_vignerons/Francois_Reverdy/Francois_Reverdy_Portrait_vigneron.png",
    "mode": "couvrir",
-   "sujet": "portrait du vigneron, noir et blanc"
+   "sujet": "portrait du vigneron, noir et blanc",
+   "provenance": "dossier de l'agence"
   },
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Francois_Reverdy/Francois_Reverdy_Gamme_5_bouteilles.jpg",
@@ -14,43 +16,153 @@
     0.1,
     0.5705,
     0.955
-   ]
+   ],
+   "provenance": "dossier de l'agence"
   }
  },
  "2": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_de_la_Barbiniere/Domaine_de_la_Barbiniere_Fiefs_Vendeens_Les_Amphibol_2022_v2.jpg",
-   "sujet": "bouteille Les Amphibol"
+   "sujet": "bouteille Les Amphibol",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d02-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.domainedelabarbiniere.com/",
+   "url": "https://static.wixstatic.com/media/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_2500,h_1666,al_c/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg",
+   "sujet": "vendanges dans les vignes du domaine",
+   "mode": "couvrir"
   }
  },
  "3": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_du_Colombier_JY_Bretaudeau/Domaine_du_Colombier_JY_Bretaudeau_Rouge_aux_levres_Val_de_Loire.jpg",
-   "sujet": "bouteille Rouge au lèvres"
+   "sujet": "bouteille Rouge au lèvres",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d03-p06-021.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 6",
+   "sujet": "le vigneron au chai",
+   "mode": "couvrir",
+   "centre": [
+    0.62,
+    0.45
+   ]
   }
  },
  "4": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_des_Noels/Domaine_des_Noels_Anjou_Blanc_Promenade_des_Noels.jpg",
-   "sujet": "bouteille Promenade des Noëls, Anjou blanc"
+   "sujet": "bouteille Promenade des Noëls, Anjou blanc",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d04-p07-038.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 7",
+   "sujet": "portrait",
+   "mode": "couvrir"
+  }
+ },
+ "5": {
+  "bouteille": {
+   "fichier": "web/d05-bouteille.webp",
+   "provenance": "site officiel du domaine",
+   "page": "https://chai-berteaud-manceau.com/",
+   "url": "https://chai-berteaud-manceau.com/wp-content/uploads/2024/06/COURANT-Chenin-2023-768x2654.webp",
+   "sujet": "bouteille du domaine"
+  },
+  "rond": {
+   "fichier": "web/d05-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://chai-berteaud-manceau.com/",
+   "url": "https://chai-berteaud-manceau.com/wp-content/uploads/2024/01/DSC8855-edited-scaled.jpg",
+   "sujet": "les deux fondateurs du chai",
+   "mode": "couvrir"
+  }
+ },
+ "6": {
+  "bouteille": {
+   "fichier": "d06/048.webp",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.jdevillebois.com/",
+   "url": "https://www.jdevillebois.fr/wp-content/uploads/2023/08/jdevillebois_pouillyfume_silexblancs_blanc_23.webp",
+   "sujet": "bouteille Pouilly-Fumé Les Silex Blancs"
+  },
+  "rond": {
+   "fichier": "canva/d06-p09-059.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 9",
+   "sujet": "dans les vignes",
+   "mode": "couvrir",
+   "centre": [
+    0.36,
+    0.5
+   ]
+  }
+ },
+ "7": {
+  "bouteille": {
+   "fichier": "web/d07-bouteille.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.divinnolow.fr/",
+   "url": "https://www.divinnolow.fr/wp-content/uploads/2024/02/divin_0.5_chardonnay_vigneron_25.png.webp",
+   "sujet": "bouteille du domaine"
+  },
+  "rond": {
+   "fichier": "web/d07-rond.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.divinnolow.fr/",
+   "url": "https://www.divinnolow.fr/wp-content/uploads/2025/02/divin_officiel_alessandro_juin_24_158.png.webp",
+   "sujet": "vinification en cuverie",
+   "mode": "couvrir"
   }
  },
  "8": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_Boehler/Domaine_Boehler_Alsace_Molse_Blanc.jpg",
-   "sujet": "bouteille Molse blanc"
+   "sujet": "bouteille Molse blanc",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d08-p11-077.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 11",
+   "sujet": "logo du domaine",
+   "mode": "contenir"
   }
  },
  "9": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_des_Nugues/Domaine_des_Nugues_Moulin-a-Vent_2022_catalogue.png",
-   "sujet": "bouteille Moulin-à-Vent 2022"
+   "sujet": "bouteille Moulin-à-Vent 2022",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d09-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.domainedesnugues.com/",
+   "url": "https://www.domainedesnugues.com/wp-content/uploads/2020/02/DSC_8874-1-1-370x555.jpg",
+   "sujet": "portrait des vignerons",
+   "mode": "couvrir"
   }
  },
  "10": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_Sebastien_Magnien/Domaine_Sebastien_Magnien_Bourgogne_Pinot_Noir_2023.png",
-   "sujet": "bouteille Bourgogne Pinot Noir 2023"
+   "sujet": "bouteille Bourgogne Pinot Noir 2023",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d10-p13-088.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 13",
+   "sujet": "portrait au chai, recadré au-dessus du verre",
+   "mode": "couvrir",
+   "cadre": [
+    0.193,
+    0.0,
+    0.487,
+    0.48
+   ]
   }
  },
  "11": {
@@ -61,138 +173,474 @@
    "centre": [
     0.55,
     0.5
-   ]
+   ],
+   "provenance": "dossier de l'agence"
   },
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg",
-   "sujet": "bouteille Mâcon Charnay-lès-Mâcon"
+   "sujet": "bouteille Mâcon Charnay-lès-Mâcon",
+   "provenance": "dossier de l'agence"
   }
  },
  "12": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Maison_Andre_Goichot/Maison_Andre_Goichot_Givry_Champ_la_Dame_2023_catalogue.png",
-   "sujet": "bouteille Givry Champ la Dame 2023"
+   "sujet": "bouteille Givry Champ la Dame 2023",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "diptyque": [
+    {
+     "fichier": "canva/d12-p15-107.png",
+     "centre": [
+      0.5,
+      0.45
+     ]
+    },
+    {
+     "fichier": "canva/d12-p15-108.png",
+     "centre": [
+      0.5,
+      0.45
+     ]
+    }
+   ],
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 15",
+   "sujet": "deux portraits de la maison, côte à côte"
   }
  },
  "13": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Chateau_du_Cray/Chateau_du_Cray_Mercurey_Blanc_Les_Doues.png",
-   "sujet": "bouteille Mercurey blanc Les Doues (cuvée absente du tarif)"
+   "sujet": "bouteille Mercurey blanc Les Doues (cuvée absente du tarif)",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "d13/007.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.maisongoichot.com/fr/content/chateau-du-cray",
+   "url": "https://www.maisongoichot.com/sites/default/files/styles/banner_md/public/banner-cray_0.jpg?itok=kYMCGWkV",
+   "sujet": "le vignoble du Château du Cray (bannière de sa page)",
+   "mode": "couvrir"
   }
  },
  "14": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_des_Guignottes/Domaine_des_Guignottes_Bourgogne_Chardonnay_2023_catalogue.png",
-   "sujet": "bouteille Bourgogne Chardonnay 2023"
+   "sujet": "bouteille Bourgogne Chardonnay 2023",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d14-p17-122.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 17",
+   "sujet": "nom du domaine sur ses vignes",
+   "mode": "couvrir",
+   "cadre": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "15": {
+  "rond": {
+   "fichier": "web/d15-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.domainedesvercheres.com/",
+   "url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/4120efd3-8e74-45e3-99eb-7111ee3b897e/IMG_3840.JPG",
+   "sujet": "portrait du vigneron",
+   "mode": "couvrir"
   }
  },
  "16": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Le_Prieure_des_Papes/Le_Prieure_des_Papes_Chateauneuf-du-Pape_Vieilles_Vignes_2022_catalogue.png",
-   "sujet": "bouteille Châteauneuf-du-Pape Vieilles Vignes"
+   "sujet": "bouteille Châteauneuf-du-Pape Vieilles Vignes",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d16-p19-133.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 19",
+   "sujet": "logo du domaine",
+   "mode": "contenir",
+   "fond": "#ffffff"
   }
  },
  "17": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_de_Coyeux/Domaine_de_Coyeux_Beaumes-de-Venise_Les_Jumelles_2023_catalogue.png",
-   "sujet": "bouteille Les Jumelles, Beaumes-de-Venise"
+   "sujet": "bouteille Les Jumelles, Beaumes-de-Venise",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d17-p20-140.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 20",
+   "sujet": "le domaine",
+   "mode": "couvrir"
+  }
+ },
+ "18": {
+  "rond": {
+   "fichier": "canva/d18-p21-149.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 21",
+   "sujet": "le couple, recadré au-dessus du verre",
+   "mode": "couvrir",
+   "cadre": [
+    0.27,
+    -0.06,
+    0.69,
+    0.7
+   ]
   }
  },
  "19": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_de_la_Pousterle/Domaine_de_la_Pousterle_Luberon_Terroir_dAnsouis_Blanc_2021.png",
-   "sujet": "bouteille Terroir d'Ansouis blanc 2021"
+   "sujet": "bouteille Terroir d'Ansouis blanc 2021",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d19-p22-151.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 22",
+   "sujet": "vendanges dans les vignes",
+   "mode": "couvrir",
+   "centre": [
+    0.33,
+    0.45
+   ]
   }
  },
  "20": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_des_Pasquiers/Domaine_des_Pasquiers_Cotes-du-Rhone_Villages_Plan_de_Dieu_2023_catalogue.png",
-   "sujet": "bouteille Plan de Dieu 2023"
+   "sujet": "bouteille Plan de Dieu 2023",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d20-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://domainedespasquiers.fr/",
+   "url": "https://domainedespasquiers.fr/wp-content/uploads/2021/04/Famille-Lambert.jpg",
+   "sujet": "portrait de la famille",
+   "mode": "couvrir"
+  }
+ },
+ "21": {
+  "rond": {
+   "fichier": "web/d21-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://domainetrichon.fr/",
+   "url": "https://domainetrichon.fr/wp-content/uploads/2022/10/20181026_084244-scaled.jpg",
+   "sujet": "mise en bouteille au domaine",
+   "mode": "couvrir"
   }
  },
  "22": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Strateus/Strateus_Madiran_Strateus_2021.png",
-   "sujet": "bouteille Madiran Strateus"
+   "sujet": "bouteille Madiran Strateus",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "d22/005.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.strateus-madiran.com/",
+   "url": "https://static.wixstatic.com/media/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png/v1/fill/w_586,h_586,al_c/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png",
+   "sujet": "logo du domaine",
+   "mode": "contenir",
+   "forme": "rond"
   }
  },
  "23": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_Haut-Marin/Domaine_Haut-Marin_IGP_Cotes_de_Gascogne_Triton_2024_catalogue.png",
-   "sujet": "bouteille N°4 Triton 2024"
+   "sujet": "bouteille N°4 Triton 2024",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d23-rond.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.domaine-hautmarin.com/",
+   "url": "https://www.domaine-hautmarin.com/wp-content/uploads/2025/12/Logo-Haut-Marin.png",
+   "sujet": "logo du domaine",
+   "mode": "contenir"
   }
  },
  "24": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Les_Hauts_des_Olivoux/Les_Hauts_des_Olivoux_Pecharmant_2023.jpeg",
-   "sujet": "bouteille Les Hauts des Olivoux, Pécharmant 2023",
-   "zone": [
-    0.36,
-    0.25,
-    0.64,
-    0.74
-   ]
+   "fichier": "canva/d24-p27-214.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 27",
+   "sujet": "bouteille ADN 24 rouge"
+  },
+  "rond": {
+   "fichier": "web/d24-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.fabiencastaing.com/",
+   "url": "https://www.fabiencastaing.com/wp-content/uploads/2021/04/2-Genealogie-2015-fabien-scaled.jpg",
+   "sujet": "portrait du vigneron dans ses vignes",
+   "mode": "couvrir"
+  }
+ },
+ "25": {
+  "bouteille": {
+   "fichier": "web/d25-bouteille.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://lapassiondesterroirs.com/",
+   "url": "https://lapassiondesterroirs.com/wp-content/uploads/BOUT-DOYAC.png",
+   "sujet": "bouteille du domaine"
+  },
+  "rond": {
+   "fichier": "web/d25-rond.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://lapassiondesterroirs.com/",
+   "url": "https://lapassiondesterroirs.com/wp-content/uploads/lucien-lurton-1.png",
+   "sujet": "portrait de famille d'époque",
+   "mode": "couvrir"
   }
  },
  "26": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Chateau_La_Gorce/Chateau_La_Gorce_Medoc_La_Bonne_Resolution_2022.png",
-   "sujet": "bouteille La Bonne Résolution 2022"
+   "sujet": "bouteille La Bonne Résolution 2022",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d26-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.chateaulagorce.com/",
+   "url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
+   "sujet": "portrait des vignerons",
+   "mode": "couvrir"
   }
  },
  "27": {
   "rond": {
    "fichier": "Domaines_et_vignerons/Chateau_Falfas/Chateau_Falfas_Logo.png",
    "mode": "contenir",
-   "sujet": "logo du château"
+   "sujet": "logo du château",
+   "provenance": "dossier de l'agence"
+  },
+  "bouteille": {
+   "fichier": "canva/d27-p30-244.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 30",
+   "sujet": "bouteille Château Falfas"
+  }
+ },
+ "28": {
+  "bouteille": {
+   "fichier": "web/d28-bouteille.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.prelalande.com/",
+   "url": "https://www.prelalande.com/images/portfolio/Famille.png",
+   "sujet": "bouteille du domaine"
+  },
+  "rond": {
+   "fichier": "web/d28-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.prelalande.com/",
+   "url": "https://www.prelalande.com/images/background/methode.jpg",
+   "sujet": "vendanges au domaine",
+   "mode": "couvrir"
   }
  },
  "29": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Chateau_Balac/Chateau_Balac_Medoc_Cru_Bourgeois_Superieur_2022_catalogue.png",
-   "sujet": "bouteille Château Balac Haut-Médoc (cuvée absente du tarif)"
+   "sujet": "bouteille Château Balac Haut-Médoc (cuvée absente du tarif)",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d29-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://chateaubalac.com/",
+   "url": "https://chateaubalac.com/wp-content/uploads/2025/03/portrait-chateau-balac_04.jpg",
+   "sujet": "portrait des vignerons",
+   "mode": "couvrir"
+  }
+ },
+ "30": {
+  "rond": {
+   "diptyque": [
+    {
+     "fichier": "d30/032.png",
+     "url": "https://lescarderievins.com/wp-content/uploads/2023/03/melanie-lescarderie-chateau-fronsac.png",
+     "centre": [
+      0.5,
+      0.45
+     ]
+    },
+    {
+     "fichier": "d30/033.png",
+     "url": "https://lescarderievins.com/wp-content/uploads/2023/03/thomas-vignoble-fronsac-bordeaux-saint-emillion.png",
+     "centre": [
+      0.5,
+      0.45
+     ]
+    }
+   ],
+   "provenance": "site officiel du domaine",
+   "page": "https://lescarderievins.com/",
+   "sujet": "les deux vignerons, deux portraits côte à côte"
+  },
+  "bouteille": {
+   "fichier": "d30/043.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://lescarderievins.com/",
+   "url": "https://lescarderievins.com/wp-content/uploads/2020/11/produit-chateau-lescarderie.png",
+   "sujet": "bouteille Château l'Escarderie"
+  }
+ },
+ "31": {
+  "rond": {
+   "fichier": "web/d31-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://blacailloux.fr/",
+   "url": "https://blacailloux.fr/wp-content/uploads/2026/07/art-de-rehabiliter-scaled.jpg.webp",
+   "sujet": "borie en pierre sèche du domaine",
+   "mode": "couvrir"
+  },
+  "bouteille": {
+   "fichier": "d31/014.webp",
+   "provenance": "site officiel du domaine",
+   "page": "https://blacailloux.fr/",
+   "url": "https://blacailloux.fr/wp-content/uploads/2026/05/WINE-8.png.webp",
+   "sujet": "bouteille JOIO rosé"
   }
  },
  "32": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Famille_dExea/Famille_dExea_Jardin_de_Corbieres_Rouge.png",
-   "sujet": "bouteille Jardins de Corbières rouge"
+   "sujet": "bouteille Jardins de Corbières rouge",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d32-rond.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.laboutiquedexea.com/",
+   "url": "https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600",
+   "sujet": "logo de la maison",
+   "mode": "contenir"
+  }
+ },
+ "33": {
+  "rond": {
+   "fichier": "canva/d33-p36-303.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 36",
+   "sujet": "brebis dans les vignes",
+   "mode": "couvrir",
+   "centre": [
+    0.45,
+    0.55
+   ]
+  },
+  "bouteille": {
+   "fichier": "canva/d33-p36-306.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 36",
+   "sujet": "bouteille de jus de Grenache"
   }
  },
  "34": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Chateau_de_Gragnos/Chateau_de_Gragnos_Saint-Chinian_Lou_Daro_2022_v2.png",
-   "sujet": "bouteille Lou Daro 2022"
+   "sujet": "bouteille Lou Daro 2022",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "web/d34-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.chateaudegragnos.com/",
+   "url": "https://www.chateaudegragnos.com/web/image/9841-9b4b7150/DSCF4018.JPG",
+   "sujet": "grappes à la vigne",
+   "mode": "couvrir"
   }
  },
  "35": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Domaine_Les_Lys/Domaine_Les_Lys_Duche_dUzes_Duche_Rouge.png",
-   "sujet": "bouteille Duché"
+   "sujet": "bouteille Duché",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d35-p38-321.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 38",
+   "sujet": "logo du domaine",
+   "mode": "contenir"
   }
  },
  "36": {
   "rond": {
    "fichier": "Domaines_et_vignerons/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Vignerons_avec_rose_NB.jpg",
    "mode": "couvrir",
-   "sujet": "les deux vignerons et leur rosé, noir et blanc"
+   "sujet": "les deux vignerons et leur rosé, noir et blanc",
+   "provenance": "dossier de l'agence"
   },
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png",
-   "sujet": "bouteille 4 Saisons"
+   "sujet": "bouteille 4 Saisons",
+   "provenance": "dossier de l'agence"
   }
  },
  "37": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Champagne_Dekeyne/Champagne_Dekeyne_Chardonnay_catalogue.png",
-   "sujet": "bouteille Chardonnay"
+   "sujet": "bouteille Chardonnay",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d37-p40-345.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 40",
+   "sujet": "les deux frères dans les vignes",
+   "mode": "couvrir",
+   "cadre": [
+    0.08,
+    -0.12,
+    0.88,
+    0.8
+   ]
   }
  },
  "38": {
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Champagne_Denis_Frezier/Champagne_Denis_Frezier_Les_Trois_Crus_catalogue.png",
-   "sujet": "bouteille Les Trois Crus"
+   "sujet": "bouteille Les Trois Crus",
+   "provenance": "dossier de l'agence"
+  },
+  "rond": {
+   "fichier": "canva/d38-p41-355.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 41",
+   "mode": "couvrir",
+   "sujet": "le village dans ses vignes"
   }
  },
- "_statut": "PROPOSITION en attente de validation par l'agence : rien n'est posé tant qu'elle n'est pas validée (npm run photos, puis npm run build)."
+ "39": {
+  "rond": {
+   "fichier": "web/d39-rond.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.champagnesolemme.com/",
+   "url": "https://www.champagnesolemme.fr/wp-content/uploads/2022/10/champagne-solemme-logo-clair_4D4D4D.png",
+   "sujet": "logo de la maison",
+   "mode": "contenir"
+  },
+  "bouteille": {
+   "fichier": "canva/d39-p42-367.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 42",
+   "sujet": "bouteille Nature de Solemme"
+  }
+ },
+ "40": {
+  "rond": {
+   "fichier": "web/d40-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.champagnevazartcoquart.com/",
+   "url": "https://www.champagnevazartcoquart.com/wp-content/uploads/2020/10/maison-champagne-vazart-coquart.jpg",
+   "sujet": "la maison de champagne",
+   "mode": "couvrir"
+  },
+  "bouteille": {
+   "fichier": "canva/d40-p43-382.png",
+   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 43",
+   "sujet": "bouteille Special Club"
+  }
+ }
 }

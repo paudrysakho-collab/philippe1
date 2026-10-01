@@ -6,9 +6,10 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 ## Où en est le projet
 
 **Terminé.** Concept retenu : **« Sous nos pieds »**. **76 pages**, 210 × 260 mm.
-Chaque fiche domaine réserve **deux emplacements d'image vides** — un rond de 40 mm pour le
-vigneron ou le logo, une bande de 24 × 62 mm pour la bouteille — que l'agence remplit
-elle-même dans Canva.
+Chaque fiche domaine porte **deux images** : un rond de 40 mm pour le vigneron ou le logo,
+une bande de 24 × 62 mm pour la bouteille. **77 des 80 sont posées** ; les trois bouteilles
+qui manquent (n°15, 18, 21) gardent leur repère pointillé. Provenance et droits, image par
+image : `credits.md`.
 
 | Livrable | Où |
 |---|---|
@@ -106,9 +107,25 @@ entrer d'un coup dans les deux PDF et dans le `.pptx`, et un changement de prix 
    `npm run build`.
 
 Un domaine sans image garde ses deux emplacements pointillés. Les images écartées, et
-pourquoi, sont dans `data/photos-ecartees.json`. Les 30 images repérées en 2026 sur les sites
-des domaines, retirées de la maquette à la demande de l'agence, restent en réserve dans
-`src/photos/reserve-web/` (voir `credits.md`) ; elles ne sont pas posées.
+pourquoi, sont dans `data/photos-ecartees.json`. `npm run photos` réécrit aussi les tables
+d'images de `credits.md`.
+
+**Trois provenances**, dans cet ordre de priorité, toutes écrites dans `data/photos-locales.json` :
+
+- **les dossiers de l'agence**, copiés dans `src/photos/brut/` (voir plus haut) ;
+- **les sites officiels des domaines** : l'entrée garde l'adresse de l'image (`url`) et de la
+  page (`page`). Si l'original manque dans `src/photos/brut/`, `npm run photos` le
+  retélécharge tout seul. `python3 scripts/moissonner.py 13 14` recueille les images des sites
+  listés dans `data/sites-domaines.json`, à trier à l'œil ;
+- **le Canva de l'agence** (« Tarif septembre 2026 ») : exporter le design en PDF qualité
+  « pro », puis `python3 scripts/extraire-canva.py export.pdf` range ses images dans
+  `src/photos/brut/canva/dNN-pPP-XXX.png` (NN = domaine, PP = page du Canva).
+
+Options d'une entrée de la table : `zone` (isoler une bouteille dans une photo de gamme),
+`centre` (déplacer le carré d'un portrait), `cadre` (reculer pour faire tenir plusieurs
+têtes entières dans le rond), `diptyque` (deux portraits séparés, une moitié chacun),
+`mode: contenir` (un logo, jamais rogné), `forme: rond` (un logo déjà rond), `fond` (couleur
+de réserve imposée sous un logo).
 
 ## Ajouter ou retirer un domaine
 

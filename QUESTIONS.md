@@ -186,3 +186,16 @@ catalogue reste sur le tarif.
 
 Elle ne contient ni tarif, ni palier, ni millésime, ni contenance : rien n'en a été repris
 de ce côté. Elle ne couvre que 26 des 40 domaines.
+
+### 24. Images des fiches : trois points à confirmer
+
+- **Deux ronds partent d'une photo où un verre est tenu en main** : n°10 Sébastien Magnien
+  (portrait au chai) et n°18 Moulin Blanc (le couple). Ils sont recadrés au-dessus du verre,
+  qui n'apparaît pas dans le cercle. *Ce que je propose :* les garder ; si vous préférez ne
+  pas partir de ces photos, on retire leurs deux lignes de `data/photos-locales.json` et les
+  ronds redeviennent pointillés.
+- **28 images viennent des sites officiels des domaines** (liste et adresses dans
+  `credits.md`). *Ce que je propose :* demander l'accord de chaque domaine avant impression.
+- **Trois bouteilles manquent** : n°15 Verchères, n°18 Moulin Blanc, n°21 Trichon. Il faut
+  une bouteille détourée (PNG transparent) ou photographiée sur fond uni, d'au moins 488 px
+  de haut. Déposée dans `Bouteilles_de_vin/<Domaine>/`, elle entre au prochain `npm run photos`.

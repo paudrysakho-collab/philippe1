@@ -14,6 +14,19 @@ export const photos = _photos.reduce((m, p) => {
   return m;
 }, {});
 export const photoDe = (d, role) => photos[d.numero]?.[role] || null;
+/** La ligne de crédit des photographies, en dernière page : elle dit d'où elles viennent,
+   ou, s'il n'y en a aucune, que les emplacements attendent encore les leurs. */
+export const creditPhotos = () => {
+  if (!_photos.length) {
+    return "Les deux emplacements d'image de chaque fiche sont livrés vides : les photographies "
+      + 'qui y seront posées restent à créditer, voir credits.md.';
+  }
+  const sources = [];
+  if (_photos.some((p) => /site officiel/.test(p.provenance || ''))) sources.push('les sites officiels des domaines');
+  if (_photos.some((p) => !/site officiel/.test(p.provenance || ''))) sources.push("la photothèque de l'agence");
+  return `Les photographies des fiches viennent de ${sources.join(' et de ')} ; elles sont créditées `
+    + 'une à une dans credits.md.';
+};
 export const REGIONS = catalogue.agence.regions;
 
 /* ——————————————————————————————— le corps du texte de présentation ———

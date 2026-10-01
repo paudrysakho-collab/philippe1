@@ -7,7 +7,7 @@ import path from 'node:path';
 import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
-  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe,
+  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, figuresModeEmploi, BLOCS_MODE_EMPLOI, PIED_MODE_EMPLOI }
   from '../src/gabarits/pages.mjs';
@@ -710,8 +710,7 @@ function slideFinale(s, numero) {
     ['Mentions légales', AG.mentions_legales],
     ['Crédits', 'Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce '
       + "catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme "
-      + "certificateur. Les deux emplacements d'image de chaque fiche sont livrés vides : les "
-      + 'photographies qui y seront posées restent à créditer, voir credits.md.'],
+      + 'certificateur. ' + creditPhotos()],
   ];
   colonnes.forEach(([t, p], i) => {
     const cx = gauche + i * (CADRE_L / 3);

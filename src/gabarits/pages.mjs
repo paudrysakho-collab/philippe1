@@ -1,6 +1,6 @@
 /* Les gabarits de page du catalogue « Sous nos pieds ». */
 import {
-  catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe,
+  catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
   NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT,
 } from './pieces.mjs';
@@ -610,7 +610,7 @@ export function pageFinale() {
           <p class="fin-mentions">${esc(AG.mentions_legales)}</p>
         </div>
         <div><h3>Crédits</h3>
-          <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme certificateur. Les deux emplacements d'image de chaque fiche sont livrés vides : les photographies qui y seront posées restent à créditer, voir <em>credits.md</em>.</p>
+          <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme certificateur. ${esc(creditPhotos()).replace('credits.md', '<em>credits.md</em>')}</p>
         </div>
       </div>
       <p class="fin-sanitaire">${esc(SANITAIRE)}</p>
