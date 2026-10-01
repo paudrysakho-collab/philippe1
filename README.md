@@ -13,6 +13,8 @@ ou le logo, une bande verticale pour la bouteille — que l'agence remplit elle-
 |---|---|
 | **Fichier Canva** (76 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
 | **Les polices à téléverser dans Canva**, avec leur mode d'emploi | `polices-canva/` |
+| **Prompt pour faire poser les images par Cowork** | `PROMPT-COWORK.md` |
+| Où sont les deux emplacements d'image, diapositive par diapositive | `docs/emplacements-images.md` |
 | **Catalogue, version imprimeur** (fond perdu 3 mm, traits de coupe) | `dist/catalogue-scio-2026-imprimeur.pdf` |
 | **Catalogue, version écran** (navigation cliquable, liens `tel:`, `mailto:`, site) | `dist/catalogue-scio-2026-ecran.pdf` |
 | Données des 40 domaines, vérifiées | `data/catalogue.json` |
