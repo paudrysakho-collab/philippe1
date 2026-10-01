@@ -1,0 +1,55 @@
+{
+  "numero": 23, "page_source": 26, "region": "Sud-Ouest",
+  "nom": "Domaine Haut Marin", "nom_sommaire": "DOMAINE HAUT MARIN",
+  "texte_source": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "IGP", "preuve": "logo IGP p.26" }, { "label": "HVE", "preuve": "logo HVE p.26" }],
+  "allocation": false,
+  "mentions": ["BIBS", "ARMAGNAC", "Pour l’ensemble des vins et les tarifs, consultez-nous"],
+  "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["16", "17", "44", "79", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 72 bouteilles", "À partir de 300 bouteilles", "À partir de 600 bouteilles"],
+      "lignes": [
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°1 Littorine", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [268, 260, 228], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°2 Amande", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [279, 270, 238], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°6 Fossiles", "couleur": "Blanc", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [299, 291, 256], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "Cuvée Denise", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [374, 363, 318], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°7 Venus", "couleur": "Doux", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [345, 335, 308], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°8 Grand Pavois", "couleur": "Doux", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [398, 387, 340], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°3 Gulf Stream", "couleur": "Rosé", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [299, 291, 256], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "N°4 Triton", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [299, 291, 256], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "Cuvée Philippe", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [331, 322, 284], "note": null },
+        { "appellation": "Vin de France", "cuvee": "N°10", "couleur": "Bulle/Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [400, 390, 360], "note": null },
+        { "appellation": "Vin de France", "cuvee": "N°10", "couleur": "Bulle/Rosé", "millesime": "—", "contenance": "75 cl", "prix_centimes": [400, 390, 360], "note": null }
+      ]
+    },
+    {
+      "intitule": "Possibilité de panacher",
+      "famille": "Armagnac",
+      "paliers": ["Tarif"],
+      "lignes": [
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "Blanche Armagnac", "couleur": "Blanc", "millesime": "—", "contenance": "70 cl", "prix_centimes": [2200], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "Réserve", "couleur": "Blanc", "millesime": "—", "contenance": "70 cl", "prix_centimes": [2500], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "V.S.O.P.", "couleur": "Blanc", "millesime": "—", "contenance": "70 cl", "prix_centimes": [2800], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "X.O.", "couleur": "Blanc", "millesime": "—", "contenance": "70 cl", "prix_centimes": [3000], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "Hors d'Age", "couleur": "Blanc", "millesime": "—", "contenance": "70 cl", "prix_centimes": [3300], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "Millésimés", "couleur": "Blanc", "millesime": "2000", "contenance": "70 cl", "prix_centimes": [3900], "note": null },
+        { "appellation": "AOP Bas-Armagnac", "cuvee": "Millésimés", "couleur": "Blanc", "millesime": "1990", "contenance": "70 cl", "prix_centimes": [4900], "note": null }
+      ]
+    },
+    {
+      "intitule": "BIB",
+      "famille": "Bag-in-box",
+      "paliers": ["Tarif"],
+      "lignes": [
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "Amande", "couleur": "Blanc, Rosé, Rouge", "millesime": null, "contenance": "3 L", "prix_centimes": [775], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "Gulf Stream", "couleur": "Blanc, Rosé, Rouge", "millesime": null, "contenance": "5 L", "prix_centimes": [1140], "note": null },
+        { "appellation": "IGP Côtes-de-Gascogne", "cuvee": "Triton", "couleur": "Blanc, Rouge", "millesime": null, "contenance": "10 L", "prix_centimes": [2025], "note": null }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "numero": 20, "page_source": 23, "region": "Rhône",
+  "nom": "Domaine des Pasquiers", "nom_sommaire": "DOMAINE DES PASQUIERS",
+  "texte_source": "Depuis 1935, le Domaine des Pasquiers, un lieu viticole de 87 hectares, est niché au cœur de plusieurs appellations prestigieuses de Provence. La propriété tisse l'histoire de la vigne depuis quatre générations avec passion, s'orientant vers une viticulture biologique pour promouvoir la durabilité et le respect de la terre.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.23" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["Tarif"],
+    "lignes": [
+      { "appellation": "Vin de Pays de Vaucluse", "cuvee": null, "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [330], "note": null },
+      { "appellation": "AOP Côtes du Rhône", "cuvee": null, "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [430], "note": null },
+      { "appellation": "AOP CDR villages Plan de Dieu", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [600], "note": null },
+      { "appellation": "AOP CDR villages Sablet", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [600], "note": null },
+      { "appellation": "AOP CDR villages Sablet", "cuvee": null, "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [725], "note": null },
+      { "appellation": "AOP Gigondas", "cuvee": null, "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [1250], "note": null }
+    ]
+  }]
+}

@@ -1,0 +1,25 @@
+{
+  "numero": 17, "page_source": 20, "region": "Rhône",
+  "nom": "Domaine de Coyeux", "nom_sommaire": "DOMAINE DE COYEUX (STRASSER RADZIWILL)",
+  "texte_source": "Propriété du groupe Maisons & Vignobles Strasser-Radziwill depuis 2022, le Domaine de Coyeux niché au pied des Dentelles de Montmirail s’étend sur 120 hectares d’un seul tenant, au sein de l’aire de l’appellation viticole Beaumes-de-Venise. Dans ce superbe environnement naturel, le domaine est constitué de bois, de garrigue et de vignes. Le vignoble du Domaine de Coyeux s’étend sur la formation géologique du Trias, un sol très ancien qui confère aux vins une qualité exceptionnelle. Les premières vignes du domaine de Coyeux datent des années 1950. Aujourd’hui, les vins sont issus d’un vignoble âgé de 40 à 70 ans et de parcelles plus récentes. Le domaine bénéficie de l’abri naturel de la colline. Son exposition au sud favorise un ensoleillement idéal. À 300 mètres d’altitude, la température est plus fraîche et participe à l’élégance des vins de Coyeux.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.20" }],
+  "allocation": false,
+  "mentions": ["Possibilité de panacher avec les vins du Domaine Le Prieuré des Papes, du Domaine du Moulin Blanc et du Domaine de La Pousterle"],
+  "panachage_groupe": "strasser-radziwill",
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 198 bts", "À partir de 300 bts", "Palette"],
+    "lignes": [
+      { "appellation": "Gigondas", "cuvee": "Coyeux", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [1320, 1220, 1190], "note": null },
+      { "appellation": "Beaumes de Venise", "cuvee": "Les Jumelles", "couleur": "Rouge", "millesime": "2021", "contenance": "75 cl", "prix_centimes": [690, 620, 590], "note": null },
+      { "appellation": "Beaumes de Venise", "cuvee": "Les banquettes", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [800, 730, 700], "note": null },
+      { "appellation": "IGP Méditerranée", "cuvee": null, "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [525, 480, 450], "note": null },
+      { "appellation": "IGP Méditerranée", "cuvee": "Première Fleur", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [525, 480, 450], "note": null },
+      { "appellation": "Muscat BDV", "cuvee": "Solera", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [690, 630, 600], "note": null },
+      { "appellation": "Muscat BDV", "cuvee": "Vintage", "couleur": "Blanc", "millesime": "2013", "contenance": "75 cl", "prix_centimes": [1000, 930, 900], "note": null }
+    ]
+  }]
+}

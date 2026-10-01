@@ -1,0 +1,22 @@
+{
+  "numero": 22, "page_source": 25, "region": "Sud-Ouest",
+  "nom": "Domaine Stratéus", "nom_sommaire": "DOMAINE STRATÉUS",
+  "texte_source": "Né de la transmission d’une vigne de 80 ans en Madiran par son grand-père, le projet de Simon cultive la rareté : produire peu pour produire sain. Environ six hectares en Madiran et Pacherenc-du-Vic-Bilh, en symbiose avec un élevage de bœufs Angus sur la ferme.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.25" }],
+  "allocation": true, "mentions": ["ALLOCATION!"], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. Franco de port.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 36 bts", "À partir de 60 bts", "À partir de 120 bts"],
+    "lignes": [
+      { "appellation": "AOP Madiran", "cuvee": "Koloss", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [650, 650, 600], "note": null },
+      { "appellation": "AOP Madiran", "cuvee": "Strateus", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1200, 1145, 1100], "note": null },
+      { "appellation": "AOP Pacherenc du Vic-Bilh Sec", "cuvee": "Strateus", "couleur": "Blanc sec", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1200, 1145, 1100], "note": null },
+      { "appellation": "VDF", "cuvee": "Koloss", "couleur": "Rosé", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [650, 650, 600], "note": "la colonne contenance affiche « 75,00 € » dans la source — voir QUESTIONS.md" },
+      { "appellation": "VDF", "cuvee": "Strateus", "couleur": "Doux", "millesime": "2025", "contenance": "75 cl", "prix_centimes": [1200, 1145, 1100], "note": null },
+      { "appellation": "AOP Madiran", "cuvee": "Néolitik", "couleur": "Rouge", "millesime": "2022", "contenance": "75 cl", "prix_centimes": [1500, 1400, 1250], "note": null }
+    ]
+  }]
+}

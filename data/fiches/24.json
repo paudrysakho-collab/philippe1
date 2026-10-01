@@ -1,0 +1,40 @@
+{
+  "numero": 24, "page_source": 27, "region": "Sud-Ouest",
+  "nom": "Fabien Castaing", "nom_sommaire": "DOMAINE FABIEN CASTAING",
+  "texte_source": "Le Domaine de Moulin-Pouzy, ancré en Dordogne, est l'héritage historique des Castaing depuis 1898, résultant d'un art viticole transmis avec flamme. Fabien Castaing, digne représentant de la 5ème génération, s'engage avec ferveur à perpétuer les traditions et les valeurs familiales : une passion profonde pour le terroir, un profond respect de l'environnement et un savoir-faire vigneron authentique.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.27" }, { "label": "HVE", "preuve": "logo HVE p.27" }],
+  "allocation": false,
+  "mentions": ["Pour l’ensemble des vins et les tarifs, consultez-nous", "BIERES"],
+  "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. hors frais de transport.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [
+    {
+      "intitule": "Possibilité de panacher",
+      "paliers": ["À partir de 120 bts", "À partir de 180 bts"],
+      "lignes": [
+        { "appellation": "AOP Monbazillac", "cuvee": "Les Classiques", "couleur": "Blanc Doux", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [580, 560], "note": null },
+        { "appellation": "AOP Bergerac", "cuvee": "Les Classiques", "couleur": "Rouge", "millesime": "2020", "contenance": "75 cl", "prix_centimes": [405, 390], "note": null },
+        { "appellation": "IGP Périgord", "cuvee": "Adn 24", "couleur": "Rouge", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [310, 295], "note": null },
+        { "appellation": "IGP Périgord", "cuvee": "Adn 24", "couleur": "Rosé", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [310, 295], "note": null },
+        { "appellation": "IGP Périgord", "cuvee": "Adn 24", "couleur": "Blanc sec", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [310, 295], "note": null },
+        { "appellation": "IGP Périgord", "cuvee": "Adn 24", "couleur": "Blanc doux", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [310, 295], "note": null },
+        { "appellation": "AOC Pécharmant", "cuvee": "Les Hauts des Olivoux", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [570, 550], "note": null },
+        { "appellation": "AOP Cahors", "cuvee": "L'esprit Sud-Ouest", "couleur": "Rouge", "millesime": "2022", "contenance": null, "prix_centimes": [355, 345], "note": null },
+        { "appellation": "AOP Fronton", "cuvee": "L'esprit Sud-Ouest", "couleur": "Rouge", "millesime": "2023", "contenance": null, "prix_centimes": [355, 345], "note": null },
+        { "appellation": "Blanc de Blancs 100% Chardonnay", "cuvee": "Fines Bulles", "couleur": "Blanc", "millesime": "—", "contenance": "75 cl", "prix_centimes": [600, 580], "note": null }
+      ]
+    },
+    {
+      "intitule": "Possibilité de panacher",
+      "famille": "Bières",
+      "paliers": ["À partir de 120 bts", "À partir de 180 bts"],
+      "lignes": [
+        { "appellation": "La Barbe Blanche", "cuvee": "la barbe", "couleur": null, "millesime": null, "contenance": null, "prix_centimes": [185, 180], "note": null },
+        { "appellation": "La Barbe Blonde", "cuvee": "la barbe", "couleur": null, "millesime": null, "contenance": null, "prix_centimes": [185, 180], "note": null },
+        { "appellation": "La Barbe Ambrée", "cuvee": "la barbe", "couleur": null, "millesime": null, "contenance": null, "prix_centimes": [185, 180], "note": null }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "numero": 21, "page_source": 24, "region": "Rhône",
+  "nom": "Domaine Trichon", "nom_sommaire": "DOMAINE TRICHON",
+  "texte_source": "Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane allient leurs savoir-faire à la vigne et dans la création des cuvées.",
+  "texte_catalogue": "",
+  "labels": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.24 ; « certifiés en agriculture biologique » dans le texte" }],
+  "allocation": false, "mentions": [], "panachage_groupe": null,
+  "note_prix": "* Prix de la bouteille H.T. départ cave.",
+  "departements": ["35", "44", "49", "53", "56", "85"],
+  "tableaux": [{
+    "intitule": "Possibilité de panacher",
+    "paliers": ["À partir de 120 cols", "À partir de 300 cols", "À partir de 600 cols"],
+    "lignes": [
+      { "appellation": "AOP Côtes du Rhône", "cuvee": "Côtes du Rhône", "couleur": "Rouge", "millesime": "2023", "contenance": "75 cl", "prix_centimes": [480, 467, 454], "note": null },
+      { "appellation": "AOP Vacqueyras", "cuvee": "Vacqueyras", "couleur": "Blanc", "millesime": "2024", "contenance": "75 cl", "prix_centimes": [955, 912, 868], "note": null },
+      { "appellation": "AOP Vacqueyras", "cuvee": "Vacqueyras", "couleur": "Rouge", "millesime": "2022/2023", "contenance": "75 cl", "prix_centimes": [935, 893, 850], "note": null }
+    ]
+  }]
+}
