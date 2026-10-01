@@ -1,0 +1,301 @@
+/* ============================================================================
+   Gabarits de page — « Sous nos pieds »
+   ========================================================================= */
+
+.etiq-strate { font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: var(--interlettre); }
+.etiq-nb { font: 400 11px 'IBM Plex Sans', sans-serif; }
+
+.titre-section {
+  font-family: var(--titre); font-size: 24pt; line-height: 1; color: var(--violet);
+  margin-bottom: 5mm; letter-spacing: -.015em;
+}
+.titre-section span {
+  display: block; font-family: var(--technique); font-size: 8pt; font-weight: 500;
+  letter-spacing: var(--interlettre); text-transform: uppercase; color: var(--gneiss); margin-top: 2mm;
+}
+
+/* ——————————————————————————————————————————————— couverture ——— */
+.couverture .coupe { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 148mm; }
+.logo-couv { position: absolute; left: var(--marge-int); top: 17mm; width: 62mm; }
+.titre-couv {
+  position: absolute; left: var(--marge-int); top: 44mm; width: 160mm;
+  font-family: var(--titre); font-size: 46pt; line-height: .92;
+  color: var(--silex); letter-spacing: -.012em;
+}
+.titre-couv em { font-style: normal; color: var(--violet); }
+.sous-couv {
+  position: absolute; left: var(--marge-int); top: 96mm; width: 120mm;
+  font-size: 10.5pt; line-height: 1.5; color: var(--silex); opacity: .85;
+}
+.pied-couv {
+  position: absolute; left: 0; bottom: 20mm; padding: 5mm 7mm 4mm var(--marge-int);
+  background: var(--tuffeau); border-radius: 0 3mm 3mm 0;
+}
+.pied-couv .cible {
+  font: 500 9pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase;
+  display: block; margin-bottom: .5mm; color: var(--silex);
+}
+.pied-couv .annee {
+  font-family: var(--titre); font-size: 34pt; line-height: 1; color: var(--violet); display: block;
+}
+.sanitaire-couv {
+  left: var(--marge-int); bottom: 8mm; color: var(--craie); opacity: .9;
+}
+
+/* ——————————————————————————————————————————————— l'agence ——— */
+.agence .cadre { display: flex; flex-direction: column; }
+.logo-agence { width: 74mm; margin-bottom: 14mm; }
+.credo {
+  font-family: var(--titre); font-size: 17pt; line-height: 1.34; color: var(--silex);
+  max-width: 150mm; margin-bottom: 12mm;
+}
+.credo strong { font-weight: 400; color: var(--violet); }
+.contacts { display: flex; gap: 14mm; margin-bottom: 9mm; }
+.contact { display: flex; flex-direction: column; gap: 1mm; }
+.contact .prenom {
+  font: 500 8pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase; color: var(--gneiss);
+}
+.contact .tel { font-family: var(--titre); font-size: 17pt; color: var(--violet); }
+.coordonnees { font-size: 10pt; line-height: 1.7; color: var(--silex); margin-bottom: auto; }
+.coordonnees a { border-bottom: .5pt solid rgba(103, 6, 124, .4); color: var(--violet); }
+.chiffres {
+  display: flex; gap: 12mm; padding-top: 6mm; border-top: .8pt solid var(--violet);
+  font: 400 9pt var(--technique); color: var(--silex);
+}
+.chiffres strong {
+  display: block; font-family: var(--titre); font-size: 26pt; font-weight: 400;
+  color: var(--violet); line-height: 1;
+}
+
+/* ——————————————————————————————————————— comment lire ——— */
+.me-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 5.5mm 9mm; flex: 1; align-content: start; }
+.mode-emploi .cadre { display: flex; flex-direction: column; }
+.me-item h3 {
+  font-family: var(--titre); font-size: 11.5pt; color: var(--violet); margin: 2.4mm 0 1.2mm;
+}
+.me-item p { font-size: 8.2pt; line-height: 1.42; }
+.me-fig {
+  height: 23mm; background: var(--craie); border-radius: 1.5mm; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; gap: 2mm; padding: 3mm;
+}
+.me-fig .coupe { width: 11mm; height: 100%; border-radius: 1mm; }
+.me-fig-tranche { gap: 4mm; }
+.me-fig-tranche .me-doigt {
+  font: 400 7.2pt var(--technique); font-style: italic; color: rgba(70,96,110,.75); max-width: 44mm;
+}
+.me-fig-prix { flex-direction: column; gap: 0; align-items: stretch; padding: 4mm 8mm; }
+.demo-bloc { display: flex; }
+.demo-bloc span {
+  flex: 1; text-align: right; font: 500 6.6pt var(--technique); color: var(--craie);
+  background: var(--violet); padding: 1.6mm 1.6mm; border-left: .4pt solid rgba(251,248,241,.3);
+}
+.demo-bloc span:first-child { border-left: 0; }
+.demo-prix span {
+  background: none; color: var(--silex); font-size: 8.6pt; border-left: 0; padding-top: 2mm;
+  font-variant-numeric: tabular-nums;
+}
+.me-fig-pictos { gap: 3mm; }
+.picto.gros { width: 7mm; height: 7mm; }
+.me-fig-jetons { flex-wrap: wrap; gap: 2mm; }
+.me-legende {
+  margin-top: 2.5mm; display: flex; flex-wrap: wrap; gap: 1.2mm 3mm;
+  font: 400 6.6pt var(--technique); color: rgba(70,96,110,.8);
+}
+.me-legende span { display: inline-flex; align-items: center; gap: 1.1mm; }
+.me-legende .picto { width: 2.6mm; height: 2.6mm; }
+.me-pied {
+  margin-top: 5mm; padding-top: 2.6mm; border-top: .8pt solid var(--violet);
+  font-size: 8.6pt; color: var(--silex);
+}
+.me-pied strong { color: var(--violet); font-weight: 600; }
+
+/* ——————————————————————————————————————————————— sommaire ——— */
+.sommaire .cadre { display: flex; flex-direction: column; }
+.sommaire .titre-section { margin-bottom: 3.5mm; }
+.som-colonne { flex: 1; display: flex; flex-direction: column; gap: 1.2mm; }
+.som-strate {
+  position: relative; background: var(--strate); border-radius: 1.5mm; overflow: hidden;
+  padding: 2.1mm 3mm 2.4mm; color: var(--craie); display: flex; flex-direction: column;
+  flex: 0 1 auto;   /* jamais plus court que son contenu : une entrée rognée est une erreur */
+}
+.som-strate.claire { color: var(--silex); }
+.som-trame { position: absolute; inset: 0; opacity: .55; }
+.som-tete { position: relative; display: flex; align-items: baseline; gap: 2.5mm; margin-bottom: 1.1mm; }
+.som-nom { font-family: var(--titre); font-size: 11.5pt; letter-spacing: -.01em; }
+.som-mot { font: 400 7pt var(--technique); font-style: italic; opacity: .82; flex: 1; }
+.som-nb {
+  font: 600 7.5pt var(--technique); background: rgba(255,255,255,.22); border-radius: 4mm;
+  padding: .4mm 2mm;
+}
+.som-strate.claire .som-nb { background: rgba(70,96,110,.14); }
+.som-liste { position: relative; list-style: none; columns: 2; column-gap: 5mm; }
+.som-strate.dense .som-liste { columns: 3; column-gap: 4mm; }
+.som-liste li { break-inside: avoid; }
+.som-liste a {
+  display: flex; align-items: baseline; gap: 1.4mm; padding: .2mm 0;
+  font: 400 7.4pt var(--technique);
+}
+.som-liste .n {
+  font-weight: 600; min-width: 5mm; text-align: right; opacity: .72;
+  font-variant-numeric: tabular-nums;
+}
+.som-liste .nom { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.som-liste .pg { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ——————————————————————————————————————————————— alliances ——— */
+.all-intro { font-size: 9.5pt; max-width: 140mm; margin-bottom: 7mm; }
+.all-intro strong { color: var(--violet); font-weight: 600; }
+.all-bloc {
+  background: var(--craie); border-left: 1.6pt solid var(--gneiss); border-radius: 0 1.5mm 1.5mm 0;
+  padding: 4mm 5mm; margin-bottom: 6mm;
+}
+.all-bloc h3 { font-family: var(--titre); font-size: 13pt; color: var(--gneiss); margin-bottom: 3mm; }
+.all-doms { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-bottom: 2.5mm; }
+.all-dom {
+  display: flex; align-items: baseline; gap: 1.6mm; background: var(--tuffeau);
+  border-radius: 1mm; padding: 1.6mm 2.6mm; font: 400 8pt var(--technique);
+}
+.all-dom .n { font-family: var(--titre); font-size: 11pt; color: var(--violet); }
+.all-dom .nom { font-weight: 500; }
+.all-dom .reg { color: var(--gneiss); font-size: 7pt; }
+.all-dom .pg { font-weight: 600; font-variant-numeric: tabular-nums; }
+.all-mention { font: 400 7.6pt var(--technique); font-style: italic; color: rgba(70,96,110,.85); }
+.all-pied {
+  margin-top: 4mm; padding-top: 3mm; border-top: .8pt solid var(--violet);
+  font-size: 8.6pt; color: var(--silex);
+}
+
+/* ——————————————————————————————————— ouverture de région ——— */
+.ouverture .ouv-fond, .respiration .resp-fond {
+  position: absolute; inset: 0; background: var(--strate);
+}
+.ouv-trame { position: absolute; inset: 0; opacity: .5; }
+.ouverture .cadre { color: var(--craie); display: flex; flex-direction: column; }
+.ouverture.claire .cadre { color: var(--silex); }
+.ouv-haut { margin-bottom: auto; position: relative; z-index: 2; }
+.ouv-carotte {
+  position: absolute; top: var(--marge-haut); right: 0; width: 46mm; height: 118mm;
+  border-radius: 23mm; overflow: hidden; box-shadow: 0 0 0 .8mm rgba(251,248,241,.3);
+}
+.page.verso .ouv-carotte { right: auto; left: 0; }
+.ouv-carotte svg { width: 100%; height: 100%; display: block; }
+.ouv-types {
+  display: flex; flex-wrap: wrap; gap: 2mm 5mm; margin-bottom: 6mm;
+  font: 400 8pt var(--technique);
+}
+.ouv-types span { display: inline-flex; align-items: center; gap: 1.6mm; }
+.ouv-types .picto { width: 3.4mm; height: 3.4mm; }
+.ouv-types b { font-weight: 600; }
+.ouv-rang {
+  font: 600 8pt var(--technique); letter-spacing: var(--interlettre); opacity: .8;
+  border: .8pt solid currentColor; border-radius: 4mm; padding: 1mm 3mm;
+}
+.ouv-nom {
+  font-family: var(--titre); font-size: 46pt; line-height: .95; letter-spacing: -.02em;
+  margin-bottom: 2mm;
+}
+.ouv-mot { font-size: 12pt; font-style: italic; opacity: .9; margin-bottom: 7mm; }
+.ouv-chiffres {
+  display: flex; gap: 10mm; padding-bottom: 5mm; margin-bottom: 5mm;
+  border-bottom: .8pt solid currentColor; font: 400 8.5pt var(--technique);
+}
+.ouv-chiffres strong {
+  display: block; font-family: var(--titre); font-size: 20pt; font-weight: 400; line-height: 1;
+}
+.ouv-liste { list-style: none; columns: 2; column-gap: 8mm; }
+.ouv-liste li { break-inside: avoid; }
+.ouv-liste a {
+  display: flex; align-items: baseline; gap: 2mm; padding: 1.1mm 0;
+  border-bottom: .3pt solid rgba(255,255,255,.26); font: 400 8.6pt var(--technique);
+}
+.ouverture.claire .ouv-liste a { border-bottom-color: rgba(70,96,110,.22); }
+.ouv-liste .n { font-family: var(--titre); font-size: 11pt; min-width: 6mm; }
+.ouv-liste .nom { flex: 1; }
+.ouv-liste .pg { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ouverture .sanitaire, .respiration .sanitaire, .ouverture .folio, .respiration .folio {
+  color: var(--craie); opacity: .8;
+}
+.ouverture.claire .sanitaire, .ouverture.claire .folio { color: var(--silex); }
+
+/* ——————————————————————————————————————————— respiration ——— */
+.respiration .cadre { display: flex; align-items: flex-end; }
+.resp-mot {
+  font-family: var(--titre); font-size: 20pt; color: var(--craie); opacity: .92;
+  max-width: 120mm; line-height: 1.2;
+}
+
+/* ——————————————————————————————————————————————— fiche ——— */
+.fiche .cadre { display: flex; flex-direction: column; }
+.fiche .corps-tableaux { flex: 1; min-height: 0; }
+.legende-note { font-style: italic; opacity: .72; }
+
+/* ——————————————————————————————————————————————— index ——— */
+.idx-intro { font-size: 8.6pt; margin-bottom: 4mm; color: rgba(70,96,110,.9); }
+.idx-flux { columns: 3; column-gap: 6mm; column-fill: balance; }
+.idx-prec { font-size: 6.2pt; color: rgba(70,96,110,.65); margin-left: 1mm; white-space: nowrap; }
+.idx-titre {
+  font: 600 8pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase;
+  color: var(--violet); margin: 3.5mm 0 1.6mm; break-after: avoid; break-inside: avoid;
+  display: flex; align-items: center; gap: 1.6mm;
+  border-bottom: .7pt solid var(--violet); padding-bottom: 1mm;
+}
+.idx-titre:first-child { margin-top: 0; }
+.idx-titre .picto { width: 3mm; height: 3mm; }
+.idx-ligne {
+  display: flex; align-items: baseline; gap: 1.4mm; padding: .5mm 0;
+  font: 400 6.9pt var(--technique); break-inside: avoid;
+  border-bottom: .25pt solid rgba(70,96,110,.18);
+}
+.idx-nom { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.idx-app { display: none; }
+.idx-dom {
+  color: var(--violet); font-weight: 600; font-variant-numeric: tabular-nums; min-width: 4mm;
+  text-align: right;
+}
+.idx-pg {
+  font-weight: 500; font-variant-numeric: tabular-nums; min-width: 4.5mm; text-align: right;
+  color: rgba(70,96,110,.8);
+}
+
+/* ——————————————————————————————————————————————— finale ——— */
+.finale .cadre { display: flex; flex-direction: column; }
+.logo-finale { width: 70mm; margin-bottom: 10mm; }
+.fin-contacts { display: flex; gap: 14mm; margin-bottom: 5mm; }
+.fin-adresse { font-size: 10pt; line-height: 1.65; margin-bottom: auto; }
+.fin-adresse a { color: var(--violet); border-bottom: .5pt solid rgba(103,6,124,.4); }
+.fin-cols {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm;
+  padding-top: 6mm; border-top: .8pt solid var(--violet); margin-bottom: 6mm;
+}
+.fin-cols h3 {
+  font: 600 7.6pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase;
+  color: var(--gneiss); margin-bottom: 2.5mm;
+}
+.lexique { font-size: 7.8pt; line-height: 1.45; }
+.lexique dt { font-weight: 600; color: var(--violet); font-family: var(--technique); }
+.lexique dd { margin-bottom: 1.6mm; }
+.fin-mentions { font-size: 7.8pt; line-height: 1.42; color: rgba(70,96,110,.95); }
+.fin-sanitaire {
+  background: var(--violet); color: var(--craie); border-radius: 1.5mm; padding: 3mm 4mm;
+  font: 600 8.5pt var(--technique); letter-spacing: var(--interlettre); text-align: center;
+}
+
+/* ——————————————————————————————————————————— traits de coupe ——— */
+.traits-coupe { display: none; }
+.imprimeur .page::before, .imprimeur .page::after {
+  content: ''; position: absolute; pointer-events: none;
+}
+
+/* ——— mode d'emploi : figures ajoutées ——— */
+.me-fig-paliers { flex-wrap: wrap; gap: 1.6mm; align-content: center; padding: 3mm 4mm; }
+.me-fig-paliers span {
+  font: 500 6.6pt var(--technique); background: var(--tuffeau); border: .6pt solid rgba(70,96,110,.3);
+  border-radius: 1mm; padding: 1mm 2mm; color: var(--silex);
+}
+.me-fig-pied { flex-direction: column; align-items: stretch; justify-content: center; gap: 2mm; padding: 4mm 5mm; }
+.me-fig-pied .demo-note { font: 400 7.2pt var(--technique); color: rgba(70,96,110,.9); }
+.me-fig-pied .demo-dep {
+  font: 400 7.2pt var(--technique); color: rgba(70,96,110,.9); text-align: right;
+  border-top: .7pt solid var(--silex); padding-top: 2mm;
+}
+.me-fig-pied .demo-dep strong { color: var(--violet); font-weight: 600; }

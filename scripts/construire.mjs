@@ -1,0 +1,255 @@
+/* Fabrique le catalogue : passe de mesure, pagination, puis les deux PDF.
+   La pagination est MESURÉE dans Chromium, pas estimée : rien ne déborde par surprise. */
+import fs from 'node:fs';
+import path from 'node:path';
+import { chromium } from 'playwright';
+import { pathToFileURL } from 'node:url';
+import {
+  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe,
+} from '../src/gabarits/pieces.mjs';
+import * as G from '../src/gabarits/pages.mjs';
+
+const RACINE = path.resolve(import.meta.dirname, '..');
+const BUILD = path.join(RACINE, 'build');
+const DIST = path.join(RACINE, 'dist');
+fs.mkdirSync(BUILD, { recursive: true });
+fs.mkdirSync(DIST, { recursive: true });
+
+const PX_PAR_MM = 96 / 25.4;
+const CADRE_H = 260 - 15 - 13;          // hauteur utile d'une page, en mm
+const ECART_TABLEAUX = 4.5;             // margin-top entre deux tableaux, en mm
+const SECURITE = 2;                     // marge de sécurité : on ne remplit jamais au millimètre
+const VIDE_MIN = 32;                    // au-delà, une fiche courte reçoit la coupe de son sol
+
+/* ———————————————————————————————————————— 1. passe de mesure ——— */
+
+function documentMesure() {
+  const blocs = catalogue.domaines.map((d) => {
+    const tableaux = d.tableaux.map((t, ti) => {
+      const lignes = t.lignes.map((l, li) => ({ l, cle: `${d.numero}-${ti}-${li}` }));
+      return G_tableau(t, lignes, `${d.numero}-${ti}`);
+    }).join('');
+    return `<div class="mesure-bloc">
+      <div data-m="entete-${d.numero}">${G.enteteDomaine(d, false)}</div>
+      <div data-m="enteteSuite-${d.numero}">${G.enteteDomaine(d, true)}</div>
+      <div data-m="haut-${d.numero}">${G.hautDomaine(d)}</div>
+      ${tableaux}
+      <div data-m="pied-${d.numero}">${G.piedDomaine(d, new Map(catalogue.domaines.map((x) => [x.numero, 99])))}</div>
+    </div>`;
+  }).join('');
+  // Deux témoins pour calibrer l'index : une ligne et un titre de famille.
+  const temoinsIndex = `<div class="mesure-bloc"><div class="idx-flux" style="columns:1">
+    <h3 class="idx-titre" data-m="idx-titre">Témoin</h3>
+    <a class="idx-ligne" data-m="idx-ligne"><span class="idx-nom">Témoin de calibrage</span>
+      <span class="idx-dom">26</span><span class="idx-pg">44</span></a></div></div>`;
+  return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../src/styles/systeme.css">
+<link rel="stylesheet" href="../src/styles/pages.css">
+<style>body{background:var(--tuffeau)}
+  .mesure-bloc{width:170mm;margin:0 auto 40mm}
+  /* flow-root : sans lui les marges des enfants sortent de la boîte et la mesure ment */
+  .mesure-bloc > [data-m]{display:flow-root}</style>
+</head><body>${defsTrames()}${blocs}${temoinsIndex}</body></html>`;
+}
+
+/* Le même tableau que dans les pages, mais avec un identifiant de thead pour la mesure. */
+function G_tableau(t, lignes, cle) {
+  const html = G_tableauBase(t, lignes, cle);
+  return html.replace('<thead>', `<thead data-m="thead-${cle}">`);
+}
+function G_tableauBase(t, lignes, cle) {
+  // on réutilise strictement le composant du catalogue
+  return tableauHtmlImport(t, lignes, { cleTableau: cle });
+}
+let tableauHtmlImport;
+{
+  const m = await import('../src/gabarits/pieces.mjs');
+  tableauHtmlImport = m.tableauHtml;
+}
+
+async function mesurer(navigateur) {
+  const fichier = path.join(BUILD, 'mesure.html');
+  fs.writeFileSync(fichier, documentMesure());
+  const p = await navigateur.newPage();
+  await p.goto(pathToFileURL(fichier).href, { waitUntil: 'networkidle' });
+  await p.emulateMedia({ media: 'print' });
+  const brut = await p.evaluate(() => {
+    const out = { blocs: {}, lignes: {} };
+    document.querySelectorAll('[data-m]').forEach((el) => {
+      out.blocs[el.dataset.m] = el.getBoundingClientRect().height;
+    });
+    document.querySelectorAll('tr[data-ligne]').forEach((el) => {
+      out.lignes[el.dataset.ligne] = el.getBoundingClientRect().height;
+    });
+    return out;
+  });
+  await p.close();
+  const mm = (px) => px / (96 / 25.4);
+  const m = { blocs: {}, lignes: {} };
+  for (const [k, v] of Object.entries(brut.blocs)) m.blocs[k] = mm(v);
+  for (const [k, v] of Object.entries(brut.lignes)) m.lignes[k] = mm(v);
+  fs.writeFileSync(path.join(BUILD, 'mesures.json'), JSON.stringify(m, null, 1));
+  return m;
+}
+
+/* ——————————————————————————————————————————— 2. pagination ——— */
+
+/** Découpe les tableaux d'un domaine en pages, sans jamais laisser une ligne orpheline. */
+function decouper(d, m) {
+  const entete = m.blocs[`entete-${d.numero}`];
+  const enteteSuite = m.blocs[`enteteSuite-${d.numero}`];
+  const haut = m.blocs[`haut-${d.numero}`];
+  const pied = m.blocs[`pied-${d.numero}`];
+
+  const tableaux = d.tableaux.map((t, ti) => ({
+    t, ti,
+    thead: m.blocs[`thead-${d.numero}-${ti}`],
+    lignes: t.lignes.map((l, li) => ({ l, cle: `${d.numero}-${ti}-${li}`, h: m.lignes[`${d.numero}-${ti}-${li}`] })),
+  }));
+
+  const pages = [];
+  let courante = { morceaux: [], premiere: true };
+  let reste = CADRE_H - SECURITE - entete - haut - pied;
+
+  const nouvellePage = () => {
+    courante.reste = reste;
+    pages.push(courante);
+    courante = { morceaux: [], premiere: false };
+    reste = CADRE_H - SECURITE - enteteSuite - pied;
+  };
+
+  for (const tb of tableaux) {
+    let i = 0, suite = false;
+    while (i < tb.lignes.length) {
+      const ecart = courante.morceaux.length ? ECART_TABLEAUX : 0;
+      let dispo = reste - ecart - tb.thead;
+      // Un en-tête de tableau doit être suivi d'au moins deux lignes sur la même page.
+      const deuxPremieres = (tb.lignes[i]?.h || 0) + (tb.lignes[i + 1]?.h || 0);
+      if (dispo < Math.min(deuxPremieres, tb.lignes[i].h)) { nouvellePage(); continue; }
+
+      const prises = [];
+      while (i < tb.lignes.length && dispo - tb.lignes[i].h >= 0) {
+        dispo -= tb.lignes[i].h;
+        prises.push(tb.lignes[i++]);
+      }
+      // Pas d'orpheline : si une seule ligne resterait pour la page suivante, on la repousse avec sa voisine.
+      if (tb.lignes.length - i === 1 && prises.length > 1) {
+        i--; dispo += prises.pop().h;
+      }
+      courante.morceaux.push({ t: tb.t, lignes: prises, suite, cle: `${d.numero}-${tb.ti}` });
+      reste = dispo;
+      suite = true;
+      if (i < tb.lignes.length) nouvellePage();
+    }
+  }
+  courante.reste = reste;
+  pages.push(courante);
+  return { pages, entete, enteteSuite, haut, pied };
+}
+
+function pagesDomaine(d, m, pagesParDomaine) {
+  const { pages } = decouper(d, m);
+  return pages.map((pg, i) => G.page({
+    region: d.region, classe: 'fiche',
+    corps: `<div class="cadre">
+      ${G.enteteDomaine(d, !pg.premiere)}
+      ${pg.premiere ? G.hautDomaine(d) : ''}
+      <div class="corps-tableaux">${pg.morceaux.map((mo) =>
+        tableauHtmlImport(mo.t, mo.lignes, { suite: mo.suite, cleTableau: mo.cle })).join('')}
+        ${pg.reste >= VIDE_MIN ? G.respireSol(d, pg.reste - 5) : ''}</div>
+      ${G.piedDomaine(d, pagesParDomaine)}
+    </div>`,
+  }));
+}
+
+/* ———————————————————————————————————————————— 3. le plan ——— */
+
+const AVANT = 5;   // couverture, agence, mode d'emploi, sommaire, alliances
+
+function plan(m) {
+  // Premier passage : on compte les pages de chaque domaine pour connaître les folios.
+  const parDomaine = new Map();
+  let n = AVANT + 1;
+  for (const region of REGIONS) {
+    n += 1;                                   // l'ouverture de région
+    for (const d of catalogue.domaines.filter((x) => x.region === region)) {
+      parDomaine.set(d.numero, n);
+      n += decouper(d, m).pages.length;
+    }
+  }
+  return { parDomaine, apresDomaines: n };
+}
+
+/* ————————————————————————————————————————— 4. construction ——— */
+
+function construirePages(m) {
+  const { parDomaine, apresDomaines } = plan(m);
+
+  const pages = [
+    G.couverture(),
+    G.pageAgence(),
+    G.modeEmploi(),
+    ...G.sommaire(parDomaine),
+    ...G.alliances(parDomaine),
+  ];
+  for (const region of REGIONS) {
+    pages.push(G.ouvertureRegion(region, parDomaine));
+    for (const d of catalogue.domaines.filter((x) => x.region === region)) {
+      pages.push(...pagesDomaine(d, m, parDomaine));
+    }
+  }
+
+  // Index : on réserve les folios, puis on remplit.
+  const entrees = G.entreesIndex(parDomaine);
+  // Budget mesuré : trois colonnes de la hauteur utile, en « unités de ligne ».
+  const hLigne = m.blocs['idx-ligne'];
+  const hTitre = m.blocs['idx-titre'] + 5;          // marge haute du titre, hors boîte
+  const poidsTitre = Math.ceil(hTitre / hLigne);
+  const parPage = Math.floor(3 * (CADRE_H - SECURITE - 24) / hLigne);
+  const pagesIdx = G.pagesIndex(entrees, parPage, poidsTitre);
+  pages.push(...pagesIdx);
+
+  // Un multiple de 4, en ajoutant des respirations avant la page finale.
+  let total = pages.length + 1;
+  const manque = (4 - (total % 4)) % 4;
+  for (let i = 0; i < manque; i++) pages.push(G.respiration(REGIONS[(i * 3) % REGIONS.length]));
+  pages.push(G.pageFinale(0));
+
+  return { pages, parDomaine, apresDomaines };
+}
+
+/* ——————————————————————————————————————————————— 5. rendu ——— */
+
+async function rendre(navigateur, html, sortie, { ecran }) {
+  const fichier = path.join(BUILD, path.basename(sortie).replace('.pdf', '.html'));
+  fs.writeFileSync(fichier, html);
+  const p = await navigateur.newPage();
+  await p.goto(pathToFileURL(fichier).href, { waitUntil: 'networkidle' });
+  await p.emulateMedia({ media: 'print' });
+  await p.pdf({
+    path: sortie, printBackground: true, preferCSSPageSize: true,
+    tagged: ecran, outline: false,
+  });
+  await p.close();
+}
+
+const navigateur = await chromium.launch();
+console.log('· mesure des blocs dans Chromium…');
+const m = await mesurer(navigateur);
+console.log('· pagination…');
+const { pages, parDomaine } = construirePages(m);
+console.log(`· ${pages.length} pages (multiple de 4 : ${pages.length % 4 === 0 ? 'oui' : 'NON'})`);
+console.log('· rendu écran…');
+await rendre(navigateur, G.document({ pages, ecran: true }),
+  path.join(DIST, 'catalogue-scio-2026-ecran.pdf'), { ecran: true });
+console.log('· rendu imprimeur…');
+await rendre(navigateur, G.document({ pages, ecran: false }),
+  path.join(DIST, 'catalogue-scio-2026-imprimeur.pdf'), { ecran: false });
+await navigateur.close();
+
+fs.writeFileSync(path.join(BUILD, 'plan.json'), JSON.stringify({
+  pages: pages.length,
+  domaines: Object.fromEntries(parDomaine),
+}, null, 1));
+console.log('✓ dist/catalogue-scio-2026-ecran.pdf');
+console.log('✓ dist/catalogue-scio-2026-imprimeur.pdf');
