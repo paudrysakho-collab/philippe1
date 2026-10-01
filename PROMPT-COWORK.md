@@ -3,6 +3,19 @@
 > Copie tout ce qui est entre les deux lignes, et joins les trois fichiers :
 > le catalogue `.pptx`, ton fichier de bouteilles, ton fichier d'images de domaine.
 
+## L'ordre des opérations
+
+**Fais poser les images par Cowork dans le `.pptx`, et importe dans Canva ensuite.**
+Pas l'inverse. Dès que tu modifies le catalogue dans Canva, Canva devient la source : si
+Cowork repart du `.pptx` après coup, tu perds tout ce que tu as fait dans Canva. Un seul
+import, une fois les images en place.
+
+1. Cowork pose les 80 images dans le `.pptx` et te rend un nouveau fichier.
+2. Tu téléverses les six polices de `polices-canva/` dans Canva (Marque → Polices de la
+   marque → Téléverser une police).
+3. Tu importes le fichier rendu par Cowork : **Créer un design → Importer un fichier**.
+4. Tu retouches dans Canva ce qui te plaît.
+
 ---
 
 Tu dois poser des images dans un catalogue de vins déjà mis en page. **Tu ne touches à rien
@@ -66,6 +79,18 @@ sur le papier crème. Si une bouteille arrive sur fond blanc non détouré, dét
 - **Ne touche pas aux 36 autres diapositives.**
 - **Loi Évin** : écarte toute image de verre levé, porté à la bouche ou trinqué, et toute
   scène de consommation. Vignes, paysages, chais, bouteilles, portraits : d'accord.
+
+## Deux pièges techniques
+
+**L'archive doit rester rangée.** Un `.pptx` est un zip, et les systèmes reconnaissent un
+PowerPoint en lisant son **premier** élément, qui doit être `[Content_Types].xml`. Si tu
+réécris l'archive et que cet élément se retrouve ailleurs, Windows et macOS ne reconnaissent
+plus le fichier et l'ouvrent dans un lecteur vidéo. Vérifie à la fin : `unzip -Z1 fichier.pptx`
+doit afficher `[Content_Types].xml` en première ligne, et `file fichier.pptx` doit répondre
+« Microsoft PowerPoint 2007+ », pas « Zip archive data ».
+
+**Ne touche pas aux polices.** Le fichier appelle Young Serif, Spectral et IBM Plex Sans.
+Ne les remplace pas, ne les convertis pas en contours : je les téléverse dans Canva de mon côté.
 
 ## Ce que tu me rends
 
