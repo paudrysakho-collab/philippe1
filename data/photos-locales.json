@@ -1,3 +1,198 @@
 {
- "_lisez-moi": "Table de correspondance VALIDÉE PAR L'AGENCE, lue par scripts/preparer-photos.py. Une clé par numéro de domaine (1 à 40). Pour chaque rôle, le chemin de l'image retenue, relatif à src/photos/brut/ : 'rond' vient de Domaines_et_vignerons/<dossier>/, 'bouteille' de Bouteilles_de_vin/<dossier>/. 'mode' vaut 'couvrir' (une photo, recadrée au carré) ou 'contenir' (un logo, jamais recadré). 'centre' [x, y], facultatif, en fractions de l'image, déplace le carré d'une photo. 'sujet' décrit l'image pour credits.md. Un domaine absent, ou un rôle absent, garde son emplacement pointillé. Exemple : \"17\": {\"rond\": {\"fichier\": \"Domaines_et_vignerons/Domaine_de_Coyeux/famille.jpg\", \"mode\": \"couvrir\", \"sujet\": \"la famille dans les vignes\"}, \"bouteille\": {\"fichier\": \"Bouteilles_de_vin/Domaine_de_Coyeux/jumelles.png\", \"sujet\": \"bouteille de la cuvée Les Jumelles\"}}"
+ "_lisez-moi": "Table de correspondance VALIDÉE PAR L'AGENCE, lue par scripts/preparer-photos.py. Une clé par numéro de domaine (1 à 40). Pour chaque rôle, le chemin de l'image retenue, relatif à src/photos/brut/ : 'rond' vient de Domaines_et_vignerons/<dossier>/, 'bouteille' de Bouteilles_de_vin/<dossier>/. 'mode' vaut 'couvrir' (une photo, recadrée au carré) ou 'contenir' (un logo, jamais recadré). 'centre' [x, y], facultatif, en fractions de l'image, déplace le carré d'une photo. 'sujet' décrit l'image pour credits.md. Un domaine absent, ou un rôle absent, garde son emplacement pointillé. Exemple : \"17\": {\"rond\": {\"fichier\": \"Domaines_et_vignerons/Domaine_de_Coyeux/famille.jpg\", \"mode\": \"couvrir\", \"sujet\": \"la famille dans les vignes\"}, \"bouteille\": {\"fichier\": \"Bouteilles_de_vin/Domaine_de_Coyeux/jumelles.png\", \"sujet\": \"bouteille de la cuvée Les Jumelles\"}}",
+ "1": {
+  "rond": {
+   "fichier": "Domaines_et_vignerons/Francois_Reverdy/Francois_Reverdy_Portrait_vigneron.png",
+   "mode": "couvrir",
+   "sujet": "portrait du vigneron, noir et blanc"
+  },
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Francois_Reverdy/Francois_Reverdy_Gamme_5_bouteilles.jpg",
+   "sujet": "bouteille de Chinon, 3e de la photo de gamme",
+   "zone": [
+    0.4169,
+    0.1,
+    0.5705,
+    0.955
+   ]
+  }
+ },
+ "2": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_de_la_Barbiniere/Domaine_de_la_Barbiniere_Fiefs_Vendeens_Les_Amphibol_2022_v2.jpg",
+   "sujet": "bouteille Les Amphibol"
+  }
+ },
+ "3": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_du_Colombier_JY_Bretaudeau/Domaine_du_Colombier_JY_Bretaudeau_Rouge_aux_levres_Val_de_Loire.jpg",
+   "sujet": "bouteille Rouge au lèvres"
+  }
+ },
+ "4": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_des_Noels/Domaine_des_Noels_Anjou_Blanc_Promenade_des_Noels.jpg",
+   "sujet": "bouteille Promenade des Noëls, Anjou blanc"
+  }
+ },
+ "8": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Boehler/Domaine_Boehler_Alsace_Molse_Blanc.jpg",
+   "sujet": "bouteille Molse blanc"
+  }
+ },
+ "9": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_des_Nugues/Domaine_des_Nugues_Moulin-a-Vent_2022_catalogue.png",
+   "sujet": "bouteille Moulin-à-Vent 2022"
+  }
+ },
+ "10": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Sebastien_Magnien/Domaine_Sebastien_Magnien_Bourgogne_Pinot_Noir_2023.png",
+   "sujet": "bouteille Bourgogne Pinot Noir 2023"
+  }
+ },
+ "11": {
+  "rond": {
+   "fichier": "Domaines_et_vignerons/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Vigneronnes_au_chai.jpg",
+   "mode": "couvrir",
+   "sujet": "les vigneronnes au chai, noir et blanc",
+   "centre": [
+    0.55,
+    0.5
+   ]
+  },
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg",
+   "sujet": "bouteille Mâcon Charnay-lès-Mâcon"
+  }
+ },
+ "12": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Maison_Andre_Goichot/Maison_Andre_Goichot_Givry_Champ_la_Dame_2023_catalogue.png",
+   "sujet": "bouteille Givry Champ la Dame 2023"
+  }
+ },
+ "13": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Chateau_du_Cray/Chateau_du_Cray_Mercurey_Blanc_Les_Doues.png",
+   "sujet": "bouteille Mercurey blanc Les Doues (cuvée absente du tarif)"
+  }
+ },
+ "14": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_des_Guignottes/Domaine_des_Guignottes_Bourgogne_Chardonnay_2023_catalogue.png",
+   "sujet": "bouteille Bourgogne Chardonnay 2023"
+  }
+ },
+ "16": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Le_Prieure_des_Papes/Le_Prieure_des_Papes_Chateauneuf-du-Pape_Vieilles_Vignes_2022_catalogue.png",
+   "sujet": "bouteille Châteauneuf-du-Pape Vieilles Vignes"
+  }
+ },
+ "17": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_de_Coyeux/Domaine_de_Coyeux_Beaumes-de-Venise_Les_Jumelles_2023_catalogue.png",
+   "sujet": "bouteille Les Jumelles, Beaumes-de-Venise"
+  }
+ },
+ "19": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_de_la_Pousterle/Domaine_de_la_Pousterle_Luberon_Terroir_dAnsouis_Blanc_2021.png",
+   "sujet": "bouteille Terroir d'Ansouis blanc 2021"
+  }
+ },
+ "20": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_des_Pasquiers/Domaine_des_Pasquiers_Cotes-du-Rhone_Villages_Plan_de_Dieu_2023_catalogue.png",
+   "sujet": "bouteille Plan de Dieu 2023"
+  }
+ },
+ "22": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Strateus/Strateus_Madiran_Strateus_2021.png",
+   "sujet": "bouteille Madiran Strateus"
+  }
+ },
+ "23": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Haut-Marin/Domaine_Haut-Marin_IGP_Cotes_de_Gascogne_Triton_2024_catalogue.png",
+   "sujet": "bouteille N°4 Triton 2024"
+  }
+ },
+ "24": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Les_Hauts_des_Olivoux/Les_Hauts_des_Olivoux_Pecharmant_2023.jpeg",
+   "sujet": "bouteille Les Hauts des Olivoux, Pécharmant 2023",
+   "zone": [
+    0.36,
+    0.25,
+    0.64,
+    0.74
+   ]
+  }
+ },
+ "26": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Chateau_La_Gorce/Chateau_La_Gorce_Medoc_La_Bonne_Resolution_2022.png",
+   "sujet": "bouteille La Bonne Résolution 2022"
+  }
+ },
+ "27": {
+  "rond": {
+   "fichier": "Domaines_et_vignerons/Chateau_Falfas/Chateau_Falfas_Logo.png",
+   "mode": "contenir",
+   "sujet": "logo du château"
+  }
+ },
+ "29": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Chateau_Balac/Chateau_Balac_Medoc_Cru_Bourgeois_Superieur_2022_catalogue.png",
+   "sujet": "bouteille Château Balac Haut-Médoc (cuvée absente du tarif)"
+  }
+ },
+ "32": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Famille_dExea/Famille_dExea_Jardin_de_Corbieres_Rouge.png",
+   "sujet": "bouteille Jardins de Corbières rouge"
+  }
+ },
+ "34": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Chateau_de_Gragnos/Chateau_de_Gragnos_Saint-Chinian_Lou_Daro_2022_v2.png",
+   "sujet": "bouteille Lou Daro 2022"
+  }
+ },
+ "35": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Les_Lys/Domaine_Les_Lys_Duche_dUzes_Duche_Rouge.png",
+   "sujet": "bouteille Duché"
+  }
+ },
+ "36": {
+  "rond": {
+   "fichier": "Domaines_et_vignerons/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Vignerons_avec_rose_NB.jpg",
+   "mode": "couvrir",
+   "sujet": "les deux vignerons et leur rosé, noir et blanc"
+  },
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png",
+   "sujet": "bouteille 4 Saisons"
+  }
+ },
+ "37": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Champagne_Dekeyne/Champagne_Dekeyne_Chardonnay_catalogue.png",
+   "sujet": "bouteille Chardonnay"
+  }
+ },
+ "38": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Champagne_Denis_Frezier/Champagne_Denis_Frezier_Les_Trois_Crus_catalogue.png",
+   "sujet": "bouteille Les Trois Crus"
+  }
+ },
+ "_statut": "PROPOSITION en attente de validation par l'agence : rien n'est posé tant qu'elle n'est pas validée (npm run photos, puis npm run build)."
 }

@@ -73,6 +73,17 @@ def ouvrir(chemin):
     return im
 
 
+def recadrer(im, entree):
+    """'zone' [x0, y0, x1, y1], en fractions de l'image, isole une partie de la source :
+    une bouteille dans une photo de gamme, un visage dans une scène. C'est un recadrage,
+    jamais un agrandissement : la résolution se calcule ensuite sur la partie gardée."""
+    z = entree.get("zone")
+    if not z:
+        return im
+    l, h = im.size
+    return im.crop((round(z[0] * l), round(z[1] * h), round(z[2] * l), round(z[3] * h)))
+
+
 def a_de_la_transparence(im):
     return im.mode == "RGBA" and im.getchannel("A").getextrema()[0] < 250
 
@@ -161,8 +172,13 @@ def silhouette(alpha):
     if not largeurs:
         return None
     mediane = largeurs[len(largeurs) // 2]
-    creusees = sum(1 for y in corps if not lignes[y] or lignes[y][1] - lignes[y][0] + 1 < 0.85 * mediane)
-    if creusees > max(2, 0.005 * len(corps)):
+    etroites = [y for y in corps if not lignes[y] or lignes[y][1] - lignes[y][0] + 1 < 0.85 * mediane]
+    # Le talon arrondi rétrécit la bouteille sur ses dernières lignes : ce n'est pas un trou.
+    # Seule compte une ligne étroite prise entre deux lignes pleines du corps.
+    fin = corps[-1]
+    while etroites and etroites[-1] == fin:
+        etroites.pop(); fin -= 1
+    if len(etroites) > max(2, 0.005 * len(corps)):
         return None
     for y in range(bas - (bas - haut) // 12, bas + 1):
         if lignes[y] and lignes[y][1] - lignes[y][0] + 1 > 1.12 * mediane:
@@ -215,6 +231,7 @@ def faire_rond(numero, entree):
     src = BRUT / entree["fichier"]
     im = ouvrir(src)
     l0, h0 = im.size
+    im = recadrer(im, entree)
     if entree.get("mode", "couvrir") == "contenir":
         im, ppi = rond_logo(im)
     else:
@@ -271,6 +288,7 @@ def faire_bouteille(numero, entree):
     src = BRUT / entree["fichier"]
     im = ouvrir(src)
     l0, h0 = im.size
+    im = recadrer(im, entree)
 
     if a_de_la_transparence(im):
         # déjà détourée : on garde son alpha tel quel
