@@ -321,3 +321,50 @@ tombe sur le vrai dessin et non sur un faux gras.
 
 76 pages, multiple de 4. Tous les contrôles au vert des deux côtés, les 715 prix retrouvés
 dans le texte des deux PDF **et** des 76 diapositives.
+
+---
+
+## Le vide sous les textes courts, et une seconde source
+
+### Le trou blanc avant le tableau
+
+L'agence a montré du doigt le vide entre la fin du texte de présentation et le tableau de
+prix, en proposant une maquette où tout est plus gros. Le vide est structurel : la bande du
+haut fait toujours la hauteur de l'emplacement bouteille (62 mm), alors qu'un texte médian
+de 285 caractères n'occupe que 25 mm au corps de base. Trente-quatre millimètres de rien.
+
+Trois pistes essayées, regardées côte à côte sur une fiche courte et sur la plus longue :
+
+- **rond agrandi seul** : le rond prend sa place mais le texte flotte toujours ;
+- **texte agrandi seul** : le texte remplit, mais le rond de 32 mm paraît perdu à côté ;
+- **les deux** : c'est la bonne.
+
+Retenu : **le rond passe de 32 à 40 mm** (même taille sur les quarante fiches, l'agence pose
+ses images sans que rien ne bouge), **le corps du texte s'ajuste entre 9,5 et 13 pt** pour
+remplir la bande, et **le texte se centre verticalement** pour que le peu d'air qui reste se
+partage au lieu de tomber en bas. Vingt-cinq fiches arrivent au plafond de 13 pt, les deux
+textes les plus longs (n°16 Prieuré des Papes, n°17 Coyeux) restent à 9,5 pt et font grandir
+leur bande — la pagination mesurée s'en occupe toute seule.
+
+`corpsDomaine()` vit dans `pieces.mjs` et sert au PDF comme au .pptx : une seule règle, deux
+sorties. Pas d'estimation : le calcul se fait sur les chasses réelles des polices livrées.
+
+### La liste du salon : une confirmation, un texte, quatorze questions
+
+L'agence a fourni deux documents du Salon Privé du 5 octobre 2026. Le premier, la liste des
+domaines, ne contient que des noms et des numéros de stand — aucun texte, contrairement à ce
+qu'elle pensait. Le second, la liste des vignerons, contient bien 26 notices.
+
+Comparaison notice par notice avec nos 40 fiches :
+
+- **20 des 21 textes communs sont identiques au mot près** une fois ôtées les phrases propres
+  au salon (« Vins sous allocation. », « Format BIB disponible. »…), que le catalogue porte
+  déjà en jetons et en tableaux. C'est une vérification indépendante de la transcription.
+- **n°1 François Reverdy**, le seul domaine sans présentation dans le tarif, en a une ici.
+  Reprise telle quelle, avec un champ `texte_provenance` qui dit d'où elle vient ;
+  `verifier-donnees` refuse désormais un texte sur ce domaine s'il n'est pas sourcé.
+- **n°21 Trichon** : la liste du salon ajoute « associés dans le projet ». Non repris.
+- **Quatorze labels divergent** entre les deux documents — n°4 Domaine des Noëls est Bio dans
+  le tarif et HVE au salon, les deux ne peuvent pas être vrais. **Rien n'a été changé** : le
+  catalogue affiche les labels du tarif. Une mention de certification engage l'agence, elle
+  ne se décide pas sans elle. Table complète dans `QUESTIONS.md`, point 22.

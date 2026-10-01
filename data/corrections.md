@@ -90,3 +90,15 @@ points que je ne pouvais pas trancher seul.
 | **n°3 Domaine du Colombier** : le tableau de six Champagne Grand Cru est un copier-coller de la fiche n°40 | **Retiré** de la fiche n°3. Le tableau reste sur la fiche n°40 Vazart-Coquart. Le Colombier passe de 20 à 14 références |
 | L'Excel et la maquette 52 pages de la session précédente ne sont pas des sources | `archive-v1/` reste consultable mais n'alimente rien. Le PDF fait seul foi |
 | Photos : « un peu de tout » | Sites officiels des domaines + images libres de droits pour les sujets génériques + fichiers fournis par l'agence, qui priment |
+
+## Texte repris d'une seconde source fournie par l'agence
+
+- **n°1 François Reverdy** — le tarif de septembre 2026 ne donne pas de présentation pour ce
+  domaine. L'agence a fourni la *Liste des vignerons du Salon Privé Vins & Terroirs* du
+  5 octobre 2026 ; sa notice n°5 a été reprise **mot pour mot**, sans rien ajouter ni retrancher.
+  `data/fiches/01.json` porte un champ `texte_provenance` qui le dit, et
+  `scripts/verifier-donnees` n'accepte un texte sur ce domaine que si ce champ est rempli.
+  **À faire relire par l'agence avant impression** (voir `QUESTIONS.md`, point 20).
+
+Rien d'autre n'a été repris de ce document : ni label, ni prix, ni mention. Les quatorze
+écarts de label entre les deux sources sont listés dans `QUESTIONS.md`, point 22.

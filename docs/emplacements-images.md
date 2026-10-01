@@ -14,7 +14,7 @@ de la même taille**. Seule la position horizontale change selon que la page est
 
 | Emplacement | Forme à remplacer | Largeur | Hauteur | y (haut) | x sur page impaire | x sur page paire |
 |---|---|---|---|---|---|---|
-| **Rond du vigneron ou logo** | ellipse au contour pointillé, étiquetée `ROND VIGNERON OU LOGO` | 32 mm | 32 mm | 37,7 mm | 17 mm | 23 mm |
+| **Rond du vigneron ou logo** | ellipse au contour pointillé, étiquetée `ROND VIGNERON OU LOGO` | 40 mm | 40 mm | 37,7 mm | 17 mm | 23 mm |
 | **Bouteille** | rectangle arrondi au contour pointillé, étiqueté `BOUTEILLE` | 24 mm | 62 mm | 37,7 mm | 163 mm | 169 mm |
 
 Chaque emplacement est fait de **deux objets** : la forme pointillée et, par-dessus, un bloc
@@ -31,7 +31,7 @@ contenue dans les 24 × 62 mm sans être déformée. Pas de rectangle blanc sur 
 
 ## Résolution minimale, à la taille imprimée
 
-200 ppi minimum, donc : **rond ≥ 252 × 252 px**, **bouteille ≥ 190 × 488 px**.
+200 ppi minimum, donc : **rond ≥ 315 × 315 px**, **bouteille ≥ 190 × 488 px**.
 En dessous, mieux vaut laisser l'emplacement vide et le signaler.
 
 ## Loi Évin

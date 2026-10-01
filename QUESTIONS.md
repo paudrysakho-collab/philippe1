@@ -114,3 +114,75 @@ de chaque domaine** et des images libres de droits pour les sujets génériques.
 - **Vos photos HD** et une **version vectorielle du logo** (PDF, SVG, EPS ou AI) : déposez-les
   dans `sources/`, elles passent en priorité sur tout le reste. Le JPG fourni fait
   1030 × 251 px, soit **87 mm de large au maximum** à 300 dpi.
+
+## Une seconde source : la liste des vignerons du Salon Privé
+
+L'agence a fourni **`Liste des vignerons du Salon Privé Vins & Terroirs`** (5 octobre 2026,
+Château de la Rairie, 26 vignerons) en indiquant que les textes manquants s'y trouvent.
+Comparaison faite, notice par notice, avec nos 40 fiches.
+
+### Ce que cela confirme
+
+**20 des 21 textes communs sont identiques au mot près** à notre transcription du tarif,
+une fois ôtées les phrases propres au salon (« Vins sous allocation. », « Format BIB
+disponible. », « Ratafia disponible. », « Panachage possible avec… »), que le catalogue
+porte déjà sous forme de jetons et de tableaux. La transcription du tarif est donc fidèle.
+
+### 20. Le texte de n°1 François Reverdy — **repris, à confirmer**
+
+Le tarif de septembre ne donne pas de présentation pour ce domaine ; la liste du salon en
+donne une (notice n°5). Je l'ai reprise **telle quelle**, et le champ `texte_provenance`
+de `data/fiches/01.json` dit d'où elle vient.
+
+> Créés ex nihilo en 2023, deux vignobles jardins conduits en agriculture biologique :
+> l'un à Sancerre, où François Reverdy est le plus petit vigneron de l'appellation, l'autre
+> à Roiffé entre Saumur et Chinon, en vieilles vignes de Grolleau noir, Cabernet Franc et
+> Chenin blanc. Vendanges à la main et vins éco-conçus, en Anjou, Saumur, Chinon, Quincy
+> et Sancerre.
+
+*Ce que je propose :* vous relisez ce paragraphe avant impression. C'est le seul endroit du
+catalogue dont le texte ne vient pas du tarif.
+
+### 21. Une phrase de plus chez n°21 Domaine Trichon — **non repris**
+
+La liste du salon écrit « Claire et Stéphane, **associés dans le projet**, allient leurs
+savoir-faire ». Le tarif n'a pas « associés dans le projet ».
+*Ce que je propose :* je garde la version du tarif. Dites-moi si vous préférez l'autre.
+
+### 22. Quatorze labels divergent entre le tarif et la liste du salon — **non repris**
+
+Les deux documents ne disent pas la même chose sur les certifications. **Je n'ai rien changé :
+le catalogue affiche les labels du tarif.** Une mention de certification engage l'agence, elle
+ne se décide pas à ma place.
+
+| Domaine | Tarif de septembre (affiché) | Liste du salon |
+|---|---|---|
+| n°4 Domaine des Noëls | Bio | HVE |
+| n°6 Domaine Jean de Villebois | *aucun* | ISO 26000 |
+| n°10 Domaine Sébastien Magnien | AOP | Agriculture raisonnée |
+| n°12 Maison et Domaine André Goichot | *aucun* | HVE |
+| n°22 Domaine Stratéus | Bio | En conversion Bio |
+| n°23 Domaine Haut Marin | IGP + HVE | HVE 3 |
+| n°27 Château Falfas | Bio + Biodyvin | Biodynamie |
+| n°28 Château Pré la Lande | Bio + Demeter | Biodynamie |
+| n°34 Château de Gragnos | Bio | En conversion Bio |
+| n°36 Prieuré Sainte-Marie d’Albas | *aucun* | HVE |
+| n°37 Champagne Dekeyne | Bio | En conversion Bio |
+| n°38 Champagne Denis Frézier | Bio + HVE | En conversion Bio |
+| n°39 Champagne Solemme | Bio | Bio & Biodynamie |
+| n°40 Vazart-Coquart & Fils | HVE | En conversion Bio |
+
+Le cas le plus net est **n°4 Domaine des Noëls** : le tarif porte les logos Bio, la liste du
+salon écrit HVE. Les deux ne peuvent pas être vrais en même temps.
+Plusieurs écarts sont peut-être une simple différence de date (« Bio » contre « En conversion
+Bio »), d'autres une différence de niveau (« HVE » contre « HVE 3 ») ou de périmètre
+(« Biodyvin » et « Demeter » contre « Biodynamie »). Trois domaines gagnent un label dans la
+liste du salon alors que le tarif n'en montre aucun : n°6, n°12 et n°36.
+
+*Ce que je propose :* vous tranchez domaine par domaine, et je reporte. En attendant, le
+catalogue reste sur le tarif.
+
+### 23. La liste du salon n'est pas un document de prix
+
+Elle ne contient ni tarif, ni palier, ni millésime, ni contenance : rien n'en a été repris
+de ce côté. Elle ne couvre que 26 des 40 domaines.

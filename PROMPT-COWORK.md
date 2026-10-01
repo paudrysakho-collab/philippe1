@@ -32,7 +32,7 @@ Seul le x change selon que la page est impaire (à droite) ou paire (à gauche) 
 
 | Emplacement | Forme à remplacer | Taille | y | x page impaire | x page paire |
 |---|---|---|---|---|---|
-| **Rond du vigneron / logo** | ellipse pointillée étiquetée `ROND VIGNERON OU LOGO` | 32 × 32 mm | 37,7 mm | 17 mm | 23 mm |
+| **Rond du vigneron / logo** | ellipse pointillée étiquetée `ROND VIGNERON OU LOGO` | 40 × 40 mm | 37,7 mm | 17 mm | 23 mm |
 | **Bouteille** | rectangle arrondi pointillé étiqueté `BOUTEILLE` | 24 × 62 mm | 37,7 mm | 163 mm | 169 mm |
 
 Chaque emplacement est fait de **deux objets superposés** : la forme pointillée et un bloc de
@@ -45,14 +45,14 @@ Le titre de chaque diapositive donne le numéro et le nom du domaine (« 1 Fran�
 ## Comment poser les images
 
 **Le rond.** Une photo se recadre au carré puis se masque en cercle, et elle **remplit** tout
-le rond de 32 mm. Un **logo ne se recadre jamais** : il entre en entier, centré, à l'échelle,
+le rond de 40 mm. Un **logo ne se recadre jamais** : il entre en entier, centré, à l'échelle,
 sur une réserve claire — un logo rogné est une faute.
 
 **La bouteille.** Détourée, **fond transparent**, **contenue** dans les 24 × 62 mm sans
 déformation (garde les proportions, ne l'étire pas). Aucun rectangle blanc ne doit apparaître
 sur le papier crème. Si une bouteille arrive sur fond blanc non détouré, détoure-la.
 
-**Résolution.** 200 ppi minimum à la taille imprimée : **rond ≥ 252 × 252 px**,
+**Résolution.** 200 ppi minimum à la taille imprimée : **rond ≥ 315 × 315 px**,
 **bouteille ≥ 190 × 488 px**. En dessous, **laisse l'emplacement vide** et signale-le-moi.
 
 ## Ce que tu ne fais jamais

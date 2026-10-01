@@ -71,15 +71,19 @@ for d in domaines:
                 err(f"n°{d['numero']} « {t['intitule']} » ligne {i} : appellation vide")
 
 # 5. Champs obligatoires, sauf les absences relevées dans docs/pieges-du-pdf.md
-SANS_TEXTE = {1}            # n°1 François Reverdy n'a pas de présentation
+SANS_TEXTE = {1}            # n°1 François Reverdy : le tarif ne donne pas de présentation
 SANS_NOTE_NI_DEPT = {8}     # n°8 Domaine Boehler n'a ni note de prix ni départements
 for d in domaines:
     if not d["nom"]:
         err(f"n°{d['numero']} : nom vide")
     if not d["texte_source"] and d["numero"] not in SANS_TEXTE:
         err(f"n°{d['numero']} {d['nom']} : texte_source vide (absence non justifiée)")
-    if d["texte_source"] and d["numero"] in SANS_TEXTE:
-        err(f"n°{d['numero']} : texte_source renseigné alors que la source n'en a pas")
+    if d["texte_source"] and d["numero"] in SANS_TEXTE and not d.get("texte_provenance"):
+        err(f"n°{d['numero']} : texte_source renseigné alors que le tarif n'en a pas, "
+            "et sans champ texte_provenance disant d'où il vient")
+    if d.get("texte_provenance") and d["numero"] not in SANS_TEXTE:
+        err(f"n°{d['numero']} : texte_provenance ne se justifie que pour un domaine "
+            "dont le tarif ne donne pas de présentation")
     if not d["note_prix"] and d["numero"] not in SANS_NOTE_NI_DEPT:
         err(f"n°{d['numero']} {d['nom']} : note_prix vide (absence non justifiée)")
     if not d["departements"] and d["numero"] not in SANS_NOTE_NI_DEPT:

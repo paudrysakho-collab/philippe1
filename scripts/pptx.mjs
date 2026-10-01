@@ -6,7 +6,7 @@ import path from 'node:path';
 import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
-  groupes, groupeDe,
+  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, figuresModeEmploi, BLOCS_MODE_EMPLOI, PIED_MODE_EMPLOI }
   from '../src/gabarits/pages.mjs';
@@ -226,28 +226,31 @@ function slideFiche(s, numero, desc) {
   y += mm(8.6);
 
   if (desc.premiere) {
-    // ——— les deux emplacements réservés, et le texte entre les deux
-    s.addShape(pres.ShapeType.ellipse, { x, y, w: mm(32), h: mm(32),
+    // ——— les deux emplacements réservés, et le texte entre les deux.
+    // La bande fait la hauteur mesurée dans Chromium : la même que dans le PDF.
+    const { rond, bouteille, ecart } = EMPLACEMENT;
+    const bande = (mesures.blocs[`haut-${d.numero}`] ?? 66.5) - 4.5;
+    s.addShape(pres.ShapeType.ellipse, { x, y, w: mm(rond), h: mm(rond),
       fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' } });
-    s.addText('ROND\nVIGNERON\nOU LOGO', { x, y, w: mm(32), h: mm(32), margin: 0,
+    s.addText('ROND\nVIGNERON\nOU LOGO', { x, y, w: mm(rond), h: mm(rond), margin: 0,
       align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
       color: C.silex, transparency: 50, lineSpacingMultiple: 1.25 });
 
-    const xb = gauche + CADRE_L - 24;
-    s.addShape(pres.ShapeType.roundRect, { x: mm(xb), y, w: mm(24), h: mm(62),
+    const xb = gauche + CADRE_L - bouteille.l;
+    s.addShape(pres.ShapeType.roundRect, { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h),
       fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' },
       rectRadius: 0.02 });
-    s.addText('BOUTEILLE', { x: mm(xb), y, w: mm(24), h: mm(62), margin: 0, align: 'center',
-      valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true, color: C.silex,
-      transparency: 50 });
+    s.addText('BOUTEILLE', { x: mm(xb), y, w: mm(bouteille.l), h: mm(bouteille.h), margin: 0,
+      align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 6.2, bold: true,
+      color: C.silex, transparency: 50 });
 
-    const lt = CADRE_L - 32 - 24 - 10;
+    // le corps grandit pour remplir la bande, et le texte s'y centre : voir corpsDomaine()
     const texte = d.texte_source
       || "Le tarif de l'Agence SCIO ne donne pas de présentation pour ce domaine. Nous n'en inventons pas.";
-    s.addText(texte, { x: mm(gauche + 37), y, w: mm(lt), h: mm(32), margin: 0,
-      fontFace: F.courant, fontSize: 9.5, color: C.silex, lineSpacingMultiple: 1.28,
-      italic: !d.texte_source, valign: 'top' });
-    y += mm(66);
+    s.addText(texte, { x: mm(gauche + rond + ecart), y, w: mm(COLONNE_DOM), h: mm(bande),
+      margin: 0, fontFace: F.courant, fontSize: d.texte_source ? corpsDomaine(d) : 9,
+      color: C.silex, lineSpacingMultiple: 1.42, italic: !d.texte_source, valign: 'middle' });
+    y += mm(bande + 4.5);
   }
 
   // ——— tableaux
@@ -264,6 +267,18 @@ function slideFiche(s, numero, desc) {
     y += mm(hEntete + hLignes.reduce((a, b) => a + b, 0))
       + mm(k < desc.morceaux.length - 1 ? 4.5 : 0);
   });
+
+  // ——— quand la fiche est courte, le sol de sa région comble le vide, comme dans le PDF
+  const VIDE_MIN = 30, VIDE_MAX = 40;
+  if (desc.reste >= VIDE_MIN) {
+    const h = Math.min(desc.reste - 5, Math.max(VIDE_MAX, desc.reste * 0.6));
+    const yl = y + mm(4);
+    s.addText(`${d.region} — ${STRATES[d.region].mot}`.toUpperCase(), {
+      x, y: yl, w: mm(CADRE_L), h: mm(3.5), margin: 0, fontFace: F.tech, fontSize: 7.2,
+      color: C.gneiss, charSpacing: 0.3 });
+    s.addImage({ path: img(`sol-${cle(d.region)}`), x, y: yl + mm(4.1),
+      w: mm(CADRE_L), h: mm(h - 8.1) });
+  }
 
   // ——— pied de fiche
   const yPied = mm(PAGE_H - MARGE.bas - 14);

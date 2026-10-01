@@ -6,8 +6,9 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 ## Où en est le projet
 
 **Terminé.** Concept retenu : **« Sous nos pieds »**. **76 pages**, 210 × 260 mm.
-Chaque fiche domaine réserve **deux emplacements d'image vides** — un rond pour le vigneron
-ou le logo, une bande verticale pour la bouteille — que l'agence remplit elle-même dans Canva.
+Chaque fiche domaine réserve **deux emplacements d'image vides** — un rond de 40 mm pour le
+vigneron ou le logo, une bande de 24 × 62 mm pour la bouteille — que l'agence remplit
+elle-même dans Canva.
 
 | Livrable | Où |
 |---|---|
@@ -34,7 +35,7 @@ ou le logo, une bande verticale pour la bouteille — que l'agence remplit elle-
 2. Dans Canva : **Créer un design → Importer un fichier**, et choisir
    `dist/catalogue-scio-2026-canva.pptx`.
 3. Sur chaque fiche domaine, **deux formes au contour pointillé** attendent une image :
-   le rond de 32 mm en haut à gauche, la bande de 24 × 62 mm à droite. Posez l'image
+   le rond de 40 mm en haut à gauche, la bande de 24 × 62 mm à droite. Posez l'image
    par-dessus, puis supprimez la forme pointillée. Elles sont à la même place et à la même
    taille sur les quarante fiches : rien ne bouge autour.
 4. **Les tableaux sont de vrais tableaux** : on clique dans une cellule et on tape.

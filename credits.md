@@ -3,7 +3,8 @@
 ## 1. Photographies des domaines
 
 > **Aucune de ces images n'est posée dans le catalogue livré.** Chaque fiche domaine réserve
-> deux emplacements vides — le rond du vigneron, la bande de la bouteille — que l'agence
+> deux emplacements vides — le rond de 40 mm du vigneron, la bande de 24 × 62 mm de la
+> bouteille — que l'agence
 > remplit elle-même dans Canva. Cette table est le dossier de travail qui va avec : les
 > images repérées, leur domaine, leur adresse exacte et leur résolution.
 

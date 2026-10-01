@@ -16,6 +16,50 @@ export const photos = _photos.reduce((m, p) => {
 export const photoDe = (d, role) => photos[d.numero]?.[role] || null;
 export const REGIONS = catalogue.agence.regions;
 
+/* ——————————————————————————————— le corps du texte de présentation ———
+   La bande du haut d'une fiche fait toujours la hauteur de l'emplacement bouteille.
+   Un texte court y laissait un grand vide avant le tableau : le corps grandit donc
+   jusqu'à ce que le texte remplisse la bande, dans une plage étroite et jamais au-delà.
+   Les deux textes les plus longs (n°16, n°17) restent au corps de base. */
+const METRIQUES = JSON.parse(fs.readFileSync(path.join(RACINE, 'src/fonts/metriques.json'), 'utf8'));
+
+export const EMPLACEMENT = { rond: 40, bouteille: { l: 24, h: 62 }, ecart: 5 };
+export const CORPS_DOM = { min: 9.5, max: 13, interligne: 1.5 };
+/** Largeur de la colonne de texte entre le rond et la bouteille, en millimètres. */
+export const COLONNE_DOM = 170 - EMPLACEMENT.rond - EMPLACEMENT.bouteille.l - 2 * EMPLACEMENT.ecart;
+
+/** Largeur d'une chaîne en millimètres, d'après les chasses de la police livrée. */
+export function largeurTexte(texte, face, taillePt) {
+  const m = METRIQUES[face] || METRIQUES.Spectral;
+  let em = 0;
+  for (const c of texte) em += m.chasses[c.codePointAt(0)] ?? m.defaut;
+  return em * taillePt * 25.4 / 72;
+}
+
+/** Nombre de lignes qu'occupe un texte dans une colonne de `large` millimètres. */
+export function lignesTexte(texte, face, taillePt, large) {
+  let n = 1, courante = '';
+  for (const mot of texte.split(/\s+/)) {
+    const essai = courante ? `${courante} ${mot}` : mot;
+    if (largeurTexte(essai, face, taillePt) > large && courante) { n += 1; courante = mot; }
+    else courante = essai;
+  }
+  return n;
+}
+
+/** Le corps, en points, qui fait le mieux remplir la bande sans la faire grandir. */
+export function corpsDomaine(d, large = COLONNE_DOM) {
+  const t = d.texte_source;
+  if (!t) return CORPS_DOM.min;
+  // la lettrine mange la largeur des deux premières lignes : une ligne de marge suffit
+  const cible = EMPLACEMENT.bouteille.h - 2.5;
+  for (let pt = CORPS_DOM.max; pt > CORPS_DOM.min; pt -= 0.25) {
+    const h = (lignesTexte(t, 'Spectral', pt, large) + 1) * pt * CORPS_DOM.interligne * 25.4 / 72;
+    if (h <= cible) return pt;
+  }
+  return CORPS_DOM.min;
+}
+
 export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 export const euros = (c) => (c / 100).toFixed(2).replace('.', ',');

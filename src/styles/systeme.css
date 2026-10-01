@@ -157,6 +157,8 @@ a { color: inherit; text-decoration: none; }
 .jeton.panachage { border-color: var(--gneiss); color: var(--gneiss); }
 
 .haut-dom { display: flex; gap: 5mm; align-items: flex-start; margin-bottom: 4.5mm; }
+/* le texte se centre dans la bande : le peu d'air qui reste se partage au lieu de tomber en bas */
+.haut-dom .texte-dom { align-self: center; }
 .haut-dom .texte-dom { max-width: none; }
 .rond-sol { width: 30mm; height: 30mm; flex: none; }
 .texte-dom { flex: 1; font-size: 9.5pt; line-height: 1.5; max-width: 128mm; }
@@ -298,5 +300,5 @@ td { padding: 1.2mm 1.3mm; vertical-align: middle; }
   font: 500 6.2pt var(--technique); line-height: 1.25; text-align: center;
   letter-spacing: var(--interlettre); text-transform: uppercase;
 }
-.emplacement-rond { width: 32mm; height: 32mm; border-radius: 50%; }
+.emplacement-rond { border-radius: 50%; }   /* taille donnée par EMPLACEMENT.rond */
 .emplacement-bouteille { width: 24mm; height: 62mm; border-radius: 1.5mm; }

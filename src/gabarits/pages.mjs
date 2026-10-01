@@ -2,7 +2,7 @@
 import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
-  NOM_FAMILLE, effectifs,
+  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT,
 } from './pieces.mjs';
 
 const AG = catalogue.agence;
@@ -297,8 +297,10 @@ export function enteteDomaine(d, suite = false) {
 
 export function hautDomaine(d) {
   const t = esc(d.texte_source);
+  // le corps s'ajuste pour que le texte remplisse la bande : un texte court y laissait un vide
+  const corps = ` style="font-size:${corpsDomaine(d)}pt"`;
   const texte = t
-    ? `<div class="texte-dom"><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
+    ? `<div class="texte-dom"${corps}><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
     : `<div class="texte-dom sans-texte">Le tarif de l'Agence SCIO ne donne pas de présentation
          pour ce domaine. Nous n'en inventons pas.</div>`;
   return `<div class="haut-dom">${emplacementRond()}${texte}${emplacementBouteille()}</div>`;
@@ -308,7 +310,8 @@ export function hautDomaine(d) {
    le rond du vigneron et la bouteille. Le repère pointillé est un guide de montage. */
 
 export function emplacementRond() {
-  return `<div class="emplacement emplacement-rond">
+  return `<div class="emplacement emplacement-rond"
+    style="width:${EMPLACEMENT.rond}mm;height:${EMPLACEMENT.rond}mm">
     <span>rond<br>vigneron<br>ou logo</span></div>`;
 }
 
