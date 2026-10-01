@@ -1,0 +1,274 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Concept 3 — La Caisse Panachée</title>
+<link rel="stylesheet" href="../src/fonts/polices.css">
+<style>
+@page { size: 420mm 260mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 420mm; height: 260mm; }
+body { display: flex; }
+.page { width: 210mm; height: 260mm; position: relative; overflow: hidden; }
+.pli { position: absolute; top: 0; bottom: 0; left: 210mm; width: 0; border-left: .2mm dashed rgba(0,0,0,.18); z-index: 99; }
+
+body { background: #F7F1E4; color: #211E1C;
+  font-family: 'Literata', serif; font-size: 9.5pt; line-height: 1.45; }
+.motif { width: 100%; height: 100%; display: block; }
+.gauche { min-height: 0; }
+
+/* ——— couverture : une caisse de douze ——— */
+.gauche { background: #F7F1E4; padding: 16mm 16mm 14mm; display: flex; flex-direction: column; }
+.titre-couv { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 40pt;
+  line-height: .94; letter-spacing: -.028em; color: #67067C; margin-bottom: 2.5mm; }
+.titre-couv em { font-style: normal; color: #C24030; }
+.sous-couv { font-size: 10pt; line-height: 1.45; color: rgba(33,30,28,.78); margin-bottom: 6mm;
+  max-width: 125mm; }
+.caisse-couv { display: grid; grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr); gap: 2.5mm; flex: 1 1 0; min-height: 0;
+  margin-bottom: 7mm; }
+.case { overflow: hidden; border-radius: 1.5mm; min-height: 0;
+  box-shadow: inset 0 0 0 .35mm rgba(33,30,28,.12); }
+.bas-couv { display: flex; align-items: flex-end; justify-content: space-between; gap: 6mm; }
+.bas-couv img { width: 58mm; display: block; }
+.bas-couv .droite-bas { text-align: right; }
+.bas-couv .cible { font: 600 8.5pt 'Hanken Grotesk', sans-serif; letter-spacing: .08em;
+  text-transform: uppercase; display: block; color: rgba(33,30,28,.8); margin-bottom: .5mm; }
+.bas-couv .annee { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30pt;
+  line-height: 1; color: #67067C; display: block; letter-spacing: -.03em; }
+
+/* ——— fiche domaine ——— */
+.droite { background: #F7F1E4; padding: 15mm 16mm 13mm; display: flex; flex-direction: column; }
+.entete-dom { display: flex; gap: 6mm; align-items: flex-start; margin-bottom: 4mm; }
+.bloc-caisse { flex: none; width: 62mm; }
+.caisse-dom { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.1mm; }
+.case-dom { aspect-ratio: 1; border-radius: .8mm; }
+.caisse-leg { margin-top: 2mm; display: flex; flex-wrap: wrap; gap: .8mm 3mm;
+  font: 500 6.6pt 'Hanken Grotesk', sans-serif; color: rgba(33,30,28,.72); }
+.caisse-leg span { display: inline-flex; align-items: center; gap: 1.1mm; }
+.caisse-leg i { width: 2.2mm; height: 2.2mm; border-radius: .4mm; display: inline-block; }
+.titre-dom { flex: 1; }
+.titre-dom .ligne { display: flex; align-items: baseline; gap: 3mm; }
+.num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26pt;
+  line-height: 1; color: #E1C853; letter-spacing: -.04em; }
+.titre-dom h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 21pt;
+  line-height: 1.04; color: #67067C; letter-spacing: -.022em; }
+.region { font: 600 8pt 'Hanken Grotesk', sans-serif; letter-spacing: .16em; text-transform: uppercase;
+  color: #C24030; margin-top: 1.5mm; }
+.identite { display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 3mm; }
+.jeton { font: 600 7.4pt 'Hanken Grotesk', sans-serif; border-radius: 1mm; padding: 1mm 2.4mm;
+  background: #67067C; color: #F7F1E4; }
+.jeton.bio { background: #4C8A57; }
+.jeton.clair { background: rgba(33,30,28,.09); color: #211E1C; }
+.texte { font-size: 9.5pt; line-height: 1.5; margin-bottom: 5mm; }
+.texte .lettrine { float: left; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700;
+  font-size: 27pt; line-height: .8; padding: 1.4mm 1.8mm 0 0; color: #C24030; }
+
+table.tarif { width: 100%; border-collapse: collapse; table-layout: fixed;
+  font-family: 'Hanken Grotesk', sans-serif; font-variant-numeric: tabular-nums; }
+.intit { text-align: left; font: 600 7.4pt 'Hanken Grotesk', sans-serif; letter-spacing: .14em;
+  text-transform: uppercase; color: rgba(33,30,28,.55); padding: 0 0 1.4mm; vertical-align: bottom; }
+th.c-bloc { vertical-align: bottom; padding: 0; }
+.c-bloc { width: 50mm; padding: 0; }
+.bloc-prix { display: flex; }
+.bloc-prix > * { flex: 1 1 0; text-align: right; padding: 1.15mm 2mm 1.15mm 1mm;
+  font-size: 9pt; font-weight: 600; color: #211E1C; }
+.bloc-prix .cel-prix span { font-size: 6.6pt; font-weight: 500; margin-left: .5mm; opacity: .62; }
+.bloc-prix.entete .cel-pal { font-size: 6.5pt; font-weight: 600; line-height: 1.14;
+  color: #F7F1E4; background: #67067C; margin-left: .6mm; padding: 1.8mm 1.8mm;
+  border-radius: 1mm 1mm 0 0; }
+.bloc-prix.entete .cel-pal:first-child { margin-left: 0; }
+tbody tr { border-bottom: .3pt solid rgba(33,30,28,.16); }
+td { padding: 1.1mm 1.4mm; vertical-align: middle; }
+.c-case { width: 7mm; }
+.pastille { width: 3.4mm; height: 3.4mm; border-radius: .6mm; display: block; }
+.c-vin .app { display: block; font-size: 7.2pt; color: rgba(33,30,28,.58); }
+.c-vin .cuv { display: block; font-size: 8.6pt; font-weight: 600; }
+.c-detail { font-size: 7.2pt; color: rgba(33,30,28,.66); white-space: nowrap; text-align: right;
+  padding-right: 2.5mm; }
+.bande-panachage { margin-top: 4mm; background: #E1C853; border-radius: 1.5mm;
+  padding: 2.6mm 3.5mm; display: flex; justify-content: space-between; gap: 5mm; align-items: center;
+  font: 600 7.8pt 'Hanken Grotesk', sans-serif; color: #211E1C; }
+.bande-panachage em { font-style: normal; font-weight: 500; }
+.pied { margin-top: 3mm; display: flex; justify-content: space-between; gap: 4mm;
+  font: 500 7.2pt 'Hanken Grotesk', sans-serif; color: rgba(33,30,28,.78); }
+.pied strong { color: #67067C; font-weight: 700; }
+.legende { margin-top: 2.4mm; display: flex; flex-wrap: wrap; gap: 1.2mm 3.5mm; align-items: center;
+  font: 500 6.6pt 'Hanken Grotesk', sans-serif; color: rgba(33,30,28,.68); }
+.legende span { display: inline-flex; align-items: center; gap: 1.2mm; }
+.legende i { width: 2.4mm; height: 2.4mm; border-radius: .5mm; display: inline-block; }
+
+</style></head><body>
+
+<div class="page gauche">
+    <h1 class="titre-couv">La caisse<br><em>panachée</em></h1>
+    <p class="sous-couv">Quarante domaines, dix régions, et le droit de mélanger.
+      Une caisse de douze cases : c'est le module de tout le catalogue.</p>
+    <div class="caisse-couv"><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#67067C"><circle cx="50" cy="50" r="36" fill="#E1C853"/>
+                   <circle cx="68" cy="42" r="30" fill="#67067C"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#E1C853"><path d="M8 36 Q25 20 42 36 T76 36 M8 54 Q25 38 42 54 T76 54 M8 72 Q25 56 42 72 T76 72"
+                     fill="none" stroke="#67067C" stroke-width="7" stroke-linecap="round"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#F7F1E4"><rect x="18" y="20" width="64" height="13" rx="5" fill="#211E1C"/>
+                   <rect x="26" y="40" width="16" height="42" fill="#211E1C"/>
+                   <rect x="58" y="40" width="16" height="42" fill="#211E1C"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#C24030"><circle cx="18" cy="18" r="3.4" fill="#F7F1E4"/><circle cx="34" cy="18" r="4.9" fill="#F7F1E4"/><circle cx="50" cy="18" r="6.4" fill="#F7F1E4"/><circle cx="66" cy="18" r="3.4" fill="#F7F1E4"/><circle cx="82" cy="18" r="4.9" fill="#F7F1E4"/><circle cx="18" cy="34" r="4.9" fill="#F7F1E4"/><circle cx="34" cy="34" r="6.4" fill="#F7F1E4"/><circle cx="50" cy="34" r="3.4" fill="#F7F1E4"/><circle cx="66" cy="34" r="4.9" fill="#F7F1E4"/><circle cx="82" cy="34" r="6.4" fill="#F7F1E4"/><circle cx="18" cy="50" r="6.4" fill="#F7F1E4"/><circle cx="34" cy="50" r="3.4" fill="#F7F1E4"/><circle cx="50" cy="50" r="4.9" fill="#F7F1E4"/><circle cx="66" cy="50" r="6.4" fill="#F7F1E4"/><circle cx="82" cy="50" r="3.4" fill="#F7F1E4"/><circle cx="18" cy="66" r="3.4" fill="#F7F1E4"/><circle cx="34" cy="66" r="4.9" fill="#F7F1E4"/><circle cx="50" cy="66" r="6.4" fill="#F7F1E4"/><circle cx="66" cy="66" r="3.4" fill="#F7F1E4"/><circle cx="82" cy="66" r="4.9" fill="#F7F1E4"/><circle cx="18" cy="82" r="4.9" fill="#F7F1E4"/><circle cx="34" cy="82" r="6.4" fill="#F7F1E4"/><circle cx="50" cy="82" r="3.4" fill="#F7F1E4"/><circle cx="66" cy="82" r="4.9" fill="#F7F1E4"/><circle cx="82" cy="82" r="6.4" fill="#F7F1E4"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#2E6E9E"><path d="M50 10 L78 50 L50 90 L22 50 Z" fill="#F7F1E4"/>
+                   <path d="M50 28 L64 50 L50 72 L36 50 Z" fill="#F7F1E4"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#4C8A57"><path d="M12 62 Q32 26 50 56 Q68 26 88 62" fill="none" stroke="#F7F1E4" stroke-width="8" stroke-linecap="round"/>
+                   <circle cx="50" cy="74" r="6" fill="#F7F1E4"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#F7F1E4"><path d="M50 88 L50 44" stroke="#4C8A57" stroke-width="6" stroke-linecap="round"/>
+                   <path d="M50 54 Q20 50 18 20 Q48 22 50 54 Z" fill="#4C8A57"/>
+                   <path d="M50 60 Q80 56 82 30 Q52 32 50 60 Z" fill="#4C8A57"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#DE6E95"><circle cx="50" cy="50" r="20" fill="#F7F1E4"/>
+                   <line x1="78" y1="50"
+                              x2="92" y2="50"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="69.79898987322333" y1="69.79898987322332"
+                              x2="79.698484809835" y2="79.698484809835"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="50" y1="78"
+                              x2="50" y2="92"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="30.201010126776673" y1="69.79898987322333"
+                              x2="20.301515190165006" y2="79.698484809835"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="22" y1="50"
+                              x2="8" y2="50.00000000000001"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="30.201010126776666" y1="30.201010126776673"
+                              x2="20.301515190165" y2="20.301515190165006"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="49.99999999999999" y1="22"
+                              x2="49.99999999999999" y2="8"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/><line x1="69.79898987322332" y1="30.201010126776666"
+                              x2="79.69848480983498" y2="20.301515190165"
+                              stroke="#F7F1E4" stroke-width="7" stroke-linecap="round"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#211E1C"><path d="M50 50 m0 -34 a34 34 0 1 1 -24 10" fill="none" stroke="#E1C853" stroke-width="8" stroke-linecap="round"/>
+                   <path d="M50 50 m0 -16 a16 16 0 1 0 12 6" fill="none" stroke="#E1C853" stroke-width="8" stroke-linecap="round"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#E1C853"><rect x="14" y="14" width="33" height="33" fill="#C24030"/>
+                   <rect x="53" y="14" width="33" height="33" fill="none" stroke="#C24030" stroke-width="6"/>
+                   <circle cx="30" cy="70" r="17" fill="none" stroke="#C24030" stroke-width="6"/>
+                   <circle cx="69" cy="70" r="17" fill="#C24030"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#67067C"><path d="M50 8 L58 38 L88 42 L62 58 L72 88 L50 70 L28 88 L38 58 L12 42 L42 38 Z" fill="#F7F1E4"/></svg></div><div class="case"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="motif"
+     style="background:#2E6E9E"><path d="M50 86 C20 70 20 30 50 14 C80 30 80 70 50 86 Z" fill="none" stroke="#E1C853" stroke-width="7"/>
+                   <path d="M50 74 C32 62 32 38 50 26 C68 38 68 62 50 74 Z" fill="none" stroke="#E1C853" stroke-width="5"/>
+                   <circle cx="50" cy="50" r="5" fill="#E1C853"/></svg></div></div>
+    <div class="bas-couv">
+      <img src="../src/images/logo-agence-scio-detoure.png" alt="Agence SCIO Vins &amp; Spirits">
+      <div class="droite-bas">
+        <span class="cible">Tarifs cavistes Vendée (85)</span>
+        <span class="annee">2026</span>
+      </div>
+    </div></div>
+<div class="page droite">
+    <div class="entete-dom">
+      <div class="bloc-caisse"><div class="caisse-dom"><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#C24030"></div><div class="case-dom" style="background:#DE6E95"></div></div>
+    <div class="caisse-leg"><span><i style="background:#C24030"></i>10 rouge</span><span><i style="background:#DE6E95"></i>1 rosé</span></div></div>
+      <div class="titre-dom">
+        <div class="ligne"><span class="num">26</span><h1>Château la Gorce</h1></div>
+        <div class="region">Bordeaux</div>
+        <div class="identite">
+          <span class="jeton bio">Bio</span>
+          
+          <span class="jeton clair">11 références</span>
+        </div>
+      </div>
+    </div>
+    <div class="texte"><span class="lettrine">E</span>n activité depuis 1822, reconnu cru bourgeois dans le classement de 1932, le domaine a été repris en 2018 par Emmanuel et Mana Martin qui initièrent immédiatement la conversion de l’intégralité des quarante-huit hectares vers l’agriculture biologique, désormais achevée sur toutes les cuvées depuis le millésime 2022.</div>
+    <table class="tarif">
+    <colgroup><col style="width:7mm"><col><col style="width:15mm"><col style="width:14mm"><col style="width:50mm"></colgroup>
+    <thead><tr><th colspan="4" class="intit">Possibilité de panacher</th>
+      <th class="c-bloc"><div class="bloc-prix entete"><div class="cel-pal">À partir de 90 bts</div><div class="cel-pal">À partir de 120 bts</div><div class="cel-pal">À partir de 300 bts</div></div></th></tr></thead>
+    <tbody><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc – Série limitée</span>
+        <span class="cuv">Préface</span></td>
+      <td class="c-detail">2013</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">5,55<span>€</span></div><div class="cel-prix">5,50<span>€</span></div><div class="cel-prix">5,40<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Prétexte</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,60<span>€</span></div><div class="cel-prix">6,55<span>€</span></div><div class="cel-prix">6,45<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Rouge Intense – sans sulfites ajoutés</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,25<span>€</span></div><div class="cel-prix">6,20<span>€</span></div><div class="cel-prix">6,10<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">L'An 022 – élevé en amphore</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">9,80<span>€</span></div><div class="cel-prix">9,75<span>€</span></div><div class="cel-prix">9,65<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#DE6E95"></span></td>
+      <td class="c-vin"><span class="app">Vin de France</span>
+        <span class="cuv">Rosé DADA</span></td>
+      <td class="c-detail">2023</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,45<span>€</span></div><div class="cel-prix">6,40<span>€</span></div><div class="cel-prix">6,30<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">La Bonne Résolution</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,35<span>€</span></div><div class="cel-prix">6,30<span>€</span></div><div class="cel-prix">6,20<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-case"><span class="pastille" style="background:#C24030"></span></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Château Canteloup</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">5,10<span>€</span></div><div class="cel-prix">5,05<span>€</span></div><div class="cel-prix">4,95<span>€</span></div>
+      </div></td></tr></tbody></table>
+    <div class="bande-panachage">
+      <span>PANACHER · <em>toute la gamme du domaine</em></span>
+      <span><em>paliers</em> À partir de 90 bts · À partir de 120 bts · À partir de 300 bts</span>
+    </div>
+    <div class="pied">
+      <div>* Prix de la bouteille H.T. franco de port.</div>
+      <div><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</div>
+    </div>
+    <div class="legende">
+      <span><i style="background:#2E6E9E"></i>Blanc</span><span><i style="background:#C24030"></i>Rouge</span><span><i style="background:#DE6E95"></i>Rosé</span><span><i style="background:#E1C853"></i>Bulles</span><span><i style="background:#4C8A57"></i>Sans alcool</span><span><i style="background:#67067C"></i>Spiritueux</span>
+    </div></div>
+<div class="pli"></div>
+</body></html>

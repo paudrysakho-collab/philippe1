@@ -1,0 +1,241 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Concept 1 — Sous nos pieds</title>
+<link rel="stylesheet" href="../src/fonts/polices.css">
+<style>
+@page { size: 420mm 260mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 420mm; height: 260mm; }
+body { display: flex; }
+.page { width: 210mm; height: 260mm; position: relative; overflow: hidden; }
+.pli { position: absolute; top: 0; bottom: 0; left: 210mm; width: 0; border-left: .2mm dashed rgba(0,0,0,.18); z-index: 99; }
+
+body { background: #F2EADA; color: #46606E;
+  font-family: 'Spectral', serif; font-size: 9.5pt; line-height: 1.42; }
+.etiq-strate { font: 600 11px 'IBM Plex Sans', sans-serif; letter-spacing: .14em; }
+.etiq-nb { font: 400 11px 'IBM Plex Sans', sans-serif; }
+
+/* ——— couverture ——— */
+.gauche { background: #F2EADA; }
+.coupe { position: absolute; left: 0; right: 0; bottom: 0; width: 210mm; height: 148mm; }
+.logo-couv { position: absolute; left: 18mm; top: 17mm; width: 62mm; }
+.titre-couv { position: absolute; left: 18mm; top: 44mm; width: 170mm;
+  font-family: 'Young Serif', serif; font-size: 46pt; line-height: .92;
+  color: #46606E; letter-spacing: -.012em; }
+.titre-couv em { font-style: normal; color: #67067C; }
+.sous-couv { position: absolute; left: 18mm; top: 96mm; width: 120mm;
+  font-size: 10.5pt; line-height: 1.5; color: #46606E; opacity: .85; }
+.pied-couv { position: absolute; left: 0; bottom: 14mm; padding: 5mm 7mm 4mm 18mm;
+  background: #F2EADA; border-radius: 0 3mm 3mm 0; }
+.pied-couv .cible { font: 500 9pt 'IBM Plex Sans', sans-serif; letter-spacing: .1em;
+  text-transform: uppercase; display: block; margin-bottom: .5mm; color: #46606E; }
+.pied-couv .annee { font-family: 'Young Serif', serif; font-size: 34pt; line-height: 1;
+  color: #67067C; display: block; }
+
+/* ——— fiche domaine ——— */
+.droite { background: #F2EADA; padding: 16mm 23mm 14mm 16mm; }
+.carotte { position: absolute; right: 0; top: 0; width: 9mm; height: 260mm; }
+.tranche-nom { position: absolute; right: 2.2mm; top: 50%; transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl; font: 600 7pt 'IBM Plex Sans', sans-serif; letter-spacing: .22em;
+  color: #FBF8F1; text-transform: uppercase; }
+.entete { display: flex; align-items: flex-start; gap: 5mm; border-bottom: 1.6pt solid #67067C;
+  padding-bottom: 3mm; margin-bottom: 5mm; }
+.num { font-family: 'Young Serif', serif; font-size: 30pt; line-height: .8; color: #67067C; }
+.entete h1 { font-family: 'Young Serif', serif; font-size: 22pt; line-height: 1.02;
+  font-weight: 400; color: #46606E; flex: 1; letter-spacing: -.01em; }
+.region { font: 500 8.5pt 'IBM Plex Sans', sans-serif; letter-spacing: .16em;
+  text-transform: uppercase; color: #A8515F; padding-top: 2mm; white-space: nowrap; }
+.identite { display: flex; flex-wrap: wrap; gap: 2mm 3mm; margin-bottom: 5mm; }
+.jeton { font: 500 7.5pt 'IBM Plex Sans', sans-serif; letter-spacing: .04em;
+  border: .8pt solid #46606E; border-radius: 1mm; padding: .9mm 2.2mm; color: #46606E; }
+.jeton.bio { border-color: #3C5B47; color: #3C5B47; }
+.jeton.alloc { background: #67067C; border-color: #67067C; color: #FBF8F1; }
+.haut { display: flex; gap: 6mm; margin-bottom: 6mm; align-items: flex-start; }
+.rond-sol { width: 34mm; height: 34mm; flex: none; }
+.texte { flex: 1; font-size: 9.5pt; line-height: 1.5; }
+.texte .lettrine { float: left; font-family: 'Young Serif', serif; font-size: 29pt;
+  line-height: .78; padding: 1mm 1.6mm 0 0; color: #67067C; }
+table.tarif { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Sans', sans-serif;
+  font-variant-numeric: tabular-nums; }
+tr.bandeau th { background: #67067C; vertical-align: bottom; }
+.intit { text-align: left; font: 600 7.5pt 'IBM Plex Sans', sans-serif; letter-spacing: .14em;
+  text-transform: uppercase; color: #E1C853; padding: 2mm 0 2mm 2.6mm; }
+.c-bloc { width: 52mm; padding: 0; }
+.bloc-prix { display: flex; }
+.bloc-prix > * { flex: 1 1 0; text-align: right; padding: 1.3mm 2mm 1.3mm 1mm; font-size: 9pt;
+  font-weight: 500; color: #46606E; }
+.bloc-prix .cel-prix span { font-size: 6.6pt; font-weight: 400; margin-left: .5mm; opacity: .75; }
+
+.bloc-prix.entete { align-items: flex-end; }
+.bloc-prix.entete .cel-pal { color: #FBF8F1; font-size: 6.6pt; font-weight: 500;
+  line-height: 1.16; letter-spacing: .02em; text-align: right; padding: 2mm 2mm 2mm 1mm;
+  border-left: .4pt solid rgba(251,248,241,.32); }
+.bloc-prix.entete .cel-pal:first-child { border-left: 0; }
+tbody tr { border-bottom: .3pt solid rgba(70,96,110,.26); }
+tbody tr:nth-child(odd) { background: rgba(251,248,241,.72); }
+td { padding: 1.3mm 1.4mm; vertical-align: middle; }
+.c-picto { width: 6mm; padding-left: 1.6mm; }
+.picto { width: 3.4mm; height: 3.4mm; display: block; }
+.c-vin .app { display: block; font-size: 7.4pt; color: #A8515F; letter-spacing: .01em; }
+.c-vin .cuv { display: block; font-size: 8.6pt; font-weight: 500; color: #46606E; }
+.c-detail { font-size: 7.4pt; color: rgba(70,96,110,.82); white-space: nowrap; text-align: right;
+  padding-right: 2.5mm; }
+table.tarif { table-layout: fixed; }
+table.tarif + table.tarif { margin-top: 5mm; }
+.pied { margin-top: 4mm; padding-top: 2.5mm; border-top: .8pt solid #46606E;
+  display: flex; justify-content: space-between; gap: 4mm;
+  font: 400 7.4pt 'IBM Plex Sans', sans-serif; color: rgba(70,96,110,.9); }
+.pied strong { font-weight: 600; color: #67067C; }
+.legende { margin-top: 3mm; display: flex; flex-wrap: wrap; gap: 1.4mm 4mm;
+  font: 400 6.8pt 'IBM Plex Sans', sans-serif; color: rgba(70,96,110,.8); align-items: center; }
+.legende span { display: inline-flex; align-items: center; gap: 1.2mm; }
+.legende .picto { width: 2.8mm; height: 2.8mm; }
+
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <pattern id="t-ecailles" width="14" height="9" patternUnits="userSpaceOnUse">
+    <path d="M-2 9 Q5 1 12 9 M12 9 Q19 1 26 9" fill="none" stroke="rgba(0,0,0,.30)" stroke-width="1.1"/></pattern>
+  <pattern id="t-veines" width="26" height="14" patternUnits="userSpaceOnUse">
+    <path d="M0 4 C7 1 11 9 18 6 S26 3 30 7" fill="none" stroke="rgba(0,0,0,.30)" stroke-width="1"/>
+    <path d="M-4 11 C3 8 7 15 14 12 S22 10 26 13" fill="none" stroke="rgba(0,0,0,.30)" stroke-width=".7"/></pattern>
+  <pattern id="t-grains" width="11" height="11" patternUnits="userSpaceOnUse">
+    <circle cx="2.5" cy="3" r="1.5" fill="rgba(0,0,0,.30)"/><circle cx="8" cy="7.5" r="1.1" fill="rgba(0,0,0,.30)"/>
+    <circle cx="5" cy="9.5" r=".7" fill="rgba(0,0,0,.30)"/></pattern>
+  <pattern id="t-pointille" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r=".9" fill="rgba(0,0,0,.30)"/><circle cx="6.5" cy="6" r=".9" fill="rgba(0,0,0,.30)"/></pattern>
+  <pattern id="t-galets" width="22" height="14" patternUnits="userSpaceOnUse">
+    <ellipse cx="6" cy="5" rx="5" ry="3.1" fill="none" stroke="rgba(0,0,0,.30)" stroke-width="1"/>
+    <ellipse cx="17" cy="10" rx="4.2" ry="2.6" fill="none" stroke="rgba(0,0,0,.30)" stroke-width="1"/></pattern>
+</defs></svg>
+<div class="page gauche">
+    <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png" alt="Agence SCIO Vins & Spirits">
+    <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
+    <p class="sous-couv">Quarante domaines, dix régions,<br>et la terre qu'ils ont sous les pieds.</p>
+    <svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"><path d="M-20 0 L0 2.3768227081745863 L85.71428571428571 -0.17351975780911744 L171.42857142857142 3.370682941749692 L257.1428571428571 -2.883117890683934 L342.85714285714283 3.043484328314662 L428.57142857142856 -2.9437573086470366 L514.2857142857142 -1.1756384815089405 L599.9999999999999 -2.771692634560168 L620 0 L620 69.18749999999999 L-20 69.18749999999999 Z" fill="#46606E"/><path d="M-20 0 L0 2.3768227081745863 L85.71428571428571 -0.17351975780911744 L171.42857142857142 3.370682941749692 L257.1428571428571 -2.883117890683934 L342.85714285714283 3.043484328314662 L428.57142857142856 -2.9437573086470366 L514.2857142857142 -1.1756384815089405 L599.9999999999999 -2.771692634560168 L620 0 L620 69.18749999999999 L-20 69.18749999999999 Z" fill="url(#t-ecailles)"/><text x="586" y="37.59374999999999" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">LOIRE</text><text x="14" y="37.59374999999999" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">7</text><path d="M-20 67.18749999999999 L0 64.52927326993084 L85.71428571428571 64.92011129274032 L171.42857142857142 70.45127647672778 L257.1428571428571 63.83264550217426 L342.85714285714283 67.11258005769922 L428.57142857142856 64.00995690934359 L514.2857142857142 66.49522642348892 L599.9999999999999 65.98205683985724 L620 67.18749999999999 L620 94.14285714285712 L-20 94.14285714285712 Z" fill="#3C5B47"/><path d="M-20 67.18749999999999 L0 64.52927326993084 L85.71428571428571 64.92011129274032 L171.42857142857142 70.45127647672778 L257.1428571428571 63.83264550217426 L342.85714285714283 67.11258005769922 L428.57142857142856 64.00995690934359 L514.2857142857142 66.49522642348892 L599.9999999999999 65.98205683985724 L620 67.18749999999999 L620 94.14285714285712 L-20 94.14285714285712 Z" fill="url(#t-veines)"/><text x="586" y="83.66517857142856" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">ALSACE</text><text x="14" y="83.66517857142856" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">1</text><path d="M-20 92.14285714285712 L0 94.42967282505039 L85.71428571428571 91.12036833902154 L171.42857142857142 94.4995790863343 L257.1428571428571 88.69909059036787 L342.85714285714283 94.59024287703711 L428.57142857142856 88.81775041543212 L514.2857142857142 92.78338290601302 L599.9999999999999 90.90958051583063 L620 92.14285714285712 L620 119.09821428571426 L-20 119.09821428571426 Z" fill="#A8515F"/><path d="M-20 92.14285714285712 L0 94.42967282505039 L85.71428571428571 91.12036833902154 L171.42857142857142 94.4995790863343 L257.1428571428571 88.69909059036787 L342.85714285714283 94.59024287703711 L428.57142857142856 88.81775041543212 L514.2857142857142 92.78338290601302 L599.9999999999999 90.90958051583063 L620 92.14285714285712 L620 119.09821428571426 L-20 119.09821428571426 Z" fill="url(#t-grains)"/><text x="586" y="108.6205357142857" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">BEAUJOLAIS</text><text x="14" y="108.6205357142857" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">1</text><path d="M-20 117.09821428571426 L0 119.35543465361529 L85.71428571428571 116.68257152921119 L171.42857142857142 116.39913045920962 L257.1428571428571 115.09591127167054 L342.85714285714283 114.27866683391453 L428.57142857142856 120.0821357944847 L514.2857142857142 114.94862238903129 L599.9999999999999 115.9411769700569 L620 117.09821428571426 L620 176.68749999999997 L-20 176.68749999999997 Z" fill="#D08C3C"/><path d="M-20 117.09821428571426 L0 119.35543465361529 L85.71428571428571 116.68257152921119 L171.42857142857142 116.39913045920962 L257.1428571428571 115.09591127167054 L342.85714285714283 114.27866683391453 L428.57142857142856 120.0821357944847 L514.2857142857142 114.94862238903129 L599.9999999999999 115.9411769700569 L620 117.09821428571426 L620 176.68749999999997 L-20 176.68749999999997 Z" fill="url(#t-pointille)"/><text x="586" y="149.8928571428571" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">BOURGOGNE</text><text x="14" y="149.8928571428571" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">6</text><path d="M-20 174.68749999999997 L0 177.6434302057605 L85.71428571428571 175.82757029146885 L171.42857142857142 176.6247066662181 L257.1428571428571 175.39705023122949 L342.85714285714283 176.46258344338273 L428.57142857142856 173.5687571938615 L514.2857142857142 177.40043417736885 L599.9999999999999 175.26091025606726 L620 174.68749999999997 L620 234.2767857142857 L-20 234.2767857142857 Z" fill="#3C5B47"/><path d="M-20 174.68749999999997 L0 177.6434302057605 L85.71428571428571 175.82757029146885 L171.42857142857142 176.6247066662181 L257.1428571428571 175.39705023122949 L342.85714285714283 176.46258344338273 L428.57142857142856 173.5687571938615 L514.2857142857142 177.40043417736885 L599.9999999999999 175.26091025606726 L620 174.68749999999997 L620 234.2767857142857 L-20 234.2767857142857 Z" fill="url(#t-galets)"/><text x="586" y="207.48214285714283" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">RHÔNE</text><text x="14" y="207.48214285714283" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">6</text><path d="M-20 232.2767857142857 L0 235.0588977513502 L85.71428571428571 232.81205540985266 L171.42857142857142 234.8695740978832 L257.1428571428571 235.53167195544975 L342.85714285714283 230.697579222698 L428.57142857142856 231.54545814447502 L514.2857142857142 232.1190768668561 L599.9999999999999 233.44511879511575 L620 232.2767857142857 L620 263.07142857142856 L-20 263.07142857142856 Z" fill="#D08C3C"/><path d="M-20 232.2767857142857 L0 235.0588977513502 L85.71428571428571 232.81205540985266 L171.42857142857142 234.8695740978832 L257.1428571428571 235.53167195544975 L342.85714285714283 230.697579222698 L428.57142857142856 231.54545814447502 L514.2857142857142 232.1190768668561 L599.9999999999999 233.44511879511575 L620 232.2767857142857 L620 263.07142857142856 L-20 263.07142857142856 Z" fill="url(#t-grains)"/><text x="586" y="250.6741071428571" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">SUD-OUEST</text><text x="14" y="250.6741071428571" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">3</text><path d="M-20 261.07142857142856 L0 262.5099954503322 L85.71428571428571 264.3098008784665 L171.42857142857142 261.77007402835545 L257.1428571428571 259.1598364106113 L342.85714285714283 261.52399849316237 L428.57142857142856 257.78668612178546 L514.2857142857142 261.9795647441143 L599.9999999999999 264.5018326692017 L620 261.07142857142856 L620 320.6607142857143 L-20 320.6607142857143 Z" fill="#A8515F"/><path d="M-20 261.07142857142856 L0 262.5099954503322 L85.71428571428571 264.3098008784665 L171.42857142857142 261.77007402835545 L257.1428571428571 259.1598364106113 L342.85714285714283 261.52399849316237 L428.57142857142856 257.78668612178546 L514.2857142857142 261.9795647441143 L599.9999999999999 264.5018326692017 L620 261.07142857142856 L620 320.6607142857143 L-20 320.6607142857143 Z" fill="url(#t-galets)"/><text x="586" y="293.8660714285714" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">BORDEAUX</text><text x="14" y="293.8660714285714" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">6</text><path d="M-20 318.6607142857143 L0 322.11619858679893 L85.71428571428571 319.7326776001469 L171.42857142857142 316.702452586997 L257.1428571428571 320.3980592650228 L342.85714285714283 317.23952218125174 L428.57142857142856 317.20685106635625 L514.2857142857142 318.30260991215306 L599.9999999999999 321.98133221551376 L620 318.6607142857143 L620 345.61607142857144 L-20 345.61607142857144 Z" fill="#46606E"/><path d="M-20 318.6607142857143 L0 322.11619858679893 L85.71428571428571 319.7326776001469 L171.42857142857142 316.702452586997 L257.1428571428571 320.3980592650228 L342.85714285714283 317.23952218125174 L428.57142857142856 317.20685106635625 L514.2857142857142 318.30260991215306 L599.9999999999999 321.98133221551376 L620 318.6607142857143 L620 345.61607142857144 L-20 345.61607142857144 Z" fill="url(#t-pointille)"/><text x="586" y="335.13839285714283" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">PROVENCE</text><text x="14" y="335.13839285714283" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">1</text><path d="M-20 343.61607142857144 L0 344.4743265986243 L85.71428571428571 343.6646474142825 L171.42857142857142 340.3247522112714 L257.1428571428571 341.02531306858043 L342.85714285714283 342.53722322678993 L428.57142857142856 344.16816050343084 L514.2857142857142 342.59422928786705 L599.9999999999999 346.385232279942 L620 343.61607142857144 L620 393.6071428571429 L-20 393.6071428571429 Z" fill="#3C5B47"/><path d="M-20 343.61607142857144 L0 344.4743265986243 L85.71428571428571 343.6646474142825 L171.42857142857142 340.3247522112714 L257.1428571428571 341.02531306858043 L342.85714285714283 342.53722322678993 L428.57142857142856 344.16816050343084 L514.2857142857142 342.59422928786705 L599.9999999999999 346.385232279942 L620 343.61607142857144 L620 393.6071428571429 L-20 393.6071428571429 Z" fill="url(#t-ecailles)"/><text x="586" y="371.61160714285717" text-anchor="end" class="etiq-strate"
+             fill="rgba(255,255,255,.92)">LANGUEDOC</text><text x="14" y="371.61160714285717" class="etiq-nb"
+             fill="rgba(255,255,255,.72)">5</text><path d="M-20 391.6071428571429 L0 390.57053717864414 L85.71428571428571 393.0293246762428 L171.42857142857142 388.7875245719749 L257.1428571428571 393.22819346385745 L342.85714285714283 389.2577353044014 L428.57142857142856 392.7825756870277 L514.2857142857142 389.5923960561465 L599.9999999999999 394.01999606528057 L620 391.6071428571429 L620 432 L-20 432 Z" fill="#FBF8F1"/><path d="M-20 391.6071428571429 L0 390.57053717864414 L85.71428571428571 393.0293246762428 L171.42857142857142 388.7875245719749 L257.1428571428571 393.22819346385745 L342.85714285714283 389.2577353044014 L428.57142857142856 392.7825756870277 L514.2857142857142 389.5923960561465 L599.9999999999999 394.01999606528057 L620 391.6071428571429 L620 432 L-20 432 Z" fill="url(#t-pointille)"/><text x="586" y="414.80357142857144" text-anchor="end" class="etiq-strate"
+             fill="#46606E">CHAMPAGNE</text><text x="14" y="414.80357142857144" class="etiq-nb"
+             fill="#46606E">4</text></svg>
+    <div class="pied-couv">
+      <span class="cible">Tarifs cavistes Vendée (85)</span>
+      <span class="annee">2026</span>
+    </div></div>
+<div class="page droite">
+    <svg viewBox="0 0 40 1000" preserveAspectRatio="none" class="carotte"><rect x="0" y="0" width="40" height="156.24999999999997" fill="#46606E" opacity="0.3"/><rect x="0" y="155.24999999999997" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="156.24999999999997" width="40" height="58.03571428571428" fill="#3C5B47" opacity="0.3"/><rect x="0" y="213.28571428571425" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="214.28571428571425" width="40" height="58.03571428571428" fill="#A8515F" opacity="0.3"/><rect x="0" y="271.32142857142856" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="272.32142857142856" width="40" height="133.92857142857142" fill="#D08C3C" opacity="0.3"/><rect x="0" y="405.25" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="406.25" width="40" height="133.92857142857142" fill="#3C5B47" opacity="0.3"/><rect x="0" y="539.1785714285714" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="540.1785714285714" width="40" height="66.96428571428571" fill="#D08C3C" opacity="0.3"/><rect x="0" y="606.1428571428571" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="607.1428571428571" width="40" height="133.92857142857142" fill="#A8515F" opacity="1"/><rect x="0" y="740.0714285714286" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="607.1428571428571" width="40" height="133.92857142857142" fill="url(#t-galets)"/><rect x="0" y="607.1428571428571" width="7" height="133.92857142857142" fill="#E1C853"/><rect x="0" y="741.0714285714286" width="40" height="58.03571428571428" fill="#46606E" opacity="0.3"/><rect x="0" y="798.1071428571429" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="799.1071428571429" width="40" height="111.60714285714285" fill="#3C5B47" opacity="0.3"/><rect x="0" y="909.7142857142858" width="40" height="1" fill="#F2EADA" opacity=".7"/><rect x="0" y="910.7142857142858" width="40" height="89.28571428571428" fill="#FBF8F1" opacity="0.3"/><rect x="0" y="999" width="40" height="1" fill="#F2EADA" opacity=".7"/></svg>
+    <div class="tranche-nom">Bordeaux</div>
+    <div class="entete">
+      <div class="num">26</div>
+      <h1>Château la Gorce</h1>
+      <div class="region">Bordeaux</div>
+    </div>
+    <div class="identite">
+      <span class="jeton bio">Bio</span>
+      
+      <span class="jeton">Panachage : toute la gamme</span>
+      <span class="jeton">3 paliers</span>
+    </div>
+    <div class="haut">
+      <svg viewBox="0 0 120 120" class="rond-sol"><circle cx="60" cy="60" r="58" fill="#FBF8F1" stroke="#46606E" stroke-width="2"/><path d="M2 2 Q30 -0.10567838279530406 60 4 T118 2 L118 22.831715628039092 Q90 26.831715628039092 60 20.831715628039092 T2 22.831715628039092 Z"
+             fill="#D08C3C" opacity="0.55"/><path d="M2 22.831715628039092 Q30 23.86712786834687 60 24.831715628039092 T118 22.831715628039092 L118 46.82774512516335 Q90 50.82774512516335 60 44.82774512516335 T2 46.82774512516335 Z"
+             fill="#A8515F" opacity="0.67"/><path d="M2 46.82774512516335 Q30 45.70855053560808 60 48.82774512516335 T118 46.82774512516335 L118 76.1495047332719 Q90 80.1495047332719 60 74.1495047332719 T2 76.1495047332719 Z"
+             fill="#46606E" opacity="0.79"/><path d="M2 76.1495047332719 Q30 78.96897872816771 60 78.1495047332719 T118 76.1495047332719 L118 100.61463208077475 Q90 104.61463208077475 60 98.61463208077475 T2 100.61463208077475 Z"
+             fill="#A8515F" opacity="0.91"/><circle cx="60" cy="60" r="58" fill="url(#t-galets)" opacity=".5"/><circle cx="60" cy="60" r="58" fill="none" stroke="#46606E" stroke-width="2.5"/></svg>
+      <div class="texte"><span class="lettrine">E</span>n activité depuis 1822, reconnu cru bourgeois dans le classement de 1932, le domaine a été repris en 2018 par Emmanuel et Mana Martin qui initièrent immédiatement la conversion de l’intégralité des quarante-huit hectares vers l’agriculture biologique, désormais achevée sur toutes les cuvées depuis le millésime 2022.</div>
+    </div>
+    <table class="tarif">
+    <colgroup><col style="width:6mm"><col><col style="width:16mm"><col style="width:15mm"><col style="width:52mm"></colgroup>
+    <thead><tr class="bandeau"><th colspan="4" class="intit">Possibilité de panacher</th>
+      <th class="c-bloc"><div class="bloc-prix entete"><div class="cel-pal">À partir de 90 bts</div><div class="cel-pal">À partir de 120 bts</div><div class="cel-pal">À partir de 300 bts</div></div></th></tr></thead>
+    <tbody><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc – Série limitée</span>
+        <span class="cuv">Préface</span></td>
+      <td class="c-detail">2013</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">5,55<span>€</span></div><div class="cel-prix">5,50<span>€</span></div><div class="cel-prix">5,40<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Prétexte</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">6,60<span>€</span></div><div class="cel-prix">6,55<span>€</span></div><div class="cel-prix">6,45<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Rouge Intense – sans sulfites ajoutés</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">6,25<span>€</span></div><div class="cel-prix">6,20<span>€</span></div><div class="cel-prix">6,10<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">L'An 022 – élevé en amphore</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">9,80<span>€</span></div><div class="cel-prix">9,75<span>€</span></div><div class="cel-prix">9,65<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><path d="M7 1.6 A5.4 5.4 0 0 1 7 12.4 Z" fill="#D98FA0"/><circle cx="7" cy="7" r="5.4" fill="none" stroke="#A8515F" stroke-width="1.2"/></svg></td>
+      <td class="c-vin"><span class="app">Vin de France</span>
+        <span class="cuv">Rosé DADA</span></td>
+      <td class="c-detail">2023</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">6,45<span>€</span></div><div class="cel-prix">6,40<span>€</span></div><div class="cel-prix">6,30<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">La Bonne Résolution</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">6,35<span>€</span></div><div class="cel-prix">6,30<span>€</span></div><div class="cel-prix">6,20<span>€</span></div></div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Château Canteloup</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix"><div class="cel-prix">5,10<span>€</span></div><div class="cel-prix">5,05<span>€</span></div><div class="cel-prix">4,95<span>€</span></div></div></td></tr></tbody></table>
+    <div class="pied">
+      <div>* Prix de la bouteille H.T. franco de port.</div>
+      <div><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</div>
+    </div>
+    <div class="legende">
+      <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#FBF8F1" stroke="#46606E" stroke-width="1.2"/></svg> Blanc</span><span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#A8515F"/></svg> Rouge</span>
+      <span><svg viewBox="0 0 14 14" class="picto"><path d="M7 1.6 A5.4 5.4 0 0 1 7 12.4 Z" fill="#D98FA0"/><circle cx="7" cy="7" r="5.4" fill="none" stroke="#A8515F" stroke-width="1.2"/></svg> Rosé</span><span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="none" stroke="#46606E" stroke-width="1.2"/><circle cx="5" cy="8" r="1.3" fill="#46606E"/><circle cx="9" cy="6.4" r="1.1" fill="#46606E"/><circle cx="7.4" cy="4.2" r=".9" fill="#46606E"/></svg> Bulles</span>
+      <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="#E1C853"/></svg> Doux</span><span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.4" fill="none" stroke="#3C5B47" stroke-width="1.2"/><path d="M3.6 10.4 L10.4 3.6" stroke="#3C5B47" stroke-width="1.2"/></svg> Sans alcool</span>
+      <span><svg viewBox="0 0 14 14" class="picto"><rect x="2.2" y="2.2" width="9.6" height="9.6" fill="#8A6230"/></svg> Spiritueux</span>
+    </div></div>
+<div class="pli"></div>
+</body></html>

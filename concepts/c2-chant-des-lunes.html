@@ -1,0 +1,349 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Concept 2 — Le Chant des Lunes</title>
+<link rel="stylesheet" href="../src/fonts/polices.css">
+<style>
+@page { size: 420mm 260mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 420mm; height: 260mm; }
+body { display: flex; }
+.page { width: 210mm; height: 260mm; position: relative; overflow: hidden; }
+.pli { position: absolute; top: 0; bottom: 0; left: 210mm; width: 0; border-left: .2mm dashed rgba(0,0,0,.18); z-index: 99; }
+
+body { color: #232B52; font-family: 'Faustina', serif; font-size: 9.5pt; line-height: 1.45; }
+
+/* ——— couverture : la nuit ——— */
+.gauche { background: #232B52; color: #F4EEE0; }
+.ciel { position: absolute; inset: 0; }
+.astre { position: absolute; color: rgba(244,238,224,.62); }
+.astre .figure { width: 100%; height: auto; display: block; }
+.voile { position: absolute; left: 0; right: 0; bottom: 0; height: 132mm;
+  background: linear-gradient(to bottom, rgba(35,43,82,0) 0%, rgba(35,43,82,.86) 32%, #232B52 62%); }
+.lune-couv { position: absolute; right: -22mm; top: 18mm; width: 86mm; height: 86mm;
+  border-radius: 50%; background: radial-gradient(circle at 34% 34%, #FFF8E6 0%, #E1C853 58%, #C2A63F 100%);
+  opacity: .92; }
+.titre-couv { position: absolute; left: 18mm; bottom: 92mm; width: 150mm;
+  font-family: 'Fraunces', serif; font-weight: 400; font-size: 44pt; line-height: .96;
+  color: #F4EEE0; letter-spacing: -.012em; }
+.titre-couv em { font-style: italic; color: #E1C853; }
+.sous-couv { position: absolute; left: 18mm; bottom: 72mm; width: 128mm;
+  font-size: 10.5pt; line-height: 1.5; color: rgba(244,238,224,.82); }
+.reserve-logo { position: absolute; left: 18mm; bottom: 20mm; background: #FFFFFF;
+  border-radius: 1.5mm; padding: 6mm 7mm; }
+.reserve-logo img { width: 58mm; display: block; }
+.pied-couv { position: absolute; right: 18mm; bottom: 20mm; text-align: right; }
+.pied-couv .cible { font: 500 9pt 'Archivo', sans-serif; letter-spacing: .1em;
+  text-transform: uppercase; display: block; color: rgba(244,238,224,.9); margin-bottom: 1mm; }
+.pied-couv .annee { font-family: 'Fraunces', serif; font-size: 34pt; line-height: 1;
+  color: #E1C853; display: block; }
+
+/* ——— fiche domaine : la ligne d'horizon ——— */
+.droite { background: #F4EEE0; }
+.au-dessus { position: absolute; left: 0; right: 0; top: 0; height: 97mm;
+  padding: 15mm 18mm 0; overflow: hidden; }
+.horizon { position: absolute; left: 0; right: 0; top: 97mm; height: 0;
+  border-top: 1.2pt solid #232B52; }
+.horizon::after { content: ''; position: absolute; left: 18mm; top: -1.6mm; width: 3.2mm; height: 3.2mm;
+  border-radius: 50%; background: #E1C853; }
+.au-dessous { position: absolute; left: 0; right: 0; top: 97mm; bottom: 0; padding: 6mm 18mm 11mm; }
+.fig-domaine { position: absolute; right: 10mm; top: 7mm; width: 68mm; color: #67067C; opacity: .92; }
+.fig-domaine svg { width: 100%; height: auto; display: block; }
+.fig-legende { position: absolute; right: 10mm; top: 78mm; width: 68mm; text-align: center;
+  font: 500 7pt 'Archivo', sans-serif; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(35,43,82,.6); }
+.entete { display: flex; align-items: baseline; gap: 4mm; margin-bottom: 1.5mm; max-width: 100mm; }
+.num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26pt; color: #D1537C; line-height: 1; }
+.entete h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 23pt; line-height: 1.02;
+  color: #232B52; letter-spacing: -.012em; }
+.region { font: 500 8pt 'Archivo', sans-serif; letter-spacing: .18em; text-transform: uppercase;
+  color: #6E8E6A; margin-bottom: 4mm; }
+.identite { display: flex; flex-wrap: wrap; gap: 2mm; margin-bottom: 4mm; max-width: 104mm; }
+.jeton { font: 500 7.5pt 'Archivo', sans-serif; border-radius: 6mm; padding: 1mm 2.6mm;
+  background: rgba(35,43,82,.07); color: #232B52; }
+.jeton.bio { background: rgba(110,142,106,.18); color: #41603E; }
+.jeton.alloc { background: #D1537C; color: #F4EEE0; }
+.texte { max-width: 104mm; font-size: 9.5pt; line-height: 1.5; }
+.texte .lettrine { float: left; font-family: 'Fraunces', serif; font-weight: 400; font-size: 30pt;
+  line-height: .78; padding: 1.2mm 1.8mm 0 0; color: #D1537C; }
+
+table.tarif { width: 100%; border-collapse: collapse; table-layout: fixed;
+  font-family: 'Archivo', sans-serif; font-variant-numeric: tabular-nums; }
+.intit { text-align: left; font: 600 7.4pt 'Archivo', sans-serif; letter-spacing: .16em;
+  text-transform: uppercase; color: #6E8E6A; padding: 0 0 1.6mm; vertical-align: bottom; }
+th.c-bloc { vertical-align: bottom; padding: 0; }
+.c-bloc { width: 50mm; padding: 0; }
+.bloc-prix { display: flex; }
+.bloc-prix > * { flex: 1 1 0; text-align: right; padding: 1.25mm 2mm 1.25mm 1mm;
+  font-size: 9pt; font-weight: 500; color: #232B52; }
+.bloc-prix .cel-prix span { font-size: 6.6pt; font-weight: 400; margin-left: .5mm; opacity: .7; }
+.bloc-prix.entete .cel-pal { font-size: 6.6pt; font-weight: 500; line-height: 1.15;
+  color: rgba(35,43,82,.72); border-bottom: 1.1pt solid #232B52; padding-bottom: 1.4mm; }
+tbody tr { border-bottom: .3pt solid rgba(35,43,82,.18); }
+td { padding: 1.05mm 1.4mm; vertical-align: middle; }
+.c-picto { width: 6mm; }
+.picto { width: 3.3mm; height: 3.3mm; display: block; }
+.c-vin .app { display: block; font-size: 7.3pt; color: rgba(35,43,82,.62); }
+.c-vin .cuv { display: block; font-size: 8.6pt; font-weight: 500; }
+.c-detail { font-size: 7.3pt; color: rgba(35,43,82,.7); white-space: nowrap; text-align: right;
+  padding-right: 2.5mm; }
+.pied { margin-top: 3mm; padding-top: 2.2mm; border-top: .8pt solid #232B52;
+  display: flex; justify-content: space-between; gap: 4mm;
+  font: 400 7.3pt 'Archivo', sans-serif; color: rgba(35,43,82,.85); }
+.pied strong { color: #D1537C; font-weight: 600; }
+.legende { margin-top: 2.2mm; display: flex; flex-wrap: wrap; gap: 1.2mm 4mm; align-items: center;
+  font: 400 6.7pt 'Archivo', sans-serif; color: rgba(35,43,82,.7); }
+.legende span { display: inline-flex; align-items: center; gap: 1.2mm; }
+.legende .picto { width: 2.7mm; height: 2.7mm; }
+
+</style></head><body>
+
+<div class="page gauche">
+    <div class="ciel"><div class="astre" style="left:2.80%;top:75.33%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M250.5 230.5 L228.6 125.0 L262.1 35.3 L145.7 54.8 L37.9 50.3 L35.5 150.9 L106.9 199.5 L38.1 253.1" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="250.5" cy="230.5" r="6.6" fill="currentColor"/><circle cx="228.6" cy="125.0" r="4.7" fill="currentColor"/><circle cx="106.9" cy="199.5" r="7.5" fill="currentColor"/><circle cx="145.7" cy="54.8" r="3.6" fill="currentColor"/><circle cx="37.9" cy="50.3" r="6.8" fill="currentColor"/><circle cx="262.1" cy="35.3" r="7.2" fill="currentColor"/><circle cx="35.5" cy="150.9" r="4.4" fill="currentColor"/><circle cx="38.1" cy="253.1" r="3.1" fill="currentColor"/></svg></div><div class="astre" style="left:62.58%;top:85.71%;width:16.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M203.5 172.9 L137.0 127.3 L63.7 76.3 L40.4 172.1 L58.7 266.2 L151.4 238.9 L252.6 259.1 L268.3 86.7 L174.2 32.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="203.5" cy="172.9" r="3.8" fill="currentColor"/><circle cx="40.4" cy="172.1" r="4.6" fill="currentColor"/><circle cx="268.3" cy="86.7" r="4.9" fill="currentColor"/><circle cx="151.4" cy="238.9" r="5.1" fill="currentColor"/><circle cx="252.6" cy="259.1" r="3.5" fill="currentColor"/><circle cx="63.7" cy="76.3" r="3.0" fill="currentColor"/><circle cx="137.0" cy="127.3" r="5.7" fill="currentColor"/><circle cx="58.7" cy="266.2" r="6.6" fill="currentColor"/><circle cx="174.2" cy="32.5" r="4.5" fill="currentColor"/></svg></div><div class="astre" style="left:78.36%;top:25.29%;width:21.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M187.2 190.0 L158.8 133.9 L116.8 86.9 L161.9 35.3 L229.8 31.8 L234.3 92.0 L264.1 160.7 L220.0 248.3 L157.2 266.4 L91.8 251.3 L37.6 228.1 L97.0 181.7 L47.9 150.9 L42.9 49.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="187.2" cy="190.0" r="4.8" fill="currentColor"/><circle cx="234.3" cy="92.0" r="3.8" fill="currentColor"/><circle cx="42.9" cy="49.7" r="3.7" fill="currentColor"/><circle cx="47.9" cy="150.9" r="4.7" fill="currentColor"/><circle cx="97.0" cy="181.7" r="4.6" fill="currentColor"/><circle cx="116.8" cy="86.9" r="3.6" fill="currentColor"/><circle cx="220.0" cy="248.3" r="4.3" fill="currentColor"/><circle cx="37.6" cy="228.1" r="7.3" fill="currentColor"/><circle cx="264.1" cy="160.7" r="6.7" fill="currentColor"/><circle cx="91.8" cy="251.3" r="7.2" fill="currentColor"/><circle cx="158.8" cy="133.9" r="7.3" fill="currentColor"/><circle cx="229.8" cy="31.8" r="4.1" fill="currentColor"/><circle cx="161.9" cy="35.3" r="6.3" fill="currentColor"/><circle cx="157.2" cy="266.4" r="3.7" fill="currentColor"/></svg></div><div class="astre" style="left:19.94%;top:88.04%;width:15.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M187.2 96.3 L255.8 45.2 L264.6 135.0 L263.3 232.2 L136.5 173.7 L109.8 256.0 L32.5 216.0 L48.5 105.6 L108.7 49.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="187.2" cy="96.3" r="6.1" fill="currentColor"/><circle cx="48.5" cy="105.6" r="7.0" fill="currentColor"/><circle cx="263.3" cy="232.2" r="2.5" fill="currentColor"/><circle cx="109.8" cy="256.0" r="7.4" fill="currentColor"/><circle cx="136.5" cy="173.7" r="4.0" fill="currentColor"/><circle cx="264.6" cy="135.0" r="3.3" fill="currentColor"/><circle cx="108.7" cy="49.3" r="4.4" fill="currentColor"/><circle cx="255.8" cy="45.2" r="3.5" fill="currentColor"/><circle cx="32.5" cy="216.0" r="4.0" fill="currentColor"/></svg></div><div class="astre" style="left:81.91%;top:62.79%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M183.7 147.4 L267.8 218.0 L107.7 58.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="183.7" cy="147.4" r="6.1" fill="currentColor"/><circle cx="267.8" cy="218.0" r="7.1" fill="currentColor"/><circle cx="107.7" cy="58.3" r="5.3" fill="currentColor"/></svg></div><div class="astre" style="left:-2.27%;top:87.65%;width:19.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M104.0 248.7 L31.1 248.9 L75.0 142.6 L63.3 64.8 L128.6 33.1 L197.3 42.6 L263.5 54.0 L234.1 111.9 L263.9 180.6 L205.7 236.3 L265.7 262.8 L161.1 185.4 L160.0 98.8" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="104.0" cy="248.7" r="7.0" fill="currentColor"/><circle cx="160.0" cy="98.8" r="4.5" fill="currentColor"/><circle cx="63.3" cy="64.8" r="3.5" fill="currentColor"/><circle cx="263.9" cy="180.6" r="5.5" fill="currentColor"/><circle cx="263.5" cy="54.0" r="2.7" fill="currentColor"/><circle cx="161.1" cy="185.4" r="4.7" fill="currentColor"/><circle cx="75.0" cy="142.6" r="4.3" fill="currentColor"/><circle cx="205.7" cy="236.3" r="4.9" fill="currentColor"/><circle cx="197.3" cy="42.6" r="5.1" fill="currentColor"/><circle cx="234.1" cy="111.9" r="7.3" fill="currentColor"/><circle cx="265.7" cy="262.8" r="3.7" fill="currentColor"/><circle cx="31.1" cy="248.9" r="2.8" fill="currentColor"/><circle cx="128.6" cy="33.1" r="6.0" fill="currentColor"/></svg></div><div class="astre" style="left:40.22%;top:37.89%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M65.7 154.5 L39.7 243.1 L161.2 207.8 L152.9 120.6 L90.7 61.2 L237.2 45.5 L242.0 145.5 L253.7 235.1" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="65.7" cy="154.5" r="3.4" fill="currentColor"/><circle cx="237.2" cy="45.5" r="4.3" fill="currentColor"/><circle cx="242.0" cy="145.5" r="7.0" fill="currentColor"/><circle cx="90.7" cy="61.2" r="4.0" fill="currentColor"/><circle cx="39.7" cy="243.1" r="7.1" fill="currentColor"/><circle cx="253.7" cy="235.1" r="7.3" fill="currentColor"/><circle cx="161.2" cy="207.8" r="6.4" fill="currentColor"/><circle cx="152.9" cy="120.6" r="2.5" fill="currentColor"/></svg></div><div class="astre" style="left:77.51%;top:48.57%;width:18.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M183.5 72.1 L151.2 131.5 L118.3 190.8 L83.5 127.0 L37.5 178.7 L78.2 263.9 L173.3 251.0 L221.0 178.0 L269.7 130.4 L254.3 58.5 L111.5 35.4 L41.2 51.9 L267.1 252.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="183.5" cy="72.1" r="7.1" fill="currentColor"/><circle cx="78.2" cy="263.9" r="4.0" fill="currentColor"/><circle cx="37.5" cy="178.7" r="4.8" fill="currentColor"/><circle cx="111.5" cy="35.4" r="2.9" fill="currentColor"/><circle cx="151.2" cy="131.5" r="3.5" fill="currentColor"/><circle cx="254.3" cy="58.5" r="3.3" fill="currentColor"/><circle cx="173.3" cy="251.0" r="6.9" fill="currentColor"/><circle cx="221.0" cy="178.0" r="3.6" fill="currentColor"/><circle cx="83.5" cy="127.0" r="3.2" fill="currentColor"/><circle cx="41.2" cy="51.9" r="5.1" fill="currentColor"/><circle cx="118.3" cy="190.8" r="6.1" fill="currentColor"/><circle cx="267.1" cy="252.3" r="6.8" fill="currentColor"/><circle cx="269.7" cy="130.4" r="6.5" fill="currentColor"/></svg></div><div class="astre" style="left:0.36%;top:0.29%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M200.7 224.3 L267.2 163.6 L215.7 86.4 L108.8 76.4 L37.1 30.4 L96.9 166.3 L54.6 262.1" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="200.7" cy="224.3" r="7.3" fill="currentColor"/><circle cx="54.6" cy="262.1" r="2.6" fill="currentColor"/><circle cx="108.8" cy="76.4" r="4.7" fill="currentColor"/><circle cx="215.7" cy="86.4" r="7.1" fill="currentColor"/><circle cx="96.9" cy="166.3" r="5.1" fill="currentColor"/><circle cx="267.2" cy="163.6" r="7.4" fill="currentColor"/><circle cx="37.1" cy="30.4" r="2.7" fill="currentColor"/></svg></div><div class="astre" style="left:59.95%;top:0.60%;width:18.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M174.1 108.2 L158.6 35.3 L74.1 81.7 L61.4 147.2 L49.0 219.9 L131.1 223.3 L199.0 225.8 L263.2 245.8 L242.0 170.1 L260.3 70.9" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="174.1" cy="108.2" r="7.1" fill="currentColor"/><circle cx="49.0" cy="219.9" r="2.9" fill="currentColor"/><circle cx="131.1" cy="223.3" r="2.7" fill="currentColor"/><circle cx="74.1" cy="81.7" r="3.9" fill="currentColor"/><circle cx="242.0" cy="170.1" r="6.3" fill="currentColor"/><circle cx="61.4" cy="147.2" r="3.7" fill="currentColor"/><circle cx="199.0" cy="225.8" r="4.3" fill="currentColor"/><circle cx="158.6" cy="35.3" r="5.1" fill="currentColor"/><circle cx="260.3" cy="70.9" r="7.1" fill="currentColor"/><circle cx="263.2" cy="245.8" r="5.2" fill="currentColor"/></svg></div><div class="astre" style="left:82.02%;top:75.33%;width:14.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M254.9 61.1 L147.7 38.1 L49.8 36.1 L58.8 155.7 L33.6 260.9 L196.0 241.5 L191.9 152.4" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="254.9" cy="61.1" r="5.7" fill="currentColor"/><circle cx="191.9" cy="152.4" r="6.4" fill="currentColor"/><circle cx="196.0" cy="241.5" r="4.2" fill="currentColor"/><circle cx="58.8" cy="155.7" r="4.4" fill="currentColor"/><circle cx="147.7" cy="38.1" r="7.0" fill="currentColor"/><circle cx="49.8" cy="36.1" r="4.3" fill="currentColor"/><circle cx="33.6" cy="260.9" r="4.2" fill="currentColor"/></svg></div><div class="astre" style="left:60.96%;top:62.54%;width:21.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M42.9 64.7 L91.0 41.3 L145.0 44.0 L196.3 30.7 L190.3 83.4 L250.0 114.5 L257.5 61.6 L224.7 187.9 L248.4 238.0 L177.1 243.2 L128.7 214.0 L117.6 267.2 L30.2 240.3 L56.5 167.1 L67.3 114.4 L121.6 92.7 L152.0 154.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="42.9" cy="64.7" r="2.7" fill="currentColor"/><circle cx="56.5" cy="167.1" r="3.9" fill="currentColor"/><circle cx="152.0" cy="154.5" r="6.1" fill="currentColor"/><circle cx="224.7" cy="187.9" r="5.1" fill="currentColor"/><circle cx="257.5" cy="61.6" r="3.9" fill="currentColor"/><circle cx="121.6" cy="92.7" r="5.0" fill="currentColor"/><circle cx="250.0" cy="114.5" r="6.8" fill="currentColor"/><circle cx="196.3" cy="30.7" r="2.7" fill="currentColor"/><circle cx="177.1" cy="243.2" r="4.1" fill="currentColor"/><circle cx="30.2" cy="240.3" r="6.1" fill="currentColor"/><circle cx="117.6" cy="267.2" r="4.2" fill="currentColor"/><circle cx="190.3" cy="83.4" r="6.6" fill="currentColor"/><circle cx="128.7" cy="214.0" r="4.3" fill="currentColor"/><circle cx="248.4" cy="238.0" r="6.2" fill="currentColor"/><circle cx="91.0" cy="41.3" r="3.5" fill="currentColor"/><circle cx="67.3" cy="114.4" r="2.5" fill="currentColor"/><circle cx="145.0" cy="44.0" r="5.5" fill="currentColor"/></svg></div><div class="astre" style="left:21.81%;top:38.79%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M171.3 244.8 L117.0 81.9 L252.9 41.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="171.3" cy="244.8" r="6.8" fill="currentColor"/><circle cx="252.9" cy="41.3" r="6.3" fill="currentColor"/><circle cx="117.0" cy="81.9" r="5.5" fill="currentColor"/></svg></div><div class="astre" style="left:37.36%;top:62.46%;width:13.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M218.6 122.8 L155.5 233.5 L73.4 179.3 L63.7 55.7 L263.3 261.2" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="218.6" cy="122.8" r="7.1" fill="currentColor"/><circle cx="155.5" cy="233.5" r="5.1" fill="currentColor"/><circle cx="73.4" cy="179.3" r="6.3" fill="currentColor"/><circle cx="63.7" cy="55.7" r="4.8" fill="currentColor"/><circle cx="263.3" cy="261.2" r="7.2" fill="currentColor"/></svg></div><div class="astre" style="left:60.08%;top:26.98%;width:13.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M203.1 60.1 L137.4 150.9 L30.2 169.0 L71.5 269.6" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="203.1" cy="60.1" r="3.4" fill="currentColor"/><circle cx="30.2" cy="169.0" r="5.3" fill="currentColor"/><circle cx="137.4" cy="150.9" r="2.6" fill="currentColor"/><circle cx="71.5" cy="269.6" r="4.2" fill="currentColor"/></svg></div><div class="astre" style="left:17.80%;top:50.46%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M54.3 256.3 L88.1 91.4 L218.1 130.2" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="54.3" cy="256.3" r="5.8" fill="currentColor"/><circle cx="218.1" cy="130.2" r="4.5" fill="currentColor"/><circle cx="88.1" cy="91.4" r="7.0" fill="currentColor"/></svg></div><div class="astre" style="left:38.37%;top:89.23%;width:14.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M109.2 132.5 L122.8 41.4 L216.4 41.8 L238.2 130.8 L213.7 234.9 L44.5 233.0 L31.7 63.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="109.2" cy="132.5" r="4.6" fill="currentColor"/><circle cx="44.5" cy="233.0" r="3.1" fill="currentColor"/><circle cx="238.2" cy="130.8" r="4.5" fill="currentColor"/><circle cx="213.7" cy="234.9" r="7.1" fill="currentColor"/><circle cx="216.4" cy="41.8" r="5.0" fill="currentColor"/><circle cx="31.7" cy="63.7" r="5.7" fill="currentColor"/><circle cx="122.8" cy="41.4" r="6.6" fill="currentColor"/></svg></div><div class="astre" style="left:38.79%;top:76.77%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M205.3 109.3 L42.8 124.0 L46.3 259.6" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="205.3" cy="109.3" r="3.8" fill="currentColor"/><circle cx="42.8" cy="124.0" r="7.3" fill="currentColor"/><circle cx="46.3" cy="259.6" r="4.2" fill="currentColor"/></svg></div><div class="astre" style="left:79.89%;top:87.98%;width:13.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M187.1 249.4 L230.4 134.9 L226.1 37.7 L114.7 97.7 L32.0 246.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="187.1" cy="249.4" r="5.1" fill="currentColor"/><circle cx="32.0" cy="246.3" r="6.2" fill="currentColor"/><circle cx="114.7" cy="97.7" r="6.1" fill="currentColor"/><circle cx="230.4" cy="134.9" r="4.2" fill="currentColor"/><circle cx="226.1" cy="37.7" r="3.6" fill="currentColor"/></svg></div><div class="astre" style="left:2.19%;top:26.03%;width:14.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M198.1 161.9 L252.6 257.9 L86.3 205.1 L32.8 128.1 L79.8 48.0 L216.2 45.9" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="198.1" cy="161.9" r="7.2" fill="currentColor"/><circle cx="79.8" cy="48.0" r="4.2" fill="currentColor"/><circle cx="86.3" cy="205.1" r="3.6" fill="currentColor"/><circle cx="216.2" cy="45.9" r="3.3" fill="currentColor"/><circle cx="252.6" cy="257.9" r="5.6" fill="currentColor"/><circle cx="32.8" cy="128.1" r="5.2" fill="currentColor"/></svg></div><div class="astre" style="left:59.03%;top:73.81%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M131.5 165.6 L162.5 62.3 L215.3 242.0" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="131.5" cy="165.6" r="5.6" fill="currentColor"/><circle cx="162.5" cy="62.3" r="6.9" fill="currentColor"/><circle cx="215.3" cy="242.0" r="3.3" fill="currentColor"/></svg></div><div class="astre" style="left:60.61%;top:51.53%;width:14.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M153.5 258.7 L85.8 183.9 L38.0 79.5 L202.2 107.2 L267.9 40.6 L257.9 229.2" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="153.5" cy="258.7" r="5.0" fill="currentColor"/><circle cx="85.8" cy="183.9" r="7.5" fill="currentColor"/><circle cx="267.9" cy="40.6" r="6.6" fill="currentColor"/><circle cx="257.9" cy="229.2" r="7.1" fill="currentColor"/><circle cx="202.2" cy="107.2" r="6.7" fill="currentColor"/><circle cx="38.0" cy="79.5" r="6.1" fill="currentColor"/></svg></div><div class="astre" style="left:81.89%;top:1.12%;width:21.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M137.8 100.5 L107.6 148.7 L46.1 167.9 L69.4 91.9 L30.9 49.9 L83.7 32.1 L145.4 31.9 L205.3 33.3 L264.5 43.1 L266.7 100.6 L257.6 170.4 L204.6 220.0 L144.9 204.9 L96.5 236.4 L38.7 253.4 L154.7 269.0 L257.2 260.4 L197.8 128.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="137.8" cy="100.5" r="3.1" fill="currentColor"/><circle cx="144.9" cy="204.9" r="4.4" fill="currentColor"/><circle cx="69.4" cy="91.9" r="6.4" fill="currentColor"/><circle cx="204.6" cy="220.0" r="5.7" fill="currentColor"/><circle cx="264.5" cy="43.1" r="4.4" fill="currentColor"/><circle cx="46.1" cy="167.9" r="5.3" fill="currentColor"/><circle cx="107.6" cy="148.7" r="7.4" fill="currentColor"/><circle cx="197.8" cy="128.3" r="7.1" fill="currentColor"/><circle cx="266.7" cy="100.6" r="7.1" fill="currentColor"/><circle cx="38.7" cy="253.4" r="2.5" fill="currentColor"/><circle cx="83.7" cy="32.1" r="2.5" fill="currentColor"/><circle cx="145.4" cy="31.9" r="5.3" fill="currentColor"/><circle cx="154.7" cy="269.0" r="6.4" fill="currentColor"/><circle cx="30.9" cy="49.9" r="5.3" fill="currentColor"/><circle cx="257.6" cy="170.4" r="5.8" fill="currentColor"/><circle cx="257.2" cy="260.4" r="7.1" fill="currentColor"/><circle cx="96.5" cy="236.4" r="4.4" fill="currentColor"/><circle cx="205.3" cy="33.3" r="5.3" fill="currentColor"/></svg></div><div class="astre" style="left:59.37%;top:36.66%;width:17.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M263.2 81.7 L192.2 77.3 L222.0 142.6 L269.0 196.1 L218.1 258.9 L169.6 204.9 L98.3 157.5 L46.2 205.9 L89.1 264.4 L30.1 134.6 L38.9 54.7 L129.0 37.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="263.2" cy="81.7" r="4.4" fill="currentColor"/><circle cx="129.0" cy="37.5" r="7.2" fill="currentColor"/><circle cx="269.0" cy="196.1" r="4.8" fill="currentColor"/><circle cx="46.2" cy="205.9" r="7.0" fill="currentColor"/><circle cx="169.6" cy="204.9" r="6.8" fill="currentColor"/><circle cx="98.3" cy="157.5" r="4.8" fill="currentColor"/><circle cx="89.1" cy="264.4" r="7.4" fill="currentColor"/><circle cx="192.2" cy="77.3" r="3.9" fill="currentColor"/><circle cx="38.9" cy="54.7" r="5.3" fill="currentColor"/><circle cx="218.1" cy="258.9" r="4.2" fill="currentColor"/><circle cx="222.0" cy="142.6" r="2.5" fill="currentColor"/><circle cx="30.1" cy="134.6" r="7.3" fill="currentColor"/></svg></div><div class="astre" style="left:59.34%;top:10.83%;width:21.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M176.8 35.2 L131.5 31.5 L80.2 48.6 L36.7 37.0 L43.8 82.0 L30.1 127.4 L67.7 160.7 L30.9 189.3 L43.5 246.7 L82.0 268.1 L127.3 262.8 L161.9 232.9 L157.5 182.0 L157.7 123.3 L181.1 82.6 L221.1 59.6 L262.5 78.2 L269.8 125.2 L249.0 164.6 L213.8 201.8 L213.2 258.3 L259.0 238.2 L205.4 126.5 L119.1 90.9 L110.7 135.1 L107.5 217.3 L269.7 30.3" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="176.8" cy="35.2" r="5.2" fill="currentColor"/><circle cx="262.5" cy="78.2" r="4.5" fill="currentColor"/><circle cx="213.2" cy="258.3" r="2.5" fill="currentColor"/><circle cx="43.5" cy="246.7" r="7.0" fill="currentColor"/><circle cx="107.5" cy="217.3" r="6.9" fill="currentColor"/><circle cx="80.2" cy="48.6" r="7.5" fill="currentColor"/><circle cx="157.7" cy="123.3" r="5.9" fill="currentColor"/><circle cx="67.7" cy="160.7" r="5.9" fill="currentColor"/><circle cx="127.3" cy="262.8" r="5.8" fill="currentColor"/><circle cx="249.0" cy="164.6" r="5.3" fill="currentColor"/><circle cx="161.9" cy="232.9" r="7.5" fill="currentColor"/><circle cx="30.9" cy="189.3" r="2.6" fill="currentColor"/><circle cx="181.1" cy="82.6" r="6.7" fill="currentColor"/><circle cx="213.8" cy="201.8" r="4.6" fill="currentColor"/><circle cx="221.1" cy="59.6" r="4.2" fill="currentColor"/><circle cx="119.1" cy="90.9" r="3.7" fill="currentColor"/><circle cx="205.4" cy="126.5" r="4.9" fill="currentColor"/><circle cx="157.5" cy="182.0" r="4.9" fill="currentColor"/><circle cx="43.8" cy="82.0" r="5.6" fill="currentColor"/><circle cx="259.0" cy="238.2" r="5.6" fill="currentColor"/><circle cx="269.8" cy="125.2" r="4.8" fill="currentColor"/><circle cx="36.7" cy="37.0" r="6.5" fill="currentColor"/><circle cx="110.7" cy="135.1" r="2.5" fill="currentColor"/><circle cx="269.7" cy="30.3" r="5.8" fill="currentColor"/><circle cx="82.0" cy="268.1" r="7.5" fill="currentColor"/><circle cx="131.5" cy="31.5" r="4.7" fill="currentColor"/><circle cx="30.1" cy="127.4" r="5.2" fill="currentColor"/></svg></div><div class="astre" style="left:21.57%;top:60.54%;width:16.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M221.1 138.1 L119.5 153.5 L53.5 191.1 L38.1 268.4 L153.0 255.7 L263.7 256.9 L257.5 38.0 L168.1 41.0 L87.8 72.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="221.1" cy="138.1" r="4.3" fill="currentColor"/><circle cx="168.1" cy="41.0" r="5.8" fill="currentColor"/><circle cx="87.8" cy="72.7" r="2.6" fill="currentColor"/><circle cx="153.0" cy="255.7" r="5.2" fill="currentColor"/><circle cx="53.5" cy="191.1" r="6.1" fill="currentColor"/><circle cx="263.7" cy="256.9" r="3.7" fill="currentColor"/><circle cx="119.5" cy="153.5" r="4.4" fill="currentColor"/><circle cx="257.5" cy="38.0" r="6.1" fill="currentColor"/><circle cx="38.1" cy="268.4" r="3.3" fill="currentColor"/></svg></div><div class="astre" style="left:81.83%;top:37.30%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M256.7 265.9 L134.8 70.6 L34.4 170.1" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="256.7" cy="265.9" r="5.8" fill="currentColor"/><circle cx="34.4" cy="170.1" r="4.4" fill="currentColor"/><circle cx="134.8" cy="70.6" r="4.4" fill="currentColor"/></svg></div><div class="astre" style="left:-1.56%;top:61.16%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M112.0 136.3 L105.1 242.7 L264.1 134.0" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="112.0" cy="136.3" r="6.2" fill="currentColor"/><circle cx="264.1" cy="134.0" r="2.9" fill="currentColor"/><circle cx="105.1" cy="242.7" r="7.0" fill="currentColor"/></svg></div><div class="astre" style="left:19.51%;top:0.42%;width:12.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M253.4 202.3 L110.6 190.0 L70.3 81.5" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="253.4" cy="202.3" r="6.1" fill="currentColor"/><circle cx="70.3" cy="81.5" r="4.8" fill="currentColor"/><circle cx="110.6" cy="190.0" r="5.6" fill="currentColor"/></svg></div><div class="astre" style="left:42.97%;top:12.68%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M182.0 84.5 L257.3 126.0 L267.4 41.9 L226.2 210.9 L137.9 198.7 L41.1 169.9 L80.5 89.3 L42.3 267.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="182.0" cy="84.5" r="3.2" fill="currentColor"/><circle cx="257.3" cy="126.0" r="7.5" fill="currentColor"/><circle cx="137.9" cy="198.7" r="5.0" fill="currentColor"/><circle cx="41.1" cy="169.9" r="3.7" fill="currentColor"/><circle cx="80.5" cy="89.3" r="3.8" fill="currentColor"/><circle cx="226.2" cy="210.9" r="5.3" fill="currentColor"/><circle cx="42.3" cy="267.7" r="6.6" fill="currentColor"/><circle cx="267.4" cy="41.9" r="3.2" fill="currentColor"/></svg></div><div class="astre" style="left:17.95%;top:74.14%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M99.1 241.3 L93.0 155.4 L129.9 38.9 L36.5 36.8 L220.4 110.5 L257.8 31.5 L231.3 205.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="99.1" cy="241.3" r="5.1" fill="currentColor"/><circle cx="93.0" cy="155.4" r="3.4" fill="currentColor"/><circle cx="220.4" cy="110.5" r="7.4" fill="currentColor"/><circle cx="129.9" cy="38.9" r="7.2" fill="currentColor"/><circle cx="231.3" cy="205.7" r="5.0" fill="currentColor"/><circle cx="36.5" cy="36.8" r="7.3" fill="currentColor"/><circle cx="257.8" cy="31.5" r="6.7" fill="currentColor"/></svg></div><div class="astre" style="left:22.77%;top:12.72%;width:21.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M62.6 263.1 L93.8 210.1 L38.7 200.5 L52.6 141.9 L54.2 81.8 L111.9 87.3 L129.4 140.2 L180.1 99.6 L162.5 44.1 L94.2 33.0 L245.8 71.4 L259.7 159.4 L197.9 184.2 L163.8 250.4 L261.2 268.4" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="62.6" cy="263.1" r="5.5" fill="currentColor"/><circle cx="259.7" cy="159.4" r="2.8" fill="currentColor"/><circle cx="94.2" cy="33.0" r="2.4" fill="currentColor"/><circle cx="180.1" cy="99.6" r="7.2" fill="currentColor"/><circle cx="52.6" cy="141.9" r="3.6" fill="currentColor"/><circle cx="163.8" cy="250.4" r="4.0" fill="currentColor"/><circle cx="54.2" cy="81.8" r="5.8" fill="currentColor"/><circle cx="129.4" cy="140.2" r="7.3" fill="currentColor"/><circle cx="197.9" cy="184.2" r="4.1" fill="currentColor"/><circle cx="245.8" cy="71.4" r="3.6" fill="currentColor"/><circle cx="162.5" cy="44.1" r="7.0" fill="currentColor"/><circle cx="93.8" cy="210.1" r="4.6" fill="currentColor"/><circle cx="38.7" cy="200.5" r="3.9" fill="currentColor"/><circle cx="261.2" cy="268.4" r="6.0" fill="currentColor"/><circle cx="111.9" cy="87.3" r="7.1" fill="currentColor"/></svg></div><div class="astre" style="left:37.82%;top:-1.14%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M205.3 145.6 L233.7 64.0 L109.2 36.8 L64.7 149.4 L53.7 257.6 L148.5 235.8 L237.4 228.2" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="205.3" cy="145.6" r="4.9" fill="currentColor"/><circle cx="53.7" cy="257.6" r="2.7" fill="currentColor"/><circle cx="109.2" cy="36.8" r="4.6" fill="currentColor"/><circle cx="64.7" cy="149.4" r="3.6" fill="currentColor"/><circle cx="233.7" cy="64.0" r="5.4" fill="currentColor"/><circle cx="237.4" cy="228.2" r="2.5" fill="currentColor"/><circle cx="148.5" cy="235.8" r="7.0" fill="currentColor"/></svg></div><div class="astre" style="left:37.45%;top:48.41%;width:15.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M200.3 150.3 L177.2 59.9 L262.4 62.1 L99.1 118.1 L43.4 43.0 L75.6 231.3 L220.0 244.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="200.3" cy="150.3" r="5.5" fill="currentColor"/><circle cx="99.1" cy="118.1" r="7.4" fill="currentColor"/><circle cx="220.0" cy="244.7" r="5.6" fill="currentColor"/><circle cx="75.6" cy="231.3" r="5.1" fill="currentColor"/><circle cx="177.2" cy="59.9" r="6.7" fill="currentColor"/><circle cx="43.4" cy="43.0" r="5.8" fill="currentColor"/><circle cx="262.4" cy="62.1" r="4.2" fill="currentColor"/></svg></div><div class="astre" style="left:41.32%;top:25.25%;width:14.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M122.9 113.1 L47.5 189.9 L91.5 266.6 L175.9 239.8 L257.2 185.8 L218.8 63.3 L43.1 31.7" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="122.9" cy="113.1" r="3.9" fill="currentColor"/><circle cx="257.2" cy="185.8" r="4.2" fill="currentColor"/><circle cx="91.5" cy="266.6" r="3.1" fill="currentColor"/><circle cx="218.8" cy="63.3" r="3.9" fill="currentColor"/><circle cx="47.5" cy="189.9" r="7.1" fill="currentColor"/><circle cx="43.1" cy="31.7" r="7.3" fill="currentColor"/><circle cx="175.9" cy="239.8" r="2.7" fill="currentColor"/></svg></div><div class="astre" style="left:-0.30%;top:13.41%;width:17.5mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M153.4 244.3 L193.8 184.9 L186.2 112.6 L218.6 49.7 L106.9 48.9 L34.8 37.5 L43.8 149.5 L118.2 137.5 L78.9 235.8 L243.9 252.0 L264.8 165.4" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="153.4" cy="244.3" r="5.6" fill="currentColor"/><circle cx="118.2" cy="137.5" r="7.2" fill="currentColor"/><circle cx="264.8" cy="165.4" r="6.5" fill="currentColor"/><circle cx="78.9" cy="235.8" r="4.8" fill="currentColor"/><circle cx="218.6" cy="49.7" r="6.5" fill="currentColor"/><circle cx="106.9" cy="48.9" r="3.7" fill="currentColor"/><circle cx="43.8" cy="149.5" r="3.2" fill="currentColor"/><circle cx="243.9" cy="252.0" r="5.3" fill="currentColor"/><circle cx="34.8" cy="37.5" r="7.5" fill="currentColor"/><circle cx="193.8" cy="184.9" r="5.3" fill="currentColor"/><circle cx="186.2" cy="112.6" r="4.1" fill="currentColor"/></svg></div><div class="astre" style="left:80.70%;top:10.63%;width:13.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M118.9 247.6 L126.0 127.2 L232.7 106.0 L241.5 257.6" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="118.9" cy="247.6" r="3.2" fill="currentColor"/><circle cx="232.7" cy="106.0" r="4.9" fill="currentColor"/><circle cx="126.0" cy="127.2" r="6.0" fill="currentColor"/><circle cx="241.5" cy="257.6" r="6.5" fill="currentColor"/></svg></div><div class="astre" style="left:-0.16%;top:50.41%;width:16.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M45.7 137.9 L129.4 150.8 L207.4 135.1 L267.6 189.8 L200.7 263.4 L98.3 238.0 L124.8 43.9 L31.3 48.0 L258.5 33.4" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="45.7" cy="137.9" r="3.1" fill="currentColor"/><circle cx="207.4" cy="135.1" r="7.1" fill="currentColor"/><circle cx="98.3" cy="238.0" r="4.1" fill="currentColor"/><circle cx="124.8" cy="43.9" r="3.1" fill="currentColor"/><circle cx="31.3" cy="48.0" r="2.5" fill="currentColor"/><circle cx="267.6" cy="189.8" r="6.9" fill="currentColor"/><circle cx="200.7" cy="263.4" r="6.3" fill="currentColor"/><circle cx="258.5" cy="33.4" r="4.4" fill="currentColor"/><circle cx="129.4" cy="150.8" r="2.9" fill="currentColor"/></svg></div><div class="astre" style="left:-1.61%;top:37.33%;width:14.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M82.5 109.9 L176.2 122.7 L230.9 198.7 L138.3 208.9 L42.3 258.7 L253.1 61.9" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="82.5" cy="109.9" r="4.8" fill="currentColor"/><circle cx="138.3" cy="208.9" r="5.6" fill="currentColor"/><circle cx="230.9" cy="198.7" r="3.1" fill="currentColor"/><circle cx="253.1" cy="61.9" r="3.1" fill="currentColor"/><circle cx="176.2" cy="122.7" r="6.4" fill="currentColor"/><circle cx="42.3" cy="258.7" r="5.6" fill="currentColor"/></svg></div><div class="astre" style="left:17.74%;top:23.81%;width:14.0mm">
+      <svg viewBox="0 0 300 300" class="figure">
+    <path d="M164.3 120.8 L255.4 93.8 L240.0 256.5 L142.0 215.8 L43.9 188.2 L64.1 51.1" fill="none" stroke="currentColor" stroke-width="1.35" opacity=".55"/>
+    <circle cx="164.3" cy="120.8" r="3.4" fill="currentColor"/><circle cx="43.9" cy="188.2" r="5.5" fill="currentColor"/><circle cx="240.0" cy="256.5" r="6.2" fill="currentColor"/><circle cx="255.4" cy="93.8" r="3.3" fill="currentColor"/><circle cx="64.1" cy="51.1" r="4.9" fill="currentColor"/><circle cx="142.0" cy="215.8" r="5.3" fill="currentColor"/></svg></div></div>
+    <div class="lune-couv"></div>
+    <div class="voile"></div>
+    <h1 class="titre-couv">Le chant<br>des <em>lunes</em></h1>
+    <p class="sous-couv">Quarante domaines, quarante petites figures d'étoiles.<br>
+      Au-dessus de la ligne, le monde ; en dessous, le prix.</p>
+    <div class="reserve-logo"><img src="../src/images/logo-agence-scio-srgb.png" alt="Agence SCIO Vins &amp; Spirits"></div>
+    <div class="pied-couv"><span class="cible">Tarifs cavistes Vendée (85)</span><span class="annee">2026</span></div></div>
+<div class="page droite">
+    <div class="au-dessus">
+      <div class="fig-domaine"><svg viewBox="0 0 300 300" class="figure">
+    <path d="M221.1 138.1 L119.5 153.5 L53.5 191.1 L38.1 268.4 L153.0 255.7 L263.7 256.9 L257.5 38.0 L168.1 41.0 L87.8 72.7" fill="none" stroke="currentColor" stroke-width="0.90" opacity=".55"/>
+    <circle cx="221.1" cy="138.1" r="2.9" fill="currentColor"/><circle cx="168.1" cy="41.0" r="3.8" fill="currentColor"/><circle cx="87.8" cy="72.7" r="1.8" fill="currentColor"/><circle cx="153.0" cy="255.7" r="3.5" fill="currentColor"/><circle cx="53.5" cy="191.1" r="4.0" fill="currentColor"/><circle cx="263.7" cy="256.9" r="2.5" fill="currentColor"/><circle cx="119.5" cy="153.5" r="3.0" fill="currentColor"/><circle cx="257.5" cy="38.0" r="4.1" fill="currentColor"/><circle cx="38.1" cy="268.4" r="2.2" fill="currentColor"/></svg></div>
+      <div class="fig-legende">11 références</div>
+      <div class="entete"><span class="num">26</span><h1>Château la Gorce</h1></div>
+      <div class="region">Bordeaux</div>
+      <div class="identite">
+        <span class="jeton bio">Bio</span>
+        
+        <span class="jeton">Panachage : toute la gamme</span>
+      </div>
+      <div class="texte"><span class="lettrine">E</span>n activité depuis 1822, reconnu cru bourgeois dans le classement de 1932, le domaine a été repris en 2018 par Emmanuel et Mana Martin qui initièrent immédiatement la conversion de l’intégralité des quarante-huit hectares vers l’agriculture biologique, désormais achevée sur toutes les cuvées depuis le millésime 2022.</div>
+    </div>
+    <div class="horizon"></div>
+    <div class="au-dessous">
+      <table class="tarif">
+    <colgroup><col style="width:6mm"><col><col style="width:16mm"><col style="width:15mm"><col style="width:50mm"></colgroup>
+    <thead><tr><th colspan="4" class="intit">Possibilité de panacher</th>
+      <th class="c-bloc"><div class="bloc-prix entete"><div class="cel-pal">À partir de 90 bts</div><div class="cel-pal">À partir de 120 bts</div><div class="cel-pal">À partir de 300 bts</div></div></th></tr></thead>
+    <tbody><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2019</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">7,05<span>€</span></div><div class="cel-prix">7,00<span>€</span></div><div class="cel-prix">6,90<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc Cru Bourgeois (AB)</span>
+        <span class="cuv">Château la Gorce</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">1,5 L</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">14,15<span>€</span></div><div class="cel-prix">14,10<span>€</span></div><div class="cel-prix">14,00<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc – Série limitée</span>
+        <span class="cuv">Préface</span></td>
+      <td class="c-detail">2013</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">5,55<span>€</span></div><div class="cel-prix">5,50<span>€</span></div><div class="cel-prix">5,40<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Prétexte</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,60<span>€</span></div><div class="cel-prix">6,55<span>€</span></div><div class="cel-prix">6,45<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Rouge Intense – sans sulfites ajoutés</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,25<span>€</span></div><div class="cel-prix">6,20<span>€</span></div><div class="cel-prix">6,10<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">L'An 022 – élevé en amphore</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">9,80<span>€</span></div><div class="cel-prix">9,75<span>€</span></div><div class="cel-prix">9,65<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#D1537C"/></svg></td>
+      <td class="c-vin"><span class="app">Vin de France</span>
+        <span class="cuv">Rosé DADA</span></td>
+      <td class="c-detail">2023</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,45<span>€</span></div><div class="cel-prix">6,40<span>€</span></div><div class="cel-prix">6,30<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">La Bonne Résolution</span></td>
+      <td class="c-detail">2022</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">6,35<span>€</span></div><div class="cel-prix">6,30<span>€</span></div><div class="cel-prix">6,20<span>€</span></div>
+      </div></td></tr><tr>
+      <td class="c-picto"><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg></td>
+      <td class="c-vin"><span class="app">AOP Médoc (AB)</span>
+        <span class="cuv">Château Canteloup</span></td>
+      <td class="c-detail">2020</td>
+      <td class="c-detail">75 cl</td>
+      <td class="c-bloc"><div class="bloc-prix">
+        <div class="cel-prix">5,10<span>€</span></div><div class="cel-prix">5,05<span>€</span></div><div class="cel-prix">4,95<span>€</span></div>
+      </div></td></tr></tbody></table>
+      <div class="pied">
+        <div>* Prix de la bouteille H.T. franco de port.</div>
+        <div><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</div>
+      </div>
+      <div class="legende">
+        <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="none" stroke="#232B52" stroke-width="1.3"/></svg> Blanc</span><span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#8E2F3E"/></svg> Rouge</span>
+        <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#D1537C"/></svg> Rosé</span><span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="none" stroke="#232B52" stroke-width="1.1"/><circle cx="7" cy="7" r="2.2" fill="#232B52"/></svg> Bulles</span>
+        <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#E1C853"/></svg> Doux</span><span><svg viewBox="0 0 14 14" class="picto"><path d="M7 1.8 A5.2 5.2 0 0 0 7 12.2 Z" fill="#6E8E6A"/><circle cx="7" cy="7" r="5.2" fill="none" stroke="#6E8E6A" stroke-width="1.2"/></svg> Sans alcool</span>
+        <span><svg viewBox="0 0 14 14" class="picto"><circle cx="7" cy="7" r="5.2" fill="#67067C"/></svg> Spiritueux</span>
+      </div>
+    </div></div>
+<div class="pli"></div>
+</body></html>
