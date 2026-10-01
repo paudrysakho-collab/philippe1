@@ -773,12 +773,12 @@
   "numero": 36,
   "role": "bouteille",
   "fichier": "src/photos/bouteille/d36.png",
-  "source_url": "src/photos/brut/Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png",
-  "page": null,
-  "provenance": "dossier de l'agence",
-  "source_px": "172x605",
-  "ppi": 232,
-  "sujet": "bouteille 4 Saisons"
+  "source_url": "https://www.saintemariedalbas.com/wp-content/uploads/2023/11/4-saisons.png",
+  "page": "https://www.saintemariedalbas.com/",
+  "provenance": "site officiel du domaine",
+  "source_px": "1013x1350",
+  "ppi": 472,
+  "sujet": "bouteille 4 Saisons 2020 (même image que celle de l'agence, en haute définition)"
  },
  {
   "numero": 37,

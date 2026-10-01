@@ -126,7 +126,8 @@ Options d'une entrée de la table : `zone` (isoler une bouteille dans une photo 
 têtes entières dans le rond), `diptyque` (deux portraits séparés, une moitié chacun),
 `mode: contenir` (un logo, jamais rogné), `forme: rond` (un logo déjà rond), `fond` (couleur
 de réserve imposée sous un logo), `tolerances` (resserrer le détourage d'une bouteille au
-bouchon blanc sur fond blanc), `detourage: modele` (une bouteille photographiée devant un
+bouchon blanc sur fond blanc), `ombre: couper` (retirer l'ombre translucide d'un PNG déjà
+détouré), `detourage: modele` (une bouteille photographiée devant un
 décor : détourage par le modèle de segmentation de `rembg`, à installer une fois avec
 `pip install rembg onnxruntime` ; le modèle, 180 Mo, se télécharge au premier usage).
 

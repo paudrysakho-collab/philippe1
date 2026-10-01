@@ -441,6 +441,14 @@ def faire_bouteille(numero, entree):
     if a_de_la_transparence(im):
         # déjà détourée : on garde son alpha tel quel
         alpha = im.getchannel("A")
+        if entree.get("ombre") == "couper":
+            # Une ombre portée translucide sous le pied : on ne garde que ce qui touche le
+            # corps opaque de la bouteille, et rien sous sa dernière ligne pleine.
+            plein = alpha.point(lambda a: 255 if a > 200 else 0)
+            alpha = ImageChops.multiply(alpha, plein.filter(ImageFilter.MaxFilter(5)))
+            b = plein.getbbox()
+            if b:
+                alpha.paste(0, (0, b[3] + 1, alpha.width, alpha.height))
         rgb = etalonner(im.convert("RGB"))
         boite = alpha.point(lambda a: 255 if a > 24 else 0).getbbox()
         if not boite:

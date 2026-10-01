@@ -430,3 +430,11 @@ bouteille est symétrique ; un bouchon mangé d'un côté ne l'est plus).
 Faux positifs du test de symétrie, vérifiés à l'œil et laissés tels quels : n°11 et n°15
 (photos légèrement de biais), n°14 (texte de capsule qui fait le tour du goulot), n°26
 (pli réel de la capsule).
+
+Deuxième passe, même nuit : deux contrôles automatiques de plus sur les 39 bouteilles.
+Les pixels translucides détachés du corps signalent une ombre portée : n°39, et n°36 dont
+la bouteille a été remplacée par la même en haute définition (site du domaine, 1013 px au
+lieu de 172). Les deux perdent leur ombre (`ombre: couper`). Le test du liseré clair au
+bord, lui, s'est révélé non concluant : il compte les étiquettes blanches qui touchent le
+verre ; vu à l'œil, le liseré d'un pixel des bouteilles sombres se fond dans le papier
+clair de la page et ne se verra pas. Laissé tel quel.

@@ -619,9 +619,12 @@
    "provenance": "dossier de l'agence"
   },
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png",
-   "sujet": "bouteille 4 Saisons",
-   "provenance": "dossier de l'agence"
+   "fichier": "web/d36-bouteille.png",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.saintemariedalbas.com/",
+   "url": "https://www.saintemariedalbas.com/wp-content/uploads/2023/11/4-saisons.png",
+   "sujet": "bouteille 4 Saisons 2020 (même image que celle de l'agence, en haute définition)",
+   "ombre": "couper"
   }
  },
  "37": {
@@ -668,7 +671,8 @@
   "bouteille": {
    "fichier": "canva/d39-p42-367.png",
    "provenance": "Canva de l'agence « Tarif septembre 2026 », page 42",
-   "sujet": "bouteille Nature de Solemme"
+   "sujet": "bouteille Nature de Solemme",
+   "ombre": "couper"
   }
  },
  "40": {

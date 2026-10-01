@@ -11,10 +11,11 @@ toujours ce qui est réellement posé.
 
 **D'où elles viennent, par ordre de priorité**
 
-1. **Les dossiers de l'agence** (`Bouteilles_de_vin/`, `Domaines_et_vignerons/`) : 29 images,
-   selon la table validée par l'agence. Le nom du fichier d'origine figure dans la colonne
+1. **Les dossiers de l'agence** (`Bouteilles_de_vin/`, `Domaines_et_vignerons/`) : 28 images,
+   selon la table validée par l'agence (la 29e, la bouteille du n°36, a été remplacée par la
+   même en haute définition). Le nom du fichier d'origine figure dans la colonne
    « Source ».
-2. **Les sites officiels des domaines** : 29 images, dont 20 des 30 repérées en 2026 (les
+2. **Les sites officiels des domaines** : 30 images, dont 20 des 30 repérées en 2026 (les
    autres doublaient une image de l'agence, ou ont été remplacées par mieux). Sur les sites
    WordPress (Blacailloux, Trichon), la médiathèque complète a été parcourue pour trouver
    la plus grande version de chaque bouteille. **L'autorisation de chaque domaine reste à demander** avant impression : une
@@ -30,8 +31,7 @@ toujours ce qui est réellement posé.
 
 **Résolution.** Toutes sont au-dessus du plancher de 200 ppi à leur taille imprimée, aucune
 n'a été agrandie. Les plus justes : bouteille n°21 (202 ppi), rond n°3 (213 ppi), rond n°35
-(217 ppi), bouteille n°36 (232 ppi). Une version plus grande de celles-là améliorerait
-l'impression.
+(217 ppi). Une version plus grande de celles-là améliorerait l'impression.
 
 **Traitement.** Une seule fonction pour toutes (`scripts/preparer-photos.py`) : saturation
 0,82, contraste 1,06, rouge réchauffé, bleu refroidi. Rien n'est déformé.
@@ -53,7 +53,10 @@ l'impression.
   puis nettoyées par la symétrie de la bouteille : les lettres de la caisse tombent. Celle
   du n°24, bouchon blanc sur fond blanc, est détourée à tolérance très serrée
   (`tolerances`) pour garder le bouchon entier ; celle du n°28 est recadrée au ras du pied
-  pour perdre son reflet.
+  pour perdre son reflet ; celles des n°36 et n°39 perdent l'ombre translucide que leur
+  PNG portait sous le pied (`ombre: couper`). La bouteille du n°36 est la même « 4 Saisons
+  2020 » que dans le dossier de l'agence, reprise du site du domaine en haute définition
+  (1013 × 1350 px au lieu de 172 × 605).
 
 **Loi Évin.** Aucun verre levé, porté à la bouche ou trinqué, aucune scène de dégustation.
 Écartées pour cette raison : les photos de dégustation des n°2, 6, 8, 30, 31, 35 et 39 (sites
@@ -146,7 +149,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 35 | Domaine Les Lys | rond (`src/photos/rond/d35.jpg`) | logo du domaine | Canva de l'agence « Tarif septembre 2026 », page 38 | `canva/d35-p38-321.png` | 265x245 px → 217 ppi à 40 mm | photothèque de l'agence |
 | 35 | Domaine Les Lys | bouteille (`src/photos/bouteille/d35.png`) | bouteille Duché | dossier de l'agence | `Bouteilles_de_vin/Domaine_Les_Lys/Domaine_Les_Lys_Duche_dUzes_Duche_Rouge.png` | 1080x1920 px → 671 ppi à 24 × 62 mm | photothèque de l'agence |
 | 36 | Prieuré Sainte-Marie d’Albas | rond (`src/photos/rond/d36.jpg`) | les deux vignerons et leur rosé, noir et blanc | dossier de l'agence | `Domaines_et_vignerons/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Vignerons_avec_rose_NB.jpg` | 1181x1181 px → 750 ppi à 40 mm | photothèque de l'agence |
-| 36 | Prieuré Sainte-Marie d’Albas | bouteille (`src/photos/bouteille/d36.png`) | bouteille 4 Saisons | dossier de l'agence | `Bouteilles_de_vin/Prieure_Sainte_Marie_dAlbas/Prieure_Sainte_Marie_dAlbas_Corbieres_4_Saisons_2020.png` | 172x605 px → 232 ppi à 24 × 62 mm | photothèque de l'agence |
+| 36 | Prieuré Sainte-Marie d’Albas | bouteille (`src/photos/bouteille/d36.png`) | bouteille 4 Saisons 2020 (même image que celle de l'agence, en haute définition) | site officiel du domaine | page https://www.saintemariedalbas.com/ — image <https://www.saintemariedalbas.com/wp-content/uploads/2023/11/4-saisons.png> | 1013x1350 px → 472 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
 | 37 | Champagne Dekeyne | rond (`src/photos/rond/d37.jpg`) | les deux frères dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 40 | `canva/d37-p40-345.png` | 1800x1200 px → 914 ppi à 40 mm | photothèque de l'agence |
 | 37 | Champagne Dekeyne | bouteille (`src/photos/bouteille/d37.png`) | bouteille Chardonnay | dossier de l'agence | `Bouteilles_de_vin/Champagne_Dekeyne/Champagne_Dekeyne_Chardonnay_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
 | 38 | Champagne Denis Frézier | rond (`src/photos/rond/d38.jpg`) | le village dans ses vignes | Canva de l'agence « Tarif septembre 2026 », page 41 | `canva/d38-p41-355.png` | 1024x768 px → 488 ppi à 40 mm | photothèque de l'agence |
@@ -195,7 +198,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 33 | Famille d’Exea — Jus de Cépages | brebis dans les vignes — Canva de l'agence, 762 ppi | bouteille de jus de Grenache — Canva de l'agence, 358 ppi |
 | 34 | Château de Gragnos | grappes à la vigne — site du domaine, 813 ppi | bouteille Lou Daro 2022 — dossier de l'agence, 699 ppi |
 | 35 | Domaine Les Lys | logo du domaine — Canva de l'agence, 217 ppi | bouteille Duché — dossier de l'agence, 671 ppi |
-| 36 | Prieuré Sainte-Marie d’Albas | les deux vignerons et leur rosé, noir et blanc — dossier de l'agence, 750 ppi | bouteille 4 Saisons — dossier de l'agence, 232 ppi |
+| 36 | Prieuré Sainte-Marie d’Albas | les deux vignerons et leur rosé, noir et blanc — dossier de l'agence, 750 ppi | bouteille 4 Saisons 2020 (même image que celle de l'agence, en haute définition) — site du domaine, 472 ppi |
 | 37 | Champagne Dekeyne | les deux frères dans les vignes — Canva de l'agence, 914 ppi | bouteille Chardonnay — dossier de l'agence, 574 ppi |
 | 38 | Champagne Denis Frézier | le village dans ses vignes — Canva de l'agence, 488 ppi | bouteille Les Trois Crus — dossier de l'agence, 574 ppi |
 | 39 | Champagne Solemme | logo de la maison — site du domaine, 437 ppi | bouteille Nature de Solemme — Canva de l'agence, 307 ppi |
