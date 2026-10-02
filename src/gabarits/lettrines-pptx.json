@@ -1,124 +1,163 @@
 {
  "1": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "2": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "3": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "4": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "5": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "6": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "7": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "8": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "9": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 10
  },
  "10": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "11": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 9
  },
  "12": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 5
  },
  "13": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "14": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 9
  },
  "15": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "16": {
   "lettrine": 1.3,
-  "interligne": 1.3
+  "interligne": 1.36,
+  "lignes": 13
  },
  "17": {
-  "lettrine": 1.3,
-  "interligne": 1.36
+  "lettrine": 1.8,
+  "lignes": 14
  },
  "18": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 10
  },
  "19": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 10
  },
  "20": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "21": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "22": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "23": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "24": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "25": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "26": {
-  "lettrine": 1.3
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "27": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "28": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "29": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "30": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "31": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "32": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 4
  },
  "33": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "34": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "35": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "36": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 8
  },
  "37": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "38": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  },
  "39": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 7
  },
  "40": {
-  "lettrine": 1.8
+  "lettrine": 1.8,
+  "lignes": 6
  }
 }

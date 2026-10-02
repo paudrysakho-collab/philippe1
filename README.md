@@ -50,12 +50,18 @@ image : `credits.md`.
    en la faisant glisser. Les logos, les ronds à deux portraits et les ronds élargis (dont
    les n°10 et n°18, cadrés pour laisser un verre hors champ) restent figés. Si Canva
    rend les ronds carrés ou déformés à l'import, garder la première version.
-6. **La lettrine** (première lettre du texte, Young Serif violette) monte au-dessus de la
-   première ligne : un .pptx ne sait pas la faire tomber sur deux lignes comme le PDF. Sa
-   taille est réglée domaine par domaine dans `src/gabarits/lettrines-pptx.json` par
-   `python3 scripts/regler-lettrines.py`, qui rend le .pptx et réduit la lettrine (puis
-   l'interligne) des seuls textes qui toucheraient leur tableau. À relancer si un texte
-   de domaine change (demande LibreOffice et `pip install pymupdf`).
+6. **La lettrine** (première lettre du texte, Young Serif violette) est une **boîte de
+   texte à part**, posée devant la première ligne et montant au-dessus d'elle : à l'import,
+   Canva ramène chaque paragraphe à une seule police et une seule taille, et une lettrine
+   écrite dans le texte n'y gardait que sa couleur. Dans le texte, quelques espaces
+   insécables lui gardent sa place. Pour corriger le premier mot dans Canva, corrigez la
+   lettre dans sa boîte et la suite dans le texte. Si vous déplacez le texte, sélectionnez
+   les deux boîtes ensemble. Sa taille, et le nombre de lignes qui sert à centrer le bloc,
+   sont réglés domaine par domaine dans `src/gabarits/lettrines-pptx.json` par
+   `python3 scripts/regler-lettrines.py`. Ce script rend le .pptx, compte les lignes, vérifie
+   que la lettrine est sur la ligne de base de la première ligne, et réduit la lettrine
+   (puis l'interligne) des seuls textes qui toucheraient leur tableau. À relancer si un
+   texte de domaine change (demande LibreOffice et `pip install pymupdf`).
 
 **Attention** : une fois le catalogue modifié dans Canva, Canva devient la nouvelle source.
 Si un prix change après coup, corrigez-le d'abord dans `data/fiches/`, relancez

@@ -8,6 +8,7 @@ import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
+  largeurTexte, lignesTexte,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, figuresModeEmploi, BLOCS_MODE_EMPLOI, PIED_MODE_EMPLOI }
   from '../src/gabarits/pages.mjs';
@@ -46,6 +47,42 @@ const LETTRINES = fs.existsSync(FICHIER_LETTRINES)
   ? JSON.parse(fs.readFileSync(FICHIER_LETTRINES, 'utf8')) : {};
 const LETTRINE_DEFAUT = 1.8;
 const BOITES = {};   // n° → place du texte, pour regler-lettrines.py
+
+/* Où tombe la ligne de base de la première ligne d'une boîte ancrée en haut, en fraction du
+   corps. Mesuré sur une planche importée dans Canva et rendue par LibreOffice
+   (essais/calibrage-canva.mjs) :
+   - LibreOffice, comme PowerPoint : l'ascendante de la police, plus le supplément
+     d'interligne, posé AU-DESSUS de la ligne (1,2 × corps × (interligne − 1)) ;
+   - Canva : l'ascendante seule, quel que soit l'interligne (0,854 pour Spectral, que Canva
+     remplace par Arimo tant qu'elle n'est pas téléversée ; 0,92 pour Young Serif). */
+const BASE = { lo: { courant: 0.998, titre: 0.999, sus: 1.2 }, canva: { courant: 0.854, titre: 0.92 } };
+const PT = 25.4 / 72;   // un point, en mm
+
+/** Place la lettrine et le texte dans la bande, en mm, depuis le haut de la bande.
+    Deux logiciels, deux façons de poser la première ligne : on cale la lettrine pour Canva,
+    et son interligne à elle (que Canva ignore, et que LibreOffice applique) la recale pour
+    LibreOffice et PowerPoint. Le bloc, de la tête de la lettrine au pied de la dernière ligne,
+    se centre dans la bande comme le texte du PDF. */
+function placerLettrine(texte, corps, interligne, taille, lignes, bande) {
+  const { lo, canva } = BASE;
+  const baseLo = corps * (lo.courant + lo.sus * (interligne - 1));         // pt sous le haut du texte
+  const lettre = (corps * canva.courant - taille * canva.titre) * PT;        // haut de la lettrine
+  const interligneLettre = 1 + (baseLo - corps * canva.courant - taille * (lo.titre - canva.titre))
+    / (lo.sus * taille);
+  // le bloc (rendu LibreOffice) : la capitale de la lettrine (0,75 du corps) au-dessus de la
+  // première ligne de base, les jambages (0,25) sous la dernière
+  const tete = (baseLo - 0.75 * taille) * PT;
+  const pied = (baseLo + (lignes - 1) * lo.sus * interligne * corps + 0.25 * corps) * PT;
+  // la place de la lettrine, en huitièmes de cadratin : des insécables (2/8) et au besoin une
+  // espace fine (1/8), pour que le blanc après la lettre reste sous 0,6 mm
+  const largeur = largeurTexte(texte.slice(0, 1), F.titre, taille);
+  const huitiemes = Math.ceil((largeur + 0.15) / largeurTexte('\u2009', F.courant, corps));
+  return {
+    haut: (bande - (pied - tete)) / 2 - tete, lettre, largeur, hauteur: taille * 1.6 * PT,
+    interligneLettre: Math.round(interligneLettre * 1000) / 1000,
+    reserve: '\u00a0'.repeat(Math.floor(huitiemes / 2)) + (huitiemes % 2 ? '\u2009' : ''),
+  };
+}
 
 const PAGE_L = 210, PAGE_H = 260;
 const MARGE = { haut: 15, bas: 13, int: 17, ext: 14 };
@@ -292,23 +329,34 @@ function slideFiche(s, numero, desc) {
     // le corps grandit pour remplir la bande, et le texte s'y centre : voir corpsDomaine()
     const texte = d.texte_source
       || "Le tarif de l'Agence SCIO ne donne pas de présentation pour ce domaine. Nous n'en inventons pas.";
-    // La lettrine, comme dans le PDF : la première lettre en Young Serif violette. Un .pptx ne
-    // sait pas faire tomber une lettre sur deux lignes ; elle monte donc au-dessus de la
-    // première ligne (lettrine montante), deux fois le corps du texte : corpsDomaine() garde
-    // déjà une ligne de marge pour elle.
+    // La lettrine, comme dans le PDF : la première lettre en Young Serif violette, montante
+    // (un .pptx ne sait pas faire tomber une lettre sur deux lignes). Elle a SA boîte de texte :
+    // à l'import, Canva ramène tout un paragraphe à une seule police et une seule taille, et une
+    // lettrine écrite dans le texte n'y gardait que sa couleur. Des espaces insécables lui
+    // réservent sa place en tête de la première ligne ; sa ligne de base est calée sur celle
+    // du texte, dans Canva comme dans LibreOffice ou PowerPoint (voir placerLettrine()).
     const corps = d.texte_source ? corpsDomaine(d) : 9;
-    const reglage = LETTRINES[d.numero] ?? {};
-    const facteur = reglage.lettrine ?? LETTRINE_DEFAUT;
-    const interligne = reglage.interligne ?? 1.42;
-    const morceaux = d.texte_source
-      ? [{ text: texte.slice(0, 1), options: { fontFace: F.titre, fontSize: Math.round(corps * facteur * 2) / 2,
-        color: C.violet } }, { text: texte.slice(1) }]
-      : texte;
-    BOITES[d.numero] = { diapo: pres.slides.length, x: gauche + rond + ecart,
-      y: y / mm(1), w: COLONNE_DOM, h: bande };
-    s.addText(morceaux, { x: mm(gauche + rond + ecart), y, w: mm(COLONNE_DOM), h: mm(bande),
-      margin: 0, fontFace: F.courant, fontSize: corps,
-      color: C.silex, lineSpacingMultiple: interligne, italic: !d.texte_source, valign: 'middle' });
+    const xt = gauche + rond + ecart;
+    if (d.texte_source) {
+      const reglage = LETTRINES[d.numero] ?? {};
+      const interligne = reglage.interligne ?? 1.42;
+      const taille = Math.round(corps * (reglage.lettrine ?? LETTRINE_DEFAUT) * 2) / 2;
+      const lignes = reglage.lignes ?? lignesTexte(texte, F.courant, corps, COLONNE_DOM);
+      const p = placerLettrine(texte, corps, interligne, taille, lignes, bande);
+      const yTexte = y / mm(1) + p.haut;
+      s.addText(texte.slice(0, 1), { x: mm(xt), y: mm(yTexte + p.lettre), w: mm(p.largeur + 1.5),
+        h: mm(p.hauteur), margin: 0, fontFace: F.titre, fontSize: taille, color: C.violet,
+        lineSpacingMultiple: p.interligneLettre, valign: 'top' });
+      s.addText(p.reserve + texte.slice(1), { x: mm(xt), y: mm(yTexte), w: mm(COLONNE_DOM),
+        h: mm(bande - p.haut), margin: 0, fontFace: F.courant, fontSize: corps, color: C.silex,
+        lineSpacingMultiple: interligne, valign: 'top' });
+      BOITES[d.numero] = { diapo: pres.slides.length, x: xt, y: y / mm(1), w: COLONNE_DOM, h: bande,
+        corps, interligne, lettrine: taille };
+    } else {
+      s.addText(texte, { x: mm(xt), y, w: mm(COLONNE_DOM), h: mm(bande), margin: 0,
+        fontFace: F.courant, fontSize: corps, color: C.silex, lineSpacingMultiple: 1.42,
+        italic: true, valign: 'middle' });
+    }
     y += mm(bande + 4.5);
   }
 

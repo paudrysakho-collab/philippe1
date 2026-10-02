@@ -479,3 +479,35 @@ la lettrine.
   67067C). Testé à rebours : le fichier non réparé sort en rouge sur ces deux lignes.
 - **Résultat** : 76 diapositives sur 76 conformes au schéma, dans les deux .pptx. Rendu
   identique à l'œil : rien n'a bougé, seul le XML a changé.
+
+### Dans Canva, la lettrine devient une boîte à part
+
+La réparation du XML n'a pas suffi : importé dans Canva (essai fait depuis le dépôt public),
+le « S » du n°2 arrivait violet, mais à la taille et dans la police du texte. Une planche
+de six variantes (`essais/lettrine-canva.mjs`) a tranché :
+- **Lettrine écrite dans le paragraphe** (en Young Serif, dans la même police, en IBM
+  Plex Sans que Canva connaît, en gras) : Canva garde la couleur et le gras, et ramène tout
+  le paragraphe à une seule police et une seule taille.
+- **Lettrine dans sa propre boîte** : Canva garde sa taille et sa couleur. Il jette le
+  retrait de première ligne (`indent`).
+
+Retenu : la lettrine a sa boîte, et des espaces insécables lui gardent sa place en tête
+du texte (Spectral n'a pas d'espace cadratin ; l'insécable fait 0,25 cadratin).
+
+**Le calage vertical.** Une planche de calibrage (`essais/calibrage-canva.mjs`), importée
+dans Canva et rendue par LibreOffice, mesurée dans les deux PDF avec PyMuPDF, donne :
+- **LibreOffice, comme PowerPoint** : la première ligne de base tombe à l'ascendante,
+  plus le supplément d'interligne posé au-dessus (1,2 × corps × (interligne − 1)).
+- **Canva** : la première ligne de base tombe à l'ascendante seule, quel que soit
+  l'interligne : 0,854 corps pour Spectral, remplacée par Arimo tant qu'elle n'est pas
+  téléversée, et 0,92 pour Young Serif, remplacée par TYSerif.
+
+On pose la lettrine pour Canva, puis on lui donne un interligne à elle, que Canva ignore et
+que LibreOffice applique, calculé pour qu'elle retombe aussi sur la ligne de base dans
+LibreOffice et PowerPoint. Si l'agence téléverse ensuite les vraies polices, les deux
+ascendantes changent ensemble (1,059 et 1,046) : le décalage reste sous 0,2 mm.
+
+Le texte est désormais ancré en haut, et non plus au milieu de sa bande : c'est la seule
+façon de savoir où tombe la première ligne. Pour garder le bloc centré comme dans le PDF,
+`regler-lettrines.py` compte les lignes de chaque texte dans le rendu LibreOffice et les
+note dans `lettrines-pptx.json`.

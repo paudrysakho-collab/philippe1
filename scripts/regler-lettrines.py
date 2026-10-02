@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Règle la taille de la lettrine du .pptx, domaine par domaine.
+"""Règle la lettrine et la place du texte du .pptx, domaine par domaine.
 
-Dans le PDF, la lettrine tombe sur deux lignes (CSS). Un .pptx ne sait pas le faire : la
-lettrine y monte au-dessus de la première ligne, qu'elle rend plus haute. Sur les textes
-les plus longs, cette ligne de plus ferait toucher le texte au tableau de prix. Ce script
-fabrique le .pptx, le fait rendre par LibreOffice, mesure chaque bloc de texte, et réduit
-la lettrine des seuls domaines qui débordent, jusqu'à ce qu'aucun ne déborde.
+Dans le PDF, la lettrine tombe sur deux lignes (CSS). Dans le .pptx, elle a sa propre boîte
+de texte (Canva ne garde pas une lettre plus grande dans un paragraphe) et monte au-dessus
+de la première ligne. Le bloc, de la tête de la lettrine au pied de la dernière ligne, se
+centre dans la bande ; pour cela, scripts/pptx.mjs doit savoir combien de lignes fait le
+texte. Ce script fabrique le .pptx, le fait rendre par LibreOffice, et, pour chaque domaine :
+- compte les lignes du texte et les note (le .pptx suivant centre le bloc juste) ;
+- vérifie que la lettrine est posée sur la ligne de base de la première ligne ;
+- si le bloc déborde de la bande, réduit la lettrine, puis resserre l'interligne.
+Il recommence jusqu'à ce que rien ne bouge.
 
     python3 scripts/regler-lettrines.py      écrit src/gabarits/lettrines-pptx.json
 
@@ -38,33 +42,36 @@ def rendre():
 
 
 def mesurer(pdf):
-    """n° → (débord en haut, débord en bas), en mm ; positif = le texte sort de sa place."""
+    """n° → {lignes, ecart, haut, bas} : nombre de lignes du texte, écart en mm entre la ligne
+    de base de la lettrine et celle de la première ligne, et débords du bloc en haut et en bas
+    (positif = le bloc sort de sa bande)."""
     boites = json.loads(BOITES.read_text(encoding="utf-8"))
     doc = pymupdf.open(pdf)
-    debords = {}
+    res = {}
     for n, b in boites.items():
         page = doc[b["diapo"] - 1]
-        haut, bas = None, None
+        lettre, bases = None, set()
         for bloc in page.get_text("dict")["blocks"]:
             for ligne in bloc.get("lines", []):
                 for sp in ligne["spans"]:
                     if not sp["text"].strip():
                         continue
-                    if not ("Spectral" in sp["font"] or "YoungSerif" in sp["font"]):
+                    x0, y0 = mm(sp["bbox"][0]), mm(sp["bbox"][1])
+                    base = mm(sp["origin"][1])
+                    if x0 < b["x"] - 1 or x0 > b["x"] + b["w"] or not b["y"] - 12 < base < b["y"] + b["h"] + 12:
                         continue
-                    x0, y0, x1, y1 = (mm(v) for v in sp["bbox"])
-                    if x0 < b["x"] - 1 or x0 > b["x"] + b["w"]:
-                        continue
-                    if y1 < b["y"] - 12 or y0 > b["y"] + b["h"] + 12:
-                        continue
-                    if "YoungSerif" in sp["font"] and sp["size"] > 18 and y0 < b["y"] - 9:
-                        continue        # le titre du domaine
-                    haut = y0 if haut is None else min(haut, y0)
-                    bas = y1 if bas is None else max(bas, y1)
-        if haut is None:
+                    if "YoungSerif" in sp["font"] and abs(sp["size"] - b["lettrine"]) < 0.3:
+                        lettre = base
+                    elif "Spectral" in sp["font"]:
+                        bases.add(round(base, 1))
+        if lettre is None or not bases:
             continue
-        debords[int(n)] = (b["y"] - MARGE_HAUT - haut, bas - (b["y"] + b["h"] + MARGE_BAS))
-    return debords
+        bases = sorted(bases)
+        haut = lettre - 0.75 * b["lettrine"] * 25.4 / 72
+        bas = bases[-1] + 0.25 * b["corps"] * 25.4 / 72
+        res[int(n)] = {"lignes": len(bases), "ecart": lettre - bases[0],
+                       "haut": b["y"] - MARGE_HAUT - haut, "bas": bas - (b["y"] + b["h"] + MARGE_BAS)}
+    return res
 
 
 # Les réglages, du plus généreux au plus sage. Une lettrine reste toujours visible
@@ -72,9 +79,10 @@ def mesurer(pdf):
 ETAPES = [(1.8, 1.42), (1.55, 1.42), (1.3, 1.42), (1.3, 1.36), (1.3, 1.30), (1.3, 1.25), (1.0, 1.25)]
 
 
-def ecrire(etat):
+def ecrire(etat, lignes):
     SORTIE.write_text(json.dumps({str(n): {"lettrine": ETAPES[i][0], **({"interligne": ETAPES[i][1]}
-                                  if ETAPES[i][1] != 1.42 else {})} for n, i in sorted(etat.items())},
+                                  if ETAPES[i][1] != 1.42 else {}), **({"lignes": lignes[n]} if n in lignes else {})}
+                                  for n, i in sorted(etat.items())},
                                  indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
@@ -82,23 +90,34 @@ def main():
     textes = [int(p.stem) for p in sorted((RACINE / "data/fiches").glob("*.json"))
               if json.loads(p.read_text(encoding="utf-8")).get("texte_source")]
     etat = {n: 0 for n in textes}
-    fautifs = []
-    for tour in range(1, len(ETAPES) + 1):
-        ecrire(etat)
-        debords = mesurer(rendre())
-        fautifs = [n for n, (h, b) in debords.items() if (h > 0 or b > 0) and n in etat]
-        print(f"tour {tour} : {len(fautifs)} domaine(s) qui débordent" +
-              (" — " + ", ".join(f"n°{n} ({max(debords[n]):.1f} mm, lettrine ×{ETAPES[etat[n]][0]}, "
-                                 f"interligne {ETAPES[etat[n]][1]})" for n in fautifs) if fautifs else ""))
+    lignes = {}
+    for tour in range(1, 3 * len(ETAPES) + 1):
+        ecrire(etat, lignes)
+        m = mesurer(rendre())
+        manquants = [n for n in textes if n not in m]
+        if manquants:
+            sys.exit(f"lettrine ou texte introuvable dans le rendu : n°{', '.join(map(str, manquants))}")
+        recompte = [n for n in textes if lignes.get(n) != m[n]["lignes"]]
+        fautifs = [n for n in textes if m[n]["haut"] > 0 or m[n]["bas"] > 0]
+        decales = [n for n in textes if abs(m[n]["ecart"]) > 0.15]
+        print(f"tour {tour} : {len(recompte)} recompte(s) de lignes, {len(fautifs)} débord(s)"
+              + (" — " + ", ".join(f"n°{n} ({max(m[n]['haut'], m[n]['bas']):.1f} mm)" for n in fautifs) if fautifs else "")
+              + (f" ; lettrine hors ligne de base : " + ", ".join(f"n°{n} ({m[n]['ecart']:+.2f} mm)" for n in decales)
+                 if decales else ""))
+        for n in textes:
+            lignes[n] = m[n]["lignes"]
         bouges = 0
-        for n in fautifs:
-            if etat[n] + 1 < len(ETAPES):
-                etat[n] += 1; bouges += 1
-        if not bouges:
+        if not recompte:            # les lignes sont justes : on peut juger les débords
+            for n in fautifs:
+                if etat[n] + 1 < len(ETAPES):
+                    etat[n] += 1; bouges += 1
+        if not recompte and not bouges:
             break
-    ecrire(etat)
-    print(f"→ {SORTIE.relative_to(RACINE)}"
+    ecrire(etat, lignes)
+    ecart = max(abs(m[n]["ecart"]) for n in textes)
+    print(f"→ {SORTIE.relative_to(RACINE)} ; lettrine à {ecart:.2f} mm au plus de la ligne de base"
           + (f" ; encore justes au dernier réglage : {', '.join(map(str, fautifs))}" if fautifs else ""))
+    return 1 if fautifs or ecart > 0.15 else 0
 
 
 if __name__ == "__main__":

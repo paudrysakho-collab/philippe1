@@ -87,19 +87,21 @@ const horsNorme = xmls.map((xml, i) => [i + 1, [...xml.matchAll(/<a:p>([\s\S]*?)
 dire(horsNorme.length === 0, `paragraphes conformes : une seule <a:pPr>, en tête${
   horsNorme.length ? ` (diapositives ${horsNorme.map(([i, n]) => `${i} : ${n}`).join(', ')})` : ''}`);
 
-// La lettrine de chaque présentation de domaine : premier morceau du texte, Young Serif violet.
+// La lettrine de chaque présentation de domaine : une boîte de texte à elle, une seule lettre en
+// Young Serif violet (Canva ne garde pas une lettre plus grande au sein d'un paragraphe), et le
+// texte qui reprend à la deuxième lettre, derrière les espaces (insécables, fine) qui lui font place.
+const echapper = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 const sansLettrine = catalogue.domaines.filter((d) => d.texte_source).filter((d) => {
-  const echapper = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-  const debut = echapper(d.texte_source.slice(1, 25));
-  const xml = xmls.find((x) => x.includes(debut));
+  const corps = new RegExp(`<a:t>[\u00a0\u2009]+${echapper(d.texte_source.slice(1, 25))
+    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
+  const xml = xmls.find((x) => corps.test(x));
   if (!xml) return true;
-  const avant = xml.slice(Math.max(0, xml.indexOf(debut) - 1500), xml.indexOf(debut));
-  const lettre = echapper(d.texte_source.slice(0, 1));
-  return !new RegExp(`<a:p><a:pPr\\b[^]*?<a:srgbClr val="67067C"/></a:solidFill><a:latin typeface="Young Serif"[^]*?<a:t>${
-    lettre}</a:t></a:r><a:r>`).test(avant.slice(avant.lastIndexOf('<a:p>')));
+  return ![...xml.matchAll(/<p:txBody>([\s\S]*?)<\/p:txBody>/g)].some(([, b]) =>
+    [...b.matchAll(/<a:t>([^<]*)<\/a:t>/g)].map((m) => m[1]).join('') === echapper(d.texte_source.slice(0, 1))
+    && b.includes('<a:srgbClr val="67067C"/>') && b.includes('<a:latin typeface="Young Serif"'));
 });
-dire(sansLettrine.length === 0, `${catalogue.domaines.filter((d) => d.texte_source).length} présentations ouvrent sur leur lettrine violette${
+dire(sansLettrine.length === 0, `${catalogue.domaines.filter((d) => d.texte_source).length} présentations ouvrent sur leur lettrine violette, dans sa propre boîte${
   sansLettrine.length ? ` (manque : ${sansLettrine.map((d) => d.numero).join(', ')})` : ''}`);
 
 const octets = fs.statSync(FICHIER).size;
