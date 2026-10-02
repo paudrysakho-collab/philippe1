@@ -134,6 +134,15 @@ Elles sont dans `QUESTIONS.md` :
   ne sont pas au salon.
 - **Les tableaux ne montrent que les vins dégustés**, d'après le **fichier de Mathéo**, qui
   fait foi pour cette liste.
+  - **Comment le lire** (consigne de l'agence) : ne prends que **les listes de vins des
+    cartes de stand**. Ignore les pages d'habillage (liste des domaines, plan « version
+    esthétique »).
+  - **Attention aux pages doubles** : une même page peut porter **deux vignerons côte à côte,
+    séparés par un trait vertical**, chacun avec son numéro de stand, son nom et sa propre
+    « Liste des vins ». Ne mélange jamais leurs vins : rattache chaque ligne au stand de sa
+    colonne, et vérifie le total (26 stands).
+  - Le Padlet déjà déposé (`padlet-vins-a-deguster.pdf`, 20 pages) a cette forme : page 1 la
+    liste des domaines, page 2 le plan, puis les cartes, une ou deux par page.
   - Chaque vin se rapproche d'une ligne du tarif (`data/fiches/`) : appellation, cuvée,
     couleur, millésime, contenance.
   - Un vin absent du tarif, ou d'un autre millésime, va dans `QUESTIONS.md`. On n'invente
