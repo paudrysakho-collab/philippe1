@@ -393,9 +393,10 @@ suffit pour ceux qui vous surprennent.
 le rouge 2021 ou le rosé 2024 du tarif ?
 
 Quelques remarques encore :
-- **Stand 7, Premières Fleurs 2025** : le dossier écrit « Rouge » ; l'agence avait donné
-  « blanc » le 2 octobre, avant le dossier. Le catalogue affiche **Rouge** (le dossier fait
-  foi). Dites-le si c'est l'inverse.
+- **Stand 7, Premières Fleurs** : le dossier en liste **deux**, un « Premières Fleurs Blanc »
+  sans millésime (au tarif) et un « Premières Fleurs Rouge 2025 » (absent du tarif). Les deux
+  sont affichés. L'agence avait donné « blanc » le 2 octobre pour la seule ligne du Padlet,
+  avant le dossier.
 - **Stand 21, les jus de cépages d'Exea** : le dossier les liste (Syrah, Chardonnay,
   Grenache). La fiche n°33 entre donc au salon, contrairement à la réponse du 2 octobre
   (« pas de jus de cépages ») : le dossier, plus récent, fait foi.

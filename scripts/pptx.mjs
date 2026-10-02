@@ -218,7 +218,8 @@ function tableauDonnees(t, lignes, hauteurs) {
       { text: [
           { text: l.appellation + (l.note === '*' ? ' *' : ''),
             options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: true, lineSpacingMultiple: 0.9 } },
-          ...(l.cuvee ? [{ text: l.cuvee, options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre,
+          // comme le PDF : les deux derniers mots de la cuvée restent ensemble (espace insécable)
+          ...(l.cuvee ? [{ text: l.cuvee.replace(/ (\S+)$/, '\u00a0$1'), options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre,
             lineSpacingMultiple: 0.9 } }] : []),
         ], options: { ...commun, margin: [1.6, 3, 1.6, 4] } },
       { text: l.millesime || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,

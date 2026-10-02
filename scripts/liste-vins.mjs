@@ -11,7 +11,7 @@ import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 
 process.env.EDITION = 'salon';
-const { SALON, STRATES, esc, picto, famille, NOM_FAMILLE, catalogue } = await import('../src/gabarits/pieces.mjs');
+const { SALON, STRATES, esc, picto, famille, NOM_FAMILLE, catalogue, sansVeuve } = await import('../src/gabarits/pieces.mjs');
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const BUILD = path.join(RACINE, 'build');
@@ -25,11 +25,17 @@ const SORTIE = path.join(RACINE, `dist/salon-prive-2026-liste-des-vins${CATALOGU
 const EV = SALON.evenement;
 const parNumero = Object.fromEntries(catalogue.domaines.map((d) => [d.numero, d]));
 
-/** Le type de vin affiché : la couleur du tarif (ou de la liste), sinon la famille du picto. */
+/** Le type affiché : la couleur du vin ; pour ce qui n'est pas du vin (jus de cépages, sans
+    alcool, bière, spiritueux), la famille du picto, comme dans le catalogue. */
+const PAS_DU_VIN = new Set(['jus', 'sansalcool', 'biere', 'spiritueux']);
 function typeDe(v, f) {
+  if (PAS_DU_VIN.has(f)) return NOM_FAMILLE[f];
   if (v.couleur) return v.couleur;
   return f === 'autre' ? '—' : NOM_FAMILLE[f];
 }
+/** La famille du picto, lue avec le tableau du tarif quand le vin y est rapproché : un tableau
+    « Jus de cépages » fait des jus, quelle que soit la couleur de la ligne. */
+const familleDe = (v) => famille(v, v.tarif ? parNumero[v.fiche].tableaux[v.tarif.tableau] : {});
 
 function blocStand(s) {
   const st = STRATES[s.region];
@@ -37,21 +43,21 @@ function blocStand(s) {
   const plusieurs = new Set(s.vins.map((v) => v.fiche)).size > 1;
   let fichePrec = null;
   const lignes = s.vins.map((v) => {
-    const f = famille(v, {});
+    const f = familleDe(v);
     const sous = plusieurs && v.fiche !== fichePrec
       ? `<div class="lv-sous">${esc(parNumero[v.fiche].nom)}</div>` : '';
     fichePrec = v.fiche;
     const titre = v.cuvee || v.appellation;
     return `${sous}<div class="lv-vin">
       <span class="lv-picto">${picto(f)}</span>
-      <span class="lv-nom"><b>${esc(titre)}</b>${v.cuvee && v.appellation
-        ? `<i>${esc(v.appellation)}</i>` : ''}</span>
+      <span class="lv-nom"><b>${sansVeuve(titre)}</b>${v.cuvee && v.appellation
+        ? `<i>${sansVeuve(v.appellation)}</i>` : ''}</span>
       <span class="lv-coul">${esc(typeDe(v, f))}</span>
       <span class="lv-mil">${esc(v.millesime && v.millesime !== '—' ? v.millesime : '—')}</span></div>`;
   }).join('');
   return `<section class="lv-stand" data-stand="${s.stand}">
     <header><span class="lv-n${clair ? ' claire' : ''}" style="--strate:${st.hex}">${s.stand}</span>
-      <span class="lv-titre">${esc(s.nom_salon)}</span>
+      <span class="lv-titre">${sansVeuve(s.nom_salon)}</span>
       <span class="lv-reg">${esc(s.region)}, ${esc(s.salle)}</span></header>
     ${lignes}</section>`;
 }
@@ -140,7 +146,7 @@ const pages = [];
 for (let i = 0; i < colonnes.length; i += 2) pages.push([colonnes[i], colonnes[i + 1] || []]);
 
 // la légende ne montre que les familles présentes dans la liste
-const presentes = new Set(SALON.stands.flatMap((s) => s.vins.map((v) => famille(v, {}))));
+const presentes = new Set(SALON.stands.flatMap((s) => s.vins.map(familleDe)));
 const legende = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'jus', 'autre'].filter((f) => presentes.has(f)).map((f) =>
   `<span>${picto(f)} ${esc(f === 'autre' ? 'Non précisé' : NOM_FAMILLE[f])}</span>`).join('');
 const corps = pages.map(([g, d], i) => {

@@ -364,6 +364,15 @@ export function famillesDe(d) {
 }
 
 /** Une ligne de tableau. `idx` sert au repérage lors de la passe de mesure. */
+/** Une cuvée qui passe à la ligne n'y laisse jamais un mot seul : les deux derniers mots
+    restent ensemble, et un mot composé (Extra-Brut, Saint-Chinian) ne se coupe pas. */
+export function sansVeuve(texte) {
+  const mots = String(texte ?? '').split(' ');
+  const bloc = (m) => (m.includes('-') ? `<span class="insecable">${esc(m)}</span>` : esc(m));
+  if (mots.length < 3) return mots.map(bloc).join(' ');
+  return `${mots.slice(0, -2).map(bloc).join(' ')} ${bloc(mots.at(-2))}&nbsp;${bloc(mots.at(-1))}`;
+}
+
 export function ligneHtml(l, t, cle) {
   // Un prix absent (édition salon, avant que l'agence ne les donne) laisse une case vide.
   const prix = l.prix_centimes.map((p) => (p == null
@@ -373,7 +382,7 @@ export function ligneHtml(l, t, cle) {
   return `<tr data-ligne="${cle}">
     <td class="c-picto">${picto(famille(l, t))}</td>
     <td class="c-vin"><span class="app">${esc(l.appellation)}${etoile}</span>
-      ${l.cuvee ? `<span class="cuv">${esc(l.cuvee)}</span>` : ''}</td>
+      ${l.cuvee ? `<span class="cuv">${sansVeuve(l.cuvee)}</span>` : ''}</td>
     <td class="c-detail">${esc(l.millesime || '—')}</td>
     <td class="c-detail">${esc(l.contenance || '—')}</td>
     <td class="c-bloc"><div class="bloc-prix">${prix}</div></td></tr>`;

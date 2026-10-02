@@ -228,6 +228,8 @@ td { padding: .7mm 1.3mm; vertical-align: middle; line-height: 1.12; }
 .c-vin .app { display: block; font-size: 8pt; font-weight: 500; color: var(--gneiss); letter-spacing: .005em; }
 .c-vin .cuv { display: block; font-size: 9.6pt; font-weight: 600; color: var(--encre); }
 .c-vin .etoile { color: var(--violet); font-weight: 600; }
+/* un mot composé ne se coupe pas (Extra-Brut, Vazart-Coquart) : voir sansVeuve() */
+.insecable { white-space: nowrap; }
 .c-detail {
   font-size: 8pt; font-weight: 500; color: var(--silex); white-space: nowrap;
   text-align: right; padding-right: 2.4mm;

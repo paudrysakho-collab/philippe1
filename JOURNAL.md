@@ -792,3 +792,18 @@ dossier appliqué à 16 h 14), seulement recompressée :
 Les « petites différences » dont parle Mathéo sont celles entre le Padlet du matin et ce
 dossier : 19 stands, textes et labels, déjà appliquées (QUESTIONS, points 26 et 30). S'il a
 retouché le Padlet après 15 h 44, il faut une nouvelle exportation.
+
+## 2 octobre 2026, soir — revérification complète
+
+`npm run build` et `npm run salon` : tous les contrôles au vert (715 prix, 40 domaines,
+26 stands, 180 vins, polices incorporées, 52 / 48 / 3 pages). En plus : liens de la version
+écran (tel, mailto, site, et 447 / 276 liens internes, tous vers la bonne page), polices de
+chaque PDF, et chaque page regardée en image. Trois défauts trouvés et corrigés :
+- **Mot seul en fin de cuvée** dans un tableau (« …Extra- / Brut », « …Brut / Nature ») :
+  `sansVeuve()` (pieces.mjs) garde ensemble les deux derniers mots et ne coupe jamais un mot
+  composé ; le .pptx lie aussi les deux derniers mots par une espace insécable.
+- **Liste des vins** : les jus de cépages d'Exea y portaient la couleur de leur ligne
+  (rouge, blanc, rosé) avec une pastille de vin ; ils prennent la famille de leur tableau,
+  comme dans le catalogue (« Jus de cépages »). « Vazart-Coquart » ne se coupe plus au trait
+  d'union ; plus de mot isolé.
+- QUESTIONS 26 : le dossier liste deux Premières Fleurs (Blanc et Rouge 2025), pas une.
