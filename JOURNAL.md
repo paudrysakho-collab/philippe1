@@ -459,3 +459,23 @@ pouvoir recentrer une photo mal cadrée directement dans Canva.
   fait de ce recadrage à l'import n'a pas pu être vérifié d'ici : la version découpée
   reste le fichier principal. Les ronds n°10 et n°18 restent figés exprès (leur photo
   entière montre un verre).
+
+### La lettrine disparaissait à l'import : un .pptx hors norme
+
+Retour de l'agence : dans son import, la première lettre des présentations n'était pas
+stylée. Le rendu LibreOffice, lui, la montrait. En relisant le XML : pptxgenjs répète les
+propriétés du paragraphe (`<a:pPr>`) devant **chaque** morceau de texte, donc entre la
+lettrine et la suite. La norme Office n'en admet qu'une, en tête du paragraphe ; le
+validateur de schéma rejetait 71 diapositives sur 76 (1 417 paragraphes : lettrines,
+mots en gras du mode d'emploi, index…). LibreOffice passe outre ; un import strict lit la
+seconde `<a:pPr>` comme une rupture et perd la mise en forme du premier morceau, c'est-à-dire
+la lettrine.
+
+- **Réparation** dans `scripts/ranger-pptx.py`, qui réécrivait déjà l'archive : une seule
+  `<a:pPr>` par paragraphe, en tête. Les répétitions étaient toutes identiques à la
+  première (vérifié ; le script s'arrête si un jour elles diffèrent).
+- **Contrôle** dans `scripts/controler-pptx.mjs` : aucun paragraphe hors norme, et les 40
+  présentations ouvrent bien sur leur lettrine (premier morceau, Young Serif, violet
+  67067C). Testé à rebours : le fichier non réparé sort en rouge sur ces deux lignes.
+- **Résultat** : 76 diapositives sur 76 conformes au schéma, dans les deux .pptx. Rendu
+  identique à l'œil : rien n'a bougé, seul le XML a changé.

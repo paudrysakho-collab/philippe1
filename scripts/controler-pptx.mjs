@@ -78,6 +78,30 @@ const premier = execFileSync('unzip', ['-Z1', FICHIER], { encoding: 'utf8' }).sp
 dire(premier === '[Content_Types].xml',
   `archive rangée, elle commence par [Content_Types].xml (et non « ${premier} »)`);
 
+// Un paragraphe n'a qu'un jeu de propriétés, en tête (norme Office). pptxgenjs le répète
+// devant chaque morceau de texte ; ranger-pptx.py le retire. Sans cela, Canva peut perdre la
+// mise en forme du premier morceau : la lettrine violette redevient une lettre ordinaire.
+const horsNorme = xmls.map((xml, i) => [i + 1, [...xml.matchAll(/<a:p>([\s\S]*?)<\/a:p>/g)]
+  .filter((m) => { const k = (m[1].match(/<a:pPr\b/g) || []).length; return k > 1 || (k === 1 && !m[1].startsWith('<a:pPr')); })
+  .length]).filter(([, n]) => n);
+dire(horsNorme.length === 0, `paragraphes conformes : une seule <a:pPr>, en tête${
+  horsNorme.length ? ` (diapositives ${horsNorme.map(([i, n]) => `${i} : ${n}`).join(', ')})` : ''}`);
+
+// La lettrine de chaque présentation de domaine : premier morceau du texte, Young Serif violet.
+const sansLettrine = catalogue.domaines.filter((d) => d.texte_source).filter((d) => {
+  const echapper = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+  const debut = echapper(d.texte_source.slice(1, 25));
+  const xml = xmls.find((x) => x.includes(debut));
+  if (!xml) return true;
+  const avant = xml.slice(Math.max(0, xml.indexOf(debut) - 1500), xml.indexOf(debut));
+  const lettre = echapper(d.texte_source.slice(0, 1));
+  return !new RegExp(`<a:p><a:pPr\\b[^]*?<a:srgbClr val="67067C"/></a:solidFill><a:latin typeface="Young Serif"[^]*?<a:t>${
+    lettre}</a:t></a:r><a:r>`).test(avant.slice(avant.lastIndexOf('<a:p>')));
+});
+dire(sansLettrine.length === 0, `${catalogue.domaines.filter((d) => d.texte_source).length} présentations ouvrent sur leur lettrine violette${
+  sansLettrine.length ? ` (manque : ${sansLettrine.map((d) => d.numero).join(', ')})` : ''}`);
+
 const octets = fs.statSync(FICHIER).size;
 dire(octets < 50 * 1024 * 1024, `${(octets / 1e6).toFixed(1)} Mo, sous la limite de 50 Mo`);
 
