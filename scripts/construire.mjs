@@ -5,7 +5,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 import {
-  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe, EDITION, BASE,
+  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe, EDITION, BASE, BANDES,
 } from '../src/gabarits/pieces.mjs';
 import * as G from '../src/gabarits/pages.mjs';
 
@@ -17,7 +17,7 @@ fs.mkdirSync(DIST, { recursive: true });
 
 const PX_PAR_MM = 96 / 25.4;
 const CADRE_H = 260 - 15 - 13;          // hauteur utile d'une page, en mm
-const ECART_TABLEAUX = 4.5;             // margin-top entre deux tableaux, en mm
+const ECART_TABLEAUX = 3.6;             // margin-top entre deux tableaux, en mm
 const SECURITE = 2;                     // marge de sécurité : on ne remplit jamais au millimètre
 const VIDE_MIN = 30;                    // au-delà, une fiche courte reçoit la coupe de son sol
 const VIDE_MAX = 40;                    // discret : le bandeau ne doit pas devenir du papier peint
@@ -33,7 +33,7 @@ function documentMesure() {
     return `<div class="mesure-bloc">
       <div data-m="entete-${d.numero}">${G.enteteDomaine(d, false)}</div>
       <div data-m="enteteSuite-${d.numero}">${G.enteteDomaine(d, true)}</div>
-      <div data-m="haut-${d.numero}">${G.hautDomaine(d)}</div>
+      ${BANDES.map((b) => `<div data-m="haut-${d.numero}-${b}">${G.hautDomaine(d, b)}</div>`).join('')}
       ${tableaux}
       <div data-m="note-${d.numero}">${G.noteDomaine(d)}</div>
       <div data-m="pied-${d.numero}">${G.piedDomaine(d, new Map(catalogue.domaines.map((x) => [x.numero, 99])))}</div>
@@ -96,14 +96,25 @@ async function mesurer(navigateur) {
 
 /* ——————————————————————————————————————————— 2. pagination ——— */
 
-/** Découpe un domaine, puis rééquilibre : deux pages dont l'une est vide, c'est laid. */
+/** Découpe un domaine. La bande du haut s'abaisse si cela épargne une page : on garde la
+    plus haute des bandes qui donnent le moins de pages (voir BANDES, pieces.mjs). */
 function decouper(d, m) {
-  const premier = decouperAvecBudget(d, m, Infinity);
+  let choix = null;
+  for (const bande of BANDES) {
+    const essai = decouperBande(d, m, bande);
+    if (!choix || essai.pages.length < choix.pages.length) choix = essai;
+  }
+  return choix;
+}
+
+/** Puis on rééquilibre : deux pages dont l'une est vide, c'est laid. */
+function decouperBande(d, m, bande) {
+  const premier = decouperAvecBudget(d, m, Infinity, bande);
   if (premier.pages.length < 2) return premier;
   // On vise des pages également remplies : on rabote le budget jusqu'à ce que ça déborde.
   let meilleur = premier;
   for (let rabot = 2; rabot <= 60; rabot += 2) {
-    const essai = decouperAvecBudget(d, m, rabot);
+    const essai = decouperAvecBudget(d, m, rabot, bande);
     if (essai.pages.length > premier.pages.length) break;
     meilleur = essai;
   }
@@ -111,10 +122,10 @@ function decouper(d, m) {
 }
 
 /** `rabot` retire des millimètres au budget de chaque page pour répartir les lignes. */
-function decouperAvecBudget(d, m, rabot) {
+function decouperAvecBudget(d, m, rabot, bande) {
   const entete = m.blocs[`entete-${d.numero}`];
   const enteteSuite = m.blocs[`enteteSuite-${d.numero}`];
-  const haut = m.blocs[`haut-${d.numero}`];
+  const haut = m.blocs[`haut-${d.numero}-${bande}`];
   const pied = m.blocs[`pied-${d.numero}`];
 
   const tableaux = d.tableaux.map((t, ti) => ({
@@ -171,13 +182,13 @@ function decouperAvecBudget(d, m, rabot) {
   }
   courante.reste = reste + rab;
   pages.push(courante);
-  return { pages, entete, enteteSuite, haut, pied };
+  return { pages, entete, enteteSuite, haut, pied, bande };
 }
 
 function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
-  const { pages } = decouper(d, m);
+  const { pages, bande } = decouper(d, m);
   pages.forEach((pg, i) => descripteurs.push({
-    type: 'fiche', domaine: d.numero, premiere: pg.premiere, reste: pg.reste,
+    type: 'fiche', domaine: d.numero, premiere: pg.premiere, reste: pg.reste, bande,
     note: i === pages.length - 1,
     morceaux: pg.morceaux.map((mo) => ({
       tableau: Number(mo.cle.split('-')[1]), suite: mo.suite,
@@ -188,7 +199,7 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
     region: d.region, classe: 'fiche',
     corps: `<div class="cadre">
       ${G.enteteDomaine(d, !pg.premiere)}
-      ${pg.premiere ? G.hautDomaine(d) : ''}
+      ${pg.premiere ? G.hautDomaine(d, bande) : ''}
       <div class="corps-tableaux">${pg.morceaux.map((mo) =>
         tableauHtmlImport(mo.t, mo.lignes, { suite: mo.suite, cleTableau: mo.cle })).join('')}
         ${i === pages.length - 1 ? G.noteDomaine(d) : ''}
@@ -210,7 +221,7 @@ function plan(m) {
   const parDomaine = new Map();
   let n = AVANT + 1;
   for (const region of REGIONS) {
-    n += 1;                                   // l'ouverture de région
+    if (G.ED.ouvertures) n += 1;              // l'ouverture de région
     for (const d of catalogue.domaines.filter((x) => x.region === region)) {
       parDomaine.set(d.numero, n);
       n += decouper(d, m).pages.length;
@@ -232,8 +243,10 @@ function construirePages(m) {
     ...G.sommaire(parDomaine),
   ];
   for (const region of REGIONS) {
-    pages.push(G.ouvertureRegion(region, parDomaine));
-    descripteurs.push({ type: 'ouverture', region });
+    if (G.ED.ouvertures) {
+      pages.push(G.ouvertureRegion(region, parDomaine));
+      descripteurs.push({ type: 'ouverture', region });
+    }
     for (const d of catalogue.domaines.filter((x) => x.region === region)) {
       pages.push(...pagesDomaine(d, m, parDomaine, descripteurs));
     }
@@ -252,8 +265,7 @@ function construirePages(m) {
   blocsIdx.forEach((b, i) => descripteurs.push({ type: 'index-vins', premiere: i === 0, blocs: b }));
   // Au salon, les produits à part se comptent sur les doigts d'une main : pas de page pour eux.
   if (!SALON) { pages.push(G.produitsAPart(parDomaine)); descripteurs.push({ type: 'produits' }); }
-  pages.push(G.indexDomaines(parDomaine));
-  descripteurs.push({ type: 'index-domaines' });
+  if (G.ED.indexDomaines) { pages.push(G.indexDomaines(parDomaine)); descripteurs.push({ type: 'index-domaines' }); }
 
   // Un multiple de 4, en ajoutant des respirations avant la page finale.
   let total = pages.length + 1;

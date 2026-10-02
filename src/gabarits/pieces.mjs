@@ -106,6 +106,19 @@ export const CORPS_DOM = { min: 9.5, max: 13, interligne: 1.5 };
 /** Largeur de la colonne de texte entre le rond et la bouteille, en millimètres. */
 export const COLONNE_DOM = 170 - EMPLACEMENT.rond - EMPLACEMENT.bouteille.l - 2 * EMPLACEMENT.ecart;
 
+/* La bande du haut peut s'abaisser : une fiche qui déborde de peu sur une seconde page
+   tient alors sur une seule. La bouteille rapetisse dans ses proportions, le rond garde sa
+   taille, la colonne de texte s'élargit d'autant. La pagination essaie les bandes de la plus
+   haute à la plus basse et garde la plus haute qui donne le moins de pages (construire.mjs). */
+export const BANDES = [62, 56, 50, 46, 44];
+export function emplacementPour(bande = EMPLACEMENT.bouteille.h) {
+  const k = bande / EMPLACEMENT.bouteille.h;
+  const bouteille = { l: +(EMPLACEMENT.bouteille.l * k).toFixed(2), h: bande };
+  const rond = Math.min(EMPLACEMENT.rond, bande);
+  return { rond, bouteille, ecart: EMPLACEMENT.ecart,
+    colonne: +(170 - rond - bouteille.l - 2 * EMPLACEMENT.ecart).toFixed(2) };
+}
+
 /** Largeur d'une chaîne en millimètres, d'après les chasses de la police livrée. */
 export function largeurTexte(texte, face, taillePt) {
   const m = METRIQUES[face] || METRIQUES.Spectral;
@@ -126,11 +139,11 @@ export function lignesTexte(texte, face, taillePt, large) {
 }
 
 /** Le corps, en points, qui fait le mieux remplir la bande sans la faire grandir. */
-export function corpsDomaine(d, large = COLONNE_DOM) {
+export function corpsDomaine(d, large = COLONNE_DOM, bande = EMPLACEMENT.bouteille.h) {
   const t = d.texte_source;
   if (!t) return CORPS_DOM.min;
   // la lettrine mange la largeur des deux premières lignes : une ligne de marge suffit
-  const cible = EMPLACEMENT.bouteille.h - 2.5;
+  const cible = bande - 2.5;
   for (let pt = CORPS_DOM.max; pt > CORPS_DOM.min; pt -= 0.25) {
     const h = (lignesTexte(t, 'Spectral', pt, large) + 1) * pt * CORPS_DOM.interligne * 25.4 / 72;
     if (h <= cible) return pt;

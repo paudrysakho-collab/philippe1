@@ -702,3 +702,47 @@ un vin qui en avait déjà une). « Effervescent » rejoint « pétillant » et 
 mots qui donnent le picto bulles. Les nouvelles couleurs, plus longues, faisaient passer la
 liste des vins à 4 pages : l'en-tête et les interlignes ont été resserrés d'un rien, retour à
 3 pages. Le tableur des couleurs manquantes, désormais vide, est retiré.
+
+## 2 octobre 2026 — le dossier de référence de Mathéo, des tableaux plus lisibles, 52 pages
+
+**Le dossier de référence de Mathéo** remplace le Padlet pour tout le salon : textes, labels et
+listes de vins (« tout est bon dans son document maintenant »). Deux scripts :
+`scripts/textes-matheo.py` reporte les 26 textes et labels sur les fiches (le texte du tarif
+reste dans `texte_tarif` ; les mentions propres au salon, « Vins sous allocation. », « Format
+BIB disponible. »…, sont retirées du texte du catalogue général, qui les porte en jetons) ;
+`scripts/transcrire-matheo.py` relit les 26 cartes. La règle d'affichage change : **tout ce
+qui s'affiche d'un vin vient du dossier** (cuvée, appellation, couleur, millésime), le tarif ne
+donne plus que la contenance et le tableau. Corrections de forme seulement, plus les deux
+fautes signalées par l'agence (Molse, Demoiselles) ; les noms propres gardent leur graphie
+(Berteaud Manceau comme sur le logo, Boehler). Une couleur de l'agence l'emporte désormais
+sur celle de la liste (l'assertion qui refusait ce cas est retirée) : c'est le cas de
+Premières Fleurs, rouge dans le dossier, blanc pour l'agence — signalé (QUESTIONS 26).
+180 vins, 1 doublon. Le contrôle « chaque vin est imprimé » compare sans espaces ni traits
+d'union : un « Extra-Brut » coupé en fin de ligne passait pour absent.
+
+**Moulin Blanc (n°18).** La bouteille envoyée par l'agence est détourée par le modèle
+(le fond n'était pas uni : le remplissage échouait) ; `preparer-photos.py --seulement 18`
+ne retraite que ce domaine. Le rond du couple est recadré plus large : les deux visages
+entiers, toujours au-dessus du verre (loi Évin).
+
+**Tableaux plus lisibles.** Cuvée 9,6 pt demi-gras, prix 10 pt, appellation et détails 8 pt
+500. Effet de bord : les lignes passaient de 9,6 à 11,7 mm et le catalogue à 76 pages.
+
+**52 pages au plus** (l'agence : « agrandis l'écriture mais pas les tableaux »). Essais, dans
+l'ordre :
+1. L'interligne hérité du corps de texte (1,45) gonflait chaque ligne de tableau. Interligne
+   1,12 et marges de cellule de 0,7 mm : 8,6 mm par ligne, même écriture. 76 → 68 pages.
+2. Les dix ouvertures de région et l'index des domaines retirés du catalogue général (le
+   sommaire par région les remplace ; options `ouvertures` et `indexDomaines` de `ED`,
+   `pages.mjs`). Le salon les garde. 68 → 56 pages.
+3. En-têtes et pieds de fiche resserrés d'un à deux millimètres chacun.
+4. **La bande du haut s'abaisse** quand cela épargne une page : la pagination essaie 62, 56,
+   50, 46 et 44 mm et garde la plus haute qui donne le moins de pages (`BANDES`,
+   `emplacementPour()` dans `pieces.mjs`). La bouteille rapetisse dans ses proportions, le
+   rond garde ses 40 mm, la colonne de texte s'élargit et le corps se recalcule. n°6, 8, 10
+   et 24 tiennent ainsi sur une page. Écarté : supprimer la bouteille ou le rond de ces
+   fiches (on perdait des photos sourcées une à une), ou mettre deux petits domaines sur une
+   page (on perdait « un domaine, une page », qui fait la navigation).
+→ **52 pages**, sans page de remplissage. Le .pptx suit : la bande vient du descripteur
+(`desc.bande`), les marges des cellules et l'interligne sont serrés comme dans le PDF, et le
+pied est recalé sur le nouveau pied du PDF. Lettrines du .pptx réglées de nouveau.

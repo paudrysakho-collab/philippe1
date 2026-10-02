@@ -102,3 +102,28 @@ points que je ne pouvais pas trancher seul.
 
 Rien d'autre n'a été repris de ce document : ni label, ni prix, ni mention. Les quatorze
 écarts de label entre les deux sources sont listés dans `QUESTIONS.md`, point 22.
+
+## Le dossier de référence de Mathéo (2 octobre 2026)
+
+L'agence a fait du dossier de Mathéo la source des textes, des labels et des listes de vins
+des 31 fiches du salon (`QUESTIONS.md`, points 26 et 30). Le texte du tarif reste dans
+`texte_tarif`. Corrections de forme seulement, appliquées par `scripts/transcrire-matheo.py`
+(liste `CORRECTIONS`) et `scripts/textes-matheo.py` :
+
+- signalées par l'agence : « Molsce » → **Molse** (Boehler) ; « Les demoiseilles de Falfas »
+  → **Les Demoiselles de Falfas** ;
+- noms propres gardés comme sur le logo ou au tarif : **Berteaud Manceau** (et non
+  Berthaud-Manceau), **Boehler** (et non Boheler) ;
+- orthographe : Crément → Crémant, Côteaux → Coteaux, Méditérranée → Méditerranée,
+  Gervey Chambertin → Gevrey-Chambertin, La Poion → La Potion, Néolithik → Néolitik,
+  Serame → Sérame, Bourgognes → Bourgogne, Vogloniers → Voglonniers, Jardin de Corbières →
+  Jardins de Corbières, Blanc de Blanc / Blancs de Blancs → Blanc de Blancs ;
+- casse et traits d'union : Pays D'Oc → Pays d'Oc, Pays D'Hérault → Pays d'Hérault,
+  Val De Loire → Val de Loire, Côtes Du Rhône → Côtes du Rhône, Clos De Cassis → Clos de
+  Cassis, D'Alsace → d'Alsace, Sur Lie → sur lie, Haut Médoc → Haut-Médoc, Pouilly-Vinzelles,
+  Auxey-Duresses, Chassagne-Montrachet, Nuits-Saint-Georges, Hautes-Côtes de Beaune,
+  AOC Menetou → AOC Menetou-Salon, « Méthode Trad » → Méthode traditionnelle ;
+- textes : apostrophes typographiques (’) et espaces simples.
+
+Aucun millésime, aucune appellation ni aucune couleur n'a été changé sur le fond : quand le
+dossier et le tarif divergent, le dossier s'affiche et l'écart est signalé (point 26).

@@ -1,12 +1,17 @@
 # Reprise : où en est le projet, et la suite (2 octobre 2026)
 
 > **Fait le 2 octobre (seconde session)** : les trois livrables sont livrés.
-> - A : `dist/catalogue-scio-2026-*` (72 pages, sommaire simple, note de prix sous le tableau,
->   labels de la liste des vignerons sur les 31 fiches du salon) ;
-> - B : `dist/salon-prive-2026-*` (52 pages, sans plan des exposants, `npm run salon`), prix vides, à remplir par
->   `tableur/prix-salon-prive-2026.xlsx` (README, « Le Salon Privé ») ;
-> - C : `dist/salon-prive-2026-liste-des-vins.pdf` (3 pages A4).
-> Ce qui reste ouvert : `QUESTIONS.md`, points 26 (vins absents du tarif, écarts) et 27.
+> - A : `dist/catalogue-scio-2026-*` (**52 pages au plus**, demande de l'agence : plus
+>   d'ouvertures de région ni d'index des domaines, lignes de tableau serrées, bande du haut
+>   abaissée sur les fiches qui débordent de peu ; sommaire simple, note de prix sous le
+>   tableau ; textes et labels du dossier de Mathéo sur les 31 fiches du salon) ;
+> - B : `dist/salon-prive-2026-*` (48 pages, sans plan des exposants, `npm run salon`), prix
+>   vides, à remplir par `tableur/prix-salon-prive-2026.xlsx` (README, « Le Salon Privé ») ;
+>   vins, textes et labels du **dossier de référence de Mathéo**
+>   (`sources/salon-prive-2026/matheo-dossier-reference.pdf`), qui fait foi ;
+> - C : `dist/salon-prive-2026-liste-des-vins.pdf` (3 pages A4, 180 vins).
+> Ce qui reste ouvert : `QUESTIONS.md`, points 26 (écarts dossier / tarif), 27, 29 (ouvertures
+> au salon ?) et 30 (n°40 « Troisième domaine certifié HVE »).
 
 Ce fichier passe le relais à une nouvelle session. Le brief de `CLAUDE.md` reste la règle ;
 ce qui suit dit ce qui est déjà fait, comment l'outil marche, et ce qu'on attend maintenant.

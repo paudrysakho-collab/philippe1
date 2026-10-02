@@ -2,7 +2,7 @@
 import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
-  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
+  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, emplacementPour, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
 } from './pieces.mjs';
 
 const AG = catalogue.agence;
@@ -28,6 +28,7 @@ export const ED = SALON_ED ? {
   piedIndexDomaines: 'Le chiffre avant la page est le nombre de vins à la dégustation.',
   introIndexVins: 'Le numéro en violet est celui du stand, le dernier chiffre est la page.',
   notesSous: 'Stands, vins, quantités, commandes',
+  ouvertures: true, indexDomaines: true,
 } : {
   titreDocument: 'Agence SCIO — Sous nos pieds — Tarifs cavistes Vendée (85) 2026',
   acteurs: catalogue.domaines.length, motActeurs: 'domaines', motActeur: 'domaine',
@@ -38,6 +39,10 @@ export const ED = SALON_ED ? {
   piedIndexDomaines: 'Le chiffre avant la page est le nombre de références au tarif.',
   introIndexVins: 'Le numéro en violet est celui du domaine, le dernier chiffre est la page.',
   notesSous: 'Quantités, paliers, dates de livraison',
+  // Le catalogue général tient en 52 pages au plus (l'agence, 2 octobre) : pas de page
+  // d'ouverture par région (le sommaire et la tranche en tiennent lieu), pas d'index des
+  // domaines (le sommaire les donne déjà, par région).
+  ouvertures: false, indexDomaines: false,
 };
 /** Le numéro qu'on montre : celui du stand au salon, celui du tarif ailleurs. */
 export const numero = (d) => (SALON_ED ? d.stand : d.numero);
@@ -283,15 +288,16 @@ export function enteteDomaine(d, suite = false) {
     <div class="jetons">${jetons}</div>`;
 }
 
-export function hautDomaine(d) {
+export function hautDomaine(d, bande = EMPLACEMENT.bouteille.h) {
   const t = esc(d.texte_source);
+  const e = emplacementPour(bande);
   // le corps s'ajuste pour que le texte remplisse la bande : un texte court y laissait un vide
-  const corps = ` style="font-size:${corpsDomaine(d)}pt"`;
+  const corps = ` style="font-size:${corpsDomaine(d, e.colonne, bande)}pt"`;
   const texte = t
     ? `<div class="texte-dom"${corps}><span class="lettrine">${t.slice(0, 1)}</span>${t.slice(1)}</div>`
     : `<div class="texte-dom sans-texte">Le tarif de l'Agence SCIO ne donne pas de présentation
          pour ce domaine. Nous n'en inventons pas.</div>`;
-  return `<div class="haut-dom">${rondDomaine(d)}${texte}${bouteilleDomaine(d)}</div>`;
+  return `<div class="haut-dom">${rondDomaine(d, e)}${texte}${bouteilleDomaine(d, e)}</div>`;
 }
 
 /* Les deux emplacements ont une taille et une place fixes : l'image s'y pose quand
@@ -299,32 +305,33 @@ export function hautDomaine(d) {
    Sinon l'emplacement reste RÉSERVÉ, avec son repère pointillé : une case vide, pas un trou. */
 
 /** Le rond : la photo, déjà carrée, masquée en cercle ; ou le logo, déjà posé sur sa réserve. */
-export function rondDomaine(d) {
+export function rondDomaine(d, e = emplacementPour()) {
   const ph = photoDe(d, 'rond');
-  if (!ph) return emplacementRond();
+  if (!ph) return emplacementRond(e);
   return `<div class="photo photo-rond"
-    style="width:${EMPLACEMENT.rond}mm;height:${EMPLACEMENT.rond}mm">
+    style="width:${e.rond}mm;height:${e.rond}mm">
     <img src="../${esc(ph.fichier)}" alt="${esc(ph.sujet)} — ${esc(d.nom)}"></div>`;
 }
 
 /** La bouteille détourée, contenue dans sa case sans déformation, posée sur le bas. */
-export function bouteilleDomaine(d) {
+export function bouteilleDomaine(d, e = emplacementPour()) {
   const ph = photoDe(d, 'bouteille');
-  if (!ph) return emplacementBouteille();
+  if (!ph) return emplacementBouteille(e);
   return `<div class="photo photo-bouteille"
-    style="width:${EMPLACEMENT.bouteille.l}mm;height:${EMPLACEMENT.bouteille.h}mm">
+    style="width:${e.bouteille.l}mm;height:${e.bouteille.h}mm">
     <img src="../${esc(ph.fichier)}" alt="Une bouteille du domaine ${esc(d.nom)}"></div>`;
 }
 
 
-export function emplacementRond() {
+export function emplacementRond(e = emplacementPour()) {
   return `<div class="emplacement emplacement-rond"
-    style="width:${EMPLACEMENT.rond}mm;height:${EMPLACEMENT.rond}mm">
+    style="width:${e.rond}mm;height:${e.rond}mm">
     <span>rond<br>vigneron<br>ou logo</span></div>`;
 }
 
-export function emplacementBouteille() {
-  return `<div class="emplacement emplacement-bouteille">
+export function emplacementBouteille(e = emplacementPour()) {
+  return `<div class="emplacement emplacement-bouteille"
+    style="width:${e.bouteille.l}mm;height:${e.bouteille.h}mm">
     <span>bouteille</span></div>`;
 }
 

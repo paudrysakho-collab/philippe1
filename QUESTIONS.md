@@ -128,7 +128,10 @@ une fois ôtées les phrases propres au salon (« Vins sous allocation. », « F
 disponible. », « Ratafia disponible. », « Panachage possible avec… »), que le catalogue
 porte déjà sous forme de jetons et de tableaux. La transcription du tarif est donc fidèle.
 
-### 20. Le texte de n°1 François Reverdy — **repris, à confirmer**
+### 20. Le texte de n°1 François Reverdy — ✅ **confirmé par le dossier de Mathéo (2 octobre)**
+
+Le dossier de référence de Mathéo donne le même texte : l'agence l'a validé (« tout est bon dans
+son document »). Ce qui suit reste pour mémoire.
 
 Le tarif de septembre ne donne pas de présentation pour ce domaine ; la liste du salon en
 donne une (notice n°5). Je l'ai reprise **telle quelle**, et le champ `texte_provenance`
@@ -143,7 +146,10 @@ de `data/fiches/01.json` dit d'où elle vient.
 *Ce que je propose :* vous relisez ce paragraphe avant impression. C'est le seul endroit du
 catalogue dont le texte ne vient pas du tarif.
 
-### 21. Une phrase de plus chez n°21 Domaine Trichon — **non repris**
+### 21. Une phrase de plus chez n°21 Domaine Trichon — ✅ **reprise (dossier de Mathéo, 2 octobre)**
+
+Le dossier de référence de Mathéo écrit aussi « associés dans le projet » : la phrase entre dans
+le catalogue général comme au salon. Le texte du tarif reste dans `texte_tarif` de la fiche.
 
 La liste du salon écrit « Claire et Stéphane, **associés dans le projet**, allient leurs
 savoir-faire ». Le tarif n'a pas « associés dans le projet ».
@@ -203,6 +209,9 @@ est à demander avant impression, liste et adresses dans `credits.md`).
 
 Restent deux points, sans urgence :
 
+- ✅ **Réglé le 2 octobre** : la bouteille du n°18 (Côtes du Rhône blanc), envoyée par
+  l'agence, est posée ; le rond du couple est recadré plus large (les deux visages entiers,
+  toujours sans le verre). Ce qui suit est pour mémoire.
 - **n°18 Domaine du Moulin Blanc : pas de bouteille.** Ni le site du groupe
   Strasser-Radziwill, ni le Canva, ni le Drive n'en ont. Le « Catalogue VSR.pdf » joint au
   mail de Thomas Bounias (Strasser-Radziwill, 4 juin 2025, transféré le 12 juillet 2025) en
@@ -242,58 +251,64 @@ viendront du fichier de Mathéo.
   2 octobre, en début de session) : le point 22 est tranché pour les 31 fiches concernées ;
   les 9 autres gardent les labels du tarif.
 
-### 26. Les vins dégustés (fichier de Mathéo) face au tarif — **à relire avant le 5**
+### 26. Les vins dégustés (dossier de référence de Mathéo) face au tarif — **à relire avant le 5**
 
-Le fichier de Mathéo est **identique, octet pour octet, au Padlet** déjà déposé
-(`sources/salon-prive-2026/padlet-vins-a-deguster.pdf`). Seules les cartes de stand ont été
-lues (pages 3 à 20) ; les pages doubles ont été transcrites colonne par colonne. **Les 26
-stands y sont.** 177 lignes, 171 vins affichés, 6 doublons écartés. Le détail, vin par vin,
-est dans `vins` de `data/salon-prive-2026.json` (`liste` : la ligne telle qu'écrite ;
+Le **dossier de référence de Mathéo** (`sources/salon-prive-2026/matheo-dossier-reference.pdf`,
+2 octobre) remplace le Padlet : l'agence l'a dit, « tout est bon dans son document maintenant ».
+Seules les cartes de stand ont été lues, les pages doubles colonne par colonne. **Les 26
+stands y sont.** 181 lignes, 180 vins affichés, 1 doublon écarté. Le détail, vin par vin, est
+dans `vins` de `data/salon-prive-2026.json` (`liste` : la ligne telle qu'écrite ;
 `tarif` : la ligne rapprochée ; `ecarts`).
 
-**La règle d'affichage.** La liste de Mathéo décide quels vins figurent et leur millésime
-(la bouteille ouverte). Pour un vin rapproché, le reste (appellation, cuvée, couleur,
-contenance) vient du tarif. Un vin absent du tarif s'affiche tel que la liste l'écrit, avec
-les seules corrections de forme (Crémant, Coteaux, Méditerranée, traits d'union).
+**La règle d'affichage** (consigne de l'agence, 2 octobre : « pour toutes les listes,
+millésime, appellation, etc., il faut prendre le document de Mathéo »). La cuvée,
+l'appellation, la couleur et le millésime s'affichent **tels que le dossier les écrit**, avec
+les seules corrections de forme : Crémant, Coteaux, Méditerranée, traits d'union, et les deux
+fautes signalées par l'agence (« Molsce » → **Molse**, « demoiseilles » → **Demoiselles**).
+Les noms propres du domaine gardent leur graphie : **Berteaud Manceau** (comme sur son logo),
+**Boehler**. Le tarif ne sert plus qu'à retrouver la contenance et le tableau (donc les
+paliers) de chaque vin ; une couleur que le dossier ne donne pas vient de l'agence (point 28),
+sinon du tarif.
 
-*Ce que je propose :* vous parcourez les trois tableaux ci-dessous. Pour un vin absent du
-tarif, un mot suffit (« OK tel quel » ou la bonne ligne) ; pour un écart, dites lequel des
-deux documents a raison.
+*Ce que je propose :* les écarts ci-dessous ne changent plus rien à l'affichage ; ils
+servent à vérifier qu'aucune faute de frappe du dossier ne part à l'impression. Un mot
+suffit pour ceux qui vous surprennent.
 
-**45 vins absents du tarif de septembre** (ou qu'on ne peut rapprocher d'une seule ligne) :
+**46 vins absents du tarif de septembre** (ou qu'on ne peut rapprocher d'une seule ligne) :
 
-| Stand | Fiche | Ligne de la liste | Remarque |
+| Stand | Fiche | Ligne du dossier | Remarque |
 |---|---|---|---|
-| 1 | n°29 | Château Balac — AOC Cru Bourgeois Haut Médoc | — |
+| 1 | n°29 | Château Balac Rouge — AOC Haut Médoc Cru Bourgeois Supérieur | — |
 | 2 | n°38 | Brut Nature — AOC Champagne | — |
 | 2 | n°38 | Millésime Expression 2018 — AOC Champagne | — |
-| 4 | n°3 | L'envol 2023 — AOC Muscadet Sèvre et Maine | — |
-| 5 | n°15 | AOC Bourgognes Passe-Tout-Grain 2025 | — |
-| 5 | n°15 | Les Bulles du Puits | — |
+| 4 | n°3 | L'envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie | — |
+| 5 | n°15 | AOC Bourgognes Passe-Tout-Grain Rouge 2025 | — |
+| 5 | n°15 | Les Bulles du Puits Rosé | — |
 | 6 | n°23 | N°10 Pétillant — IGP Côtes de Gascogne | le tarif a deux N°10, en Vin de France : Bulle/Blanc et Bulle/Rosé ; la liste ne dit pas lequel, et écrit IGP Côtes de Gascogne |
 | 7 | n°19 | Chardonnay-Viognier Blanc 2024 — VDF | peut-être « La Pousterle » blanc, Vin de France 2022, au tarif ; le nom et le millésime diffèrent |
 | 7 | n°16 | Le Couchant Rouge 2020 — AOC Châteauneuf-du-Pape | — |
-| 7 | n°17 | Premières Fleurs 2025 — IGP Méditérranée | sans couleur dans la liste ; au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée |
-| 7 | n°17 | Or des Dentelles 2023 — AOC Muscat BDV | — |
-| 7 | n°17 | Or des Dentelles 2022 — AOC Muscat BDV | — |
-| 10 | n°1 | La Grange Jaumain 2024 - Grolleau Noir | le tarif a « François Reverdy – Grolleau Noir » (Vin de France rouge 2024) et « La Grange Jaumain – Les Soudannes » (IGP Val de Loire rouge) ; la liste mêle les deux noms |
-| 10 | n°1 | Cravant - AOP Chinon Rouge 2024 | peut-être le 2024 de « Franc / Graves » (AOP Chinon, 2021/2024) au tarif ; « Cravant » n'y figure pas |
-| 11 | n°37 | Supernova Extra-Brut Zero Dosage— AOC Champagne | — |
+| 7 | n°17 | Premières Fleurs Rouge 2025 — IGP Méditérranée | au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée ; l'agence avait donné « blanc » le 2 octobre, le dossier de référence de Mathéo écrit « Rouge » |
+| 7 | n°17 | Or des Dentelles Blanc Moelleux 2023 — AOC Muscat BDV | — |
+| 7 | n°17 | Or des Dentelles Blanc Moelleux 2022 — AOC Muscat BDV | — |
+| 10 | n°1 | La Grange Jaumain Rouge 2024 - Grolleau Noir | le tarif a « François Reverdy – Grolleau Noir » (Vin de France rouge 2024) et « La Grange Jaumain – Les Soudannes » (IGP Val de Loire rouge) ; la liste mêle les deux noms |
+| 10 | n°1 | Cravant Rouge 2024 - AOP Chinon | peut-être le 2024 de « Franc / Graves » (AOP Chinon, 2021/2024) au tarif ; « Cravant » n'y figure pas |
+| 11 | n°37 | Supernova Extra-Brut Zéro Dosage— AOC Champagne | — |
 | 12 | n°21 | Mas de Lusanne Brut Blanc— AOC Bugey | — |
 | 12 | n°21 | Mas de Lusanne Extra-Brut Blanc — AOC Bugey | — |
-| 12 | n°21 | Mas de Lusanne Mondeuse 2023— AOC Bugey | — |
-| 12 | n°21 | Mas de Lusanne Pinot Noir 2023 — AOC Bugey | — |
+| 12 | n°21 | Mas de Lusanne Mondeuse Rouge  2023— AOC Bugey | — |
+| 12 | n°21 | Mas de Lusanne Pinot Noir Rouge 2023 — AOC Bugey | — |
+| 12 | n°21 | Mas de Lusanne Gamay Rouge — AOC Bugey | — |
+| 12 | n°21 | Mas de Lusanne Chardonnay Blanc 2020 — AOC Bugey | — |
 | 12 | n°21 | Mas de Lusanne Pétillant de Jus de Raisin 0 % | — |
-| 12 | n°21 | Mas de Lusanne Gamay— AOC Bugey | — |
-| 12 | n°21 | Mas de Lusanne Chardonnay 2020 — AOC Bugey | — |
-| 13 | n°34 | Juliette 2025 — AOC Saint-Chinian | — |
+| 13 | n°34 | Juliette Blanc 2025 — AOC Saint-Chinian | — |
 | 14 | n°4 | AOC Anjou Blanc 2024 | le seul Anjou blanc du tarif est « Promenade des Noëls », listé à part juste après |
 | 15 | n°40 | Rosé Brut — Grand Cru Chouilly | — |
-| 15 | n°40 | 82/17 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly | — |
+| 15 | n°40 | 82/18 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly | — |
 | 17 | n°6 | AOC Menetou Rouge | le tarif n'a qu'un Menetou-Salon, blanc |
 | 17 | n°6 | Les Beltins 2022 Blanc — AOC Sancerre | — |
-| 17 | n°6 | Vignes de Tréleau 2023 — AOC Pouilly-Fumé | au tarif, le Pouilly-Fumé 2023 nommé est « Les Silex Blancs » |
+| 17 | n°6 | Vignes de Tréleau Blanc 2023 — AOC Pouilly-Fumé | au tarif, le Pouilly-Fumé 2023 nommé est « Les Silex Blancs » |
 | 18 | n°10 | AOC Meursault 2024 | le tarif a deux Meursault 2023 : « Les Grands Charrons » et « Les Meix Chavaux » ; la liste ne dit pas lequel |
+| 18 | n°10 | Les Aigrots 2023 — Beaune 1er Cru | au tarif, « Les Aigrots » est un rouge 2023 ; le Beaune 1er Cru blanc 2023 du tarif n'a pas de nom de climat |
 | 19 | n°31 | St Probace Rouge 2025 — IGP Var Sainte Baume | au tarif, SAINT PROBACE n'existe qu'en rosé et en blanc |
 | 19 | n°31 | Miraia Blanc 2024 — AOC Côteaux Varois en  Provence | — |
 | 19 | n°31 | Miraia Rouge 2022 — AOC Côteaux Varois en  Provence | — |
@@ -301,8 +316,8 @@ deux documents a raison.
 | 19 | n°31 | Aquino Blanc 2024 — AOC Côteaux Varois en  Provence | — |
 | 20 | n°22 | Koloss Doux 2022 — VDF | au tarif, le Koloss Vin de France est un rosé 2025, et le doux Vin de France s'appelle Strateus (2025) |
 | 20 | n°22 | Néolithik Blanc 2025 — AOC Pacherenc du Vic-Bilh sec | — |
-| 24 | n°30 | Château Lafargue 2020 — AOC Fronsac | — |
-| 25 | n°5 | L'Eberluant Chardonnay 2025 — IGP Val de Loire | — |
+| 24 | n°30 | Château Lafargue Rouge 2020 — AOC Fronsac | — |
+| 25 | n°5 | L'Eberluant Chardonnay Méthode ancestrale 2025 — VDF | — |
 | 26 | n°12 | AOC Pouilly Vinzelles Blanc 2023 | — |
 | 26 | n°12 | Baron Auguste Blanc — AOC Crément de Bourgogne | — |
 | 26 | n°12 | Baron Auguste Rosé— AOC Crément de Bourgogne | — |
@@ -310,9 +325,9 @@ deux documents a raison.
 | 26 | n°12 | AOC Mercurey Blanc 2023 | au tarif, le Mercurey est un rouge 2022 (listé juste après) |
 | 26 | n°12 | AOC Givry Rouge 2023 | le tarif a deux Givry rouges 2023 : « Champ La Dame » et le Givry 1er Cru ; la liste ne dit pas lequel |
 
-**50 vins rapprochés d'une ligne du tarif, avec un écart** (le millésime affiché est celui de la liste) :
+**53 vins rapprochés d'une ligne du tarif, avec un écart** (ce qui s'affiche est ce que le dossier écrit) :
 
-| Stand | Fiche | Ligne de la liste | Écart |
+| Stand | Fiche | Ligne du dossier | Écart avec le tarif |
 |---|---|---|---|
 | 2 | n°38 | Trois Crus Brut — AOC Champagne | le tarif a aussi une demi-bouteille (37,5 cl) ; la ligne retenue est la 75 cl |
 | 3 | n°36 | Terre Rouge 2024 — AOC Corbières | le tarif a aussi un magnum ; la ligne retenue est la 75 cl |
@@ -324,7 +339,7 @@ deux documents a raison.
 | 5 | n°15 | AOC Mâcon Rouge 2024 | « Mâcon Rouge » dans la liste ; le seul Mâcon rouge du tarif est le Mâcon Mancey rouge 2024 |
 | 6 | n°23 | N°1 Littorine Blanc 2025 — IGP Côtes de Gascogne | millésime 2025 dans la liste, 2024 au tarif |
 | 6 | n°23 | N°8 Grand Pavois Rouge 2025 — IGP Côtes de Gascogne | « Rouge » dans la liste, « Doux » au tarif |
-| 6 | n°23 | N°7 Vénus Blanc Moelleux 2025 — IGP Côtes de Gascogne | millésime 2025 dans la liste, 2024 au tarif |
+| 6 | n°23 | N°7 Vénus Blanc Moelleux 2025 — IGP Côtes de Gascogne | millésime 2025 dans la liste, 2024 au tarif; couleur « Blanc moelleux » dans la liste, « Doux » au tarif |
 | 7 | n°16 | Le Prieuré Rouge 2024— AOC Côtes du Rhône | millésime 2024 dans la liste, 2022/2023 au tarif |
 | 7 | n°16 | Vieilles Vignes Rouge 2022— AOC Châteauneuf-du-Pape | millésime 2022 dans la liste, 2021 au tarif |
 | 7 | n°16 | Vieilles Vignes Rouge 2023 — AOC Châteauneuf-du-Pape | millésime 2023 dans la liste, 2021 au tarif |
@@ -333,16 +348,16 @@ deux documents a raison.
 | 8 | n°27 | Château Falfas Chevalier 2017— AOC Côtes de Bourg | millésime 2017 dans la liste, 2021 au tarif |
 | 8 | n°27 | Château Falfas Chevalier 2019— AOC Côtes de Bourg | millésime 2019 dans la liste, 2021 au tarif |
 | 8 | n°27 | Château Falfas 2023— AOC Côtes de Bourg | millésime 2023 dans la liste, 2022 au tarif |
-| 9 | n°8 | Molsce Blanc 2024— AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
-| 9 | n°8 | Leimen Sylvaner 2024— AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
-| 9 | n°8 | Riesling Hahnenberg 2024— AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
+| 9 | n°8 | Molsce Blanc 2024 — AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
+| 9 | n°8 | Leimen Sylvaner 2024 — AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
+| 9 | n°8 | Riesling Hahnenberg 2024 — AOC Alsace | millésime 2024 dans la liste, 2023 au tarif |
 | 11 | n°37 | Vogloniers Brut - AOC Champagne | « Brut » dans la liste, « Blanc extra brut » au tarif |
-| 11 | n°37 | Nature Sec - AOC Champagne | « Nature Sec » dans la liste, « Nature », blanc extra brut, au tarif |
-| 12 | n°21 | Mas de Lusanne  2024 — AOC Côtes Du Rhône | millésime 2024 dans la liste, 2023 au tarif; « Mas de Lusanne » dans la liste, sans couleur ; au tarif, le seul Côtes du Rhône est un rouge |
+| 11 | n°37 | Nature Brut - AOC Champagne | « Nature Brut » dans la liste, « Nature », blanc extra brut, au tarif |
+| 12 | n°21 | Mas de Lusanne  Rouge 2024 — AOC Côtes Du Rhône | millésime 2024 dans la liste, 2023 au tarif |
 | 12 | n°21 | Mas de Lusanne Vacqueyras Blanc 2025 — AOC Vacqueyras | millésime 2025 dans la liste, 2024 au tarif |
-| 13 | n°34 | Léon 2024 — VDF | millésime 2024 dans la liste, 2023 au tarif |
-| 13 | n°34 | Lou Daro 2023 — AOC Saint-Chinian | millésime 2023 dans la liste, 2022 au tarif |
-| 13 | n°34 | Henri 2024 — AOC Saint-Chinian | millésime 2024 dans la liste, 2022 au tarif |
+| 13 | n°34 | Léon Rouge 2024 — VDF | millésime 2024 dans la liste, 2023 au tarif |
+| 13 | n°34 | Lou Daro Rouge 2023 — AOC Saint-Chinian | millésime 2023 dans la liste, 2022 au tarif |
+| 13 | n°34 | Henri 2024 Rouge — AOC Saint-Chinian | millésime 2024 dans la liste, 2022 au tarif |
 | 13 | n°34 | Grain de Blanc  2025 - IGP Pays D'Hérault Monts de la Grage | « IGP Pays d'Hérault Monts de la Grage » dans la liste, « AOP Saint Chinian » au tarif |
 | 14 | n°4 | AOC Sauvignon 2025 | « AOC » dans la liste, « IGP Val de Loire » au tarif |
 | 14 | n°4 | AOC Crément de Loire | le tarif a deux Crémant de Loire : « Crémant de Loire » et « Cuvée Prestige » ; la ligne retenue est la première |
@@ -350,42 +365,40 @@ deux documents a raison.
 | 16 | n°28 | Cuvée Diane Rouge 2016 — AOC Sainte-Foy Côtes de Bordeaux | millésime 2016 dans la liste, 2020 au tarif |
 | 17 | n°6 | AOC Sauvignon Blanc 2025 | « AOC » dans la liste, « IGP Val de Loire » au tarif |
 | 17 | n°6 | AOC Pinot Noir Rosé 2024/25 | millésime 2024/25 dans la liste, 2023 au tarif; « AOC » dans la liste, « Vin de France » au tarif |
-| 17 | n°6 | AOC Pinot Noir | « AOC » dans la liste, « Vin de France » au tarif ; sans couleur dans la liste, rouge au tarif |
+| 17 | n°6 | AOC Pinot Noir 2024/25 | « AOC » dans la liste, « Vin de France » au tarif ; sans couleur dans la liste, rouge au tarif |
 | 18 | n°10 | AOC Hautes Côtes de Beaune 2024 | millésime 2024 dans la liste, 2023 au tarif |
-| 18 | n°10 | Les Aigrots 2024— Beaune 1er Cru | millésime 2024 dans la liste, 2023 au tarif |
+| 18 | n°10 | Les Aigrots 2024 — Beaune 1er Cru | millésime 2024 dans la liste, 2023 au tarif |
 | 18 | n°10 | Les Perrières 2024— AOC Pommard | millésime 2024 dans la liste, 2023 au tarif |
 | 19 | n°31 | Joio Rosé 2025 — AOC Côteaux Varois en  Provence | le tarif a aussi un 150 cl ; la ligne retenue est la 75 cl |
 | 19 | n°31 | Joio Blanc 2025 — AOC Côteaux Varois en  Provence | le tarif a aussi un 150 cl ; la ligne retenue est la 75 cl |
 | 20 | n°22 | Stratéus Rouge 2021 — AOC Madiran | millésime 2021 dans la liste, 2022 au tarif |
 | 20 | n°22 | Stratéus Blanc 2025 — AOC Pacherenc du Vic-Bilh sec | millésime 2025 dans la liste, 2022 au tarif |
 | 21 | n°32 | Oena Rouge 2022 — AOC Corbières | « Rouge » dans la liste, « Blanc » au tarif |
+| 21 | n°33 | Jus de cépages — Syrah | le tarif a la Syrah en 50 cl et en 25 cl ; la ligne retenue est la 50 cl |
+| 21 | n°33 | Jus de cépages — Chardonnay | le tarif a le Chardonnay en 50 cl et en 25 cl ; la ligne retenue est la 50 cl |
+| 21 | n°33 | Jus de cépages — Grenache | le tarif a le Grenache en 50 cl et en 25 cl ; la ligne retenue est la 50 cl |
 | 22 | n°2 | Les Gorinières Blanc 2024 — AOC Fiefs Vendéens Chantonnay | millésime 2024 dans la liste, 2023 au tarif |
 | 22 | n°2 | Les Courbes Blanc 2018 — AOC Fiefs Vendéens Chantonnay | « Blanc » dans la liste, « Rouge » au tarif |
 | 22 | n°2 | Les Amphibol Blanc 2025 — AOC Fiefs Vendéens Chantonnay | millésime 2025 dans la liste, 2024 au tarif |
 | 26 | n°13 | Château du Cray Blanc 2023 — AOC Bourgogne Chardonnay | millésime 2023 dans la liste, 2022 au tarif |
 | 26 | n°12 | AOC Gervey Chambertin 2022 | « Gervey » dans la liste, « Gevrey-Chambertin » au tarif |
 
-**6 doublons dans la liste**, affichés une seule fois :
-
-| Stand | Ligne répétée |
-|---|---|
-| 7 | Terroir d'Ansouis Blanc 2021 — AOC Luberon |
-| 9 | Molsce Blanc 2024— AOC Alsace |
-| 25 | Courant Chenin 2025 — IGP Val de Loire |
-| 25 | Source Melon B. 2023 — IGP Val de Loire |
-| 25 | Reflet Gamay 2024 — IGP Val de Loire |
-| 25 | L'Eberluant Chardonnay 2025 — IGP Val de Loire |
+**1 doublon** dans le dossier, affiché une seule fois : stand 7, « Terroir d'Ansouis Blanc
+2021 — AOC Luberon » (Domaine de la Pousterle) est écrit deux fois. Le second était peut-être
+le rouge 2021 ou le rosé 2024 du tarif ?
 
 Quelques remarques encore :
-- **Stand 7, Domaine de la Pousterle** : « Terroir d'Ansouis Blanc 2021 » est écrit deux fois.
-  Le second était peut-être le rouge 2021 ou le rosé 2024 du tarif ? Il n'est affiché qu'une fois.
-- **Stands 15 (Vazart-Coquart) et 17 (Jean de Villebois)** : la liste descend jusqu'au bord de la
-  carte. Est-elle complète, ou un vin a-t-il été coupé ?
+- **Stand 7, Premières Fleurs 2025** : le dossier écrit « Rouge » ; l'agence avait donné
+  « blanc » le 2 octobre, avant le dossier. Le catalogue affiche **Rouge** (le dossier fait
+  foi). Dites-le si c'est l'inverse.
+- **Stand 21, les jus de cépages d'Exea** : le dossier les liste (Syrah, Chardonnay,
+  Grenache). La fiche n°33 entre donc au salon, contrairement à la réponse du 2 octobre
+  (« pas de jus de cépages ») : le dossier, plus récent, fait foi.
+- **Stand 7, Strasser Radziwill** : le dossier donne un texte pour le groupe ; il n'est pas
+  affiché, chacune des quatre fiches (n°16 à 19) garde son propre texte. Dites-le s'il doit
+  paraître.
 - **Stand 17 : aucun vin Divin No Low** dans la liste. Comme convenu, la fiche n°7 n'entre pas
-  dans l'édition du salon. Dites-le si elle doit y être quand même.
-- **Les noms de la liste** qui diffèrent du tarif (Boheler, Berthaud-Manceau, Prieuré Sainte
-  Marie, « Domaine Les Prieuré des Papes »…) ne sont pas repris : le catalogue garde les noms des
-  fiches.
+  dans l'édition du salon.
 
 ### 27. L'édition du salon : ce qui reste à vous
 
@@ -399,8 +412,8 @@ Quelques remarques encore :
   exposants (« Château Escarderie », « Domaine Prieuré Sainte Marie d'Albas »…), qui fait foi ;
   les fiches gardent les noms du tarif (« Château l'Escarderie »…). Dites-moi si vous voulez
   une seule graphie partout.
-- **La bouteille du n°18** (Moulin Blanc, stand 7) manque toujours : son emplacement reste en
-  pointillé dans l'édition du salon aussi (point 24).
+- ~~La bouteille du n°18~~ : ✅ posée le 2 octobre (photo envoyée par l'agence), dans les
+  deux éditions (point 24).
 
 ### 28. Les couleurs qui manquaient au salon — ✅ **données par l'agence le 2 octobre**
 
@@ -410,3 +423,38 @@ et « blanc effervescent » pour les cinq Champagnes Denis Frézier. Elles sont 
 `COULEURS_AGENCE` de `scripts/transcrire-matheo.py` et, vin par vin, dans
 `data/salon-prive-2026.json` (`couleur_provenance`). Plus aucun vin du salon sans couleur.
 
+### 29. Le catalogue général en 52 pages — ✅ **demandé par l'agence le 2 octobre**
+
+« 76 pages, c'est beaucoup trop ; une cinquantaine, 52 pages max ; agrandis l'écriture mais pas
+les tableaux. » Ce qui a changé, et ce qui reste à vous :
+
+- **Les tableaux** gardent leur écriture plus grande et plus grasse (cuvée 9,6 pt, prix 10 pt),
+  mais la ligne passe de 11,7 à 8,6 mm : interligne et marges serrés. C'est ce qui rend le
+  plus de place.
+- **Les dix pages d'ouverture de région** sont retirées du catalogue général : le sommaire
+  (par région, dans la couleur de chaque sol) et la tranche colorée en tiennent lieu.
+  **L'index des domaines** aussi : il redisait le sommaire. Le **Salon Privé les garde** (48
+  pages) : *dites-moi si vous voulez les retirer là aussi* (il tomberait vers 36 à 40 pages).
+- **Quatre fiches** (n°6, 8, 10, 24) débordaient de quelques millimètres sur une seconde page :
+  leur bandeau du haut s'abaisse (bouteille un peu plus petite, texte un peu moins grand, le
+  rond ne bouge pas), et elles tiennent sur une page. Le choix est automatique, à la mesure.
+- **Quatre domaines** restent sur deux pages, parce que leur tarif est long : n°12 Goichot
+  (23 vins), n°23 Haut Marin (21), n°25 La Passion des Terroirs (31), n°32 Famille d'Exea (21).
+- Résultat : **52 pages tout juste**, sans page « Vos notes » de remplissage. Si un domaine
+  ajoute des vins, le catalogue passera à 56 : le build le dira.
+
+
+### 30. Textes et labels du dossier de Mathéo, aussi dans le catalogue général — ✅ **2 octobre**
+
+L'agence : « tu vas te référer au contenu fait par Mathéo, le texte et les références
+biologiques ; tout est bon dans son document maintenant ». Les fiches présentes au salon
+prennent donc son texte et son label, **dans les deux éditions**. Le texte du tarif reste dans
+`texte_tarif` de chaque fiche, rien ne se perd. Ce qui change sur le fond :
+
+- n°3 Domaine du Colombier : « vins **friands** » devient « vins **frais** » ;
+- n°21 Domaine Trichon : « associés dans le projet » entre (point 21) ;
+- n°36 Prieuré Sainte-Marie d'Albas : la phrase « AOP Corbières et IGP Pays d'Oc. » sort ;
+- n°40 Vazart-Coquart & Fils : la phrase « **Troisième domaine certifié HVE de France.** » sort.
+  *À vérifier* : c'était un argument fort du tarif ; le dossier ne l'a plus.
+- Labels : n°16 à 19 (Strasser Radziwill) et n°34 Gragnos passent de « En conversion Bio » à
+  **Bio** ; n°39 Solemme passe de « Bio & Biodynamie » à **Biodynamie**.

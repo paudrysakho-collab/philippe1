@@ -5,15 +5,16 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 
 ## Où en est le projet
 
-**Terminé.** Concept retenu : **« Sous nos pieds »**. **72 pages**, 210 × 260 mm.
+**Terminé.** Concept retenu : **« Sous nos pieds »**. **52 pages** (le maximum voulu par
+l'agence), 210 × 260 mm ; le Salon Privé en fait 48.
 Chaque fiche domaine porte **deux images** : un rond de 40 mm pour le vigneron ou le logo,
-une bande de 24 × 62 mm pour la bouteille. **79 des 80 sont posées** ; la bouteille qui
-manque (n°18, Moulin Blanc) garde son repère pointillé. Provenance et droits, image par
-image : `credits.md`.
+une bande de 24 × 62 mm pour la bouteille (un peu plus basse sur quatre fiches, voir « Le
+catalogue, page par page »). **Les 80 sont posées.** Provenance et droits, image par image :
+`credits.md`.
 
 | Livrable | Où |
 |---|---|
-| **Fichier Canva** (72 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
+| **Fichier Canva** (52 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
 | **Le même, ronds recadrables** : photos entières sous un masque rond qu'on fait glisser (à essayer dans Canva) | `dist/catalogue-scio-2026-canva-recadrable.pptx` |
 | **Les polices à téléverser dans Canva**, avec leur mode d'emploi | `polices-canva/` |
 | **Prompt pour faire poser les images par Cowork** | `PROMPT-COWORK.md` |
@@ -69,7 +70,10 @@ image : `credits.md`.
    `python3 scripts/regler-lettrines.py`. Ce script rend le .pptx, compte les lignes, vérifie
    que la lettrine est sur la ligne de base de la première ligne, et réduit la lettrine
    (puis l'interligne) des seuls textes qui toucheraient leur tableau. À relancer si un
-   texte de domaine change (demande LibreOffice et `pip install pymupdf`).
+   texte de domaine ou le haut des fiches change (demande LibreOffice, `pip install pymupdf`
+   et les polices de `polices-canva/` copiées dans `~/.local/share/fonts`). Chaque édition a
+   son réglage : `EDITION=salon python3 scripts/regler-lettrines.py` écrit
+   `src/gabarits/lettrines-pptx-salon.json`. Puis `npm run pptx` et `npm run pptx-salon`.
 
 **Attention** : une fois le catalogue modifié dans Canva, Canva devient la nouvelle source.
 Si un prix change après coup, corrigez-le d'abord dans `data/fiches/`, relancez
@@ -145,10 +149,14 @@ C'est une **édition** du même générateur, pas une copie : mêmes gabarits, m
 mêmes fiches. `EDITION=salon` change trois choses :
 - **ce qui entre** : les 31 fiches des 26 stands (`data/salon-prive-2026.json`, rapprochées
   d'après le plan des exposants, qui fait foi), et dans leurs tableaux **seulement les vins
-  dégustés** (le fichier de Mathéo) ;
+  dégustés** (le dossier de référence de Mathéo, qui donne aussi les textes et les labels) ;
 - **ce qu'on montre** : le numéro du stand et sa salle à la place du numéro du tarif, une
   couverture (date et lieu en haut) et une page de l'agence au nom du salon ;
 - **les prix** : vides tant que l'agence ne les a pas donnés.
+
+Le salon garde aussi les pages d'ouverture de région et l'index des domaines, que le
+catalogue général n'a plus (options `ouvertures` et `indexDomaines` de `ED`,
+`src/gabarits/pages.mjs`).
 
 ```sh
 npm run salon        # PDF écran et imprimeur, contrôles, .pptx, liste des vins
@@ -178,10 +186,17 @@ Le plus simple, par le tableur :
 
 ### Refaire la liste des vins
 
-La transcription du fichier de Mathéo et son rapprochement avec le tarif sont dans
-`scripts/transcrire-matheo.py`, ligne par ligne, avec les écarts (QUESTIONS.md, point 26).
-Si une ligne change, on la corrige là, puis `npm run transcrire-matheo` (les prix déjà saisis
-sont gardés) et `npm run salon`.
+La transcription du dossier de référence de Mathéo
+(`sources/salon-prive-2026/matheo-dossier-reference.pdf`) et son rapprochement avec le tarif
+sont dans `scripts/transcrire-matheo.py`, ligne par ligne, avec les écarts (QUESTIONS.md,
+point 26). **Ce qui s'affiche d'un vin (cuvée, appellation, couleur, millésime) est ce que le
+dossier écrit**, corrigé seulement dans la forme (liste `CORRECTIONS` du script) ; le tarif
+donne la contenance et le tableau. Si une ligne change, on la corrige là, puis
+`npm run transcrire-matheo` (les prix déjà saisis sont gardés) et `npm run salon`.
+
+Les textes et les labels du dossier sont dans `scripts/textes-matheo.py` : il les reporte
+sur les fiches (`data/fiches/NN.json`, le texte du tarif restant dans `texte_tarif`), dans
+les deux éditions. Ensuite `npm run build` et `npm run salon`.
 
 La liste des vins dégustés (`npm run liste-vins`) sort en A4 pour une impression au bureau ;
 `LISTE_FORMAT=catalogue npm run liste-vins` la sort au format du catalogue (210 × 260 mm).
@@ -200,7 +215,8 @@ entrer d'un coup dans les deux PDF et dans le `.pptx`, et un changement de prix 
 3. Écrire la table validée dans `data/photos-locales.json` (format décrit en tête du fichier).
 4. `npm run photos` prépare les images retenues (traitement unique, rond de 40 mm, bouteille
    détourée dans 24 × 62 mm, 300 ppi visés, jamais agrandies, refus sous 200 ppi), puis
-   `npm run build`.
+   `npm run build`. `python3 scripts/preparer-photos.py --seulement 18` ne retraite que les
+   images d'un domaine (ou de plusieurs : `--seulement 18 21`) et garde les autres.
 
 Un domaine sans image garde ses deux emplacements pointillés. Les images écartées, et
 pourquoi, sont dans `data/photos-ecartees.json`. `npm run photos` réécrit aussi les tables
@@ -240,15 +256,21 @@ sert de garde-fou contre une perte silencieuse de domaine.
 | 1 | Couverture |
 | 2 | L'agence, ses contacts |
 | 3 | **Sommaire** : une liste par région, les domaines numérotés avec leur page, et la légende complète des pictos (types de vin, labels) |
-| 4 – 66 | Les dix régions : une ouverture pleine page, puis ses domaines |
-| 67 – 69 | Index des vins par type, de A à Z |
-| 70 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
-| 71 | Les quarante domaines, de A à Z |
-| 72 | Contacts, lexique, mentions légales, crédits, message sanitaire |
+| 4 – 47 | Les quarante domaines, région par région (le sommaire et la tranche colorée disent la région) |
+| 48 – 50 | Index des vins par type, de A à Z |
+| 51 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
+| 52 | Contacts, lexique, mentions légales, crédits, message sanitaire |
 
-*(La pagination est recalculée à chaque fabrication ; `build/plan.json` donne la page de
-chaque domaine. Quand il le faut, des pages « Vos notes » et la planche en coupe complètent
-le catalogue jusqu'à un multiple de 4 ; avec 72 pages, il n'en faut aucune.)*
+*(La pagination est recalculée à chaque fabrication ; `build/catalogue-scio-2026-plan.json`
+donne la page de chaque domaine. Quand il le faut, des pages « Vos notes » et la planche en
+coupe complètent le catalogue jusqu'à un multiple de 4 ; avec 52 pages, il n'en faut aucune.)*
+
+**Un domaine, une page**, sauf les quatre tarifs les plus longs (n°12, 23, 25, 32), sur deux.
+Quand une fiche déborde de peu, la bande du haut s'abaisse (62, 56, 50, 46 ou 44 mm) : la
+bouteille rapetisse dans ses proportions, le rond garde sa taille, la colonne de texte
+s'élargit. La pagination garde la plus haute bande qui donne le moins de pages (`BANDES` dans
+`src/gabarits/pieces.mjs`) ; aujourd'hui n°6, 8, 10 et 24. Les lignes de tableau font 8,6 mm :
+l'écriture est grande (cuvée 9,6 pt, prix 10 pt), l'interligne serré.
 
 Sur chaque fiche, **la note de prix** (« * Prix de la bouteille H.T. hors frais de
 transport. », « franco de port », « départ chai »…) vient **juste sous le dernier tableau**,

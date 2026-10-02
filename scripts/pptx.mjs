@@ -7,7 +7,7 @@ import path from 'node:path';
 import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
-  groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
+  groupes, groupeDe, corpsDomaine, EMPLACEMENT, emplacementPour, photoDe, creditPhotos,
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, colonnesSommaire, SOMMAIRE, texteNotePrix, SALON_ED, ED, NB_VINS,
@@ -200,25 +200,27 @@ function tableauDonnees(t, lignes, hauteurs) {
   const entete = [
     { text: `${t.intitule}${t.famille ? ' · ' + t.famille : ''}`.toUpperCase(),
       options: { colspan: 4, fill: C.violet, color: C.or, fontFace: F.tech, fontSize: 8,
-        bold: true, valign: 'bottom', margin: [4, 4, 4, 6], charSpacing: 0.3 } },
+        bold: true, valign: 'bottom', margin: [3, 4, 3, 6], charSpacing: 0.3 } },
     ...t.paliers.map((p) => ({ text: p, options: {
       fill: C.violet, color: C.craie, fontFace: F.tech, fontSize: 7.2, bold: true,
-      align: 'right', valign: 'bottom', margin: [4, 5, 4, 3] } })),
+      align: 'right', valign: 'bottom', margin: [3, 5, 3, 3] } })),
   ];
 
   const corps = lignes.map((l, i) => {
     const f = famille(l, t);
     const [remplissage] = PICTO[f] || PICTO.autre;
     const fondLigne = i % 2 === 0 ? C.craie : C.tuffeau;
-    const commun = { fill: fondLigne, valign: 'middle', margin: [3, 3, 3, 3] };
+    // marges et interligne serrés, comme le PDF : l'écriture est grande, la ligne ne grandit pas
+    const commun = { fill: fondLigne, valign: 'middle', margin: [1.6, 3, 1.6, 3] };
     return [
       { text: '●', options: { ...commun, color: remplissage === 'FFFFFF' ? C.silex : remplissage,
         fontSize: 10, align: 'center' } },
       { text: [
           { text: l.appellation + (l.note === '*' ? ' *' : ''),
-            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: true } },
-          ...(l.cuvee ? [{ text: l.cuvee, options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre } }] : []),
-        ], options: { ...commun, margin: [3, 3, 3, 4] } },
+            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: true, lineSpacingMultiple: 0.9 } },
+          ...(l.cuvee ? [{ text: l.cuvee, options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre,
+            lineSpacingMultiple: 0.9 } }] : []),
+        ], options: { ...commun, margin: [1.6, 3, 1.6, 4] } },
       { text: l.millesime || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
         color: C.silex, align: 'right' } },
       { text: l.contenance || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
@@ -287,10 +289,10 @@ function slideFiche(s, numero, desc) {
     align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8, bold: true,
     color: C.gneiss, charSpacing: 0.3,
   });
-  y += SALON_ED ? mm(hRegion + 0.5) : mm(hTitre + 0.5);
+  y += SALON_ED ? mm(hRegion + 0.1) : mm(hTitre + 0.1);
   s.addShape(pres.ShapeType.line, { x, y, w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 1.4 } });
-  y += mm(2.6);
+  y += mm(1.8);
 
   // ——— jetons
   const jetons = [
@@ -317,14 +319,17 @@ function slideFiche(s, numero, desc) {
       color: fond ? C.craie : couleur });
     jx += l + 2.2;
   });
-  y += mm(8.6);
+  y += mm(8.0);
 
   if (desc.premiere) {
     // ——— les deux emplacements, et le texte entre les deux. L'image prend la place de
     // la forme pointillée quand il y en a une ; sinon l'emplacement reste réservé.
     // La bande fait la hauteur mesurée dans Chromium : la même que dans le PDF.
-    const { rond, bouteille, ecart } = EMPLACEMENT;
-    const bande = (mesures.blocs[`haut-${d.numero}`] ?? 66.5) - 4.5;
+    // la bande du haut peut avoir été abaissée par la pagination (desc.bande) : la bouteille
+    // rapetisse, la colonne de texte s'élargit, comme dans le PDF
+    const hBande = desc.bande ?? EMPLACEMENT.bouteille.h;
+    const { rond, bouteille, ecart, colonne } = emplacementPour(hBande);
+    const bande = (mesures.blocs[`haut-${d.numero}-${hBande}`] ?? 65.6) - 3.6;
     const phRond = photoDe(d, 'rond');
     if (phRond && RECADRABLE && phRond.entiere) {
       // l'image entière, à l'échelle du rond ; le carré choisi est un recadrage, le cercle
@@ -349,7 +354,7 @@ function slideFiche(s, numero, desc) {
     const xb = gauche + CADRE_L - bouteille.l;
     const phBout = photoDe(d, 'bouteille');
     if (phBout) {
-      // contenue dans 24 × 62 mm, proportions gardées, posée sur le bas comme dans le PDF
+      // contenue dans sa case (24 × 62 mm au plus), proportions gardées, posée sur le bas comme dans le PDF
       const fichier = path.join(RACINE, phBout.fichier);
       const [lpx, hpx] = taillePng(fichier);
       const k = Math.min(bouteille.l / lpx, bouteille.h / hpx);
@@ -374,12 +379,12 @@ function slideFiche(s, numero, desc) {
     // lettrine écrite dans le texte n'y gardait que sa couleur. Des espaces insécables lui
     // réservent sa place en tête de la première ligne ; sa ligne de base est calée sur celle
     // du texte, dans Canva comme dans LibreOffice ou PowerPoint (voir placerLettrine()).
-    const corps = d.texte_source ? corpsDomaine(d) : 9;
+    const corps = d.texte_source ? corpsDomaine(d, colonne, hBande) : 9;
     const xt = gauche + rond + ecart;
     if (d.texte_source) {
       const reglage = LETTRINES[d.numero] ?? {};
       const interligne = reglage.interligne ?? 1.42;
-      const lignes = reglage.lignes ?? lignesTexte(texte, F.courant, corps, COLONNE_DOM);
+      const lignes = reglage.lignes ?? lignesTexte(texte, F.courant, corps, colonne);
       const p = placerLettrine(texte, corps, interligne, corps * (reglage.lettrine ?? LETTRINE_DEFAUT),
         lignes, bande);
       const taille = p.taille;
@@ -387,17 +392,17 @@ function slideFiche(s, numero, desc) {
       s.addText(texte.slice(0, 1), { x: mm(xt + p.gauche), y: mm(yTexte + p.lettre), w: mm(p.largeur),
         h: mm(p.hauteur), margin: 0, fontFace: F.titre, fontSize: taille, color: C.violet,
         lineSpacingMultiple: p.interligneLettre, align: 'right', valign: 'top' });
-      s.addText(p.reserve + texte.slice(1), { x: mm(xt), y: mm(yTexte), w: mm(COLONNE_DOM),
+      s.addText(p.reserve + texte.slice(1), { x: mm(xt), y: mm(yTexte), w: mm(colonne),
         h: mm(bande - p.haut), margin: 0, fontFace: F.courant, fontSize: corps, color: C.silex,
         lineSpacingMultiple: interligne, valign: 'top' });
-      BOITES[d.numero] = { diapo: pres.slides.length, x: xt, y: y / mm(1), w: COLONNE_DOM, h: bande,
+      BOITES[d.numero] = { diapo: pres.slides.length, x: xt, y: y / mm(1), w: colonne, h: bande,
         corps, interligne, lettrine: taille };
     } else {
-      s.addText(texte, { x: mm(xt), y, w: mm(COLONNE_DOM), h: mm(bande), margin: 0,
+      s.addText(texte, { x: mm(xt), y, w: mm(colonne), h: mm(bande), margin: 0,
         fontFace: F.courant, fontSize: corps, color: C.silex, lineSpacingMultiple: 1.42,
         italic: true, valign: 'middle' });
     }
-    y += mm(bande + 4.5);
+    y += mm(bande + 3.6);
   }
 
   // ——— tableaux
@@ -412,15 +417,15 @@ function slideFiche(s, numero, desc) {
     s.addTable(rows, { x, y, w: mm(CADRE_L), colW: largeurs, border: bordure,
       rowH: hauteurs.map(mm), autoPage: false, fontFace: F.tech });
     y += mm(hEntete + hLignes.reduce((a, b) => a + b, 0))
-      + mm(k < desc.morceaux.length - 1 ? 4.5 : 0);
+      + mm(k < desc.morceaux.length - 1 ? 3.6 : 0);
   });
 
   // ——— la note de prix, juste sous le dernier tableau, en grand (comme .note-prix du PDF)
   if (desc.note) {
     const hNote = mesures.blocs[`note-${d.numero}`] ?? 9;
-    s.addShape(pres.ShapeType.line, { x, y: y + mm(2.4), w: 0, h: mm(hNote - 2.4),
+    s.addShape(pres.ShapeType.line, { x, y: y + mm(2), w: 0, h: mm(hNote - 2),
       line: { color: C.violet, width: 1.4 } });
-    s.addText(texteNotePrix(d), { x: x + mm(3), y: y + mm(2.4), w: mm(CADRE_L - 3), h: mm(hNote - 2.4),
+    s.addText(texteNotePrix(d), { x: x + mm(3), y: y + mm(2), w: mm(CADRE_L - 3), h: mm(hNote - 2),
       margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, color: C.encre,
       italic: !d.note_prix, lineSpacingMultiple: 1.1 });
     y += mm(hNote);
@@ -439,9 +444,10 @@ function slideFiche(s, numero, desc) {
   }
 
   // ——— pied de fiche
-  const yPied = mm(PAGE_H - MARGE.bas - 14);
+  // calé sur le pied du PDF (.pied-dom, .legende, .alliance) : le filet à 11 mm du bas du cadre
+  const yPied = mm(PAGE_H - MARGE.bas - 11);
   const g = groupeDe(d);
-  const plafond = yPied - mm(g ? 8 : 1.5);
+  const plafond = yPied - mm(g ? 9.9 : 1.5);
   if (y > plafond) {
     debordements.push(`diapo ${numero} (n°${d.numero} ${d.nom}) : `
       + `${((y - plafond) * 25.4).toFixed(1)} mm de trop sous les tableaux`);
@@ -453,7 +459,7 @@ function slideFiche(s, numero, desc) {
     s.addText([
       { text: 'Se panache avec ', options: { bold: true, color: C.gneiss } },
       { text: `${g.libelle}${autres ? ` — ${autres}` : ''}`, options: { color: C.silex } },
-    ], { x, y: yPied - mm(7), w: mm(CADRE_L), h: mm(5.5), margin: [2, 3, 2, 3],
+    ], { x, y: yPied - mm(8.4), w: mm(CADRE_L), h: mm(6.6), margin: [2, 3, 2, 3],
       fill: { color: 'F4E7E9' }, fontFace: F.tech, fontSize: 7.4, valign: 'middle' });
   }
   s.addShape(pres.ShapeType.line, { x, y: yPied, w: mm(CADRE_L), h: 0,
@@ -462,11 +468,11 @@ function slideFiche(s, numero, desc) {
     { text: 'Distribution ', options: { bold: true, color: C.violet } },
     { text: d.departements.length ? d.departements.join(' · ')
       : 'non précisés par le domaine — nous consulter', options: { color: C.silex } },
-  ], { x, y: yPied + mm(1), w: mm(CADRE_L), h: mm(5),
+  ], { x, y: yPied + mm(1.2), w: mm(CADRE_L), h: mm(4.5),
     margin: 0, align: 'left', fontFace: F.tech, fontSize: 7.2 });
   s.addText(famillesDe(d).map((f) => `● ${NOM_FAMILLE[f]}`).join('    ')
     + '     pictos de l’Agence SCIO, pas les logos officiels', {
-    x, y: yPied + mm(5.6), w: mm(CADRE_L), h: mm(4), margin: 0,
+    x, y: yPied + mm(5.8), w: mm(CADRE_L), h: mm(4), margin: 0,
     fontFace: F.tech, fontSize: 6.5, color: C.silex, transparency: 25 });
 
   folio(s, numero);
