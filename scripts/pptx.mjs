@@ -44,7 +44,8 @@ const RECADRABLE = process.argv.includes('--recadrable');
 /* La taille de la lettrine, domaine par domaine, en multiple du corps du texte, et au besoin
    un interligne un peu resserré : réglés par scripts/regler-lettrines.py, qui rend le .pptx
    et ne réduit que là où le texte déborderait de sa bande. */
-const FICHIER_LETTRINES = path.join(RACINE, 'src/gabarits/lettrines-pptx.json');
+// un réglage par édition : au salon, les textes sont ceux des cartes de stand
+const FICHIER_LETTRINES = path.join(RACINE, `src/gabarits/lettrines-pptx${EDITION === 'salon' ? '-salon' : ''}.json`);
 const LETTRINES = fs.existsSync(FICHIER_LETTRINES)
   ? JSON.parse(fs.readFileSync(FICHIER_LETTRINES, 'utf8')) : {};
 const LETTRINE_DEFAUT = 1.8;
@@ -192,16 +193,16 @@ const PICTO = {
 
 function tableauDonnees(t, lignes, hauteurs) {
   const n = t.paliers.length;
-  const largeurs = [mm(6), mm(CADRE_L - 6 - 15 - 14 - 52), mm(15), mm(14),
+  const largeurs = [mm(6.5), mm(CADRE_L - 6.5 - 17 - 16 - 52), mm(17), mm(16),
     ...Array(n).fill(mm(52 / n))];
   const bordure = [{ type: 'solid', color: 'C7D1D6', pt: 0.3 }];
 
   const entete = [
     { text: `${t.intitule}${t.famille ? ' · ' + t.famille : ''}`.toUpperCase(),
-      options: { colspan: 4, fill: C.violet, color: C.or, fontFace: F.tech, fontSize: 7.2,
+      options: { colspan: 4, fill: C.violet, color: C.or, fontFace: F.tech, fontSize: 8,
         bold: true, valign: 'bottom', margin: [4, 4, 4, 6], charSpacing: 0.3 } },
     ...t.paliers.map((p) => ({ text: p, options: {
-      fill: C.violet, color: C.craie, fontFace: F.tech, fontSize: 6.4, bold: true,
+      fill: C.violet, color: C.craie, fontFace: F.tech, fontSize: 7.2, bold: true,
       align: 'right', valign: 'bottom', margin: [4, 5, 4, 3] } })),
   ];
 
@@ -212,23 +213,23 @@ function tableauDonnees(t, lignes, hauteurs) {
     const commun = { fill: fondLigne, valign: 'middle', margin: [3, 3, 3, 3] };
     return [
       { text: '●', options: { ...commun, color: remplissage === 'FFFFFF' ? C.silex : remplissage,
-        fontSize: 9, align: 'center' } },
+        fontSize: 10, align: 'center' } },
       { text: [
           { text: l.appellation + (l.note === '*' ? ' *' : ''),
-            options: { fontFace: F.tech, fontSize: 7.2, color: C.gneiss, breakLine: true } },
-          ...(l.cuvee ? [{ text: l.cuvee, options: { fontFace: F.tech, fontSize: 8.5, bold: true, color: C.silex } }] : []),
+            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: true } },
+          ...(l.cuvee ? [{ text: l.cuvee, options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre } }] : []),
         ], options: { ...commun, margin: [3, 3, 3, 4] } },
-      { text: l.millesime || '—', options: { ...commun, fontFace: F.tech, fontSize: 7.2,
+      { text: l.millesime || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
         color: C.silex, align: 'right' } },
-      { text: l.contenance || '—', options: { ...commun, fontFace: F.tech, fontSize: 7.2,
+      { text: l.contenance || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
         color: C.silex, align: 'right' } },
       // un prix pas encore donné (édition salon) : une case vide, à remplir dans Canva
       ...l.prix_centimes.map((p) => (p == null
-        ? { text: '', options: { ...commun, align: 'right', fontFace: F.tech, fontSize: 8.8, bold: true,
-          color: C.silex } }
+        ? { text: '', options: { ...commun, align: 'right', fontFace: F.tech, fontSize: 10, bold: true,
+          color: C.encre } }
         : { text: [
-          { text: euros(p), options: { fontFace: F.tech, fontSize: 8.8, bold: true, color: C.silex } },
-          { text: ' €', options: { fontFace: F.tech, fontSize: 6.4, color: C.silex } },
+          { text: euros(p), options: { fontFace: F.tech, fontSize: 10, bold: true, color: C.encre } },
+          { text: ' €', options: { fontFace: F.tech, fontSize: 7.2, color: C.encre } },
         ], options: { ...commun, align: 'right' } })),
     ];
   });

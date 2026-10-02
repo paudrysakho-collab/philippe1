@@ -1,7 +1,8 @@
 {
   "numero": 38, "page_source": 41, "region": "Champagne",
   "nom": "Champagne Denis Frézier", "nom_sommaire": "CHAMPAGNE DENIS FRÉZIER",
-  "texte_source": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées Trois Crus, Terroir Noir et Terroir Blanc.",
+  "texte_source": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées : Trois Crus, Terroir Noir et Terroir Blanc.",
+  "texte_tarif": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées Trois Crus, Terroir Noir et Terroir Blanc.",
   "texte_catalogue": "",
   "labels": [{ "label": "En conversion Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 2 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.41 ; « en conversion biologique » dans le texte" }, { "label": "HVE", "preuve": "« Certifiée HVE et VDC » dans le texte p.41" }],

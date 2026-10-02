@@ -49,7 +49,11 @@ function editionSalon(cat) {
         })),
       };
     });
-    return { ...parNumero[d.numero], tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon };
+    // Au salon, le texte de présentation est celui de la carte du stand (dossier de référence de
+    // Mathéo), tel quel ; une fiche sans carte à elle (Strasser-Radziwill, Cray, Guignottes)
+    // garde le sien.
+    const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
+    return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon };
   });
   const presents = new Set(domaines.map((d) => d.numero));
   const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));
@@ -367,7 +371,7 @@ export function tableauHtml(t, lignes, { suite = false, cleTableau = '' } = {}) 
   const paliers = t.paliers.map((p) => `<div class="cel-pal">${esc(p)}</div>`).join('');
   const titre = esc(t.intitule) + (t.famille ? ' · ' + esc(t.famille) : '') + (suite ? ' (suite)' : '');
   return `<table class="tarif" data-tableau="${cleTableau}">
-    <colgroup><col style="width:6mm"><col><col style="width:15mm"><col style="width:14mm">
+    <colgroup><col style="width:6.5mm"><col><col style="width:17mm"><col style="width:16mm">
       <col style="width:var(--bloc-prix)"></colgroup>
     <thead><tr class="bandeau"><th colspan="4" class="intit">${titre}</th>
       <th class="c-bloc"><div class="bloc-prix entete">${paliers}</div></th></tr></thead>

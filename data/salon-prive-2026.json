@@ -39,15 +39,15 @@
    },
    "vins": [
     {
-     "liste": "Château Balac — AOC Cru Bourgeois Haut Médoc",
+     "liste": "Château Balac Rouge — AOC Haut Médoc Cru Bourgeois Supérieur",
      "fiche": 29,
      "tarif": null,
-     "appellation": "AOC Cru Bourgeois Haut-Médoc",
-     "cuvee": "Château Balac",
+     "appellation": "AOC Haut-Médoc Cru Bourgeois Supérieur",
+     "cuvee": "Château Balac Rouge",
      "couleur": "Rouge",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -60,11 +60,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "Vin de France",
-     "cuvee": "Balac Sans Sulfites (100 % Merlot)",
+     "appellation": "VDF",
+     "cuvee": "Balac sans sulfites",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -75,11 +76,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "Vin de France",
-     "cuvee": "Inopine (100 % Merlot)",
+     "appellation": "VDF",
+     "cuvee": "L’inopine de Balac",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -90,17 +92,20 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "Vin de France",
+     "appellation": "VDF",
      "cuvee": "Syrah de Balac",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "Au cœur d’une forêt de deux cents hectares, la famille Touchais veille depuis 1964 sur dix hectares de vignes à Saint-Laurent-Médoc. Classé Cru Bourgeois Supérieur et certifié bio, Balac cultive autour de sa chartreuse du XVIIIe siècle des vins de caractère et d’élégance.",
+   "fiche_texte": 29
   },
   {
    "stand": 2,
@@ -131,7 +136,7 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Champagne",
+     "appellation": "AOC Champagne",
      "cuvee": "Trois Crus Brut",
      "couleur": "Blanc effervescent",
      "millesime": "—",
@@ -149,8 +154,8 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Champagne",
-     "cuvee": "Terroir Blanc",
+     "appellation": "AOC Champagne",
+     "cuvee": "Le Terroir Blanc Blanc de Blancs Brut",
      "couleur": "Blanc effervescent",
      "millesime": "—",
      "contenance": "75 cl",
@@ -165,8 +170,8 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Champagne",
-     "cuvee": "Terroir Meunier",
+     "appellation": "AOC Champagne",
+     "cuvee": "Le Terroir Meunier Blanc de Meuniers Extra-Brut",
      "couleur": "Blanc effervescent",
      "millesime": "—",
      "contenance": "75 cl",
@@ -181,7 +186,7 @@
      "appellation": "AOC Champagne",
      "cuvee": "Brut Nature",
      "couleur": "Blanc effervescent",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
@@ -206,7 +211,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées : Trois Crus, Terroir Noir et Terroir Blanc. Ratafia disponible. Vins sous allocation.",
+   "fiche_texte": 38
   },
   {
    "stand": 3,
@@ -237,11 +244,12 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Corbières",
+     "appellation": "AOC Corbières",
      "cuvee": "Terre Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
@@ -254,11 +262,12 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "4 Saisons",
+     "appellation": "AOC Corbières",
+     "cuvee": "4 saisons",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
@@ -271,11 +280,12 @@
       "tableau": 0,
       "ligne": 8
      },
-     "appellation": "AOP Corbières",
+     "appellation": "AOC Corbières",
      "cuvee": "La Potion",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« La Poion » dans la liste, « La Potion » au tarif"
      ],
@@ -288,11 +298,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "Clos de Cassis – élevé en fûts de chêne",
+     "appellation": "AOC Corbières",
+     "cuvee": "Clos de Cassis",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
@@ -305,11 +316,12 @@
       "tableau": 0,
       "ligne": 11
      },
-     "appellation": "IGP Pays d'Oc",
-     "cuvee": "Blanc Albas",
+     "appellation": "IGP Pays d’Oc",
+     "cuvee": "Albas",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2025 dans la liste, 2023 au tarif"
      ],
@@ -317,7 +329,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "Au pied de la Montagne d’Alaric, au cœur des Corbières, Laurence et Vincent Licciardi-Pirot cultivent des vignes plantées en terrasses et balayées par le vent du Cers. Les vins sont élevés dans une ancienne cave de village à demi enterrée : des rouges chaleureux du Midi, des blancs et des rosés tout en fraîcheur.",
+   "fiche_texte": 36
   },
   {
    "stand": 4,
@@ -342,26 +356,27 @@
    },
    "vins": [
     {
-     "liste": "Cuvée des deux Colombes 2025 — AOC Muscadet Sèvre et Maine",
+     "liste": "Cuvée des deux Colombes 2025 — AOC Muscadet Sèvre et Maine Sur Lie",
      "fiche": 3,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Muscadet Sèvre et Maine sur lie",
+     "appellation": "AOC Muscadet Sèvre et Maine sur lie",
      "cuvee": "Cuvée des deux Colombes",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "L'envol 2023 — AOC Muscadet Sèvre et Maine",
+     "liste": "L'envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie",
      "fiche": 3,
      "tarif": null,
-     "appellation": "AOC Muscadet Sèvre et Maine",
-     "cuvee": "L'envol",
+     "appellation": "AOC Muscadet Sèvre et Maine sur lie",
+     "cuvee": "L’envol",
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
@@ -378,11 +393,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Muscadet Sèvre et Maine",
-     "cuvee": "CRU Mouzillon – Tillières",
+     "appellation": "AOC Muscadet Sèvre et Maine",
+     "cuvee": "Cru Mouzillon-Tillières",
      "couleur": "Blanc",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -394,10 +410,11 @@
       "ligne": 2
      },
      "appellation": "IGP Chardonnay",
-     "cuvee": "Le Prestige de Beaulieu",
+     "cuvee": "Le prestige de Beaulieu",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -413,6 +430,7 @@
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
@@ -425,11 +443,12 @@
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "IGP",
+     "appellation": "IGP Val de Loire",
      "cuvee": "Rouge au lèvres",
      "couleur": "Rouge",
-     "millesime": "2023",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -445,12 +464,15 @@
      "couleur": "Blanc",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "Quatre générations de passionnés et adhérent historique des Vignerons Indépendants : Jean-Yves Bretaudeau allie bon sens paysan et précision œnologique. Certifié HVE, le domaine préserve ses paysages ligériens pour des vins frais et expressifs. Format BIB disponible.",
+   "fiche_texte": 3
   },
   {
    "stand": 5,
@@ -481,11 +503,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Mâcon",
-     "cuvee": "Mâcon Chardonnay",
+     "appellation": "AOC Mâcon Chardonnay",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -496,11 +519,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Mâcon Mancey",
-     "cuvee": "Mâcon Mancey",
+     "appellation": "AOC Mâcon Mancey Blanc",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -511,41 +535,42 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Mâcon Mancey",
-     "cuvee": "Mâcon Mancey",
+     "appellation": "AOC Mâcon Rouge",
+     "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« Mâcon Rouge » dans la liste ; le seul Mâcon rouge du tarif est le Mâcon Mancey rouge 2024"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "AOC Bourgognes Passe-Tout-Grain 2025",
+     "liste": "AOC Bourgognes Passe-Tout-Grain Rouge 2025",
      "fiche": 15,
      "tarif": null,
-     "appellation": "AOC Bourgogne Passe-Tout-Grain",
+     "appellation": "AOC Bourgogne Passe-Tout-Grain Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Les Bulles du Puits",
+     "liste": "Les Bulles du Puits Rosé",
      "fiche": 15,
      "tarif": null,
      "appellation": null,
-     "cuvee": "Les Bulles du Puits",
+     "cuvee": "Les Bulles du Puits Rosé",
      "couleur": "Rosé effervescent",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -553,7 +578,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "Propriété familiale transmise depuis sept générations, établie à Mancey au cœur du Mâconnais. Certifié HVE, le domaine limite rigoureusement ses intrants pour préserver la vie des sols et alimente sa cave en énergie solaire, pour des vins purs, gourmands et équilibrés.",
+   "fiche_texte": 15
   },
   {
    "stand": 6,
@@ -584,11 +611,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°1 Littorine",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°1 Littorine Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
@@ -601,11 +629,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°6 Fossiles",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°6 Fossiles Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -616,11 +645,12 @@
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°3 Gulf Stream",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°3 Gulf Stream Rosé",
      "couleur": "Rosé",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -631,11 +661,12 @@
       "tableau": 0,
       "ligne": 7
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°4 Triton",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°4 Triton Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -646,11 +677,12 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°8 Grand Pavois",
-     "couleur": "Doux",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°8 Grand Pavois Rouge",
+     "couleur": "Rouge",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« Rouge » dans la liste, « Doux » au tarif"
      ],
@@ -663,13 +695,15 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "IGP Côtes-de-Gascogne",
-     "cuvee": "N°7 Venus",
-     "couleur": "Doux",
+     "appellation": "IGP Côtes de Gascogne",
+     "cuvee": "N°7 Vénus Blanc Moelleux",
+     "couleur": "Blanc moelleux",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
-      "millésime 2025 dans la liste, 2024 au tarif"
+      "millésime 2025 dans la liste, 2024 au tarif",
+      "couleur « Blanc moelleux » dans la liste, « Doux » au tarif"
      ],
      "prix_centimes": null
     },
@@ -678,10 +712,11 @@
      "fiche": 23,
      "tarif": null,
      "appellation": "IGP Côtes de Gascogne",
-     "cuvee": "N°10",
+     "cuvee": "N°10 Pétillant",
      "couleur": "Pétillant",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif a deux N°10, en Vin de France : Bulle/Blanc et Bulle/Rosé ; la liste ne dit pas lequel, et écrit IGP Côtes de Gascogne"
@@ -690,7 +725,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche"
+   "salle": "Salle Blanche",
+   "texte_reference": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs. Format BIB disponible.",
+   "fiche_texte": 23
   },
   {
    "stand": 7,
@@ -708,19 +745,19 @@
     "Domaine du Moulin Blanc",
     "Domaine de la Pousterle"
    ],
-   "label_liste_salon": "En conversion Bio",
+   "label_liste_salon": "Bio",
    "labels_affiches": {
     "16": [
-     "En conversion Bio"
+     "Bio"
     ],
     "17": [
-     "En conversion Bio"
+     "Bio"
     ],
     "18": [
-     "En conversion Bio"
+     "Bio"
     ],
     "19": [
-     "En conversion Bio"
+     "Bio"
     ]
    },
    "carte_matheo": {
@@ -734,11 +771,12 @@
      "rubrique": "Domaine de la Pousterle",
      "fiche": 19,
      "tarif": null,
-     "appellation": "Vin de France",
-     "cuvee": "Chardonnay-Viognier",
+     "appellation": "VDF",
+     "cuvee": "Chardonnay-Viognier Blanc",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "peut-être « La Pousterle » blanc, Vin de France 2022, au tarif ; le nom et le millésime diffèrent"
@@ -753,11 +791,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "Vin de France-Syrah",
-     "cuvee": "La Pousterle",
+     "appellation": "VDF",
+     "cuvee": "Syrah Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -769,11 +808,12 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "Luberon",
-     "cuvee": "Terroir d'Ansouis",
+     "appellation": "AOC Luberon",
+     "cuvee": "Terroir d’Ansouis Blanc",
      "couleur": "Blanc",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -785,11 +825,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Côtes du Rhône",
-     "cuvee": "Le Prieuré",
+     "appellation": "AOC Côtes du Rhône",
+     "cuvee": "Le Prieuré Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2022/2023 au tarif"
      ],
@@ -803,11 +844,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Châteauneuf-du-Pape",
-     "cuvee": "Vieilles Vignes",
+     "appellation": "AOC Châteauneuf-du-Pape",
+     "cuvee": "Vieilles Vignes Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2022 dans la liste, 2021 au tarif"
      ],
@@ -821,11 +863,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Châteauneuf-du-Pape",
-     "cuvee": "Vieilles Vignes",
+     "appellation": "AOC Châteauneuf-du-Pape",
+     "cuvee": "Vieilles Vignes Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2023 dans la liste, 2021 au tarif"
      ],
@@ -837,10 +880,11 @@
      "fiche": 16,
      "tarif": null,
      "appellation": "AOC Châteauneuf-du-Pape",
-     "cuvee": "Le Couchant",
+     "cuvee": "Le Couchant Rouge",
      "couleur": "Rouge",
      "millesime": "2020",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -855,57 +899,58 @@
       "ligne": 4
      },
      "appellation": "IGP Méditerranée",
-     "cuvee": "Première Fleur",
+     "cuvee": "Premières Fleurs Blanc",
      "couleur": "Blanc",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Premières Fleurs 2025 — IGP Méditérranée",
+     "liste": "Premières Fleurs Rouge 2025 — IGP Méditérranée",
      "rubrique": "Domaine de Coyeux",
      "fiche": 17,
      "tarif": null,
      "appellation": "IGP Méditerranée",
-     "cuvee": "Premières Fleurs",
-     "couleur": "Blanc",
+     "cuvee": "Premières Fleurs Rouge",
+     "couleur": "Rouge",
      "millesime": "2025",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
-      "sans couleur dans la liste ; au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée"
+      "au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée ; l'agence avait donné « blanc » le 2 octobre, le dossier de référence de Mathéo écrit « Rouge »"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Or des Dentelles 2023 — AOC Muscat BDV",
+     "liste": "Or des Dentelles Blanc Moelleux 2023 — AOC Muscat BDV",
      "rubrique": "Domaine de Coyeux",
      "fiche": 17,
      "tarif": null,
      "appellation": "AOC Muscat BDV",
-     "cuvee": "Or des Dentelles",
+     "cuvee": "Or des Dentelles Blanc Moelleux",
      "couleur": "Blanc moelleux",
      "millesime": "2023",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Or des Dentelles 2022 — AOC Muscat BDV",
+     "liste": "Or des Dentelles Blanc Moelleux 2022 — AOC Muscat BDV",
      "rubrique": "Domaine de Coyeux",
      "fiche": 17,
      "tarif": null,
      "appellation": "AOC Muscat BDV",
-     "cuvee": "Or des Dentelles",
+     "cuvee": "Or des Dentelles Blanc Moelleux",
      "couleur": "Blanc moelleux",
      "millesime": "2022",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -919,11 +964,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "Côtes du Rhône",
-     "cuvee": null,
+     "appellation": "AOC Côtes du Rhône",
+     "cuvee": "Côtes du Rhône Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     }
@@ -931,7 +977,9 @@
    "doublons_matheo": [
     "Terroir d'Ansouis Blanc 2021 — AOC Luberon"
    ],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Regroupement de quatre domaines de la vallée du Rhône réunis au sein du groupe Maisons & Vignobles Strasser-Radziwill : le Prieuré des Papes à Châteauneuf-du-Pape, le Domaine de Coyeux au pied des Dentelles de Montmirail, le Domaine du Moulin Blanc et le Domaine de la Pousterle. Panachage possible entre les quatre domaines.",
+   "fiche_texte": null
   },
   {
    "stand": 8,
@@ -956,17 +1004,18 @@
    },
    "vins": [
     {
-     "liste": "Les demoiselles de Falfas 2025— AOC Côtes de Bourg",
+     "liste": "Les demoiseilles de Falfas 2025— AOC Côtes de Bourg",
      "fiche": 27,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Côtes de Bourg",
+     "appellation": "AOC Côtes de Bourg",
      "cuvee": "Les Demoiselles de Falfas",
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -977,11 +1026,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Côtes de Bourg",
+     "appellation": "AOC Côtes de Bourg",
      "cuvee": "Château Falfas",
      "couleur": "Rouge",
      "millesime": "2020",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2020 dans la liste, 2022 au tarif"
      ],
@@ -994,11 +1044,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Côtes de Bourg",
+     "appellation": "AOC Côtes de Bourg",
      "cuvee": "Château Falfas",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2021 dans la liste, 2022 au tarif"
      ],
@@ -1011,11 +1062,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Côtes de Bourg",
+     "appellation": "AOC Côtes de Bourg",
      "cuvee": "Château Falfas",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1026,11 +1078,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Côtes de Bourg",
-     "cuvee": "Château Falfas Le Chevalier (Vieilles Vignes)",
+     "appellation": "AOC Côtes de Bourg",
+     "cuvee": "Château Falfas Chevalier",
      "couleur": "Rouge",
      "millesime": "2017",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2017 dans la liste, 2021 au tarif"
      ],
@@ -1043,11 +1096,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Côtes de Bourg",
-     "cuvee": "Château Falfas Le Chevalier (Vieilles Vignes)",
+     "appellation": "AOC Côtes de Bourg",
+     "cuvee": "Château Falfas Chevalier",
      "couleur": "Rouge",
      "millesime": "2019",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2019 dans la liste, 2021 au tarif"
      ],
@@ -1060,11 +1114,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Côtes de Bourg",
+     "appellation": "AOC Côtes de Bourg",
      "cuvee": "Château Falfas",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
@@ -1072,7 +1127,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Sentinelle édifiée en 1612 sur les coteaux argilo-calcaires de Bayon, Falfas est une référence pionnière de la biodynamie bordelaise, membre fondateur de Biodyvin sous la houlette de John et Véronique Cochran. Vingt hectares vendangés à la main pour des Côtes de Bourg racés et de longue garde.",
+   "fiche_texte": 27
   },
   {
    "stand": 9,
@@ -1103,75 +1160,96 @@
       "tableau": 0,
       "ligne": 12
      },
-     "appellation": "AOP Crémant d’Alsace",
-     "cuvee": "Brut Nature",
+     "appellation": "AOC Crémant d’Alsace",
+     "cuvee": null,
      "couleur": "Blanc brut nature",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Molsce Blanc 2024— AOC Alsace",
+     "liste": "Molsce Blanc 2024 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Alsace",
-     "cuvee": "Molse Blanc (Assemblage)",
-     "couleur": "Blanc sec",
+     "appellation": "AOC Alsace",
+     "cuvee": "Molse Blanc",
+     "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Leimen Sylvaner 2024— AOC Alsace",
+     "liste": "Molsce Rouge 2024 — AOC Alsace",
+     "fiche": 8,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 0
+     },
+     "appellation": "AOC Alsace",
+     "cuvee": "Molse Rouge",
+     "couleur": "Rouge",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
+     "ecarts": [],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Leimen Sylvaner 2024 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Alsace",
-     "cuvee": "Leimen (Sylvaner)",
+     "appellation": "AOC Alsace",
+     "cuvee": "Leimen Sylvaner",
      "couleur": "Blanc sec",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Riesling Holderhurst 2023— AOC Alsace",
+     "liste": "Riesling Holderhurst 2023 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
       "ligne": 8
      },
-     "appellation": "AOP Alsace",
-     "cuvee": "Holderhurst (Riesling)",
+     "appellation": "AOC Alsace",
+     "cuvee": "Riesling Holderhurst",
      "couleur": "Blanc sec",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Riesling Hahnenberg 2024— AOC Alsace",
+     "liste": "Riesling Hahnenberg 2024 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
       "ligne": 9
      },
-     "appellation": "AOP Alsace",
-     "cuvee": "Hahnenberg (Riesling)",
+     "appellation": "AOC Alsace",
+     "cuvee": "Riesling Hahnenberg",
      "couleur": "Blanc sec",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
@@ -1184,11 +1262,12 @@
       "tableau": 0,
       "ligne": 11
      },
-     "appellation": "AOP Alsace Grand Cru",
-     "cuvee": "Bruderthal (Gewurztraminer)",
+     "appellation": null,
+     "cuvee": "Gewurztraminer Grand Cru Bruderthal",
      "couleur": "Blanc sec",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1199,19 +1278,36 @@
       "tableau": 0,
       "ligne": 10
      },
-     "appellation": "AOP Alsace Grand Cru",
-     "cuvee": "Bruderthal (Riesling)",
+     "appellation": null,
+     "cuvee": "Riesling Grand Cru Bruderthal",
      "couleur": "Blanc sec",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
+     "ecarts": [],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Seiler Rouge 2024 — AOC Alsace",
+     "fiche": 8,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 1
+     },
+     "appellation": "AOC Alsace",
+     "cuvee": "Seiler Rouge",
+     "couleur": "Rouge",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": [
-    "Molsce Blanc 2024— AOC Alsace"
-   ],
-   "salle": "Salle Noire"
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "texte_reference": "Berceau de tradition vigneronne à Molsheim, le Domaine Boehler aborde une nouvelle ère sous l’impulsion de Julien et Aurélie. Converti à l’agriculture biologique, le tandem explore ses coteaux et le prestigieux Grand Cru Bruderthal pour des vins verticaux, précis et profonds.",
+   "fiche_texte": 8
   },
   {
    "stand": 10,
@@ -1242,11 +1338,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Anjou",
-     "cuvee": "François Reverdy – Schistes Vert",
+     "appellation": "AOP Anjou Blanc",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1258,10 +1355,11 @@
       "ligne": 6
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "La Grange Jaumain – Chenin Blanc",
+     "cuvee": "La Grange Jaumain Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1272,11 +1370,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Saumur",
-     "cuvee": "François Reverdy – Tuffeau",
+     "appellation": "AOP Saumur Blanc",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1288,10 +1387,11 @@
       "ligne": 3
      },
      "appellation": "AOP Quincy",
-     "cuvee": "François Reverdy – Graves Argileuses",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1302,24 +1402,25 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Sancerre",
-     "cuvee": "François Reverdy – Les Villaudes",
+     "appellation": "AOP Sancerre Blanc",
+     "cuvee": "Les Villaudes",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "La Grange Jaumain 2024 - Grolleau Noir",
+     "liste": "La Grange Jaumain Rouge 2024 - Grolleau Noir",
      "fiche": 1,
      "tarif": null,
      "appellation": null,
-     "cuvee": "La Grange Jaumain – Grolleau Noir",
+     "cuvee": "La Grange Jaumain Rouge – Grolleau Noir",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif a « François Reverdy – Grolleau Noir » (Vin de France rouge 2024) et « La Grange Jaumain – Les Soudannes » (IGP Val de Loire rouge) ; la liste mêle les deux noms"
@@ -1327,38 +1428,58 @@
      "prix_centimes": null
     },
     {
-     "liste": "Franc 2021 - AOP Chinon Rouge 2021",
+     "liste": "Franc Rouge 2021 - AOP Chinon",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 2
      },
      "appellation": "AOP Chinon",
-     "cuvee": "François Reverdy – Franc / Graves",
+     "cuvee": "Franc Rouge",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Cravant - AOP Chinon Rouge 2024",
+     "liste": "Cravant Rouge 2024 - AOP Chinon",
      "fiche": 1,
      "tarif": null,
      "appellation": "AOP Chinon",
-     "cuvee": "Cravant",
+     "cuvee": "Cravant Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "peut-être le 2024 de « Franc / Graves » (AOP Chinon, 2021/2024) au tarif ; « Cravant » n'y figure pas"
      ],
      "prix_centimes": null
+    },
+    {
+     "liste": "La Grange Jaumain Les Soudannes Rouge 2025 - IGP Val De Loire",
+     "fiche": 1,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 7
+     },
+     "appellation": "IGP Val de Loire",
+     "cuvee": "La Grange Jaumain Les Soudannes Rouge",
+     "couleur": "Rouge",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
+     "ecarts": [],
+     "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Créés ex nihilo en 2023, deux vignobles jardins conduits en agriculture biologique : l’un à Sancerre, où François Reverdy est le plus petit vigneron de l’appellation, l’autre à Roiffé entre Saumur et Chinon, en vieilles vignes de Grolleau noir, Cabernet Franc et Chenin blanc. Vendanges à la main et vins éco-conçus, en Anjou, Saumur, Chinon, Quincy et Sancerre.",
+   "fiche_texte": 1
   },
   {
    "stand": 11,
@@ -1389,30 +1510,32 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Champagne",
-     "cuvee": "Voglonniers",
+     "appellation": "AOC Champagne",
+     "cuvee": "Voglonniers Brut",
      "couleur": "Blanc extra brut",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« Brut » dans la liste, « Blanc extra brut » au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Nature Sec - AOC Champagne",
+     "liste": "Nature Brut - AOC Champagne",
      "fiche": 37,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Champagne",
-     "cuvee": "Nature",
+     "appellation": "AOC Champagne",
+     "cuvee": "Nature Brut",
      "couleur": "Blanc extra brut",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
-      "« Nature Sec » dans la liste, « Nature », blanc extra brut, au tarif"
+      "« Nature Brut » dans la liste, « Nature », blanc extra brut, au tarif"
      ],
      "prix_centimes": null
     },
@@ -1423,22 +1546,23 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Champagne",
-     "cuvee": "Chardonnay Vignes de 1962",
+     "appellation": "AOC Champagne",
+     "cuvee": "Chardonnay Extra-Brut",
      "couleur": "Blanc extra brut",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Supernova Extra-Brut Zero Dosage— AOC Champagne",
+     "liste": "Supernova Extra-Brut Zéro Dosage— AOC Champagne",
      "fiche": 37,
      "tarif": null,
      "appellation": "AOC Champagne",
      "cuvee": "Supernova Extra-Brut Zéro Dosage",
-     "couleur": "Extra-brut, zéro dosage",
-     "millesime": null,
+     "couleur": null,
+     "millesime": "—",
      "contenance": null,
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -1447,7 +1571,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan à la vibrante énergie de sol. Ratafia disponible. Vins sous allocation.",
+   "fiche_texte": 37
   },
   {
    "stand": 12,
@@ -1477,9 +1603,10 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Brut Blanc",
-     "couleur": "Blanc brut",
-     "millesime": null,
+     "couleur": "Blanc effervescent",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1491,102 +1618,88 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Extra-Brut Blanc",
-     "couleur": "Blanc extra-brut",
-     "millesime": null,
+     "couleur": "Blanc effervescent",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne Mondeuse 2023— AOC Bugey",
+     "liste": "Mas de Lusanne Mondeuse Rouge  2023— AOC Bugey",
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne Mondeuse",
+     "cuvee": "Mas de Lusanne Mondeuse Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne Pinot Noir 2023 — AOC Bugey",
+     "liste": "Mas de Lusanne Pinot Noir Rouge 2023 — AOC Bugey",
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne Pinot Noir",
+     "cuvee": "Mas de Lusanne Pinot Noir Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne  2024 — AOC Côtes Du Rhône",
+     "liste": "Mas de Lusanne  Rouge 2024 — AOC Côtes Du Rhône",
      "fiche": 21,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Côtes du Rhône",
-     "cuvee": "Côtes du Rhône",
+     "appellation": "AOC Côtes du Rhône",
+     "cuvee": "Mas de Lusanne Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
-      "millésime 2024 dans la liste, 2023 au tarif",
-      "« Mas de Lusanne » dans la liste, sans couleur ; au tarif, le seul Côtes du Rhône est un rouge"
+      "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
-     "fiche": 21,
-     "tarif": null,
-     "appellation": null,
-     "cuvee": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
-     "couleur": "Pétillant de jus de raisin, 0 %",
-     "millesime": null,
-     "contenance": null,
-     "famille": "jus",
-     "ecarts": [
-      "absent du tarif de septembre : affiché tel que la liste l'écrit"
-     ],
-     "prix_centimes": null
-    },
-    {
-     "liste": "Mas de Lusanne Gamay— AOC Bugey",
+     "liste": "Mas de Lusanne Gamay Rouge — AOC Bugey",
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne Gamay",
+     "cuvee": "Mas de Lusanne Gamay Rouge",
      "couleur": "Rouge",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne Chardonnay 2020 — AOC Bugey",
+     "liste": "Mas de Lusanne Chardonnay Blanc 2020 — AOC Bugey",
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne Chardonnay",
+     "cuvee": "Mas de Lusanne Chardonnay Blanc",
      "couleur": "Blanc",
      "millesime": "2020",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1599,11 +1712,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Vacqueyras",
-     "cuvee": "Vacqueyras",
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Mas de Lusanne Vacqueyras Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
@@ -1616,17 +1730,35 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Vacqueyras",
-     "cuvee": "Vacqueyras",
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Mas de Lusanne Vacqueyras Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
+     "fiche": 21,
+     "tarif": null,
+     "appellation": null,
+     "cuvee": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
+     "couleur": null,
+     "millesime": "—",
+     "contenance": null,
+     "famille": "jus",
+     "ecarts": [
+      "absent du tarif de septembre : affiché tel que la liste l'écrit"
+     ],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane, associés dans le projet, allient leurs savoir-faire à la vigne et dans la création des cuvées.",
+   "fiche_texte": 21
   },
   {
    "stand": 13,
@@ -1638,10 +1770,10 @@
    "noms_catalogue": [
     "Château de Gragnos"
    ],
-   "label_liste_salon": "En conversion Bio",
+   "label_liste_salon": "Bio",
    "labels_affiches": {
     "34": [
-     "En conversion Bio"
+     "Bio"
     ]
    },
    "carte_matheo": {
@@ -1651,66 +1783,69 @@
    },
    "vins": [
     {
-     "liste": "Léon 2024 — VDF",
+     "liste": "Léon Rouge 2024 — VDF",
      "fiche": 34,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "Vin de France",
-     "cuvee": "Léon",
+     "appellation": "VDF",
+     "cuvee": "Léon Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Lou Daro 2023 — AOC Saint-Chinian",
+     "liste": "Lou Daro Rouge 2023 — AOC Saint-Chinian",
      "fiche": 34,
      "tarif": {
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Saint Chinian",
-     "cuvee": "Lou Daro",
+     "appellation": "AOC Saint-Chinian",
+     "cuvee": "Lou Daro Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Henri 2024 — AOC Saint-Chinian",
+     "liste": "Henri 2024 Rouge — AOC Saint-Chinian",
      "fiche": 34,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Saint Chinian",
-     "cuvee": "Henri",
+     "appellation": "AOC Saint-Chinian",
+     "cuvee": "Henri Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Juliette 2025 — AOC Saint-Chinian",
+     "liste": "Juliette Blanc 2025 — AOC Saint-Chinian",
      "fiche": 34,
      "tarif": null,
      "appellation": "AOC Saint-Chinian",
-     "cuvee": "Juliette",
+     "cuvee": "Juliette Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1723,11 +1858,12 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Saint Chinian",
+     "appellation": "IGP Pays d’Hérault Monts de la Grage",
      "cuvee": "Grain de Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« IGP Pays d'Hérault Monts de la Grage » dans la liste, « AOP Saint Chinian » au tarif"
      ],
@@ -1735,7 +1871,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Alain, Patricia et leurs fils révèlent l’âme de Gragnos par un soin méticuleux apporté à chaque pied de vigne. Engagé dans une conversion biologique, le domaine privilégie un accompagnement doux du végétal pour laisser rayonner l’identité du terroir sans le contraindre.",
+   "fiche_texte": 34
   },
   {
    "stand": 14,
@@ -1763,11 +1901,12 @@
      "liste": "AOC Anjou Blanc 2024",
      "fiche": 4,
      "tarif": null,
-     "appellation": "AOC Anjou",
+     "appellation": "AOC Anjou Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le seul Anjou blanc du tarif est « Promenade des Noëls », listé à part juste après"
@@ -1775,17 +1914,18 @@
      "prix_centimes": null
     },
     {
-     "liste": "Promenade de Noëls - AOC Anjou Blanc 2024",
+     "liste": "AOC Anjou Blanc 2024 - Promenade de Noëls",
      "fiche": 4,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Anjou",
-     "cuvee": "Promenade des Noëls",
-     "couleur": "Blanc sec",
+     "appellation": "AOC Anjou Blanc",
+     "cuvee": "Promenade de Noëls",
+     "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1796,11 +1936,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "IGP Val de Loire",
-     "cuvee": "Sauvignon",
+     "appellation": "AOC Sauvignon",
+     "cuvee": null,
      "couleur": "Blanc sec",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« AOC » dans la liste, « IGP Val de Loire » au tarif"
      ],
@@ -1813,11 +1954,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Coteaux du Layon",
-     "cuvee": "Coteaux du Layon",
+     "appellation": "AOC Coteaux du Layon",
+     "cuvee": null,
      "couleur": "Blanc moelleux",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1828,11 +1970,12 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Coteaux du Layon Faye",
-     "cuvee": "Coteaux du Layon Faye",
+     "appellation": "AOC Coteaux du Layon Faye",
+     "cuvee": null,
      "couleur": "Blanc moelleux",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1843,11 +1986,12 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Crémant de Loire",
-     "cuvee": "Crémant de Loire",
+     "appellation": "AOC Crémant de Loire",
+     "cuvee": null,
      "couleur": "Blanc brut",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "le tarif a deux Crémant de Loire : « Crémant de Loire » et « Cuvée Prestige » ; la ligne retenue est la première"
      ],
@@ -1860,17 +2004,20 @@
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "AOP Rosé de Loire",
-     "cuvee": "Rosé de Loire",
+     "appellation": "AOC Rosé de Loire",
+     "cuvee": null,
      "couleur": "Rosé sec léger",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Depuis 1921 à Faye-d’Anjou, cinq générations se transmettent 24 hectares de coteaux argilo-schisteux remarquablement exposés. Le Chenin donne aussi bien les liquoreux du Coteaux du Layon que des Anjou Blanc et Crémant de Loire d’une minéralité tactile.",
+   "fiche_texte": 4
   },
   {
    "stand": 15,
@@ -1901,11 +2048,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Champagne Grand Cru",
-     "cuvee": "Cuvée Camille",
+     "appellation": "Grand Cru Chouilly",
+     "cuvee": "Cuvée Camille Extra-Brut Blanc de Blancs",
      "couleur": "Blanc brut",
-     "millesime": "Base 2023",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« Extra-Brut Blanc de Blancs » dans la liste, « Blanc brut » au tarif"
      ],
@@ -1918,11 +2066,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Champagne Grand Cru",
-     "cuvee": "Brut Réserve",
+     "appellation": "Grand Cru Chouilly",
+     "cuvee": "Brut Réserve Blanc de Blancs",
      "couleur": "Blanc de Blancs",
-     "millesime": "Base 2022",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1932,9 +2081,10 @@
      "tarif": null,
      "appellation": "Grand Cru Chouilly",
      "cuvee": "Rosé Brut",
-     "couleur": "Rosé brut",
-     "millesime": null,
+     "couleur": "Rosé effervescent",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1947,11 +2097,12 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Champagne Grand Cru",
-     "cuvee": "Special Club",
+     "appellation": "Grand Cru Chouilly",
+     "cuvee": "Spécial Club Blanc de Blancs Extra-Brut",
      "couleur": "Blanc de Blancs",
      "millesime": "2017",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -1962,22 +2113,23 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Champagne Grand Cru",
+     "appellation": "Grand Cru Chouilly",
      "cuvee": "Extra Brut",
      "couleur": "Blanc de Blancs",
-     "millesime": "Base 2020",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "82/17 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly",
+     "liste": "82/18 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly",
      "fiche": 40,
      "tarif": null,
      "appellation": "Grand Cru Chouilly",
-     "cuvee": "82/17 Blanc de Blancs Zéro Dosage",
-     "couleur": "Blanc de Blancs, zéro dosage",
-     "millesime": null,
+     "cuvee": "82/18 Blanc de Blancs Zéro Dosage",
+     "couleur": null,
+     "millesime": "—",
      "contenance": null,
      "famille": "bulles",
      "ecarts": [
@@ -1987,7 +2139,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage.",
+   "fiche_texte": 40
   },
   {
    "stand": 16,
@@ -2018,11 +2172,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
-     "cuvee": "Cuvée Diane / Le Vin Cœur",
+     "appellation": "AOC Sainte-Foy Côtes de Bordeaux",
+     "cuvee": "Cuvée Diane Rouge",
      "couleur": "Rouge",
      "millesime": "2016",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2016 dans la liste, 2020 au tarif"
      ],
@@ -2035,11 +2190,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
-     "cuvee": "Cuvée TerraCotta / L'An Fort des Haltères",
+     "appellation": "AOC Sainte-Foy Côtes de Bordeaux",
+     "cuvee": "Cuvée TerraCotta",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2050,17 +2206,20 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Sainte-Foy Côtes de Bordeaux",
-     "cuvee": "Cuvée des Fontenelles / Y'a Rien qui Presse",
+     "appellation": "AOC Sainte-Foy Côtes de Bordeaux",
+     "cuvee": "Cuvée des Fontenelles",
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Perchée à 120 mètres au-dessus de la vallée de la Dordogne, cette propriété de 1860 conduit une biodynamie certifiée Demeter d’une remarquable précision. Vinifications douces, sulfites au strict minimum, élevages en barriques et amphores : des vins vivants, d’une grande vibration minérale.",
+   "fiche_texte": 28
   },
   {
    "stand": 17,
@@ -2096,11 +2255,12 @@
      "liste": "AOC Menetou Rouge",
      "fiche": 6,
      "tarif": null,
-     "appellation": "AOC Menetou-Salon",
+     "appellation": "AOC Menetou-Salon Rouge",
      "cuvee": null,
      "couleur": "Rouge",
-     "millesime": null,
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif n'a qu'un Menetou-Salon, blanc"
@@ -2114,11 +2274,12 @@
       "tableau": 0,
       "ligne": 7
      },
-     "appellation": "AOP Menetou-Salon",
+     "appellation": "AOC Menetou-Salon Blanc",
      "cuvee": null,
      "couleur": "Blanc",
-     "millesime": "2024/2025",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2129,11 +2290,12 @@
       "tableau": 0,
       "ligne": 8
      },
-     "appellation": "AOP Quincy",
+     "appellation": "AOC Quincy",
      "cuvee": null,
      "couleur": "Blanc",
-     "millesime": "2023/2024",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2142,10 +2304,11 @@
      "fiche": 6,
      "tarif": null,
      "appellation": "AOC Sancerre",
-     "cuvee": "Les Beltins",
+     "cuvee": "Les Beltins Blanc",
      "couleur": "Blanc",
      "millesime": "2022",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2158,24 +2321,25 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Sancerre",
-     "cuvee": "Chêne à la Rouline",
+     "appellation": "AOC Sancerre",
+     "cuvee": "Chêne à la rouline Blanc",
      "couleur": "Blanc",
      "millesime": "2022",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Vignes de Tréleau 2023 — AOC Pouilly-Fumé",
+     "liste": "Vignes de Tréleau Blanc 2023 — AOC Pouilly-Fumé",
      "fiche": 6,
      "tarif": null,
      "appellation": "AOC Pouilly-Fumé",
-     "cuvee": "Vignes de Tréleau",
+     "cuvee": "Vignes de Tréleau Blanc",
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif, le Pouilly-Fumé 2023 nommé est « Les Silex Blancs »"
@@ -2189,11 +2353,12 @@
       "tableau": 0,
       "ligne": 13
      },
-     "appellation": "AOP Sancerre",
-     "cuvee": "La Louisonne",
+     "appellation": "AOC Sancerre",
+     "cuvee": "La Louisonne Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2204,11 +2369,12 @@
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "AOP Pouilly-Fumé",
+     "appellation": "AOC Pouilly-Fumé",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2219,11 +2385,12 @@
       "tableau": 0,
       "ligne": 9
      },
-     "appellation": "AOP Touraine Chenonceaux",
+     "appellation": "AOC Touraine Chenonceaux",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2234,11 +2401,12 @@
       "tableau": 0,
       "ligne": 10
      },
-     "appellation": "IGP Val de Loire Sauvignon",
+     "appellation": "AOC Sauvignon Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« AOC » dans la liste, « IGP Val de Loire » au tarif"
      ],
@@ -2251,11 +2419,12 @@
       "tableau": 0,
       "ligne": 12
      },
-     "appellation": "Vin de France Pinot Noir",
+     "appellation": "AOC Pinot Noir Rosé",
      "cuvee": null,
      "couleur": "Rosé",
      "millesime": "2024/25",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024/25 dans la liste, 2023 au tarif",
       "« AOC » dans la liste, « Vin de France » au tarif"
@@ -2263,17 +2432,18 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Pinot Noir",
+     "liste": "AOC Pinot Noir 2024/25",
      "fiche": 6,
      "tarif": {
       "tableau": 0,
       "ligne": 15
      },
-     "appellation": "Vin de France Pinot Noir",
+     "appellation": "AOC Pinot Noir",
      "cuvee": null,
      "couleur": "Rouge",
-     "millesime": "2024/2025",
+     "millesime": "2024/25",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« AOC » dans la liste, « Vin de France » au tarif ; sans couleur dans la liste, rouge au tarif"
      ],
@@ -2281,7 +2451,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Spécialiste du Sauvignon Blanc ligérien, le domaine explore les plus beaux terroirs de Loire (Sancerre, Pouilly-Fumé, Menetou-Salon, Touraine). Techniques modernes et respect de la typicité des sols calcaires et de silex pour des blancs d’une grande pureté.",
+   "fiche_texte": 6
   },
   {
    "stand": 18,
@@ -2313,11 +2485,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Hautes-Côtes de Beaune",
-     "cuvee": "Hautes-Côtes",
+     "appellation": "AOC Hautes-Côtes de Beaune",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
@@ -2333,6 +2506,7 @@
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif a deux Meursault 2023 : « Les Grands Charrons » et « Les Meix Chavaux » ; la liste ne dit pas lequel"
@@ -2340,50 +2514,70 @@
      "prix_centimes": null
     },
     {
-     "liste": "Clos de la Perrière 2023- AOC Hautes Côtes de Beaune",
+     "liste": "Les Aigrots 2023 — Beaune 1er Cru",
+     "rubrique": "Blanc",
+     "fiche": 10,
+     "tarif": null,
+     "appellation": "Beaune 1er Cru",
+     "cuvee": "Les Aigrots",
+     "couleur": "Blanc",
+     "millesime": "2023",
+     "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
+     "ecarts": [
+      "absent du tarif de septembre : affiché tel que la liste l'écrit",
+      "au tarif, « Les Aigrots » est un rouge 2023 ; le Beaune 1er Cru blanc 2023 du tarif n'a pas de nom de climat"
+     ],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Clos de la Perrière 2023/24 —  AOC Hautes Côtes de Beaune",
      "rubrique": "Rouge",
      "fiche": 10,
      "tarif": {
       "tableau": 0,
       "ligne": 10
      },
-     "appellation": "AOP Hautes-Côtes de Beaune",
+     "appellation": "AOC Hautes-Côtes de Beaune",
      "cuvee": "Clos de la Perrière",
      "couleur": "Rouge",
-     "millesime": "2023",
+     "millesime": "2023/24",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Les Bons Feuvres 2023 — AOC Beaune",
+     "liste": "Les Bons Feuvres 2023/24 — AOC Beaune",
      "rubrique": "Rouge",
      "fiche": 10,
      "tarif": {
       "tableau": 0,
       "ligne": 11
      },
-     "appellation": "AOP Beaune",
+     "appellation": "AOC Beaune",
      "cuvee": "Les Bons Feuvres",
      "couleur": "Rouge",
-     "millesime": "2023",
+     "millesime": "2023/24",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "Les Aigrots 2024— Beaune 1er Cru",
+     "liste": "Les Aigrots 2024 — Beaune 1er Cru",
      "rubrique": "Rouge",
      "fiche": 10,
      "tarif": {
       "tableau": 0,
       "ligne": 14
      },
-     "appellation": "AOP Beaune 1er Cru",
+     "appellation": "Beaune 1er Cru",
      "cuvee": "Les Aigrots",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
@@ -2397,11 +2591,12 @@
       "tableau": 0,
       "ligne": 12
      },
-     "appellation": "AOP Pommard",
+     "appellation": "AOC Pommard",
      "cuvee": "Les Perrières",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
@@ -2409,7 +2604,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Installé à Meursault depuis 2004, Sébastien Magnien conduit 12 hectares sur les terroirs d’élite de la Côte de Beaune et des Hautes-Côtes (Pommard, Volnay, Puligny, Saint-Romain). Vendanges manuelles et élevages en fûts de chêne signent des Pinots et Chardonnays d’élégance et de tension. Vins sous allocation.",
+   "fiche_texte": 10
   },
   {
    "stand": 19,
@@ -2434,14 +2631,47 @@
    },
    "vins": [
     {
+     "liste": "St Probace Rosé 2025 — IGP Var Sainte Baume",
+     "fiche": 31,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 0
+     },
+     "appellation": "IGP Var Sainte Baume",
+     "cuvee": "St Probace Rosé",
+     "couleur": "Rosé",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
+     "ecarts": [],
+     "prix_centimes": null
+    },
+    {
+     "liste": "St Probace Blanc 2025 — IGP Var Sainte Baume",
+     "fiche": 31,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 1
+     },
+     "appellation": "IGP Var Sainte Baume",
+     "cuvee": "St Probace Blanc",
+     "couleur": "Blanc",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
+     "ecarts": [],
+     "prix_centimes": null
+    },
+    {
      "liste": "St Probace Rouge 2025 — IGP Var Sainte Baume",
      "fiche": 31,
      "tarif": null,
      "appellation": "IGP Var Sainte Baume",
-     "cuvee": "SAINT PROBACE",
+     "cuvee": "St Probace Rouge",
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif, SAINT PROBACE n'existe qu'en rosé et en blanc"
@@ -2455,11 +2685,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Coteaux Varois en Provence",
-     "cuvee": "JOIO",
+     "appellation": "AOC Coteaux Varois en Provence",
+     "cuvee": "Joio Rosé",
      "couleur": "Rosé",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "le tarif a aussi un 150 cl ; la ligne retenue est la 75 cl"
      ],
@@ -2472,11 +2703,12 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Coteaux Varois en Provence",
-     "cuvee": "JOIO",
+     "appellation": "AOC Coteaux Varois en Provence",
+     "cuvee": "Joio Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "le tarif a aussi un 150 cl ; la ligne retenue est la 75 cl"
      ],
@@ -2489,11 +2721,12 @@
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "AOP Coteaux Varois en Provence",
-     "cuvee": "JOIO",
+     "appellation": "AOC Coteaux Varois en Provence",
+     "cuvee": "Joio Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2502,10 +2735,11 @@
      "fiche": 31,
      "tarif": null,
      "appellation": "AOC Coteaux Varois en Provence",
-     "cuvee": "Miraia",
+     "cuvee": "Miraia Blanc",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2516,10 +2750,11 @@
      "fiche": 31,
      "tarif": null,
      "appellation": "AOC Coteaux Varois en Provence",
-     "cuvee": "Miraia",
+     "cuvee": "Miraia Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2530,10 +2765,11 @@
      "fiche": 31,
      "tarif": null,
      "appellation": "AOC Coteaux Varois en Provence",
-     "cuvee": "Aquino",
+     "cuvee": "Aquino Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2544,10 +2780,11 @@
      "fiche": 31,
      "tarif": null,
      "appellation": "AOC Coteaux Varois en Provence",
-     "cuvee": "Aquino",
+     "cuvee": "Aquino Blanc",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2555,7 +2792,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Écrin préservé à Tourves, Blacailloux incarne la Provence Verte depuis plus d’un siècle, conduit par la quatrième génération de la famille Chamoin. Chai bioclimatique à toit végétalisé et énergie photovoltaïque. Cuvées AOP Coteaux Varois et IGP Var, fraîches et aériennes. Format BIB disponible.",
+   "fiche_texte": 31
   },
   {
    "stand": 20,
@@ -2586,11 +2825,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Madiran",
-     "cuvee": "Strateus",
+     "appellation": "AOC Madiran",
+     "cuvee": "Stratéus Rouge",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2021 dans la liste, 2022 au tarif"
      ],
@@ -2603,11 +2843,12 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Madiran",
-     "cuvee": "Néolitik",
+     "appellation": "AOC Madiran",
+     "cuvee": "Néolitik Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2618,11 +2859,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Madiran",
-     "cuvee": "Koloss",
+     "appellation": "AOC Madiran",
+     "cuvee": "Koloss Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2630,11 +2872,12 @@
      "liste": "Koloss Doux 2022 — VDF",
      "fiche": 22,
      "tarif": null,
-     "appellation": "Vin de France",
-     "cuvee": "Koloss",
+     "appellation": "VDF",
+     "cuvee": "Koloss Doux",
      "couleur": "Doux",
      "millesime": "2022",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif, le Koloss Vin de France est un rosé 2025, et le doux Vin de France s'appelle Strateus (2025)"
@@ -2648,11 +2891,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Pacherenc du Vic-Bilh Sec",
-     "cuvee": "Strateus",
-     "couleur": "Blanc sec",
+     "appellation": "AOC Pacherenc du Vic-Bilh sec",
+     "cuvee": "Stratéus Blanc",
+     "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2025 dans la liste, 2022 au tarif"
      ],
@@ -2662,11 +2906,12 @@
      "liste": "Néolithik Blanc 2025 — AOC Pacherenc du Vic-Bilh sec",
      "fiche": 22,
      "tarif": null,
-     "appellation": "AOC Pacherenc du Vic-Bilh Sec",
-     "cuvee": "Néolitik",
-     "couleur": "Blanc sec",
+     "appellation": "AOC Pacherenc du Vic-Bilh sec",
+     "cuvee": "Néolitik Blanc",
+     "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2674,21 +2919,28 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Né de la transmission d’une vigne de 80 ans en Madiran par son grand-père, le projet de Simon cultive la rareté : produire peu pour produire sain. Environ six hectares en Madiran et Pacherenc-du-Vic-Bilh, en symbiose avec un élevage de bœufs Angus sur la ferme. Vins sous allocation.",
+   "fiche_texte": 22
   },
   {
    "stand": 21,
    "nom_salon": "Famille d’Exea",
    "region": "Languedoc",
    "domaines": [
-    32
+    32,
+    33
    ],
    "noms_catalogue": [
-    "Famille d’Exea"
+    "Famille d’Exea",
+    "Famille d’Exea — Jus de Cépages"
    ],
    "label_liste_salon": "Bio",
    "labels_affiches": {
     "32": [
+     "Bio"
+    ],
+    "33": [
      "Bio"
     ]
    },
@@ -2705,11 +2957,12 @@
       "tableau": 0,
       "ligne": 11
      },
-     "appellation": "AOP Minervois",
-     "cuvee": "CHANT DE LUNE",
+     "appellation": "AOC Minervois",
+     "cuvee": "Chant de Lune Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2720,11 +2973,12 @@
       "tableau": 0,
       "ligne": 7
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "ROUGE SÉRAME",
+     "appellation": "AOC Corbières",
+     "cuvee": "Rouge Sérame",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2735,11 +2989,12 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "BLANC SÉRAME",
+     "appellation": "AOC Corbières",
+     "cuvee": "Blanc Sérame",
      "couleur": "Blanc",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2750,12 +3005,13 @@
       "tableau": 0,
       "ligne": 10
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "OENA",
-     "couleur": "Blanc",
+     "appellation": "AOC Corbières",
+     "cuvee": "Oena Rouge",
+     "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
      "note": "*",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« Rouge » dans la liste, « Blanc » au tarif"
      ],
@@ -2768,17 +3024,74 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Corbières",
-     "cuvee": "JARDINS DE CORBIÈRES",
+     "appellation": "AOC Corbières",
+     "cuvee": "Jardins de Corbières Rouge",
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Jus de cépages — Syrah",
+     "fiche": 33,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 4
+     },
+     "appellation": null,
+     "cuvee": "Jus de cépages – Syrah",
+     "couleur": "Rouge",
+     "millesime": "—",
+     "contenance": "50 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
+     "ecarts": [
+      "le tarif a la Syrah en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
+     ],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Jus de cépages — Chardonnay",
+     "fiche": 33,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 2
+     },
+     "appellation": null,
+     "cuvee": "Jus de cépages – Chardonnay",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "50 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
+     "ecarts": [
+      "le tarif a le Chardonnay en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
+     ],
+     "prix_centimes": null
+    },
+    {
+     "liste": "Jus de cépages — Grenache",
+     "fiche": 33,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 3
+     },
+     "appellation": null,
+     "cuvee": "Jus de cépages – Grenache",
+     "couleur": "Rosé",
+     "millesime": "—",
+     "contenance": "50 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
+     "ecarts": [
+      "le tarif a le Grenache en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
+     ],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Depuis plusieurs générations, la famille d’Exea façonne sur les terroirs solaires du Languedoc des vins biologiques vibrants et sincères, alliant pureté du fruit et convivialité. Panachage possible avec la gamme de purs jus de cépages. Format BIB disponible.",
+   "fiche_texte": 32
   },
   {
    "stand": 22,
@@ -2810,10 +3123,11 @@
       "ligne": 2
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Silex",
+     "cuvee": "Les Silex Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2825,10 +3139,11 @@
       "ligne": 3
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Gorinières",
+     "cuvee": "Les Gorinières Blanc",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
@@ -2842,10 +3157,11 @@
       "ligne": 4
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Courbes",
-     "couleur": "Rouge",
+     "cuvee": "Les Courbes Blanc",
+     "couleur": "Blanc",
      "millesime": "2018",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« Blanc » dans la liste, « Rouge » au tarif"
      ],
@@ -2859,10 +3175,11 @@
       "ligne": 5
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Amphibol",
+     "cuvee": "Les Amphibol Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
@@ -2876,10 +3193,11 @@
       "ligne": 6
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Gneiss",
+     "cuvee": "Les Gneiss Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2895,6 +3213,7 @@
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2905,17 +3224,20 @@
       "tableau": 0,
       "ligne": 8
      },
-     "appellation": "Méthode Traditionnelle (Extra)",
-     "cuvee": "L’O*** Brut",
+     "appellation": "Méthode traditionnelle",
+     "cuvee": "L’O Brut",
      "couleur": "Blanc",
-     "millesime": "2023",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Sur les reliefs bocagers du Chantonnais, Vincent et Alban Orion sculptent 30 hectares reflétant la diversité des terroirs chantonnaisiens. Une démarche paysanne faite de travail manuel minutieux et d’attention à la faune et à la flore, qui porte le domaine en agriculture biologique. Vins sous allocation.",
+   "fiche_texte": 2
   },
   {
    "stand": 23,
@@ -2927,10 +3249,10 @@
    "noms_catalogue": [
     "Champagne Solemme"
    ],
-   "label_liste_salon": "Bio & Biodynamie",
+   "label_liste_salon": "Biodynamie",
    "labels_affiches": {
     "39": [
-     "Bio & Biodynamie"
+     "Biodynamie"
     ]
    },
    "carte_matheo": {
@@ -2946,11 +3268,12 @@
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Terre de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Terre de Solemme Brut",
      "couleur": "Blanc brut",
-     "millesime": "BSA",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2961,11 +3284,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Plénitude de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Plénitude de Solemme Extra-Brut",
      "couleur": "Blanc extra brut",
-     "millesime": "2022",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2976,11 +3300,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Esprit de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Esprit de Solemme Brut Nature",
      "couleur": "Blanc brut nature",
-     "millesime": "2020",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -2991,11 +3316,12 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Nature de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Nature de Solemme Blanc de Blancs Brut Nature",
      "couleur": "Blanc brut nature",
-     "millesime": "2018",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3006,11 +3332,12 @@
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Ambre de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Ambre de Solemme Blanc de Noirs Brut Nature",
      "couleur": "Blanc brut nature",
-     "millesime": "2018",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3021,17 +3348,20 @@
       "tableau": 0,
       "ligne": 5
      },
-     "appellation": "AOP Champagne Premier Cru",
-     "cuvee": "Rose de Solemme",
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Rose de Solemme Brut Nature",
      "couleur": "Rosé brut nature",
-     "millesime": "2022",
+     "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "À Villers-aux-Nœuds, sur les terroirs Premier Cru de la Montagne de Reims, Olivier Langlais conduit 6 hectares en biodynamie. En cave, vinifications douces, sans chaptalisation, sans filtration et sans dosage : une Champagne d’émotion, minérale et d’une lumineuse franchise de terroir.",
+   "fiche_texte": 39
   },
   {
    "stand": 24,
@@ -3056,53 +3386,57 @@
    },
    "vins": [
     {
-     "liste": "Château Lafargue 2020 — AOC Fronsac",
+     "liste": "Château Lafargue Rouge 2020 — AOC Fronsac",
      "fiche": 30,
      "tarif": null,
      "appellation": "AOC Fronsac",
-     "cuvee": "Château Lafargue",
+     "cuvee": "Château Lafargue Rouge",
      "couleur": "Rouge",
      "millesime": "2020",
      "contenance": null,
-     "couleur_provenance": "l'agence, 2 octobre 2026",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "Amphora 2021 — AOC Fronsac",
+     "liste": "Amphora Rouge 2021 — AOC Fronsac",
      "fiche": 30,
      "tarif": {
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Fronsac",
-     "cuvee": "Amphora de Château l'Escarderie",
+     "appellation": "AOC Fronsac",
+     "cuvee": "Amphora Rouge",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "La Confiance 2023 — VDF",
+     "liste": "La Confiance Rouge 2023 — VDF",
      "fiche": 30,
      "tarif": {
       "tableau": 0,
       "ligne": 6
      },
-     "appellation": "Vin de France",
-     "cuvee": "La Confiance de l'Escarderie",
+     "appellation": "VDF",
+     "cuvee": "La Confiance Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Joyau intimiste à Saint-Germain-de-la-Rivière, en AOP Fronsac, qui renaît sous la conduite de Mélanie et Thomas. Vendanges manuelles, fermentations spontanées, sulfites mesurés et élevage sur-mesure (barriques, béton, amphores) pour des Merlots et Cabernets Francs veloutés et floraux.",
+   "fiche_texte": 30
   },
   {
    "stand": 25,
@@ -3134,10 +3468,11 @@
       "ligne": 0
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "Courant – Chenin",
+     "cuvee": "Courant Chenin",
      "couleur": "Blanc sec",
      "millesime": "2025",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3149,10 +3484,11 @@
       "ligne": 1
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "Source – Melon B.",
+     "cuvee": "Source Melon B.",
      "couleur": "Blanc sec",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3164,19 +3500,20 @@
       "ligne": 2
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "Reflet – Gamay",
+     "cuvee": "Reflet Gamay",
      "couleur": "Rouge",
      "millesime": "2024",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
     {
-     "liste": "L'Eberluant Chardonnay 2025 — IGP Val de Loire",
+     "liste": "L'Eberluant Chardonnay Méthode ancestrale 2025 — VDF",
      "fiche": 5,
      "tarif": null,
-     "appellation": "IGP Val de Loire",
-     "cuvee": "L'Eberluant – Chardonnay",
+     "appellation": "VDF",
+     "cuvee": "L’Eberluant Chardonnay Méthode ancestrale",
      "couleur": "Blanc pétillant",
      "millesime": "2025",
      "contenance": null,
@@ -3187,13 +3524,10 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": [
-    "Courant Chenin 2025 — IGP Val de Loire",
-    "Source Melon B. 2023 — IGP Val de Loire",
-    "Reflet Gamay 2024 — IGP Val de Loire",
-    "L'Eberluant Chardonnay 2025 — IGP Val de Loire"
-   ],
-   "salle": "Salle Noire"
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "texte_reference": "Premier chai urbain de La Roche-sur-Yon, à Mouilleron-le-Captif, fondé par deux amis d’enfance vendéens diplômés en ingénierie agricole à Angers. Les raisins proviennent de 8 domaines partenaires du Val de Loire. Levures indigènes : des jus digestes et éclatants.",
+   "fiche_texte": 5
   },
   {
    "stand": 26,
@@ -3230,11 +3564,12 @@
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "Bourgogne Chardonnay",
-     "cuvee": null,
+     "appellation": "AOC Bourgogne Chardonnay",
+     "cuvee": "Château du Cray Blanc",
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
@@ -3244,11 +3579,12 @@
      "liste": "AOC Pouilly Vinzelles Blanc 2023",
      "fiche": 12,
      "tarif": null,
-     "appellation": "AOC Pouilly-Vinzelles",
+     "appellation": "AOC Pouilly-Vinzelles Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -3261,11 +3597,12 @@
       "tableau": 0,
       "ligne": 14
      },
-     "appellation": "AOP Auxey-Duresses",
+     "appellation": "AOC Auxey-Duresses",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3275,9 +3612,10 @@
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
      "cuvee": "Baron Auguste Blanc",
-     "couleur": "Blanc",
-     "millesime": null,
+     "couleur": "Blanc effervescent",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -3289,9 +3627,10 @@
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
      "cuvee": "Baron Auguste Rosé",
-     "couleur": "Rosé",
-     "millesime": null,
+     "couleur": "Rosé effervescent",
+     "millesime": "—",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -3304,11 +3643,12 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "Bourgogne Pinot Noir",
-     "cuvee": null,
+     "appellation": "AOC Bourgogne Pinot Noir",
+     "cuvee": "Domaine les Guignottes Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3319,11 +3659,12 @@
       "tableau": 0,
       "ligne": 12
      },
-     "appellation": "AOP Chassagne-Montrachet",
+     "appellation": "AOC Chassagne-Montrachet Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3332,10 +3673,11 @@
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Nuits-Saint-Georges",
-     "cuvee": "Aux Allots",
+     "cuvee": "Aux Allots Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -3345,11 +3687,12 @@
      "liste": "AOC Mercurey Blanc 2023",
      "fiche": 12,
      "tarif": null,
-     "appellation": "AOC Mercurey",
+     "appellation": "AOC Mercurey Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif, le Mercurey est un rouge 2022 (listé juste après)"
@@ -3363,11 +3706,12 @@
       "tableau": 0,
       "ligne": 9
      },
-     "appellation": "AOP Mercurey",
+     "appellation": "AOC Mercurey Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -3375,11 +3719,12 @@
      "liste": "AOC Givry Rouge 2023",
      "fiche": 12,
      "tarif": null,
-     "appellation": "AOC Givry",
+     "appellation": "AOC Givry Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif a deux Givry rouges 2023 : « Champ La Dame » et le Givry 1er Cru ; la liste ne dit pas lequel"
@@ -3393,11 +3738,12 @@
       "tableau": 0,
       "ligne": 15
      },
-     "appellation": "AOP Gevrey-Chambertin",
+     "appellation": "AOC Gevrey-Chambertin",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2022",
      "contenance": "75 cl",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "« Gervey » dans la liste, « Gevrey-Chambertin » au tarif"
      ],
@@ -3405,7 +3751,9 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire"
+   "salle": "Salle Noire",
+   "texte_reference": "Fleuron familial et indépendant fondé en 1947, la Maison André Goichot porte l’exigence des grands climats de Bourgogne. Sélections parcellaires méticuleuses et cuverie d’élevage de pointe inaugurée en 2020. Panachage possible avec le Château du Cray et le Domaine Les Guignottes. Vins sous allocation.",
+   "fiche_texte": 12
   }
  ],
  "a_confirmer": [
@@ -3422,21 +3770,21 @@
   24,
   25,
   26,
-  33,
   35
  ],
  "reponses_agence": {
   "date": "2026-10-02",
   "plan": "Le plan des exposants fait foi : si le plan le dit, c'est ainsi. (Version 2 reçue le 2 octobre : identique à la première.)",
   "prix": "Inconnu : un seul prix par vin ou les paliers du domaine. Le composant doit accepter les deux.",
-  "exea_jus": "Non : pas de jus de cépages au salon (fiche n°33 exclue).",
+  "exea_jus": "D'abord non (2 octobre au matin) ; puis le dossier de référence de Mathéo, qui fait foi, liste trois jus de cépages au stand 21 (Syrah, Chardonnay, Grenache) : la fiche n°33 entre au salon.",
   "divin_no_low": "Normalement oui, sur le stand de Jean de Villebois : la fiche n°7 entre si le fichier de Mathéo (la composition des tables) liste des vins Divin No Low.",
   "goichot_cray_guignottes": "Ce que dit la composition des tables fait foi : le Padlet les met au stand 26, les trois fiches y restent.",
   "labels": "Pour les labels, la liste des vignerons du salon (sources/salon-prive-2026/liste-des-vignerons.pdf) fait foi : chaque fiche du salon affiche le label de la notice de son stand (label_liste_salon), tel quel. Chez Goichot (stand 26), la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur n°13 et n°14. Strasser Radziwill (stand 7) : la notice couvre les quatre domaines, « En conversion Bio » sur n°16 à 19. Remplace la règle « seulement si tarif et liste s'accordent » notée plus tôt le 2 octobre.",
   "labels_catalogue_general": "Oui (2 octobre, en début de session) : la liste des vignerons fait foi aussi pour les labels du catalogue général. Les 31 fiches du salon prennent le label de leur notice ; les 9 autres gardent le tarif. Voir scripts/reporter-labels.py.",
-  "divin_no_low_fichier_matheo": "Le fichier de Mathéo (2 octobre) ne liste aucun vin Divin No Low sur la carte du stand 17 : la fiche n°7 n'entre pas dans l'édition du salon (QUESTIONS.md, point 26)."
+  "divin_no_low_fichier_matheo": "Le fichier de Mathéo (2 octobre) ne liste aucun vin Divin No Low sur la carte du stand 17 : la fiche n°7 n'entre pas dans l'édition du salon (QUESTIONS.md, point 26).",
+  "dossier_reference": "2 octobre, après-midi : le dossier de référence de Mathéo fait foi pour les textes, les labels et les listes de vins, sauf quelques noms propres (Berteaud Manceau, Boehler)."
  },
- "_vins": "Vins dégustés : transcription du fichier de Mathéo (= padlet-vins-a-deguster.pdf), cartes de stand seulement, rapprochée du tarif par scripts/transcrire-matheo.py. `tarif` pointe la ligne de data/fiches/NN.json ; null = absent du tarif. `ecarts` liste ce qui diffère (repris dans QUESTIONS.md, point 26).",
+ "_vins": "Vins dégustés : transcription du dossier de référence de Mathéo (matheo-dossier-reference.pdf), cartes de stand seulement, rapprochée du tarif par scripts/transcrire-matheo.py. `tarif` pointe la ligne de data/fiches/NN.json ; null = absent du tarif. `ecarts` liste ce qui diffère (repris dans QUESTIONS.md, point 26).",
  "mode_prix": "paliers",
  "_prix": "Prix du salon, en centimes, vin par vin (`prix_centimes`). mode_prix = « paliers » : une liste d'autant de prix que de paliers du tableau du domaine, ex. [1250, 1190, 1150]. mode_prix = « unique » : un seul prix par vin, ex. [1250], et le tableau n'a plus qu'une colonne « Prix salon ». Un stand peut avoir son propre `mode_prix`. null = case vide. Ensuite : npm run salon."
 }

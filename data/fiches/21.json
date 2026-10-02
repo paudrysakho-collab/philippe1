@@ -1,7 +1,8 @@
 {
   "numero": 21, "page_source": 24, "region": "Rhône",
   "nom": "Domaine Trichon", "nom_sommaire": "DOMAINE TRICHON",
-  "texte_source": "Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane allient leurs savoir-faire à la vigne et dans la création des cuvées.",
+  "texte_source": "Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane, associés dans le projet, allient leurs savoir-faire à la vigne et dans la création des cuvées.",
+  "texte_tarif": "Les Vignobles Trichon-Bernard réunissent deux terroirs certifiés en agriculture biologique. Les Côtes du Rhône méridionales donnent le Grenache, la Syrah, le Mourvèdre, la Clairette, le Muscat et le Viognier ; le Bugey donne le Chardonnay, l’Altesse, le Gamay, le Pinot Noir et la Mondeuse. Claire et Stéphane allient leurs savoir-faire à la vigne et dans la création des cuvées.",
   "texte_catalogue": "",
   "labels": [{ "label": "Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 12 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.24 ; « certifiés en agriculture biologique » dans le texte" }],

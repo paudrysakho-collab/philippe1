@@ -15,6 +15,9 @@ l'agence : ce script ne devine rien, il applique cette table et rien d'autre.
     python3 scripts/preparer-photos.py --inventaire   liste brut/, propose une correspondance,
                                                       fait une planche de contact par dossier
     python3 scripts/preparer-photos.py                prépare les images de la table validée
+    python3 scripts/preparer-photos.py --seulement 18 prépare les seules images du n°18, sans
+                                                      toucher aux autres (quand les originaux des
+                                                      autres ne sont pas dans brut/)
 
 Sorties : src/photos/rond/dNN.jpg (pour le PDF, cerclé par la feuille de style),
 src/photos/rond/dNN-cercle.png (le même, déjà masqué en cercle, pour le .pptx),
@@ -630,15 +633,26 @@ def obtenir(e):
         chemin.unlink()
 
 
-def preparer():
+def preparer(seulement=None):
     table = json.loads(TABLE.read_text(encoding="utf-8")) if TABLE.exists() else {}
     ROND.mkdir(parents=True, exist_ok=True); BOUT.mkdir(parents=True, exist_ok=True)
-    # Ce script possède ces deux dossiers : une image d'un passage précédent qui n'est plus
-    # dans la table ne doit pas survivre, sinon elle finirait sur la mauvaise fiche.
-    for p in list(ROND.glob("d*.*")) + list(BOUT.glob("d*.*")):
-        p.unlink()
-    posees, ecartees = [], []
-    for n, entree in sorted(((k, v) for k, v in table.items() if not k.startswith("_")),
+    if seulement:
+        # on ne refait que ces domaines : les autres gardent leurs images et leurs lignes
+        garder = lambda x: x["numero"] not in seulement
+        anciennes = json.loads((RACINE / "data/photos-preparees.json").read_text(encoding="utf-8"))
+        anciennes_e = json.loads((RACINE / "data/photos-ecartees.json").read_text(encoding="utf-8"))
+        for n in seulement:
+            for p in list(ROND.glob(f"d{n:02d}*.*")) + list(BOUT.glob(f"d{n:02d}*.*")):
+                p.unlink()
+        posees, ecartees = [x for x in anciennes if garder(x)], [x for x in anciennes_e if garder(x)]
+    else:
+        # Ce script possède ces deux dossiers : une image d'un passage précédent qui n'est plus
+        # dans la table ne doit pas survivre, sinon elle finirait sur la mauvaise fiche.
+        for p in list(ROND.glob("d*.*")) + list(BOUT.glob("d*.*")):
+            p.unlink()
+        posees, ecartees = [], []
+    for n, entree in sorted(((k, v) for k, v in table.items() if not k.startswith("_")
+                             and (not seulement or int(k) in seulement)),
                             key=lambda kv: int(kv[0])):
         for role, faire in (("rond", faire_rond), ("bouteille", faire_bouteille)):
             e = entree.get(role)
@@ -666,6 +680,8 @@ def preparer():
                 posees[-1]["entiere"] = str((ROND / f"d{int(n):02d}-entiere.jpg").relative_to(RACINE))
                 posees[-1]["carre"] = [round(v, 5) for v in ENTIERES[int(n)]]
             print(f"n°{int(n):>2} {role:<9} {sortie.name:<8} source {source_px:>10}  {ppi} ppi")
+    ordre = {"rond": 0, "bouteille": 1}
+    posees.sort(key=lambda x: (x["numero"], ordre[x["role"]]))
     (RACINE / "data/photos-preparees.json").write_text(
         json.dumps(posees, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (RACINE / "data/photos-ecartees.json").write_text(
@@ -728,4 +744,9 @@ def ecrire_credits(posees):
 
 
 if __name__ == "__main__":
-    inventaire() if "--inventaire" in sys.argv else preparer()
+    if "--inventaire" in sys.argv:
+        inventaire()
+    elif "--seulement" in sys.argv:
+        preparer({int(n) for n in sys.argv[sys.argv.index("--seulement") + 1:]})
+    else:
+        preparer()

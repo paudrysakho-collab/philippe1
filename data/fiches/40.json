@@ -1,7 +1,8 @@
 {
   "numero": 40, "page_source": 43, "region": "Champagne",
   "nom": "Vazart-Coquart & Fils", "nom_sommaire": "CHAMPAGNE VAZART-COQUART",
-  "texte_source": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France.",
+  "texte_source": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage.",
+  "texte_tarif": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France.",
   "texte_catalogue": "",
   "labels": [{ "label": "En conversion Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 15 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "HVE", "preuve": "« Troisième domaine certifié HVE de France » dans le texte p.43" }],

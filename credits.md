@@ -73,7 +73,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 
 <!-- images:debut -->
 
-**79 images posées sur 80 emplacements.**
+**80 images posées sur 80 emplacements.**
 
 ### Image par image
 
@@ -113,7 +113,8 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 16 | Domaine Le Prieuré des Papes | bouteille (`src/photos/bouteille/d16.png`) | bouteille Châteauneuf-du-Pape Vieilles Vignes | dossier de l'agence | `Bouteilles_de_vin/Le_Prieure_des_Papes/Le_Prieure_des_Papes_Chateauneuf-du-Pape_Vieilles_Vignes_2022_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
 | 17 | Domaine de Coyeux | rond (`src/photos/rond/d17.jpg`) | le domaine | Canva de l'agence « Tarif septembre 2026 », page 20 | `canva/d17-p20-140.png` | 817x774 px → 491 ppi à 40 mm | photothèque de l'agence |
 | 17 | Domaine de Coyeux | bouteille (`src/photos/bouteille/d17.png`) | bouteille Les Jumelles, Beaumes-de-Venise | dossier de l'agence | `Bouteilles_de_vin/Domaine_de_Coyeux/Domaine_de_Coyeux_Beaumes-de-Venise_Les_Jumelles_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
-| 18 | Domaine du Moulin Blanc | rond (`src/photos/rond/d18.jpg`) | le couple, recadré au-dessus du verre | Canva de l'agence « Tarif septembre 2026 », page 21 | `canva/d18-p21-149.png` | 1200x630 px → 320 ppi à 40 mm | photothèque de l'agence |
+| 18 | Domaine du Moulin Blanc | rond (`src/photos/rond/d18.jpg`) | le couple, cadrage élargi (les deux visages entiers), toujours au-dessus du verre | Canva de l'agence « Tarif septembre 2026 », page 21 | `canva/d18-p21-149.png` | 1200x630 px → 381 ppi à 40 mm | photothèque de l'agence |
+| 18 | Domaine du Moulin Blanc | bouteille (`src/photos/bouteille/d18.png`) | bouteille de Côtes du Rhône blanc | dossier de l'agence (envoyée le 2 octobre 2026) | `Bouteilles_de_vin/Domaine_du_Moulin_Blanc/Domaine_du_Moulin_Blanc_Cotes_du_Rhone_Blanc.jpg` | 1500x2000 px → 667 ppi à 24 × 62 mm | photothèque de l'agence |
 | 19 | Domaine de la Pousterle | rond (`src/photos/rond/d19.jpg`) | vendanges dans les vignes | Canva de l'agence « Tarif septembre 2026 », page 22 | `canva/d19-p22-151.png` | 640x575 px → 365 ppi à 40 mm | photothèque de l'agence |
 | 19 | Domaine de la Pousterle | bouteille (`src/photos/bouteille/d19.png`) | bouteille Terroir d'Ansouis blanc 2021 | dossier de l'agence | `Bouteilles_de_vin/Domaine_de_la_Pousterle/Domaine_de_la_Pousterle_Luberon_Terroir_dAnsouis_Blanc_2021.png` | 1080x1920 px → 674 ppi à 24 × 62 mm | photothèque de l'agence |
 | 20 | Domaine des Pasquiers | rond (`src/photos/rond/d20.jpg`) | portrait de la famille | site officiel du domaine | page https://domainedespasquiers.fr/ — image <https://domainedespasquiers.fr/wp-content/uploads/2021/04/Famille-Lambert.jpg> | 1920x1440 px → 914 ppi à 40 mm | **autorisation à demander au domaine** |
@@ -180,7 +181,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 15 | Domaine des Verchères | portrait du vigneron — site du domaine, 1396 ppi | bouteille Mâcon Chardonnay — site du domaine, 1216 ppi |
 | 16 | Domaine Le Prieuré des Papes | logo du domaine — Canva de l'agence, 549 ppi | bouteille Châteauneuf-du-Pape Vieilles Vignes — dossier de l'agence, 574 ppi |
 | 17 | Domaine de Coyeux | le domaine — Canva de l'agence, 491 ppi | bouteille Les Jumelles, Beaumes-de-Venise — dossier de l'agence, 574 ppi |
-| 18 | Domaine du Moulin Blanc | le couple, recadré au-dessus du verre — Canva de l'agence, 320 ppi | **vide** (pointillé) |
+| 18 | Domaine du Moulin Blanc | le couple, cadrage élargi (les deux visages entiers), toujours au-dessus du verre — Canva de l'agence, 381 ppi | bouteille de Côtes du Rhône blanc — dossier de l'agence, 667 ppi |
 | 19 | Domaine de la Pousterle | vendanges dans les vignes — Canva de l'agence, 365 ppi | bouteille Terroir d'Ansouis blanc 2021 — dossier de l'agence, 674 ppi |
 | 20 | Domaine des Pasquiers | portrait de la famille — site du domaine, 914 ppi | bouteille Plan de Dieu 2023 — dossier de l'agence, 574 ppi |
 | 21 | Domaine Trichon | les deux vignerons, recadrés sur leurs visages — dossier de l'agence, 878 ppi | bouteille de Mondeuse du Bugey (cuvée du domaine absente du tarif) — site du domaine, 202 ppi |

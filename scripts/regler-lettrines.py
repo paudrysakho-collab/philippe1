@@ -11,18 +11,21 @@ texte. Ce script fabrique le .pptx, le fait rendre par LibreOffice, et, pour cha
 - si le bloc déborde de la bande, réduit la lettrine, puis resserre l'interligne.
 Il recommence jusqu'à ce que rien ne bouge.
 
-    python3 scripts/regler-lettrines.py      écrit src/gabarits/lettrines-pptx.json
+    python3 scripts/regler-lettrines.py                écrit src/gabarits/lettrines-pptx.json
+    EDITION=salon python3 scripts/regler-lettrines.py  écrit src/gabarits/lettrines-pptx-salon.json
 
 Demande LibreOffice (soffice) et PyMuPDF (pip install pymupdf). À relancer seulement si les
 textes des domaines changent ; `npm run pptx` se contente de lire le fichier écrit.
 """
-import json, pathlib, shutil, subprocess, sys, tempfile
+import json, os, pathlib, shutil, subprocess, sys, tempfile
 import pymupdf
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-SORTIE = RACINE / "src/gabarits/lettrines-pptx.json"
-PPTX = RACINE / "dist/catalogue-scio-2026-canva.pptx"
-BOITES = RACINE / "build/catalogue-scio-2026-pptx-textes.json"
+SALON = os.environ.get("EDITION") == "salon"
+BASE = "salon-prive-2026" if SALON else "catalogue-scio-2026"
+SORTIE = RACINE / f"src/gabarits/lettrines-pptx{'-salon' if SALON else ''}.json"
+PPTX = RACINE / f"dist/{BASE}-canva.pptx"
+BOITES = RACINE / f"build/{BASE}-pptx-textes.json"
 MARGE_BAS = 3.0                      # mm : le tableau commence 4,5 mm sous la bande
 MARGE_HAUT = 3.5                     # mm : la ligne d'étiquettes est au-dessus
 
@@ -87,8 +90,11 @@ def ecrire(etat, lignes):
 
 
 def main():
-    textes = [int(p.stem) for p in sorted((RACINE / "data/fiches").glob("*.json"))
-              if json.loads(p.read_text(encoding="utf-8")).get("texte_source")]
+    # les domaines qui ont une lettrine : ceux que le .pptx de l'édition a posés
+    if not SORTIE.exists():
+        SORTIE.write_text("{}\n", encoding="utf-8")
+    subprocess.run(["node", "scripts/pptx.mjs"], cwd=RACINE, check=True, stdout=subprocess.DEVNULL)
+    textes = sorted(int(n) for n in json.loads(BOITES.read_text(encoding="utf-8")))
     etat = {n: 0 for n in textes}
     lignes = {}
     for tour in range(1, 3 * len(ETAPES) + 1):

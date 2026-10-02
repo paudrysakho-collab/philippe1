@@ -195,7 +195,7 @@ table.tarif + table.tarif { margin-top: 4.5mm; }
 
 tr.bandeau th { background: var(--violet); vertical-align: bottom; }
 .intit {
-  text-align: left; font: 600 7.2pt var(--technique); letter-spacing: var(--interlettre);
+  text-align: left; font: 600 8pt var(--technique); letter-spacing: var(--interlettre);
   text-transform: uppercase; color: var(--or); padding: 1.8mm 0 1.8mm 2.4mm;
 }
 th.c-bloc { padding: 0; }
@@ -203,7 +203,7 @@ th.c-bloc { padding: 0; }
 .bloc-prix { display: flex; align-items: flex-end; }
 .bloc-prix > * { flex: 1 1 0; text-align: right; }
 .bloc-prix .cel-prix {
-  padding: 1.2mm 2mm 1.2mm 1mm; font-size: 8.8pt; font-weight: 500; color: var(--silex);
+  padding: 1.2mm 2mm 1.2mm 1mm; font-size: 10pt; font-weight: 600; color: var(--encre);
 }
 /* Un prix pas encore donné (édition salon) : la case reste vide, avec un pointillé où l'écrire. */
 .bloc-prix .cel-prix.vide { align-self: stretch; position: relative; min-height: 6.4mm; }
@@ -211,9 +211,9 @@ th.c-bloc { padding: 0; }
   content: ''; position: absolute; left: 2mm; right: 2mm; bottom: 1.6mm;
   border-bottom: .5pt dotted rgba(70, 96, 110, .55);
 }
-.bloc-prix .cel-prix span { font-size: 6.4pt; font-weight: 400; margin-left: .4mm; opacity: .72; }
+.bloc-prix .cel-prix span { font-size: 7.2pt; font-weight: 500; margin-left: .4mm; opacity: .8; }
 .bloc-prix.entete .cel-pal {
-  font-size: 6.4pt; font-weight: 500; line-height: 1.14; color: var(--craie);
+  font-size: 7.2pt; font-weight: 600; line-height: 1.14; color: var(--craie);
   padding: 1.8mm 2mm; border-left: .4pt solid rgba(251, 248, 241, .3);
 }
 .bloc-prix.entete .cel-pal:first-child { border-left: 0; }
@@ -222,12 +222,12 @@ tbody tr { border-bottom: var(--filet) solid rgba(70, 96, 110, .26); }
 tbody tr:nth-child(odd) { background: rgba(251, 248, 241, .72); }
 td { padding: 1.2mm 1.3mm; vertical-align: middle; }
 .c-picto { width: 6mm; padding-left: 1.6mm; }
-.picto { width: 3.3mm; height: 3.3mm; display: block; }
-.c-vin .app { display: block; font-size: 7.2pt; color: var(--gneiss); letter-spacing: .005em; }
-.c-vin .cuv { display: block; font-size: 8.5pt; font-weight: 500; color: var(--silex); }
+.picto { width: 3.6mm; height: 3.6mm; display: block; }
+.c-vin .app { display: block; font-size: 8pt; font-weight: 500; color: var(--gneiss); letter-spacing: .005em; }
+.c-vin .cuv { display: block; font-size: 9.6pt; font-weight: 600; color: var(--encre); }
 .c-vin .etoile { color: var(--violet); font-weight: 600; }
 .c-detail {
-  font-size: 7.2pt; color: rgba(70, 96, 110, .82); white-space: nowrap;
+  font-size: 8pt; font-weight: 500; color: var(--silex); white-space: nowrap;
   text-align: right; padding-right: 2.4mm;
 }
 

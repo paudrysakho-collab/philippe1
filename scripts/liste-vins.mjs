@@ -17,10 +17,10 @@ const RACINE = path.resolve(import.meta.dirname, '..');
 const BUILD = path.join(RACINE, 'build');
 const CATALOGUE = process.env.LISTE_FORMAT === 'catalogue';
 const PAGE = CATALOGUE ? { l: 210, h: 260 } : { l: 210, h: 297 };
-const MARGE = { haut: 13, bas: 14, cote: 13 };
-const ECART_COL = 8;
+const MARGE = { haut: 11, bas: 12, cote: 10 };
+const ECART_COL = 6;
 const COL = (PAGE.l - 2 * MARGE.cote - ECART_COL) / 2;
-const ENTETE_P1 = 34;          // le bandeau de titre de la première page, en mm
+const ENTETE_P1 = 33;          // le bandeau de titre de la première page, en mm
 const SORTIE = path.join(RACINE, `dist/salon-prive-2026-liste-des-vins${CATALOGUE ? '-format-catalogue' : ''}.pdf`);
 const EV = SALON.evenement;
 const parNumero = Object.fromEntries(catalogue.domaines.map((d) => [d.numero, d]));
@@ -71,7 +71,7 @@ body { margin: 0; background: var(--craie); }
 .lv-entete p b { font-family: var(--titre); font-weight: 400; color: var(--silex); font-size: 11pt; }
 .lv-entete img { width: 46mm; margin-top: 1mm; }
 .lv-col { position: absolute; width: ${COL}mm; }
-.lv-stand { break-inside: avoid; margin-bottom: 2.8mm; }
+.lv-stand { break-inside: avoid; margin-bottom: 2.2mm; }
 .lv-stand header { display: flex; align-items: center; gap: 2.2mm; padding-bottom: 1mm;
   border-bottom: .6pt solid var(--silex); margin-bottom: .6mm; }
 .lv-n { flex: none; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: var(--strate);
@@ -81,15 +81,15 @@ body { margin: 0; background: var(--craie); }
 .lv-titre { flex: 1; font-family: var(--titre); font-size: 10.5pt; line-height: 1.1; color: var(--encre); }
 .lv-reg { font: 500 7.5pt var(--technique); color: var(--gneiss); white-space: nowrap; }
 .lv-sous { font: 600 7.6pt var(--technique); color: var(--violet); margin: 1.4mm 0 .2mm 6mm; }
-.lv-vin { display: grid; grid-template-columns: 4.2mm 1fr 20mm 10mm; column-gap: 1.2mm;
-  align-items: baseline; padding: .32mm 0; border-bottom: .25pt solid rgba(70,96,110,.2);
+.lv-vin { display: grid; grid-template-columns: 4.2mm 1fr 21mm 10mm; column-gap: 1.2mm;
+  align-items: baseline; padding: .24mm 0; border-bottom: .25pt solid rgba(70,96,110,.2);
   font-family: var(--technique); font-variant-numeric: tabular-nums; }
 .lv-picto { align-self: center; }
 .lv-picto .picto { width: 2.9mm; height: 2.9mm; display: block; }
-.lv-nom { font-size: 8pt; line-height: 1.25; }
+.lv-nom { font-size: 8pt; line-height: 1.17; }
 .lv-nom b { font-weight: 500; color: var(--encre); margin-right: 1.6mm; }
 .lv-nom i { font-style: normal; font-size: 7.5pt; color: var(--gneiss); }
-.lv-coul, .lv-mil { font-size: 7.5pt; line-height: 1.25; color: var(--silex); }
+.lv-coul, .lv-mil { font-size: 7.5pt; line-height: 1.17; color: var(--silex); }
 .lv-mil { text-align: right; }
 .lv-pied { position: absolute; left: ${MARGE.cote}mm; right: ${MARGE.cote}mm; bottom: 6mm;
   display: flex; justify-content: space-between; align-items: baseline;
@@ -172,6 +172,8 @@ await q.pdf({ path: SORTIE, printBackground: true, preferCSSPageSize: true, tagg
 await navigateur.close();
 
 const nbVins = stands.reduce((n, s) => n + s.vins.length, 0);
+if (process.env.LISTE_DEBUG) console.log('hauteur des stands', Object.values(hauteurs).reduce((a, b) => a + b, 0).toFixed(0),
+  'mm ; place sur 3 pages', (utile(true) * 2 + utile(false) * 4).toFixed(0), 'mm');
 console.log(`✓ ${path.relative(RACINE, SORTIE)} — ${pages.length} pages, ${stands.length} stands, ${nbVins} vins`);
 if (depasse) { console.error(`⚠ ${depasse} colonne(s) dépassent la marge du bas`); process.exit(1); }
 if (stands.length !== EV.exposants) { console.error('⚠ il manque des stands'); process.exit(1); }

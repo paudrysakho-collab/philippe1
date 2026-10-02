@@ -3,7 +3,7 @@
   "nom": "Château de Gragnos", "nom_sommaire": "CHÂTEAU DE GRAGNOS",
   "texte_source": "Alain, Patricia et leurs fils révèlent l’âme de Gragnos par un soin méticuleux apporté à chaque pied de vigne. Engagé dans une conversion biologique, le domaine privilégie un accompagnement doux du végétal pour laisser rayonner l’identité du terroir sans le contraindre.",
   "texte_catalogue": "",
-  "labels": [{ "label": "En conversion Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 13 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
+  "labels": [{ "label": "Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 13 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.37" }],
   "allocation": false, "mentions": [], "panachage_groupe": null,
   "note_prix": "* Prix de la bouteille H.T. franco de port à partir de 180 bouteilles.",

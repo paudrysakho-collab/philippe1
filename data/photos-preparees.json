@@ -465,8 +465,19 @@
   "page": null,
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 21",
   "source_px": "1200x630",
-  "ppi": 320,
-  "sujet": "le couple, recadré au-dessus du verre"
+  "ppi": 381,
+  "sujet": "le couple, cadrage élargi (les deux visages entiers), toujours au-dessus du verre"
+ },
+ {
+  "numero": 18,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d18.png",
+  "source_url": "src/photos/brut/Bouteilles_de_vin/Domaine_du_Moulin_Blanc/Domaine_du_Moulin_Blanc_Cotes_du_Rhone_Blanc.jpg",
+  "page": null,
+  "provenance": "dossier de l'agence (envoyée le 2 octobre 2026)",
+  "source_px": "1500x2000",
+  "ppi": 667,
+  "sujet": "bouteille de Côtes du Rhône blanc"
  },
  {
   "numero": 19,

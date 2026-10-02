@@ -3,7 +3,7 @@
   "nom": "Domaine du Moulin Blanc", "nom_sommaire": "DOMAINE DU MOULIN BLANC (STRASSER RADZIWILL)",
   "texte_source": "Situé au cœur d’un terroir d’exception, le Domaine du Moulin Blanc incarne l’authenticité et le savoir-faire viticole transmis de génération en génération. Alliant tradition et modernité, le domaine cultive ses vignes avec passion et rigueur pour produire des vins reflétant toute la richesse de leurs origines. Le vignoble s’étend sur un sol généreux, bénéficiant d’un climat idéal, propice à l’expression de cépages nobles et typiques. Chaque cuvée est élaborée avec soin, dans le respect de l’environnement et du cycle naturel de la vigne, pour offrir des vins équilibrés, élégants et sincères.",
   "texte_catalogue": "",
-  "labels": [{ "label": "En conversion Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
+  "labels": [{ "label": "Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.21" }],
   "allocation": false,
   "mentions": ["Possibilité de panacher avec les vins du Domaine Le Prieuré des Papes, du Domaine de Coyeux et du Domaine de La Pousterle"],

@@ -9,7 +9,7 @@
  },
  "3": {
   "lettrine": 1.8,
-  "lignes": 6
+  "lignes": 7
  },
  "4": {
   "lettrine": 1.8,
@@ -23,29 +23,17 @@
   "lettrine": 1.8,
   "lignes": 6
  },
- "7": {
-  "lettrine": 1.8,
-  "lignes": 7
- },
  "8": {
   "lettrine": 1.8,
   "lignes": 7
- },
- "9": {
-  "lettrine": 1.8,
-  "lignes": 10
  },
  "10": {
   "lettrine": 1.8,
   "lignes": 7
  },
- "11": {
-  "lettrine": 1.8,
-  "lignes": 9
- },
  "12": {
   "lettrine": 1.8,
-  "lignes": 5
+  "lignes": 7
  },
  "13": {
   "lettrine": 1.8,
@@ -76,33 +64,17 @@
   "lettrine": 1.8,
   "lignes": 10
  },
- "20": {
-  "lettrine": 1.8,
-  "lignes": 7
- },
  "21": {
   "lettrine": 1.8,
   "lignes": 8
  },
  "22": {
   "lettrine": 1.8,
-  "lignes": 6
+  "lignes": 7
  },
  "23": {
   "lettrine": 1.8,
   "lignes": 7
- },
- "24": {
-  "lettrine": 1.8,
-  "lignes": 8
- },
- "25": {
-  "lettrine": 1.8,
-  "lignes": 8
- },
- "26": {
-  "lettrine": 1.8,
-  "lignes": 8
  },
  "27": {
   "lettrine": 1.8,
@@ -126,7 +98,7 @@
  },
  "32": {
   "lettrine": 1.8,
-  "lignes": 4
+  "lignes": 6
  },
  "33": {
   "lettrine": 1.8,
@@ -136,21 +108,17 @@
   "lettrine": 1.8,
   "lignes": 7
  },
- "35": {
-  "lettrine": 1.8,
-  "lignes": 6
- },
  "36": {
   "lettrine": 1.8,
   "lignes": 7
  },
  "37": {
   "lettrine": 1.8,
-  "lignes": 6
+  "lignes": 7
  },
  "38": {
   "lettrine": 1.8,
-  "lignes": 6
+  "lignes": 7
  },
  "39": {
   "lettrine": 1.8,

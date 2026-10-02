@@ -3,7 +3,7 @@
   "nom": "Domaine de la Pousterle", "nom_sommaire": "DOMAINE DE LA POUSTERLE (STRASSER RADZIWILL)",
   "texte_source": "Situé au cœur de la vallée du Rhône le Domaine de la Pousterle est un domaine viticole familial qui incarne l’authenticité et la diversité de cette région emblématique. Entouré de collines baignées de soleil et bercé par le mistral, le vignoble bénéficie de conditions idéales pour l’élaboration de vins généreux, expressifs et empreints de caractère. Le domaine cultive avec soins des cépages typiques de la région en alliant traditions viticoles et pratiques respectueuses de l’environnement. Chaque cuvée reflète l’identité du terroir et le savoir faire transmis au fil des générations.",
   "texte_catalogue": "",
-  "labels": [{ "label": "En conversion Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
+  "labels": [{ "label": "Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "Bio", "preuve": "logos AB et Eurofeuille p.22" }],
   "allocation": false,
   "mentions": ["Possibilité de panacher avec les vins du Domaine Le Prieuré des Papes, du Domaine de Coyeux et du Domaine du Moulin Blanc"],

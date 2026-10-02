@@ -135,9 +135,12 @@ if (SALON) {
   const stands = new Set(catalogue.domaines.map((d) => d.stand));
   dire(stands.size === catalogue.salon.evenement.exposants,
     `les ${catalogue.salon.evenement.exposants} stands ont leur fiche (${stands.size} trouvés)`);
-  const plat = texte.replace(/\s+/g, ' ');
+  // un nom coupé en fin de ligne sur son trait d'union (« Extra-Brut ») perd ce trait dans
+  // la couche texte : on compare sans espaces ni traits d'union
+  const net = (t) => t.replace(/[\s\-‐]+/g, '');
+  const plat = net(texte);
   const perdus = catalogue.domaines.flatMap((d) => d.tableaux.flatMap((t) => t.lignes))
-    .filter((l) => !plat.includes((l.cuvee || l.appellation).replace(/\s+/g, ' ')));
+    .filter((l) => !plat.includes(net(l.cuvee || l.appellation)));
   dire(perdus.length === 0, `chaque vin dégusté est imprimé${perdus.length ? ` (${perdus.length} manquent)` : ''}`);
   perdus.slice(0, 8).forEach((l) => console.log(`         ${l.cuvee || l.appellation}`));
 }
