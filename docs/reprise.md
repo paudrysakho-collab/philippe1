@@ -1,5 +1,13 @@
 # Reprise : où en est le projet, et la suite (2 octobre 2026)
 
+> **Fait le 2 octobre (seconde session)** : les trois livrables sont livrés.
+> - A : `dist/catalogue-scio-2026-*` (72 pages, sommaire simple, note de prix sous le tableau,
+>   labels de la liste des vignerons sur les 31 fiches du salon) ;
+> - B : `dist/salon-prive-2026-*` (52 pages, `npm run salon`), prix vides, à remplir par
+>   `tableur/prix-salon-prive-2026.xlsx` (README, « Le Salon Privé ») ;
+> - C : `dist/salon-prive-2026-liste-des-vins.pdf` (3 pages A4).
+> Ce qui reste ouvert : `QUESTIONS.md`, points 26 (vins absents du tarif, écarts) et 27.
+
 Ce fichier passe le relais à une nouvelle session. Le brief de `CLAUDE.md` reste la règle ;
 ce qui suit dit ce qui est déjà fait, comment l'outil marche, et ce qu'on attend maintenant.
 

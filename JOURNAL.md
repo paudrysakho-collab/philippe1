@@ -616,3 +616,54 @@ texte du PDF, polices embarquées, tous les contrôles au vert ; .pptx à 72 dia
 contrôles au vert. Chaque page regardée en image. `regler-lettrines.py` relancé : rien ne
 bouge (il faut d'abord installer les .ttf de `polices-canva/` dans `~/.local/share/fonts`,
 sinon LibreOffice substitue les polices et le script ne trouve aucune lettrine).
+
+## 2 octobre 2026 — l'édition du Salon Privé (livrables B et C)
+
+**Le fichier de Mathéo** est le Padlet déjà déposé, octet pour octet (même empreinte). On n'en a
+lu que les cartes de stand, pages 3 à 20. Les pages doubles (deux cartes séparées par un trait
+vertical) ont été transcrites colonne par colonne, sur des recadrages agrandis, puis relues
+une seconde fois face à la transcription. 177 lignes, 26 stands, 6 doublons (dont les quatre
+vins du stand 25, écrits deux fois). La transcription et le rapprochement vivent dans
+`scripts/transcrire-matheo.py`, une décision par ligne, lisible et corrigeable.
+
+**La règle de rapprochement.** La liste dit quels vins et quel millésime ; le tarif dit tout
+le reste. Un vin rapproché reprend appellation, cuvée, couleur et contenance du tarif ; le
+millésime est celui de la liste (c'est la bouteille ouverte), et un millésime absent du tarif
+devient un écart signalé. Un vin absent du tarif (45 sur 171 !) s'affiche tel que la liste
+l'écrit, aux corrections de forme près, sans contenance. Écarté : afficher seulement les vins
+du tarif, qui aurait fait disparaître un quart de la dégustation ; et compléter les absents
+avec des informations prises ailleurs, ce qui serait inventer.
+
+Une erreur rattrapée à l'épreuve : les absents dont la couleur faisait la différence (« Mas
+de Lusanne Brut Blanc » et « Extra-Brut Blanc », « Baron Auguste Blanc » et « Rosé ») se
+retrouvaient avec le même nom, puisque le tableau ne montre la couleur que par un picto. Leur
+nom garde maintenant les mots de la liste.
+
+**Une édition, pas une copie.** `EDITION=salon` (dans `pieces.mjs`) construit un catalogue
+réduit à partir du catalogue général : les 31 fiches des 26 stands, leurs tableaux réduits
+aux vins dégustés, chacun rangé dans le tableau du tarif d'où il vient (avec ses paliers).
+Tous les gabarits sont partagés ; ce qui diffère tient dans un objet `ED` (les mots et les
+nombres) et dans `numero(d)` : au salon, c'est le **numéro du stand**, dans une pastille or
+(la couleur du logo) avec sa salle, qui prend la place du numéro du tarif. C'est lui qu'on
+cherche sur le plan. Les fichiers de sortie et de mesure portent le nom de l'édition.
+
+**Le plan des exposants**, page 4 : un schéma maison (les deux salles, l'accueil, les 26
+pastilles à leur place relevée sur le plan de l'agence, chacune dans la couleur de strate de
+sa région), et la liste des stands avec leur page. Le dessin du plan de l'agence (bordeaux,
+Playfair) n'est pas repris. Les pastilles sont des liens dans la version écran. Dans le .pptx,
+les salles sont une image et les pastilles de vraies formes avec du vrai texte.
+
+**Les prix absents.** Une case de prix vide (`null`) porte un pointillé fin, là où l'on
+écrirait le prix ; rien d'autre ne bouge, puisque le bloc de prix garde sa largeur fixe. Le
+mode « unique » remplace les paliers par une colonne « Prix salon » : c'est la donnée qui
+bascule, pas le gabarit. Essayé avec des prix factices (un stand en prix unique, deux en
+paliers, un stand qui mélange les deux et que l'import refuse), puis remis à vide.
+
+**La strate de couverture** compte les stands au salon (26), pas les fiches (31) : sinon le
+sous-titre « vingt-six vignerons » et la coupe se contredisaient.
+
+**La liste des vins** (livrable C) : 3 pages A4, deux colonnes, stands dans l'ordre du plan,
+jamais coupés. La répartition est mesurée dans Chromium. Un vin tient sur une ligne : la
+cuvée en gras, l'appellation à la suite, la couleur et le millésime alignés. Première version
+à 5 pages (cuvée et appellation sur deux lignes) : trop aérée pour un document de salon.
+Proposé en A4 pour une impression au bureau ; le format du catalogue reste à un réglage près.

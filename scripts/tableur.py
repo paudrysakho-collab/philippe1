@@ -5,6 +5,11 @@
     python3 scripts/tableur.py importer FICHIER.xlsx --essai   montre ce qui change, sans rien écrire
     python3 scripts/tableur.py importer FICHIER.xlsx    écrit les changements dans data/fiches/
 
+    python3 scripts/tableur.py exporter-salon           écrit tableur/prix-salon-prive-2026.xlsx
+    python3 scripts/tableur.py importer-salon FICHIER.xlsx [--essai]
+                                                        écrit les prix du salon dans
+                                                        data/salon-prive-2026.json
+
 Le tableur est un outil d'édition, pas une seconde source : data/fiches/ reste la vérité.
 On exporte, l'agence modifie (Excel, Google Sheets, LibreOffice), on réimporte, puis
 `npm run build` refait les deux PDF et le .pptx d'un coup, contrôles compris.
@@ -429,6 +434,174 @@ def importer(fichier, essai):
           "puis npm run tableur (remet le tableur à jour).")
 
 
+# ——————————————————————————————————————————————— le Salon Privé : les prix ———
+#
+# Un onglet, une ligne par vin dégusté, rangée par stand. Les prix sont vides tant que
+# l'agence ne les a pas donnés. Deux façons de les donner, au choix, stand par stand :
+#   - un prix unique : la colonne « Prix salon », et rien dans les paliers ;
+#   - les paliers du domaine : les colonnes Palier 1 à 3 (leurs intitulés sont rappelés
+#     sur la ligne du stand), et rien dans « Prix salon ».
+# À l'import, le mode de chaque stand se déduit de ce qui est rempli ; un stand qui mêle
+# les deux est refusé. Rien d'autre que les prix ne change par ce tableur : la liste des
+# vins vient du fichier de Mathéo (scripts/transcrire-matheo.py).
+
+SALON = RACINE / "data/salon-prive-2026.json"
+SORTIE_SALON = RACINE / "tableur/prix-salon-prive-2026.xlsx"
+COL_SALON = ["Réf.", "Vin (appellation, cuvée)", "Couleur", "Millésime", "Contenance",
+             "Prix salon", "Palier 1", "Palier 2", "Palier 3"]
+LARG_SALON = [12, 58, 16, 12, 12, 13, 13, 13, 13]
+
+
+def paliers_tarif(fiches, v):
+    """Les paliers du tableau du tarif d'où vient le vin (le premier tableau s'il n'y est pas)."""
+    d = fiches[v["fiche"]]
+    ti = v["tarif"]["tableau"] if v.get("tarif") else 0
+    return d["tableaux"][ti]["paliers"]
+
+
+def mode_stand(salon, st):
+    return st.get("mode_prix") or salon.get("mode_prix") or "paliers"
+
+
+def exporter_salon(sortie=SORTIE_SALON):
+    salon = json.loads(SALON.read_text(encoding="utf-8"))
+    fiches = charger_fiches()
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Prix du salon"
+    fin = Side(style="thin", color=FILET)
+    f_ref = Font(name=POLICE, size=8, color=GRIS_REF)
+    ev = salon["evenement"]
+    ws["A1"] = f"{ev['nom']} — {ev['date_texte']} — les prix des vins à la dégustation"
+    ws["A1"].font = Font(name=POLICE, size=14, bold=True, color=VIOLET)
+    ws["A2"] = ("Pour chaque stand : soit un prix unique (colonne F), soit les paliers du domaine "
+                "(colonnes G à I, intitulés rappelés en violet). Ne pas toucher à la colonne A.")
+    ws["A2"].font = Font(name=POLICE, size=10, italic=True, color=SILEX)
+    for c, (titre, larg) in enumerate(zip(COL_SALON, LARG_SALON), start=1):
+        cel = ws.cell(LIGNE_TITRES, c, titre)
+        cel.font = Font(name=POLICE, size=10, bold=True, color=ENCRE)
+        cel.fill = PatternFill("solid", fgColor=CRAIE)
+        cel.border = Border(bottom=Side(style="medium", color=VIOLET))
+        cel.alignment = Alignment(horizontal="right" if c >= 6 else "left")
+        ws.column_dimensions[get_column_letter(c)].width = larg
+    ws.freeze_panes = ws.cell(LIGNE_TITRES + 1, 2)
+    r = LIGNE_TITRES + 2
+    for st in sorted(salon["stands"], key=lambda s: s["stand"]):
+        mode = mode_stand(salon, st)
+        ws.cell(r, 1, f"S{st['stand']:02d}").font = f_ref
+        cel = ws.cell(r, 2, f"Stand {st['stand']} — {st['nom_salon']} ({st['region']})")
+        cel.font = Font(name=POLICE, size=12, bold=True, color=VIOLET)
+        for c in range(2, len(COL_SALON) + 1):
+            ws.cell(r, c).fill = PatternFill("solid", fgColor=TUFFEAU)
+        ws.row_dimensions[r].height = 22
+        r += 1
+        precedents = None
+        for i, v in enumerate(st["vins"], start=1):
+            pal = paliers_tarif(fiches, v)
+            if pal != precedents:
+                # un bandeau rappelle les paliers du tableau du domaine
+                for c in range(2, len(COL_SALON) + 1):
+                    ws.cell(r, c).fill = PatternFill("solid", fgColor=VIOLET)
+                cel = ws.cell(r, 2, f"{fiches[v['fiche']]['nom']} — paliers du tarif")
+                cel.font = Font(name=POLICE, size=9, bold=True, color="FFFFFF")
+                ws.cell(r, 6, "Prix unique").font = Font(name=POLICE, size=9, bold=True, color="FFFFFF")
+                for pi in range(MAX_PALIERS):
+                    cel = ws.cell(r, 7 + pi, pal[pi] if pi < len(pal) else None)
+                    cel.font = Font(name=POLICE, size=8, bold=True, color="FFFFFF")
+                    cel.alignment = Alignment(horizontal="right", wrap_text=True, vertical="center")
+                ws.row_dimensions[r].height = 26
+                r += 1
+                precedents = pal
+            ws.cell(r, 1, f"S{st['stand']:02d} V{i:02d}").font = f_ref
+            nom = " — ".join(x for x in (v.get("appellation"), v.get("cuvee")) if x)
+            for c, val in ((2, nom), (3, v.get("couleur")), (4, v.get("millesime")), (5, v.get("contenance"))):
+                cel = ws.cell(r, c, val)
+                cel.font = Font(name=POLICE, size=10, color=ENCRE)
+                cel.number_format = "@"
+            p = v.get("prix_centimes") or []
+            if mode == "unique" and len(p) == 1 and p[0] is not None:
+                ws.cell(r, 6, p[0] / 100)
+            for pi in range(MAX_PALIERS):
+                cel = ws.cell(r, 7 + pi)
+                if pi >= len(pal):
+                    cel.fill = PatternFill("solid", fgColor=GRIS_VIDE)
+                elif mode == "paliers" and pi < len(p) and p[pi] is not None:
+                    cel.value = p[pi] / 100
+            for c in range(6, 10):
+                ws.cell(r, c).number_format = FORMAT_PRIX
+                ws.cell(r, c).font = Font(name=POLICE, size=10, bold=True, color=ENCRE)
+            for c in range(1, len(COL_SALON) + 1):
+                ws.cell(r, c).border = Border(bottom=fin)
+            r += 1
+        r += 1
+    sortie.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(sortie)
+    print(f"✓ {sortie.relative_to(RACINE)} — {sum(len(s['vins']) for s in salon['stands'])} vins, "
+          f"{len(salon['stands'])} stands")
+
+
+def importer_salon(fichier, essai):
+    salon = json.loads(SALON.read_text(encoding="utf-8"))
+    fiches = charger_fiches()
+    ws = load_workbook(fichier, data_only=True)["Prix du salon"]
+    lus = {}
+    for row in ws.iter_rows(min_row=LIGNE_TITRES + 1):
+        ref = texte(row[0].value)
+        m = re.fullmatch(r"S(\d{2}) V(\d{2})", ref or "")
+        if not m:
+            continue
+        ou = f"ligne {row[0].row} ({ref})"
+        unique = row[5].value
+        paliers = [row[6 + i].value for i in range(MAX_PALIERS)]
+        lus[(int(m.group(1)), int(m.group(2)))] = (
+            prix(unique, ou) if texte(unique) else None,
+            [prix(x, ou) if texte(x) else None for x in paliers], ou)
+    changes, nouveaux = [], json.loads(json.dumps(salon))
+    for st in nouveaux["stands"]:
+        vins = [(i, v) for i, v in enumerate(st["vins"], start=1)]
+        manquantes = [i for i, _ in vins if (st["stand"], i) not in lus]
+        if manquantes:
+            raise Refus(f"stand {st['stand']} : ligne(s) V{', V'.join(f'{i:02d}' for i in manquantes)} "
+                        "absente(s) du tableur — ne pas supprimer de ligne")
+        a_unique = any(lus[(st["stand"], i)][0] is not None for i, _ in vins)
+        a_paliers = any(any(x is not None for x in lus[(st["stand"], i)][1]) for i, _ in vins)
+        if a_unique and a_paliers:
+            raise Refus(f"stand {st['stand']} : prix unique ET paliers remplis — choisir l'un des deux")
+        mode = "unique" if a_unique else ("paliers" if a_paliers else mode_stand(salon, st))
+        if mode != mode_stand(salon, st):
+            changes.append(f"stand {st['stand']} : mode « {mode_stand(salon, st)} » → « {mode} »")
+            st["mode_prix"] = mode
+        for i, v in vins:
+            u, pal, ou = lus[(st["stand"], i)]
+            n = len(paliers_tarif(fiches, v))
+            if mode == "unique":
+                nouveau = [u] if u is not None else None
+            else:
+                if any(x is not None for x in pal[n:]):
+                    raise Refus(f"{ou} : un prix dans une colonne de palier que ce domaine n'a pas")
+                vals = pal[:n]
+                if all(x is None for x in vals):
+                    nouveau = None
+                elif any(x is None for x in vals):
+                    raise Refus(f"{ou} : il manque un prix de palier (tous ou aucun)")
+                else:
+                    nouveau = vals
+            if nouveau != v.get("prix_centimes"):
+                avant = "vide" if not v.get("prix_centimes") else " / ".join(euros(x) for x in v["prix_centimes"])
+                apres = "vide" if not nouveau else " / ".join(euros(x) for x in nouveau)
+                changes.append(f"stand {st['stand']} V{i:02d} {v.get('cuvee') or v.get('appellation')} : {avant} → {apres}")
+                v["prix_centimes"] = nouveau
+    print(f"{len(changes)} changement(s) :")
+    for c in changes:
+        print("  " + c)
+    if essai or not changes:
+        print("(essai : rien n'est écrit)" if essai else "rien à écrire")
+        return
+    SALON.write_text(json.dumps(nouveaux, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print("✓ data/salon-prive-2026.json mis à jour. Prochaine étape : npm run salon "
+          "(refait et contrôle les PDF et le .pptx du salon).")
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     try:
@@ -436,6 +609,10 @@ if __name__ == "__main__":
             exporter(pathlib.Path(args[1]) if len(args) > 1 else SORTIE)
         elif args[:1] == ["importer"] and len(args) >= 2:
             importer(pathlib.Path(args[1]), "--essai" in args)
+        elif args[:1] == ["exporter-salon"]:
+            exporter_salon(pathlib.Path(args[1]) if len(args) > 1 else SORTIE_SALON)
+        elif args[:1] == ["importer-salon"] and len(args) >= 2:
+            importer_salon(pathlib.Path(args[1]), "--essai" in args)
         else:
             print(__doc__)
             sys.exit(2)

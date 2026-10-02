@@ -295,3 +295,48 @@
 }
 .idom-pg { font-weight: 600; min-width: 5mm; text-align: right; font-variant-numeric: tabular-nums; }
 .idom-pied { margin-top: 4mm; font-size: 8pt; color: rgba(70,96,110,.8); }
+
+/* ============================================================================
+   ÉDITION SALON PRIVÉ — ce qui ne sert qu'au salon
+   ========================================================================= */
+.couverture-salon .titre-couv { font-size: 44pt; }
+.couverture-salon .sous-couv { top: calc(90mm + var(--fp)); }
+.couverture-salon .pied-couv .annee { font-size: 24pt; margin-bottom: 1.4mm; }
+.couverture-salon .pied-couv .cible { margin: 0; }
+
+.encart-salon {
+  margin: 8mm 0 7mm; padding: 5mm 6mm; background: var(--craie);
+  border-left: 2pt solid var(--or); display: flex; flex-direction: column; gap: 1.2mm;
+}
+.es-nom { font-family: var(--titre); font-size: 18pt; line-height: 1.1; color: var(--violet); }
+.es-date { font-family: var(--titre); font-size: 13pt; color: var(--silex); }
+.es-lieu { font-size: 10pt; color: var(--silex); }
+.es-orga { font: 400 8pt var(--technique); color: var(--gneiss); margin-top: 1mm; }
+
+/* Le plan des exposants, schéma maison */
+.plan .cadre { display: flex; flex-direction: column; }
+.plan .titre-section { margin-bottom: 4mm; }
+.plan-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.plan-salle { font-family: var(--titre); font-size: 4.4px; fill: var(--silex); }
+.plan-n { font-family: var(--technique); font-weight: 600; font-size: 2.65px; }
+.plan-note { margin: 3mm 0 5mm; font-size: 9pt; font-style: italic; color: rgba(70, 96, 110, .9); }
+.plan-liste { display: flex; gap: 8mm; }
+.plan-liste ul { flex: 1; min-width: 0; list-style: none; }
+.plan-liste a {
+  display: flex; align-items: center; gap: 2.4mm; height: 6.4mm;
+  border-bottom: .3pt solid rgba(70, 96, 110, .2); font: 400 9.5pt var(--courant); color: var(--encre);
+}
+.pl-pastille {
+  flex: none; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--strate);
+  color: var(--craie); font: 600 7.6pt var(--technique); font-variant-numeric: tabular-nums;
+  display: flex; align-items: center; justify-content: center;
+}
+.pl-pastille.claire { color: var(--silex); box-shadow: inset 0 0 0 .6pt var(--silex); }
+.plan-liste .nom { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.plan-liste .reg { font: 400 7.6pt var(--technique); color: var(--gneiss); }
+.plan-liste .pg {
+  font: 600 9pt var(--technique); color: var(--silex); min-width: 6mm; text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.fin-salon { font-family: var(--titre); font-size: 12pt; line-height: 1.35; color: var(--violet); margin-bottom: 3mm; }

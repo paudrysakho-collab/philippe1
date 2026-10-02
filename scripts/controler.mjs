@@ -5,12 +5,13 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { catalogue } from '../src/gabarits/pieces.mjs';
+import { catalogue, BASE, EDITION } from '../src/gabarits/pieces.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const HTML = path.join(RACINE, 'build/catalogue-scio-2026-ecran.html');
-const PDF = path.join(RACINE, 'dist/catalogue-scio-2026-ecran.pdf');
-const PDF_IMP = path.join(RACINE, 'dist/catalogue-scio-2026-imprimeur.pdf');
+const SALON = EDITION === 'salon';
+const HTML = path.join(RACINE, `build/${BASE}-ecran.html`);
+const PDF = path.join(RACINE, `dist/${BASE}-ecran.pdf`);
+const PDF_IMP = path.join(RACINE, `dist/${BASE}-imprimeur.pdf`);
 
 let erreurs = 0;
 const dire = (ok, texte) => { if (!ok) erreurs++; console.log(`${ok ? '  ok  ' : ' ÉCHEC'} ${texte}`); };
@@ -84,12 +85,14 @@ for (const f of [PDF, PDF_IMP]) {
 
 /* ——— 3. Chaque prix du JSON se retrouve-t-il dans le texte du PDF ? ——— */
 const texte = execFileSync('pdftotext', [PDF, '-']).toString();
+// Au salon, un prix pas encore donné (null) est une case vide attendue, pas un prix perdu.
 const manquants = [];
-let total = 0;
+let total = 0, attendus = 0;
 for (const d of catalogue.domaines) {
   for (const t of d.tableaux) {
     for (const l of t.lignes) {
       for (const c of l.prix_centimes) {
+        if (c == null) { attendus++; continue; }
         total++;
         const s = (c / 100).toFixed(2).replace('.', ',');
         if (!texte.includes(s)) manquants.push(`n°${d.numero} ${l.cuvee || l.appellation} — ${s} €`);
@@ -97,7 +100,8 @@ for (const d of catalogue.domaines) {
     }
   }
 }
-dire(manquants.length === 0, `${total} prix du JSON retrouvés dans le texte du PDF`);
+dire(manquants.length === 0, `${total} prix du JSON retrouvés dans le texte du PDF`
+  + (attendus ? ` (${attendus} cases de prix encore vides, en attente des prix de l'agence)` : ''));
 manquants.slice(0, 10).forEach((m) => console.log('         ' + m));
 
 /* ——— 4. Les mentions obligatoires ——— */
@@ -108,14 +112,15 @@ const obligatoires = [
   ["adresse", 'Rezé'],
   ["site", catalogue.agence.contacts.site],
   ["RCS", '843 151 663'],
-  ["cible", 'Vendée (85)'],
+  ...(SALON ? [["nom du salon", catalogue.salon.evenement.nom], ["date du salon", catalogue.salon.evenement.date_texte],
+    ["lieu du salon", catalogue.salon.evenement.lieu]] : [["cible", 'Vendée (85)']]),
 ];
 obligatoires.forEach(([nom, aiguille]) =>
   dire(texte.toUpperCase().includes(aiguille.toUpperCase()), `${nom} présent dans le PDF`));
 
 /* ——— 4 bis. La couche texte n'est-elle pas fragmentée par l'interlettrage ? ——— */
 const motsEntiers = ['BORDEAUX', 'BOURGOGNE', 'LANGUEDOC', 'CHAMPAGNE', 'POSSIBILITÉ DE PANACHER',
-  'Tarifs cavistes Vendée (85)', 'SUD-OUEST'];
+  SALON ? 'Salon Privé' : 'Tarifs cavistes Vendée (85)', 'SUD-OUEST'];
 // Les capitales sont parfois produites par CSS : on compare en majuscules.
 const hautTexte = texte.toUpperCase();
 const fragmentes = motsEntiers.filter((m) => !hautTexte.includes(m.toUpperCase()));
@@ -124,7 +129,18 @@ fragmentes.forEach((m) => console.log(`         introuvable : « ${m} »`));
 
 /* ——— 5. Les 40 domaines sont-ils tous imprimés ? ——— */
 const absents = catalogue.domaines.filter((d) => !texte.includes(d.nom.split(' /')[0]));
-dire(absents.length === 0, `les 40 domaines sont imprimés`);
+dire(absents.length === 0, `les ${catalogue.domaines.length} domaines sont imprimés`);
+if (SALON) {
+  // chaque stand du plan a sa fiche, et chaque vin dégusté est dans le PDF
+  const stands = new Set(catalogue.domaines.map((d) => d.stand));
+  dire(stands.size === catalogue.salon.evenement.exposants,
+    `les ${catalogue.salon.evenement.exposants} stands ont leur fiche (${stands.size} trouvés)`);
+  const plat = texte.replace(/\s+/g, ' ');
+  const perdus = catalogue.domaines.flatMap((d) => d.tableaux.flatMap((t) => t.lignes))
+    .filter((l) => !plat.includes((l.cuvee || l.appellation).replace(/\s+/g, ' ')));
+  dire(perdus.length === 0, `chaque vin dégusté est imprimé${perdus.length ? ` (${perdus.length} manquent)` : ''}`);
+  perdus.slice(0, 8).forEach((l) => console.log(`         ${l.cuvee || l.appellation}`));
+}
 absents.forEach((d) => console.log(`         n°${d.numero} ${d.nom}`));
 
 console.log(`\n${erreurs ? `— ${erreurs} contrôle(s) en échec —` : '— tous les contrôles au vert —'}\n`);

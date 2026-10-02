@@ -18,7 +18,15 @@
     "photos": "python3 scripts/preparer-photos.py",
     "moisson": "python3 scripts/moissonner.py",
     "tableur": "python3 scripts/tableur.py exporter",
-    "importer": "python3 scripts/tableur.py importer"
+    "importer": "python3 scripts/tableur.py importer",
+    "catalogue-salon": "EDITION=salon node scripts/construire.mjs",
+    "controle-salon": "EDITION=salon node scripts/controler.mjs",
+    "pptx-salon": "EDITION=salon node scripts/deco.mjs && EDITION=salon node scripts/pptx.mjs && python3 scripts/ranger-pptx.py dist/salon-prive-2026-canva.pptx && EDITION=salon node scripts/controler-pptx.mjs",
+    "salon": "npm run donnees && npm run catalogue-salon && npm run controle-salon && npm run pptx-salon && npm run liste-vins",
+    "liste-vins": "node scripts/liste-vins.mjs",
+    "transcrire-matheo": "python3 scripts/transcrire-matheo.py",
+    "tableur-salon": "python3 scripts/tableur.py exporter-salon",
+    "importer-salon": "python3 scripts/tableur.py importer-salon"
   },
   "dependencies": {
     "playwright": "1.56.1",

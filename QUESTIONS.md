@@ -386,3 +386,19 @@ Quelques remarques encore :
 - **Les noms de la liste** qui diffèrent du tarif (Boheler, Berthaud-Manceau, Prieuré Sainte
   Marie, « Domaine Les Prieuré des Papes »…) ne sont pas repris : le catalogue garde les noms des
   fiches.
+
+### 27. L'édition du salon : ce qui reste à vous
+
+- **Les prix** : un prix unique par vin, ou les paliers du domaine ? Le catalogue accepte les
+  deux, stand par stand, sans retouche (voir README, « Ajouter les prix du salon »). Le plus
+  simple : remplir `tableur/prix-salon-prive-2026.xlsx` et me le renvoyer.
+- **Le format de la liste des vins** : je la propose en **A4** (3 pages), pour l'imprimer au
+  bureau et la poser sur les tables. Si vous la voulez au format du catalogue (210 × 260 mm),
+  c'est un réglage (`LISTE_FORMAT=catalogue`).
+- **Les noms de stand** : la page du plan et la liste des vins écrivent les noms du plan des
+  exposants (« Château Escarderie », « Domaine Prieuré Sainte Marie d'Albas »…), qui fait foi ;
+  les fiches gardent les noms du tarif (« Château l'Escarderie »…). Dites-moi si vous voulez
+  une seule graphie partout.
+- **La bouteille du n°18** (Moulin Blanc, stand 7) manque toujours : son emplacement reste en
+  pointillé dans l'édition du salon aussi (point 24).
+

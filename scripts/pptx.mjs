@@ -8,17 +8,19 @@ import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
-  largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS,
+  largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
-import { entreesIndex, colonnesSommaire, SOMMAIRE, encreStrate, texteNotePrix }
+import { entreesIndex, colonnesSommaire, SOMMAIRE, encreStrate, texteNotePrix, SALON_ED, ED, NB_VINS,
+  numero as numeroAffiche, PLAN, standsPlan }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const DECO = path.join(RACINE, 'build/deco');
-const plan = JSON.parse(fs.readFileSync(path.join(RACINE, 'build/plan.json'), 'utf8'));
+const DECO = path.join(RACINE, `build/deco-${BASE}`);
+const plan = JSON.parse(fs.readFileSync(path.join(RACINE, `build/${BASE}-plan.json`), 'utf8'));
 /* Les hauteurs mesurées dans Chromium pendant la fabrication du PDF : la diapositive
    reprend exactement la même géométrie, sans jamais estimer une hauteur de ligne. */
-const mesures = JSON.parse(fs.readFileSync(path.join(RACINE, 'build/mesures.json'), 'utf8'));
+const mesures = JSON.parse(fs.readFileSync(path.join(RACINE, `build/${BASE}-mesures.json`), 'utf8'));
+const EV = catalogue.salon?.evenement;
 /* Les chasses des polices livrées : de quoi savoir si un titre tient sur une ligne. */
 const metriques = JSON.parse(fs.readFileSync(path.join(RACINE, 'src/fonts/metriques.json'), 'utf8'));
 const AG = catalogue.agence;
@@ -55,7 +57,7 @@ const BOITES = {};   // n° → place du texte, pour regler-lettrines.py
      d'interligne, posé AU-DESSUS de la ligne (1,2 × corps × (interligne − 1)) ;
    - Canva : l'ascendante seule, quel que soit l'interligne (0,854 pour Spectral, que Canva
      remplace par Arimo tant qu'elle n'est pas téléversée ; 0,92 pour Young Serif). */
-const BASE = { lo: { courant: 0.998, titre: 0.999, sus: 1.2 }, canva: { courant: 0.854, titre: 0.92 } };
+const BASE_LIGNE = { lo: { courant: 0.998, titre: 0.999, sus: 1.2 }, canva: { courant: 0.854, titre: 0.92 } };
 const PT = 25.4 / 72;   // un point, en mm
 
 /** Place la lettrine et le texte dans la bande, en mm, depuis le haut de la bande.
@@ -68,7 +70,7 @@ const PT = 25.4 / 72;   // un point, en mm
     applique) la recale pour LibreOffice et PowerPoint. Le bloc, de la tête de la lettrine
     au pied de la dernière ligne, se centre dans la bande comme le texte du PDF. */
 function placerLettrine(texte, corps, interligne, visee, lignes, bande) {
-  const { lo, canva } = BASE;
+  const { lo, canva } = BASE_LIGNE;
   const JOINT = 0.25;                                                       // mm avant la 2e lettre
   const chasse = largeurTexte(texte.slice(0, 1), F.titre, 1);               // mm par point de corps
   const insecable = largeurTexte('\u00a0', F.courant, corps);
@@ -129,7 +131,7 @@ const pres = new PptxGenJS();
 pres.defineLayout({ name: 'SCIO', width: mm(PAGE_L), height: mm(PAGE_H) });
 pres.layout = 'SCIO';
 pres.author = 'Agence SCIO Vins & Spirits';
-pres.title = 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
+pres.title = SALON_ED ? `${EV.nom} — ${EV.date_texte}` : 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
 
 /** Marge intérieure d'une page : à droite sur un recto, à gauche sur un verso. */
 function geo(numero) {
@@ -220,7 +222,11 @@ function tableauDonnees(t, lignes, hauteurs) {
         color: C.silex, align: 'right' } },
       { text: l.contenance || '—', options: { ...commun, fontFace: F.tech, fontSize: 7.2,
         color: C.silex, align: 'right' } },
-      ...l.prix_centimes.map((p) => ({ text: [
+      // un prix pas encore donné (édition salon) : une case vide, à remplir dans Canva
+      ...l.prix_centimes.map((p) => (p == null
+        ? { text: '', options: { ...commun, align: 'right', fontFace: F.tech, fontSize: 8.8, bold: true,
+          color: C.silex } }
+        : { text: [
           { text: euros(p), options: { fontFace: F.tech, fontSize: 8.8, bold: true, color: C.silex } },
           { text: ' €', options: { fontFace: F.tech, fontSize: 6.4, color: C.silex } },
         ], options: { ...commun, align: 'right' } })),
@@ -240,7 +246,8 @@ function slideFiche(s, numero, desc) {
   // ——— en-tête. Un nom long réduit le corps du titre plutôt que de passer à la ligne :
   // le filet et les jetons restent où la pagination mesurée les attend.
   const LARGEUR_TITRE = CADRE_L - 34;
-  const RETRAIT = largeur(`${d.numero}   `, F.titre, 27);
+  // au salon, la pastille du stand (19 mm) remplace le numéro du tarif
+  const RETRAIT = SALON_ED ? 23 : largeur(`${d.numero}   `, F.titre, 27);
   const SUITE = desc.premiere ? 0 : largeur('  (suite)', 'Spectral', 11);
   const dispo = LARGEUR_TITRE - RETRAIT - SUITE;
   const pleine = largeur(d.nom, F.titre, 20);
@@ -248,19 +255,38 @@ function slideFiche(s, numero, desc) {
     : Math.max(15, Math.floor(20 * dispo / pleine * 2) / 2);
   const nbLignes = Math.max(1, lignesDe(d.nom, F.titre, taille, dispo));
   const hTitre = 11 + (nbLignes - 1) * 8.4;
+  const suiteTxt = desc.premiere ? [] : [{ text: '  (suite)', options: {
+    fontFace: F.courant, fontSize: 11, italic: true, color: C.gneiss } }];
+  if (SALON_ED) {
+    // la hauteur de l'en-tête vient de la mesure du PDF : la pastille y tient, centrée
+    const hEnt = (mesures.blocs[`entete-${d.numero}`] ?? 26) - 11.7;
+    const hP = 14.4, yP = y + mm((hEnt - hP) / 2);
+    s.addShape(pres.ShapeType.roundRect, { x, y: yP, w: mm(19), h: mm(hP), fill: { color: C.or },
+      line: { color: C.or, width: 0 }, rectRadius: 0.06 });
+    s.addText([
+      { text: 'STAND', options: { fontFace: F.tech, fontSize: 7, bold: true, breakLine: true, charSpacing: 0.3 } },
+      { text: String(d.stand), options: { fontFace: F.titre, fontSize: 22, breakLine: true } },
+      { text: d.salle, options: { fontFace: F.tech, fontSize: 7 } },
+    ], { x, y: yP, w: mm(19), h: mm(hP), margin: 0, align: 'center', valign: 'middle',
+      color: C.violet, lineSpacingMultiple: 0.95 });
+    s.addText([{ text: d.nom, options: { fontFace: F.titre, fontSize: taille, color: C.silex } }, ...suiteTxt],
+      { x: x + mm(RETRAIT), y, w: mm(LARGEUR_TITRE - RETRAIT), h: mm(hEnt), margin: 0, valign: 'middle',
+        lineSpacingMultiple: 1.04 });
+  } else {
   s.addText([
     { text: String(d.numero), options: { fontFace: F.titre, fontSize: 27, color: C.violet } },
     { text: `   ${d.nom}`, options: { fontFace: F.titre, fontSize: taille, color: C.silex } },
-    ...(desc.premiere ? [] : [{ text: '  (suite)', options: {
-      fontFace: F.courant, fontSize: 11, italic: true, color: C.gneiss } }]),
+    ...suiteTxt,
   ], { x, y, w: mm(LARGEUR_TITRE), h: mm(hTitre), margin: 0, valign: 'middle',
     lineSpacingMultiple: 1.04 });
+  }
+  const hRegion = SALON_ED ? (mesures.blocs[`entete-${d.numero}`] ?? 26) - 11.7 : 11;
   s.addText(d.region.toUpperCase(), {
-    x: mm(gauche + CADRE_L - 40), y, w: mm(40), h: mm(11), margin: 0,
+    x: mm(gauche + CADRE_L - 40), y, w: mm(40), h: mm(hRegion), margin: 0,
     align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8, bold: true,
     color: C.gneiss, charSpacing: 0.3,
   });
-  y += mm(hTitre + 0.5);
+  y += SALON_ED ? mm(hRegion + 0.5) : mm(hTitre + 0.5);
   s.addShape(pres.ShapeType.line, { x, y, w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 1.4 } });
   y += mm(2.6);
@@ -272,7 +298,7 @@ function slideFiche(s, numero, desc) {
     [groupeDe(d) ? 'Panachage entre domaines' : 'Panachage dans le domaine', C.gneiss, null],
     ...(d.mentions.some((m) => m.toLowerCase().includes('consultez-nous'))
       ? [['Consultez-nous', C.sables, C.sables]] : []),
-    [`${nbReferences(d)} références`, C.silex, null],
+    [`${nbReferences(d)} ${nbReferences(d) > 1 ? ED.motVins : ED.motVin}`, C.silex, null],
   ];
   let jx = gauche;
   jetons.forEach(([texte, couleur, fond, pictoLabel]) => {
@@ -420,11 +446,12 @@ function slideFiche(s, numero, desc) {
       + `${((y - plafond) * 25.4).toFixed(1)} mm de trop sous les tableaux`);
   }
   if (g) {
-    const autres = g.domaines.filter((n) => n !== d.numero)
-      .map((n) => `n°${n} p. ${pageDe[n]}`).join(' · ');
+    const autres = (g.presents || g.domaines).filter((n) => n !== d.numero)
+      .map((n) => (SALON_ED ? `${parNumero[n].nom}, stand ${parNumero[n].stand} p. ${pageDe[n]}`
+        : `n°${n} p. ${pageDe[n]}`)).join(' · ');
     s.addText([
       { text: 'Se panache avec ', options: { bold: true, color: C.gneiss } },
-      { text: `${g.libelle} — ${autres}`, options: { color: C.silex } },
+      { text: `${g.libelle}${autres ? ` — ${autres}` : ''}`, options: { color: C.silex } },
     ], { x, y: yPied - mm(7), w: mm(CADRE_L), h: mm(5.5), margin: [2, 3, 2, 3],
       fill: { color: 'F4E7E9' }, fontFace: F.tech, fontSize: 7.4, valign: 'middle' });
   }
@@ -463,13 +490,30 @@ function slideCouverture(s, numero) {
   s.addImage({ path: img('coupe-titree'), x: 0, y: mm(PAGE_H - 148), w: mm(PAGE_L), h: mm(148) });
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
     x: mm(MARGE.int), y: mm(17), w: mm(62), h: mm(62 * 251 / 1030) });
+  const sousTitre = ED.sousTitre.replace('<br>', '\n');
+  if (SALON_ED) {
+    s.addText([
+      { text: 'Salon Privé', options: { breakLine: true } },
+      { text: 'Vins & Terroirs', options: { color: C.violet } },
+    ], { x: mm(MARGE.int), y: mm(42), w: mm(165), h: mm(34), margin: 0,
+      fontFace: F.titre, fontSize: 44, color: C.silex, lineSpacingMultiple: 0.92 });
+    s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
+      fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
+    s.addShape(pres.ShapeType.roundRect, { x: mm(-6), y: mm(PAGE_H - 44), w: mm(112), h: mm(24),
+      fill: { color: C.tuffeau }, line: { color: C.tuffeau, width: 0 }, rectRadius: 0.03 });
+    s.addText(EV.date_texte, { x: mm(MARGE.int), y: mm(PAGE_H - 41), w: mm(95), h: mm(10), margin: 0,
+      fontFace: F.titre, fontSize: 24, color: C.violet });
+    s.addText(`${EV.lieu}, ${EV.commune}`.toUpperCase(), { x: mm(MARGE.int), y: mm(PAGE_H - 30),
+      w: mm(95), h: mm(5), margin: 0, fontFace: F.tech, fontSize: 9, bold: true, color: C.silex,
+      charSpacing: 0.3 });
+  } else {
   s.addText([
     { text: 'Sous', options: { breakLine: true } },
     { text: 'nos', options: { breakLine: true } },
     { text: 'pieds', options: { color: C.violet } },
   ], { x: mm(MARGE.int), y: mm(42), w: mm(150), h: mm(50), margin: 0,
     fontFace: F.titre, fontSize: 46, color: C.silex, lineSpacingMultiple: 0.92 });
-  s.addText("Quarante domaines, dix régions,\net la terre qu'ils ont sous les pieds.", {
+  s.addText(sousTitre, {
     x: mm(MARGE.int), y: mm(95), w: mm(120), h: mm(14), margin: 0,
     fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
   s.addShape(pres.ShapeType.roundRect, { x: mm(-6), y: mm(PAGE_H - 44), w: mm(78), h: mm(24),
@@ -478,6 +522,7 @@ function slideCouverture(s, numero) {
     margin: 0, fontFace: F.tech, fontSize: 9, bold: true, color: C.silex, charSpacing: 0.3 });
   s.addText(AG.edition, { x: mm(MARGE.int), y: mm(PAGE_H - 36), w: mm(60), h: mm(14), margin: 0,
     fontFace: F.titre, fontSize: 34, color: C.violet });
+  }
   s.addText(AG.message_sanitaire, { x: mm(MARGE.int), y: mm(PAGE_H - 13), w: mm(140), h: mm(5),
     margin: 0, fontFace: F.tech, fontSize: 5.6, color: C.craie });
 }
@@ -493,7 +538,7 @@ function slideAgence(s, numero) {
     { text: ' en vous proposant des vignerons de tous horizons, avant-gardistes et respectueux '
         + 'de la nature. Découvrez notre sélection. Laissez-vous guider et conseiller.' },
   ], { x, y: mm(MARGE.haut + 32), w: mm(150), h: mm(40), margin: 0,
-    fontFace: F.titre, fontSize: 17, color: C.silex, lineSpacingMultiple: 1.3 });
+    fontFace: F.titre, fontSize: 16, color: C.silex, lineSpacingMultiple: 1.28 });
 
   [['Laurent', AG.contacts.laurent], ['Carline', AG.contacts.carline]].forEach(([p, t], i) => {
     const cx = gauche + i * 55;
@@ -505,13 +550,28 @@ function slideAgence(s, numero) {
   s.addText(`${AG.contacts.adresse}\n${AG.contacts.email}\n${AG.contacts.site}`, {
     x, y: mm(MARGE.haut + 94), w: mm(120), h: mm(20), margin: 0,
     fontFace: F.courant, fontSize: 10, color: C.silex, lineSpacingMultiple: 1.6 });
-  s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 120), w: mm(CADRE_L),
-    h: mm(CADRE_L * 42 / 176) });
+  if (SALON_ED) {
+    // l'encart du salon prend la place de la coupe : nom, date, lieu, organisateur
+    const ye = MARGE.haut + 122;
+    s.addShape(pres.ShapeType.rect, { x, y: mm(ye), w: mm(CADRE_L), h: mm(36),
+      fill: { color: C.craie }, line: { color: C.craie, width: 0 } });
+    s.addShape(pres.ShapeType.line, { x, y: mm(ye), w: 0, h: mm(36), line: { color: C.or, width: 2 } });
+    s.addText([
+      { text: EV.nom, options: { fontFace: F.titre, fontSize: 18, color: C.violet, breakLine: true } },
+      { text: EV.date_texte, options: { fontFace: F.titre, fontSize: 13, color: C.silex, breakLine: true } },
+      { text: `${EV.lieu}, ${EV.commune}`, options: { fontFace: F.courant, fontSize: 10, color: C.silex, breakLine: true } },
+      { text: `Organisé par l'${EV.organisateur}`, options: { fontFace: F.tech, fontSize: 8, color: C.gneiss } },
+    ], { x: x + mm(6), y: mm(ye), w: mm(CADRE_L - 12), h: mm(36), margin: 0, valign: 'middle',
+      lineSpacingMultiple: 1.25 });
+  } else {
+    s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 120), w: mm(CADRE_L),
+      h: mm(CADRE_L * 42 / 176) });
+  }
   const yc = MARGE.haut + 172;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 0.8 } });
-  const refs = catalogue.domaines.reduce((n, d) => n + nbReferences(d), 0);
-  [['40', 'domaines'], ['10', 'régions'], [String(refs), 'références']].forEach(([n, l], i) => {
+  [[String(ED.acteurs), ED.motActeurs], [String(REGIONS.length), 'régions'],
+    [String(NB_VINS), ED.motVins]].forEach(([n, l], i) => {
     s.addText(n, { x: mm(gauche + i * 42), y: mm(yc + 3), w: mm(40), h: mm(11), margin: 0,
       fontFace: F.titre, fontSize: 26, color: C.violet });
     s.addText(l, { x: mm(gauche + i * 42), y: mm(yc + 14), w: mm(40), h: mm(5), margin: 0,
@@ -523,9 +583,13 @@ function slideAgence(s, numero) {
 /** Le sommaire, liste par région sur deux colonnes : la géométrie de SOMMAIRE, comme le PDF. */
 function slideSommaire(s, numero) {
   const { gauche } = geo(numero);
-  s.addText('Sommaire', { x: mm(gauche), y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
-    fontFace: F.titre, fontSize: 24, color: C.violet, valign: 'top' });
-  const y0 = MARGE.haut + 8.5 + 6;
+  const y0 = SALON_ED
+    ? titreSection(s, numero, 'Sommaire', 'par région ; le premier chiffre est le numéro du stand') + 0.5
+    : MARGE.haut + 8.5 + 6;
+  if (!SALON_ED) {
+    s.addText('Sommaire', { x: mm(gauche), y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
+      fontFace: F.titre, fontSize: 24, color: C.violet, valign: 'top' });
+  }
   const { bande, ligne, apresBande, entreRegions, colonne } = SOMMAIRE;
   colonnesSommaire().forEach((blocs, c) => {
     const cx = gauche + c * (CADRE_L - colonne);
@@ -537,7 +601,7 @@ function slideSommaire(s, numero) {
         fontFace: F.titre, fontSize: 13, color: encreStrate(b.nom).slice(1), valign: 'middle' });
       y += bande + apresBande;
       b.doms.forEach((d) => {
-        s.addText(String(d.numero), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
+        s.addText(String(numeroAffiche(d)), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
           align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true, color: C.violet });
         s.addText(d.nom, { x: mm(cx + 8.5), y: mm(y), w: mm(colonne - 18), h: mm(ligne), margin: 0,
           valign: 'middle', fontFace: F.courant, fontSize: 10, color: C.encre });
@@ -590,7 +654,7 @@ function slideOuverture(s, numero, region) {
   const encre = clair ? C.silex : C.craie;
   const doms = catalogue.domaines.filter((d) => d.region === region);
   const refs = doms.reduce((n, d) => n + nbReferences(d), 0);
-  s.addText(`${REGIONS.indexOf(region) + 1} / 10`, { x: mm(gauche), y: mm(MARGE.haut),
+  s.addText(`${REGIONS.indexOf(region) + 1} / ${REGIONS.length}`, { x: mm(gauche), y: mm(MARGE.haut),
     w: mm(22), h: mm(6), margin: 0, align: 'center', valign: 'middle',
     fontFace: F.tech, fontSize: 8, bold: true, color: encre });
   s.addText(region, { x: mm(gauche), y: mm(142), w: mm(140), h: mm(22), margin: 0,
@@ -603,12 +667,12 @@ function slideOuverture(s, numero, region) {
     h: mm(5), margin: 0, fontFace: F.tech, fontSize: 8.5, color: encre });
   s.addText(String(refs), { x: mm(gauche + 28), y: mm(176), w: mm(24), h: mm(9), margin: 0,
     fontFace: F.titre, fontSize: 20, color: encre });
-  s.addText('références', { x: mm(gauche + 28), y: mm(185), w: mm(26), h: mm(5), margin: 0,
+  s.addText(refs > 1 ? ED.motVins : ED.motVin, { x: mm(gauche + 28), y: mm(185), w: mm(45), h: mm(5), margin: 0,
     fontFace: F.tech, fontSize: 8.5, color: encre });
   doms.forEach((d, k) => {
     const col = k % 2, rang = Math.floor(k / 2);
     s.addText([
-      { text: `${d.numero}   `, options: { fontFace: F.titre, fontSize: 11 } },
+      { text: `${numeroAffiche(d)}   `, options: { fontFace: F.titre, fontSize: 11 } },
       { text: d.nom },
       { text: `   ${pageDe[d.numero]}`, options: { bold: true } },
     ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(198 + rang * 7), w: mm(CADRE_L / 2 - 4),
@@ -622,7 +686,7 @@ function slideIndexVins(s, numero, desc) {
   let y = MARGE.haut;
   if (desc.premiere) {
     y = titreSection(s, numero, 'Index des vins', 'par type, de A à Z') + 2;
-    s.addText('Le numéro en violet est celui du domaine, le dernier chiffre est la page.', {
+    s.addText(ED.introIndexVins, {
       x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(5), margin: 0,
       fontFace: F.courant, fontSize: 8.6, color: C.silex });
     y += 7;
@@ -687,14 +751,14 @@ function slideProduits(s, numero) {
 
 function slideIndexDomaines(s, numero) {
   const { gauche } = geo(numero);
-  const y = titreSection(s, numero, 'Les quarante domaines', 'de A à Z');
+  const y = titreSection(s, numero, ED.titreIndexDomaines, 'de A à Z');
   const tries = [...catalogue.domaines].sort((a, b) =>
     a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' }));
   const parCol = Math.ceil(tries.length / 2);
   tries.forEach((d, i) => {
     const col = Math.floor(i / parCol), rang = i % parCol;
     s.addText([
-      { text: `${d.numero}   `, options: { fontFace: F.titre, fontSize: 11, color: C.violet } },
+      { text: `${numeroAffiche(d)}   `, options: { fontFace: F.titre, fontSize: 11, color: C.violet } },
       { text: `${d.nom}   `, options: { bold: true } },
       { text: `${d.region}   `, options: { color: C.gneiss, fontSize: 7 } },
       { text: `${nbReferences(d)}   `, options: { fontSize: 7, color: C.silex } },
@@ -702,17 +766,26 @@ function slideIndexDomaines(s, numero) {
     ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(y + rang * 8), w: mm(CADRE_L / 2 - 4),
       h: mm(7), margin: 0, fontFace: F.tech, fontSize: 8.4, color: C.silex, valign: 'middle' });
   });
-  s.addText('Le chiffre avant la page est le nombre de références au tarif.', {
+  s.addText(ED.piedIndexDomaines, {
     x: mm(gauche), y: mm(PAGE_H - MARGE.bas - 8), w: mm(CADRE_L), h: mm(5), margin: 0,
     fontFace: F.courant, fontSize: 8, color: C.silex });
   folio(s, numero);
 }
 
+/** Comme dans le PDF : la légende se pose au-dessus de la strate de craie, trop claire. */
+function margePlanche() {
+  const { poids, total } = poidsStrates();
+  return Math.max(18, (poids[poids.length - 1] / total) * PAGE_H - MARGE.bas + 6);
+}
+
 function slidePlanche(s, numero) {
   s.addImage({ path: img('coupe-pleine'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H) });
   const { gauche } = geo(numero);
-  s.addText('Dix régions,\ndix sols,\nquarante domaines.', {
-    x: mm(gauche), y: mm(PAGE_H - MARGE.bas - 60), w: mm(120), h: mm(42), margin: 0,
+  const n = { 9: 'neuf', 10: 'dix', 26: 'vingt-six', 40: 'quarante' };
+  const mot = (k) => n[k] || String(k);
+  s.addText(`${mot(REGIONS.length).replace(/^./, (c) => c.toUpperCase())} régions,\n${mot(REGIONS.length)} sols,\n`
+    + `${mot(ED.acteurs)} ${ED.motActeurs}.`, {
+    x: mm(gauche), y: mm(PAGE_H - MARGE.bas - margePlanche() - 42), w: mm(120), h: mm(42), margin: 0,
     fontFace: F.titre, fontSize: 26, color: C.craie, lineSpacingMultiple: 1.12 });
   folio(s, numero, { clair: true });
 }
@@ -723,7 +796,7 @@ function slideNotes(s, numero) {
   const x = mm(gauche);
   s.addText('Vos notes', { x, y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
     fontFace: F.titre, fontSize: 20, color: C.violet, valign: 'bottom' });
-  s.addText('QUANTITÉS, PALIERS, DATES DE LIVRAISON', {
+  s.addText(ED.notesSous.toUpperCase(), {
     x, y: mm(MARGE.haut + 9.5), w: mm(CADRE_L), h: mm(5), margin: 0,
     fontFace: F.tech, fontSize: 7.5, bold: true, color: C.gneiss, charSpacing: 0.3 });
   for (let i = 0; i < 23; i += 1) {
@@ -745,11 +818,18 @@ function slideFinale(s, numero) {
     s.addText(t, { x: mm(cx), y: mm(MARGE.haut + 33), w: mm(50), h: mm(9), margin: 0,
       fontFace: F.titre, fontSize: 17, color: C.violet });
   });
+  if (SALON_ED) {
+    s.addText(`${EV.nom}\n${EV.date_texte}, ${EV.lieu}, ${EV.commune}`, {
+      x, y: mm(MARGE.haut + 46), w: mm(CADRE_L), h: mm(11), margin: 0,
+      fontFace: F.titre, fontSize: 12, color: C.violet, lineSpacingMultiple: 1.2 });
+  }
   s.addText(`${AG.contacts.adresse}\n${AG.contacts.email} · ${AG.contacts.site}`, {
-    x, y: mm(MARGE.haut + 46), w: mm(130), h: mm(14), margin: 0,
+    x, y: mm(MARGE.haut + (SALON_ED ? 59 : 46)), w: mm(130), h: mm(14), margin: 0,
     fontFace: F.courant, fontSize: 10, color: C.silex, lineSpacingMultiple: 1.5 });
-  s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 66), w: mm(CADRE_L),
-    h: mm(CADRE_L * 42 / 176) });
+  // au salon, la ligne du salon décale l'adresse : la coupe descend d'autant et s'aplatit
+  const dy = SALON_ED ? 14 : 0;
+  s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 66 + dy), w: mm(CADRE_L),
+    h: mm(CADRE_L * 42 / 176 - dy) });
 
   const yc = MARGE.haut + 118;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
@@ -775,6 +855,57 @@ function slideFinale(s, numero) {
     color: C.craie });
 }
 
+/** Le plan des exposants (salon) : les salles en image, les stands en vraies formes et vrai texte. */
+function slidePlan(s, numero) {
+  const { gauche } = geo(numero);
+  let y = titreSection(s, numero, 'Le plan des exposants', `${EV.lieu}, ${EV.commune}`);
+  const k = CADRE_L / PLAN.largeur;
+  const hPlan = PLAN.hauteur * k;
+  s.addImage({ path: img('plan-salles'), x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(hPlan) });
+  const pageDuStand = (st) => Math.min(...st.vins.map((v) => pageDe[v.fiche]));
+  standsPlan().forEach((p) => {
+    const clair = p.region === 'Champagne';
+    const r = PLAN.rayon * k;
+    s.addShape(pres.ShapeType.ellipse, { x: mm(gauche + p.x * k - r), y: mm(y + p.y * k - r),
+      w: mm(2 * r), h: mm(2 * r), fill: { color: p.hex.slice(1) },
+      line: { color: clair ? C.silex : p.hex.slice(1), width: 0.6 } });
+    s.addText(String(p.s.stand), { x: mm(gauche + p.x * k - r), y: mm(y + p.y * k - r), w: mm(2 * r),
+      h: mm(2 * r), margin: 0, align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 7.4,
+      bold: true, color: clair ? C.silex : C.craie });
+  });
+  y += hPlan + 3;
+  s.addText("Schéma d'après le plan des exposants de l'agence. Salle Blanche : stands 1 à 6, près de "
+    + "l'accueil. Salle Noire : stands 7 à 26. Chaque pastille a la couleur de sa région.", {
+    x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(9), margin: 0, fontFace: F.courant, fontSize: 9,
+    italic: true, color: C.silex });
+  y += 14;
+  const stands = [...catalogue.salon.stands].sort((a, b) => a.stand - b.stand);
+  const moitie = Math.ceil(stands.length / 2);
+  const lc = (CADRE_L - 8) / 2;
+  stands.forEach((st, i) => {
+    const col = Math.floor(i / moitie), rang = i % moitie;
+    const cx = gauche + col * (lc + 8), cy = y + rang * 6.4;
+    const clair = st.region === 'Champagne';
+    s.addShape(pres.ShapeType.ellipse, { x: mm(cx), y: mm(cy + 0.5), w: mm(5.4), h: mm(5.4),
+      fill: { color: STRATES[st.region].hex.slice(1) },
+      line: { color: clair ? C.silex : STRATES[st.region].hex.slice(1), width: 0.6 } });
+    s.addText(String(st.stand), { x: mm(cx), y: mm(cy + 0.5), w: mm(5.4), h: mm(5.4), margin: 0,
+      align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 7.6, bold: true,
+      color: clair ? C.silex : C.craie });
+    // un nom long réduit son corps plutôt que de passer à la ligne
+    const corpsNom = Math.min(9.5, Math.floor(9.5 * (lc - 35) / largeur(st.nom_salon, 'Spectral', 9.5) * 4) / 4);
+    s.addText(st.nom_salon, { x: mm(cx + 7.8), y: mm(cy), w: mm(lc - 34), h: mm(6.4), margin: 0,
+      valign: 'middle', fontFace: F.courant, fontSize: corpsNom, color: C.encre });
+    s.addText(st.region, { x: mm(cx + lc - 27), y: mm(cy), w: mm(18), h: mm(6.4), margin: 0,
+      align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 7.6, color: C.gneiss });
+    s.addText(String(pageDuStand(st)), { x: mm(cx + lc - 8), y: mm(cy), w: mm(8), h: mm(6.4), margin: 0,
+      align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true, color: C.silex });
+    s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(cy + 6.4), w: mm(lc), h: 0,
+      line: { color: 'C9CFC9', width: 0.3 } });
+  });
+  folio(s, numero);
+}
+
 /* ———————————————————————————————————————— montage ——— */
 
 plan.descripteurs.forEach((desc, i) => {
@@ -785,6 +916,7 @@ plan.descripteurs.forEach((desc, i) => {
     case 'couverture': slideCouverture(s, numero); break;
     case 'agence': slideAgence(s, numero); break;
     case 'sommaire': slideSommaire(s, numero); break;
+    case 'plan': slidePlan(s, numero); break;
     case 'ouverture': slideOuverture(s, numero, desc.region); break;
     case 'fiche': slideFiche(s, numero, desc); break;
     case 'index-vins': slideIndexVins(s, numero, desc); break;
@@ -796,10 +928,9 @@ plan.descripteurs.forEach((desc, i) => {
   }
 });
 
-const sortie = path.join(RACINE, RECADRABLE ? 'dist/catalogue-scio-2026-canva-recadrable.pptx'
-  : 'dist/catalogue-scio-2026-canva.pptx');
+const sortie = path.join(RACINE, `dist/${BASE}-canva${RECADRABLE ? '-recadrable' : ''}.pptx`);
 await pres.writeFile({ fileName: sortie });
-fs.writeFileSync(path.join(RACINE, 'build/pptx-textes.json'), JSON.stringify(BOITES, null, 1));
+fs.writeFileSync(path.join(RACINE, `build/${BASE}-pptx-textes.json`), JSON.stringify(BOITES, null, 1));
 console.log(`✓ ${path.relative(RACINE, sortie)} — ${plan.descripteurs.length} diapositives`);
 if (debordements.length) {
   console.error('\n⚠ débordements sous les tableaux :');

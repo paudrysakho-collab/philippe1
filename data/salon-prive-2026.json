@@ -8,7 +8,13 @@
   "commune": "Pont-Saint-Martin",
   "organisateur": "Agence SCIO Vins & Spirits",
   "exposants": 26,
-  "regions": 9
+  "regions": 9,
+  "salles": {
+   "Salle Blanche": "stands 1 à 6, près de l'accueil",
+   "Salle Noire": "stands 7 à 26"
+  },
+  "_salles": "Relevé sur le plan des exposants (version 2 du 2 octobre), qui fait foi.",
+  "_plan_xy": "plan_xy de chaque stand : sa place sur le plan des exposants, en pixels d'un rendu à 110 dpi (page de 1287 × 910). Sert au schéma maison du plan."
  },
  "stands": [
   {
@@ -93,7 +99,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    1166,
+    692
+   ]
   },
   {
    "stand": 2,
@@ -193,7 +204,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    1110,
+    692
+   ]
   },
   {
    "stand": 3,
@@ -303,7 +319,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    1078,
+    692
+   ]
   },
   {
    "stand": 4,
@@ -434,7 +455,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    1027,
+    692
+   ]
   },
   {
    "stand": 5,
@@ -534,7 +560,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    995,
+    692
+   ]
   },
   {
    "stand": 6,
@@ -670,7 +701,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Blanche",
+   "plan_xy": [
+    928,
+    692
+   ]
   },
   {
    "stand": 7,
@@ -907,6 +943,11 @@
    ],
    "doublons_matheo": [
     "Terroir d'Ansouis Blanc 2021 — AOC Luberon"
+   ],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    698,
+    692
    ]
   },
   {
@@ -1047,7 +1088,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    620,
+    692
+   ]
   },
   {
    "stand": 9,
@@ -1185,6 +1231,11 @@
    ],
    "doublons_matheo": [
     "Molsce Blanc 2024— AOC Alsace"
+   ],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    587,
+    692
    ]
   },
   {
@@ -1330,7 +1381,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    517,
+    692
+   ]
   },
   {
    "stand": 11,
@@ -1408,7 +1464,7 @@
      "fiche": 37,
      "tarif": null,
      "appellation": "AOC Champagne",
-     "cuvee": "Supernova",
+     "cuvee": "Supernova Extra-Brut Zéro Dosage",
      "couleur": "Extra-brut, zéro dosage",
      "millesime": null,
      "contenance": null,
@@ -1418,7 +1474,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    443,
+    692
+   ]
   },
   {
    "stand": 12,
@@ -1447,7 +1508,7 @@
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne",
+     "cuvee": "Mas de Lusanne Brut Blanc",
      "couleur": "Blanc brut",
      "millesime": null,
      "contenance": null,
@@ -1461,7 +1522,7 @@
      "fiche": 21,
      "tarif": null,
      "appellation": "AOC Bugey",
-     "cuvee": "Mas de Lusanne",
+     "cuvee": "Mas de Lusanne Extra-Brut Blanc",
      "couleur": "Blanc extra-brut",
      "millesime": null,
      "contenance": null,
@@ -1521,7 +1582,7 @@
      "fiche": 21,
      "tarif": null,
      "appellation": null,
-     "cuvee": "Mas de Lusanne",
+     "cuvee": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
      "couleur": "Pétillant de jus de raisin, 0 %",
      "millesime": null,
      "contenance": null,
@@ -1592,7 +1653,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    358,
+    692
+   ]
   },
   {
    "stand": 13,
@@ -1699,7 +1765,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    280,
+    692
+   ]
   },
   {
    "stand": 14,
@@ -1833,7 +1904,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    247,
+    692
+   ]
   },
   {
    "stand": 15,
@@ -1894,7 +1970,7 @@
      "fiche": 40,
      "tarif": null,
      "appellation": "Grand Cru Chouilly",
-     "cuvee": null,
+     "cuvee": "Rosé Brut",
      "couleur": "Rosé brut",
      "millesime": null,
      "contenance": null,
@@ -1938,17 +2014,23 @@
      "fiche": 40,
      "tarif": null,
      "appellation": "Grand Cru Chouilly",
-     "cuvee": "82/17",
+     "cuvee": "82/17 Blanc de Blancs Zéro Dosage",
      "couleur": "Blanc de Blancs, zéro dosage",
      "millesime": null,
      "contenance": null,
+     "famille": "bulles",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    178,
+    692
+   ]
   },
   {
    "stand": 16,
@@ -2020,7 +2102,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    105,
+    692
+   ]
   },
   {
    "stand": 17,
@@ -2239,7 +2326,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    105,
+    572
+   ]
   },
   {
    "stand": 18,
@@ -2366,7 +2458,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    178,
+    572
+   ]
   },
   {
    "stand": 19,
@@ -2511,7 +2608,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    247,
+    572
+   ]
   },
   {
    "stand": 20,
@@ -2629,7 +2731,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    280,
+    572
+   ]
   },
   {
    "stand": 21,
@@ -2732,7 +2839,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    358,
+    572
+   ]
   },
   {
    "stand": 22,
@@ -2868,7 +2980,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    443,
+    572
+   ]
   },
   {
    "stand": 23,
@@ -2983,7 +3100,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    517,
+    572
+   ]
   },
   {
    "stand": 24,
@@ -3052,7 +3174,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    587,
+    572
+   ]
   },
   {
    "stand": 25,
@@ -3141,6 +3268,11 @@
     "Source Melon B. 2023 — IGP Val de Loire",
     "Reflet Gamay 2024 — IGP Val de Loire",
     "L'Eberluant Chardonnay 2025 — IGP Val de Loire"
+   ],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    620,
+    572
    ]
   },
   {
@@ -3222,7 +3354,7 @@
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
-     "cuvee": "Baron Auguste",
+     "cuvee": "Baron Auguste Blanc",
      "couleur": "Blanc",
      "millesime": null,
      "contenance": null,
@@ -3236,7 +3368,7 @@
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
-     "cuvee": "Baron Auguste",
+     "cuvee": "Baron Auguste Rosé",
      "couleur": "Rosé",
      "millesime": null,
      "contenance": null,
@@ -3352,7 +3484,12 @@
      "prix_centimes": null
     }
    ],
-   "doublons_matheo": []
+   "doublons_matheo": [],
+   "salle": "Salle Noire",
+   "plan_xy": [
+    698,
+    572
+   ]
   }
  ],
  "a_confirmer": [

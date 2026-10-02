@@ -2,11 +2,46 @@
 import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
-  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, pictoLabel, ORDRE_LABELS,
+  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
 } from './pieces.mjs';
 
 const AG = catalogue.agence;
 const SANITAIRE = AG.message_sanitaire;
+
+/* ——————————————————————————————————————————————— l'édition ———
+   Le catalogue général et l'édition du Salon Privé partagent tous les gabarits. Ce qui les
+   distingue tient ici : les nombres, les mots, et le numéro qu'on montre sur chaque fiche
+   (le numéro du tarif, ou celui du stand, qui sert à retrouver le vigneron sur le plan). */
+export const SALON_ED = EDITION === 'salon';
+const EV = catalogue.salon?.evenement;
+const ENLETTRES = { 9: 'neuf', 10: 'dix', 26: 'vingt-six', 31: 'trente et un', 40: 'quarante' };
+const enLettres = (n) => ENLETTRES[n] || String(n);
+const majuscule = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+export const NB_VINS = catalogue.domaines.reduce((n, d) => n + nbReferences(d), 0);
+export const ED = SALON_ED ? {
+  titreDocument: `Agence SCIO — ${EV.nom} — ${EV.date_texte}`,
+  acteurs: EV.exposants, motActeurs: 'vignerons', motActeur: 'vigneron',
+  motVins: 'vins à la dégustation', motVin: 'vin à la dégustation',
+  sousTitre: `${majuscule(enLettres(EV.exposants))} vignerons, ${enLettres(REGIONS.length)} régions,`
+    + "<br>et la terre qu'ils ont sous les pieds.",
+  titreIndexDomaines: `Les ${enLettres(EV.exposants)} exposants`,
+  piedIndexDomaines: 'Le chiffre avant la page est le nombre de vins à la dégustation.',
+  introIndexVins: 'Le numéro en violet est celui du stand, le dernier chiffre est la page.',
+  notesSous: 'Stands, vins, quantités, commandes',
+} : {
+  titreDocument: 'Agence SCIO — Sous nos pieds — Tarifs cavistes Vendée (85) 2026',
+  acteurs: catalogue.domaines.length, motActeurs: 'domaines', motActeur: 'domaine',
+  motVins: 'références', motVin: 'référence',
+  sousTitre: `${majuscule(enLettres(catalogue.domaines.length))} domaines, ${enLettres(REGIONS.length)} régions,`
+    + "<br>et la terre qu'ils ont sous les pieds.",
+  titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
+  piedIndexDomaines: 'Le chiffre avant la page est le nombre de références au tarif.',
+  introIndexVins: 'Le numéro en violet est celui du domaine, le dernier chiffre est la page.',
+  notesSous: 'Quantités, paliers, dates de livraison',
+};
+/** Le numéro qu'on montre : celui du stand au salon, celui du tarif ailleurs. */
+export const numero = (d) => (SALON_ED ? d.stand : d.numero);
+const vins = (n) => `${n} ${n > 1 ? ED.motVins : ED.motVin}`;
 
 /* ——————————————————————————————————————————————— enveloppe ——— */
 
@@ -35,7 +70,7 @@ export function rendrePage(p, numero, { traits = false } = {}) {
 export function document({ pages, ecran }) {
   const corps = pages.map((p, i) => rendrePage(p, i + 1, { traits: !ecran })).join('\n');
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<title>Agence SCIO — Sous nos pieds — Tarifs cavistes Vendée (85) 2026</title>
+<title>${esc(ED.titreDocument)}</title>
 <link rel="stylesheet" href="../src/styles/systeme.css">
 <link rel="stylesheet" href="../src/styles/pages.css">
 <style>:root { --fp: ${ecran ? '0mm' : '3mm'}; }</style>
@@ -48,17 +83,36 @@ ${corps}
 /* ——————————————————————————————————————————————— couverture ——— */
 
 export function couverture() {
+  if (SALON_ED) return couvertureSalon();
   return page({
     classe: 'couverture', folio: false, sanitaire: false,
     corps: `
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
-      <p class="sous-couv">Quarante domaines, dix régions,<br>et la terre qu'ils ont sous les pieds.</p>
+      <p class="sous-couv">${ED.sousTitre}</p>
       ${coupe({ largeur: 600, hauteur: 430 })}
       <div class="pied-couv">
         <span class="cible">${esc(AG.cible)}</span>
         <span class="annee">${esc(AG.edition)}</span>
+      </div>
+      <div class="sanitaire sanitaire-couv">${esc(SANITAIRE)}</div>`,
+  });
+}
+
+/** La couverture du salon : on voit tout de suite le nom du salon, la date et le lieu. */
+function couvertureSalon() {
+  return page({
+    classe: 'couverture couverture-salon', folio: false, sanitaire: false,
+    corps: `
+      <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
+           alt="Agence SCIO Vins &amp; Spirits">
+      <h1 class="titre-couv">Salon Privé<br><em>Vins &amp; Terroirs</em></h1>
+      <p class="sous-couv">${ED.sousTitre}</p>
+      ${coupe({ largeur: 600, hauteur: 430 })}
+      <div class="pied-couv">
+        <span class="annee">${esc(EV.date_texte)}</span>
+        <span class="cible">${esc(EV.lieu)}, ${esc(EV.commune)}</span>
       </div>
       <div class="sanitaire sanitaire-couv">${esc(SANITAIRE)}</div>`,
   });
@@ -87,11 +141,16 @@ export function pageAgence() {
         <p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>
         <p><a href="https://${esc(c.site)}">${esc(c.site)}</a></p>
       </div>
-      <div class="bandeau-coupe">${coupe({ largeur: 600, hauteur: 110, graineN: 2, etiquettes: false })}</div>
+      ${SALON_ED ? `<div class="encart-salon">
+          <span class="es-nom">${esc(EV.nom)}</span>
+          <span class="es-date">${esc(EV.date_texte)}</span>
+          <span class="es-lieu">${esc(EV.lieu)}, ${esc(EV.commune)}</span>
+          <span class="es-orga">Organisé par l'${esc(EV.organisateur)}</span></div>`
+        : `<div class="bandeau-coupe">${coupe({ largeur: 600, hauteur: 110, graineN: 2, etiquettes: false })}</div>`}
       <div class="chiffres">
-        <div><strong>40</strong> domaines</div>
-        <div><strong>10</strong> régions</div>
-        <div><strong>${catalogue.domaines.reduce((n, d) => n + nbReferences(d), 0)}</strong> références</div>
+        <div><strong>${ED.acteurs}</strong> ${ED.motActeurs}</div>
+        <div><strong>${REGIONS.length}</strong> régions</div>
+        <div><strong>${NB_VINS}</strong> ${ED.motVins}</div>
       </div>
     </div>`,
   });
@@ -146,19 +205,100 @@ export function sommaire(pagesParDomaine) {
       <div class="som-bande ${b.nom === 'Champagne' ? 'claire' : ''}" style="--strate:${s.hex}">
         <div class="trame trame-${s.t}"></div><span>${esc(b.nom)}</span></div>
       <ul>${b.doms.map((d) => `<li><a href="#p${pagesParDomaine.get(d.numero)}">
-        <span class="n">${d.numero}</span><span class="nom">${esc(d.nom)}</span>
+        <span class="n">${numero(d)}</span><span class="nom">${esc(d.nom)}</span>
         <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul></div>`;
   }).join('');
   const [gauche, droite] = colonnesSommaire();
   return [page({
     classe: 'sommaire',
     corps: `<div class="cadre">
-      <h2 class="titre-section">Sommaire</h2>
+      <h2 class="titre-section">Sommaire${SALON_ED ? '<span>par région ; le premier chiffre est le numéro du stand</span>' : ''}</h2>
       <div class="som-cols"><div class="som-col">${colonne(gauche)}</div>
         <div class="som-col">${colonne(droite)}</div></div>
       ${legendeComplete()}
     </div>`,
   })];
+}
+
+/* ——————————————————————————————————————— le plan du salon ——— */
+
+/* Un schéma maison du plan des exposants : les deux salles, l'accueil, et les 26 stands à
+   leur place (relevée sur le plan de l'agence, qui fait foi : `plan_xy` des stands). Chaque
+   stand prend la couleur de la strate de sa région, comme dans le sommaire. Le dessin du plan
+   de l'agence, lui, n'est pas repris. */
+const PLAN_ECHELLE = 170 / 1240;                       // mm par pixel du relevé
+const planX = (x) => (x - 25) * PLAN_ECHELLE;
+const planY = (y) => (y - 175) * PLAN_ECHELLE;
+export const PLAN = {
+  largeur: 170, hauteur: planY(760), rayon: 2.45,
+  noire: [[48, 530], [767, 530], [767, 735], [48, 735]],
+  blanche: [[790, 372], [918, 372], [918, 283], [1040, 283], [1040, 195], [1240, 195], [1240, 735], [790, 735]],
+  passage: [[760, 688], [797, 688], [797, 712], [760, 712]],
+  etiquettes: [
+    { texte: 'Salle Noire', x: 408, y: 640 }, { texte: 'Salle Blanche', x: 1015, y: 520 },
+    { texte: 'Accueil', x: 1140, y: 245 },
+  ],
+};
+/** Les stands, en mm sur le schéma ; deux stands voisins sur une même table sont écartés
+    juste assez pour que leurs pastilles ne se touchent pas. */
+export function standsPlan() {
+  const st = (catalogue.salon?.stands || []).map((s) => ({
+    s, x: planX(s.plan_xy[0]), y: planY(s.plan_xy[1]),
+    region: s.region, hex: STRATES[s.region].hex,
+  }));
+  st.forEach((a) => st.forEach((b) => {
+    if (a === b || Math.abs(a.y - b.y) > 0.1) return;
+    const d = b.x - a.x;
+    if (d > 0 && d < 2 * PLAN.rayon + 0.6) { const e = (2 * PLAN.rayon + 0.6 - d) / 2; a.x -= e; b.x += e; }
+  }));
+  return st;
+}
+const pts = (l) => l.map(([x, y]) => `${planX(x).toFixed(2)},${planY(y).toFixed(2)}`).join(' ');
+/** Les salles seules (le .pptx les pose en image, et les stands par-dessus en vrai texte). */
+export function sallesSvg() {
+  return `<svg viewBox="0 0 ${PLAN.largeur} ${PLAN.hauteur.toFixed(2)}" class="plan-svg" aria-hidden="true">
+    <polygon points="${pts(PLAN.blanche)}" fill="#FBF8F1" stroke="#46606E" stroke-width=".8"/>
+    <polygon points="${pts(PLAN.noire)}" fill="#46606E" fill-opacity=".14" stroke="#46606E" stroke-width=".8"/>
+    <polygon points="${pts(PLAN.passage)}" fill="#FBF8F1"/>
+    ${PLAN.etiquettes.map((e) => `<text x="${planX(e.x).toFixed(2)}" y="${planY(e.y).toFixed(2)}"
+      text-anchor="middle" class="plan-salle">${esc(e.texte)}</text>`).join('')}</svg>`;
+}
+export function planSvg(pageDuStand = () => null) {
+  const r = PLAN.rayon;
+  const stands = standsPlan().map((p) => {
+    const clair = p.region === 'Champagne';
+    const pg = pageDuStand(p.s);
+    return `<a${pg ? ` href="#p${pg}"` : ''}><circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="${r}"
+        fill="${p.hex}" stroke="${clair ? '#46606E' : p.hex}" stroke-width=".35"/>
+      <text x="${p.x.toFixed(2)}" y="${(p.y + 0.95).toFixed(2)}" text-anchor="middle"
+        class="plan-n" fill="${clair ? '#46606E' : '#FBF8F1'}">${p.s.stand}</text></a>`;
+  }).join('');
+  return sallesSvg().replace('</svg>', `${stands}</svg>`);
+}
+
+export function planSalon(pagesParDomaine) {
+  const stands = [...catalogue.salon.stands].sort((a, b) => a.stand - b.stand);
+  const moitie = Math.ceil(stands.length / 2);
+  const pageDuStand = (s) => Math.min(...s.vins.map((v) => pagesParDomaine.get(v.fiche)));
+  const ligne = (s) => {
+    const pg = pageDuStand(s);
+    const clair = s.region === 'Champagne';
+    return `<li><a href="#p${pg}"><span class="pl-pastille${clair ? ' claire' : ''}"
+        style="--strate:${STRATES[s.region].hex}">${s.stand}</span>
+      <span class="nom">${esc(s.nom_salon)}</span><span class="reg">${esc(s.region)}</span>
+      <span class="pg">${pg}</span></a></li>`;
+  };
+  return page({
+    classe: 'plan',
+    corps: `<div class="cadre">
+      <h2 class="titre-section">Le plan des exposants<span>${esc(EV.lieu)}, ${esc(EV.commune)}</span></h2>
+      <div class="plan-dessin">${planSvg(pageDuStand)}</div>
+      <p class="plan-note">Schéma d'après le plan des exposants de l'agence. Salle Blanche : stands 1 à 6,
+        près de l'accueil. Salle Noire : stands 7 à 26. Chaque pastille a la couleur de sa région.</p>
+      <div class="plan-liste"><ul>${stands.slice(0, moitie).map(ligne).join('')}</ul>
+        <ul>${stands.slice(moitie).map(ligne).join('')}</ul></div>
+    </div>`,
+  });
 }
 
 /* ——————————————————————————————————————— ouverture de région ——— */
@@ -182,16 +322,16 @@ export function ouvertureRegion(nom, pagesParDomaine) {
       </div>
       <div class="ouv-carotte">${solRegion(nom, REGIONS.indexOf(nom) + 1)}</div>
       <div class="cadre">
-        <div class="ouv-haut"><span class="ouv-rang">${REGIONS.indexOf(nom) + 1} / 10</span></div>
+        <div class="ouv-haut"><span class="ouv-rang">${REGIONS.indexOf(nom) + 1} / ${REGIONS.length}</span></div>
         <h2 class="ouv-nom">${esc(nom)}</h2>
         <p class="ouv-mot">${esc(s.mot)}</p>
         <div class="ouv-chiffres">
-          <span><strong>${doms.length}</strong> domaine${doms.length > 1 ? 's' : ''}</span>
-          <span><strong>${refs}</strong> références</span>
+          <span><strong>${doms.length}</strong> ${doms.length > 1 ? ED.motActeurs.replace('vignerons', 'domaines') : 'domaine'}</span>
+          <span><strong>${refs}</strong> ${refs > 1 ? ED.motVins : ED.motVin}</span>
         </div>
         <div class="ouv-types">${types}</div>
         <ul class="ouv-liste">${doms.map((d) =>
-          `<li><a href="#p${pagesParDomaine.get(d.numero)}"><span class="n">${d.numero}</span>
+          `<li><a href="#p${pagesParDomaine.get(d.numero)}"><span class="n">${numero(d)}</span>
             <span class="nom">${esc(d.nom)}</span><span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul>
       </div>`,
   });
@@ -208,10 +348,16 @@ export function enteteDomaine(d, suite = false) {
     g ? `<span class="jeton panachage">Panachage entre domaines</span>`
       : `<span class="jeton panachage">Panachage dans le domaine</span>`,
     consulter ? '<span class="jeton consulter">Consultez-nous</span>' : '',
-    `<span class="jeton">${nbReferences(d)} références</span>`,
+    `<span class="jeton">${vins(nbReferences(d))}</span>`,
   ].filter(Boolean).join('');
-  return `<div class="entete-dom">
-      <div class="num">${d.numero}</div>
+  // Au salon, le numéro du stand prend la place du numéro du tarif : c'est lui qu'on
+  // cherche sur le plan. Il vient avec sa salle.
+  const tete = SALON_ED
+    ? `<div class="stand-dom"><span class="sd-mot">Stand</span><span class="sd-n">${d.stand}</span>
+         <span class="sd-salle">${esc(d.salle)}</span></div>`
+    : `<div class="num">${d.numero}</div>`;
+  return `<div class="entete-dom${SALON_ED ? ' entete-salon' : ''}">
+      ${tete}
       <h1>${esc(d.nom)}${suite ? ' <span class="suite">(suite)</span>' : ''}</h1>
       <div class="region">${esc(d.region)}</div>
     </div>
@@ -322,10 +468,12 @@ export function solRegion(region, graineN, { fond = '#FBF8F1' } = {}) {
 
 export function piedDomaine(d, pagesParDomaine) {
   const g = groupeDe(d);
+  // Au salon, seuls les membres présents ont une page ; les autres restent nommés dans le libellé.
+  const autres = g ? (g.presents || g.domaines).filter((n) => n !== d.numero) : [];
+  const parN = Object.fromEntries(catalogue.domaines.map((x) => [x.numero, x]));
   const alliance = g
-    ? `<div class="alliance"><strong>Se panache avec</strong> <em>${esc(g.libelle)}</em> —
-        ${g.domaines.filter((n) => n !== d.numero).map((n) =>
-          `n°${n} p.&nbsp;${pagesParDomaine.get(n)}`).join(' · ')}</div>`
+    ? `<div class="alliance"><strong>Se panache avec</strong> <em>${esc(g.libelle)}</em>${autres.length ? ' —' : ''}
+        ${autres.map((n) => `${SALON_ED ? `${esc(parN[n].nom)}, stand ${parN[n].stand}` : `n°${n}`} p.&nbsp;${pagesParDomaine.get(n)}`).join(' · ')}</div>`
     : '';
   const dep = d.departements.length
     ? d.departements.join(' · ')
@@ -366,13 +514,13 @@ export function entreesIndex(pagesParDomaine) {
       if (l.cuvee && occurrences[cuv] > 1) {
         const appsDifferentes = toutes.filter(({ l: x }) => (x.cuvee || x.appellation) === cuv)
           .map(({ l: x }) => x.appellation);
-        if (new Set(appsDifferentes).size > 1) nom = l.appellation;
+        if (new Set(appsDifferentes).size > 1) nom = l.appellation || cuv;
         else prec = l.contenance || l.millesime || null;
       } else if (!l.cuvee && occurrences[cuv] > 1) {
         prec = l.contenance || l.millesime || null;
       }
       (par[famille(l, t)] ||= []).push({
-        nom, prec, dom: d.numero, pg: pagesParDomaine.get(d.numero),
+        nom, prec, dom: numero(d), pg: pagesParDomaine.get(d.numero),
       });
     });
   });
@@ -431,7 +579,7 @@ export function pagesIndex(groupesIndex, parPage, poidsTitre = 3) {
       classe: 'index',
       corps: `<div class="cadre">
         ${premiere ? `<h2 class="titre-section">Index des vins<span>par type, de A à Z</span></h2>
-          <p class="idx-intro">Le numéro en violet est celui du domaine, le dernier chiffre est la page.</p>` : ''}
+          <p class="idx-intro">${ED.introIndexVins}</p>` : ''}
         <div class="idx-flux">${html}</div></div>`,
     }));
     premiere = false;
@@ -495,15 +643,15 @@ export function indexDomaines(pagesParDomaine) {
   return page({
     classe: 'index-dom',
     corps: `<div class="cadre">
-      <h2 class="titre-section">Les quarante domaines<span>de A à Z</span></h2>
+      <h2 class="titre-section">${ED.titreIndexDomaines}<span>de A à Z</span></h2>
       <div class="idom-flux">${tries.map((d) => `
         <a class="idom-ligne" href="#p${pagesParDomaine.get(d.numero)}">
-          <span class="idom-n">${d.numero}</span>
+          <span class="idom-n">${numero(d)}</span>
           <span class="idom-nom">${esc(d.nom)}</span>
           <span class="idom-reg">${esc(d.region)}</span>
           <span class="idom-nb">${nbReferences(d)}</span>
           <span class="idom-pg">${pagesParDomaine.get(d.numero)}</span></a>`).join('')}</div>
-      <p class="idom-pied">Le chiffre avant la page est le nombre de références au tarif.</p>
+      <p class="idom-pied">${ED.piedIndexDomaines}</p>
     </div>`,
   });
 }
@@ -523,6 +671,8 @@ export function pageFinale() {
         <div class="contact"><span class="prenom">Carline</span>
           <a href="tel:+33649191675" class="tel">${esc(c.carline)}</a></div>
       </div>
+      ${SALON_ED ? `<p class="fin-salon">${esc(EV.nom)}<br>${esc(EV.date_texte)},
+        ${esc(EV.lieu)}, ${esc(EV.commune)}</p>` : ''}
       <p class="fin-adresse">${esc(c.adresse)}<br>
         <a href="mailto:${esc(c.email)}">${esc(c.email)}</a> ·
         <a href="https://${esc(c.site)}">${esc(c.site)}</a></p>
@@ -553,7 +703,7 @@ export function pageNotes() {
     classe: 'notes',
     corps: `<div class="cadre">
       <h2 class="notes-titre">Vos notes</h2>
-      <p class="notes-sous">Quantités, paliers, dates de livraison</p>
+      <p class="notes-sous">${ED.notesSous}</p>
       <div class="notes-lignes"></div>
     </div>`,
   });
@@ -563,9 +713,14 @@ export function pageNotes() {
 
 /** Une page de respiration qui dit quelque chose : les dix sols, en coupe, pleine page. */
 export function planche(numero = 0) {
+  // La légende se pose au-dessus de la dernière strate (la craie, trop claire pour un texte
+  // blanc) : sa hauteur dépend de l'édition, on la calcule.
+  const { poids, total } = poidsStrates();
+  const craie = (poids[poids.length - 1] / total) * 260;
+  const marge = Math.max(18, craie - 13 + 6);
   return page({
     classe: 'planche',
     corps: `<div class="planche-fond">${coupe({ largeur: 600, hauteur: 430, graineN: 99 + numero })}</div>
-      <div class="cadre"><p class="planche-mot">Dix régions,<br>dix sols,<br>quarante domaines.</p></div>`,
+      <div class="cadre"><p class="planche-mot" style="margin-bottom:${marge.toFixed(1)}mm">${majuscule(enLettres(REGIONS.length))} régions,<br>${enLettres(REGIONS.length)} sols,<br>${enLettres(ED.acteurs)} ${ED.motActeurs}.</p></div>`,
   });
 }

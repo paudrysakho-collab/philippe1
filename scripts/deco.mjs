@@ -4,11 +4,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { REGIONS, STRATES, coupe, carotte, defsTrames, PICTOS_LABELS } from '../src/gabarits/pieces.mjs';
-import { solTeinte, solRegion } from '../src/gabarits/pages.mjs';
+import { REGIONS, STRATES, coupe, carotte, defsTrames, PICTOS_LABELS, BASE } from '../src/gabarits/pieces.mjs';
+import { solTeinte, solRegion, sallesSvg, PLAN } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const DECO = path.join(RACINE, 'build/deco');
+// une déco par édition : au salon, la coupe et les tranches n'ont que neuf régions
+const DECO = path.join(RACINE, `build/deco-${BASE}`);
 fs.mkdirSync(DECO, { recursive: true });
 
 /** Identifiants sans accent ni espace : ils servent de noms de fichier et de sélecteurs. */
@@ -42,6 +43,10 @@ REGIONS.forEach((r) => {
        <div class="trame trame-${s.t}" style="opacity:.5"></div></div>` });
 });
 
+// Les salles du plan des exposants (édition salon) : les stands sont posés par-dessus en texte.
+blocs.push({ nom: 'plan-salles', l: PLAN.largeur, h: +PLAN.hauteur.toFixed(2), html:
+  `<div style="position:absolute;inset:0">${sallesSvg()}</div>` });
+
 // Les pictos de label, posés dans les jetons des fiches et dans la légende du sommaire.
 Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {
   blocs.push({ nom: `label-${nom}`, l: 3, h: 3, html:
@@ -70,7 +75,7 @@ ${blocs.map((b) => `<div class="bloc${b.nu ? ' bloc-nu' : ''}" id="${b.nom}"
   style="width:${b.l}mm;height:${b.h}mm">${b.html}</div>`).join('\n')}
 </body></html>`;
 
-const fichier = path.join(RACINE, 'build/deco.html');
+const fichier = path.join(RACINE, `build/${BASE}-deco.html`);
 fs.writeFileSync(fichier, html);
 
 const nav = await chromium.launch();
@@ -83,4 +88,4 @@ for (const b of blocs) {
 await nav.close();
 fs.writeFileSync(path.join(DECO, 'tailles.json'),
   JSON.stringify(Object.fromEntries(blocs.map((b) => [b.nom, { l: b.l, h: b.h }])), null, 1));
-console.log(`${blocs.length} éléments → build/deco/`);
+console.log(`${blocs.length} éléments → build/deco-${BASE}/`);

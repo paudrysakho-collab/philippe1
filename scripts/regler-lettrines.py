@@ -22,7 +22,7 @@ import pymupdf
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "src/gabarits/lettrines-pptx.json"
 PPTX = RACINE / "dist/catalogue-scio-2026-canva.pptx"
-BOITES = RACINE / "build/pptx-textes.json"
+BOITES = RACINE / "build/catalogue-scio-2026-pptx-textes.json"
 MARGE_BAS = 3.0                      # mm : le tableau commence 4,5 mm sous la bande
 MARGE_HAUT = 3.5                     # mm : la ligne d'étiquettes est au-dessus
 

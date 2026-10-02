@@ -19,6 +19,12 @@ image : `credits.md`.
 | **Prompt pour faire poser les images par Cowork** | `PROMPT-COWORK.md` |
 | Où sont les deux emplacements d'image, diapositive par diapositive | `docs/emplacements-images.md` |
 | **Catalogue, version imprimeur** (fond perdu 3 mm, traits de coupe) | `dist/catalogue-scio-2026-imprimeur.pdf` |
+| **Salon Privé du 5 octobre, version écran** (sans prix pour l'instant) | `dist/salon-prive-2026-ecran.pdf` |
+| **Salon Privé, version imprimeur** | `dist/salon-prive-2026-imprimeur.pdf` |
+| **Salon Privé, fichier Canva** | `dist/salon-prive-2026-canva.pptx` |
+| **Salon Privé, liste des vins dégustés** (3 pages A4) | `dist/salon-prive-2026-liste-des-vins.pdf` |
+| **Salon Privé, les prix à remplir** | `tableur/prix-salon-prive-2026.xlsx` |
+| Aperçus PNG des pages | `epreuves/apercus/` |
 | **Catalogue, version écran** (navigation cliquable, liens `tel:`, `mailto:`, site) | `dist/catalogue-scio-2026-ecran.pdf` |
 | Données des 40 domaines, vérifiées | `data/catalogue.json` |
 | **Tous les tableaux de prix dans un tableur**, à modifier puis réimporter | `tableur/tarifs-scio-2026.xlsx` |
@@ -132,6 +138,53 @@ paliers, un tableau ajouté ou retiré) et dit à quelle ligne. Il demande `pip 
 de les modifier. Les gabarits ne font que lire,
 et le contrôle vérifie que les 715 prix du JSON se retrouvent dans le texte des deux PDF
 **et** dans celui des diapositives.
+
+## Le Salon Privé du 5 octobre 2026
+
+C'est une **édition** du même générateur, pas une copie : mêmes gabarits, mêmes styles,
+mêmes fiches. `EDITION=salon` change trois choses :
+- **ce qui entre** : les 31 fiches des 26 stands (`data/salon-prive-2026.json`, rapprochées
+  d'après le plan des exposants, qui fait foi), et dans leurs tableaux **seulement les vins
+  dégustés** (le fichier de Mathéo) ;
+- **ce qu'on montre** : le numéro du stand et sa salle à la place du numéro du tarif, une
+  couverture et une page de l'agence au nom du salon, un plan des exposants dessiné ;
+- **les prix** : vides tant que l'agence ne les a pas donnés.
+
+```sh
+npm run salon        # PDF écran et imprimeur, contrôles, .pptx, liste des vins
+```
+
+### Ajouter les prix du salon
+
+Les prix vivent dans `data/salon-prive-2026.json`, vin par vin (`prix_centimes`, en centimes,
+`null` tant qu'il n'y en a pas). **Un prix unique ou les paliers du domaine : les deux marchent
+sans toucher aux gabarits.**
+- `"mode_prix": "paliers"` (par défaut) : le tableau garde les paliers du tarif du domaine ;
+  chaque vin reçoit autant de prix que de paliers, par exemple `[1250, 1190, 1150]`.
+- `"mode_prix": "unique"` : le tableau n'a plus qu'une colonne « Prix salon » ; chaque vin
+  reçoit un prix, par exemple `[1250]`.
+Le mode se règle pour tout le salon (en tête du fichier) ou stand par stand.
+
+Le plus simple, par le tableur :
+1. `npm run tableur-salon` écrit `tableur/prix-salon-prive-2026.xlsx` : une ligne par vin,
+   rangée par stand, avec les intitulés de paliers du domaine rappelés en violet.
+2. Pour chaque stand, remplir **soit** la colonne « Prix salon », **soit** les colonnes de
+   paliers. Le mode du stand se déduit de ce qui est rempli ; un stand qui mêle les deux est
+   refusé.
+3. `npm run importer-salon -- FICHIER.xlsx --essai` montre chaque changement, sans rien
+   écrire ; sans `--essai`, il l'écrit.
+4. `npm run salon`. Le contrôle vérifie que chaque prix donné est dans le PDF et compte les
+   cases encore vides.
+
+### Refaire la liste des vins
+
+La transcription du fichier de Mathéo et son rapprochement avec le tarif sont dans
+`scripts/transcrire-matheo.py`, ligne par ligne, avec les écarts (QUESTIONS.md, point 26).
+Si une ligne change, on la corrige là, puis `npm run transcrire-matheo` (les prix déjà saisis
+sont gardés) et `npm run salon`.
+
+La liste des vins dégustés (`npm run liste-vins`) sort en A4 pour une impression au bureau ;
+`LISTE_FORMAT=catalogue npm run liste-vins` la sort au format du catalogue (210 × 260 mm).
 
 ## Poser les images des domaines
 

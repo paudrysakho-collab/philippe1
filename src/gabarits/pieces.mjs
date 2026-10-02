@@ -5,7 +5,68 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-export const catalogue = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.json'), 'utf8'));
+const general = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.json'), 'utf8'));
+
+/* ——————————————————————————————————————————————— les éditions ———
+   Un seul générateur, deux éditions. `EDITION=salon` fabrique le catalogue du Salon Privé :
+   les mêmes fiches, mais seulement celles des exposants, et leurs tableaux réduits aux vins
+   dégustés (data/salon-prive-2026.json). Les prix du salon y vivent, vides tant que
+   l'agence ne les a pas donnés. */
+export const EDITION = process.env.EDITION === 'salon' ? 'salon' : 'general';
+export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/salon-prive-2026.json'), 'utf8'));
+
+/** Le mode de prix d'un stand : « paliers » (ceux du tarif du domaine) ou « unique ». */
+export const modePrix = (stand) => stand?.mode_prix || SALON.mode_prix || 'paliers';
+
+/** Le catalogue de l'édition salon, construit depuis le catalogue général et le fichier du salon. */
+function editionSalon(cat) {
+  const parNumero = Object.fromEntries(cat.domaines.map((d) => [d.numero, d]));
+  const standDe = {};
+  SALON.stands.forEach((s) => s.vins.forEach((v) => { standDe[v.fiche] = s; }));
+  const domaines = cat.domaines.filter((d) => standDe[d.numero]).map((d) => {
+    const s = standDe[d.numero];
+    const unique = modePrix(s) === 'unique';
+    // Les vins dégustés, rangés dans le tableau du tarif d'où ils viennent (le premier s'ils
+    // n'y sont pas) : chacun garde son intitulé et ses paliers.
+    const parTableau = new Map();
+    s.vins.filter((v) => v.fiche === d.numero).forEach((v) => {
+      const ti = v.tarif ? v.tarif.tableau : 0;
+      if (!parTableau.has(ti)) parTableau.set(ti, []);
+      parTableau.get(ti).push(v);
+    });
+    const tableaux = [...parTableau.keys()].sort((a, b) => a - b).map((ti) => {
+      const t = d.tableaux[ti];
+      const paliers = unique ? ['Prix salon'] : t.paliers;
+      return {
+        intitule: t.intitule, ...(t.famille ? { famille: t.famille } : {}), paliers,
+        lignes: parTableau.get(ti).map((v) => ({
+          appellation: v.appellation || '', cuvee: v.cuvee, couleur: v.couleur,
+          millesime: v.millesime, contenance: v.contenance,
+          // null : la case reste vide ; sinon autant de prix que de colonnes
+          prix_centimes: Array.isArray(v.prix_centimes) && v.prix_centimes.length === paliers.length
+            ? v.prix_centimes : paliers.map(() => null),
+          note: v.note || null, ...(v.famille ? { famille: v.famille } : {}),
+        })),
+      };
+    });
+    return { ...parNumero[d.numero], tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon };
+  });
+  const presents = new Set(domaines.map((d) => d.numero));
+  const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));
+  return {
+    ...cat, domaines,
+    agence: {
+      ...cat.agence, regions,
+      // un groupe de panachage garde ses membres : ceux qui ne sont pas au salon restent nommés
+      groupes_panachage: cat.agence.groupes_panachage.map((g) => ({ ...g, presents: g.domaines.filter((n) => presents.has(n)) })),
+    },
+    salon: SALON,
+  };
+}
+
+export const catalogue = EDITION === 'salon' ? editionSalon(general) : general;
+/** Les noms de fichiers d'une édition : dist/<base>-ecran.pdf, build/<base>-plan.json… */
+export const BASE = EDITION === 'salon' ? 'salon-prive-2026' : 'catalogue-scio-2026';
 
 /** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */
 const _photos = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-preparees.json'), 'utf8'));
@@ -122,8 +183,10 @@ export function defsTrames() {
 </defs></svg>`;
 }
 
-export const effectifs = () =>
-  REGIONS.map((n) => catalogue.domaines.filter((d) => d.region === n).length);
+/** Ce qu'une strate compte : les domaines du catalogue, ou les stands au salon (26 en tout). */
+export const effectifs = () => REGIONS.map((n) => (EDITION === 'salon'
+  ? new Set(catalogue.domaines.filter((d) => d.region === n).map((d) => d.stand)).size
+  : catalogue.domaines.filter((d) => d.region === n).length));
 
 /** Épaisseurs des strates : proportionnelles, avec un plancher pour rester lisibles. */
 export function poidsStrates() {
@@ -255,6 +318,7 @@ export const ORDRE_LABELS = ['Bio', 'En conversion Bio', 'Biodynamie', 'Bio & Bi
 
 /** Famille d'une ligne : lue dans la source, jamais devinée au-delà de ce qu'elle écrit. */
 export function famille(ligne, tableau) {
+  if (ligne.famille) return ligne.famille;          // donnée explicitement (édition salon)
   const f = (tableau.famille || '').toLowerCase();
   if (f.includes('jus')) return 'jus';
   if (f.includes('bière')) return 'biere';
@@ -284,7 +348,10 @@ export function famillesDe(d) {
 
 /** Une ligne de tableau. `idx` sert au repérage lors de la passe de mesure. */
 export function ligneHtml(l, t, cle) {
-  const prix = l.prix_centimes.map((p) => `<div class="cel-prix">${euros(p)}<span>€</span></div>`).join('');
+  // Un prix absent (édition salon, avant que l'agence ne les donne) laisse une case vide.
+  const prix = l.prix_centimes.map((p) => (p == null
+    ? '<div class="cel-prix vide"></div>'
+    : `<div class="cel-prix">${euros(p)}<span>€</span></div>`)).join('');
   const etoile = l.note === '*' ? ' <span class="etoile">*</span>' : '';
   return `<tr data-ligne="${cle}">
     <td class="c-picto">${picto(famille(l, t))}</td>

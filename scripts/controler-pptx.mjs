@@ -3,11 +3,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { catalogue, euros, photoDe } from '../src/gabarits/pieces.mjs';
+import { catalogue, euros, photoDe, BASE } from '../src/gabarits/pieces.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const FICHIER = path.join(RACINE, process.argv[2] || 'dist/catalogue-scio-2026-canva.pptx');
-const plan = JSON.parse(fs.readFileSync(path.join(RACINE, 'build/plan.json'), 'utf8'));
+const FICHIER = path.join(RACINE, process.argv[2] || `dist/${BASE}-canva.pptx`);
+const plan = JSON.parse(fs.readFileSync(path.join(RACINE, `build/${BASE}-plan.json`), 'utf8'));
 
 const liste = execFileSync('unzip', ['-Z1', FICHIER], { encoding: 'utf8' })
   .split('\n').filter((n) => /^ppt\/slides\/slide\d+\.xml$/.test(n));
@@ -28,12 +28,12 @@ dire(liste.length === plan.descripteurs.length,
 
 let prix = 0, perdus = 0;
 catalogue.domaines.forEach((d) => d.tableaux.forEach((t) => t.lignes.forEach((l) => {
-  l.prix_centimes.forEach((c) => { prix += 1; if (!tout.includes(euros(c))) perdus += 1; });
+  l.prix_centimes.forEach((c) => { if (c == null) return; prix += 1; if (!tout.includes(euros(c))) perdus += 1; });
 })));
 dire(perdus === 0, `${prix} prix du JSON retrouvés dans le texte des diapositives`);
 
 const absents = catalogue.domaines.filter((d) => !tout.includes(d.nom));
-dire(absents.length === 0, `les 40 domaines sont nommés${
+dire(absents.length === 0, `les ${catalogue.domaines.length} domaines sont nommés${
   absents.length ? ` (manquent : ${absents.map((d) => d.numero).join(', ')})` : ''}`);
 
 const AG = catalogue.agence;
@@ -69,7 +69,8 @@ plan.descripteurs.forEach((desc, i) => {
     }
   });
 });
-dire(fautes.length === 0, `40 fiches : ${posees} images posées, ${80 - posees} emplacement${80 - posees > 1 ? "s" : ""} réservé${80 - posees > 1 ? "s" : ""}, ni doublon ni trou${
+const places = 2 * catalogue.domaines.length;
+dire(fautes.length === 0, `${catalogue.domaines.length} fiches : ${posees} images posées, ${places - posees} emplacement${places - posees > 1 ? "s" : ""} réservé${places - posees > 1 ? "s" : ""}, ni doublon ni trou${
   fautes.length ? ` (${fautes.join(' ; ')})` : ''}`);
 
 // Les systèmes reconnaissent un PowerPoint en lisant le premier élément de l'archive :

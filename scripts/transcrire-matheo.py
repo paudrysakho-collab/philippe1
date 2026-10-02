@@ -15,6 +15,8 @@ Règle d'affichage, notée dans JOURNAL.md :
   source des faits ; tout désaccord avec la liste est noté dans `ecarts` et dans QUESTIONS.md ;
 - un vin absent du tarif, ou qu'on ne peut rapprocher d'une seule ligne, s'affiche tel que
   la liste l'écrit (corrections de forme seulement), avec `tarif: null`, et va dans QUESTIONS.md ;
+  ce qui le distingue d'un voisin (« Brut Blanc », « Rosé »…) reste dans son nom, puisque le
+  tableau ne montre la couleur que par un picto ;
 - un doublon de la liste n'est affiché qu'une fois (`doublons_matheo`).
 
 Le script écrit `carte_matheo`, `vins` et `doublons_matheo` dans data/salon-prive-2026.json.
@@ -156,20 +158,20 @@ STANDS = {
   ("Nature Sec - AOC Champagne", T(37, 0, 1, "« Nature Sec » dans la liste, « Nature », blanc extra brut, au tarif")),
   ("Chardonnay Extra-Brut — AOC Champagne", T(37, 0, 0)),
   ("Supernova Extra-Brut Zero Dosage— AOC Champagne",
-   L(37, appellation="AOC Champagne", cuvee="Supernova", couleur="Extra-brut, zéro dosage")),
+   L(37, appellation="AOC Champagne", cuvee="Supernova Extra-Brut Zéro Dosage", couleur="Extra-brut, zéro dosage")),
  ]),
  12: dict(page=11, colonne="pleine page (deux colonnes de liste)", nom="12 — Domaine Trichon", vins=[
   ("Mas de Lusanne Brut Blanc— AOC Bugey",
-   L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne", couleur="Blanc brut")),
+   L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne Brut Blanc", couleur="Blanc brut")),
   ("Mas de Lusanne Extra-Brut Blanc — AOC Bugey",
-   L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne", couleur="Blanc extra-brut")),
+   L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne Extra-Brut Blanc", couleur="Blanc extra-brut")),
   ("Mas de Lusanne Mondeuse 2023— AOC Bugey",
    L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne Mondeuse", millesime="2023")),
   ("Mas de Lusanne Pinot Noir 2023 — AOC Bugey",
    L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne Pinot Noir", millesime="2023")),
   ("Mas de Lusanne  2024 — AOC Côtes Du Rhône", T(21, 0, 0, "« Mas de Lusanne » dans la liste, sans couleur ; au tarif, le seul Côtes du Rhône est un rouge")),
   ("Mas de Lusanne Pétillant de Jus de Raisin 0 %",
-   L(21, cuvee="Mas de Lusanne", couleur="Pétillant de jus de raisin, 0 %", famille="jus")),
+   L(21, cuvee="Mas de Lusanne Pétillant de Jus de Raisin 0 %", couleur="Pétillant de jus de raisin, 0 %", famille="jus")),
   ("Mas de Lusanne Gamay— AOC Bugey",
    L(21, appellation="AOC Bugey", cuvee="Mas de Lusanne Gamay")),
   ("Mas de Lusanne Chardonnay 2020 — AOC Bugey",
@@ -201,11 +203,12 @@ STANDS = {
   ("Cuvée Camille Extra-Brut Blanc de Blancs — Grand Cru Chouilly", T(40, 0, 0, "« Extra-Brut Blanc de Blancs » dans la liste, « Blanc brut » au tarif")),
   ("Brut Réserve Blanc de Blancs— Grand Cru Chouilly", T(40, 0, 1)),
   ("Rosé Brut — Grand Cru Chouilly",
-   L(40, appellation="Grand Cru Chouilly", couleur="Rosé brut")),
+   L(40, appellation="Grand Cru Chouilly", cuvee="Rosé Brut", couleur="Rosé brut")),
   ("Spécial Club 2017 Blanc de Blancs Extra-Brut — Grand Cru Chouilly", T(40, 0, 3)),
   ("Extra Brut — Grand Cru Chouilly", T(40, 0, 2)),
   ("82/17 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly",
-   L(40, appellation="Grand Cru Chouilly", cuvee="82/17", couleur="Blanc de Blancs, zéro dosage")),
+   # « Zéro Dosage » ne se dit que d'un vin effervescent : picto bulles
+   L(40, appellation="Grand Cru Chouilly", cuvee="82/17 Blanc de Blancs Zéro Dosage", couleur="Blanc de Blancs, zéro dosage", famille="bulles")),
  ]),
  16: dict(page=14, colonne="pleine page", nom="16 — Château Pré la Lande", vins=[
   ("Cuvée Diane Rouge 2016 — AOC Sainte-Foy Côtes de Bordeaux", T(28, 0, 0)),
@@ -314,9 +317,9 @@ STANDS = {
    L(12, appellation="AOC Pouilly-Vinzelles", couleur="Blanc", millesime="2023")),
   ("AOC Auxey Duresses 2023", T(12, 0, 14)),
   ("Baron Auguste Blanc — AOC Crément de Bourgogne",
-   L(12, appellation="AOC Crémant de Bourgogne", cuvee="Baron Auguste", couleur="Blanc")),
+   L(12, appellation="AOC Crémant de Bourgogne", cuvee="Baron Auguste Blanc", couleur="Blanc")),
   ("Baron Auguste Rosé— AOC Crément de Bourgogne",
-   L(12, appellation="AOC Crémant de Bourgogne", cuvee="Baron Auguste", couleur="Rosé")),
+   L(12, appellation="AOC Crémant de Bourgogne", cuvee="Baron Auguste Rosé", couleur="Rosé")),
   ("Domaine les Guignottes Rouge 2023  — AOC Bourgogne Pinot Noir", T(14, 0, 2)),
   ("AOC Chassagne Montrachet Rouge 2023", T(12, 0, 12)),
   ("Aux Allots Rouge 2023 — AOC Nuits Saint Georges",

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 import {
-  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe,
+  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe, EDITION, BASE,
 } from '../src/gabarits/pieces.mjs';
 import * as G from '../src/gabarits/pages.mjs';
 
@@ -70,7 +70,7 @@ let tableauHtmlImport;
 }
 
 async function mesurer(navigateur) {
-  const fichier = path.join(BUILD, 'mesure.html');
+  const fichier = path.join(BUILD, `${BASE}-mesure.html`);
   fs.writeFileSync(fichier, documentMesure());
   const p = await navigateur.newPage();
   await p.goto(pathToFileURL(fichier).href, { waitUntil: 'networkidle' });
@@ -90,7 +90,7 @@ async function mesurer(navigateur) {
   const m = { blocs: {}, lignes: {} };
   for (const [k, v] of Object.entries(brut.blocs)) m.blocs[k] = mm(v);
   for (const [k, v] of Object.entries(brut.lignes)) m.lignes[k] = mm(v);
-  fs.writeFileSync(path.join(BUILD, 'mesures.json'), JSON.stringify(m, null, 1));
+  fs.writeFileSync(path.join(BUILD, `${BASE}-mesures.json`), JSON.stringify(m, null, 1));
   return m;
 }
 
@@ -202,7 +202,8 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
 
 /* ———————————————————————————————————————————— 3. le plan ——— */
 
-const AVANT = 3;   // couverture, agence, sommaire
+const SALON = EDITION === 'salon';
+const AVANT = SALON ? 4 : 3;   // couverture, agence, sommaire (et le plan, au salon)
 
 function plan(m) {
   // Premier passage : on compte les pages de chaque domaine pour connaître les folios.
@@ -230,6 +231,7 @@ function construirePages(m) {
     G.pageAgence(),
     ...G.sommaire(parDomaine),
   ];
+  if (SALON) { pages.push(G.planSalon(parDomaine)); descripteurs.push({ type: 'plan' }); }
   for (const region of REGIONS) {
     pages.push(G.ouvertureRegion(region, parDomaine));
     descripteurs.push({ type: 'ouverture', region });
@@ -249,8 +251,8 @@ function construirePages(m) {
   const blocsIdx = G.blocsIndex(entrees, parPage, poidsTitre);
   pages.push(...pagesIdx);
   blocsIdx.forEach((b, i) => descripteurs.push({ type: 'index-vins', premiere: i === 0, blocs: b }));
-  pages.push(G.produitsAPart(parDomaine));
-  descripteurs.push({ type: 'produits' });
+  // Au salon, les produits à part se comptent sur les doigts d'une main : pas de page pour eux.
+  if (!SALON) { pages.push(G.produitsAPart(parDomaine)); descripteurs.push({ type: 'produits' }); }
   pages.push(G.indexDomaines(parDomaine));
   descripteurs.push({ type: 'index-domaines' });
 
@@ -292,16 +294,16 @@ const { pages, parDomaine, descripteurs } = construirePages(m);
 console.log(`· ${pages.length} pages (multiple de 4 : ${pages.length % 4 === 0 ? 'oui' : 'NON'})`);
 console.log('· rendu écran…');
 await rendre(navigateur, G.document({ pages, ecran: true }),
-  path.join(DIST, 'catalogue-scio-2026-ecran.pdf'), { ecran: true });
+  path.join(DIST, `${BASE}-ecran.pdf`), { ecran: true });
 console.log('· rendu imprimeur…');
 await rendre(navigateur, G.document({ pages, ecran: false }),
-  path.join(DIST, 'catalogue-scio-2026-imprimeur.pdf'), { ecran: false });
+  path.join(DIST, `${BASE}-imprimeur.pdf`), { ecran: false });
 await navigateur.close();
 
-fs.writeFileSync(path.join(BUILD, 'plan.json'), JSON.stringify({
+fs.writeFileSync(path.join(BUILD, `${BASE}-plan.json`), JSON.stringify({
   pages: pages.length,
   domaines: Object.fromEntries(parDomaine),
   descripteurs,
 }, null, 1));
-console.log('✓ dist/catalogue-scio-2026-ecran.pdf');
-console.log('✓ dist/catalogue-scio-2026-imprimeur.pdf');
+console.log(`✓ dist/${BASE}-ecran.pdf`);
+console.log(`✓ dist/${BASE}-imprimeur.pdf`);
