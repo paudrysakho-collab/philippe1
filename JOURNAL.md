@@ -746,3 +746,24 @@ l'ordre :
 → **52 pages**, sans page de remplissage. Le .pptx suit : la bande vient du descripteur
 (`desc.bande`), les marges des cellules et l'interligne sont serrés comme dans le PDF, et le
 pied est recalé sur le nouveau pied du PDF. Lettrines du .pptx réglées de nouveau.
+
+## 2 octobre 2026 — les bouteilles retouchées par l'agence (Gemini)
+
+L'agence a refait neuf bouteilles avec Gemini, sur un fond propre, et les a déposées dans
+son Drive (« les photos gemini / photo gemini ») : Barbinière, Colombier, Magnien, Verchères,
+Pousterle, Trichon, Stratéus, Exea, Gragnos. Elles remplacent les bouteilles de ces neuf
+fiches. Le dossier ne contenait pas de Moulin Blanc (la dixième image était la Verchères
+exportée de notre .pptx, plus petite) : sa bouteille reste celle du matin.
+
+- Téléchargées par le connecteur Drive (le contenu arrive en base64 dans un fichier, décodé
+  dans `src/photos/brut/gemini/`, renommé `dNN-domaine-cuvée.jpg`). L'identifiant Drive de
+  chaque image est dans `page` de `data/photos-locales.json`.
+- `--seulement` refaisait aussi les ronds : trois originaux de ronds (n°3, 10, 19) ne sont
+  pas dans ce conteneur et ces ronds tombaient. Option `--role bouteille` ajoutée.
+- Détourage au modèle pour huit ; Exea au remplissage depuis les bords (fond blanc uni ; le
+  modèle laissait le centre de la bouteille incertain). Stratéus : le modèle prenait les
+  plages blanches de l'étiquette pour du fond. Option `remplir` : l'intérieur de la
+  silhouette est rendu opaque et le profil ne se creuse pas (une rangée plus étroite que ses
+  voisines du dessus et du dessous reprend leur largeur).
+- Vérifié sur le fond du catalogue et sur un fond magenta (qui montre la moindre bavure),
+  puis dans les fiches. Toutes au-dessus de 780 ppi.

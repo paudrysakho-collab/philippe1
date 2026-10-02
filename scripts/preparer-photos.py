@@ -18,6 +18,9 @@ l'agence : ce script ne devine rien, il applique cette table et rien d'autre.
     python3 scripts/preparer-photos.py --seulement 18 prépare les seules images du n°18, sans
                                                       toucher aux autres (quand les originaux des
                                                       autres ne sont pas dans brut/)
+    python3 scripts/preparer-photos.py --seulement 2 3 --role bouteille
+                                                      ne refait que les bouteilles des n°2 et 3 :
+                                                      leurs ronds restent tels quels
 
 Sorties : src/photos/rond/dNN.jpg (pour le PDF, cerclé par la feuille de style),
 src/photos/rond/dNN-cercle.png (le même, déjà masqué en cercle, pour le .pptx),
@@ -389,7 +392,7 @@ def rond_logo(im, forme=None, fond=None):
 
 # ——————————————————————————————————————————————————————— la bouteille ———
 
-def detourer_au_modele(im):
+def detourer_au_modele(im, remplir=False):
     """Une bouteille posée devant un décor (une caisse, un mur) ne se détoure pas par
     remplissage depuis les bords. 'detourage': 'modele' la confie à un modèle de
     segmentation (rembg, modèle isnet-general-use, à installer : pip install rembg
@@ -434,13 +437,26 @@ def detourer_au_modele(im):
     for y in range(large - 1, -1, -1):
         if demis[y] > demis[y + 1] >= 0:
             demis[y] = demis[y + 1]
+    if remplir:
+        # ni ne se creuse : une rangée plus étroite que ses voisines du dessus ET du dessous
+        # (une plage blanche de l'étiquette qui touche le bord) reprend leur largeur
+        k = max(3, h // 25)
+        demis = [max(d, min(max(demis[max(0, y - k):y] or [-1]), max(demis[y + 1:y + 1 + k] or [-1])))
+                 for y, d in enumerate(demis)]
     garde = Image.new("L", corps.size, 0)
     d = ImageDraw.Draw(garde)
     for y, demi in enumerate(demis):
         if demi >= 0:
             d.line((round(axe[y] - demi - 2), y, round(axe[y] + demi + 2), y), fill=255)
     corps = ImageChops.multiply(corps, garde).filter(ImageFilter.MaxFilter(5))
-    rgba.putalpha(ImageChops.multiply(alpha, corps))
+    alpha = ImageChops.multiply(alpha, corps)
+    if remplir:
+        # Une étiquette aux larges plages blanches passe pour du fond aux yeux du modèle :
+        # l'intérieur de la silhouette, rangée par rangée, est rendu opaque ; le bord garde
+        # l'adoucissement du modèle ('remplir': true dans data/photos-locales.json).
+        alpha = ImageChops.lighter(alpha, garde.filter(ImageFilter.MinFilter(5))
+                                   .filter(ImageFilter.GaussianBlur(0.8)))
+    rgba.putalpha(alpha)
     return rgba
 
 
@@ -450,7 +466,7 @@ def faire_bouteille(numero, entree):
     l0, h0 = im.size
     im = recadrer(im, entree)
     if entree.get("detourage") == "modele":
-        im = detourer_au_modele(im)
+        im = detourer_au_modele(im, remplir=entree.get("remplir", False))
 
     if a_de_la_transparence(im):
         # déjà détourée : on garde son alpha tel quel
@@ -633,16 +649,17 @@ def obtenir(e):
         chemin.unlink()
 
 
-def preparer(seulement=None):
+def preparer(seulement=None, roles=("rond", "bouteille")):
     table = json.loads(TABLE.read_text(encoding="utf-8")) if TABLE.exists() else {}
     ROND.mkdir(parents=True, exist_ok=True); BOUT.mkdir(parents=True, exist_ok=True)
     if seulement:
         # on ne refait que ces domaines : les autres gardent leurs images et leurs lignes
-        garder = lambda x: x["numero"] not in seulement
+        garder = lambda x: x["numero"] not in seulement or x["role"] not in roles
         anciennes = json.loads((RACINE / "data/photos-preparees.json").read_text(encoding="utf-8"))
         anciennes_e = json.loads((RACINE / "data/photos-ecartees.json").read_text(encoding="utf-8"))
         for n in seulement:
-            for p in list(ROND.glob(f"d{n:02d}*.*")) + list(BOUT.glob(f"d{n:02d}*.*")):
+            for p in ((list(ROND.glob(f"d{n:02d}*.*")) if "rond" in roles else [])
+                      + (list(BOUT.glob(f"d{n:02d}*.*")) if "bouteille" in roles else [])):
                 p.unlink()
         posees, ecartees = [x for x in anciennes if garder(x)], [x for x in anciennes_e if garder(x)]
     else:
@@ -656,7 +673,7 @@ def preparer(seulement=None):
                             key=lambda kv: int(kv[0])):
         for role, faire in (("rond", faire_rond), ("bouteille", faire_bouteille)):
             e = entree.get(role)
-            if not e:
+            if not e or role not in roles:
                 continue
             sources = e.get("diptyque") or [e]
             for s in sources:
@@ -747,6 +764,12 @@ if __name__ == "__main__":
     if "--inventaire" in sys.argv:
         inventaire()
     elif "--seulement" in sys.argv:
-        preparer({int(n) for n in sys.argv[sys.argv.index("--seulement") + 1:]})
+        args = sys.argv[sys.argv.index("--seulement") + 1:]
+        roles = ("rond", "bouteille")
+        if "--role" in args:
+            i = args.index("--role")
+            roles = (args[i + 1],)
+            args = args[:i] + args[i + 2:]
+        preparer({int(n) for n in args}, roles)
     else:
         preparer()

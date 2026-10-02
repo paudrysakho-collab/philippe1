@@ -216,7 +216,8 @@ entrer d'un coup dans les deux PDF et dans le `.pptx`, et un changement de prix 
 4. `npm run photos` prépare les images retenues (traitement unique, rond de 40 mm, bouteille
    détourée dans 24 × 62 mm, 300 ppi visés, jamais agrandies, refus sous 200 ppi), puis
    `npm run build`. `python3 scripts/preparer-photos.py --seulement 18` ne retraite que les
-   images d'un domaine (ou de plusieurs : `--seulement 18 21`) et garde les autres.
+   images d'un domaine (ou de plusieurs : `--seulement 18 21`) et garde les autres ;
+   `--seulement 2 3 --role bouteille` ne refait que les bouteilles, les ronds restent.
 
 Un domaine sans image garde ses deux emplacements pointillés. Les images écartées, et
 pourquoi, sont dans `data/photos-ecartees.json`. `npm run photos` réécrit aussi les tables

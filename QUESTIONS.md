@@ -64,6 +64,8 @@ Le texte parle de « la ferme de **La Voglonière** », le tableau d'une cuvée 
 
 ### 10. « Rouge au lèvres » — n°3 Domaine du Colombier (p.6)
 Nom de cuvée. « aux lèvres » ? C'est un nom propre : **je n'y touche pas sans votre accord.**
+*Indice (2 octobre)* : l'étiquette de la bouteille envoyée par l'agence porte « Rouge **aux**
+lèvres ». Un mot de votre part et je corrige le tableau.
 
 ### 11. Région du Domaine des Pasquiers — n°20 (p.23)
 La fiche est classée en **Rhône** (Côtes du Rhône, Plan de Dieu, Sablet, Gigondas), mais son
@@ -218,6 +220,9 @@ Restent deux points, sans urgence :
   contient sans doute une, mais une pièce jointe de mail ne se lit pas d'ici. *Ce que je
   propose :* déposer ce PDF (ou une photo de bouteille) dans le Drive ; elle entre au
   prochain `npm run photos`.
+- *2 octobre* : les bouteilles des n°2, 3, 10, 15, 19, 21, 22, 32 et 34 sont remplacées par
+  les versions retouchées par l'agence (Gemini, dossier Drive « photo gemini »). Le dossier
+  n'avait pas de Moulin Blanc : sa bouteille reste celle du matin.
 - **n°21 Domaine Trichon : la bouteille posée est une Mondeuse du Bugey**, cuvée du domaine
   absente du tarif (le site ne montre aucun de ses Côtes du Rhône ni Vacqueyras). *Ce que je
   propose :* la garder tant qu'il n'y a pas mieux ; une photo d'un Vacqueyras la remplacerait.

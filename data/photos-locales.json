@@ -22,9 +22,11 @@
  },
  "2": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Domaine_de_la_Barbiniere/Domaine_de_la_Barbiniere_Fiefs_Vendeens_Les_Amphibol_2022_v2.jpg",
+   "fichier": "gemini/d02-barbiniere-les-amphibol.jpg",
    "sujet": "bouteille Les Amphibol",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/11NyixVguoC4V7_EBF8-jybKpM3DJd9PD/view",
+   "detourage": "modele"
   },
   "rond": {
    "fichier": "web/d02-rond.jpg",
@@ -37,9 +39,11 @@
  },
  "3": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Domaine_du_Colombier_JY_Bretaudeau/Domaine_du_Colombier_JY_Bretaudeau_Rouge_aux_levres_Val_de_Loire.jpg",
+   "fichier": "gemini/d03-colombier-rouge-aux-levres.jpg",
    "sujet": "bouteille Rouge au lèvres",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1refNlEOrSEn0jf9dv7HLi3vHUWC_GHii/view",
+   "detourage": "modele"
   },
   "rond": {
    "fichier": "canva/d03-p06-021.png",
@@ -148,9 +152,11 @@
  },
  "10": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Domaine_Sebastien_Magnien/Domaine_Sebastien_Magnien_Bourgogne_Pinot_Noir_2023.png",
+   "fichier": "gemini/d10-magnien-bourgogne-pinot-noir.jpg",
    "sujet": "bouteille Bourgogne Pinot Noir 2023",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1C9aKrdndPZqQ4NCaOPW3BwPVtNhS2L5v/view",
+   "detourage": "modele"
   },
   "rond": {
    "fichier": "canva/d10-p13-088.png",
@@ -253,12 +259,11 @@
    "mode": "couvrir"
   },
   "bouteille": {
-   "fichier": "web/d15-bouteille.jpg",
-   "provenance": "site officiel du domaine",
-   "page": "https://www.domainedesvercheres.com/nos-vins",
-   "url": "https://images.squarespace-cdn.com/content/v1/68b02ccf60982e21017910b9/01e061e8-8638-4911-9403-316f431e4a60/IMG_3517+4+-+copie.jpg",
-   "detourage": "modele",
-   "sujet": "bouteille Mâcon Chardonnay"
+   "fichier": "gemini/d15-vercheres-macon-chardonnay.jpg",
+   "sujet": "bouteille Mâcon Chardonnay",
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1G9ovQ1UcGTfphrhOTY0ydXq3oyBMuC3u/view",
+   "detourage": "modele"
   }
  },
  "16": {
@@ -310,9 +315,11 @@
  },
  "19": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Domaine_de_la_Pousterle/Domaine_de_la_Pousterle_Luberon_Terroir_dAnsouis_Blanc_2021.png",
+   "fichier": "gemini/d19-pousterle-terroir-d-ansouis.jpg",
    "sujet": "bouteille Terroir d'Ansouis blanc 2021",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1A5TNit-S3ksn69SahcXGsueruTiWG5Lz/view",
+   "detourage": "modele"
   },
   "rond": {
    "fichier": "canva/d19-p22-151.png",
@@ -367,18 +374,21 @@
    "sujet": "les deux vignerons, recadrés sur leurs visages"
   },
   "bouteille": {
-   "fichier": "web/d21-bouteille.png",
-   "provenance": "site officiel du domaine",
-   "page": "https://domainetrichon.fr/",
-   "url": "https://domainetrichon.fr/wp-content/uploads/2021/06/Mondeuse_02-removebg-preview.png",
-   "sujet": "bouteille de Mondeuse du Bugey (cuvée du domaine absente du tarif)"
+   "fichier": "gemini/d21-trichon-mondeuse.jpg",
+   "sujet": "bouteille de Mondeuse du Bugey (cuvée du domaine absente du tarif)",
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1Cbuk4xv75cV1DTn5JSkN3FG7ysbQfUJz/view",
+   "detourage": "modele"
   }
  },
  "22": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Strateus/Strateus_Madiran_Strateus_2021.png",
+   "fichier": "gemini/d22-strateus-madiran.jpg",
    "sujet": "bouteille Madiran Strateus",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1IZXM5xB2g5h_O5IKQBhpGSM910K5FLCI/view",
+   "detourage": "modele",
+   "remplir": true
   },
   "rond": {
    "fichier": "d22/005.png",
@@ -559,9 +569,10 @@
  },
  "32": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Famille_dExea/Famille_dExea_Jardin_de_Corbieres_Rouge.png",
+   "fichier": "gemini/d32-exea-jardin-de-corbieres.jpg",
    "sujet": "bouteille Jardins de Corbières rouge",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1aq8BxAZoQLSbZZ16wVapcVIi9R7obsfq/view"
   },
   "rond": {
    "fichier": "web/d32-rond.png",
@@ -591,9 +602,11 @@
  },
  "34": {
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Chateau_de_Gragnos/Chateau_de_Gragnos_Saint-Chinian_Lou_Daro_2022_v2.png",
+   "fichier": "gemini/d34-gragnos-lou-daro.jpg",
    "sujet": "bouteille Lou Daro 2022",
-   "provenance": "dossier de l'agence"
+   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
+   "page": "https://drive.google.com/file/d/1oqpEntrGdZx3l2Si7PUT7jFC8myySEPJ/view",
+   "detourage": "modele"
   },
   "rond": {
    "fichier": "web/d34-rond.jpg",
