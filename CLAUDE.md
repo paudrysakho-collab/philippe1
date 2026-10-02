@@ -1,5 +1,18 @@
 # Catalogue Agence SCIO 2026 : le brief
 
+> **Reprise au 2 octobre 2026.** Le catalogue général est fait : étapes 1 à 6 ci-dessous,
+> 76 pages, PDF et .pptx pour Canva. La suite comprend trois livrables :
+> - les retouches du catalogue général ;
+> - l'édition du **Salon Privé du 5 octobre 2026**, sans prix pour l'instant ;
+> - la liste des vins dégustés par domaine.
+>
+> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous) : la bonne branche, les outils
+> à installer, la chaîne de fabrication, ce qu'on a appris sur Canva, et le détail des trois
+> livrables. Le brief qui suit reste la règle : le tarif est la seule source des faits et des
+> prix.
+
+@docs/reprise.md
+
 Tu es à la fois directeur artistique, éditeur et développeur. Tu crées le nouveau catalogue de vins de l'**Agence SCIO Vins & Spirits** (Rezé) : tarifs cavistes Vendée (85), sélection 2026, 40 domaines répartis dans 10 régions.
 
 Le contenu existe déjà : c'est **notre catalogue**, `sources/tarif-septembre-2026.pdf`. Tu n'en prends **que le contenu textuel** : textes, tableaux de prix, sommaire, mentions. **Son design n'existe pas pour toi** : tu l'ignores complètement. Tout le reste vient de toi : le concept, le titre, la structure, la mise en page, les couleurs, les typos, les illustrations, la voix. On veut un catalogue **original, joyeux, rêveur et imaginatif**, qui reste un outil de travail impeccable pour un caviste.

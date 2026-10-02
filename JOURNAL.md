@@ -539,3 +539,18 @@ Ce dernier écart vient des arrondis de Canva, différents d'un corps à l'autre
 cadratin sous le haut de la boîte à 13 pt, 0,84 à 11 pt), et non du calage. Il ne se
 corrige pas d'un réglage global et ne se voit pas à la lecture (vérifié à 200 dpi).
 LibreOffice : 0,15 mm au plus, blanc de 0,2 mm.
+
+### Passage de relais : le Salon Privé du 5 octobre
+
+L'agence ouvre une nouvelle session pour la suite. Le relais est dans `docs/reprise.md`,
+chargé par `CLAUDE.md`. La suite comprend trois livrables :
+- les retouches du catalogue général : pages 3 et 5 supprimées, sommaire simple, note de
+  prix agrandie et remontée sous le tableau ;
+- l'édition du Salon Privé (26 stands, sans prix pour l'instant) ;
+- la liste des vins dégustés.
+
+Les quatre documents du salon sont dans `sources/salon-prive-2026/`.
+`data/salon-prive-2026.json` rapproche les 26 stands de 31 fiches. Les numéros de stand
+viennent de la liste des domaines et du plan, recoupés avec les cartes du Padlet, numérotées
+de même. Les questions ouvertes sont au point 25 de `QUESTIONS.md` ; Strasser Radziwill
+(« En conversion Bio » au salon, « Bio » au tarif) s'ajoute au point 22.

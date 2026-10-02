@@ -171,6 +171,7 @@ ne se décide pas à ma place.
 | n°38 Champagne Denis Frézier | Bio + HVE | En conversion Bio |
 | n°39 Champagne Solemme | Bio | Bio & Biodynamie |
 | n°40 Vazart-Coquart & Fils | HVE | En conversion Bio |
+| n°16 à 19, les quatre domaines Strasser Radziwill | Bio | En conversion Bio (relevé le 2 octobre, sur la liste et le Padlet du salon) |
 
 Le cas le plus net est **n°4 Domaine des Noëls** : le tarif porte les logos Bio, la liste du
 salon écrit HVE. Les deux ne peuvent pas être vrais en même temps.
@@ -204,3 +205,25 @@ Restent deux points, sans urgence :
 - **n°21 Domaine Trichon : la bouteille posée est une Mondeuse du Bugey**, cuvée du domaine
   absente du tarif (le site ne montre aucun de ses Côtes du Rhône ni Vacqueyras). *Ce que je
   propose :* la garder tant qu'il n'y a pas mieux ; une photo d'un Vacqueyras la remplacerait.
+
+## Le Salon Privé du 5 octobre 2026 — à trancher avant l'édition du salon
+
+Documents déposés le 2 octobre 2026 dans `sources/salon-prive-2026/` : liste des vignerons,
+liste des domaines (numéros de stand), plan des exposants, Padlet des vins à déguster. Les
+26 stands sont rapprochés de 31 fiches dans `data/salon-prive-2026.json`. Les vins dégustés
+viendront du fichier de Mathéo.
+
+### 25. Ce qu'il faut savoir avant de composer l'édition du salon
+
+- **Le prix au salon** : un seul prix par vin (« prix salon »), ou les paliers du domaine
+  comme dans le tarif ? Les prix seront ajoutés plus tard par l'agence : le catalogue du
+  salon sort d'abord avec des cases de prix vides.
+- **Stand 21, Famille d'Exea** : les jus de cépages (fiche n°33) sont-ils présentés, ou
+  seulement les vins (fiche n°32) ? Le Padlet ne liste que des vins.
+- **Stand 17, Jean de Villebois** : Divin No Low (fiche n°7, vins désalcoolisés) est-il sur
+  le stand ? Le Padlet n'en liste aucun.
+- **Stand 26, André Goichot** : le Padlet liste aussi des vins du Château du Cray (n°13) et
+  du Domaine Les Guignottes (n°14). Les trois fiches sont rattachées au stand 26.
+- **Les labels** : le point 22 vaut aussi pour le salon. Tant qu'il n'est pas tranché,
+  l'édition du salon affiche les labels du tarif, comme le catalogue.
+

@@ -1,0 +1,336 @@
+{
+ "_lisez_moi": "Salon Privé Vins & Terroirs du 5 octobre 2026 : les 26 stands rapprochés des fiches du catalogue (numéro du sommaire source, 1 à 40). Établi le 2 octobre 2026 depuis sources/salon-prive-2026/liste-des-domaines.pdf et plan-des-exposants.pdf (numéros de stand). Les vins dégustés n'y sont pas encore : ils viendront du fichier de Mathéo. Les textes et labels du salon ne sont PAS une source de faits : voir QUESTIONS.md, points 22 et 25.",
+ "evenement": {
+  "nom": "Salon Privé Vins & Terroirs",
+  "date": "2026-10-05",
+  "date_texte": "Lundi 5 octobre 2026",
+  "lieu": "Château de la Rairie",
+  "commune": "Pont-Saint-Martin",
+  "organisateur": "Agence SCIO Vins & Spirits",
+  "exposants": 26,
+  "regions": 9
+ },
+ "stands": [
+  {
+   "stand": 1,
+   "nom_salon": "Château Balac",
+   "region": "Bordeaux",
+   "domaines": [
+    29
+   ],
+   "noms_catalogue": [
+    "Château Balac"
+   ]
+  },
+  {
+   "stand": 2,
+   "nom_salon": "Champagne Denis Frézier",
+   "region": "Champagne",
+   "domaines": [
+    38
+   ],
+   "noms_catalogue": [
+    "Champagne Denis Frézier"
+   ]
+  },
+  {
+   "stand": 3,
+   "nom_salon": "Domaine Prieuré Sainte Marie d’Albas",
+   "region": "Languedoc",
+   "domaines": [
+    36
+   ],
+   "noms_catalogue": [
+    "Prieuré Sainte-Marie d’Albas"
+   ]
+  },
+  {
+   "stand": 4,
+   "nom_salon": "Domaine du Colombier",
+   "region": "Loire",
+   "domaines": [
+    3
+   ],
+   "noms_catalogue": [
+    "Domaine du Colombier / J.Y Bretaudeau"
+   ]
+  },
+  {
+   "stand": 5,
+   "nom_salon": "Domaine des Verchères",
+   "region": "Bourgogne",
+   "domaines": [
+    15
+   ],
+   "noms_catalogue": [
+    "Domaine des Verchères"
+   ]
+  },
+  {
+   "stand": 6,
+   "nom_salon": "Domaine Haut Marin",
+   "region": "Sud-Ouest",
+   "domaines": [
+    23
+   ],
+   "noms_catalogue": [
+    "Domaine Haut Marin"
+   ]
+  },
+  {
+   "stand": 7,
+   "nom_salon": "Vignobles Strasser Radziwill",
+   "region": "Rhône",
+   "domaines": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "noms_catalogue": [
+    "Domaine Le Prieuré des Papes",
+    "Domaine de Coyeux",
+    "Domaine du Moulin Blanc",
+    "Domaine de la Pousterle"
+   ]
+  },
+  {
+   "stand": 8,
+   "nom_salon": "Château Falfas",
+   "region": "Bordeaux",
+   "domaines": [
+    27
+   ],
+   "noms_catalogue": [
+    "Château Falfas"
+   ]
+  },
+  {
+   "stand": 9,
+   "nom_salon": "Domaine Boehler",
+   "region": "Alsace",
+   "domaines": [
+    8
+   ],
+   "noms_catalogue": [
+    "Domaine Boehler"
+   ]
+  },
+  {
+   "stand": 10,
+   "nom_salon": "François Reverdy",
+   "region": "Loire",
+   "domaines": [
+    1
+   ],
+   "noms_catalogue": [
+    "François Reverdy"
+   ]
+  },
+  {
+   "stand": 11,
+   "nom_salon": "Champagne Dekeyne",
+   "region": "Champagne",
+   "domaines": [
+    37
+   ],
+   "noms_catalogue": [
+    "Champagne Dekeyne"
+   ]
+  },
+  {
+   "stand": 12,
+   "nom_salon": "Domaine Trichon",
+   "region": "Rhône",
+   "domaines": [
+    21
+   ],
+   "noms_catalogue": [
+    "Domaine Trichon"
+   ]
+  },
+  {
+   "stand": 13,
+   "nom_salon": "Château de Gragnos",
+   "region": "Languedoc",
+   "domaines": [
+    34
+   ],
+   "noms_catalogue": [
+    "Château de Gragnos"
+   ]
+  },
+  {
+   "stand": 14,
+   "nom_salon": "Domaine des Noëls",
+   "region": "Loire",
+   "domaines": [
+    4
+   ],
+   "noms_catalogue": [
+    "Domaine des Noëls"
+   ]
+  },
+  {
+   "stand": 15,
+   "nom_salon": "Champagne Vazart-Coquart",
+   "region": "Champagne",
+   "domaines": [
+    40
+   ],
+   "noms_catalogue": [
+    "Vazart-Coquart & Fils"
+   ]
+  },
+  {
+   "stand": 16,
+   "nom_salon": "Château Pré La Lande",
+   "region": "Bordeaux",
+   "domaines": [
+    28
+   ],
+   "noms_catalogue": [
+    "Château Pré la Lande"
+   ]
+  },
+  {
+   "stand": 17,
+   "nom_salon": "Vignobles Jean de Villebois",
+   "region": "Loire",
+   "domaines": [
+    6
+   ],
+   "noms_catalogue": [
+    "Domaine Jean de Villebois"
+   ]
+  },
+  {
+   "stand": 18,
+   "nom_salon": "Domaine Sébastien Magnien",
+   "region": "Bourgogne",
+   "domaines": [
+    10
+   ],
+   "noms_catalogue": [
+    "Domaine Sébastien Magnien"
+   ]
+  },
+  {
+   "stand": 19,
+   "nom_salon": "Bastide de Blacailloux",
+   "region": "Provence",
+   "domaines": [
+    31
+   ],
+   "noms_catalogue": [
+    "Bastide de Blacailloux"
+   ]
+  },
+  {
+   "stand": 20,
+   "nom_salon": "Domaine Stratéus",
+   "region": "Sud-Ouest",
+   "domaines": [
+    22
+   ],
+   "noms_catalogue": [
+    "Domaine Stratéus"
+   ]
+  },
+  {
+   "stand": 21,
+   "nom_salon": "Famille d’Exea",
+   "region": "Languedoc",
+   "domaines": [
+    32
+   ],
+   "noms_catalogue": [
+    "Famille d’Exea"
+   ]
+  },
+  {
+   "stand": 22,
+   "nom_salon": "Domaine de la Barbinière",
+   "region": "Loire",
+   "domaines": [
+    2
+   ],
+   "noms_catalogue": [
+    "Domaine de la Barbinière"
+   ]
+  },
+  {
+   "stand": 23,
+   "nom_salon": "Champagne Solemme",
+   "region": "Champagne",
+   "domaines": [
+    39
+   ],
+   "noms_catalogue": [
+    "Champagne Solemme"
+   ]
+  },
+  {
+   "stand": 24,
+   "nom_salon": "Château Escarderie",
+   "region": "Bordeaux",
+   "domaines": [
+    30
+   ],
+   "noms_catalogue": [
+    "Château l’Escarderie"
+   ]
+  },
+  {
+   "stand": 25,
+   "nom_salon": "Chai Berteaud Manceau",
+   "region": "Loire",
+   "domaines": [
+    5
+   ],
+   "noms_catalogue": [
+    "Chai Berteaud Manceau"
+   ]
+  },
+  {
+   "stand": 26,
+   "nom_salon": "Maison André Goichot",
+   "region": "Bourgogne",
+   "domaines": [
+    12,
+    13,
+    14
+   ],
+   "noms_catalogue": [
+    "Maison et Domaine André Goichot",
+    "Château du Cray",
+    "Domaine Les Guignottes"
+   ]
+  }
+ ],
+ "a_confirmer": [
+  {
+   "stand": 21,
+   "question": "Les jus de cépages de la Famille d’Exea (fiche n°33) sont-ils présentés au salon ? Le Padlet ne liste que des vins (fiche n°32)."
+  },
+  {
+   "stand": 17,
+   "question": "Divin No Low (fiche n°7, vins désalcoolisés, panachable avec Villebois) est-il sur le stand de Jean de Villebois ? Le Padlet n'en liste aucun."
+  },
+  {
+   "stand": 26,
+   "question": "Le Padlet du stand Goichot liste aussi des vins du Château du Cray (n°13) et du Domaine Les Guignottes (n°14) : les trois fiches sont rattachées au stand 26, à confirmer avec le fichier de Mathéo."
+  }
+ ],
+ "fiches_absentes_du_salon": [
+  7,
+  9,
+  11,
+  20,
+  24,
+  25,
+  26,
+  33,
+  35
+ ]
+}
