@@ -775,3 +775,20 @@ pied entier, verre opaque. Barbinière a en plus un bouchon blanc sur fond blanc
 dégradé : le remplissage mangeait le bouchon, le modèle le pied. Nouveau mode
 `"detourage": "modele+bords"` : l'union des deux silhouettes, avec `remplir`. Vérifié sur
 fond magenta et dans les deux éditions.
+
+## 2 octobre 2026, soir — « le nouveau fichier de Mathéo » : rien de nouveau
+
+L'agence a renvoyé deux fois le dossier de Mathéo, « avec les derniers changements » :
+`mateo_le_dossier_r_ference_compressed.pdf`, puis
+`ma-sandbox-magnifique_board_…_2_3_compressed.pdf` (et l'original non compressé `…_2_2`).
+Les trois sont **la même exportation du Padlet** (créée le 2 octobre à 15 h 44 UTC, comme le
+dossier appliqué à 16 h 14), seulement recompressée :
+- au pixel près, à 150 et 300 dpi, la version `_2_3` est identique au dossier appliqué
+  (écart maximal 0) ; les autres ne diffèrent que par le bruit de compression ;
+- relecture OCR (Tesseract, français) des 20 pages : chaque vin des 26 stands retrouvé, aucune
+  puce du dossier sans vin ; les millésimes et les dates douteuses à l'OCR (Falfas Chevalier
+  2019, Vazart-Coquart 1954, Balac 1964) vérifiés à l'image : la transcription est juste
+  (l'écriture du Padlet fait lire un 9 comme un 4).
+Les « petites différences » dont parle Mathéo sont celles entre le Padlet du matin et ce
+dossier : 19 stands, textes et labels, déjà appliquées (QUESTIONS, points 26 et 30). S'il a
+retouché le Padlet après 15 h 44, il faut une nouvelle exportation.
