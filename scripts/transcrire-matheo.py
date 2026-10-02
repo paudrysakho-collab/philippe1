@@ -335,6 +335,33 @@ STANDS = {
  ]),
 }
 
+# Les couleurs que ni la liste ni le tarif ne donnaient, données par l'agence (2 octobre 2026),
+# vin par vin : (stand, ligne de la liste) → couleur. Elles passent avant celle du tarif, qui
+# n'en avait pas (Champagne Denis Frézier).
+COULEURS_AGENCE = {
+    (1, "Château Balac — AOC Cru Bourgeois Haut Médoc"): "Rouge",
+    (2, "Trois Crus Brut — AOC Champagne"): "Blanc effervescent",
+    (2, "Le Terroir Blanc Blanc de Blanc Brut — AOC Champagne"): "Blanc effervescent",
+    (2, "le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne"): "Blanc effervescent",
+    (2, "Brut Nature — AOC Champagne"): "Blanc effervescent",
+    (2, "Millésime Expression 2018 — AOC Champagne"): "Blanc effervescent",
+    (4, "L'envol 2023 — AOC Muscadet Sèvre et Maine"): "Blanc",
+    (5, "AOC Bourgognes Passe-Tout-Grain 2025"): "Rouge",
+    (5, "Les Bulles du Puits"): "Rosé effervescent",
+    (7, "Premières Fleurs 2025 — IGP Méditérranée"): "Blanc",
+    (7, "Or des Dentelles 2023 — AOC Muscat BDV"): "Blanc moelleux",
+    (7, "Or des Dentelles 2022 — AOC Muscat BDV"): "Blanc moelleux",
+    (10, "La Grange Jaumain 2024 - Grolleau Noir"): "Rouge",
+    (12, "Mas de Lusanne Mondeuse 2023— AOC Bugey"): "Rouge",
+    (12, "Mas de Lusanne Pinot Noir 2023 — AOC Bugey"): "Rouge",
+    (12, "Mas de Lusanne Gamay— AOC Bugey"): "Rouge",
+    (12, "Mas de Lusanne Chardonnay 2020 — AOC Bugey"): "Blanc",
+    (13, "Juliette 2025 — AOC Saint-Chinian"): "Blanc",
+    (17, "Vignes de Tréleau 2023 — AOC Pouilly-Fumé"): "Blanc",
+    (24, "Château Lafargue 2020 — AOC Fronsac"): "Rouge",
+    (25, "L'Eberluant Chardonnay 2025 — IGP Val de Loire"): "Blanc pétillant",
+}
+
 ANNEE = re.compile(r"(19|20)\d{2}")
 
 
@@ -401,6 +428,11 @@ def main():
                     v["famille"] = c["famille"]
                 tarif = None
                 ecarts.insert(0, "absent du tarif de septembre : affiché tel que la liste l'écrit")
+            couleur = COULEURS_AGENCE.pop((s["stand"], brut), None)
+            if couleur:
+                assert not v.get("couleur"), f"stand {s['stand']} : « {brut} » avait déjà une couleur"
+                v["couleur"] = couleur
+                v["couleur_provenance"] = "l'agence, 2 octobre 2026"
             vins.append({"liste": brut, **({"rubrique": rubrique} if rubrique else {}),
                          "fiche": r["fiche"], "tarif": tarif, **v,
                          "ecarts": ecarts, "prix_centimes": anciens.get((s["stand"], brut))})
@@ -408,6 +440,7 @@ def main():
         s["vins"] = vins
         s["doublons_matheo"] = doublons
 
+    assert not COULEURS_AGENCE, f"couleurs de l'agence sans vin : {list(COULEURS_AGENCE)}"
     salon["_vins"] = ("Vins dégustés : transcription du fichier de Mathéo (= padlet-vins-a-deguster.pdf), "
                       "cartes de stand seulement, rapprochée du tarif par scripts/transcrire-matheo.py. "
                       "`tarif` pointe la ligne de data/fiches/NN.json ; null = absent du tarif. "

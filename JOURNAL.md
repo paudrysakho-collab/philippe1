@@ -694,3 +694,11 @@ des exposants »). La page, son schéma, sa diapositive, sa déco et la position
 `data/salon-prive-2026.json` sont supprimés ; le numéro de stand et la salle restent sur
 chaque fiche, pour se repérer sur le plan de l'agence. Le salon garde 52 pages : la
 pagination complète seule avec deux pages « Vos notes » au lieu d'une.
+
+**Les 21 couleurs manquantes.** L'agence les a données vin par vin. Elles vivent dans
+`COULEURS_AGENCE` de `transcrire-matheo.py` (repérées par stand et ligne de la liste, pour
+qu'une couleur ne se pose jamais sur le mauvais vin ; le script refuse une couleur sans vin ou
+un vin qui en avait déjà une). « Effervescent » rejoint « pétillant » et « brut » parmi les
+mots qui donnent le picto bulles. Les nouvelles couleurs, plus longues, faisaient passer la
+liste des vins à 4 pages : l'en-tête et les interlignes ont été resserrés d'un rien, retour à
+3 pages. Le tableur des couleurs manquantes, désormais vide, est retiré.

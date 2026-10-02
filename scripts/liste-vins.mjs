@@ -20,7 +20,7 @@ const PAGE = CATALOGUE ? { l: 210, h: 260 } : { l: 210, h: 297 };
 const MARGE = { haut: 13, bas: 14, cote: 13 };
 const ECART_COL = 8;
 const COL = (PAGE.l - 2 * MARGE.cote - ECART_COL) / 2;
-const ENTETE_P1 = 38;          // le bandeau de titre de la première page, en mm
+const ENTETE_P1 = 34;          // le bandeau de titre de la première page, en mm
 const SORTIE = path.join(RACINE, `dist/salon-prive-2026-liste-des-vins${CATALOGUE ? '-format-catalogue' : ''}.pdf`);
 const EV = SALON.evenement;
 const parNumero = Object.fromEntries(catalogue.domaines.map((d) => [d.numero, d]));
@@ -71,7 +71,7 @@ body { margin: 0; background: var(--craie); }
 .lv-entete p b { font-family: var(--titre); font-weight: 400; color: var(--silex); font-size: 11pt; }
 .lv-entete img { width: 46mm; margin-top: 1mm; }
 .lv-col { position: absolute; width: ${COL}mm; }
-.lv-stand { break-inside: avoid; margin-bottom: 3.4mm; }
+.lv-stand { break-inside: avoid; margin-bottom: 2.8mm; }
 .lv-stand header { display: flex; align-items: center; gap: 2.2mm; padding-bottom: 1mm;
   border-bottom: .6pt solid var(--silex); margin-bottom: .6mm; }
 .lv-n { flex: none; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: var(--strate);
@@ -82,7 +82,7 @@ body { margin: 0; background: var(--craie); }
 .lv-reg { font: 500 7.5pt var(--technique); color: var(--gneiss); white-space: nowrap; }
 .lv-sous { font: 600 7.6pt var(--technique); color: var(--violet); margin: 1.4mm 0 .2mm 6mm; }
 .lv-vin { display: grid; grid-template-columns: 4.2mm 1fr 20mm 10mm; column-gap: 1.2mm;
-  align-items: baseline; padding: .45mm 0; border-bottom: .25pt solid rgba(70,96,110,.2);
+  align-items: baseline; padding: .32mm 0; border-bottom: .25pt solid rgba(70,96,110,.2);
   font-family: var(--technique); font-variant-numeric: tabular-nums; }
 .lv-picto { align-self: center; }
 .lv-picto .picto { width: 2.9mm; height: 2.9mm; display: block; }
@@ -139,7 +139,9 @@ colonnes.push(courante);
 const pages = [];
 for (let i = 0; i < colonnes.length; i += 2) pages.push([colonnes[i], colonnes[i + 1] || []]);
 
-const legende = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'jus', 'autre'].map((f) =>
+// la légende ne montre que les familles présentes dans la liste
+const presentes = new Set(SALON.stands.flatMap((s) => s.vins.map((v) => famille(v, {}))));
+const legende = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'jus', 'autre'].filter((f) => presentes.has(f)).map((f) =>
   `<span>${picto(f)} ${esc(f === 'autre' ? 'Non précisé' : NOM_FAMILLE[f])}</span>`).join('');
 const corps = pages.map(([g, d], i) => {
   const haut = MARGE.haut + (i === 0 ? ENTETE_P1 : 0);

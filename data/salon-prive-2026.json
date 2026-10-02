@@ -44,9 +44,10 @@
      "tarif": null,
      "appellation": "AOC Cru Bourgeois Haut-Médoc",
      "cuvee": "Château Balac",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": null,
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -132,9 +133,10 @@
      },
      "appellation": "AOP Champagne",
      "cuvee": "Trois Crus Brut",
-     "couleur": null,
+     "couleur": "Blanc effervescent",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "le tarif a aussi une demi-bouteille (37,5 cl) ; la ligne retenue est la 75 cl"
      ],
@@ -149,9 +151,10 @@
      },
      "appellation": "AOP Champagne",
      "cuvee": "Terroir Blanc",
-     "couleur": null,
+     "couleur": "Blanc effervescent",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -164,9 +167,10 @@
      },
      "appellation": "AOP Champagne",
      "cuvee": "Terroir Meunier",
-     "couleur": null,
+     "couleur": "Blanc effervescent",
      "millesime": "—",
      "contenance": "75 cl",
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [],
      "prix_centimes": null
     },
@@ -176,9 +180,10 @@
      "tarif": null,
      "appellation": "AOC Champagne",
      "cuvee": "Brut Nature",
-     "couleur": null,
+     "couleur": "Blanc effervescent",
      "millesime": null,
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -190,9 +195,10 @@
      "tarif": null,
      "appellation": "AOC Champagne",
      "cuvee": "Millésime Expression",
-     "couleur": null,
+     "couleur": "Blanc effervescent",
      "millesime": "2018",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -356,9 +362,10 @@
      "tarif": null,
      "appellation": "AOC Muscadet Sèvre et Maine",
      "cuvee": "L'envol",
-     "couleur": null,
+     "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -520,9 +527,10 @@
      "tarif": null,
      "appellation": "AOC Bourgogne Passe-Tout-Grain",
      "cuvee": null,
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -534,9 +542,10 @@
      "tarif": null,
      "appellation": null,
      "cuvee": "Les Bulles du Puits",
-     "couleur": null,
+     "couleur": "Rosé effervescent",
      "millesime": null,
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -860,9 +869,10 @@
      "tarif": null,
      "appellation": "IGP Méditerranée",
      "cuvee": "Premières Fleurs",
-     "couleur": null,
+     "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "sans couleur dans la liste ; au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée"
@@ -876,9 +886,10 @@
      "tarif": null,
      "appellation": "AOC Muscat BDV",
      "cuvee": "Or des Dentelles",
-     "couleur": null,
+     "couleur": "Blanc moelleux",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -891,9 +902,10 @@
      "tarif": null,
      "appellation": "AOC Muscat BDV",
      "cuvee": "Or des Dentelles",
-     "couleur": null,
+     "couleur": "Blanc moelleux",
      "millesime": "2022",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1304,9 +1316,10 @@
      "tarif": null,
      "appellation": null,
      "cuvee": "La Grange Jaumain – Grolleau Noir",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": "2024",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "le tarif a « François Reverdy – Grolleau Noir » (Vin de France rouge 2024) et « La Grange Jaumain – Les Soudannes » (IGP Val de Loire rouge) ; la liste mêle les deux noms"
@@ -1492,9 +1505,10 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Mondeuse",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1506,9 +1520,10 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Pinot Noir",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1553,9 +1568,10 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Gamay",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": null,
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1567,9 +1583,10 @@
      "tarif": null,
      "appellation": "AOC Bugey",
      "cuvee": "Mas de Lusanne Chardonnay",
-     "couleur": null,
+     "couleur": "Blanc",
      "millesime": "2020",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -1690,9 +1707,10 @@
      "tarif": null,
      "appellation": "AOC Saint-Chinian",
      "cuvee": "Juliette",
-     "couleur": null,
+     "couleur": "Blanc",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2154,9 +2172,10 @@
      "tarif": null,
      "appellation": "AOC Pouilly-Fumé",
      "cuvee": "Vignes de Tréleau",
-     "couleur": null,
+     "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif, le Pouilly-Fumé 2023 nommé est « Les Silex Blancs »"
@@ -3042,9 +3061,10 @@
      "tarif": null,
      "appellation": "AOC Fronsac",
      "cuvee": "Château Lafargue",
-     "couleur": null,
+     "couleur": "Rouge",
      "millesime": "2020",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -3157,9 +3177,10 @@
      "tarif": null,
      "appellation": "IGP Val de Loire",
      "cuvee": "L'Eberluant – Chardonnay",
-     "couleur": null,
+     "couleur": "Blanc pétillant",
      "millesime": "2025",
      "contenance": null,
+     "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],

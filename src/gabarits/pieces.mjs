@@ -327,7 +327,7 @@ export function famille(ligne, tableau) {
   const a = (ligne.appellation || '').toLowerCase();
   if (a.includes('sans alcool')) return 'sansalcool';
   if (a.includes('armagnac') || a.includes('ratafia')) return 'spiritueux';
-  if (c.includes('bulle') || c.includes('pétillant') || c.includes('brut') || c.includes('champagne')
+  if (c.includes('bulle') || c.includes('pétillant') || c.includes('effervescent') || c.includes('brut') || c.includes('champagne')
       || a.includes('champagne') || a.includes('crémant') || a.includes('méthode')) return 'bulles';
   if (c.includes('doux') || c.includes('moelleux') || c.includes('liquoreux') || c.includes('demi-sec')) return 'doux';
   if (c.includes('ros') || c.includes('clairet')) return 'rose';

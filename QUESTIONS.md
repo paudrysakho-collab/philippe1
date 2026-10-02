@@ -402,3 +402,11 @@ Quelques remarques encore :
 - **La bouteille du n°18** (Moulin Blanc, stand 7) manque toujours : son emplacement reste en
   pointillé dans l'édition du salon aussi (point 24).
 
+### 28. Les couleurs qui manquaient au salon — ✅ **données par l'agence le 2 octobre**
+
+Les 21 vins du salon sans couleur (ni la liste de Mathéo ni le tarif ne la donnaient) ont
+reçu la leur de l'agence : rouge, blanc, blanc moelleux, rosé effervescent, blanc pétillant,
+et « blanc effervescent » pour les cinq Champagnes Denis Frézier. Elles sont dans
+`COULEURS_AGENCE` de `scripts/transcrire-matheo.py` et, vin par vin, dans
+`data/salon-prive-2026.json` (`couleur_provenance`). Plus aucun vin du salon sans couleur.
+
