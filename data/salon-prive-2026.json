@@ -13,8 +13,7 @@
    "Salle Blanche": "stands 1 à 6, près de l'accueil",
    "Salle Noire": "stands 7 à 26"
   },
-  "_salles": "Relevé sur le plan des exposants (version 2 du 2 octobre), qui fait foi.",
-  "_plan_xy": "plan_xy de chaque stand : sa place sur le plan des exposants, en pixels d'un rendu à 110 dpi (page de 1287 × 910). Sert au schéma maison du plan."
+  "_salles": "Relevé sur le plan des exposants (version 2 du 2 octobre), qui fait foi."
  },
  "stands": [
   {
@@ -100,11 +99,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    1166,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 2,
@@ -205,11 +200,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    1110,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 3,
@@ -320,11 +311,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    1078,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 4,
@@ -456,11 +443,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    1027,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 5,
@@ -561,11 +544,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    995,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 6,
@@ -702,11 +681,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Blanche",
-   "plan_xy": [
-    928,
-    692
-   ]
+   "salle": "Salle Blanche"
   },
   {
    "stand": 7,
@@ -944,11 +919,7 @@
    "doublons_matheo": [
     "Terroir d'Ansouis Blanc 2021 — AOC Luberon"
    ],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    698,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 8,
@@ -1089,11 +1060,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    620,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 9,
@@ -1232,11 +1199,7 @@
    "doublons_matheo": [
     "Molsce Blanc 2024— AOC Alsace"
    ],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    587,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 10,
@@ -1382,11 +1345,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    517,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 11,
@@ -1475,11 +1434,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    443,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 12,
@@ -1654,11 +1609,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    358,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 13,
@@ -1766,11 +1717,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    280,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 14,
@@ -1905,11 +1852,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    247,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 15,
@@ -2026,11 +1969,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    178,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 16,
@@ -2103,11 +2042,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    105,
-    692
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 17,
@@ -2327,11 +2262,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    105,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 18,
@@ -2459,11 +2390,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    178,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 19,
@@ -2609,11 +2536,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    247,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 20,
@@ -2732,11 +2655,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    280,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 21,
@@ -2840,11 +2759,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    358,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 22,
@@ -2981,11 +2896,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    443,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 23,
@@ -3101,11 +3012,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    517,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 24,
@@ -3175,11 +3082,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    587,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 25,
@@ -3269,11 +3172,7 @@
     "Reflet Gamay 2024 — IGP Val de Loire",
     "L'Eberluant Chardonnay 2025 — IGP Val de Loire"
    ],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    620,
-    572
-   ]
+   "salle": "Salle Noire"
   },
   {
    "stand": 26,
@@ -3485,11 +3384,7 @@
     }
    ],
    "doublons_matheo": [],
-   "salle": "Salle Noire",
-   "plan_xy": [
-    698,
-    572
-   ]
+   "salle": "Salle Noire"
   }
  ],
  "a_confirmer": [

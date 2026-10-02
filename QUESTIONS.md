@@ -395,7 +395,7 @@ Quelques remarques encore :
 - **Le format de la liste des vins** : je la propose en **A4** (3 pages), pour l'imprimer au
   bureau et la poser sur les tables. Si vous la voulez au format du catalogue (210 × 260 mm),
   c'est un réglage (`LISTE_FORMAT=catalogue`).
-- **Les noms de stand** : la page du plan et la liste des vins écrivent les noms du plan des
+- **Les noms de stand** : la liste des vins écrit les noms du plan des
   exposants (« Château Escarderie », « Domaine Prieuré Sainte Marie d'Albas »…), qui fait foi ;
   les fiches gardent les noms du tarif (« Château l'Escarderie »…). Dites-moi si vous voulez
   une seule graphie partout.

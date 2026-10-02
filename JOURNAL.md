@@ -688,3 +688,9 @@ en formes simples, modifiables dans Canva.
 
 **Le plan des exposants reste** : « pas besoin, mais j'aime bien ». Il se retire d'une ligne
 dans `scripts/construire.mjs` si l'agence change d'avis.
+
+**Le plan des exposants, finalement retiré** (l'agence, même jour : « la version sans le plan
+des exposants »). La page, son schéma, sa diapositive, sa déco et la position des stands dans
+`data/salon-prive-2026.json` sont supprimés ; le numéro de stand et la salle restent sur
+chaque fiche, pour se repérer sur le plan de l'agence. Le salon garde 52 pages : la
+pagination complète seule avec deux pages « Vos notes » au lieu d'une.

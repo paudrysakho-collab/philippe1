@@ -11,7 +11,7 @@ import {
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, colonnesSommaire, SOMMAIRE, texteNotePrix, SALON_ED, ED, NB_VINS,
-  numero as numeroAffiche, PLAN, standsPlan }
+  numero as numeroAffiche }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -858,57 +858,6 @@ function slideFinale(s, numero) {
     color: C.craie });
 }
 
-/** Le plan des exposants (salon) : les salles en image, les stands en vraies formes et vrai texte. */
-function slidePlan(s, numero) {
-  const { gauche } = geo(numero);
-  let y = titreSection(s, numero, 'Le plan des exposants', `${EV.lieu}, ${EV.commune}`);
-  const k = CADRE_L / PLAN.largeur;
-  const hPlan = PLAN.hauteur * k;
-  s.addImage({ path: img('plan-salles'), x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(hPlan) });
-  const pageDuStand = (st) => Math.min(...st.vins.map((v) => pageDe[v.fiche]));
-  standsPlan().forEach((p) => {
-    const clair = p.region === 'Champagne';
-    const r = PLAN.rayon * k;
-    s.addShape(pres.ShapeType.ellipse, { x: mm(gauche + p.x * k - r), y: mm(y + p.y * k - r),
-      w: mm(2 * r), h: mm(2 * r), fill: { color: p.hex.slice(1) },
-      line: { color: clair ? C.silex : p.hex.slice(1), width: 0.6 } });
-    s.addText(String(p.s.stand), { x: mm(gauche + p.x * k - r), y: mm(y + p.y * k - r), w: mm(2 * r),
-      h: mm(2 * r), margin: 0, align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 7.4,
-      bold: true, color: clair ? C.silex : C.craie });
-  });
-  y += hPlan + 3;
-  s.addText("Schéma d'après le plan des exposants de l'agence. Salle Blanche : stands 1 à 6, près de "
-    + "l'accueil. Salle Noire : stands 7 à 26. Chaque pastille a la couleur de sa région.", {
-    x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(9), margin: 0, fontFace: F.courant, fontSize: 9,
-    italic: true, color: C.silex });
-  y += 14;
-  const stands = [...catalogue.salon.stands].sort((a, b) => a.stand - b.stand);
-  const moitie = Math.ceil(stands.length / 2);
-  const lc = (CADRE_L - 8) / 2;
-  stands.forEach((st, i) => {
-    const col = Math.floor(i / moitie), rang = i % moitie;
-    const cx = gauche + col * (lc + 8), cy = y + rang * 6.4;
-    const clair = st.region === 'Champagne';
-    s.addShape(pres.ShapeType.ellipse, { x: mm(cx), y: mm(cy + 0.5), w: mm(5.4), h: mm(5.4),
-      fill: { color: STRATES[st.region].hex.slice(1) },
-      line: { color: clair ? C.silex : STRATES[st.region].hex.slice(1), width: 0.6 } });
-    s.addText(String(st.stand), { x: mm(cx), y: mm(cy + 0.5), w: mm(5.4), h: mm(5.4), margin: 0,
-      align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 7.6, bold: true,
-      color: clair ? C.silex : C.craie });
-    // un nom long réduit son corps plutôt que de passer à la ligne
-    const corpsNom = Math.min(9.5, Math.floor(9.5 * (lc - 35) / largeur(st.nom_salon, 'Spectral', 9.5) * 4) / 4);
-    s.addText(st.nom_salon, { x: mm(cx + 7.8), y: mm(cy), w: mm(lc - 34), h: mm(6.4), margin: 0,
-      valign: 'middle', fontFace: F.courant, fontSize: corpsNom, color: C.encre });
-    s.addText(st.region, { x: mm(cx + lc - 27), y: mm(cy), w: mm(18), h: mm(6.4), margin: 0,
-      align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 7.6, color: C.gneiss });
-    s.addText(String(pageDuStand(st)), { x: mm(cx + lc - 8), y: mm(cy), w: mm(8), h: mm(6.4), margin: 0,
-      align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true, color: C.silex });
-    s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(cy + 6.4), w: mm(lc), h: 0,
-      line: { color: 'C9CFC9', width: 0.3 } });
-  });
-  folio(s, numero);
-}
-
 /* ———————————————————————————————————————— montage ——— */
 
 plan.descripteurs.forEach((desc, i) => {
@@ -919,7 +868,6 @@ plan.descripteurs.forEach((desc, i) => {
     case 'couverture': slideCouverture(s, numero); break;
     case 'agence': slideAgence(s, numero); break;
     case 'sommaire': slideSommaire(s, numero); break;
-    case 'plan': slidePlan(s, numero); break;
     case 'ouverture': slideOuverture(s, numero, desc.region); break;
     case 'fiche': slideFiche(s, numero, desc); break;
     case 'index-vins': slideIndexVins(s, numero, desc); break;

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 import { REGIONS, STRATES, coupe, carotte, defsTrames, PICTOS_LABELS, BASE } from '../src/gabarits/pieces.mjs';
-import { solTeinte, solRegion, sallesSvg, PLAN } from '../src/gabarits/pages.mjs';
+import { solTeinte, solRegion } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 // une déco par édition : au salon, la coupe et les tranches n'ont que neuf régions
@@ -33,10 +33,6 @@ REGIONS.forEach((r) => {
     `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
        ${solTeinte(r, 7)}</div>` });
 });
-
-// Les salles du plan des exposants (édition salon) : les stands sont posés par-dessus en texte.
-blocs.push({ nom: 'plan-salles', l: PLAN.largeur, h: +PLAN.hauteur.toFixed(2), html:
-  `<div style="position:absolute;inset:0">${sallesSvg()}</div>` });
 
 // Les pictos de label, posés dans les jetons des fiches et dans la légende du sommaire.
 Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {

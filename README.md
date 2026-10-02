@@ -147,7 +147,7 @@ mêmes fiches. `EDITION=salon` change trois choses :
   d'après le plan des exposants, qui fait foi), et dans leurs tableaux **seulement les vins
   dégustés** (le fichier de Mathéo) ;
 - **ce qu'on montre** : le numéro du stand et sa salle à la place du numéro du tarif, une
-  couverture et une page de l'agence au nom du salon, un plan des exposants dessiné ;
+  couverture (date et lieu en haut) et une page de l'agence au nom du salon ;
 - **les prix** : vides tant que l'agence ne les a pas donnés.
 
 ```sh

@@ -203,7 +203,7 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
 /* ———————————————————————————————————————————— 3. le plan ——— */
 
 const SALON = EDITION === 'salon';
-const AVANT = SALON ? 4 : 3;   // couverture, agence, sommaire (et le plan, au salon)
+const AVANT = 3;   // couverture, agence, sommaire
 
 function plan(m) {
   // Premier passage : on compte les pages de chaque domaine pour connaître les folios.
@@ -231,7 +231,6 @@ function construirePages(m) {
     G.pageAgence(),
     ...G.sommaire(parDomaine),
   ];
-  if (SALON) { pages.push(G.planSalon(parDomaine)); descripteurs.push({ type: 'plan' }); }
   for (const region of REGIONS) {
     pages.push(G.ouvertureRegion(region, parDomaine));
     descripteurs.push({ type: 'ouverture', region });
