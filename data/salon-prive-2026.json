@@ -1,5 +1,5 @@
 {
- "_lisez_moi": "Salon Privé Vins & Terroirs du 5 octobre 2026 : les 26 stands rapprochés des fiches du catalogue (numéro du sommaire source, 1 à 40). Établi le 2 octobre 2026 depuis sources/salon-prive-2026/liste-des-domaines.pdf et plan-des-exposants.pdf (numéros de stand). Les vins dégustés n'y sont pas encore : ils viendront du fichier de Mathéo. Les textes et labels du salon ne sont PAS une source de faits : voir QUESTIONS.md, points 22 et 25.",
+ "_lisez_moi": "Salon Privé Vins & Terroirs du 5 octobre 2026 : les 26 stands rapprochés des fiches du catalogue (numéro du sommaire source, 1 à 40). Établi le 2 octobre 2026 depuis sources/salon-prive-2026/liste-des-domaines.pdf et plan-des-exposants.pdf (numéros de stand). Les vins dégustés n'y sont pas encore : ils viendront du fichier de Mathéo. Les textes et labels du salon ne sont PAS une source de faits : voir QUESTIONS.md, points 22 et 25. Le plan des exposants fait foi (l'agence, 2 octobre).",
  "evenement": {
   "nom": "Salon Privé Vins & Terroirs",
   "date": "2026-10-05",
@@ -20,7 +20,13 @@
    ],
    "noms_catalogue": [
     "Château Balac"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "29": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 2,
@@ -31,7 +37,11 @@
    ],
    "noms_catalogue": [
     "Champagne Denis Frézier"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "38": []
+   }
   },
   {
    "stand": 3,
@@ -42,7 +52,11 @@
    ],
    "noms_catalogue": [
     "Prieuré Sainte-Marie d’Albas"
-   ]
+   ],
+   "label_liste_salon": "HVE",
+   "labels_affiches": {
+    "36": []
+   }
   },
   {
    "stand": 4,
@@ -53,7 +67,13 @@
    ],
    "noms_catalogue": [
     "Domaine du Colombier / J.Y Bretaudeau"
-   ]
+   ],
+   "label_liste_salon": "HVE",
+   "labels_affiches": {
+    "3": [
+     "HVE"
+    ]
+   }
   },
   {
    "stand": 5,
@@ -64,7 +84,13 @@
    ],
    "noms_catalogue": [
     "Domaine des Verchères"
-   ]
+   ],
+   "label_liste_salon": "HVE",
+   "labels_affiches": {
+    "15": [
+     "HVE"
+    ]
+   }
   },
   {
    "stand": 6,
@@ -75,7 +101,13 @@
    ],
    "noms_catalogue": [
     "Domaine Haut Marin"
-   ]
+   ],
+   "label_liste_salon": "HVE 3",
+   "labels_affiches": {
+    "23": [
+     "HVE"
+    ]
+   }
   },
   {
    "stand": 7,
@@ -92,7 +124,14 @@
     "Domaine de Coyeux",
     "Domaine du Moulin Blanc",
     "Domaine de la Pousterle"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": []
+   }
   },
   {
    "stand": 8,
@@ -103,7 +142,11 @@
    ],
    "noms_catalogue": [
     "Château Falfas"
-   ]
+   ],
+   "label_liste_salon": "Biodynamie",
+   "labels_affiches": {
+    "27": []
+   }
   },
   {
    "stand": 9,
@@ -114,7 +157,13 @@
    ],
    "noms_catalogue": [
     "Domaine Boehler"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "8": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 10,
@@ -125,7 +174,13 @@
    ],
    "noms_catalogue": [
     "François Reverdy"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "1": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 11,
@@ -136,7 +191,11 @@
    ],
    "noms_catalogue": [
     "Champagne Dekeyne"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "37": []
+   }
   },
   {
    "stand": 12,
@@ -147,7 +206,13 @@
    ],
    "noms_catalogue": [
     "Domaine Trichon"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "21": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 13,
@@ -158,7 +223,11 @@
    ],
    "noms_catalogue": [
     "Château de Gragnos"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "34": []
+   }
   },
   {
    "stand": 14,
@@ -169,7 +238,11 @@
    ],
    "noms_catalogue": [
     "Domaine des Noëls"
-   ]
+   ],
+   "label_liste_salon": "HVE",
+   "labels_affiches": {
+    "4": []
+   }
   },
   {
    "stand": 15,
@@ -180,7 +253,11 @@
    ],
    "noms_catalogue": [
     "Vazart-Coquart & Fils"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "40": []
+   }
   },
   {
    "stand": 16,
@@ -191,7 +268,11 @@
    ],
    "noms_catalogue": [
     "Château Pré la Lande"
-   ]
+   ],
+   "label_liste_salon": "Biodynamie",
+   "labels_affiches": {
+    "28": []
+   }
   },
   {
    "stand": 17,
@@ -202,6 +283,13 @@
    ],
    "noms_catalogue": [
     "Domaine Jean de Villebois"
+   ],
+   "label_liste_salon": "ISO 26000",
+   "labels_affiches": {
+    "6": []
+   },
+   "domaines_possibles": [
+    7
    ]
   },
   {
@@ -213,7 +301,11 @@
    ],
    "noms_catalogue": [
     "Domaine Sébastien Magnien"
-   ]
+   ],
+   "label_liste_salon": "Agriculture raisonnée",
+   "labels_affiches": {
+    "10": []
+   }
   },
   {
    "stand": 19,
@@ -224,7 +316,13 @@
    ],
    "noms_catalogue": [
     "Bastide de Blacailloux"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "31": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 20,
@@ -235,7 +333,11 @@
    ],
    "noms_catalogue": [
     "Domaine Stratéus"
-   ]
+   ],
+   "label_liste_salon": "En conversion Bio",
+   "labels_affiches": {
+    "22": []
+   }
   },
   {
    "stand": 21,
@@ -246,7 +348,13 @@
    ],
    "noms_catalogue": [
     "Famille d’Exea"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "32": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 22,
@@ -257,7 +365,13 @@
    ],
    "noms_catalogue": [
     "Domaine de la Barbinière"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "2": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 23,
@@ -268,7 +382,13 @@
    ],
    "noms_catalogue": [
     "Champagne Solemme"
-   ]
+   ],
+   "label_liste_salon": "Bio & Biodynamie",
+   "labels_affiches": {
+    "39": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 24,
@@ -279,7 +399,13 @@
    ],
    "noms_catalogue": [
     "Château l’Escarderie"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "30": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 25,
@@ -290,7 +416,13 @@
    ],
    "noms_catalogue": [
     "Chai Berteaud Manceau"
-   ]
+   ],
+   "label_liste_salon": "Bio",
+   "labels_affiches": {
+    "5": [
+     "Bio"
+    ]
+   }
   },
   {
    "stand": 26,
@@ -305,21 +437,23 @@
     "Maison et Domaine André Goichot",
     "Château du Cray",
     "Domaine Les Guignottes"
-   ]
+   ],
+   "label_liste_salon": "HVE",
+   "labels_affiches": {
+    "12": [],
+    "13": [],
+    "14": []
+   }
   }
  ],
  "a_confirmer": [
   {
-   "stand": 21,
-   "question": "Les jus de cépages de la Famille d’Exea (fiche n°33) sont-ils présentés au salon ? Le Padlet ne liste que des vins (fiche n°32)."
-  },
-  {
    "stand": 17,
-   "question": "Divin No Low (fiche n°7, vins désalcoolisés, panachable avec Villebois) est-il sur le stand de Jean de Villebois ? Le Padlet n'en liste aucun."
+   "question": "Divin No Low (fiche n°7) : à inclure si le fichier de Mathéo en liste des vins."
   },
   {
-   "stand": 26,
-   "question": "Le Padlet du stand Goichot liste aussi des vins du Château du Cray (n°13) et du Domaine Les Guignottes (n°14) : les trois fiches sont rattachées au stand 26, à confirmer avec le fichier de Mathéo."
+   "stand": null,
+   "question": "Prix : un seul prix par vin, ou les paliers du domaine. Les deux doivent marcher."
   }
  ],
  "fiches_absentes_du_salon": [
@@ -332,5 +466,14 @@
   26,
   33,
   35
- ]
+ ],
+ "reponses_agence": {
+  "date": "2026-10-02",
+  "plan": "Le plan des exposants fait foi : si le plan le dit, c'est ainsi. (Version 2 reçue le 2 octobre : identique à la première.)",
+  "prix": "Inconnu : un seul prix par vin ou les paliers du domaine. Le composant doit accepter les deux.",
+  "exea_jus": "Non : pas de jus de cépages au salon (fiche n°33 exclue).",
+  "divin_no_low": "Normalement oui, sur le stand de Jean de Villebois : la fiche n°7 entre si le fichier de Mathéo (la composition des tables) liste des vins Divin No Low.",
+  "goichot_cray_guignottes": "Ce que dit la composition des tables fait foi : le Padlet les met au stand 26, les trois fiches y restent.",
+  "labels": "« Pour le 5, moins on en dit, moins on fait d'erreur. » Un label n'est affiché que si le tarif et la liste du salon disent la même chose (HVE 3 = HVE ; Bio & Biodynamie contient Bio) ; sinon, aucun label : voir labels_affiches."
+ }
 }

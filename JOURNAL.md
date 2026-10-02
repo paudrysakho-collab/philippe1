@@ -554,3 +554,15 @@ Les quatre documents du salon sont dans `sources/salon-prive-2026/`.
 viennent de la liste des domaines et du plan, recoupés avec les cartes du Padlet, numérotées
 de même. Les questions ouvertes sont au point 25 de `QUESTIONS.md` ; Strasser Radziwill
 (« En conversion Bio » au salon, « Bio » au tarif) s'ajoute au point 22.
+
+Réponses de l'agence, le 2 octobre :
+- **le plan fait foi** ; sa version 2 est identique à la première ;
+- **prix** : on ne sait pas encore si ce sera un prix unique ou des paliers ;
+- **Exea** : pas de jus de cépages ;
+- **Divin No Low** : « normalement » présent ;
+- **Goichot** : la composition des tables fait foi ;
+- **labels** : « pour le 5, moins on en dit, moins on fait d'erreur ».
+
+Pour les labels, la règle retenue : un label ne s'affiche au salon que si le tarif et la
+liste du salon disent la même chose. Elle est appliquée d'avance, stand par stand, dans
+`data/salon-prive-2026.json` : 13 stands gardent leur label, 13 n'en ont aucun.

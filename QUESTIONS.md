@@ -213,17 +213,20 @@ liste des domaines (numéros de stand), plan des exposants, Padlet des vins à d
 26 stands sont rapprochés de 31 fiches dans `data/salon-prive-2026.json`. Les vins dégustés
 viendront du fichier de Mathéo.
 
-### 25. Ce qu'il faut savoir avant de composer l'édition du salon
+### 25. Ce qu'il faut savoir avant de composer l'édition du salon — **réponses du 2 octobre**
 
-- **Le prix au salon** : un seul prix par vin (« prix salon »), ou les paliers du domaine
-  comme dans le tarif ? Les prix seront ajoutés plus tard par l'agence : le catalogue du
-  salon sort d'abord avec des cases de prix vides.
-- **Stand 21, Famille d'Exea** : les jus de cépages (fiche n°33) sont-ils présentés, ou
-  seulement les vins (fiche n°32) ? Le Padlet ne liste que des vins.
-- **Stand 17, Jean de Villebois** : Divin No Low (fiche n°7, vins désalcoolisés) est-il sur
-  le stand ? Le Padlet n'en liste aucun.
-- **Stand 26, André Goichot** : le Padlet liste aussi des vins du Château du Cray (n°13) et
-  du Domaine Les Guignottes (n°14). Les trois fiches sont rattachées au stand 26.
-- **Les labels** : le point 22 vaut aussi pour le salon. Tant qu'il n'est pas tranché,
-  l'édition du salon affiche les labels du tarif, comme le catalogue.
-
+- **Le plan fait foi** : « si le plan le dit, c'est comme ça ». La version 2 du plan reçue
+  le 2 octobre est identique à la première.
+- **Le prix au salon : on ne sait pas encore** s'il y aura un seul prix par vin ou les
+  paliers du domaine. Le tableau de l'édition du salon doit accepter les deux ; il sort
+  d'abord avec des cases de prix vides.
+- **Stand 21, Famille d'Exea : pas de jus de cépages.** Seulement les vins (fiche n°32).
+- **Stand 17, Jean de Villebois : Divin No Low « normalement » présent.** La fiche n°7 entre
+  si le fichier de Mathéo, qui donne la composition des tables, liste des vins Divin No Low.
+- **Stand 26, André Goichot** : la composition des tables fait foi. Le Château du Cray (n°13)
+  et le Domaine Les Guignottes (n°14) restent sur le stand.
+- **Les labels au salon : « moins on en dit, moins on fait d'erreur ».** Un label n'apparaît
+  que si le tarif et la liste du salon disent la même chose (HVE 3 vaut HVE ; « Bio &
+  Biodynamie » contient Bio). Résultat : 13 stands gardent leur label, les 13 autres n'en
+  affichent aucun (`labels_affiches` dans `data/salon-prive-2026.json`). Le catalogue général
+  reste sur les labels du tarif ; le point 22 reste ouvert pour lui.
