@@ -56,7 +56,9 @@ image : `credits.md`.
    écrite dans le texte n'y gardait que sa couleur. Dans le texte, quelques espaces
    insécables lui gardent sa place. Pour corriger le premier mot dans Canva, corrigez la
    lettre dans sa boîte et la suite dans le texte. Si vous déplacez le texte, sélectionnez
-   les deux boîtes ensemble. Sa taille, et le nombre de lignes qui sert à centrer le bloc,
+   les deux boîtes ensemble. Tant que Young Serif et Spectral ne sont pas téléversées,
+   Canva dessine la lettrine dans une serif plus fine, qui rentre un peu dans la colonne ;
+   une fois les polices téléversées, elle tombe au ras, comme dans le PDF. Sa taille, et le nombre de lignes qui sert à centrer le bloc,
    sont réglés domaine par domaine dans `src/gabarits/lettrines-pptx.json` par
    `python3 scripts/regler-lettrines.py`. Ce script rend le .pptx, compte les lignes, vérifie
    que la lettrine est sur la ligne de base de la première ligne, et réduit la lettrine

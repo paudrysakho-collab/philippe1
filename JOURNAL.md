@@ -529,3 +529,13 @@ Avec les vraies polices (LibreOffice, ou Canva une fois Young Serif et Spectral
 téléversées), la lettre est au ras de la colonne et le blanc fait 0,25 mm. Avec les
 polices de remplacement de Canva, la lettre reste collée à son mot ; c'est son bord
 gauche qui rentre un peu.
+
+Contrôle final dans Canva (import du fichier poussé, export PDF des 40 fiches, mesuré par
+`essais/mesurer-lettrines.py`) :
+- **blanc avant la suite du mot** : de 0,6 à 1,3 mm, avec les polices de remplacement ;
+- **ligne de base** : de −0,48 à +0,21 mm.
+
+Ce dernier écart vient des arrondis de Canva, différents d'un corps à l'autre (0,90
+cadratin sous le haut de la boîte à 13 pt, 0,84 à 11 pt), et non du calage. Il ne se
+corrige pas d'un réglage global et ne se voit pas à la lecture (vérifié à 200 dpi).
+LibreOffice : 0,15 mm au plus, blanc de 0,2 mm.
