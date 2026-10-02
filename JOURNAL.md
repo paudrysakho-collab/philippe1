@@ -511,3 +511,21 @@ Le texte est désormais ancré en haut, et non plus au milieu de sa bande : c'es
 façon de savoir où tombe la première ligne. Pour garder le bloc centré comme dans le PDF,
 `regler-lettrines.py` compte les lignes de chaque texte dans le rendu LibreOffice et les
 note dans `lettrines-pptx.json`.
+
+**Le calage horizontal.** Premier import des 40 fiches dans Canva : les lettrines tombent
+toutes sur la ligne de base (écart de 0 à 0,2 mm ; 0,47 mm pour la petite lettrine du
+n°16). Mais le blanc entre la lettre et la suite du mot va de 1 à 3 mm (« S  ur »),
+contre 0,2 à 0,6 mm dans LibreOffice. Deux causes, mesurées :
+- les espaces d'Arimo sont plus larges que celles de Spectral (la réserve fait 1 mm de plus) ;
+- TYSerif est plus étroite que Young Serif (le S : 4,4 mm au lieu de 6,0).
+
+Corrigé de trois façons :
+- **Insécables seules.** L'espace fine, encore plus large chez Arimo, est abandonnée.
+- **Corps ajusté.** La lettrine prend le corps exact qui remplit la place réservée, à
+  quelques pour cent de la taille visée (de 11 à 25 pt selon le corps du texte).
+- **Alignement à droite.** La lettrine est alignée à droite dans sa boîte, contre son mot.
+
+Avec les vraies polices (LibreOffice, ou Canva une fois Young Serif et Spectral
+téléversées), la lettre est au ras de la colonne et le blanc fait 0,25 mm. Avec les
+polices de remplacement de Canva, la lettre reste collée à son mot ; c'est son bord
+gauche qui rentre un peu.

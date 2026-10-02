@@ -89,11 +89,11 @@ dire(horsNorme.length === 0, `paragraphes conformes : une seule <a:pPr>, en têt
 
 // La lettrine de chaque présentation de domaine : une boîte de texte à elle, une seule lettre en
 // Young Serif violet (Canva ne garde pas une lettre plus grande au sein d'un paragraphe), et le
-// texte qui reprend à la deuxième lettre, derrière les espaces (insécables, fine) qui lui font place.
+// texte qui reprend à la deuxième lettre, derrière les espaces insécables qui lui font place.
 const echapper = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 const sansLettrine = catalogue.domaines.filter((d) => d.texte_source).filter((d) => {
-  const corps = new RegExp(`<a:t>[\u00a0\u2009]+${echapper(d.texte_source.slice(1, 25))
+  const corps = new RegExp(`<a:t>\u00a0+${echapper(d.texte_source.slice(1, 25))
     .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
   const xml = xmls.find((x) => corps.test(x));
   if (!xml) return true;

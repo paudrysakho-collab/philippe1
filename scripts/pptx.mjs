@@ -59,12 +59,21 @@ const BASE = { lo: { courant: 0.998, titre: 0.999, sus: 1.2 }, canva: { courant:
 const PT = 25.4 / 72;   // un point, en mm
 
 /** Place la lettrine et le texte dans la bande, en mm, depuis le haut de la bande.
-    Deux logiciels, deux façons de poser la première ligne : on cale la lettrine pour Canva,
-    et son interligne à elle (que Canva ignore, et que LibreOffice applique) la recale pour
-    LibreOffice et PowerPoint. Le bloc, de la tête de la lettrine au pied de la dernière ligne,
-    se centre dans la bande comme le texte du PDF. */
-function placerLettrine(texte, corps, interligne, taille, lignes, bande) {
+    Horizontalement : des espaces insécables réservent la place de la lettrine en tête de la
+    première ligne, et la lettrine prend le corps exact qui remplit cette place (à quelques
+    pour cent de la taille visée) ; alignée à droite dans sa boîte, elle reste collée à son
+    mot même quand Canva la remplace par une police plus étroite.
+    Verticalement : deux logiciels, deux façons de poser la première ligne. On cale la
+    lettrine pour Canva, et son interligne à elle (que Canva ignore, et que LibreOffice
+    applique) la recale pour LibreOffice et PowerPoint. Le bloc, de la tête de la lettrine
+    au pied de la dernière ligne, se centre dans la bande comme le texte du PDF. */
+function placerLettrine(texte, corps, interligne, visee, lignes, bande) {
   const { lo, canva } = BASE;
+  const JOINT = 0.25;                                                       // mm avant la 2e lettre
+  const chasse = largeurTexte(texte.slice(0, 1), F.titre, 1);               // mm par point de corps
+  const insecable = largeurTexte('\u00a0', F.courant, corps);
+  const nombre = Math.max(1, Math.round((chasse * visee + JOINT) / insecable));
+  const taille = Math.round((nombre * insecable - JOINT) / chasse * 100) / 100;
   const baseLo = corps * (lo.courant + lo.sus * (interligne - 1));         // pt sous le haut du texte
   const lettre = (corps * canva.courant - taille * canva.titre) * PT;        // haut de la lettrine
   const interligneLettre = 1 + (baseLo - corps * canva.courant - taille * (lo.titre - canva.titre))
@@ -73,14 +82,12 @@ function placerLettrine(texte, corps, interligne, taille, lignes, bande) {
   // première ligne de base, les jambages (0,25) sous la dernière
   const tete = (baseLo - 0.75 * taille) * PT;
   const pied = (baseLo + (lignes - 1) * lo.sus * interligne * corps + 0.25 * corps) * PT;
-  // la place de la lettrine, en huitièmes de cadratin : des insécables (2/8) et au besoin une
-  // espace fine (1/8), pour que le blanc après la lettre reste sous 0,6 mm
-  const largeur = largeurTexte(texte.slice(0, 1), F.titre, taille);
-  const huitiemes = Math.ceil((largeur + 0.15) / largeurTexte('\u2009', F.courant, corps));
+  const largeur = chasse * taille + 1.5;                                    // la boîte, un peu d'aise à gauche
   return {
-    haut: (bande - (pied - tete)) / 2 - tete, lettre, largeur, hauteur: taille * 1.6 * PT,
+    haut: (bande - (pied - tete)) / 2 - tete, lettre, taille, largeur,
+    gauche: nombre * insecable - JOINT - largeur, hauteur: taille * 1.6 * PT,
     interligneLettre: Math.round(interligneLettre * 1000) / 1000,
-    reserve: '\u00a0'.repeat(Math.floor(huitiemes / 2)) + (huitiemes % 2 ? '\u2009' : ''),
+    reserve: '\u00a0'.repeat(nombre),
   };
 }
 
@@ -340,13 +347,14 @@ function slideFiche(s, numero, desc) {
     if (d.texte_source) {
       const reglage = LETTRINES[d.numero] ?? {};
       const interligne = reglage.interligne ?? 1.42;
-      const taille = Math.round(corps * (reglage.lettrine ?? LETTRINE_DEFAUT) * 2) / 2;
       const lignes = reglage.lignes ?? lignesTexte(texte, F.courant, corps, COLONNE_DOM);
-      const p = placerLettrine(texte, corps, interligne, taille, lignes, bande);
+      const p = placerLettrine(texte, corps, interligne, corps * (reglage.lettrine ?? LETTRINE_DEFAUT),
+        lignes, bande);
+      const taille = p.taille;
       const yTexte = y / mm(1) + p.haut;
-      s.addText(texte.slice(0, 1), { x: mm(xt), y: mm(yTexte + p.lettre), w: mm(p.largeur + 1.5),
+      s.addText(texte.slice(0, 1), { x: mm(xt + p.gauche), y: mm(yTexte + p.lettre), w: mm(p.largeur),
         h: mm(p.hauteur), margin: 0, fontFace: F.titre, fontSize: taille, color: C.violet,
-        lineSpacingMultiple: p.interligneLettre, valign: 'top' });
+        lineSpacingMultiple: p.interligneLettre, align: 'right', valign: 'top' });
       s.addText(p.reserve + texte.slice(1), { x: mm(xt), y: mm(yTexte), w: mm(COLONNE_DOM),
         h: mm(bande - p.haut), margin: 0, fontFace: F.courant, fontSize: corps, color: C.silex,
         lineSpacingMultiple: interligne, valign: 'top' });
