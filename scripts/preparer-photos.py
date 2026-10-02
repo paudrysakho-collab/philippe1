@@ -465,8 +465,19 @@ def faire_bouteille(numero, entree):
     im = ouvrir(src)
     l0, h0 = im.size
     im = recadrer(im, entree)
-    if entree.get("detourage") == "modele":
-        im = detourer_au_modele(im, remplir=entree.get("remplir", False))
+    if entree.get("detourage") in ("modele", "modele+bords"):
+        modele = detourer_au_modele(im, remplir=entree.get("remplir", False))
+        if entree["detourage"] == "modele+bords":
+            # Un blanc en verre clair avec un bouchon blanc : le modèle garde le bouchon mais
+            # grignote le pied, le remplissage depuis les bords garde le pied mais mange le
+            # bouchon. On prend l'union des deux silhouettes (calculée sur une copie réduite).
+            f = min(1.0, 1200 / max(im.size))
+            petit = im.convert("RGB").resize((round(im.width * f), round(im.height * f)), Image.LANCZOS)
+            bords, _, _ = detourer(petit, tuple(entree.get("tolerances", (24, 16, 11, 7))))
+            if bords is not None:
+                bords = bords.resize(im.size, Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.8))
+                modele.putalpha(ImageChops.lighter(modele.getchannel("A"), bords))
+        im = modele
 
     if a_de_la_transparence(im):
         # déjà détourée : on garde son alpha tel quel

@@ -767,3 +767,11 @@ exportée de notre .pptx, plus petite) : sa bouteille reste celle du matin.
   voisines du dessus et du dessous reprend leur largeur).
 - Vérifié sur le fond du catalogue et sur un fond magenta (qui montre la moindre bavure),
   puis dans les fiches. Toutes au-dessus de 780 ppi.
+
+**Retour de l'agence : Verchères et Barbinière « trop découpées ».** Deux blancs en verre
+clair : le modèle prenait le verre pour du fond (la bouteille devenait en partie transparente)
+et grignotait le pied. Verchères passe au remplissage depuis les bords (fond blanc uni) :
+pied entier, verre opaque. Barbinière a en plus un bouchon blanc sur fond blanc légèrement
+dégradé : le remplissage mangeait le bouchon, le modèle le pied. Nouveau mode
+`"detourage": "modele+bords"` : l'union des deux silhouettes, avec `remplir`. Vérifié sur
+fond magenta et dans les deux éditions.

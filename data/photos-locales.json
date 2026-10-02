@@ -26,7 +26,8 @@
    "sujet": "bouteille Les Amphibol",
    "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
    "page": "https://drive.google.com/file/d/11NyixVguoC4V7_EBF8-jybKpM3DJd9PD/view",
-   "detourage": "modele"
+   "detourage": "modele+bords",
+   "remplir": true
   },
   "rond": {
    "fichier": "web/d02-rond.jpg",
@@ -262,8 +263,7 @@
    "fichier": "gemini/d15-vercheres-macon-chardonnay.jpg",
    "sujet": "bouteille Mâcon Chardonnay",
    "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
-   "page": "https://drive.google.com/file/d/1G9ovQ1UcGTfphrhOTY0ydXq3oyBMuC3u/view",
-   "detourage": "modele"
+   "page": "https://drive.google.com/file/d/1G9ovQ1UcGTfphrhOTY0ydXq3oyBMuC3u/view"
   }
  },
  "16": {
