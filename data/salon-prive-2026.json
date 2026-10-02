@@ -40,7 +40,9 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "38": []
+    "38": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -55,7 +57,9 @@
    ],
    "label_liste_salon": "HVE",
    "labels_affiches": {
-    "36": []
+    "36": [
+     "HVE"
+    ]
    }
   },
   {
@@ -105,7 +109,7 @@
    "label_liste_salon": "HVE 3",
    "labels_affiches": {
     "23": [
-     "HVE"
+     "HVE 3"
     ]
    }
   },
@@ -127,10 +131,18 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "16": [],
-    "17": [],
-    "18": [],
-    "19": []
+    "16": [
+     "En conversion Bio"
+    ],
+    "17": [
+     "En conversion Bio"
+    ],
+    "18": [
+     "En conversion Bio"
+    ],
+    "19": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -145,7 +157,9 @@
    ],
    "label_liste_salon": "Biodynamie",
    "labels_affiches": {
-    "27": []
+    "27": [
+     "Biodynamie"
+    ]
    }
   },
   {
@@ -194,7 +208,9 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "37": []
+    "37": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -226,7 +242,9 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "34": []
+    "34": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -241,7 +259,9 @@
    ],
    "label_liste_salon": "HVE",
    "labels_affiches": {
-    "4": []
+    "4": [
+     "HVE"
+    ]
    }
   },
   {
@@ -256,7 +276,9 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "40": []
+    "40": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -271,7 +293,9 @@
    ],
    "label_liste_salon": "Biodynamie",
    "labels_affiches": {
-    "28": []
+    "28": [
+     "Biodynamie"
+    ]
    }
   },
   {
@@ -286,11 +310,18 @@
    ],
    "label_liste_salon": "ISO 26000",
    "labels_affiches": {
-    "6": []
+    "6": [
+     "ISO 26000"
+    ]
    },
    "domaines_possibles": [
     7
-   ]
+   ],
+   "labels_affiches_si_present": {
+    "7": [
+     "ISO 26000"
+    ]
+   }
   },
   {
    "stand": 18,
@@ -304,7 +335,9 @@
    ],
    "label_liste_salon": "Agriculture raisonnée",
    "labels_affiches": {
-    "10": []
+    "10": [
+     "Agriculture raisonnée"
+    ]
    }
   },
   {
@@ -336,7 +369,9 @@
    ],
    "label_liste_salon": "En conversion Bio",
    "labels_affiches": {
-    "22": []
+    "22": [
+     "En conversion Bio"
+    ]
    }
   },
   {
@@ -386,7 +421,7 @@
    "label_liste_salon": "Bio & Biodynamie",
    "labels_affiches": {
     "39": [
-     "Bio"
+     "Bio & Biodynamie"
     ]
    }
   },
@@ -440,7 +475,9 @@
    ],
    "label_liste_salon": "HVE",
    "labels_affiches": {
-    "12": [],
+    "12": [
+     "HVE"
+    ],
     "13": [],
     "14": []
    }
@@ -454,6 +491,10 @@
   {
    "stand": null,
    "question": "Prix : un seul prix par vin, ou les paliers du domaine. Les deux doivent marcher."
+  },
+  {
+   "stand": null,
+   "question": "La liste des vignerons fait foi pour les labels du salon. Vaut-elle aussi pour le catalogue général (point 22 de QUESTIONS.md) ? À demander en début de session."
   }
  ],
  "fiches_absentes_du_salon": [
@@ -474,6 +515,6 @@
   "exea_jus": "Non : pas de jus de cépages au salon (fiche n°33 exclue).",
   "divin_no_low": "Normalement oui, sur le stand de Jean de Villebois : la fiche n°7 entre si le fichier de Mathéo (la composition des tables) liste des vins Divin No Low.",
   "goichot_cray_guignottes": "Ce que dit la composition des tables fait foi : le Padlet les met au stand 26, les trois fiches y restent.",
-  "labels": "« Pour le 5, moins on en dit, moins on fait d'erreur. » Un label n'est affiché que si le tarif et la liste du salon disent la même chose (HVE 3 = HVE ; Bio & Biodynamie contient Bio) ; sinon, aucun label : voir labels_affiches."
+  "labels": "Pour les labels, la liste des vignerons du salon (sources/salon-prive-2026/liste-des-vignerons.pdf) fait foi : chaque fiche du salon affiche le label de la notice de son stand (label_liste_salon), tel quel. Chez Goichot (stand 26), la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur n°13 et n°14. Strasser Radziwill (stand 7) : la notice couvre les quatre domaines, « En conversion Bio » sur n°16 à 19. Remplace la règle « seulement si tarif et liste s'accordent » notée plus tôt le 2 octobre."
  }
 }

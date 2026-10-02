@@ -566,3 +566,9 @@ Réponses de l'agence, le 2 octobre :
 Pour les labels, la règle retenue : un label ne s'affiche au salon que si le tarif et la
 liste du salon disent la même chose. Elle est appliquée d'avance, stand par stand, dans
 `data/salon-prive-2026.json` : 13 stands gardent leur label, 13 n'en ont aucun.
+
+Précision de l'agence, le même jour : **pour les labels, la liste des vignerons fait foi**.
+Le document renvoyé est identique à celui de `sources/salon-prive-2026/`. Au salon, chaque
+fiche affiche donc le label de la notice de son stand, tel quel. La règle « seulement si
+tarif et liste s'accordent » est abandonnée. Reste à savoir si cela vaut aussi pour le
+catalogue général.

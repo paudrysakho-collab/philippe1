@@ -225,8 +225,12 @@ viendront du fichier de Mathéo.
   si le fichier de Mathéo, qui donne la composition des tables, liste des vins Divin No Low.
 - **Stand 26, André Goichot** : la composition des tables fait foi. Le Château du Cray (n°13)
   et le Domaine Les Guignottes (n°14) restent sur le stand.
-- **Les labels au salon : « moins on en dit, moins on fait d'erreur ».** Un label n'apparaît
-  que si le tarif et la liste du salon disent la même chose (HVE 3 vaut HVE ; « Bio &
-  Biodynamie » contient Bio). Résultat : 13 stands gardent leur label, les 13 autres n'en
-  affichent aucun (`labels_affiches` dans `data/salon-prive-2026.json`). Le catalogue général
-  reste sur les labels du tarif ; le point 22 reste ouvert pour lui.
+- **Les labels au salon : la liste des vignerons fait foi** (précision de l'agence, même jour).
+  Chaque fiche du salon affiche le label de la notice de son stand, tel quel (« En conversion
+  Bio », « Biodynamie », « ISO 26000 », « Agriculture raisonnée », « HVE 3 »…). Chez Goichot,
+  la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur les n°13 et 14. La
+  correspondance est dans `labels_affiches` de `data/salon-prive-2026.json`. Cette précision
+  remplace la règle « seulement si tarif et liste s'accordent », notée plus tôt le même jour.
+- **Reste à demander : la liste des vignerons vaut-elle aussi pour les labels du catalogue
+  général ?** Si oui, le point 22 est tranché pour les 31 fiches concernées ; les 9 autres
+  gardent les labels du tarif.

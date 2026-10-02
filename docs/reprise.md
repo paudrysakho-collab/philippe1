@@ -151,12 +151,17 @@ Elles sont dans `QUESTIONS.md` :
     Le tableau doit accepter les deux sans retouche de gabarit. Par défaut, il reprend les
     paliers du tarif du domaine, cases vides. Si l'agence donne un prix unique, la même donnée
     bascule le tableau sur une seule colonne « Prix salon ».
-- **Les labels : « pour le 5, moins on en dit, moins on fait d'erreur »** (l'agence).
-  - Un label n'apparaît que si le tarif et la liste du salon disent la même chose, et c'est
-    déjà calculé : `labels_affiches` dans `data/salon-prive-2026.json`.
-  - 13 stands gardent leur label (Bio ou HVE), les 13 autres n'en affichent aucun.
-  - Même esprit pour le reste : sobre, rien que le tarif ne dise. Les textes des documents
-    du salon ne sont pas une source de faits.
+- **Les labels : la liste des vignerons fait foi** (`sources/salon-prive-2026/liste-des-vignerons.pdf`).
+  - Chaque fiche du salon affiche le label de la notice de son stand, tel quel ; c'est déjà
+    rapproché dans `labels_affiches` de `data/salon-prive-2026.json`.
+  - Nouveaux libellés : « En conversion Bio », « Biodynamie », « ISO 26000 », « Agriculture
+    raisonnée », « HVE 3 », « Bio & Biodynamie ». Ils demandent de nouveaux pictos maison
+    (compétence `picto-maison` ; jamais les logos officiels), légendés.
+  - Pour le reste, l'agence veut de la sobriété : « pour le 5, moins on en dit, moins on fait
+    d'erreur ». Rien que le tarif ne dise. Les textes des documents du salon ne sont pas une
+    source de faits.
+  - **À demander en début de session** : cette liste vaut-elle aussi pour les labels du
+    catalogue général (point 22) ?
 - **Sorties** : `dist/salon-prive-2026-ecran.pdf`, `dist/salon-prive-2026-imprimeur.pdf`
   et un `.pptx` pour Canva. C'est le seul des trois livrables qu'on modifiera encore, pour
   les prix.
