@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { REGIONS, STRATES, coupe, carotte, defsTrames } from '../src/gabarits/pieces.mjs';
-import { solTeinte, solRegion, figuresModeEmploi } from '../src/gabarits/pages.mjs';
+import { REGIONS, STRATES, coupe, carotte, defsTrames, PICTOS_LABELS } from '../src/gabarits/pieces.mjs';
+import { solTeinte, solRegion } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const DECO = path.join(RACINE, 'build/deco');
@@ -33,9 +33,19 @@ REGIONS.forEach((r) => {
        ${solTeinte(r, 7)}</div>` });
 });
 
-// Les six vignettes du mode d'emploi : la colonne de la grille fait 80,5 mm.
-figuresModeEmploi().forEach((f) => {
-  blocs.push({ nom: f.nom, l: 80.5, h: f.hauteur, html: f.html, nu: true });
+// Les bandes de région du sommaire : la couleur et la trame de la strate (SOMMAIRE.colonne × bande).
+REGIONS.forEach((r) => {
+  const s = STRATES[r];
+  blocs.push({ nom: `bande-${cle(r)}`, l: 82, h: 7.6, html:
+    `<div style="position:absolute;inset:0;border-radius:1.2mm;overflow:hidden;background:${s.hex};
+       ${r === 'Champagne' ? 'box-shadow:inset 0 0 0 .6pt rgba(70,96,110,.45)' : ''}">
+       <div class="trame trame-${s.t}" style="opacity:.5"></div></div>` });
+});
+
+// Les pictos de label, posés dans les jetons des fiches et dans la légende du sommaire.
+Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {
+  blocs.push({ nom: `label-${nom}`, l: 3, h: 3, html:
+    `<svg viewBox="0 0 14 14" style="position:absolute;inset:0;width:100%;height:100%">${svg}</svg>` });
 });
 
 blocs.push({ nom: 'coupe-titree', l: 216, h: 151, html:

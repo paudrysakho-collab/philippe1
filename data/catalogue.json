@@ -97,6 +97,12 @@
    "labels": [
     {
      "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 10 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
+     "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.4"
     }
    ],
@@ -239,6 +245,12 @@
    "texte_source": "Sur les reliefs bocagers du Chantonnais, Vincent et Alban Orion sculptent 30 hectares reflétant la diversité des terroirs chantonnaisiens. Une démarche paysanne faite de travail manuel minutieux et d’attention à la faune et à la flore, qui porte le domaine en agriculture biologique.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 22 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.5"
@@ -389,6 +401,12 @@
    "texte_source": "Quatre générations de passionnés et adhérent historique des Vignerons Indépendants : Jean-Yves Bretaudeau allie bon sens paysan et précision œnologique. Certifié HVE, le domaine préserve ses paysages ligériens pour des vins friands et expressifs.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "HVE",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 4 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "HVE",
      "preuve": "mention « Certifié HVE » dans le texte p.6"
@@ -599,6 +617,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "HVE",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 14 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.7"
     }
@@ -756,6 +780,12 @@
    "labels": [
     {
      "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 25 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
+     "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.8"
     }
    ],
@@ -831,7 +861,13 @@
    "nom_sommaire": "DOMAINE JEAN DE VILLEBOIS",
    "texte_source": "Spécialiste du Sauvignon Blanc ligérien, le domaine explore les plus beaux terroirs de Loire (Sancerre, Pouilly-Fumé, Menetou-Salon, Touraine). Techniques modernes et respect de la typicité des sols calcaires et de silex pour des blancs d’une grande pureté.",
    "texte_catalogue": "",
-   "labels": [],
+   "labels": [
+    {
+     "label": "ISO 26000",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 17 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [],
    "allocation": false,
    "mentions": [
     "Possibilité de panacher avec les vins Divin No Low!",
@@ -1163,6 +1199,12 @@
    "texte_source": "Berceau de tradition vigneronne à Molsheim, le Domaine Boehler aborde une nouvelle ère sous l’impulsion de Julien et Aurélie. Converti à l’agriculture biologique, le tandem explore ses coteaux et le prestigieux Grand Cru Bruderthal pour des vins verticaux, précis et profonds.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 9 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.11"
@@ -1534,6 +1576,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "Agriculture raisonnée",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 18 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "AOP",
      "preuve": "logo AOP p.13"
     }
@@ -1848,7 +1896,13 @@
    "nom_sommaire": "MAISON ANDRÉ GOICHOT",
    "texte_source": "Fleuron familial et indépendant fondé en 1947, la Maison André Goichot porte l’exigence des grands climats de Bourgogne. Sélections parcellaires méticuleuses et cuverie d’élevage de pointe inaugurée en 2020.",
    "texte_catalogue": "",
-   "labels": [],
+   "labels": [
+    {
+     "label": "HVE",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 26 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [],
    "allocation": true,
    "mentions": [
     "ALLOCATION *",
@@ -2161,6 +2215,7 @@
    "texte_source": "Depuis 2016, la famille Goichot est aux commandes de ce charmant domaine, précieuse propriété de la famille Perret du Cray depuis 1798. Situé au nord de Buxy, en Saône-et-Loire, le Château du Cray s’étend sur un domaine viticole de 22 hectares. Les vignes s’étendent autour du château, au milieu du coteau et bénéficient d’une exposition privilégiée Est-Sud-Est. Le domaine bénéficie d’un MONOPOLE : Le Cornevent",
    "texte_catalogue": "",
    "labels": [],
+   "labels_tarif": [],
    "allocation": false,
    "mentions": [
     "Possibilité de panacher avec les vins de la Maison A. Goichot et domaine Les Guignottes"
@@ -2232,6 +2287,7 @@
    "texte_source": "Depuis 2015, la famille Goichot est fière de diriger la distribution exclusive du Domaine Les Guignottes, une propriété de 10 hectares à Saint-Valérien en Côte Châlonnaise. Avec une palette de cépage incluant l’Aligoté, Le Pinot Noir et le Chardonnay, les vins du domaine reflètent avec élégance leur terroir d’origine. En harmonie avec les tendances actuelles, ils mettent en valeur la minéralité et la légèreté, une expérience qui célèbre la tradition et la qualité de la Côte Châlonnaise.",
    "texte_catalogue": "",
    "labels": [],
+   "labels_tarif": [],
    "allocation": false,
    "mentions": [
     "Possibilité de panacher avec les vins de la Maison A. Goichot et Château du Cray !"
@@ -2328,6 +2384,12 @@
    "labels": [
     {
      "label": "HVE",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 5 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
+     "label": "HVE",
      "preuve": "mention « Certifié HVE » dans le texte p.18"
     }
    ],
@@ -2418,6 +2480,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.19 ; « certifié Agriculture Biologique » dans le texte"
     }
@@ -2493,6 +2561,12 @@
    "texte_source": "Propriété du groupe Maisons & Vignobles Strasser-Radziwill depuis 2022, le Domaine de Coyeux niché au pied des Dentelles de Montmirail s’étend sur 120 hectares d’un seul tenant, au sein de l’aire de l’appellation viticole Beaumes-de-Venise. Dans ce superbe environnement naturel, le domaine est constitué de bois, de garrigue et de vignes. Le vignoble du Domaine de Coyeux s’étend sur la formation géologique du Trias, un sol très ancien qui confère aux vins une qualité exceptionnelle. Les premières vignes du domaine de Coyeux datent des années 1950. Aujourd’hui, les vins sont issus d’un vignoble âgé de 40 à 70 ans et de parcelles plus récentes. Le domaine bénéficie de l’abri naturel de la colline. Son exposition au sud favorise un ensoleillement idéal. À 300 mètres d’altitude, la température est plus fraîche et participe à l’élégance des vins de Coyeux.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.20"
@@ -2626,6 +2700,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.21"
     }
@@ -2705,6 +2785,12 @@
    "texte_source": "Situé au cœur de la vallée du Rhône le Domaine de la Pousterle est un domaine viticole familial qui incarne l’authenticité et la diversité de cette région emblématique. Entouré de collines baignées de soleil et bercé par le mistral, le vignoble bénéficie de conditions idéales pour l’élaboration de vins généreux, expressifs et empreints de caractère. Le domaine cultive avec soins des cépages typiques de la région en alliant traditions viticoles et pratiques respectueuses de l’environnement. Chaque cuvée reflète l’identité du terroir et le savoir faire transmis au fil des générations.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 7 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.22"
@@ -2916,6 +3002,12 @@
    "labels": [
     {
      "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 12 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
+     "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.24 ; « certifiés en agriculture biologique » dans le texte"
     }
    ],
@@ -2992,6 +3084,12 @@
    "texte_source": "Né de la transmission d’une vigne de 80 ans en Madiran par son grand-père, le projet de Simon cultive la rareté : produire peu pour produire sain. Environ six hectares en Madiran et Pacherenc-du-Vic-Bilh, en symbiose avec un élevage de bœufs Angus sur la ferme.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 20 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.25"
@@ -3111,6 +3209,12 @@
    "texte_source": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "HVE 3",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 6 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "IGP",
      "preuve": "logo IGP p.26"
@@ -4199,6 +4303,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "Biodynamie",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 8 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.30"
     },
@@ -4273,6 +4383,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "Biodynamie",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 16 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.31"
     },
@@ -4346,6 +4462,12 @@
    "texte_source": "Au cœur d’une forêt de deux cents hectares, la famille Touchais veille depuis 1964 sur dix hectares de vignes à Saint-Laurent-Médoc. Classé Cru Bourgeois Supérieur et certifié bio, Balac cultive autour de sa chartreuse du XVIIIe siècle des vins de caractère et d’élégance.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 1 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.32 ; « certifié bio » dans le texte"
@@ -4424,6 +4546,12 @@
    "texte_source": "Joyau intimiste à Saint-Germain-de-la-Rivière, en AOP Fronsac, qui renaît sous la conduite de Mélanie et Thomas. Vendanges manuelles, fermentations spontanées, sulfites mesurés et élevage sur-mesure (barriques, béton, amphores) pour des Merlots et Cabernets Francs veloutés et floraux.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 24 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.33"
@@ -4549,6 +4677,12 @@
    "texte_source": "Écrin préservé à Tourves, Blacailloux incarne la Provence Verte depuis plus d’un siècle, conduit par la quatrième génération de la famille Chamoin. Chai bioclimatique à toit végétalisé et énergie photovoltaïque. Cuvées AOP Coteaux Varois et IGP Var, fraîches et aériennes.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 19 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.34"
@@ -4700,6 +4834,12 @@
    "texte_source": "Depuis plusieurs générations, la famille d’Exea façonne sur les terroirs solaires du Languedoc des vins biologiques vibrants et sincères, alliant pureté du fruit et convivialité.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 21 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.35"
@@ -5168,6 +5308,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 13 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.37"
     }
@@ -5405,7 +5551,13 @@
    "nom_sommaire": "PRIEURÉ SAINTE-MARIE D’ALBAS",
    "texte_source": "Au pied de la Montagne d’Alaric, au cœur des Corbières, Laurence et Vincent Licciardi-Pirot cultivent des vignes plantées en terrasses et balayées par le vent du Cers. Les vins sont élevés dans une ancienne cave de village à demi enterrée : des rouges chaleureux du Midi, des blancs et des rosés tout en fraîcheur. AOP Corbières et IGP Pays d’Oc.",
    "texte_catalogue": "",
-   "labels": [],
+   "labels": [
+    {
+     "label": "HVE",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 3 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [],
    "allocation": false,
    "mentions": [],
    "panachage_groupe": null,
@@ -5582,6 +5734,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 11 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.40 ; « en conversion biologique » dans le texte"
     }
@@ -5661,6 +5819,12 @@
    "texte_source": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées Trois Crus, Terroir Noir et Terroir Blanc.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 2 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.41 ; « en conversion biologique » dans le texte"
@@ -5849,6 +6013,12 @@
    "texte_catalogue": "",
    "labels": [
     {
+     "label": "Bio & Biodynamie",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 23 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
+    {
      "label": "Bio",
      "preuve": "logos AB et Eurofeuille p.42"
     }
@@ -5965,6 +6135,12 @@
    "texte_source": "Maison de référence à Chouilly, Grand Cru de la Côte des Blancs, Vazart-Coquart célèbre le Chardonnay depuis 1954. Jean-Pierre et Caroline veillent sur trente parcelles (11 ha) où la craie révèle toute la finesse du cépage. Troisième domaine certifié HVE de France.",
    "texte_catalogue": "",
    "labels": [
+    {
+     "label": "En conversion Bio",
+     "preuve": "liste des vignerons du Salon Privé, notice du stand 15 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)"
+    }
+   ],
+   "labels_tarif": [
     {
      "label": "HVE",
      "preuve": "« Troisième domaine certifié HVE de France » dans le texte p.43"

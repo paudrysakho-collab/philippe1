@@ -149,7 +149,14 @@ La liste du salon écrit « Claire et Stéphane, **associés dans le projet**, a
 savoir-faire ». Le tarif n'a pas « associés dans le projet ».
 *Ce que je propose :* je garde la version du tarif. Dites-moi si vous préférez l'autre.
 
-### 22. Quatorze labels divergent entre le tarif et la liste du salon — **non repris**
+### 22. Quatorze labels divergent entre le tarif et la liste du salon — ✅ **TRANCHÉ le 2 octobre 2026**
+
+**Réponse de l'agence (2 octobre, en début de session) : la liste des vignerons fait foi pour les labels, au salon
+et dans le catalogue général.** Les 31 fiches présentes au salon affichent le label de la notice de leur stand, tel
+quel ; les 9 autres (n°7, 9, 11, 20, 24, 25, 26, 33, 35) gardent ceux du tarif. Les labels du tarif restent consignés
+dans `labels_tarif` de chaque fiche. Conséquence à connaître : les jetons « AOP » (n°10) et « IGP » (n°23) disparaissent
+de ces deux fiches, puisque la notice du salon ne les porte pas ; l'appellation reste écrite sur chaque ligne de tarif.
+Report : `python3 scripts/reporter-labels.py`. Historique de la question ci-dessous.
 
 Les deux documents ne disent pas la même chose sur les certifications. **Je n'ai rien changé :
 le catalogue affiche les labels du tarif.** Une mention de certification engage l'agence, elle
@@ -231,6 +238,6 @@ viendront du fichier de Mathéo.
   la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur les n°13 et 14. La
   correspondance est dans `labels_affiches` de `data/salon-prive-2026.json`. Cette précision
   remplace la règle « seulement si tarif et liste s'accordent », notée plus tôt le même jour.
-- **Reste à demander : la liste des vignerons vaut-elle aussi pour les labels du catalogue
-  général ?** Si oui, le point 22 est tranché pour les 31 fiches concernées ; les 9 autres
-  gardent les labels du tarif.
+- **La liste des vignerons vaut aussi pour les labels du catalogue général** (réponse du
+  2 octobre, en début de session) : le point 22 est tranché pour les 31 fiches concernées ;
+  les 9 autres gardent les labels du tarif.

@@ -6,7 +6,8 @@
   "nom_sommaire": "FRANÇOIS REVERDY",
   "texte_source": "Créés ex nihilo en 2023, deux vignobles jardins conduits en agriculture biologique : l'un à Sancerre, où François Reverdy est le plus petit vigneron de l'appellation, l'autre à Roiffé entre Saumur et Chinon, en vieilles vignes de Grolleau noir, Cabernet Franc et Chenin blanc. Vendanges à la main et vins éco-conçus, en Anjou, Saumur, Chinon, Quincy et Sancerre.",
   "texte_catalogue": "Créés ex nihilo en 2023, deux vignobles jardins conduits en agriculture biologique : l'un à Sancerre, où François Reverdy est le plus petit vigneron de l'appellation, l'autre à Roiffé entre Saumur et Chinon, en vieilles vignes de Grolleau noir, Cabernet Franc et Chenin blanc. Vendanges à la main et vins éco-conçus, en Anjou, Saumur, Chinon, Quincy et Sancerre.",
-  "labels": [
+  "labels": [{ "label": "Bio", "preuve": "liste des vignerons du Salon Privé, notice du stand 10 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
+  "labels_tarif": [
     {
       "label": "Bio",
       "preuve": "logos AB et Eurofeuille p.4"

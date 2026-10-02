@@ -218,6 +218,41 @@ export const NOM_FAMILLE = {
 export const picto = (f, cls = 'picto') =>
   `<svg viewBox="0 0 14 14" class="${cls}" aria-hidden="true">${PICTOS[f] || PICTOS.autre}</svg>`;
 
+/* ——— Pictos de label : une feuille, toujours la même. Le remplissage dit le label, il se
+   lit en niveaux de gris, et il ne ressemble à aucun logo officiel (AB, HVE, Demeter…).
+   Le libellé est toujours écrit à côté : le picto ne remplace jamais le mot. ——— */
+const FEUILLE = 'M7 1.3 C11.4 3.6 11.4 10.4 7 12.7 C2.6 10.4 2.6 3.6 7 1.3 Z';
+const DEMI = 'M7 1.3 C11.4 3.6 11.4 10.4 7 12.7 Z';
+const V = '#3C5B47';
+export const PICTOS_LABELS = {
+  bio: `<path d="${FEUILLE}" fill="${V}"/>`,
+  conversion: `<path d="${DEMI}" fill="${V}"/><path d="${FEUILLE}" fill="none" stroke="${V}" stroke-width="1.2"/>`,
+  biodynamie: `<path d="${FEUILLE}" fill="none" stroke="${V}" stroke-width="1.2"/><circle cx="7" cy="7" r="1.9" fill="${V}"/>`,
+  biobiodyn: `<path d="${FEUILLE}" fill="${V}"/><circle cx="7" cy="7" r="1.9" fill="#FBF8F1"/>`,
+  hve: `<path d="${FEUILLE}" fill="none" stroke="${V}" stroke-width="1.2"/><path d="M7 3.2 V10.8" stroke="${V}" stroke-width="1.2"/>`,
+  raisonnee: `<path d="${FEUILLE}" fill="none" stroke="${V}" stroke-width="1.2"/><path d="M4.6 7 H9.4" stroke="${V}" stroke-width="1.2"/>`,
+  iso: `<path d="${FEUILLE}" fill="none" stroke="${V}" stroke-width="1.2" stroke-dasharray="1.6 1.2"/>`,
+};
+/** Le picto d'un libellé de label. AOP et IGP disent une origine, pas une pratique : pas de feuille. */
+export function familleLabel(libelle) {
+  const l = (libelle || '').toLowerCase();
+  if (l.includes('conversion')) return 'conversion';
+  if (l.includes('bio') && l.includes('biodynamie')) return 'biobiodyn';
+  if (l.includes('biodynamie') || l.includes('demeter') || l.includes('biodyvin')) return 'biodynamie';
+  if (l === 'bio') return 'bio';
+  if (l.startsWith('hve')) return 'hve';
+  if (l.includes('raisonnée')) return 'raisonnee';
+  if (l.includes('iso')) return 'iso';
+  return null;
+}
+export const pictoLabel = (libelle, cls = 'picto picto-label') => {
+  const f = familleLabel(libelle);
+  return f ? `<svg viewBox="0 0 14 14" class="${cls}" aria-hidden="true">${PICTOS_LABELS[f]}</svg>` : '';
+};
+/** Les libellés de label réellement affichés, dans l'ordre de la légende. */
+export const ORDRE_LABELS = ['Bio', 'En conversion Bio', 'Biodynamie', 'Bio & Biodynamie',
+  'HVE', 'HVE 3', 'Agriculture raisonnée', 'ISO 26000'];
+
 /** Famille d'une ligne : lue dans la source, jamais devinée au-delà de ce qu'elle écrit. */
 export function famille(ligne, tableau) {
   const f = (tableau.famille || '').toLowerCase();

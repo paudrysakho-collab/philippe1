@@ -8,9 +8,9 @@ import PptxGenJS from 'pptxgenjs';
 import {
   catalogue, REGIONS, STRATES, euros, famille, famillesDe, nbReferences, NOM_FAMILLE,
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
-  largeurTexte, lignesTexte,
+  largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS,
 } from '../src/gabarits/pieces.mjs';
-import { entreesIndex, figuresModeEmploi, BLOCS_MODE_EMPLOI, PIED_MODE_EMPLOI }
+import { entreesIndex, colonnesSommaire, SOMMAIRE, encreStrate, texteNotePrix }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -267,7 +267,7 @@ function slideFiche(s, numero, desc) {
 
   // ——— jetons
   const jetons = [
-    ...d.labels.map((l) => [l.label, C.amphibolite, null]),
+    ...d.labels.map((l) => [l.label, C.amphibolite, null, familleLabel(l.label)]),
     ...(d.allocation ? [['Allocation', C.violet, C.violet]] : []),
     [groupeDe(d) ? 'Panachage entre domaines' : 'Panachage dans le domaine', C.gneiss, null],
     ...(d.mentions.some((m) => m.toLowerCase().includes('consultez-nous'))
@@ -275,12 +275,17 @@ function slideFiche(s, numero, desc) {
     [`${nbReferences(d)} références`, C.silex, null],
   ];
   let jx = gauche;
-  jetons.forEach(([texte, couleur, fond]) => {
-    const l = largeur(texte, 'IBM Plex Sans Bold', 7.2) + 5.6;
+  jetons.forEach(([texte, couleur, fond, pictoLabel]) => {
+    // le picto de label (une feuille maison) se pose dans le jeton, avant le mot
+    const p = pictoLabel ? 4.1 : 0;
+    const l = largeur(texte, 'IBM Plex Sans Bold', 7.2) + 5.6 + p;
     s.addShape(pres.ShapeType.roundRect, { x: mm(jx), y, w: mm(l), h: mm(5),
       fill: fond ? { color: fond } : { color: C.tuffeau },
       line: { color: couleur, width: 0.7 }, rectRadius: 0.02 });
-    s.addText(texte, { x: mm(jx), y, w: mm(l), h: mm(5), margin: 0, align: 'center',
+    if (pictoLabel) {
+      s.addImage({ path: img(`label-${pictoLabel}`), x: mm(jx + 2), y: y + mm(1), w: mm(3), h: mm(3) });
+    }
+    s.addText(texte, { x: mm(jx + p), y, w: mm(l - p), h: mm(5), margin: 0, align: 'center',
       valign: 'middle', fontFace: F.tech, fontSize: 7.2, bold: true,
       color: fond ? C.craie : couleur });
     jx += l + 2.2;
@@ -383,6 +388,17 @@ function slideFiche(s, numero, desc) {
       + mm(k < desc.morceaux.length - 1 ? 4.5 : 0);
   });
 
+  // ——— la note de prix, juste sous le dernier tableau, en grand (comme .note-prix du PDF)
+  if (desc.note) {
+    const hNote = mesures.blocs[`note-${d.numero}`] ?? 9;
+    s.addShape(pres.ShapeType.line, { x, y: y + mm(2.4), w: 0, h: mm(hNote - 2.4),
+      line: { color: C.violet, width: 1.4 } });
+    s.addText(texteNotePrix(d), { x: x + mm(3), y: y + mm(2.4), w: mm(CADRE_L - 3), h: mm(hNote - 2.4),
+      margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, color: C.encre,
+      italic: !d.note_prix, lineSpacingMultiple: 1.1 });
+    y += mm(hNote);
+  }
+
   // ——— quand la fiche est courte, le sol de sa région comble le vide, comme dans le PDF
   const VIDE_MIN = 30, VIDE_MAX = 40;
   if (desc.reste >= VIDE_MIN) {
@@ -414,15 +430,12 @@ function slideFiche(s, numero, desc) {
   }
   s.addShape(pres.ShapeType.line, { x, y: yPied, w: mm(CADRE_L), h: 0,
     line: { color: C.silex, width: 0.7 } });
-  s.addText(d.note_prix || 'Conditions de port non précisées par le domaine — nous consulter.', {
-    x, y: yPied + mm(1), w: mm(CADRE_L * 0.55), h: mm(5), margin: 0,
-    fontFace: F.tech, fontSize: 7.2, color: C.silex });
   s.addText([
     { text: 'Distribution ', options: { bold: true, color: C.violet } },
     { text: d.departements.length ? d.departements.join(' · ')
       : 'non précisés par le domaine — nous consulter', options: { color: C.silex } },
-  ], { x: mm(gauche + CADRE_L * 0.45), y: yPied + mm(1), w: mm(CADRE_L * 0.55), h: mm(5),
-    margin: 0, align: 'right', fontFace: F.tech, fontSize: 7.2 });
+  ], { x, y: yPied + mm(1), w: mm(CADRE_L), h: mm(5),
+    margin: 0, align: 'left', fontFace: F.tech, fontSize: 7.2 });
   s.addText(famillesDe(d).map((f) => `● ${NOM_FAMILLE[f]}`).join('    ')
     + '     pictos de l’Agence SCIO, pas les logos officiels', {
     x, y: yPied + mm(5.6), w: mm(CADRE_L), h: mm(4), margin: 0,
@@ -507,122 +520,65 @@ function slideAgence(s, numero) {
   folio(s, numero);
 }
 
-function slideModeEmploi(s, numero) {
-  const { gauche } = geo(numero);
-  const y = titreSection(s, numero, 'Comment lire ce catalogue');
-  const figures = figuresModeEmploi();
-  const COL = CADRE_L / 2 - 4.5;
-  // Mêmes règles que la grille CSS : chaque rangée fait la hauteur du plus haut des deux blocs.
-  const H_TITRE = 4.7, H_LIGNE = 4.2, ECART = 5.5;
-  const taille = BLOCS_MODE_EMPLOI.map(([t, p], i) => {
-    const hFig = figures[i].hauteur;
-    const nT = lignesDe(t, F.titre, 11.5, COL);
-    const nP = lignesDe(p.replace(/<\/?strong>/g, ''), F.courant, 8.2, COL);
-    return { hFig, hT: nT * H_TITRE, hP: nP * H_LIGNE };
-  });
-  const rangs = [0, 1, 2].map((r) => Math.max(
-    ...[0, 1].map((c) => { const b = taille[r * 2 + c]; return b.hFig + 1.8 + b.hT + 1.4 + b.hP; })));
-  BLOCS_MODE_EMPLOI.forEach(([t, p], i) => {
-    const col = i % 2, rang = Math.floor(i / 2);
-    const bx = gauche + col * (CADRE_L / 2 + 4.5);
-    const by = y + rangs.slice(0, rang).reduce((a, b) => a + b + ECART, 0);
-    const b = taille[i];
-    s.addImage({ path: img(figures[i].nom), x: mm(bx), y: mm(by), w: mm(COL), h: mm(b.hFig) });
-    const yT = by + b.hFig + 1.8;
-    s.addText(t, { x: mm(bx), y: mm(yT), w: mm(COL), h: mm(b.hT), margin: 0,
-      fontFace: F.titre, fontSize: 11.5, color: C.violet, valign: 'top',
-      lineSpacingMultiple: 1.05 });
-    s.addText(riches(p), { x: mm(bx), y: mm(yT + b.hT + 1.4), w: mm(COL), h: mm(b.hP + 2),
-      margin: 0, fontFace: F.courant, fontSize: 8.2, color: C.silex,
-      lineSpacingMultiple: 1.28, valign: 'top' });
-  });
-  const yPied = PAGE_H - MARGE.bas - 17;
-  s.addShape(pres.ShapeType.line, { x: mm(gauche), y: mm(yPied), w: mm(CADRE_L), h: 0,
-    line: { color: C.violet, width: 0.8 } });
-  s.addText(riches(PIED_MODE_EMPLOI, C.violet),
-    { x: mm(gauche), y: mm(yPied + 1.6), w: mm(CADRE_L), h: mm(11), margin: 0,
-      fontFace: F.courant, fontSize: 8.6, color: C.silex });
-  folio(s, numero);
-}
-
+/** Le sommaire, liste par région sur deux colonnes : la géométrie de SOMMAIRE, comme le PDF. */
 function slideSommaire(s, numero) {
   const { gauche } = geo(numero);
-  const y0 = titreSection(s, numero, 'La coupe', 'sommaire des dix régions');
-  const eff = REGIONS.map((n) => catalogue.domaines.filter((d) => d.region === n).length);
-  const poids = eff.map((n) => Math.max(n, 2.6));
-  const total = poids.reduce((a, b) => a + b, 0);
-  const dispo = PAGE_H - MARGE.bas - y0 - 9 * 1.2;
-  let y = y0;
-  REGIONS.forEach((r, i) => {
-    const st = STRATES[r];
-    const h = (poids[i] / total) * dispo;
-    const clair = r === 'Champagne';
-    s.addShape(pres.ShapeType.roundRect, { x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(h),
-      fill: { color: st.hex.slice(1) }, line: { color: st.hex.slice(1), width: 0 },
-      rectRadius: 0.015 });
-    s.addText(r, { x: mm(gauche + 3), y: mm(y + 1.6), w: mm(50), h: mm(6), margin: 0,
-      fontFace: F.titre, fontSize: 11.5, color: clair ? C.silex : C.craie, valign: 'middle' });
-    s.addText(st.mot, { x: mm(gauche + 36), y: mm(y + 1.6), w: mm(70), h: mm(6), margin: 0,
-      fontFace: F.courant, fontSize: 7, italic: true, color: clair ? C.silex : C.craie,
-      valign: 'middle', transparency: 18 });
-    s.addText(String(eff[i]), { x: mm(gauche + CADRE_L - 12), y: mm(y + 1.6), w: mm(9), h: mm(6),
-      margin: 0, align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 7.5, bold: true,
-      color: clair ? C.silex : C.craie });
-    const doms = catalogue.domaines.filter((d) => d.region === r);
-    const cols = doms.length >= 5 ? 3 : 2;
-    const lc = (CADRE_L - 8) / cols;
-    doms.forEach((d, k) => {
-      const col = Math.floor(k / Math.ceil(doms.length / cols));
-      const rang = k % Math.ceil(doms.length / cols);
-      s.addText([
-        { text: `${d.numero}  `, options: { bold: true } },
-        { text: d.nom },
-        { text: `   ${pageDe[d.numero]}`, options: { bold: true } },
-      ], { x: mm(gauche + 4 + col * lc), y: mm(y + 8 + rang * 3.6), w: mm(lc - 2), h: mm(3.6),
-        margin: 0, fontFace: F.tech, fontSize: 7.4, color: clair ? C.silex : C.craie,
-        valign: 'middle' });
+  s.addText('Sommaire', { x: mm(gauche), y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
+    fontFace: F.titre, fontSize: 24, color: C.violet, valign: 'top' });
+  const y0 = MARGE.haut + 8.5 + 6;
+  const { bande, ligne, apresBande, entreRegions, colonne } = SOMMAIRE;
+  colonnesSommaire().forEach((blocs, c) => {
+    const cx = gauche + c * (CADRE_L - colonne);
+    let y = y0;
+    blocs.forEach((b) => {
+      const st = STRATES[b.nom];
+      s.addImage({ path: img(`bande-${cle(b.nom)}`), x: mm(cx), y: mm(y), w: mm(colonne), h: mm(bande) });
+      s.addText(b.nom, { x: mm(cx + 3), y: mm(y), w: mm(colonne - 6), h: mm(bande), margin: 0,
+        fontFace: F.titre, fontSize: 13, color: encreStrate(b.nom).slice(1), valign: 'middle' });
+      y += bande + apresBande;
+      b.doms.forEach((d) => {
+        s.addText(String(d.numero), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
+          align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true, color: C.violet });
+        s.addText(d.nom, { x: mm(cx + 8.5), y: mm(y), w: mm(colonne - 18), h: mm(ligne), margin: 0,
+          valign: 'middle', fontFace: F.courant, fontSize: 10, color: C.encre });
+        s.addText(String(pageDe[d.numero]), { x: mm(cx + colonne - 10), y: mm(y), w: mm(9), h: mm(ligne),
+          margin: 0, align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true,
+          color: C.silex });
+        s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + ligne), w: mm(colonne), h: 0,
+          line: { color: 'C9CFC9', width: 0.3 } });
+        y += ligne;
+      });
+      y += entreRegions;
     });
-    y += h + 1.2;
   });
-  folio(s, numero);
-}
-
-function slideAlliances(s, numero) {
-  const { gauche } = geo(numero);
-  let y = titreSection(s, numero, 'Les quatre alliances',
-    "ce que l'on peut mélanger entre domaines");
+  // la légende complète des pictos, en bas de page, comme dans le PDF
+  const familles = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'sansalcool', 'jus', 'biere', 'spiritueux'];
+  const labels = ORDRE_LABELS.filter((l) => catalogue.domaines.some((d) => d.labels.some((x) => x.label === l)));
+  const yl = PAGE_H - MARGE.bas - 17;
+  s.addShape(pres.ShapeType.line, { x: mm(gauche), y: mm(yl), w: mm(CADRE_L), h: 0,
+    line: { color: C.violet, width: 0.8 } });
   s.addText([
-    { text: 'Partout ailleurs, « Possibilité de panacher » vaut ' },
-    { text: "à l'intérieur d'un domaine", options: { bold: true, color: C.violet } },
-    { text: '. Ces quatre groupes-là se panachent ' },
-    { text: 'entre eux', options: { bold: true, color: C.violet } },
-    { text: ' : une commande peut mélanger leurs vins pour atteindre un palier.' },
-  ], { x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(12), margin: 0,
-    fontFace: F.courant, fontSize: 9.5, color: C.silex });
-  y += 14;
-  groupes.forEach((g) => {
-    const doms = g.domaines.map((n) => parNumero[n]);
-    const h = 13 + Math.ceil(doms.length / 2) * 7;
-    s.addShape(pres.ShapeType.roundRect, { x: mm(gauche), y: mm(y), w: mm(CADRE_L), h: mm(h),
-      fill: { color: C.craie }, line: { color: C.gneiss, width: 1.2 }, rectRadius: 0.012 });
-    s.addText(g.libelle, { x: mm(gauche + 4), y: mm(y + 2), w: mm(CADRE_L - 8), h: mm(7),
-      margin: 0, fontFace: F.titre, fontSize: 13, color: C.gneiss, valign: 'middle' });
-    doms.forEach((d, k) => {
-      s.addText([
-        { text: `${d.numero}  `, options: { fontFace: F.titre, fontSize: 11, color: C.violet } },
-        { text: `${d.nom}  `, options: { bold: true } },
-        { text: `${d.region}   `, options: { color: C.gneiss, fontSize: 7 } },
-        { text: `p. ${pageDe[d.numero]}`, options: { bold: true } },
-      ], { x: mm(gauche + 5 + (k % 2) * (CADRE_L / 2)), y: mm(y + 10 + Math.floor(k / 2) * 7),
-        w: mm(CADRE_L / 2 - 6), h: mm(6), margin: 0, fontFace: F.tech, fontSize: 8,
-        color: C.silex, valign: 'middle' });
-    });
-    y += h + 5;
+    { text: 'Types    ', options: { bold: true, color: C.violet } },
+    ...familles.flatMap((f) => {
+      const [remplissage] = PICTO[f] || PICTO.autre;
+      return [{ text: '●', options: { color: remplissage === 'FFFFFF' ? C.silex : remplissage } },
+        { text: `\u00a0${NOM_FAMILLE[f]}    ` }];
+    }),
+  ], { x: mm(gauche), y: mm(yl + 2), w: mm(CADRE_L), h: mm(4.5), margin: 0,
+    fontFace: F.tech, fontSize: 7.4, color: C.silex, valign: 'middle' });
+  let lx = gauche + 13;
+  s.addText('Labels', { x: mm(gauche), y: mm(yl + 7), w: mm(13), h: mm(4.5), margin: 0,
+    fontFace: F.tech, fontSize: 7.4, bold: true, color: C.violet, valign: 'middle' });
+  labels.forEach((l) => {
+    const w = largeur(l, 'IBM Plex Sans', 7.4) + 1.5;
+    s.addImage({ path: img(`label-${familleLabel(l)}`), x: mm(lx), y: mm(yl + 7.75), w: mm(3), h: mm(3) });
+    s.addText(l, { x: mm(lx + 4.1), y: mm(yl + 7), w: mm(w), h: mm(4.5), margin: 0,
+      fontFace: F.tech, fontSize: 7.4, color: C.silex, valign: 'middle' });
+    lx += 4.1 + w + 3;
   });
-  s.addText('Les paliers restent ceux de chaque domaine : le panachage permet d’atteindre la '
-    + 'quantité, il ne change pas le tarif de la bouteille.', {
-    x: mm(gauche), y: mm(PAGE_H - MARGE.bas - 12), w: mm(CADRE_L), h: mm(8), margin: 0,
-    fontFace: F.courant, fontSize: 8.6, color: C.silex });
+  s.addText("Ces pictos sont ceux de l'Agence SCIO, dessinés pour ce catalogue : ce ne sont pas "
+    + 'les logos officiels des organismes certificateurs.', { x: mm(gauche), y: mm(yl + 12), w: mm(CADRE_L),
+    h: mm(4), margin: 0, fontFace: F.tech, fontSize: 7.6, italic: true, color: C.silex });
   folio(s, numero);
 }
 
@@ -828,9 +784,7 @@ plan.descripteurs.forEach((desc, i) => {
   switch (desc.type) {
     case 'couverture': slideCouverture(s, numero); break;
     case 'agence': slideAgence(s, numero); break;
-    case 'mode-emploi': slideModeEmploi(s, numero); break;
     case 'sommaire': slideSommaire(s, numero); break;
-    case 'alliances': slideAlliances(s, numero); break;
     case 'ouverture': slideOuverture(s, numero, desc.region); break;
     case 'fiche': slideFiche(s, numero, desc); break;
     case 'index-vins': slideIndexVins(s, numero, desc); break;

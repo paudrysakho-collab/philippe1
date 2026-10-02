@@ -5,7 +5,7 @@ Construit depuis `data/catalogue.json`, qui est la **seule vérité** du projet.
 
 ## Où en est le projet
 
-**Terminé.** Concept retenu : **« Sous nos pieds »**. **76 pages**, 210 × 260 mm.
+**Terminé.** Concept retenu : **« Sous nos pieds »**. **72 pages**, 210 × 260 mm.
 Chaque fiche domaine porte **deux images** : un rond de 40 mm pour le vigneron ou le logo,
 une bande de 24 × 62 mm pour la bouteille. **79 des 80 sont posées** ; la bouteille qui
 manque (n°18, Moulin Blanc) garde son repère pointillé. Provenance et droits, image par
@@ -13,7 +13,7 @@ image : `credits.md`.
 
 | Livrable | Où |
 |---|---|
-| **Fichier Canva** (76 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
+| **Fichier Canva** (72 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
 | **Le même, ronds recadrables** : photos entières sous un masque rond qu'on fait glisser (à essayer dans Canva) | `dist/catalogue-scio-2026-canva-recadrable.pptx` |
 | **Les polices à téléverser dans Canva**, avec leur mode d'emploi | `polices-canva/` |
 | **Prompt pour faire poser les images par Cowork** | `PROMPT-COWORK.md` |
@@ -186,19 +186,26 @@ sert de garde-fou contre une perte silencieuse de domaine.
 |---|---|
 | 1 | Couverture |
 | 2 | L'agence, ses contacts |
-| 3 | Comment lire ce catalogue (la tranche, le bloc de prix, les pictos, les mentions, les paliers, le pied de page) |
-| 4 | **La coupe** — sommaire des dix régions |
-| 5 | **Les quatre alliances** — ce qui se panache entre domaines |
-| 6 – 67 | Les dix régions : une ouverture pleine page, puis ses domaines |
-| 68 – 70 | Index des vins par type, de A à Z |
-| 71 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
-| 72 | Les quarante domaines, de A à Z |
-| 73 – 74 | Vos notes |
-| 75 | Planche : la coupe pleine page |
-| 76 | Contacts, lexique, mentions légales, crédits, message sanitaire |
+| 3 | **Sommaire** : une liste par région, les domaines numérotés avec leur page, et la légende complète des pictos (types de vin, labels) |
+| 4 – 66 | Les dix régions : une ouverture pleine page, puis ses domaines |
+| 67 – 69 | Index des vins par type, de A à Z |
+| 70 | Les produits à part : bag-in-box, sans alcool, jus de cépages, bières, armagnacs, ratafias |
+| 71 | Les quarante domaines, de A à Z |
+| 72 | Contacts, lexique, mentions légales, crédits, message sanitaire |
 
 *(La pagination est recalculée à chaque fabrication ; `build/plan.json` donne la page de
-chaque domaine. Les pages 73 à 75 existent pour tomber sur un multiple de 4.)*
+chaque domaine. Quand il le faut, des pages « Vos notes » et la planche en coupe complètent
+le catalogue jusqu'à un multiple de 4 ; avec 72 pages, il n'en faut aucune.)*
+
+Sur chaque fiche, **la note de prix** (« * Prix de la bouteille H.T. hors frais de
+transport. », « franco de port », « départ chai »…) vient **juste sous le dernier tableau**,
+en 10,5 pt, avec un filet violet : c'est ce que le prix comprend. Les départements de
+distribution restent en pied de fiche.
+
+Les **labels** affichés sont ceux de la liste des vignerons du Salon Privé pour les 31
+fiches présentes au salon (décision de l'agence du 2 octobre 2026), ceux du tarif pour les
+9 autres. Les labels du tarif restent dans `labels_tarif` de chaque fiche ;
+`python3 scripts/reporter-labels.py` refait le report.
 
 ## Arborescence
 

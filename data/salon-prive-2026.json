@@ -491,10 +491,6 @@
   {
    "stand": null,
    "question": "Prix : un seul prix par vin, ou les paliers du domaine. Les deux doivent marcher."
-  },
-  {
-   "stand": null,
-   "question": "La liste des vignerons fait foi pour les labels du salon. Vaut-elle aussi pour le catalogue général (point 22 de QUESTIONS.md) ? À demander en début de session."
   }
  ],
  "fiches_absentes_du_salon": [
@@ -515,6 +511,7 @@
   "exea_jus": "Non : pas de jus de cépages au salon (fiche n°33 exclue).",
   "divin_no_low": "Normalement oui, sur le stand de Jean de Villebois : la fiche n°7 entre si le fichier de Mathéo (la composition des tables) liste des vins Divin No Low.",
   "goichot_cray_guignottes": "Ce que dit la composition des tables fait foi : le Padlet les met au stand 26, les trois fiches y restent.",
-  "labels": "Pour les labels, la liste des vignerons du salon (sources/salon-prive-2026/liste-des-vignerons.pdf) fait foi : chaque fiche du salon affiche le label de la notice de son stand (label_liste_salon), tel quel. Chez Goichot (stand 26), la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur n°13 et n°14. Strasser Radziwill (stand 7) : la notice couvre les quatre domaines, « En conversion Bio » sur n°16 à 19. Remplace la règle « seulement si tarif et liste s'accordent » notée plus tôt le 2 octobre."
+  "labels": "Pour les labels, la liste des vignerons du salon (sources/salon-prive-2026/liste-des-vignerons.pdf) fait foi : chaque fiche du salon affiche le label de la notice de son stand (label_liste_salon), tel quel. Chez Goichot (stand 26), la notice ne parle que de la Maison : HVE sur la fiche n°12, rien sur n°13 et n°14. Strasser Radziwill (stand 7) : la notice couvre les quatre domaines, « En conversion Bio » sur n°16 à 19. Remplace la règle « seulement si tarif et liste s'accordent » notée plus tôt le 2 octobre.",
+  "labels_catalogue_general": "Oui (2 octobre, en début de session) : la liste des vignerons fait foi aussi pour les labels du catalogue général. Les 31 fiches du salon prennent le label de leur notice ; les 9 autres gardent le tarif. Voir scripts/reporter-labels.py."
  }
 }

@@ -2,7 +2,7 @@
 import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
-  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT,
+  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, pictoLabel, ORDRE_LABELS,
 } from './pieces.mjs';
 
 const AG = catalogue.agence;
@@ -97,144 +97,67 @@ export function pageAgence() {
   });
 }
 
-/* ——————————————————————————————————— comment lire ce catalogue ——— */
+/* ——————————————————————————————————————————————— sommaire ——— */
 
-/** Les six vignettes du mode d'emploi, partagées entre le PDF et l'export .pptx. */
-export function figuresModeEmploi() {
-  const toutes = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'sansalcool', 'jus', 'biere', 'spiritueux'];
-  return [
-    { nom: 'me-tranche', hauteur: 23, html:
-      `<div class="me-fig me-fig-tranche">${coupe({ largeur: 60, hauteur: 300, graineN: 3, etiquettes: false })}
-        <span class="me-doigt">Dix bandes sur la tranche, une par région. Celle où vous êtes
-          est pleine et marquée d'or.</span></div>` },
-    { nom: 'me-prix', hauteur: 23, html:
-      `<div class="me-fig me-fig-prix">
-        <div class="demo-bloc"><span>jusqu'à&nbsp;36</span><span>dès&nbsp;48</span><span>dès&nbsp;120</span></div>
-        <div class="demo-bloc demo-prix"><span>14,75&nbsp;€</span><span>13,25&nbsp;€</span><span>12,25&nbsp;€</span></div>
-      </div>` },
-    { nom: 'me-pictos', hauteur: 32, html:
-      `<div class="me-fig me-fig-pictos">${toutes.map((f) => picto(f, 'picto gros')).join('')}</div>
-       <div class="me-legende">${toutes.map((f) =>
-         `<span>${picto(f)} ${esc(NOM_FAMILLE[f])}</span>`).join('')}</div>` },
-    { nom: 'me-jetons', hauteur: 23, html:
-      `<div class="me-fig me-fig-jetons">
-        <span class="jeton bio">Bio</span><span class="jeton alloc">Allocation</span>
-        <span class="jeton panachage">Panachage</span><span class="jeton consulter">Consultez-nous</span></div>` },
-    { nom: 'me-paliers', hauteur: 23, html:
-      `<div class="me-fig me-fig-paliers">
-        <span>jusqu'à 36 bts</span><span>à partir de 198 bts</span><span>Palette</span>
-        <span>120 cols</span><span>50 BIB demi pal</span><span>Plus de 300 bts</span>
-        <span>Tarif unique</span></div>` },
-    { nom: 'me-pied', hauteur: 23, html:
-      `<div class="me-fig me-fig-pied">
-        <span class="demo-note">* Prix de la bouteille H.T. franco de port.</span>
-        <span class="demo-dep"><strong>Distribution</strong> 35 · 44 · 49 · 53 · 56 · 85</span></div>` },
-  ];
+/* Le sommaire « comme on faisait d'habitude » : une liste par région, les domaines numérotés
+   avec leur page, sur deux colonnes. Chaque région ouvre sur une bande de sa strate.
+   Les hauteurs sont fixes (en mm) : le .pptx les reprend telles quelles. */
+export const SOMMAIRE = { bande: 7.6, ligne: 5.6, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
+
+/** Les régions et leurs domaines, coupés en deux colonnes de hauteurs voisines. */
+export function colonnesSommaire() {
+  const blocs = REGIONS.map((nom) => ({ nom, doms: catalogue.domaines.filter((d) => d.region === nom) }))
+    .filter((b) => b.doms.length);
+  const h = (b) => SOMMAIRE.bande + SOMMAIRE.apresBande + b.doms.length * SOMMAIRE.ligne;
+  const total = blocs.reduce((a, b) => a + h(b) + SOMMAIRE.entreRegions, 0);
+  let cumul = 0, coupe = blocs.length;
+  for (let i = 0; i < blocs.length; i++) {
+    cumul += h(blocs[i]) + SOMMAIRE.entreRegions;
+    if (cumul >= total / 2) {
+      // on coupe avant ou après ce bloc, du côté qui équilibre le mieux
+      const avant = cumul - h(blocs[i]) - SOMMAIRE.entreRegions;
+      coupe = Math.abs(total / 2 - avant) < Math.abs(total / 2 - cumul) ? i : i + 1;
+      break;
+    }
+  }
+  return [blocs.slice(0, coupe), blocs.slice(coupe)];
 }
 
-/** Les six blocs du mode d'emploi : titre, texte, et la vignette qui va avec. */
-export const BLOCS_MODE_EMPLOI = [
-  ['La tranche vous emmène',
-    "Dix régions, dix strates. Sur le bord de chaque page, la strate de la région où vous êtes est "
-    + "pleine et marquée d'or. Catalogue fermé, la tranche affiche les dix bandes : vous ouvrez "
-    + 'directement à la bonne région.'],
-  ['Le prix tombe toujours au même endroit',
-    "Le bloc de prix a la même largeur sur les quarante fiches, divisé en autant de parts qu'il y a "
-    + 'de paliers. Les paliers, eux, sont ceux de chaque domaine : nous ne les avons pas harmonisés. '
-    + "Un domaine à tarif unique n'a qu'une part."],
-  ['Les pictos sont les nôtres',
-    'Une forme par type : bulles, blanc, rosé, rouge, doux, sans alcool, jus de cépages, bière, '
-    + 'spiritueux. Ce sont <strong>nos</strong> pictos, dessinés pour ce catalogue : ce ne sont pas '
-    + 'les logos officiels des organismes certificateurs.'],
-  ['Les mentions',
-    '<strong>Allocation</strong> : quantités limitées, à réserver. <strong>Panachage</strong> : vous '
-    + "pouvez mélanger à l'intérieur du domaine, et parfois entre plusieurs domaines — les quatre "
-    + 'alliances sont page 7. <strong>Consultez-nous</strong> : le domaine communique ses tarifs et '
-    + 'ses offres au cas par cas.'],
-  ['Les paliers sont ceux du domaine',
-    'Treize notations différentes dans cette sélection, toutes recopiées telles quelles : bouteilles, '
-    + "cols, bag-in-box, demi-palette, palette, ou tarif unique. <strong>Nous n'avons harmonisé aucun "
-    + 'seuil</strong> — une quantité approximative serait une erreur de commande.'],
-  ['Le bas de page dit le reste',
-    "À gauche, les conditions exactes du domaine : hors transport, franco de port, départ chai, "
-    + "départ cave, ou franco à partir d'une quantité. À droite, les départements où ce domaine est "
-    + "distribué. Les deux changent d'une fiche à l'autre."],
-];
+/** La couleur d'écriture sur une bande de strate : la craie de Champagne veut de l'encre. */
+export const encreStrate = (nom) => (nom === 'Champagne' ? '#46606E' : '#FBF8F1');
 
-export const PIED_MODE_EMPLOI = 'Tous les prix sont <strong>hors taxes, par bouteille</strong>. '
-  + "Les conditions de port diffèrent d'un domaine à l'autre : elles sont écrites en bas de chaque "
-  + 'fiche, avec les départements de distribution.';
-
-export function modeEmploi() {
-  const figures = figuresModeEmploi();
-  return page({
-    classe: 'mode-emploi',
-    corps: `<div class="cadre">
-      <h2 class="titre-section">Comment lire ce catalogue</h2>
-      <div class="me-grille">
-        ${BLOCS_MODE_EMPLOI.map(([titre, texte], i) => `<div class="me-item">
-          ${figures[i].html}
-          <h3>${titre}</h3>
-          <p>${texte}</p></div>`).join('')}
-      </div>
-      <p class="me-pied">${PIED_MODE_EMPLOI}</p>
-    </div>`,
-  });
+/** La légende complète des pictos : types de vin et labels. */
+export function legendeComplete() {
+  const familles = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'sansalcool', 'jus', 'biere', 'spiritueux'];
+  const labels = ORDRE_LABELS.filter((l) => catalogue.domaines.some((d) => d.labels.some((x) => x.label === l)));
+  return `<div class="som-legende">
+    <div class="som-leg-ligne"><b>Types</b>${familles.map((f) =>
+      `<span>${picto(f)} ${esc(NOM_FAMILLE[f])}</span>`).join('')}</div>
+    <div class="som-leg-ligne"><b>Labels</b>${labels.map((l) =>
+      `<span>${pictoLabel(l)} ${esc(l)}</span>`).join('')}</div>
+    <p>Ces pictos sont ceux de l'Agence SCIO, dessinés pour ce catalogue : ce ne sont pas
+      les logos officiels des organismes certificateurs.</p></div>`;
 }
-
-/* ——————————————————————————————————————————— l'entrée visuelle ——— */
 
 export function sommaire(pagesParDomaine) {
-  const eff = effectifs();
-  const bandes = REGIONS.map((nom, i) => {
-    const doms = catalogue.domaines.filter((d) => d.region === nom);
-    const s = STRATES[nom];
-    const clair = nom === 'Champagne';
-    return `<div class="som-strate ${clair ? 'claire' : ''} ${doms.length >= 5 ? 'dense' : ''}"
-      style="--strate:${s.hex}; flex-grow:${Math.max(eff[i], 2.6)}">
-      <div class="som-trame trame trame-${s.t}"></div>
-      <div class="som-tete"><span class="som-nom">${esc(nom)}</span>
-        <span class="som-mot">${esc(s.mot)}</span>
-        <span class="som-nb">${eff[i]}</span></div>
-      <ul class="som-liste">${doms.map((d) =>
-        `<li><a href="#p${pagesParDomaine.get(d.numero)}"><span class="n">${d.numero}</span>
-          <span class="nom">${esc(d.nom)}</span>
-          <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul>
-    </div>`;
-  });
+  const colonne = (blocs) => blocs.map((b) => {
+    const s = STRATES[b.nom];
+    return `<div class="som-region">
+      <div class="som-bande ${b.nom === 'Champagne' ? 'claire' : ''}" style="--strate:${s.hex}">
+        <div class="trame trame-${s.t}"></div><span>${esc(b.nom)}</span></div>
+      <ul>${b.doms.map((d) => `<li><a href="#p${pagesParDomaine.get(d.numero)}">
+        <span class="n">${d.numero}</span><span class="nom">${esc(d.nom)}</span>
+        <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul></div>`;
+  }).join('');
+  const [gauche, droite] = colonnesSommaire();
   return [page({
     classe: 'sommaire',
     corps: `<div class="cadre">
-      <h2 class="titre-section">La coupe<span>sommaire des dix régions</span></h2>
-      <div class="som-colonne">${bandes.join('')}</div>
+      <h2 class="titre-section">Sommaire</h2>
+      <div class="som-cols"><div class="som-col">${colonne(gauche)}</div>
+        <div class="som-col">${colonne(droite)}</div></div>
+      ${legendeComplete()}
     </div>`,
-  })];
-}
-
-/* ——————————————————————————————————————————— les alliances ——— */
-
-export function alliances(pagesParDomaine) {
-  const bloc = (g) => {
-    const doms = g.domaines.map((n) => catalogue.domaines.find((d) => d.numero === n));
-    return `<div class="all-bloc">
-      <h3>${esc(g.libelle)}</h3>
-      <div class="all-doms">${doms.map((d) => `<a class="all-dom" href="#p${pagesParDomaine.get(d.numero)}">
-        <span class="n">${d.numero}</span><span class="nom">${esc(d.nom)}</span>
-        <span class="reg">${esc(d.region)}</span><span class="pg">p.&nbsp;${pagesParDomaine.get(d.numero)}</span>
-      </a>`).join('')}</div>
-      <p class="all-mention">${esc(doms[0].mentions.find((m) => m.toLowerCase().includes('panacher')) || '')}</p>
-    </div>`;
-  };
-  return [page({
-    classe: 'alliances',
-    corps: `<div class="cadre">
-      <h2 class="titre-section">Les quatre alliances<span>ce que l'on peut mélanger entre domaines</span></h2>
-      <p class="all-intro">Partout ailleurs, « Possibilité de panacher » vaut <strong>à l'intérieur
-        d'un domaine</strong>. Ces quatre groupes-là se panachent <strong>entre eux</strong> :
-        une commande peut mélanger leurs vins pour atteindre un palier.</p>
-      ${groupes.map(bloc).join('')}
-      <p class="all-pied">Les paliers restent ceux de chaque domaine : le panachage permet
-        d'atteindre la quantité, il ne change pas le tarif de la bouteille.</p></div>`,
   })];
 }
 
@@ -280,7 +203,7 @@ export function enteteDomaine(d, suite = false) {
   const g = groupeDe(d);
   const consulter = d.mentions.find((m) => m.toLowerCase().includes('consultez-nous'));
   const jetons = [
-    ...d.labels.map((l) => `<span class="jeton bio">${esc(l.label)}</span>`),
+    ...d.labels.map((l) => `<span class="jeton bio">${pictoLabel(l.label)}${esc(l.label)}</span>`),
     d.allocation ? '<span class="jeton alloc">Allocation</span>' : '',
     g ? `<span class="jeton panachage">Panachage entre domaines</span>`
       : `<span class="jeton panachage">Panachage dans le domaine</span>`,
@@ -404,16 +327,20 @@ export function piedDomaine(d, pagesParDomaine) {
         ${g.domaines.filter((n) => n !== d.numero).map((n) =>
           `n°${n} p.&nbsp;${pagesParDomaine.get(n)}`).join(' · ')}</div>`
     : '';
-  const note = d.note_prix
-    ? esc(d.note_prix)
-    : 'Conditions de port non précisées par le domaine — nous consulter.';
   const dep = d.departements.length
     ? d.departements.join(' · ')
     : 'non précisés par le domaine — nous consulter';
   return `${alliance}
-    <div class="pied-dom"><div>${note}</div>
-      <div><strong>Distribution</strong> ${dep}</div></div>
+    <div class="pied-dom"><div><strong>Distribution</strong> ${dep}</div></div>
     ${legendeHtml(famillesDe(d))}`;
+}
+
+/** La note de prix, juste sous le dernier tableau du domaine, en grand : c'est elle qui dit
+    ce que le prix comprend (H.T., franco, départ chai…). L'agence y tient avant tout. */
+export const texteNotePrix = (d) => d.note_prix
+  || 'Conditions de port non précisées par le domaine — nous consulter.';
+export function noteDomaine(d) {
+  return `<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>`;
 }
 
 /* ——————————————————————————————————————————————— index ——— */

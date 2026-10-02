@@ -572,3 +572,47 @@ Le document renvoyé est identique à celui de `sources/salon-prive-2026/`. Au s
 fiche affiche donc le label de la notice de son stand, tel quel. La règle « seulement si
 tarif et liste s'accordent » est abandonnée. Reste à savoir si cela vaut aussi pour le
 catalogue général.
+
+## 2 octobre 2026 — reprise : le catalogue général retouché (livrable A)
+
+**Labels.** Question posée en début de session : la liste des vignerons du salon vaut-elle
+aussi pour le catalogue général ? Réponse : **oui, partout**. `scripts/reporter-labels.py`
+reporte le label de chaque notice sur les 31 fiches du salon (18 changent : n°4 Bio → HVE,
+n°6 → ISO 26000, n°10 AOP → Agriculture raisonnée, n°12 et n°36 → HVE, n°16 à 19, 22, 34,
+37, 38, 40 → En conversion Bio, n°23 → HVE 3, n°27 et n°28 → Biodynamie, n°39 → Bio &
+Biodynamie). Le script garde la mise en page à la main des fiches et consigne l'ancien
+label dans `labels_tarif`. Les 9 fiches absentes du salon gardent le tarif.
+
+**Pictos de label.** Les nouveaux libellés demandaient leurs pictos. Une seule géométrie,
+une feuille, et le remplissage dit le label : pleine (Bio), à moitié (En conversion),
+évidée avec un cœur (Biodynamie), pleine au cœur clair (Bio & Biodynamie), nervure
+verticale (HVE, HVE 3), nervure transversale (Agriculture raisonnée), contour pointillé
+(ISO 26000). Tout se distingue en niveaux de gris, rien ne ressemble aux logos officiels,
+et le mot reste toujours écrit à côté, dans le jeton. AOP et IGP disent une origine, pas une
+pratique : pas de feuille.
+
+**Pages 3 et 5 supprimées.** « Comment lire ce catalogue » et « Les quatre alliances »
+sortent des gabarits (`pages.mjs`), de la pagination (`AVANT = 3`), du .pptx, de la déco
+et des styles. Le panachage reste sur chaque fiche (jeton, encart « Se panache avec… »).
+Aucun texte ne renvoyait plus à ces pages, sauf le mode d'emploi lui-même (« les quatre
+alliances sont page 7 »), parti avec lui.
+
+**Le sommaire, comme d'habitude.** Une liste par région, sur deux colonnes équilibrées
+par le calcul (`colonnesSommaire`) : Loire à Rhône à gauche, Sud-Ouest à Champagne à
+droite. Chaque région ouvre sur une bande de sa strate (couleur et trame), le nom écrit en
+craie dessus, à l'encre sur la craie de Champagne : la règle « le nom de région dans sa
+couleur de strate » est tenue sans écrire de l'ocre sur du tuffeau, trop pâle à lire.
+Les hauteurs sont fixes (`SOMMAIRE`), le .pptx les reprend. La légende complète des
+pictos, qui vivait sur la page 3, descend en pied du sommaire.
+
+**La note de prix sous le tableau.** Elle sort du pied de fiche et vient juste après le
+dernier tableau, en IBM Plex Sans 10,5 pt, filet violet à gauche. Dans la pagination, sa
+hauteur mesurée s'ajoute à la dernière ligne du dernier tableau : elle voyage avec elle et
+ne se retrouve jamais seule en haut d'une page. Le descripteur de page porte `note: true`
+pour le .pptx, qui la pose à la même place. Les départements restent en pied de fiche.
+
+**Résultat.** 72 pages (multiple de 4 sans page de remplissage), 715 prix retrouvés dans le
+texte du PDF, polices embarquées, tous les contrôles au vert ; .pptx à 72 diapositives,
+contrôles au vert. Chaque page regardée en image. `regler-lettrines.py` relancé : rien ne
+bouge (il faut d'abord installer les .ttf de `polices-canva/` dans `~/.local/share/fonts`,
+sinon LibreOffice substitue les polices et le script ne trouve aucune lettrine).

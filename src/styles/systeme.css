@@ -151,7 +151,11 @@ a { color: inherit; text-decoration: none; }
   font: 500 7.2pt var(--technique); letter-spacing: .02em;
   border: .7pt solid var(--silex); border-radius: .9mm; padding: .8mm 2mm; color: var(--silex);
 }
-.jeton.bio { border-color: var(--amphibolite); color: var(--amphibolite); }
+.jeton.bio {
+  border-color: var(--amphibolite); color: var(--amphibolite);
+  display: inline-flex; align-items: center; gap: 1.1mm;
+}
+.jeton .picto-label { width: 3mm; height: 3mm; display: block; }
 .jeton.alloc { background: var(--violet); border-color: var(--violet); color: var(--craie); }
 .jeton.consulter { background: var(--sables); border-color: var(--sables); color: var(--encre); }
 .jeton.panachage { border-color: var(--gneiss); color: var(--gneiss); }
@@ -210,6 +214,14 @@ td { padding: 1.2mm 1.3mm; vertical-align: middle; }
   font-size: 7.2pt; color: rgba(70, 96, 110, .82); white-space: nowrap;
   text-align: right; padding-right: 2.4mm;
 }
+
+/* ——— La note de prix : juste sous le dernier tableau, en grand. Elle dit ce que le prix
+   comprend (H.T., franco, départ chai…) ; l'agence y tient plus qu'à tout le reste. ——— */
+.note-prix {
+  margin-top: 2.4mm; padding: 1.6mm 0 1.6mm 3mm; border-left: 1.4pt solid var(--violet);
+  font: 500 10.5pt var(--technique); line-height: 1.3; color: var(--encre);
+}
+.note-prix.sans-note { font-style: italic; color: var(--silex); }
 
 /* ——— Pied de fiche ——— */
 .pied-dom {

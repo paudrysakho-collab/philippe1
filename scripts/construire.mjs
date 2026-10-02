@@ -35,6 +35,7 @@ function documentMesure() {
       <div data-m="enteteSuite-${d.numero}">${G.enteteDomaine(d, true)}</div>
       <div data-m="haut-${d.numero}">${G.hautDomaine(d)}</div>
       ${tableaux}
+      <div data-m="note-${d.numero}">${G.noteDomaine(d)}</div>
       <div data-m="pied-${d.numero}">${G.piedDomaine(d, new Map(catalogue.domaines.map((x) => [x.numero, 99])))}</div>
     </div>`;
   }).join('');
@@ -121,6 +122,10 @@ function decouperAvecBudget(d, m, rabot) {
     thead: m.blocs[`thead-${d.numero}-${ti}`],
     lignes: t.lignes.map((l, li) => ({ l, cle: `${d.numero}-${ti}-${li}`, h: m.lignes[`${d.numero}-${ti}-${li}`] })),
   }));
+  // La note de prix suit le dernier tableau : elle voyage collée à sa dernière ligne,
+  // jamais seule en haut d'une page.
+  const derniere = tableaux.at(-1).lignes.at(-1);
+  derniere.h += m.blocs[`note-${d.numero}`];
 
   const pages = [];
   let courante = { morceaux: [], premiere: true };
@@ -173,6 +178,7 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
   const { pages } = decouper(d, m);
   pages.forEach((pg, i) => descripteurs.push({
     type: 'fiche', domaine: d.numero, premiere: pg.premiere, reste: pg.reste,
+    note: i === pages.length - 1,
     morceaux: pg.morceaux.map((mo) => ({
       tableau: Number(mo.cle.split('-')[1]), suite: mo.suite,
       lignes: mo.lignes.map((l) => Number(l.cle.split('-')[2])),
@@ -185,6 +191,7 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
       ${pg.premiere ? G.hautDomaine(d) : ''}
       <div class="corps-tableaux">${pg.morceaux.map((mo) =>
         tableauHtmlImport(mo.t, mo.lignes, { suite: mo.suite, cleTableau: mo.cle })).join('')}
+        ${i === pages.length - 1 ? G.noteDomaine(d) : ''}
         ${pg.reste >= VIDE_MIN
           ? G.respireSol(d, Math.min(pg.reste - 5, Math.max(VIDE_MAX, pg.reste * 0.6)))
           : ''}</div>
@@ -195,7 +202,7 @@ function pagesDomaine(d, m, pagesParDomaine, descripteurs) {
 
 /* ———————————————————————————————————————————— 3. le plan ——— */
 
-const AVANT = 5;   // couverture, agence, mode d'emploi, sommaire, alliances
+const AVANT = 3;   // couverture, agence, sommaire
 
 function plan(m) {
   // Premier passage : on compte les pages de chaque domaine pour connaître les folios.
@@ -217,14 +224,11 @@ function construirePages(m) {
   const { parDomaine, apresDomaines } = plan(m);
 
   // Le descripteur décrit chaque page : il sert à fabriquer le PPTX à l'identique.
-  const descripteurs = [{ type: 'couverture' }, { type: 'agence' }, { type: 'mode-emploi' },
-    { type: 'sommaire' }, { type: 'alliances' }];
+  const descripteurs = [{ type: 'couverture' }, { type: 'agence' }, { type: 'sommaire' }];
   const pages = [
     G.couverture(),
     G.pageAgence(),
-    G.modeEmploi(),
     ...G.sommaire(parDomaine),
-    ...G.alliances(parDomaine),
   ];
   for (const region of REGIONS) {
     pages.push(G.ouvertureRegion(region, parDomaine));
