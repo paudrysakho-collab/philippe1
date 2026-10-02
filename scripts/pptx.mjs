@@ -10,7 +10,7 @@ import {
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, COLONNE_DOM, photoDe, creditPhotos,
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
-import { entreesIndex, colonnesSommaire, SOMMAIRE, encreStrate, texteNotePrix, SALON_ED, ED, NB_VINS,
+import { entreesIndex, colonnesSommaire, SOMMAIRE, texteNotePrix, SALON_ED, ED, NB_VINS,
   numero as numeroAffiche, PLAN, standsPlan }
   from '../src/gabarits/pages.mjs';
 
@@ -499,13 +499,12 @@ function slideCouverture(s, numero) {
       fontFace: F.titre, fontSize: 44, color: C.silex, lineSpacingMultiple: 0.92 });
     s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
       fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
-    s.addShape(pres.ShapeType.roundRect, { x: mm(-6), y: mm(PAGE_H - 44), w: mm(112), h: mm(24),
-      fill: { color: C.tuffeau }, line: { color: C.tuffeau, width: 0 }, rectRadius: 0.03 });
-    s.addText(EV.date_texte, { x: mm(MARGE.int), y: mm(PAGE_H - 41), w: mm(95), h: mm(10), margin: 0,
-      fontFace: F.titre, fontSize: 24, color: C.violet });
-    s.addText(`${EV.lieu}, ${EV.commune}`.toUpperCase(), { x: mm(MARGE.int), y: mm(PAGE_H - 30),
-      w: mm(95), h: mm(5), margin: 0, fontFace: F.tech, fontSize: 9, bold: true, color: C.silex,
-      charSpacing: 0.3 });
+    // la date et le lieu, en haut, en face du logo (comme .edition-couv du PDF)
+    s.addText(EV.date_texte, { x: mm(PAGE_L - MARGE.int - 95), y: mm(16), w: mm(95), h: mm(8.5),
+      margin: 0, align: 'right', valign: 'top', fontFace: F.titre, fontSize: 19, color: C.violet });
+    s.addText(`${EV.lieu}\n${EV.commune}`.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 95), y: mm(25),
+      w: mm(95), h: mm(9), margin: 0, align: 'right', valign: 'top', fontFace: F.tech, fontSize: 9,
+      bold: true, color: C.silex, charSpacing: 0.3, lineSpacingMultiple: 1.2 });
   } else {
   s.addText([
     { text: 'Sous', options: { breakLine: true } },
@@ -516,12 +515,11 @@ function slideCouverture(s, numero) {
   s.addText(sousTitre, {
     x: mm(MARGE.int), y: mm(95), w: mm(120), h: mm(14), margin: 0,
     fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
-  s.addShape(pres.ShapeType.roundRect, { x: mm(-6), y: mm(PAGE_H - 44), w: mm(78), h: mm(24),
-    fill: { color: C.tuffeau }, line: { color: C.tuffeau, width: 0 }, rectRadius: 0.03 });
-  s.addText(AG.cible.toUpperCase(), { x: mm(MARGE.int), y: mm(PAGE_H - 42), w: mm(60), h: mm(5),
-    margin: 0, fontFace: F.tech, fontSize: 9, bold: true, color: C.silex, charSpacing: 0.3 });
-  s.addText(AG.edition, { x: mm(MARGE.int), y: mm(PAGE_H - 36), w: mm(60), h: mm(14), margin: 0,
-    fontFace: F.titre, fontSize: 34, color: C.violet });
+  // la cible et l'année, en haut, en face du logo (comme .edition-couv du PDF)
+  s.addText(AG.cible.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 80), y: mm(17), w: mm(80), h: mm(5),
+    margin: 0, align: 'right', fontFace: F.tech, fontSize: 9, bold: true, color: C.silex, charSpacing: 0.3 });
+  s.addText(AG.edition, { x: mm(PAGE_L - MARGE.int - 60), y: mm(22.5), w: mm(60), h: mm(13), margin: 0,
+    align: 'right', valign: 'top', fontFace: F.titre, fontSize: 34, color: C.violet });
   }
   s.addText(AG.message_sanitaire, { x: mm(MARGE.int), y: mm(PAGE_H - 13), w: mm(140), h: mm(5),
     margin: 0, fontFace: F.tech, fontSize: 5.6, color: C.craie });
@@ -596,9 +594,14 @@ function slideSommaire(s, numero) {
     let y = y0;
     blocs.forEach((b) => {
       const st = STRATES[b.nom];
-      s.addImage({ path: img(`bande-${cle(b.nom)}`), x: mm(cx), y: mm(y), w: mm(colonne), h: mm(bande) });
-      s.addText(b.nom, { x: mm(cx + 3), y: mm(y), w: mm(colonne - 6), h: mm(bande), margin: 0,
-        fontFace: F.titre, fontSize: 13, color: encreStrate(b.nom).slice(1), valign: 'middle' });
+      // version sobre (pour l'impression) : une pastille de strate, le nom en violet, un filet
+      s.addShape(pres.ShapeType.rect, { x: mm(cx), y: mm(y + (bande - 3.2) / 2), w: mm(3.2), h: mm(3.2),
+        fill: { color: st.hex.slice(1) },
+        line: { color: b.nom === 'Champagne' ? C.silex : st.hex.slice(1), width: 0.6 } });
+      s.addText(b.nom, { x: mm(cx + 5.4), y: mm(y), w: mm(colonne - 6), h: mm(bande), margin: 0,
+        fontFace: F.titre, fontSize: 13, color: C.violet, valign: 'middle' });
+      s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + bande), w: mm(colonne), h: 0,
+        line: { color: C.violet, width: 0.9 } });
       y += bande + apresBande;
       b.doms.forEach((d) => {
         s.addText(String(numeroAffiche(d)), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,

@@ -30,17 +30,21 @@
   position: absolute; left: calc(var(--marge-int) + var(--fp)); top: calc(96mm + var(--fp)); width: 120mm;
   font-size: 10.5pt; line-height: 1.5; color: var(--silex); opacity: .85;
 }
-.pied-couv {
-  position: absolute; left: 0; bottom: calc(20mm + var(--fp));
-  padding: 5mm 7mm 4mm calc(var(--marge-int) + var(--fp));
-  background: var(--tuffeau); border-radius: 0 3mm 3mm 0;
+/* L'édition (« Tarifs cavistes Vendée (85) », « 2026 », ou la date du salon) se lit en haut
+   de la couverture, en face du logo : c'est la première chose que l'agence veut voir. */
+.edition-couv {
+  position: absolute; top: calc(17mm + var(--fp)); right: calc(var(--marge-int) + var(--fp));
+  text-align: right; display: flex; flex-direction: column; align-items: flex-end;
 }
-.pied-couv .cible {
+.edition-couv .cible {
   font: 500 9pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase;
-  display: block; margin-bottom: .5mm; color: var(--silex);
+  color: var(--silex); line-height: 1.35;
 }
-.pied-couv .annee {
-  font-family: var(--titre); font-size: 34pt; line-height: 1; color: var(--violet); display: block;
+.edition-couv .annee {
+  font-family: var(--titre); font-size: 34pt; line-height: 1; color: var(--violet); margin-top: .6mm;
+}
+.edition-couv .date {
+  font-family: var(--titre); font-size: 19pt; line-height: 1.05; color: var(--violet); margin-bottom: 1.4mm;
 }
 .sanitaire-couv {
   left: calc(var(--marge-int) + var(--fp)); bottom: calc(8mm + var(--fp)); color: var(--craie); opacity: .9;
@@ -80,12 +84,13 @@
 .som-col { width: 82mm; }
 .som-region { margin-bottom: 4.2mm; }
 .som-bande {
-  position: relative; height: 7.6mm; margin-bottom: 1.4mm; border-radius: 1.2mm; overflow: hidden;
-  background: var(--strate); color: var(--craie); display: flex; align-items: center; padding: 0 3mm;
+  height: 7.6mm; margin-bottom: 1.4mm; display: flex; align-items: center; gap: 2.2mm;
+  border-bottom: .9pt solid var(--violet);
 }
-.som-bande .trame { opacity: .5; }
-.som-bande.claire { color: var(--silex); box-shadow: inset 0 0 0 .6pt rgba(70,96,110,.45); }
-.som-bande span { position: relative; font-family: var(--titre); font-size: 13pt; letter-spacing: -.01em; }
+/* la seule couleur de strate du sommaire : une pastille, comme sur la tranche */
+.som-pastille { flex: none; width: 3.2mm; height: 3.2mm; border-radius: .6mm; background: var(--strate); }
+.som-bande.claire .som-pastille { box-shadow: inset 0 0 0 .6pt var(--silex); }
+.som-bande span { font-family: var(--titre); font-size: 13pt; letter-spacing: -.01em; color: var(--violet); }
 .sommaire ul { list-style: none; }
 .sommaire li a {
   height: 5.6mm; display: flex; align-items: center; gap: 2.4mm; padding: 0 1mm 0 .6mm;
@@ -301,8 +306,6 @@
    ========================================================================= */
 .couverture-salon .titre-couv { font-size: 44pt; }
 .couverture-salon .sous-couv { top: calc(90mm + var(--fp)); }
-.couverture-salon .pied-couv .annee { font-size: 24pt; margin-bottom: 1.4mm; }
-.couverture-salon .pied-couv .cible { margin: 0; }
 
 .encart-salon {
   margin: 8mm 0 7mm; padding: 5mm 6mm; background: var(--craie);

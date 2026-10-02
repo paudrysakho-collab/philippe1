@@ -667,3 +667,24 @@ jamais coupés. La répartition est mesurée dans Chromium. Un vin tient sur une
 cuvée en gras, l'appellation à la suite, la couleur et le millésime alignés. Première version
 à 5 pages (cuvée et appellation sur deux lignes) : trop aérée pour un document de salon.
 Proposé en A4 pour une impression au bureau ; le format du catalogue reste à un réglage près.
+
+## 2 octobre 2026 — retour de l'agence : la date en haut, un sommaire sobre
+
+« C'est beau, c'est clean, c'est carré. » Deux retouches demandées :
+
+**La date en haut de la première page.** Sur les deux couvertures, l'édition passait en bas,
+dans un cartouche posé sur la coupe. Elle remonte en haut à droite, en face du logo :
+« Tarifs cavistes Vendée (85) / 2026 » pour le catalogue général, « Lundi 5 octobre 2026 /
+Château de la Rairie / Pont-Saint-Martin » pour le salon, sous le titre « Salon Privé Vins &
+Terroirs ». Le bas de la couverture ne porte plus que la coupe, sans cartouche : c'est plus
+net. Même chose dans les deux .pptx.
+
+**Un sommaire qui coûte le moins d'encre.** Les bandes de région pleines (couleur et trame)
+coûtaient cher à l'impression. Le sommaire passe en version sobre et uniforme : le nom de la
+région en violet, un filet violet dessous, et de la couleur de strate seulement dans une
+pastille de 3 mm, comme un repère de tranche. Les listes de domaines ne changent pas. Les
+images de bandes de la déco du .pptx disparaissent : le .pptx dessine la pastille et le filet
+en formes simples, modifiables dans Canva.
+
+**Le plan des exposants reste** : « pas besoin, mais j'aime bien ». Il se retire d'une ligne
+dans `scripts/construire.mjs` si l'agence change d'avis.

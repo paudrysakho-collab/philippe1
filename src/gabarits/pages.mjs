@@ -92,7 +92,7 @@ export function couverture() {
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
       ${coupe({ largeur: 600, hauteur: 430 })}
-      <div class="pied-couv">
+      <div class="edition-couv">
         <span class="cible">${esc(AG.cible)}</span>
         <span class="annee">${esc(AG.edition)}</span>
       </div>
@@ -110,9 +110,10 @@ function couvertureSalon() {
       <h1 class="titre-couv">Salon Privé<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
       ${coupe({ largeur: 600, hauteur: 430 })}
-      <div class="pied-couv">
-        <span class="annee">${esc(EV.date_texte)}</span>
-        <span class="cible">${esc(EV.lieu)}, ${esc(EV.commune)}</span>
+      <div class="edition-couv">
+        <span class="date">${esc(EV.date_texte)}</span>
+        <span class="cible">${esc(EV.lieu)}</span>
+        <span class="cible">${esc(EV.commune)}</span>
       </div>
       <div class="sanitaire sanitaire-couv">${esc(SANITAIRE)}</div>`,
   });
@@ -159,7 +160,8 @@ export function pageAgence() {
 /* ——————————————————————————————————————————————— sommaire ——— */
 
 /* Le sommaire « comme on faisait d'habitude » : une liste par région, les domaines numérotés
-   avec leur page, sur deux colonnes. Chaque région ouvre sur une bande de sa strate.
+   avec leur page, sur deux colonnes. Version sobre, demandée par l'agence pour l'impression :
+   une seule encre pour le texte, et de la couleur de strate seulement dans une pastille.
    Les hauteurs sont fixes (en mm) : le .pptx les reprend telles quelles. */
 export const SOMMAIRE = { bande: 7.6, ligne: 5.6, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
 
@@ -182,8 +184,6 @@ export function colonnesSommaire() {
   return [blocs.slice(0, coupe), blocs.slice(coupe)];
 }
 
-/** La couleur d'écriture sur une bande de strate : la craie de Champagne veut de l'encre. */
-export const encreStrate = (nom) => (nom === 'Champagne' ? '#46606E' : '#FBF8F1');
 
 /** La légende complète des pictos : types de vin et labels. */
 export function legendeComplete() {
@@ -203,7 +203,7 @@ export function sommaire(pagesParDomaine) {
     const s = STRATES[b.nom];
     return `<div class="som-region">
       <div class="som-bande ${b.nom === 'Champagne' ? 'claire' : ''}" style="--strate:${s.hex}">
-        <div class="trame trame-${s.t}"></div><span>${esc(b.nom)}</span></div>
+        <i class="som-pastille"></i><span>${esc(b.nom)}</span></div>
       <ul>${b.doms.map((d) => `<li><a href="#p${pagesParDomaine.get(d.numero)}">
         <span class="n">${numero(d)}</span><span class="nom">${esc(d.nom)}</span>
         <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul></div>`;

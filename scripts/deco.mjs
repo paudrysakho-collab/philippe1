@@ -34,15 +34,6 @@ REGIONS.forEach((r) => {
        ${solTeinte(r, 7)}</div>` });
 });
 
-// Les bandes de région du sommaire : la couleur et la trame de la strate (SOMMAIRE.colonne × bande).
-REGIONS.forEach((r) => {
-  const s = STRATES[r];
-  blocs.push({ nom: `bande-${cle(r)}`, l: 82, h: 7.6, html:
-    `<div style="position:absolute;inset:0;border-radius:1.2mm;overflow:hidden;background:${s.hex};
-       ${r === 'Champagne' ? 'box-shadow:inset 0 0 0 .6pt rgba(70,96,110,.45)' : ''}">
-       <div class="trame trame-${s.t}" style="opacity:.5"></div></div>` });
-});
-
 // Les salles du plan des exposants (édition salon) : les stands sont posés par-dessus en texte.
 blocs.push({ nom: 'plan-salles', l: PLAN.largeur, h: +PLAN.hauteur.toFixed(2), html:
   `<div style="position:absolute;inset:0">${sallesSvg()}</div>` });
