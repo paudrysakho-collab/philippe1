@@ -20,6 +20,7 @@ image : `credits.md`.
 | **Catalogue, version imprimeur** (fond perdu 3 mm, traits de coupe) | `dist/catalogue-scio-2026-imprimeur.pdf` |
 | **Catalogue, version écran** (navigation cliquable, liens `tel:`, `mailto:`, site) | `dist/catalogue-scio-2026-ecran.pdf` |
 | Données des 40 domaines, vérifiées | `data/catalogue.json` |
+| **Tous les tableaux de prix dans un tableur**, à modifier puis réimporter | `tableur/tarifs-scio-2026.xlsx` |
 | Épreuve de contrôle des tarifs | `epreuves/epreuve-tarifs.pdf` |
 | Lecture du catalogue concurrent | `INSPIRATIONS.md` |
 | Les trois directions et leurs maquettes | `CONCEPTS.md`, `concepts/*.png` |
@@ -86,7 +87,27 @@ si les polices changent, car ses deux sorties sont versionnées.
    est refait avec la même pagination que les PDF.
 4. `npm run epreuve` pour revoir le tableau d'origine face à la nouvelle version.
 
-**Ne jamais écrire un prix ailleurs que dans `data/fiches/`.** Les gabarits ne font que lire,
+### Beaucoup de changements d'un coup : le tableur
+
+`tableur/tarifs-scio-2026.xlsx` contient les 48 tableaux de prix des 40 domaines, à la suite,
+présentés comme dans le catalogue (un bandeau par domaine, un bandeau violet par tableau avec
+ses paliers), plus un sommaire cliquable et un mode d'emploi. Il s'ouvre dans Excel, Google
+Sheets ou LibreOffice.
+
+1. On modifie le tableur : prix, millésimes, cuvées, notes, intitulés de paliers, note de
+   prix ; on ajoute un vin en insérant une ligne (colonne A vide), on en retire un en
+   supprimant sa ligne. La colonne A (grise) ne se touche pas.
+2. `npm run importer -- FICHIER.xlsx --essai` montre chaque changement (ancien prix → nouveau
+   prix, ajouts, retraits) sans rien écrire. On relit.
+3. `npm run importer -- FICHIER.xlsx` écrit les changements dans `data/fiches/` (seules les
+   lignes modifiées bougent), puis `npm run build` refait et contrôle les PDF et le `.pptx`.
+4. `npm run tableur` remet le tableur à jour pour la fois suivante.
+
+Le tableur refuse ce qui casserait le catalogue (un prix illisible, plus de prix que de
+paliers, un tableau ajouté ou retiré) et dit à quelle ligne. Il demande `pip install openpyxl`.
+
+**Ne jamais écrire un prix ailleurs que dans `data/fiches/`.** Le tableur n'est qu'un moyen
+de les modifier. Les gabarits ne font que lire,
 et le contrôle vérifie que les 715 prix du JSON se retrouvent dans le texte des deux PDF
 **et** dans celui des diapositives.
 
