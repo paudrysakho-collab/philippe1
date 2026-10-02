@@ -48,6 +48,10 @@ PX_BOUT_L = px(MM_BOUT_L)               # 283 px
 PX_BOUT_H = px(MM_BOUT_H)               # 732 px
 
 
+# n° du domaine → [x, y, l, h] du carré du rond dans son image entière, en fractions
+ENTIERES = {}
+
+
 class Ecartee(Exception):
     """Une image qu'on ne pose pas : l'emplacement reste vide, avec sa raison."""
 
@@ -337,6 +341,13 @@ def faire_rond(numero, entree):
             g = (im.width - c) // 2 if cx is None else round(cx * im.width - c / 2)
             h = (im.height - c) // 3 if cy is None else round(cy * im.height - c / 2)
             g = max(0, min(im.width - c, g)); h = max(0, min(im.height - c, h))
+            # L'image entière, à la même échelle que le rond, et la place du carré dedans :
+            # le .pptx « recadrable » la pose avec un masque rond qu'on peut déplacer.
+            k = min(1.0, PX_ROND / c)
+            entiere = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
+            entiere.save(ROND / f"d{int(numero):02d}-entiere.jpg", "JPEG", quality=88,
+                         optimize=True, progressive=True)
+            ENTIERES[int(numero)] = [g / im.width, h / im.height, c / im.width, c / im.height]
             im = im.crop((g, h, g + c, h + c))
         # on ne grandit jamais une image : sous 300 ppi, elle garde ses pixels
         cote = min(PX_ROND, c)
@@ -651,6 +662,9 @@ def preparer():
                            "page": e.get("page") or sources[0].get("page"),
                            "provenance": e.get("provenance", "dossier de l'agence"),
                            "source_px": source_px, "ppi": ppi, "sujet": e.get("sujet", "")})
+            if role == "rond" and int(n) in ENTIERES:
+                posees[-1]["entiere"] = str((ROND / f"d{int(n):02d}-entiere.jpg").relative_to(RACINE))
+                posees[-1]["carre"] = [round(v, 5) for v in ENTIERES[int(n)]]
             print(f"n°{int(n):>2} {role:<9} {sortie.name:<8} source {source_px:>10}  {ppi} ppi")
     (RACINE / "data/photos-preparees.json").write_text(
         json.dumps(posees, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

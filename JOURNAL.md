@@ -438,3 +438,24 @@ lieu de 172). Les deux perdent leur ombre (`ombre: couper`). Le test du liseré 
 bord, lui, s'est révélé non concluant : il compte les étiquettes blanches qui touchent le
 verre ; vu à l'œil, le liseré d'un pixel des bouteilles sombres se fond dans le papier
 clair de la page et ne se verra pas. Laissé tel quel.
+
+### Le .pptx : la lettrine, et des ronds qu'on peut recentrer
+
+L'agence voulait retrouver dans le .pptx la lettrine du PDF (Young Serif violette) et
+pouvoir recentrer une photo mal cadrée directement dans Canva.
+
+- **La lettrine.** Un .pptx ne sait pas faire tomber une lettre sur deux lignes ; elle y
+  monte au-dessus de la première ligne, qu'elle rend plus haute. À 2,1 fois le corps, les
+  textes les plus longs (n°16, n°17, qui touchaient déjà leur tableau sans lettrine)
+  débordaient dans le rendu. Une estimation théorique de la place libre donnait des tailles
+  très inégales d'une fiche à l'autre : rejetée. Retenu : `scripts/regler-lettrines.py`
+  rend le .pptx dans LibreOffice, mesure chaque bloc de texte (PyMuPDF, par la police :
+  Spectral et Young Serif, pas le tableau en IBM Plex Sans) et ne réduit que les fautifs,
+  d'abord la lettrine (1,8 → 1,55 → 1,3), puis l'interligne. Résultat : 1,8 fois partout,
+  1,3 au n°26, 1,3 avec un interligne resserré aux n°16 (1,30) et n°17 (1,36).
+- **Les ronds recadrables.** Un second fichier, `…-canva-recadrable.pptx`, pose les 25
+  photos simples en entier (à l'échelle du rond) avec un recadrage carré et un masque en
+  ellipse, au lieu du rond déjà découpé. LibreOffice les rend à l'identique. Ce que Canva
+  fait de ce recadrage à l'import n'a pas pu être vérifié d'ici : la version découpée
+  reste le fichier principal. Les ronds n°10 et n°18 restent figés exprès (leur photo
+  entière montre un verre).

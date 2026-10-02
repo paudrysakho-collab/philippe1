@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { catalogue, euros, photoDe } from '../src/gabarits/pieces.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const FICHIER = path.join(RACINE, 'dist/catalogue-scio-2026-canva.pptx');
+const FICHIER = path.join(RACINE, process.argv[2] || 'dist/catalogue-scio-2026-canva.pptx');
 const plan = JSON.parse(fs.readFileSync(path.join(RACINE, 'build/plan.json'), 'utf8'));
 
 const liste = execFileSync('unzip', ['-Z1', FICHIER], { encoding: 'utf8' })

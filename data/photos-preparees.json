@@ -8,7 +8,14 @@
   "provenance": "dossier de l'agence",
   "source_px": "486x463",
   "ppi": 294,
-  "sujet": "portrait du vigneron, noir et blanc"
+  "sujet": "portrait du vigneron, noir et blanc",
+  "entiere": "src/photos/rond/d01-entiere.jpg",
+  "carre": [
+   0.02263,
+   0.0,
+   0.95267,
+   1.0
+  ]
  },
  {
   "numero": 1,
@@ -30,7 +37,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "2500x1666",
   "ppi": 1058,
-  "sujet": "vendanges dans les vignes du domaine"
+  "sujet": "vendanges dans les vignes du domaine",
+  "entiere": "src/photos/rond/d02-entiere.jpg",
+  "carre": [
+   0.1668,
+   0.0,
+   0.6664,
+   1.0
+  ]
  },
  {
   "numero": 2,
@@ -52,7 +66,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 6",
   "source_px": "515x336",
   "ppi": 213,
-  "sujet": "le vigneron au chai"
+  "sujet": "le vigneron au chai",
+  "entiere": "src/photos/rond/d03-entiere.jpg",
+  "carre": [
+   0.2932,
+   0.0,
+   0.65243,
+   1.0
+  ]
  },
  {
   "numero": 3,
@@ -74,7 +95,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 7",
   "source_px": "994x1325",
   "ppi": 631,
-  "sujet": "portrait"
+  "sujet": "portrait",
+  "entiere": "src/photos/rond/d04-entiere.jpg",
+  "carre": [
+   0.0,
+   0.08302,
+   1.0,
+   0.75019
+  ]
  },
  {
   "numero": 4,
@@ -96,7 +124,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1784x2560",
   "ppi": 1133,
-  "sujet": "les deux fondateurs du chai"
+  "sujet": "les deux fondateurs du chai",
+  "entiere": "src/photos/rond/d05-entiere.jpg",
+  "carre": [
+   0.0,
+   0.10078,
+   1.0,
+   0.69688
+  ]
  },
  {
   "numero": 5,
@@ -118,7 +153,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 9",
   "source_px": "1800x1200",
   "ppi": 762,
-  "sujet": "dans les vignes"
+  "sujet": "dans les vignes",
+  "entiere": "src/photos/rond/d06-entiere.jpg",
+  "carre": [
+   0.02667,
+   0.0,
+   0.66667,
+   1.0
+  ]
  },
  {
   "numero": 6,
@@ -140,7 +182,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "2000x1333",
   "ppi": 846,
-  "sujet": "vinification en cuverie"
+  "sujet": "vinification en cuverie",
+  "entiere": "src/photos/rond/d07-entiere.jpg",
+  "carre": [
+   0.1665,
+   0.0,
+   0.6665,
+   1.0
+  ]
  },
  {
   "numero": 7,
@@ -184,7 +233,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "370x555",
   "ppi": 235,
-  "sujet": "portrait des vignerons"
+  "sujet": "portrait des vignerons",
+  "entiere": "src/photos/rond/d09-entiere.jpg",
+  "carre": [
+   0.0,
+   0.10991,
+   1.0,
+   0.66667
+  ]
  },
  {
   "numero": 9,
@@ -228,7 +284,14 @@
   "provenance": "dossier de l'agence",
   "source_px": "1920x1080",
   "ppi": 686,
-  "sujet": "les vigneronnes au chai, noir et blanc"
+  "sujet": "les vigneronnes au chai, noir et blanc",
+  "entiere": "src/photos/rond/d11-entiere.jpg",
+  "carre": [
+   0.26875,
+   0.0,
+   0.5625,
+   1.0
+  ]
  },
  {
   "numero": 11,
@@ -272,7 +335,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1130x663",
   "ppi": 421,
-  "sujet": "le vignoble du Château du Cray (bannière de sa page)"
+  "sujet": "le vignoble du Château du Cray (bannière de sa page)",
+  "entiere": "src/photos/rond/d13-entiere.jpg",
+  "carre": [
+   0.20619,
+   0.0,
+   0.58673,
+   1.0
+  ]
  },
  {
   "numero": 13,
@@ -316,7 +386,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "2500x2199",
   "ppi": 1396,
-  "sujet": "portrait du vigneron"
+  "sujet": "portrait du vigneron",
+  "entiere": "src/photos/rond/d15-entiere.jpg",
+  "carre": [
+   0.06,
+   0.0,
+   0.8796,
+   1.0
+  ]
  },
  {
   "numero": 15,
@@ -360,7 +437,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 20",
   "source_px": "817x774",
   "ppi": 491,
-  "sujet": "le domaine"
+  "sujet": "le domaine",
+  "entiere": "src/photos/rond/d17-entiere.jpg",
+  "carre": [
+   0.0257,
+   0.0,
+   0.94737,
+   1.0
+  ]
  },
  {
   "numero": 17,
@@ -393,7 +477,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 22",
   "source_px": "640x575",
   "ppi": 365,
-  "sujet": "vendanges dans les vignes"
+  "sujet": "vendanges dans les vignes",
+  "entiere": "src/photos/rond/d19-entiere.jpg",
+  "carre": [
+   0.0,
+   0.0,
+   0.89844,
+   1.0
+  ]
  },
  {
   "numero": 19,
@@ -415,7 +506,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1920x1440",
   "ppi": 914,
-  "sujet": "portrait de la famille"
+  "sujet": "portrait de la famille",
+  "entiere": "src/photos/rond/d20-entiere.jpg",
+  "carre": [
+   0.125,
+   0.0,
+   0.75,
+   1.0
+  ]
  },
  {
   "numero": 20,
@@ -503,7 +601,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1920x2560",
   "ppi": 1219,
-  "sujet": "portrait du vigneron dans ses vignes"
+  "sujet": "portrait du vigneron dans ses vignes",
+  "entiere": "src/photos/rond/d24-entiere.jpg",
+  "carre": [
+   0.0,
+   0.0832,
+   1.0,
+   0.75
+  ]
  },
  {
   "numero": 24,
@@ -525,7 +630,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "685x1086",
   "ppi": 435,
-  "sujet": "portrait de famille d'époque"
+  "sujet": "portrait de famille d'époque",
+  "entiere": "src/photos/rond/d25-entiere.jpg",
+  "carre": [
+   0.0,
+   0.12247,
+   1.0,
+   0.63076
+  ]
  },
  {
   "numero": 25,
@@ -547,7 +659,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1000x1500",
   "ppi": 635,
-  "sujet": "portrait des vignerons"
+  "sujet": "portrait des vignerons",
+  "entiere": "src/photos/rond/d26-entiere.jpg",
+  "carre": [
+   0.0,
+   0.11067,
+   1.0,
+   0.66667
+  ]
  },
  {
   "numero": 26,
@@ -591,7 +710,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "800x640",
   "ppi": 406,
-  "sujet": "vendanges au domaine"
+  "sujet": "vendanges au domaine",
+  "entiere": "src/photos/rond/d28-entiere.jpg",
+  "carre": [
+   0.1,
+   0.0,
+   0.8,
+   1.0
+  ]
  },
  {
   "numero": 28,
@@ -613,7 +739,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "886x591",
   "ppi": 375,
-  "sujet": "portrait des vignerons"
+  "sujet": "portrait des vignerons",
+  "entiere": "src/photos/rond/d29-entiere.jpg",
+  "carre": [
+   0.16591,
+   0.0,
+   0.66704,
+   1.0
+  ]
  },
  {
   "numero": 29,
@@ -657,7 +790,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "2560x1709",
   "ppi": 1085,
-  "sujet": "borie en pierre sèche du domaine"
+  "sujet": "borie en pierre sèche du domaine",
+  "entiere": "src/photos/rond/d31-entiere.jpg",
+  "carre": [
+   0.16602,
+   0.0,
+   0.66758,
+   1.0
+  ]
  },
  {
   "numero": 31,
@@ -701,7 +841,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 36",
   "source_px": "1800x1200",
   "ppi": 762,
-  "sujet": "brebis dans les vignes"
+  "sujet": "brebis dans les vignes",
+  "entiere": "src/photos/rond/d33-entiere.jpg",
+  "carre": [
+   0.11667,
+   0.0,
+   0.66667,
+   1.0
+  ]
  },
  {
   "numero": 33,
@@ -723,7 +870,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1280x1920",
   "ppi": 813,
-  "sujet": "grappes à la vigne"
+  "sujet": "grappes à la vigne",
+  "entiere": "src/photos/rond/d34-entiere.jpg",
+  "carre": [
+   0.0,
+   0.11094,
+   1.0,
+   0.66667
+  ]
  },
  {
   "numero": 34,
@@ -767,7 +921,14 @@
   "provenance": "dossier de l'agence",
   "source_px": "1181x1181",
   "ppi": 750,
-  "sujet": "les deux vignerons et leur rosé, noir et blanc"
+  "sujet": "les deux vignerons et leur rosé, noir et blanc",
+  "entiere": "src/photos/rond/d36-entiere.jpg",
+  "carre": [
+   0.0,
+   0.0,
+   1.0,
+   1.0
+  ]
  },
  {
   "numero": 36,
@@ -811,7 +972,14 @@
   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 41",
   "source_px": "1024x768",
   "ppi": 488,
-  "sujet": "le village dans ses vignes"
+  "sujet": "le village dans ses vignes",
+  "entiere": "src/photos/rond/d38-entiere.jpg",
+  "carre": [
+   0.125,
+   0.0,
+   0.75,
+   1.0
+  ]
  },
  {
   "numero": 38,
@@ -855,7 +1023,14 @@
   "provenance": "site officiel du domaine",
   "source_px": "1920x950",
   "ppi": 603,
-  "sujet": "la maison de champagne"
+  "sujet": "la maison de champagne",
+  "entiere": "src/photos/rond/d40-entiere.jpg",
+  "carre": [
+   0.2526,
+   0.0,
+   0.49479,
+   1.0
+  ]
  },
  {
   "numero": 40,

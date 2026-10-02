@@ -14,6 +14,7 @@ image : `credits.md`.
 | Livrable | Où |
 |---|---|
 | **Fichier Canva** (76 diapositives, textes et tableaux modifiables) | `dist/catalogue-scio-2026-canva.pptx` |
+| **Le même, ronds recadrables** : photos entières sous un masque rond qu'on fait glisser (à essayer dans Canva) | `dist/catalogue-scio-2026-canva-recadrable.pptx` |
 | **Les polices à téléverser dans Canva**, avec leur mode d'emploi | `polices-canva/` |
 | **Prompt pour faire poser les images par Cowork** | `PROMPT-COWORK.md` |
 | Où sont les deux emplacements d'image, diapositive par diapositive | `docs/emplacements-images.md` |
@@ -42,6 +43,19 @@ image : `credits.md`.
    taille sur les quarante fiches : rien ne bouge autour.
 4. **Les tableaux sont de vrais tableaux** : on clique dans une cellule et on tape.
    Les textes aussi.
+5. **Deux versions du fichier.** `…-canva.pptx` pose des ronds déjà découpés : ils
+   s'affichent partout à l'identique, mais on ne peut pas y déplacer la photo.
+   `…-canva-recadrable.pptx` pose les 25 photos simples en entier sous un masque rond :
+   dans PowerPoint, et dans Canva s'il garde ce recadrage à l'import, on recentre la photo
+   en la faisant glisser. Les logos, les ronds à deux portraits et les ronds élargis (dont
+   les n°10 et n°18, cadrés pour laisser un verre hors champ) restent figés. Si Canva
+   rend les ronds carrés ou déformés à l'import, garder la première version.
+6. **La lettrine** (première lettre du texte, Young Serif violette) monte au-dessus de la
+   première ligne : un .pptx ne sait pas la faire tomber sur deux lignes comme le PDF. Sa
+   taille est réglée domaine par domaine dans `src/gabarits/lettrines-pptx.json` par
+   `python3 scripts/regler-lettrines.py`, qui rend le .pptx et réduit la lettrine (puis
+   l'interligne) des seuls textes qui toucheraient leur tableau. À relancer si un texte
+   de domaine change (demande LibreOffice et `pip install pymupdf`).
 
 **Attention** : une fois le catalogue modifié dans Canva, Canva devient la nouvelle source.
 Si un prix change après coup, corrigez-le d'abord dans `data/fiches/`, relancez

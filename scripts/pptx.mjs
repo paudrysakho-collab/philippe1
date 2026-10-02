@@ -32,6 +32,21 @@ const C = {
 };
 const F = { titre: 'Young Serif', courant: 'Spectral', tech: 'IBM Plex Sans' };
 
+/* `node scripts/pptx.mjs --recadrable` : les ronds photo sont posés en image entière sous un
+   masque rond (recadrage du fichier, pas des pixels). Dans PowerPoint, et dans Canva s'il
+   garde ce recadrage à l'import, on déplace l'image dans son rond. La version par défaut
+   pose le rond déjà découpé, qui ne dépend de rien. */
+const RECADRABLE = process.argv.includes('--recadrable');
+
+/* La taille de la lettrine, domaine par domaine, en multiple du corps du texte, et au besoin
+   un interligne un peu resserré : réglés par scripts/regler-lettrines.py, qui rend le .pptx
+   et ne réduit que là où le texte déborderait de sa bande. */
+const FICHIER_LETTRINES = path.join(RACINE, 'src/gabarits/lettrines-pptx.json');
+const LETTRINES = fs.existsSync(FICHIER_LETTRINES)
+  ? JSON.parse(fs.readFileSync(FICHIER_LETTRINES, 'utf8')) : {};
+const LETTRINE_DEFAUT = 1.8;
+const BOITES = {};   // n° → place du texte, pour regler-lettrines.py
+
 const PAGE_L = 210, PAGE_H = 260;
 const MARGE = { haut: 15, bas: 13, int: 17, ext: 14 };
 const CAROTTE = 9;
@@ -235,7 +250,15 @@ function slideFiche(s, numero, desc) {
     const { rond, bouteille, ecart } = EMPLACEMENT;
     const bande = (mesures.blocs[`haut-${d.numero}`] ?? 66.5) - 4.5;
     const phRond = photoDe(d, 'rond');
-    if (phRond) {
+    if (phRond && RECADRABLE && phRond.entiere) {
+      // l'image entière, à l'échelle du rond ; le carré choisi est un recadrage, le cercle
+      // un masque : on peut faire glisser l'image dans son rond
+      const [cx, cy, cl, ch] = phRond.carre;
+      const [W, H] = [mm(rond) / cl, mm(rond) / ch];
+      s.addImage({ path: path.join(RACINE, phRond.entiere), x, y, w: W, h: H, rounding: true,
+        sizing: { type: 'crop', x: cx * W, y: cy * H, w: mm(rond), h: mm(rond) },
+        altText: `${phRond.sujet} — ${d.nom}` });
+    } else if (phRond) {
       // déjà masquée en cercle par preparer-photos.py : rien ne dépend de l'import
       s.addImage({ path: path.join(RACINE, phRond.fichier.replace(/\.jpg$/, '-cercle.png')),
         x, y, w: mm(rond), h: mm(rond), altText: `${phRond.sujet} — ${d.nom}` });
@@ -269,9 +292,23 @@ function slideFiche(s, numero, desc) {
     // le corps grandit pour remplir la bande, et le texte s'y centre : voir corpsDomaine()
     const texte = d.texte_source
       || "Le tarif de l'Agence SCIO ne donne pas de présentation pour ce domaine. Nous n'en inventons pas.";
-    s.addText(texte, { x: mm(gauche + rond + ecart), y, w: mm(COLONNE_DOM), h: mm(bande),
-      margin: 0, fontFace: F.courant, fontSize: d.texte_source ? corpsDomaine(d) : 9,
-      color: C.silex, lineSpacingMultiple: 1.42, italic: !d.texte_source, valign: 'middle' });
+    // La lettrine, comme dans le PDF : la première lettre en Young Serif violette. Un .pptx ne
+    // sait pas faire tomber une lettre sur deux lignes ; elle monte donc au-dessus de la
+    // première ligne (lettrine montante), deux fois le corps du texte : corpsDomaine() garde
+    // déjà une ligne de marge pour elle.
+    const corps = d.texte_source ? corpsDomaine(d) : 9;
+    const reglage = LETTRINES[d.numero] ?? {};
+    const facteur = reglage.lettrine ?? LETTRINE_DEFAUT;
+    const interligne = reglage.interligne ?? 1.42;
+    const morceaux = d.texte_source
+      ? [{ text: texte.slice(0, 1), options: { fontFace: F.titre, fontSize: Math.round(corps * facteur * 2) / 2,
+        color: C.violet } }, { text: texte.slice(1) }]
+      : texte;
+    BOITES[d.numero] = { diapo: pres.slides.length, x: gauche + rond + ecart,
+      y: y / mm(1), w: COLONNE_DOM, h: bande };
+    s.addText(morceaux, { x: mm(gauche + rond + ecart), y, w: mm(COLONNE_DOM), h: mm(bande),
+      margin: 0, fontFace: F.courant, fontSize: corps,
+      color: C.silex, lineSpacingMultiple: interligne, italic: !d.texte_source, valign: 'middle' });
     y += mm(bande + 4.5);
   }
 
@@ -749,8 +786,10 @@ plan.descripteurs.forEach((desc, i) => {
   }
 });
 
-const sortie = path.join(RACINE, 'dist/catalogue-scio-2026-canva.pptx');
+const sortie = path.join(RACINE, RECADRABLE ? 'dist/catalogue-scio-2026-canva-recadrable.pptx'
+  : 'dist/catalogue-scio-2026-canva.pptx');
 await pres.writeFile({ fileName: sortie });
+fs.writeFileSync(path.join(RACINE, 'build/pptx-textes.json'), JSON.stringify(BOITES, null, 1));
 console.log(`✓ ${path.relative(RACINE, sortie)} — ${plan.descripteurs.length} diapositives`);
 if (debordements.length) {
   console.error('\n⚠ débordements sous les tableaux :');
