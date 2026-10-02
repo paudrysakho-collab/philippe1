@@ -6,6 +6,7 @@
     python3 scripts/tableur.py importer FICHIER.xlsx    écrit les changements dans data/fiches/
 
     python3 scripts/tableur.py exporter-salon           écrit tableur/prix-salon-prive-2026.xlsx
+    python3 scripts/tableur.py couleurs-salon           écrit tableur/couleurs-manquantes-salon-2026.xlsx
     python3 scripts/tableur.py importer-salon FICHIER.xlsx [--essai]
                                                         écrit les prix du salon dans
                                                         data/salon-prive-2026.json
@@ -602,6 +603,61 @@ def importer_salon(fichier, essai):
           "(refait et contrôle les PDF et le .pptx du salon).")
 
 
+# ——————————————————————————————— le Salon Privé : les vins sans couleur ———
+#
+# Les vins du salon dont on ne connaît pas la couleur (ni la liste de Mathéo ni le tarif ne la
+# donnent). Le catalogue les marque d'un picto « non précisé », ou « bulles » pour un
+# Champagne. L'agence remplit la colonne « Couleur » ; on la reporte ensuite dans
+# scripts/transcrire-matheo.py (vin absent du tarif) ou dans la fiche (vin du tarif).
+
+SORTIE_COULEURS = RACINE / "tableur/couleurs-manquantes-salon-2026.xlsx"
+
+
+def exporter_couleurs_salon(sortie=SORTIE_COULEURS):
+    salon = json.loads(SALON.read_text(encoding="utf-8"))
+    fiches = charger_fiches()
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Couleurs à préciser"
+    ev = salon["evenement"]
+    manquants = [(st, i, v) for st in sorted(salon["stands"], key=lambda s: s["stand"])
+                 for i, v in enumerate(st["vins"], start=1) if not v.get("couleur")]
+    ws["A1"] = f"{ev['nom']} — {ev['date_texte']} — les {len(manquants)} vins dont la couleur manque"
+    ws["A1"].font = Font(name=POLICE, size=14, bold=True, color=VIOLET)
+    ws["A2"] = ("Ni la liste des vins dégustés ni le tarif de septembre ne donnent leur couleur. "
+                "Remplir la colonne « Couleur » (blanc, rosé, rouge, effervescent blanc…), puis renvoyer le fichier.")
+    ws["A2"].font = Font(name=POLICE, size=10, italic=True, color=SILEX)
+    colonnes = ["Réf.", "Stand", "Domaine", "Vin", "Appellation", "Millésime", "Au tarif ?",
+                "Le catalogue affiche", "Couleur"]
+    largeurs = [12, 7, 32, 38, 30, 11, 11, 22, 24]
+    for c, (titre, larg) in enumerate(zip(colonnes, largeurs), start=1):
+        cel = ws.cell(LIGNE_TITRES, c, titre)
+        cel.font = Font(name=POLICE, size=10, bold=True, color=ENCRE)
+        cel.fill = PatternFill("solid", fgColor=CRAIE)
+        cel.border = Border(bottom=Side(style="medium", color=VIOLET))
+        ws.column_dimensions[get_column_letter(c)].width = larg
+    ws.freeze_panes = ws.cell(LIGNE_TITRES + 1, 3)
+    fin = Side(style="thin", color=FILET)
+    a_remplir = PatternFill("solid", fgColor="FFF6D6")
+    for r, (st, i, v) in enumerate(manquants, start=LIGNE_TITRES + 1):
+        champagne = "champagne" in (v.get("appellation") or "").lower()
+        valeurs = [f"S{st['stand']:02d} V{i:02d}", st["stand"], fiches[v["fiche"]]["nom"],
+                   v.get("cuvee") or "—", v.get("appellation") or "—",
+                   v.get("millesime") if v.get("millesime") not in (None, "—") else "—",
+                   "oui" if v.get("tarif") else "non",
+                   "picto « bulles »" if champagne else "picto « non précisé »", None]
+        for c, val in enumerate(valeurs, start=1):
+            cel = ws.cell(r, c, val)
+            cel.font = Font(name=POLICE, size=8 if c == 1 else 10, color=GRIS_REF if c == 1 else ENCRE)
+            cel.border = Border(bottom=fin)
+            cel.alignment = Alignment(vertical="center")
+        ws.cell(r, 9).fill = a_remplir
+        ws.row_dimensions[r].height = 18
+    sortie.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(sortie)
+    print(f"✓ {sortie.relative_to(RACINE)} — {len(manquants)} vins sans couleur")
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     try:
@@ -609,6 +665,8 @@ if __name__ == "__main__":
             exporter(pathlib.Path(args[1]) if len(args) > 1 else SORTIE)
         elif args[:1] == ["importer"] and len(args) >= 2:
             importer(pathlib.Path(args[1]), "--essai" in args)
+        elif args[:1] == ["couleurs-salon"]:
+            exporter_couleurs_salon(pathlib.Path(args[1]) if len(args) > 1 else SORTIE_COULEURS)
         elif args[:1] == ["exporter-salon"]:
             exporter_salon(pathlib.Path(args[1]) if len(args) > 1 else SORTIE_SALON)
         elif args[:1] == ["importer-salon"] and len(args) >= 2:
