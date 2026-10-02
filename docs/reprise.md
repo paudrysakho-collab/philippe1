@@ -124,10 +124,14 @@ Elles sont dans `QUESTIONS.md` :
 - **On voit tout de suite que c'est le salon.** Sur la couverture et la page de l'agence :
   le nom du salon, la date, le lieu. Sur chaque fiche, le **numéro de stand**, pour la
   retrouver sur le plan.
+- **Le plan des exposants fait foi** (réponse de l'agence, 2 octobre) : en cas de
+  divergence entre les documents du salon, le plan l'emporte.
 - **Les exposants** : `data/salon-prive-2026.json` rapproche les 26 stands de 31 fiches.
   Strasser Radziwill (stand 7) couvre les quatre fiches n°16 à 19 ; Goichot (stand 26)
-  couvre les fiches n°12, 13 et 14. Les fiches 7, 9, 11, 20, 24, 25, 26, 33 et 35 ne sont pas
-  au salon.
+  couvre les fiches n°12, 13 et 14. Pas de jus de cépages d'Exea (fiche n°33 exclue).
+  Divin No Low (fiche n°7) est « normalement » sur le stand de Jean de Villebois : la fiche
+  entre si le fichier de Mathéo en liste des vins. Les fiches 9, 11, 20, 24, 25, 26, 33 et 35
+  ne sont pas au salon.
 - **Les tableaux ne montrent que les vins dégustés**, d'après le **fichier de Mathéo**, qui
   fait foi pour cette liste.
   - Chaque vin se rapproche d'une ligne du tarif (`data/fiches/`) : appellation, cuvée,
@@ -143,9 +147,16 @@ Elles sont dans `QUESTIONS.md` :
     prévois aussi l'aller-retour par le tableur, en étendant `scripts/tableur.py`.
   - Le contrôle « chaque prix du JSON est dans le PDF » doit accepter ces prix absents
     tant qu'ils le sont.
-  - Un seul prix par vin, ou les paliers du domaine : **à demander** (point 25).
-- **Les labels** : ceux du tarif, tant que le point 22 n'est pas tranché. Les textes et les
-  labels des documents du salon ne sont pas une source de faits.
+  - **Un seul prix par vin, ou les paliers du domaine : l'agence ne le sait pas encore.**
+    Le tableau doit accepter les deux sans retouche de gabarit. Par défaut, il reprend les
+    paliers du tarif du domaine, cases vides. Si l'agence donne un prix unique, la même donnée
+    bascule le tableau sur une seule colonne « Prix salon ».
+- **Les labels : « pour le 5, moins on en dit, moins on fait d'erreur »** (l'agence).
+  - Un label n'apparaît que si le tarif et la liste du salon disent la même chose, et c'est
+    déjà calculé : `labels_affiches` dans `data/salon-prive-2026.json`.
+  - 13 stands gardent leur label (Bio ou HVE), les 13 autres n'en affichent aucun.
+  - Même esprit pour le reste : sobre, rien que le tarif ne dise. Les textes des documents
+    du salon ne sont pas une source de faits.
 - **Sorties** : `dist/salon-prive-2026-ecran.pdf`, `dist/salon-prive-2026-imprimeur.pdf`
   et un `.pptx` pour Canva. C'est le seul des trois livrables qu'on modifiera encore, pour
   les prix.
@@ -162,7 +173,7 @@ Elles sont dans `QUESTIONS.md` :
 | Fichier | Ce qu'il apporte |
 |---|---|
 | `liste-des-domaines.pdf` | les 26 domaines par région avec leur **numéro de stand** |
-| `plan-des-exposants.pdf` | le plan des salles (Salle Blanche, Salle Noire), les stands 1 à 26, l'accueil, les contacts |
+| `plan-des-exposants.pdf` | **fait foi** (version 2 du 2 octobre, identique à la première) : le plan des salles (Salle Blanche, Salle Noire), les stands 1 à 26, l'accueil, les contacts |
 | `liste-des-vignerons.pdf` | une notice par vigneron (numérotée 1 à 26 par région : ce **ne sont pas** les numéros de stand) |
 | `padlet-vins-a-deguster.pdf` | une carte par stand, numérotée comme les stands, avec une « liste des vins » |
 | *à venir* : le fichier de Mathéo | **les vins dégustés**, qui font foi |
@@ -170,13 +181,12 @@ Elles sont dans `QUESTIONS.md` :
 Ces documents ont leur propre habillage (serif bordeaux, Padlet). **On n'en reprend pas le
 dessin** : le salon garde la DA du catalogue.
 
-## 5. Ce qu'il faut demander à l'agence avant de composer le salon
+## 5. Les réponses de l'agence (2 octobre) et ce qui reste ouvert
 
-Voir le point 25 de `QUESTIONS.md` :
-- prix unique ou paliers ;
-- les jus d'Exea (n°33) ;
-- Divin No Low (n°7) ;
-- le rattachement du Cray et des Guignottes au stand 26.
+Les réponses sont au point 25 de `QUESTIONS.md` et dans `reponses_agence` de
+`data/salon-prive-2026.json`. Rien n'empêche de commencer.
 
-S'y ajoute une question du livrable C : le format de la liste des vins (A4 ou le format du
-catalogue ?).
+Restent ouverts :
+- prix unique ou paliers, d'où le tableau qui accepte les deux ;
+- Divin No Low, que le fichier de Mathéo tranchera ;
+- le format de la liste des vins (A4 ou le format du catalogue) : propose-le à l'agence.
