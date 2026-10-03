@@ -21,7 +21,7 @@ const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8">
     display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; }
   .logo { width: 70mm; display: block; }
   h1 { margin: 16mm 0 0; font: 400 40pt/1 var(--titre); color: var(--violet); }
-  .sous { margin-top: 5mm; font: 400 20pt var(--titre); color: var(--encre); }
+  .sous { margin-top: 7mm; font: 400 34pt/1.05 var(--titre); color: var(--encre); }
   .qr { display: block; margin-top: 14mm; width: 120mm; height: 120mm; }
   .qr img { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
   .scan { margin-top: 10mm; font: 400 20pt var(--titre); color: var(--violet); }
