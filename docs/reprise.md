@@ -5,6 +5,55 @@ toucher à quoi que ce soit.** Le brief de `CLAUDE.md` reste la règle ; ce fich
 est fait, comment l'outil marche, ce que l'agence a décidé depuis le brief, et la suite.
 L'historique détaillé (essais, erreurs, raisons) est dans `JOURNAL.md`.
 
+## 0. Tu es la suite de la session précédente
+
+Tu n'es pas une nouvelle personne sur le projet : **tu continues le travail de la
+conversation précédente**, avec le même interlocuteur (l'agence SCIO), les mêmes outils et les
+mêmes décisions. Tout ce qui a été tranché est ici, dans `JOURNAL.md` et dans
+`QUESTIONS.md`. Ne refais rien, ne réexplique rien, **ne redemande rien de ce qui est déjà
+décidé**. Pas de questionnaire en début de session : fais l'installation de la section 1
+sans en parler, lis ce fichier, puis traite la demande.
+
+### Comment il travaille, et ce qu'il attend
+
+- **Il écrit vite, souvent à la voix**, en français familier, sans ponctuation, avec des
+  fautes. Lis l'intention, pas la lettre (exemples plus bas).
+- **Agis, ne demande pas.** Si la demande est claire à 80 %, fais-la avec le choix le plus
+  raisonnable, montre le résultat, et dis en une ligne ce que tu as choisi : il corrigera
+  s'il veut autre chose. Pas d'`AskUserQuestion` pour un choix de mise en page, de taille,
+  de place ou de méthode : ces choix-là sont à toi.
+- **Les seules choses qu'on ne fait jamais sans lui** : inventer ou corriger un prix ou un
+  fait (on le note dans `QUESTIONS.md` et on continue le reste), et effacer son travail.
+  Une question n'est permise que si une donnée manque vraiment et ne se déduit de rien.
+  Une seule question à la fois, à la fin du message, jamais pour bloquer le reste.
+- **Il a ses fichiers sur son Google Drive** (« tout est sur Drive ») ou les joint au
+  message. Cherche toi-même dans le Drive (connecteur Google Drive, `list_recent_files`,
+  `search_files`) avant de lui demander un fichier.
+- **Il veut voir** : après chaque changement visible, envoie les PNG des pages touchées et
+  les PDF refaits (`SendUserFile`), avec les chemins exacts dans le dépôt. Commit et push à
+  chaque étape.
+- **Réponses courtes** : ce qui est fait, ce qui reste ouvert, et c'est tout. Pendant une
+  tâche longue, une ligne de temps en temps pour dire où tu en es.
+- **Un fichier renvoyé identique** à ce qui est déjà appliqué : dis-le simplement, preuve à
+  l'appui (comparaison au pixel), et ne refais rien.
+- **Avant de dire « c'est fait »** : contrôles automatiques au vert et pages touchées
+  regardées en image (compétence `epreuve-pages`).
+
+### Ses demandes passées, et ce qu'elles voulaient dire
+
+| Il a écrit | Ce qu'il voulait, et ce qui a été fait |
+|---|---|
+| « agrandis l'écriture mais pas les tableaux, c'est grave possible » | Texte des tableaux plus gros et plus gras, **lignes resserrées** pour que les tableaux ne grandissent pas |
+| « 76 pages c'est beaucoup trop, une cinquantaine, 52 pages max » | Compacter sans toucher à la DA : lignes serrées, ouvertures de région retirées, bande du haut abaissée |
+| « on voit vraiment pas la meuf, faut peut-être rétrécir l'image » | Recadrer plus large le rond (reculer), pour voir les deux personnes entières |
+| « t'as trop découpé, c'est bizarre » (bouteilles) | Le détourage mangeait le verre : le refaire, vérifier sur fond magenta |
+| « tout est bon dans son document maintenant » (Mathéo) | Le dossier de Mathéo fait foi pour les textes, labels et vins, **dans les deux éditions** |
+| « juste pour toutes les listes, millésime, appellation, etc., il faut prendre le document de Mathéo » | Afficher les vins **tels que le dossier les écrit** (corrigés seulement dans la forme) |
+| « il a mis un c à Mols et un i à demoiselle » | Corriger ces deux fautes, et elles seules |
+| « mets en parenthèse au niveau du sommaire en petit » | Mention discrète sous le nom, sans tronquer le nom |
+| « le plus facile à imprimer, celui qui coûte le moins de couleurs » | Version sobre en encre (pastille de couleur au lieu de bandes pleines) |
+| « vas-y, tu continues » / « tu gères » | Feu vert : enchaîner sans redemander |
+
 ## 1. Avant tout : la branche et les outils
 
 Tout le travail est sur **`claude/design-skill-propositions-suwoa9`**. Si ta session a

@@ -4,7 +4,8 @@
 > général (52 pages, PDF et .pptx pour Canva), l'édition du **Salon Privé du 5 octobre 2026**
 > (48 pages, prix encore vides) et la liste des vins dégustés.
 >
-> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous) : la branche, les outils, les
+> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous), à commencer par sa section 0 : tu es
+> la suite de la session précédente, tu agis sans redemander ce qui est décidé. Puis : la branche, les outils, les
 > commandes, le piège des photos, **ce qui fait foi** depuis les décisions de l'agence (le
 > dossier de Mathéo pour les textes, les labels et les vins du salon), ses consignes (52 pages
 > au plus, tableaux, note de prix, sommaire), les questions ouvertes et la suite. Le brief qui
