@@ -3,6 +3,7 @@ import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
   NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, emplacementPour, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
+  coupeElegante, photoRegion,
 } from './pieces.mjs';
 
 const AG = catalogue.agence;
@@ -90,13 +91,14 @@ ${corps}
 export function couverture() {
   if (SALON_ED) return couvertureSalon();
   return page({
-    classe: 'couverture', folio: false, sanitaire: false,
+    classe: 'couverture couv-photo', folio: false, sanitaire: false,
     corps: `
+      ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
-      ${coupe({ largeur: 600, hauteur: 430 })}
+      ${coupeElegante({ style: 'fine' })}
       <div class="edition-couv">
         <span class="cible">${esc(AG.cible)}</span>
         <span class="annee">${esc(AG.edition)}</span>
@@ -105,16 +107,24 @@ export function couverture() {
   });
 }
 
+/** Le ciel de la couverture (modèle H, choisi par l'agence le 3 octobre) : un paysage de
+    vignes au-dessus des strates, une réserve claire sous le logo, qui reste intact. */
+function cielCouverture() {
+  return `<div class="couv-ciel"><img src="${photoRegion('Sud-Ouest')}" alt=""></div>
+      <div class="couv-reserve"></div>`;
+}
+
 /** La couverture du salon : on voit tout de suite le nom du salon, la date et le lieu. */
 function couvertureSalon() {
   return page({
-    classe: 'couverture couverture-salon', folio: false, sanitaire: false,
+    classe: 'couverture couverture-salon couv-photo', folio: false, sanitaire: false,
     corps: `
+      ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Salon Privé<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
-      ${coupe({ largeur: 600, hauteur: 430 })}
+      ${coupeElegante({ style: 'fine' })}
       <div class="edition-couv">
         <span class="date">${esc(EV.date_texte)}</span>
         <span class="cible">${esc(EV.lieu)}</span>
@@ -152,7 +162,7 @@ export function pageAgence() {
           <span class="es-date">${esc(EV.date_texte)}</span>
           <span class="es-lieu">${esc(EV.lieu)}, ${esc(EV.commune)}</span>
           <span class="es-orga">Organisé par l'${esc(EV.organisateur)}</span></div>`
-        : `<div class="bandeau-coupe">${coupe({ largeur: 600, hauteur: 110, graineN: 2, etiquettes: false })}</div>`}
+        : `<div class="bandeau-coupe bandeau-photo"><img src="${photoRegion('Beaujolais')}" alt=""></div>`}
       <div class="chiffres">
         <div><strong>${ED.acteurs}</strong> ${ED.motActeurs}</div>
         <div><strong>${REGIONS.length}</strong> régions</div>
@@ -246,8 +256,8 @@ export function ouvertureRegion(nom, pagesParDomaine) {
   return page({
     region: nom, classe: `ouverture ${nom === 'Champagne' ? 'claire' : ''}`,
     corps: `
-      <div class="ouv-fond" style="--strate:${s.hex}">
-        <div class="ouv-trame trame trame-${s.t}"></div>
+      <div class="ouv-fond ouv-photo" style="--strate:${s.hex}">
+        <img src="${photoRegion(nom)}" alt="">
       </div>
       <div class="ouv-carotte">${solRegion(nom, REGIONS.indexOf(nom) + 1)}</div>
       <div class="cadre">
@@ -345,7 +355,7 @@ export function respireSol(d, hauteurMm) {
   const s = STRATES[d.region];
   return `<div class="respire" style="height:${hauteurMm.toFixed(1)}mm">
     <div class="legende-sol">${esc(d.region)} — ${esc(s.mot)}</div>
-    <div class="respire-sol">${solTeinte(d.region, d.numero)}</div></div>`;
+    <div class="respire-sol respire-photo"><img src="${photoRegion(d.region)}" alt=""></div></div>`;
 }
 
 /** Le même sol, mais dans la seule teinte de la région : discret, et différent d'une région à l'autre. */
@@ -610,7 +620,7 @@ export function pageFinale() {
         <a href="mailto:${esc(c.email)}">${esc(c.email)}</a> ·
         <a href="https://${esc(c.site)}">${esc(c.site)}</a></p>
 
-      <div class="bandeau-coupe bandeau-fin">${coupe({ largeur: 600, hauteur: 110, graineN: 68, etiquettes: false })}</div>
+      <div class="bandeau-coupe bandeau-fin">${coupeElegante({ largeur: 600, hauteur: 110, style: 'fine', etiquettes: false })}</div>
       <div class="fin-cols">
         <div><h3>Lexique</h3>
           <dl class="lexique">${AG.lexique.map((l) =>

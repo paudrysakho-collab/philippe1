@@ -102,7 +102,10 @@ const CADRE_H = PAGE_H - MARGE.haut - MARGE.bas;            // 232 mm
 
 const cle = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^A-Za-z0-9]+/g, '-').toLowerCase();
-const img = (nom) => path.join(DECO, `${nom}.png`);
+const img = (nom) => {
+  const jpg = path.join(DECO, `${nom}.jpg`);
+  return fs.existsSync(jpg) ? jpg : path.join(DECO, `${nom}.png`);
+};
 /** Largeur et hauteur d'un PNG, lues dans son en-tête IHDR. */
 const taillePng = (f) => { const b = fs.readFileSync(f); return [b.readUInt32BE(16), b.readUInt32BE(20)]; };
 
@@ -509,42 +512,46 @@ function titreSection(s, numero, titre, sous) {
 }
 
 function slideCouverture(s, numero) {
+  // couverture H : le ciel en photo, les strates droites dessous, une réserve claire sous le logo
+  s.addImage({ path: img('couv-ciel'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H - 148 + 2) });
   s.addImage({ path: img('coupe-titree'), x: 0, y: mm(PAGE_H - 148), w: mm(PAGE_L), h: mm(148) });
+  s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int - 4), y: mm(13), w: mm(70), h: mm(24),
+    fill: { color: C.craie }, line: { color: C.craie, width: 0 }, rectRadius: 0.05 });
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
     x: mm(MARGE.int), y: mm(17), w: mm(62), h: mm(62 * 251 / 1030) });
   const sousTitre = ED.sousTitre.replace('<br>', '\n');
   if (SALON_ED) {
     s.addText([
       { text: 'Salon Privé', options: { breakLine: true } },
-      { text: 'Vins & Terroirs', options: { color: C.violet } },
+      { text: 'Vins & Terroirs', options: { color: C.or } },
     ], { x: mm(MARGE.int), y: mm(42), w: mm(165), h: mm(34), margin: 0,
-      fontFace: F.titre, fontSize: 44, color: C.silex, lineSpacingMultiple: 0.92 });
+      fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });
     s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
-      fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
+      fontFace: F.courant, fontSize: 10.5, color: C.craie, lineSpacingMultiple: 1.4 });
     // la date et le lieu, en haut, en face du logo (comme .edition-couv du PDF)
     s.addText(EV.date_texte, { x: mm(PAGE_L - MARGE.int - 95), y: mm(16), w: mm(95), h: mm(8.5),
-      margin: 0, align: 'right', valign: 'top', fontFace: F.titre, fontSize: 19, color: C.violet });
+      margin: 0, align: 'right', valign: 'top', fontFace: F.titre, fontSize: 19, color: C.craie });
     s.addText(`${EV.lieu}\n${EV.commune}`.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 95), y: mm(25),
       w: mm(95), h: mm(9), margin: 0, align: 'right', valign: 'top', fontFace: F.tech, fontSize: 9,
-      bold: true, color: C.silex, charSpacing: 0.3, lineSpacingMultiple: 1.2 });
+      bold: true, color: C.craie, charSpacing: 0.3, lineSpacingMultiple: 1.2 });
   } else {
   s.addText([
     { text: 'Sous', options: { breakLine: true } },
     { text: 'nos', options: { breakLine: true } },
-    { text: 'pieds', options: { color: C.violet } },
+    { text: 'pieds', options: { color: C.or } },
   ], { x: mm(MARGE.int), y: mm(42), w: mm(150), h: mm(50), margin: 0,
-    fontFace: F.titre, fontSize: 46, color: C.silex, lineSpacingMultiple: 0.92 });
+    fontFace: F.titre, fontSize: 46, color: C.craie, lineSpacingMultiple: 0.92 });
   s.addText(sousTitre, {
     x: mm(MARGE.int), y: mm(95), w: mm(120), h: mm(14), margin: 0,
-    fontFace: F.courant, fontSize: 10.5, color: C.silex, lineSpacingMultiple: 1.4 });
+    fontFace: F.courant, fontSize: 10.5, color: C.craie, lineSpacingMultiple: 1.4 });
   // la cible et l'année, en haut, en face du logo (comme .edition-couv du PDF)
   s.addText(AG.cible.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 80), y: mm(17), w: mm(80), h: mm(5),
-    margin: 0, align: 'right', fontFace: F.tech, fontSize: 9, bold: true, color: C.silex, charSpacing: 0.3 });
+    margin: 0, align: 'right', fontFace: F.tech, fontSize: 9, bold: true, color: C.craie, charSpacing: 0.3 });
   s.addText(AG.edition, { x: mm(PAGE_L - MARGE.int - 60), y: mm(22.5), w: mm(60), h: mm(13), margin: 0,
-    align: 'right', valign: 'top', fontFace: F.titre, fontSize: 34, color: C.violet });
+    align: 'right', valign: 'top', fontFace: F.titre, fontSize: 34, color: C.craie });
   }
-  s.addText(AG.message_sanitaire, { x: mm(MARGE.int), y: mm(PAGE_H - 13), w: mm(140), h: mm(5),
-    margin: 0, fontFace: F.tech, fontSize: 5.6, color: C.craie });
+  s.addText(AG.message_sanitaire, { x: mm(PAGE_L - MARGE.int - 140), y: mm(PAGE_H - 13), w: mm(140), h: mm(5),
+    margin: 0, align: 'right', fontFace: F.tech, fontSize: 5.6, color: C.encre });
 }
 
 function slideAgence(s, numero) {
@@ -552,13 +559,14 @@ function slideAgence(s, numero) {
   const x = mm(gauche);
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
     x, y: mm(MARGE.haut), w: mm(74), h: mm(74 * 251 / 1030) });
-  s.addText([
-    { text: "L'Agence SCIO, c'est " },
-    { text: 'partager notre savoir et notre passion', options: { color: C.violet } },
-    { text: ' en vous proposant des vignerons de tous horizons, avant-gardistes et respectueux '
-        + 'de la nature. Découvrez notre sélection. Laissez-vous guider et conseiller.' },
-  ], { x, y: mm(MARGE.haut + 32), w: mm(150), h: mm(40), margin: 0,
-    fontFace: F.titre, fontSize: 16, color: C.silex, lineSpacingMultiple: 1.28 });
+  // page 2 A : texte posé en Spectral, filet or à gauche (comme .credo du PDF)
+  s.addShape(pres.ShapeType.line, { x, y: mm(MARGE.haut + 32), w: 0, h: mm(32),
+    line: { color: C.or, width: 1.2 } });
+  s.addText("L'Agence SCIO, c'est partager notre savoir et notre passion en vous proposant des "
+    + 'vignerons de tous horizons, avant-gardistes et respectueux de la nature. Découvrez notre '
+    + 'sélection. Laissez-vous guider et conseiller.',
+  { x: x + mm(5), y: mm(MARGE.haut + 32), w: mm(140), h: mm(32), margin: 0, valign: 'top',
+    fontFace: F.courant, fontSize: 14.5, color: C.encre, lineSpacingMultiple: 1.45 });
 
   [['Laurent', AG.contacts.laurent], ['Carline', AG.contacts.carline]].forEach(([p, t], i) => {
     const cx = gauche + i * 55;
@@ -584,8 +592,8 @@ function slideAgence(s, numero) {
     ], { x: x + mm(6), y: mm(ye), w: mm(CADRE_L - 12), h: mm(36), margin: 0, valign: 'middle',
       lineSpacingMultiple: 1.25 });
   } else {
-    s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 120), w: mm(CADRE_L),
-      h: mm(CADRE_L * 42 / 176) });
+    s.addImage({ path: img('agence-photo'), x, y: mm(MARGE.haut + 118), w: mm(CADRE_L),
+      h: mm(CADRE_L * 46 / 176) });
   }
   const yc = MARGE.haut + 172;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
@@ -682,8 +690,8 @@ function slideOuverture(s, numero, region) {
   s.addImage({ path: img(`ouverture-${cle(region)}`), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H) });
   poserCarotte(s, numero, region);
   const { gauche } = geo(numero);
-  const clair = region === 'Champagne';
-  const encre = clair ? C.silex : C.craie;
+  const clair = false;   // ouverture A : la photo assombrie porte toujours un texte clair
+  const encre = C.craie;
   const doms = catalogue.domaines.filter((d) => d.region === region);
   const refs = doms.reduce((n, d) => n + nbReferences(d), 0);
   s.addText(`${REGIONS.indexOf(region) + 1} / ${REGIONS.length}`, { x: mm(gauche), y: mm(MARGE.haut),

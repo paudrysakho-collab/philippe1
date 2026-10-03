@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { REGIONS, STRATES, coupe, carotte, defsTrames, PICTOS_LABELS, BASE } from '../src/gabarits/pieces.mjs';
+import { REGIONS, STRATES, coupe, coupeElegante, carotte, defsTrames, PICTOS_LABELS, BASE, photoRegion } from '../src/gabarits/pieces.mjs';
 import { solTeinte, solRegion } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -20,18 +20,21 @@ const blocs = [];
 // Ouverture de région : fond pleine page, couleur + trame + carotte verticale
 REGIONS.forEach((r) => {
   const s = STRATES[r];
-  blocs.push({ nom: `ouverture-${cle(r)}`, l: 216, h: 266, html:
-    `<div style="position:absolute;inset:0;background:${s.hex}"></div>
-     <div class="trame trame-${s.t}" style="position:absolute;inset:0;opacity:.5"></div>
+  // ouverture A (choix de l'agence, 3 octobre) : la photo de la région, assombrie vers le bas
+  blocs.push({ photo: true, nom: `ouverture-${cle(r)}`, l: 216, h: 266, html:
+    `<div style="position:absolute;inset:0;background:#2E3F48"></div>
+     <img src="${photoRegion(r)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(70,96,110,0) 0%, rgba(70,96,110,.25) 45%, rgba(46,63,72,.88) 66%, rgba(46,63,72,.95) 100%)"></div>
      <div style="position:absolute;top:18mm;right:17mm;width:46mm;height:118mm;
        border-radius:23mm;overflow:hidden;
        box-shadow:0 0 0 .7mm rgba(${r === 'Champagne' ? '70,96,110,.38' : '251,248,241,.35'})">
        ${solRegion(r, REGIONS.indexOf(r) + 1)}</div>` });
   blocs.push({ nom: `carotte-${cle(r)}`, l: 12, h: 266, html:
     `<div style="position:absolute;inset:0">${carotte(r)}</div>` });
-  blocs.push({ nom: `sol-${cle(r)}`, l: 170, h: 40, html:
+  // bas de fiche A : la photo de la région
+  blocs.push({ photo: true, nom: `sol-${cle(r)}`, l: 170, h: 40, html:
     `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
-       ${solTeinte(r, 7)}</div>` });
+       <img src="${photoRegion(r)}" style="width:100%;height:100%;object-fit:cover;display:block"></div>` });
 });
 
 // Les pictos de label, posés dans les jetons des fiches et dans la légende du sommaire.
@@ -40,11 +43,20 @@ Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {
     `<svg viewBox="0 0 14 14" style="position:absolute;inset:0;width:100%;height:100%">${svg}</svg>` });
 });
 
+// couverture H (choix de l'agence, 3 octobre) : le ciel en photo, les strates droites dessous
+blocs.push({ photo: true, nom: 'couv-ciel', l: 216, h: 117, html:
+  `<img src="${photoRegion('Sud-Ouest')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+   <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,.12) 40%, rgba(42,57,66,0) 70%),
+     linear-gradient(90deg, rgba(42,57,66,.45) 0%, rgba(42,57,66,0) 55%)"></div>` });
 blocs.push({ nom: 'coupe-titree', l: 216, h: 151, html:
-  `<div style="position:absolute;inset:0">${coupe({ largeur: 600, hauteur: 430 })}</div>` });
+  `<div style="position:absolute;inset:0">${coupeElegante({ style: 'fine' })}</div>` });
 blocs.push({ nom: 'coupe-nue', l: 176, h: 42, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
-     ${coupe({ largeur: 600, hauteur: 110, graineN: 2, etiquettes: false })}</div>` });
+     ${coupeElegante({ largeur: 600, hauteur: 110, style: 'fine', etiquettes: false })}</div>` });
+// page 2 A : la photo du Beaujolais
+blocs.push({ photo: true, nom: 'agence-photo', l: 176, h: 46, html:
+  `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
+     <img src="${photoRegion('Beaujolais')}" style="width:100%;height:100%;object-fit:cover;display:block"></div>` });
 blocs.push({ nom: 'coupe-pleine', l: 216, h: 266, html:
   `<div style="position:absolute;inset:0">${coupe({ largeur: 600, hauteur: 430, graineN: 99 })}</div>` });
 
@@ -56,7 +68,9 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
 .bloc:not(.bloc-nu) .coupe,.bloc:not(.bloc-nu) svg{position:absolute;inset:0;width:100%;height:100%}
 .bloc-nu{display:flex;flex-direction:column}
 .etiq-strate{font:600 11px 'IBM Plex Sans',sans-serif;letter-spacing:.03em}
-.etiq-nb{font:400 11px 'IBM Plex Sans',sans-serif}</style></head><body>
+.etiq-nb{font:400 11px 'IBM Plex Sans',sans-serif}
+.etiq-strate-el{font:500 9.6px 'IBM Plex Sans',sans-serif;letter-spacing:1.6px}
+.etiq-nb-el{font:400 12px 'Young Serif',serif}</style></head><body>
 ${defsTrames()}
 ${blocs.map((b) => `<div class="bloc${b.nu ? ' bloc-nu' : ''}" id="${b.nom}"
   style="width:${b.l}mm;height:${b.h}mm">${b.html}</div>`).join('\n')}
@@ -70,7 +84,12 @@ const page = await nav.newPage({ deviceScaleFactor: 3 });   // ≈ 300 ppi à la
 await page.goto(pathToFileURL(fichier).href, { waitUntil: 'networkidle' });
 for (const b of blocs) {
   const el = page.locator(`#${b.nom}`);
-  await el.screenshot({ path: path.join(DECO, `${b.nom}.png`), omitBackground: true });
+  // une photo s'exporte en JPEG (le .pptx en répète certaines sur plusieurs diapositives :
+  // en PNG, il dépassait 50 Mo) ; le reste en PNG transparent
+  if (b.photo) {
+    fs.rmSync(path.join(DECO, `${b.nom}.png`), { force: true });
+    await el.screenshot({ path: path.join(DECO, `${b.nom}.jpg`), type: 'jpeg', quality: 82 });
+  } else await el.screenshot({ path: path.join(DECO, `${b.nom}.png`), omitBackground: true });
 }
 await nav.close();
 fs.writeFileSync(path.join(DECO, 'tailles.json'),

@@ -98,9 +98,18 @@ export const creditPhotos = () => {
   const sources = [];
   if (_photos.some((p) => /site officiel/.test(p.provenance || ''))) sources.push('les sites officiels des domaines');
   if (_photos.some((p) => !/site officiel/.test(p.provenance || ''))) sources.push("la photothèque de l'agence");
+  const regions = Object.values(PHOTOS_REGIONS).map((x) => `${x.auteur} (${x.licence})`);
   return `Les photographies des fiches viennent de ${sources.join(' et de ')} ; elles sont créditées `
-    + 'une à une dans credits.md.';
+    + 'une à une dans credits.md. Paysages des régions : Wikimedia Commons, '
+    + `${[...new Set(regions)].join(', ')}.`;
 };
+
+/** Les photos de paysage des régions (Wikimedia Commons, licences libres), choisies avec
+    l'agence le 3 octobre 2026 : couverture, page 2, ouvertures de région, bas de fiche.
+    Elles montrent une région, jamais un domaine précis. */
+export const PHOTOS_REGIONS = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-regions.json'), 'utf8'));
+/** Le chemin d'une photo de région, vu depuis build/ (où vit le HTML). */
+export const photoRegion = (nom) => (PHOTOS_REGIONS[nom] ? `../${PHOTOS_REGIONS[nom].fichier}` : null);
 export const REGIONS = catalogue.agence.regions;
 
 /* ——————————————————————————————— le corps du texte de présentation ———

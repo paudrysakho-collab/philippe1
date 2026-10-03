@@ -322,3 +322,43 @@
 .es-orga { font: 400 8pt var(--technique); color: var(--gneiss); margin-top: 1mm; }
 
 .fin-salon { font-family: var(--titre); font-size: 12pt; line-height: 1.35; color: var(--violet); margin-bottom: 3mm; }
+
+
+/* ——— Retouches choisies par l'agence le 3 octobre 2026 ——————————————————————————
+   Couverture H : paysage en haut, strates droites et sobres dessous. Page 2 A : texte posé,
+   grande photo. Ouverture A : la photo de la région en fond. Bas de fiche A : la photo. */
+.couv-photo .couv-ciel { position: absolute; left: 0; right: 0; top: 0; height: calc(114mm + var(--fp)); overflow: hidden; }
+.couv-ciel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.couv-ciel::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,.12) 40%, rgba(42,57,66,0) 70%),
+    linear-gradient(90deg, rgba(42,57,66,.45) 0%, rgba(42,57,66,0) 55%); }
+.couv-photo .coupe { z-index: 2; }
+.couv-photo .titre-couv, .couv-photo .sous-couv, .couv-photo .edition-couv { z-index: 3; }
+.couv-photo .titre-couv { color: var(--craie); }
+.couv-photo .titre-couv em { color: var(--or); }
+.couv-photo .sous-couv { color: var(--craie); opacity: 1; }
+.couv-photo .edition-couv .cible, .couv-photo .edition-couv .annee, .couv-photo .edition-couv .date { color: var(--craie); }
+.couv-reserve { position: absolute; z-index: 3; left: calc(var(--marge-int) - 4mm + var(--fp)); top: calc(13mm + var(--fp));
+  width: 70mm; height: 24mm; background: var(--craie); border-radius: 1.5mm; }
+.couv-photo .logo-couv { z-index: 4; }
+.couv-photo .sanitaire-couv { left: auto; right: calc(var(--marge-int) + var(--fp)); text-align: right;
+  color: var(--encre); opacity: .75; z-index: 5; }
+.etiq-strate-el { font: 500 9.6px var(--technique); letter-spacing: 1.6px; }
+.etiq-nb-el { font: 400 12px var(--titre); }
+
+.credo {
+  font-family: var(--courant); font-size: 14.5pt; line-height: 1.55; color: var(--encre);
+  max-width: 140mm; padding-left: 5mm; border-left: 1.2pt solid var(--or);
+}
+.credo strong { font-weight: 500; color: inherit; }
+.contact .tel { font-size: 15pt; }
+.bandeau-photo { height: 62mm; }
+.bandeau-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.ouverture .ouv-photo { background: #2E3F48; }
+.ouv-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ouv-photo::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(70,96,110,0) 0%, rgba(70,96,110,.25) 45%, rgba(46,63,72,.88) 66%, rgba(46,63,72,.95) 100%); }
+.ouverture.claire .cadre { color: var(--craie); }
+
+.respire-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
