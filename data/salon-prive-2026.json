@@ -154,7 +154,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible en fonction du volume."
+   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
   },
   {
    "stand": 2,
@@ -321,8 +321,8 @@
      "prix_centimes": [
       720
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Terre Rouge 2022/2024 Magnum 1,5 L",
@@ -469,8 +469,8 @@
      "prix_centimes": [
       470
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -580,8 +580,8 @@
      "prix_centimes": [
       310
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Cuvée domaine 2025 — IGP Sauvignon Gris",
@@ -602,8 +602,8 @@
      "prix_centimes": [
       285
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Rouge aux lèvres — IGP Val de Loire",
@@ -622,8 +622,8 @@
      "prix_centimes": [
       345
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "La Perle — Méthode Traditionnelle",
@@ -841,8 +841,8 @@
       260,
       228
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "N°6 Fossiles Blanc 2025 — IGP Côtes de Gascogne",
@@ -863,8 +863,8 @@
       291,
       256
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "N°3 Gulf Stream Rosé 2025 — IGP Côtes de Gascogne",
@@ -885,8 +885,8 @@
       291,
       256
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "N°4 Triton Rouge 2024 — IGP Côtes de Gascogne",
@@ -907,9 +907,9 @@
       291,
       256
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
      "offre": "5+1",
-     "offre_detail": "dès 250 cols"
+     "offre_detail": "dès 250 cols",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "N°8 Grand Pavois Rouge 2025 — IGP Côtes de Gascogne",
@@ -956,8 +956,8 @@
       335,
       308
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "N°10 Pétillant — IGP Côtes de Gascogne",
@@ -978,9 +978,9 @@
       390,
       360
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
      "offre": "5+1",
-     "offre_detail": "dès 250 cols"
+     "offre_detail": "dès 250 cols",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -1054,8 +1054,8 @@
       450,
       420
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Syrah Rouge 2022 — VDF",
@@ -1077,8 +1077,8 @@
       450,
       420
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Terroir d'Ansouis Blanc 2021 — AOC Luberon",
@@ -1100,8 +1100,8 @@
       520,
       500
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Terroir d’Ansouis Rouge 2021 75 cl",
@@ -1149,8 +1149,8 @@
       540,
       520
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Vieilles Vignes Rouge 2022— AOC Châteauneuf-du-Pape",
@@ -1174,8 +1174,8 @@
       1750,
       1700
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Vieilles Vignes Rouge 2023 — AOC Châteauneuf-du-Pape",
@@ -1199,8 +1199,8 @@
       1750,
       1700
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Le Couchant Rouge 2020 — AOC Châteauneuf-du-Pape",
@@ -1221,8 +1221,8 @@
       2650,
       2600
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Premières Fleurs Blanc — IGP Méditérranée",
@@ -1244,8 +1244,8 @@
       520,
       500
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Premières Fleurs Rouge 2025 — IGP Méditérranée",
@@ -1267,8 +1267,8 @@
       520,
       500
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Or des Dentelles Blanc Moelleux 2023 — AOC Muscat BDV",
@@ -1289,8 +1289,8 @@
       740,
       690
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Or des Dentelles Blanc Moelleux 2022 — AOC Muscat BDV",
@@ -1311,8 +1311,8 @@
       440,
       410
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Les Jumelles Rouge — 75 cl",
@@ -1358,8 +1358,8 @@
       540,
       520
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "5+1"
+     "offre": "5+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [
@@ -1432,8 +1432,8 @@
      "prix_centimes": [
       950
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Château Falfas 2020 — AOC Côtes de Bourg",
@@ -1454,8 +1454,8 @@
      "prix_centimes": [
       1230
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Château Falfas 2021 — AOC Côtes de Bourg",
@@ -1476,8 +1476,8 @@
      "prix_centimes": [
       1230
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Château Falfas 2022 — AOC Côtes de Bourg",
@@ -1496,8 +1496,8 @@
      "prix_centimes": [
       1240
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Château Falfas Chevalier 2017— AOC Côtes de Bourg",
@@ -1539,8 +1539,8 @@
      "prix_centimes": [
       2390
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Château Falfas 2023— AOC Côtes de Bourg",
@@ -1561,8 +1561,8 @@
      "prix_centimes": [
       2010
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -1575,7 +1575,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 42 cols."
+   "offre_salon": "Offre 11+1 à partir de 120 cols."
   },
   {
    "stand": 9,
@@ -1662,8 +1662,8 @@
       780,
       730
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Leimen Sylvaner 2024 — AOC Alsace",
@@ -1707,8 +1707,8 @@
       810,
       760
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Riesling Hahnenberg 2024 — AOC Alsace",
@@ -1773,8 +1773,8 @@
       1820,
       1730
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Seiler Rouge 2024 — AOC Alsace",
@@ -1795,8 +1795,8 @@
       990,
       950
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -2294,8 +2294,8 @@
       559,
       532
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Mas de Lusanne Chardonnay Blanc 2020 — AOC Bugey",
@@ -2315,8 +2315,8 @@
       680,
       635
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Mas de Lusanne Vacqueyras Blanc 2025 — AOC Vacqueyras",
@@ -2394,7 +2394,8 @@
      "À partir de 600 cols"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "offre_salon": "Offre 11+1 à partir de 300 cols."
   },
   {
    "stand": 13,
@@ -2437,8 +2438,8 @@
      "prix_centimes": [
       485
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Lou Daro Rouge 2023 — AOC Saint-Chinian",
@@ -2459,8 +2460,8 @@
      "prix_centimes": [
       670
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Henri Rouge 2024 — AOC Saint-Chinian",
@@ -2481,8 +2482,8 @@
      "prix_centimes": [
       485
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Juliette Blanc 2025 — AOC Saint-Chinian",
@@ -2500,8 +2501,8 @@
      "prix_centimes": [
       485
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Grain de Blanc  2025 - IGP Pays D'Hérault Monts de la Grage",
@@ -2522,8 +2523,8 @@
      "prix_centimes": [
       670
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -2598,8 +2599,8 @@
       570,
       560
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Sauvignon 2025",
@@ -2621,8 +2622,8 @@
       360,
       340
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Coteaux du Layon 2025",
@@ -2642,8 +2643,8 @@
       570,
       560
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Coteaux du Layon Faye 2025",
@@ -2685,8 +2686,8 @@
       580,
       560
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Rosé de Loire 2025",
@@ -3320,8 +3321,8 @@
      "prix_centimes": [
       1350
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Meursault 2024",
@@ -3381,8 +3382,8 @@
      "prix_centimes": [
       1450
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Les Bons Feuvres 2023/24 — AOC Beaune",
@@ -3402,8 +3403,8 @@
      "prix_centimes": [
       1800
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Les Aigrots 2024 — Beaune 1er Cru",
@@ -3425,8 +3426,8 @@
      "prix_centimes": [
       2200
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Les Perrières 2024— AOC Pommard",
@@ -3448,8 +3449,8 @@
      "prix_centimes": [
       2400
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -3709,7 +3710,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre en fonction du volume."
+   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
   },
   {
    "stand": 20,
@@ -3754,8 +3755,8 @@
       1100,
       1050
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Néolithik Rouge 2022 — AOC Madiran",
@@ -3776,8 +3777,8 @@
       1250,
       1200
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Koloss Rouge 2022 — AOC Madiran",
@@ -3798,8 +3799,8 @@
       600,
       550
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Koloss Doux 2022 — VDF",
@@ -3808,7 +3809,7 @@
      "appellation": "VDF",
      "cuvee": "Koloss Doux",
      "couleur": "Doux",
-     "millesime": "2022",
+     "millesime": "2025",
      "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
@@ -3820,8 +3821,8 @@
       600,
       550
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Stratéus Blanc 2025 — AOC Pacherenc du Vic-Bilh sec",
@@ -3844,8 +3845,8 @@
       1100,
       1050
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Néolithik Blanc 2025 — AOC Pacherenc du Vic-Bilh sec",
@@ -3865,8 +3866,8 @@
       1250,
       1200
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -3929,8 +3930,8 @@
       716,
       613
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Chant de Lune Rouge, disponible en décembre 2026 — Magnum 1,5 L",
@@ -3974,8 +3975,8 @@
       716,
       613
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Blanc Serame — AOC Corbières",
@@ -3996,8 +3997,8 @@
       716,
       613
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Oena Rouge 2022 — AOC Corbières",
@@ -4042,8 +4043,8 @@
       436,
       408
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Jardins de Corbières Rouge, disponible en décembre 2026 — Magnum 1,5 L",
@@ -4220,7 +4221,8 @@
      "À partir de 300 bts"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "offre_salon": "Offre 11+1 à partir de 240 cols."
   },
   {
    "stand": 22,
@@ -4303,8 +4305,8 @@
      "prix_centimes": [
       723
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Les Amphibol Blanc 2025 — AOC Fiefs Vendéens Chantonnay",
@@ -4344,8 +4346,8 @@
      "prix_centimes": [
       513
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Le Bois Bouquet 2023 — IGP Val de Loire Pinot Noir",
@@ -4459,8 +4461,8 @@
       2160,
       2110
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "(ajout) Plénitude de Solemme Extra-Brut 2022 Magnum 1,5 L",
@@ -4710,13 +4712,12 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      695,
       645,
       595,
       575
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Source Melon B. 2023 — IGP Val de Loire",
@@ -4733,13 +4734,12 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      595,
       545,
       495,
       475
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Reflet Gamay 2024 — IGP Val de Loire",
@@ -4756,13 +4756,12 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      695,
       645,
       595,
       575
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "L'Eberluant Chardonnay Méthode ancestrale 2025 — VDF",
@@ -4778,7 +4777,6 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      695,
       645,
       595,
       575
@@ -4792,7 +4790,6 @@
    "fiche_texte": 5,
    "paliers_salon": {
     "5": [
-     "À partir de 36 cols",
      "À partir de 60 cols",
      "À partir de 120 cols",
      "À partir de 240 cols"
@@ -4848,8 +4845,8 @@
       860,
       810
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Pouilly-Vinzelles Blanc 2023",
@@ -4869,19 +4866,19 @@
       1500,
       1430
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
-     "liste": "AOC Auxey-Duresses 2023",
+     "liste": "AOC Auxey-Duresses Blanc 2023",
      "fiche": 12,
      "tarif": null,
-     "appellation": "AOC Auxey-Duresses",
+     "appellation": "AOC Auxey-Duresses Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": "75 cl",
-     "couleur_provenance": "tarif annoté par l'agence, 3 octobre 2026 (scan 4, p.12)",
+     "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
       "au tarif annoté, l'Auxey-Duresses surligné est le blanc ; le tarif de septembre n'a qu'un rouge"
@@ -4891,8 +4888,8 @@
       2220,
       2120
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Baron Auguste Blanc — AOC Crémant de Bourgogne",
@@ -4912,8 +4909,8 @@
       900,
       840
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Baron Auguste Rosé — AOC Crémant de Bourgogne",
@@ -4933,8 +4930,8 @@
       900,
       840
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Domaine les Guignottes Rouge 2023  — AOC Bourgogne Pinot Noir",
@@ -4955,8 +4952,8 @@
       860,
       810
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Chassagne-Montrachet Rouge 2023",
@@ -4977,8 +4974,8 @@
       2360,
       2260
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "Aux Allots Rouge 2023 — AOC Nuits-Saint-Georges",
@@ -4998,8 +4995,8 @@
       3360,
       3230
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026",
-     "offre": "11+1"
+     "offre": "11+1",
+     "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
      "liste": "AOC Mercurey Blanc 2023",

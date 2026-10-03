@@ -225,6 +225,11 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
 - Dessins maison disponibles (pas encore posés) : `src/gabarits/dessins.mjs` (bouteilles,
   feuille, cep, lune, soleil, paysage de coteaux).
 
+**Relecture du salon appliquée (3 octobre, soir)** : validité « du 5 octobre au 14 novembre
+2026 » en couverture, strates à 108 mm, date sur pastille gneiss ; offre avant la note de prix ;
+deux notes de prix seulement ; « Possibilité de panacher avec… » réservé aux trois familles ;
+Berteaud sans la colonne 36 ; folios toujours à droite (`JOURNAL.md`).
+
 **À faire ensuite** :
 1. ~~Recharger la photo de Bourgogne en grand~~ : **fait le 3 octobre au soir** (original
    3072 × 1461 px, traité en 2400 × 1141 ; les deux catalogues refaits).

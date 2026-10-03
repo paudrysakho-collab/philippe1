@@ -124,6 +124,8 @@ function couvertureSalon() {
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Salon Privé<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
+      <div class="validite-couv"><span>Tarif et offres valables</span>
+        <strong>du 5 octobre au 14 novembre 2026</strong></div>
       ${coupeElegante({ style: 'fine' })}
       <div class="edition-couv">
         <span class="date">${esc(EV.date_texte)}</span>
@@ -430,8 +432,8 @@ export const texteNotePrix = (d) => d.note_prix
   || 'Conditions de port non précisées par le domaine — nous consulter.';
 export function noteDomaine(d) {
   // Au salon, l'offre du stand (« Offre 11+1 à partir de 240 cols ») suit la note de prix.
-  return `<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>${d.offre_salon
-    ? `<p class="offre-salon">${esc(d.offre_salon)}</p>` : ''}`;
+  // l'agence, 3 octobre au soir : l'offre d'abord, la note de prix dessous
+  return `${d.offre_salon ? `<p class="offre-salon">${esc(d.offre_salon)}</p>` : ''}<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>`;
 }
 
 /* ——————————————————————————————————————————————— index ——— */

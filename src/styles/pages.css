@@ -362,3 +362,19 @@
 .ouverture.claire .cadre { color: var(--craie); }
 
 .respire-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Salon, relecture du 3 octobre au soir : la validité du tarif en couverture, des strates
+   plus basses, et la date sur une pastille de couleur (en blanc, elle se perdait dans le ciel). */
+.couverture-salon .coupe { height: calc(108mm + var(--fp)); }
+.couverture-salon .couv-ciel { height: calc(154mm + var(--fp)); }
+.validite-couv {
+  position: absolute; z-index: 3; left: calc(var(--marge-int) + var(--fp)); top: calc(110mm + var(--fp));
+  padding: 3mm 5mm 3.2mm; background: var(--violet); border-radius: 1.5mm;
+  border-left: 1.6mm solid var(--or); color: var(--craie);
+  display: flex; flex-direction: column; gap: .8mm;
+}
+.validite-couv span { font: 500 9pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase; opacity: .9; }
+.validite-couv strong { font: 400 17pt var(--titre); color: var(--craie); }
+.couverture-salon .edition-couv {
+  background: var(--gneiss); border-radius: 1.5mm; padding: 2.6mm 4mm 2.8mm; top: calc(13mm + var(--fp));
+}
