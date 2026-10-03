@@ -1,15 +1,15 @@
 # Catalogue Agence SCIO 2026 : le brief
 
-> **Reprise au 2 octobre 2026.** Le catalogue général est fait : étapes 1 à 6 ci-dessous,
-> 76 pages, PDF et .pptx pour Canva. La suite comprend trois livrables :
-> - les retouches du catalogue général ;
-> - l'édition du **Salon Privé du 5 octobre 2026**, sans prix pour l'instant ;
-> - la liste des vins dégustés par domaine.
+> **État au 3 octobre 2026.** Les trois livrables sont faits et poussés : le catalogue
+> général (52 pages, PDF et .pptx pour Canva), l'édition du **Salon Privé du 5 octobre 2026**
+> (48 pages, prix encore vides) et la liste des vins dégustés.
 >
-> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous) : la bonne branche, les outils
-> à installer, la chaîne de fabrication, ce qu'on a appris sur Canva, et le détail des trois
-> livrables. Le brief qui suit reste la règle : le tarif est la seule source des faits et des
-> prix.
+> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous) : la branche, les outils, les
+> commandes, le piège des photos, **ce qui fait foi** depuis les décisions de l'agence (le
+> dossier de Mathéo pour les textes, les labels et les vins du salon), ses consignes (52 pages
+> au plus, tableaux, note de prix, sommaire), les questions ouvertes et la suite. Le brief qui
+> suit reste la règle ; là où l'agence a décidé autrement, `docs/reprise.md` le dit. Les prix
+> ne viennent que du tarif.
 
 @docs/reprise.md
 
@@ -40,7 +40,7 @@ Tu tournes dans une session Claude Code cloud. L'humain n'a pas de terminal : il
 
 En cas de conflit, cet ordre tranche : exactitude des faits et des prix, puis lisibilité pour le caviste, puis originalité et joie.
 
-1. **Notre PDF est la seule source des faits.** Noms, cuvées, appellations, couleurs, millésimes, contenances, prix, paliers, conditions, départements et textes viennent de `sources/tarif-septembre-2026.pdf`. Jamais du catalogue concurrent, d'Internet ou de tes connaissances générales.
+1. **Notre PDF est la seule source des faits** (exceptions décidées par l'agence : `docs/reprise.md`, section 4 ; les prix, eux, n'ont pas d'exception). Noms, cuvées, appellations, couleurs, millésimes, contenances, prix, paliers, conditions, départements et textes viennent de `sources/tarif-septembre-2026.pdf`. Jamais du catalogue concurrent, d'Internet ou de tes connaissances générales.
 2. **Zéro fait inventé.** Pas d'hectares, de dates, de personnes, de cépages, de sols, de notes de dégustation, d'accords, de médailles, de labels, de coups de cœur ni de promotions absents de notre PDF. Tu peux réécrire les textes dans ta voix si chaque information vient du PDF et qu'aucune n'est ajoutée. Un domaine sans texte reste sans texte.
 3. **Les prix sont sacrés.** Transcrits une fois dans `data/catalogue.json`, vérifiés deux fois, ensuite seulement lus par les gabarits. Jamais un prix tapé à la main dans le HTML. Tu ne corriges jamais un prix, même s'il paraît faux : tu le signales.
 4. **Le design de notre catalogue est entièrement ignoré.** Couleurs, typos, composition des pages, encarts, styles de tableaux, photos, illustrations : tu ne t'en sers pas, même comme point de départ. Tu regardes ses pages uniquement pour lire le texte et les tableaux, qui sont des images. Les informations qu'un logo ou une pastille porte (bio, HVE, « ALLOCATION ») sont du contenu et se reprennent ; leur forme, non. **Le catalogue concurrent, à l'inverse, est là pour inspirer ton design**, jamais pour être copié (voir `docs/concurrent-les-jules.md`). Seuls deux éléments visuels sont repris tels quels : notre logo, obligatoire, et des photos prises sur les sites des domaines (voir « Photos »). Ne redessine pas les logos officiels (AB, Eurofeuille, HVE, Demeter, AOP, IGP) : crée tes propres pictos et explique-les dans une légende.

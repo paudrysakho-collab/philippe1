@@ -1,219 +1,169 @@
-# Reprise : où en est le projet, et la suite (2 octobre 2026)
+# Reprise : où en est le projet (3 octobre 2026)
 
-> **Fait le 2 octobre (seconde session)** : les trois livrables sont livrés.
-> - A : `dist/catalogue-scio-2026-*` (**52 pages au plus**, demande de l'agence : plus
->   d'ouvertures de région ni d'index des domaines, lignes de tableau serrées, bande du haut
->   abaissée sur les fiches qui débordent de peu ; sommaire simple, note de prix sous le
->   tableau ; textes et labels du dossier de Mathéo sur les 31 fiches du salon) ;
-> - B : `dist/salon-prive-2026-*` (48 pages, sans plan des exposants, `npm run salon`), prix
->   vides, à remplir par `tableur/prix-salon-prive-2026.xlsx` (README, « Le Salon Privé ») ;
->   vins, textes et labels du **dossier de référence de Mathéo**
->   (`sources/salon-prive-2026/matheo-dossier-reference.pdf`), qui fait foi ;
-> - C : `dist/salon-prive-2026-liste-des-vins.pdf` (3 pages A4, 180 vins).
-> Ce qui reste ouvert : `QUESTIONS.md`, points 26 (écarts dossier / tarif), 27, 29 (ouvertures
-> au salon ?) et 30 (n°40 « Troisième domaine certifié HVE »).
+Ce fichier passe le relais d'une conversation à la suivante. **Lis-le en entier avant de
+toucher à quoi que ce soit.** Le brief de `CLAUDE.md` reste la règle ; ce fichier dit ce qui
+est fait, comment l'outil marche, ce que l'agence a décidé depuis le brief, et la suite.
+L'historique détaillé (essais, erreurs, raisons) est dans `JOURNAL.md`.
 
-Ce fichier passe le relais à une nouvelle session. Le brief de `CLAUDE.md` reste la règle ;
-ce qui suit dit ce qui est déjà fait, comment l'outil marche, et ce qu'on attend maintenant.
-
-## 1. Avant tout : la bonne branche
+## 1. Avant tout : la branche et les outils
 
 Tout le travail est sur **`claude/design-skill-propositions-suwoa9`**. Si ta session a
-démarré sur une autre branche, rapatrie celle-ci d'abord, sans rien perdre :
+démarré ailleurs, rapatrie-la d'abord, sans rien perdre :
 
 ```sh
 git fetch origin claude/design-skill-propositions-suwoa9
-git merge origin/claude/design-skill-propositions-suwoa9   # ou checkout, si ta branche est vide
+git checkout claude/design-skill-propositions-suwoa9      # ou merge, si ta branche a du travail
 ```
 
-Vérifie ensuite que `docs/reprise.md`, `data/salon-prive-2026.json` et
-`sources/salon-prive-2026/` sont là.
-
-Outils à installer en début de session (le conteneur repart de zéro) :
+Le conteneur repart de zéro à chaque session :
 
 ```sh
 npm install
 apt-get install -y poppler-utils libreoffice-impress libreoffice-calc
-pip install pymupdf openpyxl fonttools defusedxml lxml
+pip install pymupdf openpyxl fonttools defusedxml lxml rembg onnxruntime
+mkdir -p ~/.local/share/fonts && cp polices-canva/*.ttf ~/.local/share/fonts/ && fc-cache -f
+# au besoin, pour relire un PDF-image : apt-get install -y tesseract-ocr tesseract-ocr-fra
 ```
 
-Chromium est déjà installé pour Playwright, sans téléchargement.
+Chromium est déjà installé pour Playwright. Les polices dans `~/.local/share/fonts` servent
+au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines.py` échoue.
 
-## 2. Ce qui est fait : le catalogue général, étapes 1 à 6 du brief
+## 2. Ce qui est livré (`dist/`, tout est poussé)
 
-**Ne rien refaire.**
+| Livrable | Fichiers | État |
+|---|---|---|
+| **Catalogue général** « Sous nos pieds » | `catalogue-scio-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx`, `-canva-recadrable.pptx` | **52 pages**, 40 domaines, 715 prix, 80 images |
+| **Salon Privé Vins & Terroirs**, lundi 5 octobre 2026, Château de la Rairie | `salon-prive-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **48 pages**, 26 stands, 31 fiches, 180 vins, **prix vides** |
+| **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
+| Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
+| Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
 
-- **Concept retenu** : « Sous nos pieds ». Chaque région est une strate de sol (couleur et
-  trame), la tranche du catalogue fermé montre les dix bandes, et chaque fiche ouvre sur
-  son sol. Le détail est dans `CONCEPTS.md`, concept 1, et les décisions dans `JOURNAL.md`.
-- **Format** : 210 × 260 mm, 76 pages.
-- **Palette** : tuffeau `F2EADA`, craie `FBF8F1`, silex `46606E`, gneiss `A8515F`,
-  amphibolite `3C5B47`, sables `D08C3C`, violet `67067C`, or `E1C853`, encre `2A3942`.
-- **Polices** : Young Serif pour les titres et la lettrine, Spectral pour les textes,
-  IBM Plex Sans pour les tableaux.
-- **Livrables** dans `dist/` :
-  - `catalogue-scio-2026-ecran.pdf` et `catalogue-scio-2026-imprimeur.pdf` ;
-  - `catalogue-scio-2026-canva.pptx` et `catalogue-scio-2026-canva-recadrable.pptx`, pour
-    Canva, avec textes et tableaux modifiables.
-- **Images** : 79 photos posées sur 80 emplacements. Il manque la bouteille du n°18. Tout est
-  sourcé dans `credits.md`.
-- **Tableur des prix** : `tableur/tarifs-scio-2026.xlsx`, aller et retour avec l'agence
-  (`npm run tableur`, puis `npm run importer -- fichier.xlsx`).
+Le 2 et le 3 octobre, tout a été revérifié : contrôles automatiques au vert, liens de la
+version écran, polices, et **chaque page regardée en image**.
 
-### La chaîne de fabrication
+## 3. Les commandes
 
-- **Les données** : `data/fiches/NN.json` (une fiche par domaine, prix en centimes) sont
-  assemblées en `data/catalogue.json` par `scripts/assembler.py`, puis vérifiées par
-  `scripts/verifier-donnees`.
-- **Le PDF** : `scripts/construire.mjs` pagine (`build/plan.json`) avec les gabarits
-  `src/gabarits/pages.mjs` et `pieces.mjs` et le style `src/styles/systeme.css`, rend dans
-  Chromium et mesure les hauteurs (`build/mesures.json`). Il complète seul jusqu'à un
-  multiple de 4 avec des pages « respiration » (Vos notes).
-- **Le contrôle** : `scripts/controler.mjs` retrouve chaque prix dans le texte du PDF,
-  vérifie les polices et le nombre de pages.
-- **Le .pptx** : `scripts/pptx.mjs` reprend la même géométrie (`build/mesures.json`), puis
-  `scripts/ranger-pptx.py` remet le XML à la norme et `scripts/controler-pptx.mjs` vérifie.
-- **Une seule commande** : `npm run build` enchaîne données, PDF, contrôle et pptx.
+```sh
+npm run build          # catalogue général : données vérifiées, PDF, contrôle, deux .pptx
+npm run salon          # Salon Privé : données, PDF, contrôle, .pptx, liste des vins
+npm run liste-vins     # la liste seule (LISTE_FORMAT=catalogue pour le format 210 × 260)
+npm run tableur        # tarifs → xlsx ; npm run importer -- fichier.xlsx [--essai]
+npm run tableur-salon  # prix du salon → xlsx ; npm run importer-salon -- fichier.xlsx [--essai]
+npm run transcrire-matheo            # refait les vins du salon depuis scripts/transcrire-matheo.py
+python3 scripts/textes-matheo.py     # reporte textes et labels du dossier de Mathéo sur les fiches
+python3 scripts/regler-lettrines.py  # lettrines du .pptx ; EDITION=salon pour le salon
+```
 
-### Les compétences à charger
+- **Les données** : `data/fiches/NN.json` (prix en centimes) → `data/catalogue.json`
+  (`scripts/assembler.py`), vérifiées par `scripts/verifier-donnees`. Le salon :
+  `data/salon-prive-2026.json` (stands, vins, `prix_centimes: null`, `mode_prix`).
+- **Le PDF** : `scripts/construire.mjs` (pagination mesurée dans Chromium), gabarits
+  `src/gabarits/pages.mjs` et `pieces.mjs`, styles `src/styles/systeme.css` et `pages.css`.
+  L'édition se choisit par `EDITION=salon` (objet `ED` de `pages.mjs`).
+- **Le .pptx** : `scripts/pptx.mjs` reprend la géométrie mesurée (`build/<base>-mesures.json`
+  et `-plan.json`). Si le haut des fiches ou un texte de domaine change, relance
+  `regler-lettrines.py` (25 min environ par édition, en tâche de fond), puis `npm run pptx`
+  et `npm run pptx-salon`.
 
-Elles sont dans `.claude/skills/` : `da-scio` avant toute page, `tableau-tarif` avant tout
-tableau, `picto-maison`, `photos-domaines` et `epreuve-pages` (regarder chaque page en image
-avant de livrer).
+### Piège : les photos
 
-### Ce qu'on a appris à nos dépens sur Canva
+Les **originaux** des photos sont dans `src/photos/brut/`, **ignoré par git** : ils ne sont
+pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/bouteille/`) et
+`data/photos-preparees.json` sont, elles, dans le dépôt.
+- **Ne lance jamais `npm run photos` (tout) sans les originaux** : le script vide d'abord
+  les dossiers d'images, puis écarte tout ce qu'il ne trouve pas. Tout serait perdu.
+- Pour une seule image : remets son original dans `src/photos/brut/` (chemin écrit dans
+  `data/photos-locales.json`) et lance
+  `python3 scripts/preparer-photos.py --seulement N [--role bouteille]`.
+- Les originaux sont sur le **Drive de l'agence** (« tout est sur Drive ») : dossiers
+  `Bouteilles_de_vin/`, `Domaines_et_vignerons/`, et `les photos gemini/photo gemini/` pour les
+  neuf bouteilles retouchées. Le connecteur Drive rend un fichier en base64 dans un fichier
+  de `tool-results` : on le décode avec Python (voir `JOURNAL.md`, 2 octobre).
+- Une bouteille détourée se vérifie sur un **fond magenta** : il montre la moindre bavure.
 
-- **La lettrine.** À l'import d'un .pptx, Canva ramène un paragraphe à une seule police et une
-  seule taille. La lettrine est donc une **boîte de texte à part**, calée sur la première
-  ligne. Si les textes des domaines ou le haut des fiches changent, relance
-  `python3 scripts/regler-lettrines.py` (voir `JOURNAL.md`, « La lettrine disparaissait » et
-  suivants).
-- **Les polices.** Canva ne connaît ni Young Serif ni Spectral : il les remplace (TYSerif,
-  Arimo) tant que l'agence ne les a pas téléversées (`polices-canva/LISEZ-MOI.md`).
-- **Tester un import.** Le dépôt est public : on importe dans Canva depuis l'adresse
-  `raw.githubusercontent.com` d'un commit poussé, puis on exporte le PDF et on le mesure
-  (`essais/mesurer-lettrines.py`).
+## 4. Ce qui fait foi (décisions de l'agence depuis le brief)
 
-### Questions encore ouvertes
+| Pour… | La source | Où c'est dans le dépôt |
+|---|---|---|
+| prix, paliers, contenances, note de prix, départements | **le tarif de septembre 2026** (seul, comme dit le brief) | `data/fiches/` |
+| **textes et labels des 31 fiches présentes au salon**, dans les **deux** éditions | **le dossier de référence de Mathéo** (« tout est bon dans son document ») | `sources/salon-prive-2026/matheo-dossier-reference.pdf`, `scripts/textes-matheo.py` ; le texte du tarif reste dans `texte_tarif` |
+| **les vins du salon** : cuvée, appellation, couleur, millésime, **tels qu'écrits** | le dossier de Mathéo, corrigé seulement dans la forme | `scripts/transcrire-matheo.py` (`CORRECTIONS`) ; le tarif ne donne que la contenance et le tableau |
+| numéros de stand et salles | le plan des exposants | `data/salon-prive-2026.json` |
+| les couleurs que personne ne donnait | l'agence, vin par vin | `COULEURS_AGENCE` de `transcrire-matheo.py` |
+| les labels des 9 fiches absentes du salon | le tarif | `labels_tarif` |
 
-Elles sont dans `QUESTIONS.md` :
-- point 22 : les labels du tarif et ceux du salon divergent ;
-- point 24 : la bouteille du n°18, et la Mondeuse posée au n°21 ;
-- point 20 : le texte du n°1, repris de la liste du salon ;
-- point 25 : les questions du salon.
+- **Noms propres** : comme sur le logo du domaine, jamais comme une faute du dossier :
+  **Berteaud Manceau**, **Boehler**. Corrections signalées par l'agence : « Molsce » →
+  **Molse**, « demoiseilles » → **Demoiselles**.
+- Le dossier de Mathéo a été renvoyé trois fois le 2 octobre au soir
+  (`…_compressed.pdf`, `ma-sandbox-magnifique_board_…_2_2.pdf`, `…_2_3_compressed.pdf`) :
+  c'est **la même exportation du Padlet (15 h 44 UTC)**, vérifiée au pixel et par OCR. Rien à
+  réappliquer. S'il change encore, comparer d'abord au pixel avec la version en place (méthode
+  dans `JOURNAL.md`), puis relire par OCR (Tesseract lit souvent un 9 comme un 4 dans
+  l'écriture du Padlet : vérifier les dates à l'image).
 
-## 3. La suite : trois livrables
+## 5. Les consignes de l'agence (à tenir)
 
-### Livrable A : le catalogue général, avec les retouches du responsable
+- **Catalogue général : 52 pages au plus.** Pas de pages d'ouverture de région ni d'index des
+  domaines (options `ouvertures` et `indexDomaines` de `ED`) ; le Salon Privé les garde.
+  Quand une fiche déborde de peu, sa bande du haut s'abaisse (`BANDES`, `pieces.mjs`).
+- **Tableaux** : écriture grande et grasse (cuvée 9,6 pt demi-gras, prix 10 pt) **mais lignes
+  serrées** (8,6 mm) ; « agrandis l'écriture mais pas les tableaux ».
+- **La note de prix** (H.T., franco, départ chai…) **juste sous le dernier tableau**, en
+  10,5 pt : « hyper important ».
+- **Sommaire simple**, « comme d'habitude », sobre en encre (une pastille de couleur par
+  région). Les quatre domaines du groupe portent **« (Vignobles Strasser Radziwill) »** en petit
+  sous leur nom (`mention_sommaire`, `data/agence.json`).
+- **Couverture** : l'édition et la date en haut (« Tarifs cavistes Vendée (85) 2026 » ;
+  « Lundi 5 octobre 2026 »). Pas de plan des exposants dans le salon.
+- **Sobriété au salon** : « pour le 5, moins on en dit, moins on fait d'erreur ».
+- **Pas de mot seul** en fin de ligne dans une cuvée (`sansVeuve()`, `pieces.mjs`).
+- Avec l'agence : écrire en français simple, envoyer les PNG et PDF (et leurs chemins
+  exacts sur GitHub), commit et push après chaque étape.
 
-1. **Supprimer la page 3**, « Comment lire ce catalogue » (`mode-emploi`), **et la page 5**,
-   « Les quatre alliances » (`alliances`). Voir `scripts/construire.mjs` (descripteurs, et
-   `AVANT = 5`), `src/gabarits/pages.mjs` et `scripts/pptx.mjs`. Le panachage reste visible
-   sur chaque fiche (jeton « Panachage », ligne « Se panache avec… ») ; vérifie qu'aucun
-   texte ne renvoie encore à ces pages.
-2. **Un sommaire simple** à la place de « La coupe » (page 4) : « comme on faisait
-   d'habitude ». C'est une liste par région ; sous chaque région, les domaines numérotés
-   avec leur page, sur deux colonnes, dans les couleurs et les polices du catalogue (le nom
-   de région dans sa couleur de strate). Pour la *structure* seulement, voir le sommaire du
-   tarif source (`data/pages/p-03.png`) ; son dessin, lui, reste ignoré (règle d'or 4).
-3. **La note de prix, plus grosse et juste sous le tableau.** Par exemple « * Prix de la
-   bouteille H.T. hors frais de transport. » : aujourd'hui elle est en petit dans le pied de
-   page de la fiche (`pages.mjs`, vers la ligne 407 ; `pptx.mjs`, vers la ligne 417). Elle
-   doit venir **à la suite immédiate du dernier tableau**, en plus gros (au moins 10 pt),
-   bien visible. C'est « hyper important » pour l'agence. Les départements de distribution
-   peuvent rester en pied de page. À faire sur toutes les fiches, et dans le .pptx aussi.
-4. **Après** : `npm run build`, regarde chaque page (`epreuve-pages`), et relance
-   `regler-lettrines.py` si le haut des fiches a bougé. Le nombre de pages se recale seul
-   sur un multiple de 4.
+## 6. Questions encore ouvertes (`QUESTIONS.md`)
 
-### Livrable B : le catalogue du Salon Privé Vins & Terroirs
+- **10** : « Rouge au lèvres » (tarif) ou « Rouge **aux** lèvres » (l'étiquette de la bouteille).
+- **26** : les écarts entre le dossier de Mathéo et le tarif (46 vins absents du tarif, 53
+  écarts), à relire avant impression.
+- **27** : prix du salon (prix unique ou paliers : le tableau accepte les deux), format de la
+  liste des vins, une seule graphie des noms de stand ?
+- **29** : retirer aussi les ouvertures de région du Salon Privé ?
+- **30** : le texte de Vazart-Coquart (n°40) n'a plus « Troisième domaine certifié HVE de
+  France » (le dossier de Mathéo l'a retiré).
+- Les anomalies du tarif (points 1 à 9, 11 à 14) restent signalées, jamais corrigées seules.
 
-- **L'événement** : lundi 5 octobre 2026, Château de la Rairie, Pont-Saint-Martin.
-  26 vignerons exposants, 9 régions (pas de Beaujolais), organisé par l'Agence SCIO.
-- **La même DA que le catalogue général** (demande expresse) : même concept, mêmes polices,
-  mêmes composants. C'est une **édition** du même générateur (par exemple
-  `EDITION=salon npm run build`), pas une copie des gabarits. Les retouches du livrable A
-  s'y appliquent aussi.
-- **On voit tout de suite que c'est le salon.** Sur la couverture et la page de l'agence :
-  le nom du salon, la date, le lieu. Sur chaque fiche, le **numéro de stand**, pour la
-  retrouver sur le plan.
-- **Le plan des exposants fait foi** (réponse de l'agence, 2 octobre) : en cas de
-  divergence entre les documents du salon, le plan l'emporte.
-- **Les exposants** : `data/salon-prive-2026.json` rapproche les 26 stands de 31 fiches.
-  Strasser Radziwill (stand 7) couvre les quatre fiches n°16 à 19 ; Goichot (stand 26)
-  couvre les fiches n°12, 13 et 14. Pas de jus de cépages d'Exea (fiche n°33 exclue).
-  Divin No Low (fiche n°7) est « normalement » sur le stand de Jean de Villebois : la fiche
-  entre si le fichier de Mathéo en liste des vins. Les fiches 9, 11, 20, 24, 25, 26, 33 et 35
-  ne sont pas au salon.
-- **Les tableaux ne montrent que les vins dégustés**, d'après le **fichier de Mathéo**, qui
-  fait foi pour cette liste.
-  - **Comment le lire** (consigne de l'agence) : ne prends que **les listes de vins des
-    cartes de stand**. Ignore les pages d'habillage (liste des domaines, plan « version
-    esthétique »).
-  - **Attention aux pages doubles** : une même page peut porter **deux vignerons côte à côte,
-    séparés par un trait vertical**, chacun avec son numéro de stand, son nom et sa propre
-    « Liste des vins ». Ne mélange jamais leurs vins : rattache chaque ligne au stand de sa
-    colonne, et vérifie le total (26 stands).
-  - Le Padlet déjà déposé (`padlet-vins-a-deguster.pdf`, 20 pages) a cette forme : page 1 la
-    liste des domaines, page 2 le plan, puis les cartes, une ou deux par page.
-  - Chaque vin se rapproche d'une ligne du tarif (`data/fiches/`) : appellation, cuvée,
-    couleur, millésime, contenance.
-  - Un vin absent du tarif, ou d'un autre millésime, va dans `QUESTIONS.md`. On n'invente
-    rien.
-  - Le Padlet (`sources/salon-prive-2026/padlet-vins-a-deguster.pdf`, en images : zoomer)
-    est une version antérieure des listes par stand, utile pour recouper.
-- **Les prix ne sont pas encore connus** : l'agence les ajoutera après.
-  - Les colonnes de prix sont là, avec des cases **vides**.
-  - Les prix vivent dans les données (par exemple `prix_centimes: null` dans
-    `data/salon-prive-2026.json`). Les remplir et relancer le build doit suffire ;
-    prévois aussi l'aller-retour par le tableur, en étendant `scripts/tableur.py`.
-  - Le contrôle « chaque prix du JSON est dans le PDF » doit accepter ces prix absents
-    tant qu'ils le sont.
-  - **Un seul prix par vin, ou les paliers du domaine : l'agence ne le sait pas encore.**
-    Le tableau doit accepter les deux sans retouche de gabarit. Par défaut, il reprend les
-    paliers du tarif du domaine, cases vides. Si l'agence donne un prix unique, la même donnée
-    bascule le tableau sur une seule colonne « Prix salon ».
-- **Les labels : la liste des vignerons fait foi** (`sources/salon-prive-2026/liste-des-vignerons.pdf`).
-  - Chaque fiche du salon affiche le label de la notice de son stand, tel quel ; c'est déjà
-    rapproché dans `labels_affiches` de `data/salon-prive-2026.json`.
-  - Nouveaux libellés : « En conversion Bio », « Biodynamie », « ISO 26000 », « Agriculture
-    raisonnée », « HVE 3 », « Bio & Biodynamie ». Ils demandent de nouveaux pictos maison
-    (compétence `picto-maison` ; jamais les logos officiels), légendés.
-  - Pour le reste, l'agence veut de la sobriété : « pour le 5, moins on en dit, moins on fait
-    d'erreur ». Rien que le tarif ne dise. Les textes des documents du salon ne sont pas une
-    source de faits.
-  - **À demander en début de session** : cette liste vaut-elle aussi pour les labels du
-    catalogue général (point 22) ?
-- **Sorties** : `dist/salon-prive-2026-ecran.pdf`, `dist/salon-prive-2026-imprimeur.pdf`
-  et un `.pptx` pour Canva. C'est le seul des trois livrables qu'on modifiera encore, pour
-  les prix.
+## 7. La suite : ta mission, c'est **mettre les prix**
 
-### Livrable C : la liste des vins dégustés, par domaine (2 à 3 pages)
+La prochaine session n'a qu'un rôle (l'agence, 3 octobre) : **remettre les prix**. Rien
+d'autre ne change : ni la mise en page, ni les textes, ni les photos, ni `CLAUDE.md`.
 
-- Pour chaque stand : numéro, nom, région, puis la liste des vins dégustés (cuvée,
-  appellation, couleur, millésime).
-- Même DA, mêmes données que le livrable B, sans prix.
-- Sortie : `dist/salon-prive-2026-liste-des-vins.pdf`.
+- **Prix du Salon Privé** (cases vides aujourd'hui) : l'agence remplit
+  `tableur/prix-salon-prive-2026.xlsx` (une ligne par vin, rangée par stand). Pour chaque
+  stand, **soit** la colonne « Prix salon » (prix unique), **soit** les colonnes de paliers.
+  Puis `npm run importer-salon -- FICHIER.xlsx --essai` (montre chaque changement), sans
+  `--essai` pour écrire, et `npm run salon`. Détail : README, « Ajouter les prix du salon ».
+- **Un prix du catalogue général** change : `npm run tableur`, l'agence corrige
+  `tableur/tarifs-scio-2026.xlsx`, `npm run importer -- FICHIER.xlsx --essai`, puis sans
+  `--essai`, et `npm run build`.
+- Les prix vivent dans les données, **en centimes**, jamais tapés dans un gabarit. Un prix
+  qui paraît faux ne se corrige pas : il se signale (`QUESTIONS.md`).
+- Après : contrôles au vert (chaque prix donné se retrouve dans le PDF), un coup d'œil en
+  image aux fiches touchées, commit, push, et envoyer à l'agence les PDF et .pptx refaits.
+  Les lettrines ne bougent pas : inutile de relancer `regler-lettrines.py`.
 
-## 4. Les documents du salon (`sources/salon-prive-2026/`)
+Pour mémoire, en attente de l'agence et hors de cette mission : la mise au point de
+`CLAUDE.md` (proposition faite le 2 octobre) et les questions de la section 6.
 
-| Fichier | Ce qu'il apporte |
-|---|---|
-| `liste-des-domaines.pdf` | les 26 domaines par région avec leur **numéro de stand** |
-| `plan-des-exposants.pdf` | **fait foi** (version 2 du 2 octobre, identique à la première) : le plan des salles (Salle Blanche, Salle Noire), les stands 1 à 26, l'accueil, les contacts |
-| `liste-des-vignerons.pdf` | une notice par vigneron (numérotée 1 à 26 par région : ce **ne sont pas** les numéros de stand) |
-| `padlet-vins-a-deguster.pdf` | une carte par stand, numérotée comme les stands, avec une « liste des vins » |
-| *à venir* : le fichier de Mathéo | **les vins dégustés**, qui font foi |
+## 8. Ce qu'on a appris à nos dépens
 
-Ces documents ont leur propre habillage (serif bordeaux, Padlet). **On n'en reprend pas le
-dessin** : le salon garde la DA du catalogue.
-
-## 5. Les réponses de l'agence (2 octobre) et ce qui reste ouvert
-
-Les réponses sont au point 25 de `QUESTIONS.md` et dans `reponses_agence` de
-`data/salon-prive-2026.json`. Rien n'empêche de commencer.
-
-Restent ouverts :
-- prix unique ou paliers, d'où le tableau qui accepte les deux ;
-- Divin No Low, que le fichier de Mathéo tranchera ;
-- le format de la liste des vins (A4 ou le format du catalogue) : propose-le à l'agence.
+- **Canva et la lettrine** : à l'import d'un .pptx, Canva ramène un paragraphe à une police et
+  une taille ; la lettrine est donc une boîte à part, calée par `regler-lettrines.py`. Canva
+  remplace Young Serif et Spectral tant que l'agence ne les a pas téléversées
+  (`polices-canva/LISEZ-MOI.md`).
+- **OCR** : lancer Tesseract avec `OMP_THREAD_LIMIT=1` et 4 pages à la fois
+  (`xargs -P 4`) ; vingt en parallèle saturent la machine.
+- **`rm` avec une variable** est bloqué par la sécurité : chemins littéraux, ou `"${dossier:?}"`.
+- **Le pptx suit le PDF par la géométrie mesurée** : toute retouche d'espacement dans
+  `systeme.css` (fiche, tableau, pied) se reporte à la main dans `scripts/pptx.mjs`, puis se
+  vérifie en rendant le .pptx dans LibreOffice à côté du PDF.
