@@ -457,8 +457,12 @@ LARG_SALON = [12, 58, 16, 12, 12, 13] + [13] * MAX_SALON
 def paliers_tarif(fiches, v, st=None):
     """Les paliers du vin : ceux du salon (`paliers_salon` du stand, par fiche) quand l'agence
     les a donnés ; sinon ceux du tableau du tarif d'où vient le vin (le premier s'il n'y est pas)."""
-    if st and st.get("paliers_salon", {}).get(str(v["fiche"])):
-        return st["paliers_salon"][str(v["fiche"])]
+    ps = (st or {}).get("paliers_salon", {})
+    ti = v["tarif"]["tableau"] if v.get("tarif") else 0
+    if ps.get(f"{v['fiche']}:{ti}"):
+        return ps[f"{v['fiche']}:{ti}"]
+    if ps.get(str(v["fiche"])):
+        return ps[str(v["fiche"])]
     d = fiches[v["fiche"]]
     ti = v["tarif"]["tableau"] if v.get("tarif") else 0
     return d["tableaux"][ti]["paliers"]

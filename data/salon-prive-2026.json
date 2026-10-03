@@ -4093,7 +4093,10 @@
     {
      "liste": "(ajout) Jus de cépages – Syrah — 25 cl",
      "ajout": true,
-     "tarif": null,
+     "tarif": {
+      "tableau": 1,
+      "ligne": 2
+     },
      "note": null,
      "ecarts": [],
      "fiche": 33,
@@ -4134,7 +4137,10 @@
     {
      "liste": "(ajout) Jus de cépages – Chardonnay — 25 cl",
      "ajout": true,
-     "tarif": null,
+     "tarif": {
+      "tableau": 1,
+      "ligne": 0
+     },
      "note": null,
      "ecarts": [],
      "fiche": 33,
@@ -4175,7 +4181,10 @@
     {
      "liste": "(ajout) Jus de cépages – Grenache — 25 cl",
      "ajout": true,
-     "tarif": null,
+     "tarif": {
+      "tableau": 1,
+      "ligne": 1
+     },
      "note": null,
      "ecarts": [],
      "fiche": 33,
@@ -4203,6 +4212,10 @@
      "1 palette"
     ],
     "33": [
+     "À partir de 72 bts",
+     "À partir de 144 bts"
+    ],
+    "33:1": [
      "À partir de 144 bts",
      "À partir de 300 bts"
     ]

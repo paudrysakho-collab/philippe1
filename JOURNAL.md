@@ -895,3 +895,6 @@ de port. » au salon (`note_prix_salon`) ; **jus de cépages d'Exea** : six lign
 2,39 et 25 cl 1,84 / 1,74, d'après la photo du tarif (`scans-prix/photo-exea-jus-de-cepages.jpg`),
 colonnes « À partir de 144 / 300 bts » comme sur la photo (l'agence a dit 72 et 144 : question
 posée). Falfas confirmé. Salon : 192 lignes avec prix, aucune case vide.
+Jus de cépages, précision de l'agence : **50 cl à partir de 72 / 144 bts, 25 cl à partir de
+144 / 300 bts**. Deux tableaux sur la fiche (les 25 cl rangés dans le 2e tableau du tarif) ;
+`paliers_salon` accepte une clé « fiche:tableau » (« 33:1 »), lue par le gabarit et le tableur.

@@ -50,7 +50,8 @@ PALIERS = {
     13: UNIQUE, 14: P(120, 240), 15: P(48, 78, 96), 16: UNIQUE, 17: UNIQUE, 18: UNIQUE,
     19: P(120, 180, 600), 20: P(60, 120, 300),
     21: {32: P(144, 300, unite="cols") + ["1 palette"],
-         33: P(144, 300)},   # jus de cépages : photo du tarif envoyée par l'agence, 3 octobre
+         33: P(72, 144),      # jus de cépages 50 cl ; l'agence, 3 octobre : « 72 et 144 pour 50 cl »
+         "33:1": P(144, 300)},  # jus de cépages 25 cl (2e tableau) : « 144 et 300 pour les 25 cl »
     22: UNIQUE, 23: P(60, 120, 240), 24: UNIQUE, 25: P(36, 60, 120, 240, unite="cols"),
     26: P(60, 120, 300),
 }
@@ -253,11 +254,11 @@ AJOUTS = [
      cuvee="Terroir d’Ansouis Rouge", couleur="Rouge", millesime="2021", contenance="75 cl",
      prix_centimes=eu("5,50", "5,20", "5,00"), offre=O5, liste_vins=True,
      source="l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)")),
- *[(21, f"Jus de cépages — {c}", dict(fiche=33, appellation=None, cuvee=f"Jus de cépages – {c}",
+ *[(21, f"Jus de cépages — {c}", dict(fiche=33, tarif={"tableau": 1, "ligne": li}, appellation=None, cuvee=f"Jus de cépages – {c}",
      couleur=coul, millesime="—", contenance="25 cl",
      prix_centimes=eu("1,84", "1,74"), liste_vins=False,
      source="photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"))
-   for c, coul in (("Syrah", "Rouge"), ("Chardonnay", "Blanc"), ("Grenache", "Rosé"))],
+   for c, coul, li in (("Syrah", "Rouge", 2), ("Chardonnay", "Blanc", 0), ("Grenache", "Rosé", 1))],
  (1, "Château Balac Rouge", dict(fiche=29, appellation="AOC Haut-Médoc Cru Bourgeois Supérieur",
      cuvee="Château Balac Rouge", couleur="Rouge", millesime="2018", contenance=None,
      prix_centimes=eu("7,25", "7,13", "7,00"), liste_vins=True,
@@ -323,6 +324,7 @@ def main():
         # paliers, par fiche
         pal = PALIERS[n]
         par_fiche = pal if isinstance(pal, dict) else {f: pal for f in st["domaines"]}
+        # une clé « fiche:tableau » donne ses propres paliers à un tableau de la fiche
         st["paliers_salon"] = {str(f): p for f, p in par_fiche.items()}
         st["mode_prix"] = "unique" if all(p == UNIQUE for p in par_fiche.values()) else "paliers"
         if NOTE.get(n):

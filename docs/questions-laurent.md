@@ -13,5 +13,5 @@ Restent, pour Laurent :
 
 1. **Goichot (stand 26), Bourgogne Pinot Noir des Guignottes 2023** : rien n'est surligné sur
    le tarif. Quel prix ? *En attendant : 8,90 / 8,60 / 8,10, la ligne du même tarif.*
-2. **Exea, jus de cépages** : la photo du tarif dit « À partir de 144 bts / À partir de 300 bts »,
-   on m'a dit « 72 et 144 ». Lesquels ? *En attendant : 144 et 300, comme la photo.*
+
+(Jus de cépages réglés : 72 / 144 bts pour les 50 cl, 144 / 300 bts pour les 25 cl.)

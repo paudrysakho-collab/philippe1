@@ -38,7 +38,8 @@ function editionSalon(cat) {
       const t = d.tableaux[ti];
       // Les paliers du salon (tarifs annotés par l'agence) quand elle les a donnés, par fiche ;
       // sinon ceux du tarif de septembre.
-      const paliers = s.paliers_salon?.[String(d.numero)] || (unique ? ['Prix salon'] : t.paliers);
+      const paliers = s.paliers_salon?.[`${d.numero}:${ti}`] || s.paliers_salon?.[String(d.numero)]
+        || (unique ? ['Prix salon'] : t.paliers);
       return {
         intitule: t.intitule, ...(t.famille ? { famille: t.famille } : {}), paliers,
         lignes: parTableau.get(ti).map((v) => ({
