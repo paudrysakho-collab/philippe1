@@ -56,13 +56,22 @@ sans en parler, lis ce fichier, puis traite la demande.
 
 ## 1. Avant tout : la branche et les outils
 
-Tout le travail est sur **`claude/design-skill-propositions-suwoa9`**. Si ta session a
-démarré ailleurs, rapatrie-la d'abord, sans rien perdre :
+Tout le travail est sur **`claude/design-skill-propositions-suwoa9`**. **Commence toujours
+par te mettre à jour sur GitHub** : un conteneur peut avoir été cloné avant les derniers
+envois.
 
 ```sh
 git fetch origin claude/design-skill-propositions-suwoa9
-git checkout claude/design-skill-propositions-suwoa9      # ou merge, si ta branche a du travail
+git status --short                      # vide : rien à toi, on peut s'aligner sans risque
+git checkout -B claude/design-skill-propositions-suwoa9 origin/claude/design-skill-propositions-suwoa9
 ```
+
+**Ta copie est périmée** si tu vois l'un de ces signes : `sources/salon-prive-2026/` sans
+`matheo-dossier-reference.pdf`, un `docs/reprise.md` daté du 2 octobre qui parle de
+« Livrable A : retouches », de « supprimer la page 3 », du « fichier de Mathéo à venir » ou
+de la question des labels (point 22). Dans ce cas : resynchronise comme ci-dessus, puis
+**relis `CLAUDE.md` et ce fichier avec l'outil de lecture** (ceux chargés au démarrage de la
+session sont l'ancienne version) et oublie ce que l'ancienne version te faisait demander.
 
 Le conteneur repart de zéro à chaque session :
 
