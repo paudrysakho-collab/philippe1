@@ -845,3 +845,39 @@ enverra ses documents au fil de l'eau, avec les détails. Prêt en attendant :
 `scripts/preremplir-prix-salon.py` sort un tableur pré-rempli avec les prix du tarif
 (134 vins rapprochés, dont 53 à regarder ; 46 absents du tarif), au cas où l'agence voudrait
 partir du tarif. Rien n'est importé.
+
+## 3 octobre 2026 — les prix du Salon Privé
+
+L'agence a scanné ses tarifs annotés (bourrage papier : 4 PDF dans le Drive, dossier
+« tableau catalogue », plus un cinquième pour Trichon), rangés par stand, et dicté ses
+consignes domaine par domaine. Le connecteur Drive refuse les fichiers de plus de 10 Mo : le
+dossier a été partagé par lien, téléchargé par `drive.usercontent.google.com`. Les scans sont
+dans `sources/salon-prive-2026/scans-prix/` (41 Mo).
+
+- **Relevé** : chaque page lue en image (rendus à 200 dpi, recadrés, tournés), prix surlignés
+  notés dans `data/prix-salon-releve.md` avec la page du scan, puis **seconde passe** : chaque
+  tableau relu face aux données saisies avant la saisie définitive.
+- **Données** : `scripts/prix-salon.py` (nouveau, `npm run prix-salon`, enchaîné après
+  `npm run transcrire-matheo`) écrit dans `data/salon-prive-2026.json` les paliers du salon
+  par fiche (`paliers_salon`), les prix vin par vin, les offres (`offre`) et le bas de fiche
+  (`offre_salon`). Prix en centimes, convertis depuis le texte sans flottant.
+- **Gabarit** : un tableau du salon prend les paliers du salon ; quatre paliers élargissent le
+  bloc de prix (`table.tarif.p4`, 66 mm) ; un prix seul sur une ligne à paliers (magnum à
+  prix unique) occupe toute la largeur (`.cel-prix.seul`) ; l'offre est une petite étiquette
+  or et violet après le nom du vin (`.offre`) ; l'offre du stand suit la note de prix
+  (`.offre-salon`). « Magnum 1,5 L » passe sur deux lignes dans un tableau à paliers. Même
+  chose dans le .pptx.
+- **Retouches de liste** demandées : « Brut Nature » retiré chez Frézier (`RETIRE`) ; « AOP
+  Bourgogne Chardonnay 2023 » rangé sur la fiche des Guignottes (le tarif annoté barre le Cray) ;
+  Auxey-Duresses en blanc et Mercurey blanc sur la fiche du Cray, d'après le surlignage.
+- **Lignes ajoutées** (9) : Balac 2018, trois magnums d'Albas, Les Jumelles chez Coyeux
+  (« Rajouter Beaumes de Venise »), magnum de Brut Réserve (Vazart), deux magnums d'Exea,
+  magnum de Plénitude (Solemme). Les magnums ne vont pas dans la liste des vins dégustés
+  (`liste_vins: false`).
+- **Tableur** : `tableur/prix-salon-prive-2026.xlsx` suit les paliers du salon, quatre colonnes
+  de paliers ; une ligne peut avoir un prix unique (colonne F) dans un stand à paliers.
+  Aller-retour vérifié : 0 changement.
+- Le dossier de Mathéo renvoyé avec les consignes est identique, octet pour octet, à celui en
+  place.
+Les doutes sont dans QUESTIONS, point 31.
+

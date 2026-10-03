@@ -448,13 +448,17 @@ def importer(fichier, essai):
 
 SALON = RACINE / "data/salon-prive-2026.json"
 SORTIE_SALON = RACINE / "tableur/prix-salon-prive-2026.xlsx"
+MAX_SALON = 4   # au salon, jusqu'à quatre paliers (Berteaud Manceau : 36, 60, 120, 240 cols)
 COL_SALON = ["Réf.", "Vin (appellation, cuvée)", "Couleur", "Millésime", "Contenance",
-             "Prix salon", "Palier 1", "Palier 2", "Palier 3"]
-LARG_SALON = [12, 58, 16, 12, 12, 13, 13, 13, 13]
+             "Prix salon"] + [f"Palier {i}" for i in range(1, MAX_SALON + 1)]
+LARG_SALON = [12, 58, 16, 12, 12, 13] + [13] * MAX_SALON
 
 
-def paliers_tarif(fiches, v):
-    """Les paliers du tableau du tarif d'où vient le vin (le premier tableau s'il n'y est pas)."""
+def paliers_tarif(fiches, v, st=None):
+    """Les paliers du vin : ceux du salon (`paliers_salon` du stand, par fiche) quand l'agence
+    les a donnés ; sinon ceux du tableau du tarif d'où vient le vin (le premier s'il n'y est pas)."""
+    if st and st.get("paliers_salon", {}).get(str(v["fiche"])):
+        return st["paliers_salon"][str(v["fiche"])]
     d = fiches[v["fiche"]]
     ti = v["tarif"]["tableau"] if v.get("tarif") else 0
     return d["tableaux"][ti]["paliers"]
@@ -498,16 +502,17 @@ def exporter_salon(sortie=SORTIE_SALON):
         r += 1
         precedents = None
         for i, v in enumerate(st["vins"], start=1):
-            pal = paliers_tarif(fiches, v)
+            pal = paliers_tarif(fiches, v, st)
+            unique = pal == ["Prix salon"]
             if pal != precedents:
                 # un bandeau rappelle les paliers du tableau du domaine
                 for c in range(2, len(COL_SALON) + 1):
                     ws.cell(r, c).fill = PatternFill("solid", fgColor=VIOLET)
-                cel = ws.cell(r, 2, f"{fiches[v['fiche']]['nom']} — paliers du tarif")
+                cel = ws.cell(r, 2, f"{fiches[v['fiche']]['nom']} — paliers du salon")
                 cel.font = Font(name=POLICE, size=9, bold=True, color="FFFFFF")
                 ws.cell(r, 6, "Prix unique").font = Font(name=POLICE, size=9, bold=True, color="FFFFFF")
-                for pi in range(MAX_PALIERS):
-                    cel = ws.cell(r, 7 + pi, pal[pi] if pi < len(pal) else None)
+                for pi in range(MAX_SALON):
+                    cel = ws.cell(r, 7 + pi, pal[pi] if pi < len(pal) and not unique else None)
                     cel.font = Font(name=POLICE, size=8, bold=True, color="FFFFFF")
                     cel.alignment = Alignment(horizontal="right", wrap_text=True, vertical="center")
                 ws.row_dimensions[r].height = 26
@@ -520,15 +525,16 @@ def exporter_salon(sortie=SORTIE_SALON):
                 cel.font = Font(name=POLICE, size=10, color=ENCRE)
                 cel.number_format = "@"
             p = v.get("prix_centimes") or []
-            if mode == "unique" and len(p) == 1 and p[0] is not None:
+            # un seul prix (prix unique du stand, ou magnum à prix unique) : colonne F
+            if len(p) == 1 and p[0] is not None:
                 ws.cell(r, 6, p[0] / 100)
-            for pi in range(MAX_PALIERS):
+            for pi in range(MAX_SALON):
                 cel = ws.cell(r, 7 + pi)
-                if pi >= len(pal):
+                if unique or pi >= len(pal):
                     cel.fill = PatternFill("solid", fgColor=GRIS_VIDE)
-                elif mode == "paliers" and pi < len(p) and p[pi] is not None:
+                elif len(p) > 1 and pi < len(p) and p[pi] is not None:
                     cel.value = p[pi] / 100
-            for c in range(6, 10):
+            for c in range(6, 7 + MAX_SALON):
                 ws.cell(r, c).number_format = FORMAT_PRIX
                 ws.cell(r, c).font = Font(name=POLICE, size=10, bold=True, color=ENCRE)
             for c in range(1, len(COL_SALON) + 1):
@@ -553,7 +559,7 @@ def importer_salon(fichier, essai):
             continue
         ou = f"ligne {row[0].row} ({ref})"
         unique = row[5].value
-        paliers = [row[6 + i].value for i in range(MAX_PALIERS)]
+        paliers = [row[6 + i].value for i in range(MAX_SALON)]
         lus[(int(m.group(1)), int(m.group(2)))] = (
             prix(unique, ou) if texte(unique) else None,
             [prix(x, ou) if texte(x) else None for x in paliers], ou)
@@ -564,19 +570,15 @@ def importer_salon(fichier, essai):
         if manquantes:
             raise Refus(f"stand {st['stand']} : ligne(s) V{', V'.join(f'{i:02d}' for i in manquantes)} "
                         "absente(s) du tableur — ne pas supprimer de ligne")
-        a_unique = any(lus[(st["stand"], i)][0] is not None for i, _ in vins)
-        a_paliers = any(any(x is not None for x in lus[(st["stand"], i)][1]) for i, _ in vins)
-        if a_unique and a_paliers:
-            raise Refus(f"stand {st['stand']} : prix unique ET paliers remplis — choisir l'un des deux")
-        mode = "unique" if a_unique else ("paliers" if a_paliers else mode_stand(salon, st))
-        if mode != mode_stand(salon, st):
-            changes.append(f"stand {st['stand']} : mode « {mode_stand(salon, st)} » → « {mode} »")
-            st["mode_prix"] = mode
+        # Les colonnes viennent des paliers du salon (scripts/prix-salon.py). Par ligne : la colonne F
+        # seule donne un prix unique ; les colonnes de paliers, toutes ou aucune ; jamais les deux.
         for i, v in vins:
             u, pal, ou = lus[(st["stand"], i)]
-            n = len(paliers_tarif(fiches, v))
-            if mode == "unique":
-                nouveau = [u] if u is not None else None
+            n = len(paliers_tarif(fiches, v, st))
+            if u is not None and any(x is not None for x in pal):
+                raise Refus(f"{ou} : prix unique ET paliers remplis — choisir l'un des deux")
+            if u is not None:
+                nouveau = [u]
             else:
                 if any(x is not None for x in pal[n:]):
                     raise Refus(f"{ou} : un prix dans une colonne de palier que ce domaine n'a pas")

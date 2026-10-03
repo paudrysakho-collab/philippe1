@@ -46,11 +46,14 @@ def T(fiche, tableau, ligne, ecart=None, couleur=None):
     return {"fiche": fiche, "tarif": (tableau, ligne), "ecart": ecart, "couleur": couleur}
 
 
-def L(fiche, ecart=None, **champs):
-    return {"fiche": fiche, "tarif": None, "ecart": ecart, "champs": champs}
+def L(fiche, ecart=None, couleur_annotee=None, **champs):
+    """`couleur_annotee` : d'où vient la couleur de `champs` quand ni la liste ni le tarif de
+    septembre ne la donnent (par exemple le tarif annoté par l'agence, 3 octobre 2026)."""
+    return {"fiche": fiche, "tarif": None, "ecart": ecart, "champs": champs, "couleur_annotee": couleur_annotee}
 
 
 DOUBLON = {"doublon": True}
+RETIRE = {"retire": True}   # retiré par l'agence : ni affiché, ni compté
 
 STANDS = {
  1: dict(page=3, colonne="pleine page", nom="01 - Château Balac", vins=[
@@ -64,7 +67,8 @@ STANDS = {
   ("Trois Crus Brut — AOC Champagne", T(38, 0, 5, "le tarif a aussi une demi-bouteille (37,5 cl) ; la ligne retenue est la 75 cl")),
   ("Le Terroir Blanc Blanc de Blancs Brut — AOC Champagne", T(38, 0, 1)),
   ("Le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne", T(38, 0, 3)),
-  ("Brut Nature — AOC Champagne", L(38, appellation="AOC Champagne", cuvee="Brut Nature")),
+  # l'agence, 3 octobre 2026 : « Brut Nature AOC Champagne, on le supprime »
+  ("Brut Nature — AOC Champagne", RETIRE),
   ("Millésime Expression 2018 — AOC Champagne",
    L(38, appellation="AOC Champagne", cuvee="Millésime Expression", millesime="2018")),
  ]),
@@ -326,11 +330,18 @@ STANDS = {
  ]),
  26: dict(page=20, colonne="pleine page (deux colonnes de liste)", nom="26 — Maison André Goichot", vins=[
   # Le dossier du 3 octobre écrit « AOC Bourgogne Chardonnay Blanc 2023 » ; l'agence, même jour :
-  # « AOP Bourgogne Chardonnay 2023 », sans le nom du château.
-  ("AOP Bourgogne Chardonnay 2023", T(13, 0, 1)),
+  # « AOP Bourgogne Chardonnay 2023 », sans le nom du château. Sur le tarif annoté par l'agence
+  # (scans du 3 octobre), le Chardonnay du Château du Cray est barré et c'est la ligne « Bourgogne
+  # Chardonnay — Domaine Les Guignottes », nom du domaine barré, « 2023 » écrit, qui est surlignée.
+  ("AOP Bourgogne Chardonnay 2023", T(14, 0, 1)),
   ("AOC Pouilly-Vinzelles Blanc 2023",
    L(12, appellation="AOC Pouilly-Vinzelles", couleur="Blanc", millesime="2023")),
-  ("AOC Auxey-Duresses 2023", T(12, 0, 14)),
+  # Scans du 3 octobre : c'est l'Auxey-Duresses BLANC (2023/2024) qui est surligné, pas le rouge
+  # du tarif de septembre (QUESTIONS, point 31).
+  ("AOC Auxey-Duresses 2023",
+   L(12, "au tarif annoté, l'Auxey-Duresses surligné est le blanc ; le tarif de septembre n'a qu'un rouge",
+     couleur_annotee="tarif annoté par l'agence, 3 octobre 2026 (scan 4, p.12)",
+     appellation="AOC Auxey-Duresses", couleur="Blanc", millesime="2023")),
   ("Baron Auguste Blanc — AOC Crémant de Bourgogne",
    L(12, appellation="AOC Crémant de Bourgogne", cuvee="Baron Auguste Blanc", couleur="Blanc")),
   ("Baron Auguste Rosé — AOC Crémant de Bourgogne",
@@ -339,8 +350,9 @@ STANDS = {
   ("AOC Chassagne-Montrachet Rouge 2023", T(12, 0, 12)),
   ("Aux Allots Rouge 2023 — AOC Nuits-Saint-Georges",
    L(12, appellation="AOC Nuits-Saint-Georges", cuvee="Aux Allots", couleur="Rouge", millesime="2023")),
+  # Scans du 3 octobre : le Mercurey blanc surligné est celui du Château du Cray, « Les Doués ».
   ("AOC Mercurey Blanc 2023",
-   L(12, "au tarif, le Mercurey est un rouge 2022 (listé juste après)",
+   L(13, "au tarif annoté, le Mercurey blanc est celui du Château du Cray (« Les Doués »)",
      appellation="AOC Mercurey", couleur="Blanc", millesime="2023")),
   ("AOC Mercurey Rouge 2022", T(12, 0, 9)),
   ("AOC Givry Rouge 2023",
@@ -357,7 +369,6 @@ COULEURS_AGENCE = {
     (2, "Trois Crus Brut — AOC Champagne"): "Blanc effervescent",
     (2, "Le Terroir Blanc Blanc de Blancs Brut — AOC Champagne"): "Blanc effervescent",
     (2, "Le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne"): "Blanc effervescent",
-    (2, "Brut Nature — AOC Champagne"): "Blanc effervescent",
     (2, "Millésime Expression 2018 — AOC Champagne"): "Blanc effervescent",
     (4, "L'Envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie"): "Blanc",
     (25, "L'Eberluant Chardonnay Méthode ancestrale 2025 — VDF"): "Blanc pétillant",
@@ -461,7 +472,7 @@ def main():
     for s in salon["stands"]:
         spec = STANDS[s["stand"]]
         s["carte_matheo"] = {"page": spec["page"], "colonne": spec["colonne"], "titre": spec["nom"]}
-        vins, doublons = [], []
+        vins, doublons, retires = [], [], []
         for brut, r in spec["vins"]:
             total += 1
             rubrique = None
@@ -470,6 +481,9 @@ def main():
                 rubrique, brut = m.group(1), m.group(2)
             if r.get("doublon"):
                 doublons.append(brut)
+                continue
+            if r.get("retire"):
+                retires.append(brut)
                 continue
             fiche = fiches[r["fiche"]]
             assert r["fiche"] in s["domaines"], f"stand {s['stand']} : fiche {r['fiche']} hors du stand"
@@ -506,6 +520,8 @@ def main():
                 v["couleur"], v["couleur_provenance"] = lu["couleur"], "liste de Mathéo"
             elif tarif_couleur:
                 v["couleur"], v["couleur_provenance"] = tarif_couleur, "tarif (la liste ne la donne pas)"
+            elif r.get("champs", {}).get("couleur") and r.get("couleur_annotee"):
+                v["couleur"], v["couleur_provenance"] = r["champs"]["couleur"], r["couleur_annotee"]
             else:
                 v["couleur"] = None
             v.pop("famille", None) if not (r.get("champs") or {}).get("famille") else None
@@ -518,6 +534,10 @@ def main():
             affiches += 1
         s["vins"] = vins
         s["doublons_matheo"] = doublons
+        if retires:
+            s["retires_agence"] = retires
+        else:
+            s.pop("retires_agence", None)
 
     assert not COULEURS_AGENCE, f"couleurs de l'agence sans vin : {list(COULEURS_AGENCE)}"
     salon["_vins"] = ("Vins dégustés : transcription du dossier de référence de Mathéo (matheo-dossier-reference.pdf), "

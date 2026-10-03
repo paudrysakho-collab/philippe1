@@ -3,7 +3,8 @@
 Source : `sources/salon-prive-2026/scans-prix/Scan03102026*.pdf` (4 PDF, 75 pages, rangés par
 stand). Règle de l'agence : **les prix surlignés sont ceux à mettre** ; les offres (« 11+1 »,
 « 5+1 ») vont après le nom du vin ; « offre à partir de N cols » en bas de la fiche ; on écrit
-« cols ». Brouillon : rien n'est encore importé.
+« cols ». **Posé le 3 octobre** par `scripts/prix-salon.py`, après les consignes orales de
+l'agence (qui priment sur les remarques de ce relevé ; voir QUESTIONS, point 31).
 
 | Stand | Vin (dossier de Mathéo) | Prix surlignés | Offre | Où (scan-page) | Remarque |
 |---|---|---|---|---|---|
@@ -198,3 +199,4 @@ stand). Règle de l'agence : **les prix surlignés sont ceux à mettre** ; les o
 | 26 Goichot | AOC Givry Rouge 2023 | 16,50 / 16,20 / 15,40 | — | s4-13 | « Givry Champ La Dame » 2023 surligné (le Givry 1er Cru n'a que le nom effleuré) |
 | 26 Goichot | AOC Gevrey-Chambertin 2022 | 43,50 / 43,20 / 41,60 | — | s4-14 | 2022/2023 |
 | 26 Goichot | (bas de fiche) | | « offre à partir de 126 bouteilles » | s4-09 | |
+| 12 Trichon | (les 10 vins) | Bugey : Chardonnay 2020 7,25 / 6,80 / 6,35 ; Gamay 5,85 / 5,59 / 5,32 ; Pinot Noir 6,99 / 6,67 / 6,35 ; Mondeuse 7,38 / 6,98 / 6,58 ; Brut et Extra-Brut 7,43 / 6,90 / 6,73 ; Pétillant de jus de raisin 5,08 ; Rhône : Côtes du Rhône 4,80 / 4,67 / 4,54 ; Vacqueyras Blanc 9,55 / 9,12 / 8,68 ; Vacqueyras Rouge 9,35 / 8,93 / 8,50 | Gamay et Chardonnay 11+1 | s5-2, s5-3 | scan reçu ensuite ; colonnes imprimées 600 / 300 / 120 cols, remises dans l'ordre 120 / 300 / 600 |

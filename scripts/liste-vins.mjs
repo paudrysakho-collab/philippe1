@@ -23,6 +23,8 @@ const COL = (PAGE.l - 2 * MARGE.cote - ECART_COL) / 2;
 const ENTETE_P1 = 33;          // le bandeau de titre de la première page, en mm
 const SORTIE = path.join(RACINE, `dist/salon-prive-2026-liste-des-vins${CATALOGUE ? '-format-catalogue' : ''}.pdf`);
 const EV = SALON.evenement;
+// Les lignes ajoutées pour les prix (magnums) ne sont pas des vins à la dégustation.
+const degustes = (s) => s.vins.filter((v) => v.liste_vins !== false);
 const parNumero = Object.fromEntries(catalogue.domaines.map((d) => [d.numero, d]));
 
 /** Le type affiché : la couleur du vin ; pour ce qui n'est pas du vin (jus de cépages, sans
@@ -40,9 +42,9 @@ const familleDe = (v) => famille(v, v.tarif ? parNumero[v.fiche].tableaux[v.tari
 function blocStand(s) {
   const st = STRATES[s.region];
   const clair = s.region === 'Champagne';
-  const plusieurs = new Set(s.vins.map((v) => v.fiche)).size > 1;
+  const plusieurs = new Set(degustes(s).map((v) => v.fiche)).size > 1;
   let fichePrec = null;
-  const lignes = s.vins.map((v) => {
+  const lignes = degustes(s).map((v) => {
     const f = familleDe(v);
     const sous = plusieurs && v.fiche !== fichePrec
       ? `<div class="lv-sous">${esc(parNumero[v.fiche].nom)}</div>` : '';
@@ -146,7 +148,7 @@ const pages = [];
 for (let i = 0; i < colonnes.length; i += 2) pages.push([colonnes[i], colonnes[i + 1] || []]);
 
 // la légende ne montre que les familles présentes dans la liste
-const presentes = new Set(SALON.stands.flatMap((s) => s.vins.map(familleDe)));
+const presentes = new Set(SALON.stands.flatMap((s) => degustes(s).map(familleDe)));
 const legende = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'jus', 'autre'].filter((f) => presentes.has(f)).map((f) =>
   `<span>${picto(f)} ${esc(f === 'autre' ? 'Non précisé' : NOM_FAMILLE[f])}</span>`).join('');
 const corps = pages.map(([g, d], i) => {
@@ -177,7 +179,7 @@ const depasse = await q.evaluate((bas) => [...document.querySelectorAll('.lv-col
 await q.pdf({ path: SORTIE, printBackground: true, preferCSSPageSize: true, tagged: true });
 await navigateur.close();
 
-const nbVins = stands.reduce((n, s) => n + s.vins.length, 0);
+const nbVins = stands.reduce((n, s) => n + degustes(s).length, 0);
 if (process.env.LISTE_DEBUG) console.log('hauteur des stands', Object.values(hauteurs).reduce((a, b) => a + b, 0).toFixed(0),
   'mm ; place sur 3 pages', (utile(true) * 2 + utile(false) * 4).toFixed(0), 'mm');
 console.log(`✓ ${path.relative(RACINE, SORTIE)} — ${pages.length} pages, ${stands.length} stands, ${nbVins} vins`);

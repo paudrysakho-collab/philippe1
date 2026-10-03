@@ -193,8 +193,10 @@ const PICTO = {
 
 function tableauDonnees(t, lignes, hauteurs) {
   const n = t.paliers.length;
-  const largeurs = [mm(6.5), mm(CADRE_L - 6.5 - 17 - 16 - 52), mm(17), mm(16),
-    ...Array(n).fill(mm(52 / n))];
+  // comme le PDF (table.tarif.p4) : à quatre paliers, le bloc de prix passe de 52 à 66 mm
+  const BLOC = n > 3 ? 66 : 52;
+  const largeurs = [mm(6.5), mm(CADRE_L - 6.5 - 17 - 16 - BLOC), mm(17), mm(16),
+    ...Array(n).fill(mm(BLOC / n))];
   const bordure = [{ type: 'solid', color: 'C7D1D6', pt: 0.3 }];
 
   const entete = [
@@ -217,23 +219,32 @@ function tableauDonnees(t, lignes, hauteurs) {
         fontSize: 10, align: 'center' } },
       { text: [
           { text: l.appellation + (l.note === '*' ? ' *' : ''),
-            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: true, lineSpacingMultiple: 0.9 } },
+            // sans cuvée, l'offre reste sur la ligne de l'appellation, comme dans le PDF
+            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: !!l.cuvee || !l.offre, lineSpacingMultiple: 0.9 } },
           // comme le PDF : les deux derniers mots de la cuvée restent ensemble (espace insécable)
           ...(l.cuvee ? [{ text: l.cuvee.replace(/ (\S+)$/, '\u00a0$1'), options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre,
             lineSpacingMultiple: 0.9 } }] : []),
+          // l'offre du salon (11+1, 5+1), juste après le nom du vin, comme .offre du PDF
+          ...(l.offre ? [{ text: `  offre\u00a0${l.offre}${l.offre_detail ? ' ' + l.offre_detail.replace(/ (\S+)$/, '\u00a0$1') : ''}`,
+            options: { fontFace: F.tech, fontSize: 7.4, bold: true, color: C.violet, highlight: 'F0E3A6',
+              lineSpacingMultiple: 0.9 } }] : []),
         ], options: { ...commun, margin: [1.6, 3, 1.6, 4] } },
       { text: l.millesime || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
         color: C.silex, align: 'right' } },
       { text: l.contenance || '—', options: { ...commun, fontFace: F.tech, fontSize: 8,
         color: C.silex, align: 'right' } },
       // un prix pas encore donné (édition salon) : une case vide, à remplir dans Canva
-      ...l.prix_centimes.map((p) => (p == null
+      // un seul prix pour une ligne à plusieurs paliers : une case fusionnée, comme .cel-prix.seul
+      ...(l.prix_centimes.length === 1 && n > 1 && l.prix_centimes[0] != null ? [{ text: [
+          { text: euros(l.prix_centimes[0]), options: { fontFace: F.tech, fontSize: 10, bold: true, color: C.encre } },
+          { text: ' €', options: { fontFace: F.tech, fontSize: 7.2, color: C.encre } },
+        ], options: { ...commun, align: 'center', colspan: n } }] : l.prix_centimes.map((p) => (p == null
         ? { text: '', options: { ...commun, align: 'right', fontFace: F.tech, fontSize: 10, bold: true,
           color: C.encre } }
         : { text: [
           { text: euros(p), options: { fontFace: F.tech, fontSize: 10, bold: true, color: C.encre } },
           { text: ' €', options: { fontFace: F.tech, fontSize: 7.2, color: C.encre } },
-        ], options: { ...commun, align: 'right' } })),
+        ], options: { ...commun, align: 'right' } }))),
     ];
   });
 
@@ -426,9 +437,12 @@ function slideFiche(s, numero, desc) {
     const hNote = mesures.blocs[`note-${d.numero}`] ?? 9;
     s.addShape(pres.ShapeType.line, { x, y: y + mm(2), w: 0, h: mm(hNote - 2),
       line: { color: C.violet, width: 1.4 } });
-    s.addText(texteNotePrix(d), { x: x + mm(3), y: y + mm(2), w: mm(CADRE_L - 3), h: mm(hNote - 2),
-      margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, color: C.encre,
-      italic: !d.note_prix, lineSpacingMultiple: 1.1 });
+    // au salon, l'offre du stand suit la note de prix, en violet (comme .offre-salon du PDF)
+    s.addText([
+      { text: texteNotePrix(d), options: { color: C.encre, italic: !d.note_prix, breakLine: !!d.offre_salon } },
+      ...(d.offre_salon ? [{ text: d.offre_salon, options: { color: C.violet, bold: true } }] : []),
+    ], { x: x + mm(3), y: y + mm(2), w: mm(CADRE_L - 3), h: mm(hNote - 2),
+      margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, lineSpacingMultiple: 1.1 });
     y += mm(hNote);
   }
 

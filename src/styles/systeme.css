@@ -213,6 +213,16 @@ th.c-bloc { padding: 0; }
   border-bottom: .5pt dotted rgba(70, 96, 110, .55);
 }
 .bloc-prix .cel-prix span { font-size: 7.2pt; font-weight: 500; margin-left: .4mm; opacity: .8; }
+/* Un seul prix pour toute la ligne (un magnum à prix unique dans un tableau à paliers). */
+.bloc-prix .cel-prix.seul { flex: 1 1 100%; text-align: center; }
+/* Quatre paliers : le bloc de prix s'élargit, la colonne des vins cède la place. */
+table.tarif.p4 { --bloc-prix: 66mm; }
+/* L'offre du salon, juste après le nom du vin. */
+.offre {
+  display: inline-block; margin-left: 1.4mm; padding: 0 1.2mm; border-radius: .8mm;
+  font: 600 7.4pt/1.35 var(--technique); color: var(--violet); white-space: nowrap;
+  background: rgba(225, 200, 83, .42); vertical-align: .2mm;
+}
 .bloc-prix.entete .cel-pal {
   font-size: 7.2pt; font-weight: 600; line-height: 1.14; color: var(--craie);
   padding: 1.3mm 2mm; border-left: .4pt solid rgba(251, 248, 241, .3);
@@ -242,6 +252,11 @@ td { padding: .7mm 1.3mm; vertical-align: middle; line-height: 1.12; }
   font: 500 10.5pt var(--technique); line-height: 1.3; color: var(--encre);
 }
 .note-prix.sans-note { font-style: italic; color: var(--silex); }
+/* Au salon, l'offre du stand, juste sous la note de prix. */
+.offre-salon {
+  margin-top: .4mm; padding: .2mm 0 1.2mm 3mm; border-left: 1.4pt solid var(--or);
+  font: 600 10.5pt var(--technique); line-height: 1.3; color: var(--violet);
+}
 
 /* ——— Pied de fiche ——— */
 .pied-dom {

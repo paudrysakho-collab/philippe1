@@ -164,6 +164,14 @@ npm run salon        # PDF écran et imprimeur, contrôles, .pptx, liste des vin
 
 ### Ajouter les prix du salon
 
+**Le 3 octobre 2026, les prix ont été posés** depuis les tarifs annotés de l'agence, par
+`scripts/prix-salon.py` (`npm run prix-salon`, rejoué automatiquement après
+`npm run transcrire-matheo`) : paliers du salon par fiche (`paliers_salon`), prix vin par vin,
+offres (`offre`, affichée après le nom du vin) et offre du stand (`offre_salon`, sous la note
+de prix). Un prix à corriger se corrige dans ce script, puis `npm run prix-salon` et
+`npm run salon`. Le tableur ci-dessous reste possible pour une retouche ponctuelle (mais une
+nouvelle exécution du script la remplacerait).
+
 Les prix vivent dans `data/salon-prive-2026.json`, vin par vin (`prix_centimes`, en centimes,
 `null` tant qu'il n'y en a pas). **Un prix unique ou les paliers du domaine : les deux marchent
 sans toucher aux gabarits.**

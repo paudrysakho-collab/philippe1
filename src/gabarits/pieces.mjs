@@ -36,16 +36,21 @@ function editionSalon(cat) {
     });
     const tableaux = [...parTableau.keys()].sort((a, b) => a - b).map((ti) => {
       const t = d.tableaux[ti];
-      const paliers = unique ? ['Prix salon'] : t.paliers;
+      // Les paliers du salon (tarifs annotés par l'agence) quand elle les a donnés, par fiche ;
+      // sinon ceux du tarif de septembre.
+      const paliers = s.paliers_salon?.[String(d.numero)] || (unique ? ['Prix salon'] : t.paliers);
       return {
         intitule: t.intitule, ...(t.famille ? { famille: t.famille } : {}), paliers,
         lignes: parTableau.get(ti).map((v) => ({
           appellation: v.appellation || '', cuvee: v.cuvee, couleur: v.couleur,
           millesime: v.millesime, contenance: v.contenance,
-          // null : la case reste vide ; sinon autant de prix que de colonnes
-          prix_centimes: Array.isArray(v.prix_centimes) && v.prix_centimes.length === paliers.length
+          // null : la case reste vide ; sinon autant de prix que de colonnes, ou un seul prix
+          // pour toute la ligne (un magnum à prix unique dans un tableau à paliers)
+          prix_centimes: Array.isArray(v.prix_centimes)
+            && (v.prix_centimes.length === paliers.length || v.prix_centimes.length === 1)
             ? v.prix_centimes : paliers.map(() => null),
           note: v.note || null, ...(v.famille ? { famille: v.famille } : {}),
+          ...(v.offre ? { offre: v.offre, offre_detail: v.offre_detail || null } : {}),
         })),
       };
     });
@@ -53,7 +58,8 @@ function editionSalon(cat) {
     // Mathéo), tel quel ; une fiche sans carte à elle (Strasser-Radziwill, Cray, Guignottes)
     // garde le sien.
     const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
-    return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon };
+    return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
+      offre_salon: s.offre_salon || null };
   });
   const presents = new Set(domaines.map((d) => d.numero));
   const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));
@@ -375,16 +381,23 @@ export function sansVeuve(texte) {
 
 export function ligneHtml(l, t, cle) {
   // Un prix absent (édition salon, avant que l'agence ne les donne) laisse une case vide.
+  // Un seul prix sur une ligne à plusieurs paliers : il vaut pour toute la ligne.
+  const seul = l.prix_centimes.length === 1 && t.paliers.length > 1;
   const prix = l.prix_centimes.map((p) => (p == null
     ? '<div class="cel-prix vide"></div>'
-    : `<div class="cel-prix">${euros(p)}<span>€</span></div>`)).join('');
+    : `<div class="cel-prix${seul ? ' seul' : ''}">${euros(p)}<span>€</span></div>`)).join('');
   const etoile = l.note === '*' ? ' <span class="etoile">*</span>' : '';
+  // L'offre du salon (11+1, 5+1) suit le nom du vin.
+  const offre = l.offre ? ` <span class="offre">offre&nbsp;${esc(l.offre)}${l.offre_detail
+    ? ' ' + esc(l.offre_detail).replace(/ (\S+)$/, '&nbsp;$1') : ''}</span>` : '';
   return `<tr data-ligne="${cle}">
     <td class="c-picto">${picto(famille(l, t))}</td>
-    <td class="c-vin"><span class="app">${esc(l.appellation)}${etoile}</span>
-      ${l.cuvee ? `<span class="cuv">${sansVeuve(l.cuvee)}</span>` : ''}</td>
+    <td class="c-vin"><span class="app">${esc(l.appellation)}${etoile}${l.cuvee ? '' : offre}</span>
+      ${l.cuvee ? `<span class="cuv">${sansVeuve(l.cuvee)}${offre}</span>` : ''}</td>
     <td class="c-detail">${esc(l.millesime || '—')}</td>
-    <td class="c-detail">${esc(l.contenance || '—')}</td>
+    <td class="c-detail">${t.paliers.length > 1
+      // dans un tableau à paliers, « Magnum 1,5 L » passe sur deux lignes au lieu de mordre sur les prix
+      ? esc(l.contenance || '—').replace(/^Magnum /, 'Magnum<br>') : esc(l.contenance || '—')}</td>
     <td class="c-bloc"><div class="bloc-prix">${prix}</div></td></tr>`;
 }
 
@@ -392,7 +405,8 @@ export function ligneHtml(l, t, cle) {
 export function tableauHtml(t, lignes, { suite = false, cleTableau = '' } = {}) {
   const paliers = t.paliers.map((p) => `<div class="cel-pal">${esc(p)}</div>`).join('');
   const titre = esc(t.intitule) + (t.famille ? ' · ' + esc(t.famille) : '') + (suite ? ' (suite)' : '');
-  return `<table class="tarif" data-tableau="${cleTableau}">
+  // Quatre paliers : le bloc de prix s'élargit pour que les intitulés tiennent.
+  return `<table class="tarif${t.paliers.length > 3 ? ' p4' : ''}" data-tableau="${cleTableau}">
     <colgroup><col style="width:6.5mm"><col><col style="width:17mm"><col style="width:16mm">
       <col style="width:var(--bloc-prix)"></colgroup>
     <thead><tr class="bandeau"><th colspan="4" class="intit">${titre}</th>

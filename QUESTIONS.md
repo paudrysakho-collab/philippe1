@@ -412,9 +412,7 @@ Quelques remarques encore :
 
 ### 27. L'édition du salon : ce qui reste à vous
 
-- **Les prix** : un prix unique par vin, ou les paliers du domaine ? Le catalogue accepte les
-  deux, stand par stand, sans retouche (voir README, « Ajouter les prix du salon »). Le plus
-  simple : remplir `tableur/prix-salon-prive-2026.xlsx` et me le renvoyer.
+- ~~Les prix~~ : ✅ posés le 3 octobre depuis vos tarifs annotés (point 31).
 - **Le format de la liste des vins** : je la propose en **A4** (3 pages), pour l'imprimer au
   bureau et la poser sur les tables. Si vous la voulez au format du catalogue (210 × 260 mm),
   c'est un réglage (`LISTE_FORMAT=catalogue`).
@@ -468,3 +466,58 @@ prennent donc son texte et son label, **dans les deux éditions**. Le texte du t
   *À vérifier* : c'était un argument fort du tarif ; le dossier ne l'a plus.
 - Labels : n°16 à 19 (Strasser Radziwill) et n°34 Gragnos passent de « En conversion Bio » à
   **Bio** ; n°39 Solemme passe de « Bio & Biodynamie » à **Biodynamie**.
+
+### 31. Les prix du Salon Privé — ✅ **posés le 3 octobre**, quelques points à vérifier
+
+Source : vos tarifs annotés (5 PDF scannés, `sources/salon-prive-2026/scans-prix/`) et vos
+consignes du 3 octobre. Les prix surlignés sont posés, avec les paliers de chaque tarif, les
+offres après le nom du vin (« offre 11+1 », « offre 5+1 ») et l'offre du stand sous la note de
+prix. Le relevé ligne à ligne, avec la page du scan, est dans `data/prix-salon-releve.md` ; les
+données dans `scripts/prix-salon.py`. 185 lignes ont un prix ; les trois jus de cépages d'Exea
+restent sans prix (« pas de jus de cépages », hors des tarifs du salon).
+
+Ce que j'ai décidé seul, à vérifier :
+
+1. **Stand 26, Goichot — « AOP Bourgogne Chardonnay 2023 »** : sur le tarif annoté, le
+   Chardonnay du Château du Cray est barré et c'est la ligne « Bourgogne Chardonnay — Domaine Les
+   Guignottes » (nom du domaine barré, « 2023 » écrit) qui est surlignée : 8,90 / 8,60 / 8,10.
+   Le vin est donc rangé sur la fiche des Guignottes, plus sur celle du Cray.
+2. **Stand 26 — Auxey-Duresses 2023** : c'est l'Auxey-Duresses **blanc** qui est surligné
+   (22,50 / 22,20 / 21,20), pas le rouge (15,90…). Il s'affiche donc en blanc.
+3. **Stand 26 — Mercurey rouge 2022** : deux lignes surlignées, celle de la Maison Goichot
+   (16,50 / 16,20 / 15,40) et le « Champ Roin » du Château du Cray (19,00 / 18,70 / 17,80).
+   J'ai pris la **Maison Goichot** (la carte dit « AOC Mercurey Rouge 2022 », sans nom). Le
+   Mercurey **blanc** est « Les Doués » du Château du Cray (15,70 / 15,40 / 14,60), rangé sur
+   la fiche du Cray.
+4. **Stand 26 — Pinot Noir des Guignottes** : rien n'est surligné ; j'ai pris la ligne
+   « Bourgogne Pinot Noir — Domaine Les Guignottes 2023 » du même tarif (8,90 / 8,60 / 8,10).
+5. **Stand 15, Vazart-Coquart — Brut Réserve** : le surlignage tombe sur la demie et le magnum.
+   J'ai mis la bouteille 75 cl (20,80 / 20,60 / 20,30) **et** une ligne magnum (47,90 / 47,50 /
+   46,90).
+6. **Stand 7, Strasser — « Rajouter Beaumes de Venise »** : ajouté sur la fiche de Coyeux, « Les
+   Jumelles Rouge », 6,50 / 6,00 / 5,50, offre 11+1, sans millésime (2023 est barré sur le
+   tarif). Il entre aussi dans la liste des vins dégustés.
+7. **Stand 7 — Terroir d'Ansouis** : le dossier de Mathéo l'écrit deux fois « Blanc 2021 » (une
+   seule ligne affichée) ; le tarif surligne le Blanc **et** le Rouge (5,50 / 5,20 / 5,00).
+   *Faut-il ajouter le Rouge ?*
+8. **Stand 7 — paliers** : à partir de 126, 246 et 540 cols pour les quatre domaines, comme
+   vous l'avez dit. Pour Coyeux, le tarif de juillet écrit 120-240 ; j'ai suivi votre consigne.
+9. **Stand 6, Haut Marin** : « offre 5+1 dès 200 cols » sur le Triton (n°4) et « dès 250 cols »
+   sur le Pétillant (n°10), comme vous l'avez dit. Le Padlet annoté écrit « 250 cols mini » à
+   côté du Triton : *200 ou 250 pour le n°4 ?*
+10. **Stand 21, Exea** : les deux magnums surlignés (Chant de Lune, Jardins de Corbières,
+    « disponible en décembre 2026 ») sont ajoutés. Dernière colonne : « 1 palette » (« MIX
+    Pal. » sur le tarif).
+11. **Stand 1, Balac** : deux lignes pour le Château Balac Rouge, 2022 (7,71 / 7,59 / 7,50) et
+    2018 (7,25 / 7,13 / 7,00), d'après le mail d'Amélie Touchais.
+12. **Stand 3, Albas, et stand 23, Solemme** : les magnums surlignés font une ligne de plus
+    (Terre Rouge 17,90 ; 4 Saisons 13,40 ; Clos de Cassis 20,80 ; Plénitude 58,00, prix unique).
+13. **Stand 19, Blacailloux** : trois colonnes, 120, 180 et 600 bouteilles et plus (le
+    « Tarif 600+ » est une page à part du même tarif).
+14. **Stand 12, Trichon** : prix du scan reçu ensuite (Scan03102026-5) ; les colonnes y sont
+    dans l'ordre 600 / 300 / 120 cols, remises à l'endroit (120 / 300 / 600).
+15. **Prix qui ne suivent pas les paliers**, recopiés tels quels comme toujours : Verchères,
+    Mâcon Chardonnay 6,10 / 5,45 / 5,75 et Bulles du Puits 6,40 / 5,45 / 5,75 (point 2).
+16. **Pré La Lande (16)** : offre écrite « Offre à partir de 120 cols, en général 11+1, selon le
+    volume. » d'après vos mots ; à reformuler si besoin.
+

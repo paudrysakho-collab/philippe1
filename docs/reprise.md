@@ -91,7 +91,7 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | Livrable | Fichiers | État |
 |---|---|---|
 | **Catalogue général** « Sous nos pieds » | `catalogue-scio-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx`, `-canva-recadrable.pptx` | **52 pages**, 40 domaines, 715 prix, 80 images |
-| **Salon Privé Vins & Terroirs**, lundi 5 octobre 2026, Château de la Rairie | `salon-prive-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **48 pages**, 26 stands, 31 fiches, 180 vins, **prix vides** |
+| **Salon Privé Vins & Terroirs**, lundi 5 octobre 2026, Château de la Rairie | `salon-prive-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **48 pages**, 26 stands, 32 fiches, 179 vins dégustés, **prix posés le 3 octobre** (185 lignes) |
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
@@ -209,9 +209,15 @@ peuvent venir s'y ajouter. Ne touche à rien d'autre de toi-même ; si l'agence 
 Chaque décision nouvelle de l'agence va dans `JOURNAL.md` et, si elle dure, dans les
 sections 4 et 5 de ce fichier.
 
-- **Prix du Salon Privé** (cases vides aujourd'hui) : l'agence remplit
-  `tableur/prix-salon-prive-2026.xlsx` (une ligne par vin, rangée par stand). Pour chaque
-  stand, **soit** la colonne « Prix salon » (prix unique), **soit** les colonnes de paliers.
+- **Prix du Salon Privé : posés le 3 octobre** depuis les tarifs annotés de l'agence
+  (`sources/salon-prive-2026/scans-prix/`, relevé dans `data/prix-salon-releve.md`), par
+  `scripts/prix-salon.py` (paliers du salon par fiche, prix, offres « 11+1 » / « 5+1 » après le
+  nom du vin, offre du stand sous la note de prix, magnums ajoutés). Règles de l'agence : les
+  prix **surlignés** ; « À partir de… » ; « cols » pour les offres ; un magnum surligné fait une
+  ligne de plus. Doutes : QUESTIONS, point 31. Pour retoucher un prix : le corriger dans
+  `scripts/prix-salon.py` (qui est rejoué après `npm run transcrire-matheo`), ou par
+  `tableur/prix-salon-prive-2026.xlsx` (une ligne par vin, rangée par stand ; par ligne,
+  **soit** la colonne « Prix salon », **soit** les colonnes de paliers).
   Puis `npm run importer-salon -- FICHIER.xlsx --essai` (montre chaque changement), sans
   `--essai` pour écrire, et `npm run salon`. Détail : README, « Ajouter les prix du salon ».
 - **Un prix du catalogue général** change : `npm run tableur`, l'agence corrige

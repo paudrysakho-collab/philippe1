@@ -419,7 +419,9 @@ export function piedDomaine(d, pagesParDomaine) {
 export const texteNotePrix = (d) => d.note_prix
   || 'Conditions de port non précisées par le domaine — nous consulter.';
 export function noteDomaine(d) {
-  return `<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>`;
+  // Au salon, l'offre du stand (« Offre 11+1 à partir de 240 cols ») suit la note de prix.
+  return `<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>${d.offre_salon
+    ? `<p class="offre-salon">${esc(d.offre_salon)}</p>` : ''}`;
 }
 
 /* ——————————————————————————————————————————————— index ——— */
