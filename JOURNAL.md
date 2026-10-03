@@ -837,3 +837,11 @@ Le dossier remplace `sources/salon-prive-2026/matheo-dossier-reference.pdf`. Lig
 jour dans `transcrire-matheo.py` (deux corrections de forme élargies : « Pays D'Oc »,
 « Méthode Traditionnelle »), texte dans `textes-matheo.py`. Le changement de texte du n°23
 est en fin de paragraphe : la lettrine ne bouge pas, pas de `regler-lettrines.py`.
+
+## 3 octobre 2026 — prix du salon : en attente
+
+Les prix du salon ne sont pas encore connus (« pour l'instant il y a rien ») : l'agence
+enverra ses documents au fil de l'eau, avec les détails. Prêt en attendant :
+`scripts/preremplir-prix-salon.py` sort un tableur pré-rempli avec les prix du tarif
+(134 vins rapprochés, dont 53 à regarder ; 46 absents du tarif), au cas où l'agence voudrait
+partir du tarif. Rien n'est importé.
