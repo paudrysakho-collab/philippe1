@@ -156,7 +156,9 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
 - Le dossier de Mathéo a été renvoyé trois fois le 2 octobre au soir
   (`…_compressed.pdf`, `ma-sandbox-magnifique_board_…_2_2.pdf`, `…_2_3_compressed.pdf`) :
   c'est **la même exportation du Padlet (15 h 44 UTC)**, vérifiée au pixel et par OCR. Rien à
-  réappliquer. S'il change encore, comparer d'abord au pixel avec la version en place (méthode
+  réappliquer. **Le 3 octobre au matin, une vraie nouvelle exportation** (8 h 44 UTC) est
+  arrivée et a été appliquée (`JOURNAL.md`, 3 octobre) ; au stand 26, l'agence veut « AOP
+  Bourgogne Chardonnay 2023 », sans le nom du château. S'il change encore, comparer d'abord au pixel avec la version en place (méthode
   dans `JOURNAL.md`), puis relire par OCR (Tesseract lit souvent un 9 comme un 4 dans
   l'écriture du Padlet : vérifier les dates à l'image).
 

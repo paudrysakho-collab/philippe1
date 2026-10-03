@@ -70,14 +70,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "L'inopine de Balac 2021 — VDF",
+     "liste": "L'inopiné de Balac 2021 — VDF",
      "fiche": 29,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
      "appellation": "VDF",
-     "cuvee": "L’inopine de Balac",
+     "cuvee": "L’inopiné de Balac",
      "couleur": "Rouge",
      "millesime": "2021",
      "contenance": "75 cl",
@@ -148,7 +148,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Le Terroir Blanc Blanc de Blanc Brut — AOC Champagne",
+     "liste": "Le Terroir Blanc Blanc de Blancs Brut — AOC Champagne",
      "fiche": 38,
      "tarif": {
       "tableau": 0,
@@ -164,7 +164,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne",
+     "liste": "Le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne",
      "fiche": 38,
      "tarif": {
       "tableau": 0,
@@ -292,7 +292,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Clos De Cassis 2023 — AOC Corbières",
+     "liste": "Clos de Cassis 2023 — AOC Corbières",
      "fiche": 36,
      "tarif": {
       "tableau": 0,
@@ -310,7 +310,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Albas 2025— IGP Pays D'OC",
+     "liste": "Albas 2025— IGP Pays D'Oc",
      "fiche": 36,
      "tarif": {
       "tableau": 0,
@@ -372,11 +372,11 @@
      "prix_centimes": null
     },
     {
-     "liste": "L'envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie",
+     "liste": "L'Envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie",
      "fiche": 3,
      "tarif": null,
      "appellation": "AOC Muscadet Sèvre et Maine sur lie",
-     "cuvee": "L’envol",
+     "cuvee": "L’Envol",
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": null,
@@ -403,14 +403,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "Le prestige de Beaulieu 2024 — IGP Chardonnay",
+     "liste": "Le Prestige de Beaulieu 2024 — IGP Chardonnay",
      "fiche": 3,
      "tarif": {
       "tableau": 0,
       "ligne": 2
      },
      "appellation": "IGP Chardonnay",
-     "cuvee": "Le prestige de Beaulieu",
+     "cuvee": "Le Prestige de Beaulieu",
      "couleur": "Blanc",
      "millesime": "2024",
      "contenance": "75 cl",
@@ -437,14 +437,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "Rouge au lèvres — IGP Val de Loire",
+     "liste": "Rouge aux lèvres — IGP Val de Loire",
      "fiche": 3,
      "tarif": {
       "tableau": 0,
       "ligne": 6
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "Rouge au lèvres",
+     "cuvee": "Rouge aux lèvres",
      "couleur": "Rouge",
      "millesime": "—",
      "contenance": "75 cl",
@@ -453,14 +453,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "La perle — Méthode Trad",
+     "liste": "La Perle — Méthode Traditionnelle",
      "fiche": 3,
      "tarif": {
       "tableau": 0,
       "ligne": 7
      },
      "appellation": "Méthode traditionnelle",
-     "cuvee": "La perle",
+     "cuvee": "La Perle",
      "couleur": "Blanc",
      "millesime": "—",
      "contenance": "75 cl",
@@ -529,13 +529,13 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Mâcon Rouge 2024",
+     "liste": "AOC Mâcon Mancey Rouge 2024",
      "fiche": 15,
      "tarif": {
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOC Mâcon Rouge",
+     "appellation": "AOC Mâcon Mancey Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2024",
@@ -547,10 +547,10 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Bourgognes Passe-Tout-Grain Rouge 2025",
+     "liste": "AOC Bourgognes Passe-Tout-Grains Rouge 2025",
      "fiche": 15,
      "tarif": null,
-     "appellation": "AOC Bourgogne Passe-Tout-Grain Rouge",
+     "appellation": "AOC Bourgogne Passe-Tout-Grains Rouge",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2025",
@@ -562,11 +562,11 @@
      "prix_centimes": null
     },
     {
-     "liste": "Les Bulles du Puits Rosé",
+     "liste": "Les Bulles du Puits Rosé Gamay Demi-Sec",
      "fiche": 15,
      "tarif": null,
      "appellation": null,
-     "cuvee": "Les Bulles du Puits Rosé",
+     "cuvee": "Les Bulles du Puits Rosé Gamay Demi-Sec",
      "couleur": "Rosé effervescent",
      "millesime": "—",
      "contenance": null,
@@ -726,7 +726,7 @@
    ],
    "doublons_matheo": [],
    "salle": "Salle Blanche",
-   "texte_reference": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs. Format BIB disponible.",
+   "texte_reference": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnac. Format BIB disponible.",
    "fiche_texte": 23
   },
   {
@@ -763,7 +763,7 @@
    "carte_matheo": {
     "page": 7,
     "colonne": "pleine page (quatre rubriques)",
-    "titre": "07 — Vignoble Strasser Radziwill"
+    "titre": "07 — Vignobles Strasser-Radziwill"
    },
    "vins": [
     {
@@ -819,7 +819,7 @@
     },
     {
      "liste": "Le Prieuré Rouge 2024— AOC Côtes du Rhône",
-     "rubrique": "Domaine Les Prieuré des Papes",
+     "rubrique": "Domaine Le Prieuré des Papes",
      "fiche": 16,
      "tarif": {
       "tableau": 0,
@@ -838,7 +838,7 @@
     },
     {
      "liste": "Vieilles Vignes Rouge 2022— AOC Châteauneuf-du-Pape",
-     "rubrique": "Domaine Les Prieuré des Papes",
+     "rubrique": "Domaine Le Prieuré des Papes",
      "fiche": 16,
      "tarif": {
       "tableau": 0,
@@ -857,7 +857,7 @@
     },
     {
      "liste": "Vieilles Vignes Rouge 2023 — AOC Châteauneuf-du-Pape",
-     "rubrique": "Domaine Les Prieuré des Papes",
+     "rubrique": "Domaine Le Prieuré des Papes",
      "fiche": 16,
      "tarif": {
       "tableau": 0,
@@ -876,7 +876,7 @@
     },
     {
      "liste": "Le Couchant Rouge 2020 — AOC Châteauneuf-du-Pape",
-     "rubrique": "Domaine Les Prieuré des Papes",
+     "rubrique": "Domaine Le Prieuré des Papes",
      "fiche": 16,
      "tarif": null,
      "appellation": "AOC Châteauneuf-du-Pape",
@@ -957,7 +957,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Côtes du Rhône 2023 Rouge — AOC Côtes du Rhône",
+     "liste": "Côtes du Rhône Rouge 2023 — AOC Côtes du Rhône",
      "rubrique": "Domaine du Moulin Blanc",
      "fiche": 18,
      "tarif": {
@@ -1150,11 +1150,11 @@
    "carte_matheo": {
     "page": 8,
     "colonne": "droite",
-    "titre": "09 — Domaine Boheler"
+    "titre": "09 — Domaine Boehler"
    },
    "vins": [
     {
-     "liste": "AOC Crément D'Alsace 2024",
+     "liste": "AOC Crémant D'Alsace 2024",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
@@ -1170,7 +1170,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Molsce Blanc 2024 — AOC Alsace",
+     "liste": "Molse Blanc 2024 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
@@ -1188,7 +1188,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Molsce Rouge 2024 — AOC Alsace",
+     "liste": "Molse Rouge 2024 — AOC Alsace",
      "fiche": 8,
      "tarif": {
       "tableau": 0,
@@ -1332,13 +1332,13 @@
    },
    "vins": [
     {
-     "liste": "AOP Anjou Blanc 2023",
+     "liste": "AOC Anjou Blanc 2023",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
-     "appellation": "AOP Anjou Blanc",
+     "appellation": "AOC Anjou Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
@@ -1364,13 +1364,13 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOP Saumur Blanc 2024",
+     "liste": "AOC Saumur Blanc 2024",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOP Saumur Blanc",
+     "appellation": "AOC Saumur Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
@@ -1380,13 +1380,13 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOP Quincy 2023",
+     "liste": "AOC Quincy 2023",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "AOP Quincy",
+     "appellation": "AOC Quincy",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
@@ -1396,13 +1396,13 @@
      "prix_centimes": null
     },
     {
-     "liste": "Les Villaudes - AOP Sancerre Blanc 2025",
+     "liste": "Les Villaudes — AOC Sancerre Blanc 2025",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 4
      },
-     "appellation": "AOP Sancerre Blanc",
+     "appellation": "AOC Sancerre Blanc",
      "cuvee": "Les Villaudes",
      "couleur": "Blanc",
      "millesime": "2025",
@@ -1412,7 +1412,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "La Grange Jaumain Rouge 2024 - Grolleau Noir",
+     "liste": "La Grange Jaumain Rouge 2024 — Grolleau Noir",
      "fiche": 1,
      "tarif": null,
      "appellation": null,
@@ -1428,13 +1428,13 @@
      "prix_centimes": null
     },
     {
-     "liste": "Franc Rouge 2021 - AOP Chinon",
+     "liste": "Franc Rouge 2021 — AOC Chinon",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "AOP Chinon",
+     "appellation": "AOC Chinon",
      "cuvee": "Franc Rouge",
      "couleur": "Rouge",
      "millesime": "2021",
@@ -1444,10 +1444,10 @@
      "prix_centimes": null
     },
     {
-     "liste": "Cravant Rouge 2024 - AOP Chinon",
+     "liste": "Cravant Rouge 2024 — AOC Chinon",
      "fiche": 1,
      "tarif": null,
-     "appellation": "AOP Chinon",
+     "appellation": "AOC Chinon",
      "cuvee": "Cravant Rouge",
      "couleur": "Rouge",
      "millesime": "2024",
@@ -1460,7 +1460,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "La Grange Jaumain Les Soudannes Rouge 2025 - IGP Val De Loire",
+     "liste": "La Grange Jaumain Les Soudannes Rouge 2025 — IGP Val De Loire",
      "fiche": 1,
      "tarif": {
       "tableau": 0,
@@ -1658,7 +1658,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Mas de Lusanne  Rouge 2024 — AOC Côtes Du Rhône",
+     "liste": "Mas de Lusanne  Rouge 2024 — AOC Côtes du Rhône",
      "fiche": 21,
      "tarif": {
       "tableau": 0,
@@ -1819,7 +1819,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Henri 2024 Rouge — AOC Saint-Chinian",
+     "liste": "Henri Rouge 2024 — AOC Saint-Chinian",
      "fiche": 34,
      "tarif": {
       "tableau": 0,
@@ -1980,7 +1980,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Crément de Loire",
+     "liste": "AOC Crémant de Loire",
      "fiche": 4,
      "tarif": {
       "tableau": 0,
@@ -2162,7 +2162,7 @@
    "carte_matheo": {
     "page": 14,
     "colonne": "pleine page",
-    "titre": "16 — Château Pré la Lande"
+    "titre": "16 — Château Pré La Lande"
    },
    "vins": [
     {
@@ -2315,14 +2315,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "Chêne à la rouline 2022 Blanc— AOC Sancerre",
+     "liste": "Chêne à la Rouline 2022 Blanc— AOC Sancerre",
      "fiche": 6,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
      "appellation": "AOC Sancerre",
-     "cuvee": "Chêne à la rouline Blanc",
+     "cuvee": "Chêne à la Rouline Blanc",
      "couleur": "Blanc",
      "millesime": "2022",
      "contenance": null,
@@ -2474,7 +2474,7 @@
    "carte_matheo": {
     "page": 15,
     "colonne": "droite",
-    "titre": "18 — Sebastien Magnien"
+    "titre": "18 — Sébastien Magnien"
    },
    "vins": [
     {
@@ -2631,14 +2631,14 @@
    },
    "vins": [
     {
-     "liste": "St Probace Rosé 2025 — IGP Var Sainte Baume",
+     "liste": "Sainte-Probace Rosé 2025 — IGP Var Sainte Baume",
      "fiche": 31,
      "tarif": {
       "tableau": 0,
       "ligne": 0
      },
      "appellation": "IGP Var Sainte Baume",
-     "cuvee": "St Probace Rosé",
+     "cuvee": "Sainte-Probace Rosé",
      "couleur": "Rosé",
      "millesime": "2025",
      "contenance": "75 cl",
@@ -2647,14 +2647,14 @@
      "prix_centimes": null
     },
     {
-     "liste": "St Probace Blanc 2025 — IGP Var Sainte Baume",
+     "liste": "Sainte-Probace Blanc 2025 — IGP Var Sainte Baume",
      "fiche": 31,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
      "appellation": "IGP Var Sainte Baume",
-     "cuvee": "St Probace Blanc",
+     "cuvee": "Sainte-Probace Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
      "contenance": "75 cl",
@@ -2663,11 +2663,11 @@
      "prix_centimes": null
     },
     {
-     "liste": "St Probace Rouge 2025 — IGP Var Sainte Baume",
+     "liste": "Sainte-Probace Rouge 2025 — IGP Var Sainte Baume",
      "fiche": 31,
      "tarif": null,
      "appellation": "IGP Var Sainte Baume",
-     "cuvee": "St Probace Rouge",
+     "cuvee": "Sainte-Probace Rouge",
      "couleur": "Rouge",
      "millesime": "2025",
      "contenance": null,
@@ -3310,7 +3310,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Nature de Solemme Blancs de Blancs Brut Nature — Premier Cru Champagne",
+     "liste": "Nature de Solemme Blanc de Blancs Brut Nature — Premier Cru Champagne",
      "fiche": 39,
      "tarif": {
       "tableau": 0,
@@ -3558,25 +3558,25 @@
    },
    "vins": [
     {
-     "liste": "Château du Cray Blanc 2023 — AOC Bourgogne Chardonnay",
+     "liste": "AOP Bourgogne Chardonnay 2023",
      "fiche": 13,
      "tarif": {
       "tableau": 0,
       "ligne": 1
      },
-     "appellation": "AOC Bourgogne Chardonnay",
-     "cuvee": "Château du Cray Blanc",
+     "appellation": "AOP Bourgogne Chardonnay",
+     "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
      "contenance": "75 cl",
-     "couleur_provenance": "liste de Mathéo",
+     "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": null
     },
     {
-     "liste": "AOC Pouilly Vinzelles Blanc 2023",
+     "liste": "AOC Pouilly-Vinzelles Blanc 2023",
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Pouilly-Vinzelles Blanc",
@@ -3591,7 +3591,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Auxey Duresses 2023",
+     "liste": "AOC Auxey-Duresses 2023",
      "fiche": 12,
      "tarif": {
       "tableau": 0,
@@ -3607,7 +3607,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Baron Auguste Blanc — AOC Crément de Bourgogne",
+     "liste": "Baron Auguste Blanc — AOC Crémant de Bourgogne",
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
@@ -3622,7 +3622,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Baron Auguste Rosé— AOC Crément de Bourgogne",
+     "liste": "Baron Auguste Rosé — AOC Crémant de Bourgogne",
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Crémant de Bourgogne",
@@ -3653,7 +3653,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Chassagne Montrachet Rouge 2023",
+     "liste": "AOC Chassagne-Montrachet Rouge 2023",
      "fiche": 12,
      "tarif": {
       "tableau": 0,
@@ -3669,7 +3669,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "Aux Allots Rouge 2023 — AOC Nuits Saint Georges",
+     "liste": "Aux Allots Rouge 2023 — AOC Nuits-Saint-Georges",
      "fiche": 12,
      "tarif": null,
      "appellation": "AOC Nuits-Saint-Georges",
@@ -3732,7 +3732,7 @@
      "prix_centimes": null
     },
     {
-     "liste": "AOC Gervey Chambertin 2022",
+     "liste": "AOC Gervey-Chambertin 2022",
      "fiche": 12,
      "tarif": {
       "tableau": 0,

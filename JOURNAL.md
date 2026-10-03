@@ -817,3 +817,23 @@ même ligne, « Domaine Le Prieuré des Papes (Vignobles Strasser Radziwill) » 
 dans la colonne et le nom aurait été tronqué. Ces quatre lignes passent de 5,6 à 8,8 mm ;
 le partage des colonnes en tient compte. Même chose dans les deux .pptx, et dans l'édition
 du salon.
+
+## 3 octobre 2026 — nouveau dossier de Mathéo, et le stand 26
+
+L'agence envoie une nouvelle exportation du dossier de Mathéo (`…_1790850846_3.pdf`, créée le
+3 octobre à 8 h 44 UTC) et demande, au stand 26, « AOP Bourgogne Chardonnay 2023 », sans le
+nom du château. Cette fois ce n'est pas la même exportation : comparée au pixel (rendus
+flous, seuil 50) à celle du 2 octobre, 14 pages diffèrent. Chaque écart relu à l'image :
+- **Contenu** : « Rouge aux lèvres » (n°3) ; « AOC Mâcon Mancey Rouge 2024 » et « Les Bulles
+  du Puits Rosé Gamay Demi-Sec » (n°15) ; « L'inopiné de Balac » (n°29) ; « Sainte-Probace »
+  (n°31) ; chez François Reverdy (n°1), « AOC » au lieu de « AOP » (Anjou, Saumur, Quincy,
+  Sancerre, Chinon) ; texte du stand 6 (n°23) : « Bas-Armagnac » au singulier.
+- **Forme** (déjà corrigée chez nous pour la plupart) : Crémant, Molse, traits d'union,
+  majuscules (L'Envol, Le Prestige, La Perle, Chêne à la Rouline), titres de cartes (Boehler,
+  Sébastien Magnien, Pré La Lande, Vignobles Strasser-Radziwill), noms de région des cartes.
+- **Stand 26** : le dossier écrit « AOC Bourgogne Chardonnay Blanc 2023 » ; on affiche ce
+  que l'agence demande, « AOP Bourgogne Chardonnay 2023 » (couleur Blanc, du tarif).
+Le dossier remplace `sources/salon-prive-2026/matheo-dossier-reference.pdf`. Lignes mises à
+jour dans `transcrire-matheo.py` (deux corrections de forme élargies : « Pays D'Oc »,
+« Méthode Traditionnelle »), texte dans `textes-matheo.py`. Le changement de texte du n°23
+est en fin de paragraphe : la lettrine ne bouge pas, pas de `regler-lettrines.py`.

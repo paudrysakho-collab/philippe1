@@ -1,7 +1,8 @@
 {
   "numero": 23, "page_source": 26, "region": "Sud-Ouest",
   "nom": "Domaine Haut Marin", "nom_sommaire": "DOMAINE HAUT MARIN",
-  "texte_source": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs.",
+  "texte_source": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnac.",
+  "texte_tarif": "En plein cœur de la Gascogne à Gondrin, les familles Jegerlehner et Prataviera subliment sables fauves et sous-sols argilo-calcaires riches en fossiles marins. Cette fraîcheur insuffle aux cépages gascons éclat aromatique et vivacité saline. IGP Côtes de Gascogne et Bas-Armagnacs.",
   "texte_catalogue": "",
   "labels": [{ "label": "HVE 3", "preuve": "liste des vignerons du Salon Privé, notice du stand 6 — fait foi pour les labels, salon et catalogue général (l'agence, 2 octobre 2026)" }],
   "labels_tarif": [{ "label": "IGP", "preuve": "logo IGP p.26" }, { "label": "HVE", "preuve": "logo HVE p.26" }],

@@ -66,6 +66,8 @@ Le texte parle de « la ferme de **La Voglonière** », le tableau d'une cuvée 
 Nom de cuvée. « aux lèvres » ? C'est un nom propre : **je n'y touche pas sans votre accord.**
 *Indice (2 octobre)* : l'étiquette de la bouteille envoyée par l'agence porte « Rouge **aux**
 lèvres ». Un mot de votre part et je corrige le tableau.
+*3 octobre* : le dossier de Mathéo du 3 octobre écrit lui aussi « Rouge **aux** lèvres » : le
+salon l'affiche ainsi. Le catalogue général garde la graphie du tarif en attendant votre mot.
 
 ### 11. Région du Domaine des Pasquiers — n°20 (p.23)
 La fiche est classée en **Rhône** (Côtes du Rhône, Plan de Dieu, Sablet, Gigondas), mais son
@@ -261,7 +263,9 @@ viendront du fichier de Mathéo.
 Le **dossier de référence de Mathéo** (`sources/salon-prive-2026/matheo-dossier-reference.pdf`,
 2 octobre) remplace le Padlet : l'agence l'a dit, « tout est bon dans son document maintenant ».
 Seules les cartes de stand ont été lues, les pages doubles colonne par colonne. **Les 26
-stands y sont.** 181 lignes, 180 vins affichés, 1 doublon écarté. Le détail, vin par vin, est
+stands y sont.** *Mise à jour du 3 octobre* : nouvelle exportation du dossier (3 octobre,
+8 h 44 UTC), comparée au pixel à la précédente ; les écarts sont repris (détail dans
+`JOURNAL.md`, 3 octobre). 181 lignes, 180 vins affichés, 1 doublon écarté. Le détail, vin par vin, est
 dans `vins` de `data/salon-prive-2026.json` (`liste` : la ligne telle qu'écrite ;
 `tarif` : la ligne rapprochée ; `ecarts`).
 
@@ -288,7 +292,7 @@ suffit pour ceux qui vous surprennent.
 | 2 | n°38 | Millésime Expression 2018 — AOC Champagne | — |
 | 4 | n°3 | L'envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie | — |
 | 5 | n°15 | AOC Bourgognes Passe-Tout-Grain Rouge 2025 | — |
-| 5 | n°15 | Les Bulles du Puits Rosé | — |
+| 5 | n°15 | Les Bulles du Puits Rosé Gamay Demi-Sec | — |
 | 6 | n°23 | N°10 Pétillant — IGP Côtes de Gascogne | le tarif a deux N°10, en Vin de France : Bulle/Blanc et Bulle/Rosé ; la liste ne dit pas lequel, et écrit IGP Côtes de Gascogne |
 | 7 | n°19 | Chardonnay-Viognier Blanc 2024 — VDF | peut-être « La Pousterle » blanc, Vin de France 2022, au tarif ; le nom et le millésime diffèrent |
 | 7 | n°16 | Le Couchant Rouge 2020 — AOC Châteauneuf-du-Pape | — |
@@ -314,7 +318,7 @@ suffit pour ceux qui vous surprennent.
 | 17 | n°6 | Vignes de Tréleau Blanc 2023 — AOC Pouilly-Fumé | au tarif, le Pouilly-Fumé 2023 nommé est « Les Silex Blancs » |
 | 18 | n°10 | AOC Meursault 2024 | le tarif a deux Meursault 2023 : « Les Grands Charrons » et « Les Meix Chavaux » ; la liste ne dit pas lequel |
 | 18 | n°10 | Les Aigrots 2023 — Beaune 1er Cru | au tarif, « Les Aigrots » est un rouge 2023 ; le Beaune 1er Cru blanc 2023 du tarif n'a pas de nom de climat |
-| 19 | n°31 | St Probace Rouge 2025 — IGP Var Sainte Baume | au tarif, SAINT PROBACE n'existe qu'en rosé et en blanc |
+| 19 | n°31 | Sainte-Probace Rouge 2025 — IGP Var Sainte Baume | au tarif, SAINT PROBACE n'existe qu'en rosé et en blanc |
 | 19 | n°31 | Miraia Blanc 2024 — AOC Côteaux Varois en  Provence | — |
 | 19 | n°31 | Miraia Rouge 2022 — AOC Côteaux Varois en  Provence | — |
 | 19 | n°31 | Aquino Rouge 2023 — AOC Côteaux Varois en  Provence | — |
@@ -341,7 +345,7 @@ suffit pour ceux qui vous surprennent.
 | 3 | n°36 | Clos De Cassis 2023 — AOC Corbières | le tarif a aussi un magnum ; la ligne retenue est la 75 cl |
 | 3 | n°36 | Albas 2025— IGP Pays D'OC | millésime 2025 dans la liste, 2023 au tarif |
 | 4 | n°3 | Cuvée domaine 2025 — IGP Sauvignon Gris | millésime 2025 dans la liste, 2024 au tarif |
-| 5 | n°15 | AOC Mâcon Rouge 2024 | « Mâcon Rouge » dans la liste ; le seul Mâcon rouge du tarif est le Mâcon Mancey rouge 2024 |
+| 5 | n°15 | AOC Mâcon Mancey Rouge 2024 | ✅ le dossier du 3 octobre écrit désormais « Mâcon Mancey Rouge », comme le tarif |
 | 6 | n°23 | N°1 Littorine Blanc 2025 — IGP Côtes de Gascogne | millésime 2025 dans la liste, 2024 au tarif |
 | 6 | n°23 | N°8 Grand Pavois Rouge 2025 — IGP Côtes de Gascogne | « Rouge » dans la liste, « Doux » au tarif |
 | 6 | n°23 | N°7 Vénus Blanc Moelleux 2025 — IGP Côtes de Gascogne | millésime 2025 dans la liste, 2024 au tarif; couleur « Blanc moelleux » dans la liste, « Doux » au tarif |
@@ -385,7 +389,7 @@ suffit pour ceux qui vous surprennent.
 | 22 | n°2 | Les Gorinières Blanc 2024 — AOC Fiefs Vendéens Chantonnay | millésime 2024 dans la liste, 2023 au tarif |
 | 22 | n°2 | Les Courbes Blanc 2018 — AOC Fiefs Vendéens Chantonnay | « Blanc » dans la liste, « Rouge » au tarif |
 | 22 | n°2 | Les Amphibol Blanc 2025 — AOC Fiefs Vendéens Chantonnay | millésime 2025 dans la liste, 2024 au tarif |
-| 26 | n°13 | Château du Cray Blanc 2023 — AOC Bourgogne Chardonnay | millésime 2023 dans la liste, 2022 au tarif |
+| 26 | n°13 | AOP Bourgogne Chardonnay 2023 (l'agence, 3 octobre ; le dossier écrit « AOC Bourgogne Chardonnay Blanc 2023 ») | millésime 2023 dans la liste, 2022 au tarif |
 | 26 | n°12 | AOC Gervey Chambertin 2022 | « Gervey » dans la liste, « Gevrey-Chambertin » au tarif |
 
 **1 doublon** dans le dossier, affiché une seule fois : stand 7, « Terroir d'Ansouis Blanc
