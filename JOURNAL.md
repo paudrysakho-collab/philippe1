@@ -881,3 +881,7 @@ dans `sources/salon-prive-2026/scans-prix/` (41 Mo).
   place.
 Les doutes sont dans QUESTIONS, point 31.
 
+Réponses de l'agence le même jour : Goichot (Chardonnay des Guignottes, Auxey blanc, Mercurey
+Maison), magnum et bouteille de Brut Réserve, Les Jumelles sans millésime : confirmés ; offre du
+Triton (Haut Marin) **dès 250 cols**, corrigé. Six questions restent pour Laurent
+(`docs/questions-laurent.md`). L'agence : on ne s'occupe que du Salon Privé pour l'instant.

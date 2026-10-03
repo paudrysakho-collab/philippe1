@@ -104,7 +104,7 @@ VINS = {
  6: [("N°1 Littorine", eu("2,68", "2,60", "2,28"), O11, {}),
      ("N°6 Fossiles", eu("2,99", "2,91", "2,56"), O11, {}),
      ("N°3 Gulf Stream", eu("2,99", "2,91", "2,56"), O5, {}),
-     ("N°4 Triton", eu("2,99", "2,91", "2,56"), O5, {"offre_detail": "dès 200 cols"}),   # l'agence, à l'oral
+     ("N°4 Triton", eu("2,99", "2,91", "2,56"), O5, {"offre_detail": "dès 250 cols"}),   # l'agence, 3 octobre : 250
      ("N°8 Grand Pavois", eu("3,98", "3,87", "3,40"), None, {}),
      ("N°7 Vénus", eu("3,45", "3,35", "3,08"), O11, {}),
      ("N°10 Pétillant", eu("4,00", "3,90", "3,60"), O5, {"offre_detail": "dès 250 cols"})],

@@ -521,3 +521,9 @@ Ce que j'ai décidé seul, à vérifier :
 16. **Pré La Lande (16)** : offre écrite « Offre à partir de 120 cols, en général 11+1, selon le
     volume. » d'après vos mots ; à reformuler si besoin.
 
+*Réponses de l'agence, 3 octobre (fin d'après-midi)* : points 1, 2, 3, 5, 6 (Jumelles sans
+millésime), 9 (**250 cols** pour le Triton, comme le Pétillant), Dekeyne (les quatre prix sont
+surlignés), Villebois et Pré La Lande : confirmés. Restent pour Laurent : le Pinot Noir des
+Guignottes, le Terroir d'Ansouis rouge, les jus de cépages d'Exea, la note de prix de Boehler,
+les « oui » raturés de Falfas, les paliers de Verchères (`docs/questions-laurent.md`).
+
