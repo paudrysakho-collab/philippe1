@@ -10,9 +10,19 @@
 .credit-m { position: absolute; right: 2mm; bottom: 1.2mm; font: 400 5.6pt var(--technique);
   color: rgba(251,248,241,.85); }
 
-  .m-arche { right: 18mm; top: 40mm; width: 74mm; height: 78mm; border-radius: 37mm 37mm 0 0;
-    overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
+  .m-ciel { left: 0; right: 0; top: 0; height: 120mm; overflow: hidden; }
+  .m-ciel::after { content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(42,57,66,.55) 0%, rgba(42,57,66,.25) 38%, rgba(42,57,66,0) 60%),
+      linear-gradient(90deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,0) 55%); }
   .couverture .coupe { z-index: 2; }
+  .couverture .titre-couv, .couverture .sous-couv, .edition-couv { z-index: 3; }
+  .couverture .titre-couv { color: var(--craie); }
+  .couverture .titre-couv em { color: var(--or); }
+  .couverture .sous-couv { color: var(--craie); opacity: 1; text-shadow: 0 0 2mm rgba(42,57,66,.6); }
+  .edition-couv .cible, .edition-couv .annee { color: var(--craie); }
+  .m-reserve { position: absolute; z-index: 3; left: calc(var(--marge-int) - 4mm); top: 13mm; width: 70mm; height: 24mm;
+    background: var(--craie); border-radius: 1.5mm; }
+  .logo-couv { z-index: 4; }
 </style></head><body class="ecran">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <pattern id="t-ecailles" width="14" height="9" patternUnits="userSpaceOnUse">
@@ -30,12 +40,12 @@
     <ellipse cx="17" cy="10" rx="4.2" ry="2.6" fill="none" stroke="rgba(0,0,0,.30)" stroke-width="1"/></pattern>
 </defs></svg>
 <section class="page recto couverture" id="p1" data-page="1">
-      <img class="logo-couv" src="../../src/images/logo-agence-scio-detoure.png"
+      <div class="m-abs m-ciel"><img class="photo-region" src="../../src/photos/regions/Sud-Ouest.jpg" alt=""></div>
+   <div class="m-reserve"></div><img class="logo-couv" src="../../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
       <p class="sous-couv">Quarante domaines, dix régions,<br>et la terre qu'ils ont sous les pieds.</p>
-      <div class="m-abs m-arche"><img class="photo-region" src="../../src/photos/regions/Loire.jpg" alt=""></div>
-   <svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
+      <svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
             aria-hidden="true"><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="#46606E"/><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="url(#t-ecailles)"/><text x="586" y="37.6" text-anchor="end"
                 class="etiq-strate" fill="rgba(255,255,255,.93)">LOIRE</text><text x="14" y="37.6" class="etiq-nb"
                 fill="rgba(255,255,255,.72)">7</text><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="#3C5B47"/><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="url(#t-veines)"/><text x="586" y="83.7" text-anchor="end"

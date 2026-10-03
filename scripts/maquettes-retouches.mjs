@@ -66,7 +66,7 @@ modele('couverture-B-photo-arche', GEN, 'p1', `
     overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
   .couverture .coupe { z-index: 2; }
 `, (s) => s.replace('<svg viewBox="0 0 600 430"',
-  `<div class="m-abs m-arche"><img class="photo-region" src="${PHOTO('Loire-16.jpg')}" alt=""></div>
+  `<div class="m-abs m-arche"><img class="photo-region" src="${PHOTO('Loire.jpg')}" alt=""></div>
    <svg viewBox="0 0 600 430"`));
 
 modele('couverture-C-petits-dessins', GEN, 'p1', `
@@ -84,6 +84,55 @@ modele('couverture-C-petits-dessins', GEN, 'p1', `
    <div class="m-abs m-b" style="right:54mm; width:9mm">${bouteille('bourguignonne', { vin: C.silex, capsule: C.gneiss })}</div>
    <svg viewBox="0 0 600 430"`));
 
+/* ——— couverture, deuxième série (l'agence : « dans l'esprit de l'ouverture de région ») ——— */
+modele('couverture-D-paysage-et-sols', GEN, 'p1', `
+  .m-ciel { left: 0; right: 0; top: 0; height: ${COUPE_HAUT + 8}mm; overflow: hidden; }
+  .m-ciel::after { content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(42,57,66,.55) 0%, rgba(42,57,66,.25) 38%, rgba(42,57,66,0) 60%),
+      linear-gradient(90deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,0) 55%); }
+  .couverture .coupe { z-index: 2; }
+  .couverture .titre-couv, .couverture .sous-couv, .edition-couv { z-index: 3; }
+  .couverture .titre-couv { color: var(--craie); }
+  .couverture .titre-couv em { color: var(--or); }
+  .couverture .sous-couv { color: var(--craie); opacity: 1; text-shadow: 0 0 2mm rgba(42,57,66,.6); }
+  .edition-couv .cible, .edition-couv .annee { color: var(--craie); }
+  .m-reserve { position: absolute; z-index: 3; left: calc(var(--marge-int) - 4mm); top: 13mm; width: 70mm; height: 24mm;
+    background: var(--craie); border-radius: 1.5mm; }
+  .logo-couv { z-index: 4; }
+`, (s) => s.replace('<img class="logo-couv"', `<div class="m-abs m-ciel"><img class="photo-region" src="${PHOTO('Sud-Ouest.jpg')}" alt=""></div>
+   <div class="m-reserve"></div><img class="logo-couv"`));
+
+modele('couverture-E-capsule', GEN, 'p1', `
+  .couverture .coupe { display: none; }
+  .m-caps { right: 20mm; top: 40mm; width: 78mm; height: 200mm; border-radius: 39mm; overflow: hidden;
+    box-shadow: 0 0 0 1mm var(--craie), 0 0 0 1.8mm rgba(70,96,110,.25); background: var(--silex); }
+  .m-caps .photo-region { height: 46%; }
+  .m-caps .coupe { position: absolute !important; display: block !important; left: 0; right: 0; bottom: 0; top: 44%;
+    width: 100%; height: 56% !important; }
+  .couverture .sous-couv { width: 85mm; }
+  .couverture .sanitaire-couv { color: var(--silex); }
+  .m-btl-c { left: calc(var(--marge-int)); bottom: 22mm; display: flex; gap: 2.2mm; align-items: flex-end; }
+  .m-btl-c .dessin { width: 9mm; }
+`, (s) => {
+  const coupe = s.match(/<svg viewBox="0 0 600 430"[\s\S]*?<\/svg>/)[0];
+  return s.replace(coupe, `<div class="m-abs m-caps"><img class="photo-region" src="${PHOTO('Champagne.jpg')}" alt="">${coupe}</div>
+    <div class="m-abs m-btl-c">${bouteille('bourguignonne', { vin: C.silex, capsule: C.gneiss })}${bouteille('flute', { vin: C.or, capsule: C.violet })}${bouteille('champenoise', { vin: C.amphibolite, capsule: C.or })}${bouteille('bordelaise', { vin: C.gneiss, capsule: C.or })}</div>`);
+});
+
+modele('couverture-F-fenetres', GEN, 'p1', `
+  .couverture .coupe { z-index: 2; }
+  .m-fen { position: absolute; top: 56mm; width: 30mm; height: ${COUPE_HAUT - 56 + 4}mm; border-radius: 15mm 15mm 0 0;
+    overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
+  .m-fen span { position: absolute; left: 0; right: 0; bottom: 5.5mm; text-align: center; z-index: 2;
+    font: 600 6.6pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase; color: var(--craie);
+    text-shadow: 0 0 1.5mm rgba(42,57,66,.8); }
+  .m-lune { right: 18mm; top: 40mm; width: 10mm; }
+`, (s) => s.replace('<svg viewBox="0 0 600 430"',
+  [['Loire.jpg', 'Loire', 108], ['Bourgogne.jpg', 'Bourgogne', 141], ['Rhone.jpg', 'Rhône', 174]].map(([f, n, x], k) =>
+    `<div class="m-fen" style="left:${x - 8}mm; top:${56 + (k === 1 ? -8 : 0)}mm; height:${COUPE_HAUT - 56 + 4 + (k === 1 ? 8 : 0)}mm">
+      <img class="photo-region" src="${PHOTO(f)}" alt=""><span>${n}</span></div>`).join('')
+  + `<div class="m-abs m-lune">${lune()}</div><svg viewBox="0 0 600 430"`));
+
 /* ——————————————————————————————————— page 2, l'agence ——— */
 const CREDO_POSE = `
   .credo { font-family: var(--courant); font-size: 14.5pt; line-height: 1.55; color: var(--encre);
@@ -94,7 +143,7 @@ const CREDO_POSE = `
 modele('page2-A-texte-pose-photo', GEN, 'p2', CREDO_POSE + `
   .bandeau-coupe { height: 62mm; }
 `, (s) => s.replace(/<div class="bandeau-coupe">[\s\S]*?<\/svg><\/div>/,
-  `<div class="bandeau-coupe"><img class="photo-region" src="${PHOTO('Bordeaux-07.jpg')}" alt=""></div>`));
+  `<div class="bandeau-coupe"><img class="photo-region" src="${PHOTO('Beaujolais.jpg')}" alt=""></div>`));
 
 modele('page2-B-italique-paysage', GEN, 'p2', CREDO_POSE + `
   .credo { font-style: italic; font-size: 15pt; border-left: 0; padding-left: 0; }
@@ -112,13 +161,13 @@ modele('page2-C-deux-colonnes', GEN, 'p2', CREDO_POSE + `
   .m-btl .dessin { width: 8mm; }
   .credo { margin-bottom: 9mm; }
 `, (s) => s.replace(/(<p class="credo">[\s\S]*?<\/p>)([\s\S]*?<div class="coordonnees">[\s\S]*?<\/div>)/,
-  `<div class="m-deux"><div>$1$2</div><div><div class="m-capsule"><img class="photo-region" src="${PHOTO('Loire-16.jpg')}" alt=""></div>
+  `<div class="m-deux"><div>$1$2</div><div><div class="m-capsule"><img class="photo-region" src="${PHOTO('Loire.jpg')}" alt=""></div>
    <div class="m-btl">${bouteille('flute', { vin: C.or, capsule: C.violet })}${bouteille('bordelaise', { vin: C.gneiss, capsule: C.or })}${bouteille('champenoise', { vin: C.amphibolite, capsule: C.or })}</div></div></div>`));
 
 /* ——————————————————————————————————— bas de fiche (salon, Château Balac) ——— */
 const BAS = /<div class="respire-sol">[\s\S]*?<\/div><\/div><\/div>/;
 modele('bas-de-fiche-A-photo-region', SAL, 'p31', '', (s) => s.replace(BAS,
-  `<div class="respire-sol"><img class="photo-region" src="${PHOTO('Bordeaux-03.jpg')}" alt=""></div></div>`));
+  `<div class="respire-sol"><img class="photo-region" src="${PHOTO('Bordeaux.jpg')}" alt=""></div></div>`));
 
 modele('bas-de-fiche-B-paysage-dessine', SAL, 'p31', `.respire-sol { background: var(--craie); }`, (s) => s.replace(BAS,
   `<div class="respire-sol">${paysage({ graineN: 29, largeur: 600, hauteur: 140, astre: 'soleil',
@@ -129,7 +178,7 @@ modele('bas-de-fiche-C-photo-sol-bouteille', SAL, 'p31', `
   .m-btl-bas { position: absolute; right: 6mm; bottom: 1mm; width: 9mm; height: 27mm; z-index: 2; }
   .m-btl-bas svg { width: 100%; height: 100%; }
 `, (s) => s.replace(BAS,
-  `<div class="respire-sol"><img class="photo-region" src="${PHOTO('Bordeaux-03.jpg')}" alt="">
+  `<div class="respire-sol"><img class="photo-region" src="${PHOTO('Bordeaux.jpg')}" alt="">
    <div class="m-liseré" style="background:var(--gneiss)"><div class="trame trame-galets" style="opacity:.4"></div></div>
    <div class="m-btl-bas">${bouteille('bordelaise', { vin: C.gneiss, capsule: C.or })}</div></div></div>`));
 
@@ -140,7 +189,7 @@ modele('ouverture-A-photo', SAL, 'p4', `
   .ouverture .ouv-fond::after { content: ''; position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(70,96,110,0) 0%, rgba(70,96,110,.25) 45%, rgba(46,63,72,.88) 66%, rgba(46,63,72,.95) 100%); }
 `, (s) => s.replace('<div class="ouv-trame trame trame-ecailles"></div>',
-  `<img class="photo-region" src="${PHOTO('Loire-16.jpg')}" alt="">`));
+  `<img class="photo-region" src="${PHOTO('Loire.jpg')}" alt="">`));
 
 modele('ouverture-B-paysage-dessine', SAL, 'p4', `
   .m-pays { position: absolute; left: 0; right: 0; top: 70mm; height: 70mm; opacity: .9; }

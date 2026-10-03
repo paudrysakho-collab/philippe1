@@ -10,9 +10,16 @@
 .credit-m { position: absolute; right: 2mm; bottom: 1.2mm; font: 400 5.6pt var(--technique);
   color: rgba(251,248,241,.85); }
 
-  .m-arche { right: 18mm; top: 40mm; width: 74mm; height: 78mm; border-radius: 37mm 37mm 0 0;
-    overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
-  .couverture .coupe { z-index: 2; }
+  .couverture .coupe { display: none; }
+  .m-caps { right: 20mm; top: 40mm; width: 78mm; height: 200mm; border-radius: 39mm; overflow: hidden;
+    box-shadow: 0 0 0 1mm var(--craie), 0 0 0 1.8mm rgba(70,96,110,.25); background: var(--silex); }
+  .m-caps .photo-region { height: 46%; }
+  .m-caps .coupe { position: absolute !important; display: block !important; left: 0; right: 0; bottom: 0; top: 44%;
+    width: 100%; height: 56% !important; }
+  .couverture .sous-couv { width: 85mm; }
+  .couverture .sanitaire-couv { color: var(--silex); }
+  .m-btl-c { left: calc(var(--marge-int)); bottom: 22mm; display: flex; gap: 2.2mm; align-items: flex-end; }
+  .m-btl-c .dessin { width: 9mm; }
 </style></head><body class="ecran">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <pattern id="t-ecailles" width="14" height="9" patternUnits="userSpaceOnUse">
@@ -34,8 +41,7 @@
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
       <p class="sous-couv">Quarante domaines, dix régions,<br>et la terre qu'ils ont sous les pieds.</p>
-      <div class="m-abs m-arche"><img class="photo-region" src="../../src/photos/regions/Loire.jpg" alt=""></div>
-   <svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
+      <div class="m-abs m-caps"><img class="photo-region" src="../../src/photos/regions/Champagne.jpg" alt=""><svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
             aria-hidden="true"><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="#46606E"/><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="url(#t-ecailles)"/><text x="586" y="37.6" text-anchor="end"
                 class="etiq-strate" fill="rgba(255,255,255,.93)">LOIRE</text><text x="14" y="37.6" class="etiq-nb"
                 fill="rgba(255,255,255,.72)">7</text><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="#3C5B47"/><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="url(#t-veines)"/><text x="586" y="83.7" text-anchor="end"
@@ -56,7 +62,32 @@
                 class="etiq-strate" fill="rgba(255,255,255,.93)">LANGUEDOC</text><text x="14" y="371.6" class="etiq-nb"
                 fill="rgba(255,255,255,.72)">5</text><path d="M-20 391.6 L0 390.6 L85.71428571428571 393.0 L171.42857142857142 388.8 L257.1428571428571 393.2 L342.85714285714283 389.3 L428.57142857142856 392.8 L514.2857142857142 389.6 L599.9999999999999 394.0 L620 391.6 L620 432.0 L-20 432.0 Z" fill="#FBF8F1"/><path d="M-20 391.6 L0 390.6 L85.71428571428571 393.0 L171.42857142857142 388.8 L257.1428571428571 393.2 L342.85714285714283 389.3 L428.57142857142856 392.8 L514.2857142857142 389.6 L599.9999999999999 394.0 L620 391.6 L620 432.0 L-20 432.0 Z" fill="url(#t-pointille)"/><text x="586" y="414.8" text-anchor="end"
                 class="etiq-strate" fill="#46606E">CHAMPAGNE</text><text x="14" y="414.8" class="etiq-nb"
-                fill="#46606E">4</text></svg>
+                fill="#46606E">4</text></svg></div>
+    <div class="m-abs m-btl-c"><svg viewBox="0 0 40 120" class="dessin"   aria-hidden="true">
+    <path d="M16.5 2 H23.5 V24 C24 40 34 44 34 60 V112 Q34 117 29 117 H11 Q6 117 6 112 V60 C6 44 16 40 16.5 24 Z" fill="#46606E" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="16" y="1.5" width="8" height="14" rx="1.2" fill="#A8515F" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="9" y="66" width="22" height="18.6" rx="1.5" fill="#FBF8F1" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M12 73.2 H28 M14 78 H26" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-width=".8" fill="none"/>
+    <path d="M9.5 66 V108" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg><svg viewBox="0 0 40 120" class="dessin"   aria-hidden="true">
+    <path d="M17 2 H23 V30 C23.5 50 30 52 30 66 V113 Q30 117 26 117 H14 Q10 117 10 113 V66 C10 52 16.5 50 17 30 Z" fill="#E1C853" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="16" y="1.5" width="8" height="14" rx="1.2" fill="#67067C" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="12" y="72" width="16" height="16.12" rx="1.5" fill="#FBF8F1" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M15 78.24 H25 M17 82.4 H23" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-width=".8" fill="none"/>
+    <path d="M12.5 72 V108" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg><svg viewBox="0 0 40 120" class="dessin"   aria-hidden="true">
+    <path d="M15.5 4 H24.5 V26 C25 40 35.5 44 35.5 62 V112 Q35.5 117 30 117 H10 Q4.5 117 4.5 112 V62 C4.5 44 15 40 15.5 26 Z" fill="#3C5B47" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="15" y="3" width="10" height="22" rx="1.2" fill="#E1C853" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="7" y="68" width="26" height="18.6" rx="1.5" fill="#FBF8F1" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M10 75.2 H30 M12 80 H28" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-width=".8" fill="none"/>
+    <path d="M9.5 66 V108" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg><svg viewBox="0 0 40 120" class="dessin"   aria-hidden="true">
+    <path d="M16 2 H24 V30 C24 36 33 37 33 46 V112 Q33 117 28 117 H12 Q7 117 7 112 V46 C7 37 16 36 16 30 Z" fill="#A8515F" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="16" y="1.5" width="8" height="14" rx="1.2" fill="#E1C853" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="9" y="60" width="22" height="21.08" rx="1.5" fill="#FBF8F1" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M12 68.16 H28 M14 73.6 H26" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-width=".8" fill="none"/>
+    <path d="M9.5 66 V108" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg></div>
       <div class="edition-couv">
         <span class="cible">Tarifs cavistes Vendée (85)</span>
         <span class="annee">2026</span>

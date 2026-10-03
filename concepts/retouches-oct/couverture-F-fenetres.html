@@ -10,9 +10,13 @@
 .credit-m { position: absolute; right: 2mm; bottom: 1.2mm; font: 400 5.6pt var(--technique);
   color: rgba(251,248,241,.85); }
 
-  .m-arche { right: 18mm; top: 40mm; width: 74mm; height: 78mm; border-radius: 37mm 37mm 0 0;
-    overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
   .couverture .coupe { z-index: 2; }
+  .m-fen { position: absolute; top: 56mm; width: 30mm; height: 60mm; border-radius: 15mm 15mm 0 0;
+    overflow: hidden; box-shadow: 0 0 0 .8mm var(--craie); }
+  .m-fen span { position: absolute; left: 0; right: 0; bottom: 5.5mm; text-align: center; z-index: 2;
+    font: 600 6.6pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase; color: var(--craie);
+    text-shadow: 0 0 1.5mm rgba(42,57,66,.8); }
+  .m-lune { right: 18mm; top: 40mm; width: 10mm; }
 </style></head><body class="ecran">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <pattern id="t-ecailles" width="14" height="9" patternUnits="userSpaceOnUse">
@@ -34,8 +38,11 @@
            alt="Agence SCIO Vins &amp; Spirits">
       <h1 class="titre-couv">Sous<br>nos<br><em>pieds</em></h1>
       <p class="sous-couv">Quarante domaines, dix régions,<br>et la terre qu'ils ont sous les pieds.</p>
-      <div class="m-abs m-arche"><img class="photo-region" src="../../src/photos/regions/Loire.jpg" alt=""></div>
-   <svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
+      <div class="m-fen" style="left:100mm; top:56mm; height:60mm">
+      <img class="photo-region" src="../../src/photos/regions/Loire.jpg" alt=""><span>Loire</span></div><div class="m-fen" style="left:133mm; top:48mm; height:68mm">
+      <img class="photo-region" src="../../src/photos/regions/Bourgogne.jpg" alt=""><span>Bourgogne</span></div><div class="m-fen" style="left:166mm; top:56mm; height:60mm">
+      <img class="photo-region" src="../../src/photos/regions/Rhone.jpg" alt=""><span>Rhône</span></div><div class="m-abs m-lune"><svg viewBox="0 0 40 40" class="dessin" aria-hidden="true">
+    <path d="M26 5 A15 15 0 1 0 35 27 A12 12 0 1 1 26 5 Z" fill="#E1C853" stroke="#2A3942" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg></div><svg viewBox="0 0 600 430" preserveAspectRatio="none" class="coupe"
             aria-hidden="true"><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="#46606E"/><path d="M-20 0.0 L0 2.4 L85.71428571428571 -0.2 L171.42857142857142 3.4 L257.1428571428571 -2.9 L342.85714285714283 3.0 L428.57142857142856 -2.9 L514.2857142857142 -1.2 L599.9999999999999 -2.8 L620 0.0 L620 69.2 L-20 69.2 Z" fill="url(#t-ecailles)"/><text x="586" y="37.6" text-anchor="end"
                 class="etiq-strate" fill="rgba(255,255,255,.93)">LOIRE</text><text x="14" y="37.6" class="etiq-nb"
                 fill="rgba(255,255,255,.72)">7</text><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="#3C5B47"/><path d="M-20 67.2 L0 64.5 L85.71428571428571 64.9 L171.42857142857142 70.5 L257.1428571428571 63.8 L342.85714285714283 67.1 L428.57142857142856 64.0 L514.2857142857142 66.5 L599.9999999999999 66.0 L620 67.2 L620 94.1 L-20 94.1 Z" fill="url(#t-veines)"/><text x="586" y="83.7" text-anchor="end"

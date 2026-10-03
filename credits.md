@@ -276,3 +276,21 @@ Toutes sous licence **SIL Open Font License (OFL)**, récupérées via les paque
 
 Les six autres familles de `src/fonts/` servent aux maquettes des concepts 2 et 3, pas au
 catalogue final.
+
+
+## Photos de régions (Wikimedia Commons, licences libres, 3 octobre 2026)
+
+Paysages viticoles illustrant une région, jamais un domaine précis. Crédit obligatoire en dernière page.
+
+| Région | Page | Image | Auteur | Licence |
+|---|---|---|---|---|
+| Loire | https://commons.wikimedia.org/wiki/File:Sancerre_-_View_on_vineyards_-_2.jpg | https://upload.wikimedia.org/wikipedia/commons/0/00/Sancerre_-_View_on_vineyards_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Benjamin Smith | CC BY-SA 4.0 |
+| Alsace | https://commons.wikimedia.org/wiki/File:Kaysersberg_Vignoble_c_2011.jpg | https://upload.wikimedia.org/wikipedia/commons/8/88/Kaysersberg_Vignoble_c_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | JLPC | CC BY-SA 3.0 |
+| Beaujolais | https://commons.wikimedia.org/wiki/File:Coucher_de_soleil_sur_les_vignobles_du_Beaujolais.jpg | https://upload.wikimedia.org/wikipedia/commons/0/0d/Coucher_de_soleil_sur_les_vignobles_du_Beaujolais.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Sebleouf | CC BY-SA 4.0 |
+| Bourgogne | https://commons.wikimedia.org/wiki/File:IMG_Vignoble_%C3%A0_Pommard.JPG | https://upload.wikimedia.org/wikipedia/commons/c/cd/IMG_Vignoble_%C3%A0_Pommard.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Mpmpmp | CC BY-SA 3.0 |
+| Rhône | https://commons.wikimedia.org/wiki/File:Dentelles_de_Montmirail_vue_du_Plan_de_Dieu.JPG | https://upload.wikimedia.org/wikipedia/commons/f/f2/Dentelles_de_Montmirail_vue_du_Plan_de_Dieu.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Véronique PAGNIER | Public domain |
+| Sud-Ouest | https://commons.wikimedia.org/wiki/File:Vins_du_Sud-ouest,_en_Gascogne.jpg | https://upload.wikimedia.org/wikipedia/commons/5/5e/Vins_du_Sud-ouest%2C_en_Gascogne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Interprofession des Vins du Sud-Ouest | CC BY-SA 4.0 |
+| Bordeaux | https://commons.wikimedia.org/wiki/File:Saint-Emilion,_vignoble_3.jpg | https://upload.wikimedia.org/wikipedia/commons/6/61/Saint-Emilion%2C_vignoble_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Pascal MOULIN | CC BY-SA 4.0 |
+| Provence | https://commons.wikimedia.org/wiki/File:Puyloubier-FR-13-vignes_et_Mont_Venturi-a2.jpg | https://upload.wikimedia.org/wikipedia/commons/8/87/Puyloubier-FR-13-vignes_et_Mont_Venturi-a2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | François GOGLINS | CC BY-SA 4.0 |
+| Languedoc | https://commons.wikimedia.org/wiki/File:Village_de_Saint-Chinian,_vue_sur_le_vignoble.jpg | https://upload.wikimedia.org/wikipedia/commons/a/a1/Village_de_Saint-Chinian%2C_vue_sur_le_vignoble.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | Gaylord Burguière | CC BY 4.0 |
+| Champagne | https://commons.wikimedia.org/wiki/File:Blick_von_Ch%C3%A2tillon-sur-Marne_%C3%BCber_die_Weinberge_der_Champagne_06.jpg | https://upload.wikimedia.org/wikipedia/commons/2/20/Blick_von_Ch%C3%A2tillon-sur-Marne_%C3%BCber_die_Weinberge_der_Champagne_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original | JensKunstfreund | CC BY-SA 4.0 |

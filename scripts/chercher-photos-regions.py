@@ -25,15 +25,15 @@ LICENCES = re.compile(r"^(CC0|CC BY(-SA)? [0-9.]+|Public domain|PD)", re.I)
 REQUETES = {
     "Loire": ["Vouvray vignoble", "vignoble Saumur", "Sancerre vignes", "Muscadet vignoble"],
     "Alsace": ["vignoble Alsace village", "Alsace vineyard Riquewihr", "route des vins Alsace vignes"],
-    "Beaujolais": ["Beaujolais vignoble paysage", "Beaujolais vineyards hills"],
+    "Beaujolais": ["Beaujolais vignoble paysage", "Beaujolais vineyards hills", "Fleurie vignoble", "Morgon vignes", "Pierres dorées vignes", "Brouilly vignoble"],
     "Bourgogne": ["Côte de Beaune vignes", "Burgundy vineyards Meursault", "Pommard vignoble"],
     "Rhône": ["Dentelles de Montmirail vignes", "Gigondas vignoble", "Châteauneuf-du-Pape galets vignes"],
-    "Sud-Ouest": ["Madiran vignoble", "vignoble Gers", "Armagnac vignes paysage"],
+    "Sud-Ouest": ["Madiran vignoble", "vignoble Gers", "Armagnac vignes paysage", "Jurançon vignoble", "Cahors vignoble", "Gascogne vignes"],
     "Bordeaux": ["Saint-Émilion vignoble", "Médoc vignoble", "Côtes de Bourg vignes"],
-    "Provence": ["vignoble Provence Sainte-Victoire", "Provence vineyard lavender", "Coteaux Varois vignes"],
-    "Languedoc": ["Corbières vignoble", "Minervois vignes", "Languedoc vineyard garrigue"],
+    "Provence": ["Provence vineyard", "vignoble Provence", "Côtes de Provence vignes", "Bandol vignoble", "Sainte-Victoire vignes", "Var vineyard landscape"],
+    "Languedoc": ["Corbières vignoble", "Minervois vignes", "Languedoc vineyard garrigue", "Saint-Chinian vignoble", "Hérault vignes paysage", "vignoble Aude"],
     "Champagne": ["vignoble Champagne Hautvillers", "Champagne vineyards Marne", "Côte des Blancs vignes"],
-    "_général": ["vineyard rows sunset France", "rangs de vigne automne"],
+    "_général": ["vineyard rows sunset France", "rangs de vigne automne", "vineyard autumn golden light France", "vignoble coucher de soleil", "vignes automne Bourgogne", "vineyard golden hour"],
 }
 
 
@@ -45,8 +45,9 @@ def get(params, essais=6):
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read())
         except Exception as e:  # 429 : on attend et on recommence
-            time.sleep(3 * (k + 1))
-    raise RuntimeError(f"Commons ne répond pas : {url}")
+            time.sleep(8 * (k + 1))
+    print(f"  (Commons ne répond pas, requête sautée)")
+    return {}
 
 
 def chercher(q):
@@ -79,7 +80,7 @@ def main():
                 if c["titre"] not in vus:
                     vus.add(c["titre"])
                     liste.append(c)
-            time.sleep(1.5)
+            time.sleep(5)
         for i, c in enumerate(liste):
             f = VIGNETTES / f"{r}-{i:02d}.jpg"
             if not f.exists():

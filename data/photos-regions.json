@@ -1,0 +1,92 @@
+{
+ "Loire": {
+  "brut": "src/photos/regions-brut/Loire-16.jpg",
+  "fichier": "src/photos/regions/Loire.jpg",
+  "titre": "File:Sancerre - View on vineyards - 2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sancerre_-_View_on_vineyards_-_2.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/00/Sancerre_-_View_on_vineyards_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Benjamin Smith",
+  "licence": "CC BY-SA 4.0"
+ },
+ "Alsace": {
+  "brut": "src/photos/regions-brut/Alsace-03.jpg",
+  "fichier": "src/photos/regions/Alsace.jpg",
+  "titre": "File:Kaysersberg Vignoble c 2011.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kaysersberg_Vignoble_c_2011.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Kaysersberg_Vignoble_c_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "JLPC",
+  "licence": "CC BY-SA 3.0"
+ },
+ "Beaujolais": {
+  "brut": "src/photos/regions-brut/_général-03.jpg",
+  "fichier": "src/photos/regions/Beaujolais.jpg",
+  "titre": "File:Coucher de soleil sur les vignobles du Beaujolais.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Coucher_de_soleil_sur_les_vignobles_du_Beaujolais.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Coucher_de_soleil_sur_les_vignobles_du_Beaujolais.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Sebleouf",
+  "licence": "CC BY-SA 4.0"
+ },
+ "Bourgogne": {
+  "brut": "src/photos/regions-brut/Bourgogne-17.jpg",
+  "fichier": "src/photos/regions/Bourgogne.jpg",
+  "titre": "File:IMG Vignoble à Pommard.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:IMG_Vignoble_%C3%A0_Pommard.JPG",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/IMG_Vignoble_%C3%A0_Pommard.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Mpmpmp",
+  "licence": "CC BY-SA 3.0"
+ },
+ "Rhône": {
+  "brut": "src/photos/regions-brut/Rhône-03.jpg",
+  "fichier": "src/photos/regions/Rhone.jpg",
+  "titre": "File:Dentelles de Montmirail vue du Plan de Dieu.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Dentelles_de_Montmirail_vue_du_Plan_de_Dieu.JPG",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Dentelles_de_Montmirail_vue_du_Plan_de_Dieu.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Véronique PAGNIER",
+  "licence": "Public domain"
+ },
+ "Sud-Ouest": {
+  "brut": "src/photos/regions-brut/Sud-Ouest-29.jpg",
+  "fichier": "src/photos/regions/Sud-Ouest.jpg",
+  "titre": "File:Vins du Sud-ouest, en Gascogne.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vins_du_Sud-ouest,_en_Gascogne.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vins_du_Sud-ouest%2C_en_Gascogne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Interprofession des Vins du Sud-Ouest",
+  "licence": "CC BY-SA 4.0"
+ },
+ "Bordeaux": {
+  "brut": "src/photos/regions-brut/Bordeaux-03.jpg",
+  "fichier": "src/photos/regions/Bordeaux.jpg",
+  "titre": "File:Saint-Emilion, vignoble 3.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Saint-Emilion,_vignoble_3.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Saint-Emilion%2C_vignoble_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Pascal MOULIN",
+  "licence": "CC BY-SA 4.0"
+ },
+ "Provence": {
+  "brut": "src/photos/regions-brut/Provence-26.jpg",
+  "fichier": "src/photos/regions/Provence.jpg",
+  "titre": "File:Puyloubier-FR-13-vignes et Mont Venturi-a2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Puyloubier-FR-13-vignes_et_Mont_Venturi-a2.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Puyloubier-FR-13-vignes_et_Mont_Venturi-a2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "François GOGLINS",
+  "licence": "CC BY-SA 4.0"
+ },
+ "Languedoc": {
+  "brut": "src/photos/regions-brut/Languedoc-06.jpg",
+  "fichier": "src/photos/regions/Languedoc.jpg",
+  "titre": "File:Village de Saint-Chinian, vue sur le vignoble.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Village_de_Saint-Chinian,_vue_sur_le_vignoble.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Village_de_Saint-Chinian%2C_vue_sur_le_vignoble.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "Gaylord Burguière",
+  "licence": "CC BY 4.0"
+ },
+ "Champagne": {
+  "brut": "src/photos/regions-brut/Champagne-06.jpg",
+  "fichier": "src/photos/regions/Champagne.jpg",
+  "titre": "File:Blick von Châtillon-sur-Marne über die Weinberge der Champagne 06.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Blick_von_Ch%C3%A2tillon-sur-Marne_%C3%BCber_die_Weinberge_der_Champagne_06.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Blick_von_Ch%C3%A2tillon-sur-Marne_%C3%BCber_die_Weinberge_der_Champagne_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "auteur": "JensKunstfreund",
+  "licence": "CC BY-SA 4.0"
+ }
+}
