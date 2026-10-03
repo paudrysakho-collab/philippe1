@@ -248,6 +248,57 @@ export function coupe({ largeur = 600, hauteur = 430, graineN = 26, etiquettes =
             aria-hidden="true">${out}</svg>`;
 }
 
+/** Mélange une couleur hex vers une autre (t = 0 : la première, 1 : la seconde). */
+function melange(a, b, t) {
+  const v = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [x, y] = [v(a), v(b)];
+  return '#' + x.map((c, i) => Math.round(c + (y[i] - c) * t).toString(16).padStart(2, '0')).join('');
+}
+
+/** La coupe « élégante » de la couverture (l'agence, 3 octobre : « des traits plus droits,
+    moins enfantin, plus rêver »). Strates parfaitement horizontales, sans zigzag ni grosse
+    trame ; légende sobre à gauche, comme un relevé géologique.
+    style : 'aquarelle' (teintes adoucies, léger dégradé), 'fine' (bandes translucides, à poser
+    sous une photo), 'gravure' (ton sur ton, hachures fines, liseré or). */
+export function coupeElegante({ largeur = 600, hauteur = 430, style = 'aquarelle', etiquettes = true,
+  classe = 'coupe' } = {}) {
+  const { effectifs: eff, poids, total } = poidsStrates();
+  let y = 0, defs = '', out = '';
+  REGIONS.forEach((nom, i) => {
+    const h = (poids[i] / total) * hauteur;
+    const hex = STRATES[nom].hex === '#FBF8F1' ? '#D9CDB4' : STRATES[nom].hex;
+    const id = `ce-${style}-${i}`;
+    if (style === 'aquarelle') {
+      defs += `<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${melange(hex, '#FBF8F1', 0.42)}"/>
+        <stop offset="1" stop-color="${melange(hex, '#FBF8F1', 0.22)}"/></linearGradient>`;
+      out += `<rect x="0" y="${y.toFixed(2)}" width="${largeur}" height="${(h + 0.6).toFixed(2)}" fill="url(#${id})"/>`;
+      if (i) out += `<rect x="0" y="${(y - 0.4).toFixed(2)}" width="${largeur}" height=".8" fill="#FBF8F1" opacity=".85"/>`;
+    } else if (style === 'fine') {
+      out += `<rect x="0" y="${y.toFixed(2)}" width="${largeur}" height="${(h + 0.6).toFixed(2)}" fill="${hex}" opacity=".78"/>`;
+      if (i) out += `<rect x="0" y="${(y - 0.3).toFixed(2)}" width="${largeur}" height=".6" fill="#FBF8F1" opacity=".7"/>`;
+    } else {
+      const fond = melange(hex, '#F2EADA', 0.62);
+      defs += `<pattern id="${id}" width="${5 + (i % 3)}" height="${5 + (i % 3)}" patternUnits="userSpaceOnUse"
+          patternTransform="rotate(${[35, -35, 0, 90][i % 4]})">${i % 2
+        ? `<circle cx="1.5" cy="1.5" r=".55" fill="${melange(hex, '#2A3942', 0.2)}" opacity=".45"/>`
+        : `<path d="M0 0 V${5 + (i % 3)}" stroke="${melange(hex, '#2A3942', 0.2)}" stroke-width=".45" opacity=".45"/>`}</pattern>`;
+      out += `<rect x="0" y="${y.toFixed(2)}" width="${largeur}" height="${(h + 0.6).toFixed(2)}" fill="${fond}"/>
+        <rect x="0" y="${y.toFixed(2)}" width="${largeur}" height="${(h + 0.6).toFixed(2)}" fill="url(#${id})"/>`;
+      if (i) out += `<rect x="0" y="${(y - 0.5).toFixed(2)}" width="${largeur}" height="1" fill="#C9AE4A"/>`;
+    }
+    if (etiquettes) {
+      const encre = style !== 'fine' || nom === 'Champagne' ? '#2A3942' : '#FBF8F1';
+      const ym = (y + h / 2 + 3.4).toFixed(1);
+      out += `<text x="18" y="${ym}" class="etiq-nb-el" fill="${encre}" opacity=".9">${eff[i]}</text>`
+           + `<text x="40" y="${ym}" class="etiq-strate-el" fill="${encre}">${esc(nom.toUpperCase())}</text>`;
+    }
+    y += h;
+  });
+  return `<svg viewBox="0 0 ${largeur} ${hauteur}" preserveAspectRatio="none" class="${classe}"
+            aria-hidden="true"><defs>${defs}</defs>${out}</svg>`;
+}
+
 /** La carotte de tranche : la strate de la région courante est pleine, repérée en or. */
 export function carotte(regionActive) {
   const { poids, total } = poidsStrates();

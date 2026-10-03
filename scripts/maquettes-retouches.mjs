@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { C, bouteille, feuille, lune, soleil, cep, paysage } from '../src/gabarits/dessins.mjs';
+import { coupeElegante } from '../src/gabarits/pieces.mjs';
 
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SORTIE = path.join(RACINE, 'concepts/retouches-oct');
@@ -132,6 +133,41 @@ modele('couverture-F-fenetres', GEN, 'p1', `
     `<div class="m-fen" style="left:${x - 8}mm; top:${56 + (k === 1 ? -8 : 0)}mm; height:${COUPE_HAUT - 56 + 4 + (k === 1 ? 8 : 0)}mm">
       <img class="photo-region" src="${PHOTO(f)}" alt=""><span>${n}</span></div>`).join('')
   + `<div class="m-abs m-lune">${lune()}</div><svg viewBox="0 0 600 430"`));
+
+/* ——— couverture, troisième série : des strates droites, sobres (3 octobre, soir) ——— */
+const ETIQ = `
+  .couverture .sanitaire-couv { left: auto; right: calc(var(--marge-int) + var(--fp)); text-align: right;
+    color: var(--encre) !important; opacity: .75; z-index: 5; }
+  .etiq-strate-el { font: 500 9.6px 'IBM Plex Sans', sans-serif; letter-spacing: 1.6px; }
+  .etiq-nb-el { font: 400 12px 'Young Serif', serif; }
+`;
+const COUPE_SVG = /<svg viewBox="0 0 600 430"[\s\S]*?<\/svg>/;
+
+modele('couverture-G-aquarelle', GEN, 'p1', ETIQ + `
+  .couverture .sanitaire-couv { color: var(--silex); }
+`, (s) => s.replace(COUPE_SVG, coupeElegante({ style: 'aquarelle' })));
+
+modele('couverture-H-photo-et-strates', GEN, 'p1', ETIQ + `
+  .m-ciel { left: 0; right: 0; top: 0; height: ${COUPE_HAUT + 2}mm; overflow: hidden; }
+  .m-ciel::after { content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,.12) 40%, rgba(42,57,66,0) 70%),
+      linear-gradient(90deg, rgba(42,57,66,.45) 0%, rgba(42,57,66,0) 55%); }
+  .couverture .coupe { z-index: 2; }
+  .couverture .titre-couv, .couverture .sous-couv, .edition-couv { z-index: 3; }
+  .couverture .titre-couv { color: var(--craie); }
+  .couverture .titre-couv em { color: var(--or); }
+  .couverture .sous-couv { color: var(--craie); opacity: 1; }
+  .edition-couv .cible, .edition-couv .annee { color: var(--craie); }
+  .m-reserve { position: absolute; z-index: 3; left: calc(var(--marge-int) - 4mm); top: 13mm; width: 70mm; height: 24mm;
+    background: var(--craie); border-radius: 1.5mm; }
+  .logo-couv { z-index: 4; }
+`, (s) => s.replace('<img class="logo-couv"', `<div class="m-abs m-ciel"><img class="photo-region" src="${PHOTO('Sud-Ouest.jpg')}" alt=""></div>
+   <div class="m-reserve"></div><img class="logo-couv"`).replace(COUPE_SVG, coupeElegante({ style: 'fine' })));
+
+modele('couverture-I-gravure', GEN, 'p1', ETIQ + `
+  .couverture .sanitaire-couv { color: var(--silex); }
+  .couverture .coupe { border-top: 1.2pt solid #C9AE4A; }
+`, (s) => s.replace(COUPE_SVG, coupeElegante({ style: 'gravure' })));
 
 /* ——————————————————————————————————— page 2, l'agence ——— */
 const CREDO_POSE = `
