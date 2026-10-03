@@ -7,7 +7,7 @@ import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
-const LIEN = 'https://drive.google.com/file/d/18jcYYdNBDIZzRgf84NML8M3eGpujcJ6b/view?usp=sharing';
+const LIEN = 'https://drive.google.com/file/d/1MqKTUrDruyCBBxMYoCU3CH6Gh9NiZILF/view?usp=sharing';
 const SANITAIRE = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/agence.json'), 'utf8')).message_sanitaire
   || "L'abus d'alcool est dangereux pour la santé. À consommer avec modération.";
 const SORTIE = path.join(RACINE, 'dist/salon-prive-2026-affiche-qr.pdf');

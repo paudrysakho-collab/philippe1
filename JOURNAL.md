@@ -958,3 +958,4 @@ l'agence (`src/images/qr-catalogue-salon.png`, il mène au PDF du salon sur le D
 pour découvrir le catalogue », message sanitaire. QR relu dans le PDF rendu : bon lien.
 - Refaite sobre en encre à la demande de l'agence : plus de photo en haut, fond blanc, logo,
   « Salon Privé / Vins & Terroirs », « Le catalogue du salon », QR de 120 mm, une ligne.
+- Nouveau QR code fourni par l'agence (l'ancien était une erreur) : il mène à https://drive.google.com/file/d/1MqKTUrDruyCBBxMYoCU3CH6Gh9NiZILF/view ; relu dans le PDF rendu.
