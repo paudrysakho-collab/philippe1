@@ -52,26 +52,28 @@ PALIERS = {
     21: {32: P(144, 300, unite="cols") + ["1 palette"],
          33: P(72, 144),      # jus de cépages 50 cl ; l'agence, 3 octobre : « 72 et 144 pour 50 cl »
          "33:1": P(144, 300)},  # jus de cépages 25 cl (2e tableau) : « 144 et 300 pour les 25 cl »
-    22: UNIQUE, 23: P(60, 120, 240), 24: UNIQUE, 25: P(36, 60, 120, 240, unite="cols"),
+    22: UNIQUE, 23: P(60, 120, 240), 24: UNIQUE, 25: P(60, 120, 240, unite="cols"),   # « à partir de 36 » retiré (agence, 3 oct. soir)
     26: P(60, 120, 300),
 }
 
 # le bas de fiche : l'offre du stand, telle que l'agence l'a dite
 OFFRE = {
-    1: "Offre possible en fonction du volume.",
+    1: "Offre possible à étudier en fonction du volume et de la référence.",
     3: "Offre 11+1 à partir de 180 cols.",
     4: "Offre 11+1 à partir de 300 cols.",
     6: "Offre à partir de 300 cols.",
     7: "Offre 11+1 à partir de 240 cols ; offre 5+1 à partir de 540 cols.",
-    8: "Offre 11+1 à partir de 42 cols.",
+    8: "Offre 11+1 à partir de 120 cols.",   # l'agence, 3 octobre au soir
     9: "Offre 11+1 à partir de 240 cols.",
+    12: "Offre 11+1 à partir de 300 cols.",
     13: "Offre 11+1 à partir de 180 cols.",
     14: "Offre 11+1 à partir de 240 cols.",
     16: "Offre à partir de 120 cols, en général 11+1, selon le volume.",
     17: "Offre à partir de 120 cols.",
     18: "Offre 11+1 à partir de 120 cols.",
-    19: "Offre en fonction du volume.",
+    19: "Offre possible à étudier en fonction du volume et de la référence.",
     20: "Offre 11+1 à partir de 120 cols.",
+    21: "Offre 11+1 à partir de 240 cols.",
     23: "Offre 11+1 à partir de 120 cols.",
     24: "Offre possible à étudier en fonction du volume et de la référence.",
     25: "Offre 11+1 à partir de 120 cols.",
@@ -205,7 +207,7 @@ VINS = {
  20: [("Stratéus Rouge", eu("11,45", "11,00", "10,50"), O11, {}),
       ("Néolithik Rouge", eu("14,00", "12,50", "12,00"), O11, {}),
       ("Koloss Rouge", eu("6,50", "6,00", "5,50"), O11, {}),
-      ("Koloss Doux", eu("6,50", "6,00", "5,50"), O11, {}),
+      ("Koloss Doux", eu("6,50", "6,00", "5,50"), O11, {"millesime": "2025"}),   # agence : Doux 2025
       ("Stratéus Blanc", eu("11,45", "11,00", "10,50"), O11, {}),
       ("Néolithik Blanc", eu("14,00", "12,50", "12,00"), O11, {})],
  21: [("Chant de Lune", eu("7,78", "7,16", "6,13"), O11, {}),
@@ -228,10 +230,10 @@ VINS = {
       ("Rose de Solemme", eu("36,00", "35,10", "34,20"), None, {})],
  24: [("Château Lafargue", eu("6,90"), None, {}), ("Amphora", eu("10,10"), None, {}),
       ("La Confiance", eu("8,45"), None, {})],
- 25: [("Courant Chenin", eu("6,95", "6,45", "5,95", "5,75"), O11, {}),
-      ("Source Melon", eu("5,95", "5,45", "4,95", "4,75"), O11, {}),
-      ("Reflet Gamay", eu("6,95", "6,45", "5,95", "5,75"), O11, {}),
-      ("L'Eberluant", eu("6,95", "6,45", "5,95", "5,75"), None, {})],
+ 25: [("Courant Chenin", eu("6,45", "5,95", "5,75"), O11, {}),
+      ("Source Melon", eu("5,45", "4,95", "4,75"), O11, {}),
+      ("Reflet Gamay", eu("6,45", "5,95", "5,75"), O11, {}),
+      ("L'Eberluant", eu("6,45", "5,95", "5,75"), None, {})],
  26: [("AOP Bourgogne Chardonnay", eu("8,90", "8,60", "8,10"), O11, {}),
       ("AOC Pouilly-Vinzelles", eu("15,30", "15,00", "14,30"), O11, {}),
       ("AOC Auxey-Duresses", eu("22,50", "22,20", "21,20"), O11, {}),

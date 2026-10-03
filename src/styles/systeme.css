@@ -114,7 +114,8 @@ a { color: inherit; text-decoration: none; }
   font: 500 7.5pt var(--technique); color: var(--silex); opacity: .72;
   font-variant-numeric: tabular-nums;
 }
-.page.verso .folio { right: auto; left: calc(var(--marge-ext) + var(--carotte-l) + var(--fp)); }
+/* l'agence, 3 octobre au soir : le numéro de page toujours à droite, le message sanitaire à gauche */
+.page.verso .folio { right: calc(var(--marge-int) + var(--fp)); }
 
 /* ——— Message sanitaire : présent sur chaque page ——— */
 .sanitaire {
@@ -122,7 +123,7 @@ a { color: inherit; text-decoration: none; }
   font: 400 5.6pt var(--technique); letter-spacing: .03em;
   color: var(--silex); opacity: .55; text-transform: uppercase;
 }
-.page.verso .sanitaire { left: auto; right: calc(var(--marge-int) + var(--fp)); text-align: right; }
+.page.verso .sanitaire { left: calc(var(--marge-ext) + var(--carotte-l) + var(--fp)); }
 
 /* ============================================================================
    FICHE DOMAINE

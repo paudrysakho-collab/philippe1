@@ -909,3 +909,24 @@ page 2 **A** (Spectral, photo du Beaujolais), bas de fiche **A** (photo de régi
 de Wikimedia Commons (licences libres, `credits.md`). Le .pptx dépassait 50 Mo (photos en
 PNG répétées sur chaque fiche) : déco photo exportée en JPEG, 28 Mo. Contrôles au vert :
 52 et 48 pages, 715 et 439 prix retrouvés.
+
+## 3 octobre, soir — relecture du Salon Privé par l'agence
+
+- **Couverture** : « Tarif et offres valables du 5 octobre au 14 novembre 2026 » dans un
+  cartouche violet à filet or, sous le sous-titre ; bande de strates ramenée de 148 à 108 mm
+  (le ciel descend d'autant) ; la date et le lieu, blancs et perdus dans le ciel, posés sur une
+  pastille gneiss. Même chose dans le .pptx (`deco.mjs` rend ciel et strates aux hauteurs du salon).
+- **Bas de fiche** : l'offre du stand d'abord, la note de prix dessous.
+- **Deux notes de prix seulement** au salon (`noteUniforme`, `pieces.mjs`) : « hors frais de
+  transport » (dont tous les « départ ») ou « franco de port ».
+- **Offres** : formule unique « Offre possible à étudier en fonction du volume et de la
+  référence. » (Balac, Blacailloux, L'Escarderie) ; Trichon 11+1 dès 300 cols ; Falfas 11+1
+  dès 120 cols ; Exea et jus 11+1 dès 240 cols. Les autres offres restent telles que l'agence
+  les a dictées (stands 6, 16, 17 compris).
+- **« Possibilité de panacher »** retiré des en-têtes, sauf les trois familles (Goichot / Cray /
+  Guignottes ; Strasser Radziwill ; Exea et jus), où l'en-tête nomme les **autres** membres.
+- Berteaud Manceau : colonne « à partir de 36 » supprimée (435 prix au lieu de 439) ;
+  « AOC Auxey-Duresses Blanc » ; Koloss Doux 2025.
+- **Folios toujours à droite**, dans les deux éditions (le message sanitaire passe à gauche
+  sur les pages paires).
+- User-Agent de `chercher-photos-regions.py` : retiré l'adresse e-mail.

@@ -166,14 +166,15 @@ function poserCarotte(s, numero, region) {
 function folio(s, numero, { clair = false } = {}) {
   const { verso } = geo(numero);
   s.addText(String(numero), {
-    x: verso ? mm(MARGE.ext + CAROTTE) : mm(PAGE_L - MARGE.ext - CAROTTE - 15),
+    // toujours à droite (l'agence, 3 octobre au soir), comme .folio du PDF
+    x: verso ? mm(PAGE_L - MARGE.int - 15) : mm(PAGE_L - MARGE.ext - CAROTTE - 15),
     y: mm(PAGE_H - 11), w: mm(15), h: mm(5), margin: 0,
-    align: verso ? 'left' : 'right', fontFace: F.tech, fontSize: 7.5,
+    align: 'right', fontFace: F.tech, fontSize: 7.5,
     color: clair ? C.craie : C.silex, transparency: 28,
   });
   s.addText(AG.message_sanitaire, {
-    x: verso ? mm(PAGE_L - MARGE.int - 95) : mm(MARGE.int), y: mm(PAGE_H - 11),
-    w: mm(95), h: mm(5), margin: 0, align: verso ? 'right' : 'left',
+    x: verso ? mm(MARGE.ext + CAROTTE) : mm(MARGE.int), y: mm(PAGE_H - 11),
+    w: mm(95), h: mm(5), margin: 0, align: 'left',
     fontFace: F.tech, fontSize: 5.6, color: clair ? C.craie : C.silex, transparency: 45,
   });
 }
@@ -441,9 +442,10 @@ function slideFiche(s, numero, desc) {
     s.addShape(pres.ShapeType.line, { x, y: y + mm(2), w: 0, h: mm(hNote - 2),
       line: { color: C.violet, width: 1.4 } });
     // au salon, l'offre du stand suit la note de prix, en violet (comme .offre-salon du PDF)
+    // l'offre d'abord, la note de prix dessous (l'agence, 3 octobre au soir)
     s.addText([
-      { text: texteNotePrix(d), options: { color: C.encre, italic: !d.note_prix, breakLine: !!d.offre_salon } },
-      ...(d.offre_salon ? [{ text: d.offre_salon, options: { color: C.violet, bold: true } }] : []),
+      ...(d.offre_salon ? [{ text: d.offre_salon, options: { color: C.violet, bold: true, breakLine: true } }] : []),
+      { text: texteNotePrix(d), options: { color: C.encre, italic: !d.note_prix } },
     ], { x: x + mm(3), y: y + mm(2), w: mm(CADRE_L - 3), h: mm(hNote - 2),
       margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, lineSpacingMultiple: 1.1 });
     y += mm(hNote);
@@ -513,8 +515,9 @@ function titreSection(s, numero, titre, sous) {
 
 function slideCouverture(s, numero) {
   // couverture H : le ciel en photo, les strates droites dessous, une réserve claire sous le logo
-  s.addImage({ path: img('couv-ciel'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H - 148 + 2) });
-  s.addImage({ path: img('coupe-titree'), x: 0, y: mm(PAGE_H - 148), w: mm(PAGE_L), h: mm(148) });
+  const HC = SALON_ED ? 108 : 148;   // hauteur de la bande de strates (plus basse au salon)
+  s.addImage({ path: img('couv-ciel'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H - HC + 2) });
+  s.addImage({ path: img('coupe-titree'), x: 0, y: mm(PAGE_H - HC), w: mm(PAGE_L), h: mm(HC) });
   s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int - 4), y: mm(13), w: mm(70), h: mm(24),
     fill: { color: C.craie }, line: { color: C.craie, width: 0 }, rectRadius: 0.05 });
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
@@ -528,7 +531,19 @@ function slideCouverture(s, numero) {
       fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });
     s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
       fontFace: F.courant, fontSize: 10.5, color: C.craie, lineSpacingMultiple: 1.4 });
-    // la date et le lieu, en haut, en face du logo (comme .edition-couv du PDF)
+    // la date et le lieu, en haut, en face du logo, sur une pastille gneiss (comme .edition-couv)
+    s.addShape(pres.ShapeType.roundRect, { x: mm(PAGE_L - MARGE.int - 72), y: mm(13), w: mm(76), h: mm(23.5),
+      fill: { color: C.gneiss }, line: { color: C.gneiss, width: 0 }, rectRadius: 0.05 });
+    // la validité du tarif et des offres, bien visible sous le titre (comme .validite-couv)
+    s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int), y: mm(110), w: mm(112), h: mm(17),
+      fill: { color: C.violet }, line: { color: C.violet, width: 0 }, rectRadius: 0.06 });
+    s.addShape(pres.ShapeType.rect, { x: mm(MARGE.int), y: mm(110), w: mm(1.6), h: mm(17),
+      fill: { color: C.or }, line: { color: C.or, width: 0 } });
+    s.addText([
+      { text: 'TARIF ET OFFRES VALABLES', options: { fontFace: F.tech, fontSize: 9, bold: true, charSpacing: 0.3, breakLine: true } },
+      { text: 'du 5 octobre au 14 novembre 2026', options: { fontFace: F.titre, fontSize: 17 } },
+    ], { x: mm(MARGE.int + 5), y: mm(110), w: mm(105), h: mm(17), margin: 0, valign: 'middle',
+      color: C.craie, lineSpacingMultiple: 1.1 });
     s.addText(EV.date_texte, { x: mm(PAGE_L - MARGE.int - 95), y: mm(16), w: mm(95), h: mm(8.5),
       margin: 0, align: 'right', valign: 'top', fontFace: F.titre, fontSize: 19, color: C.craie });
     s.addText(`${EV.lieu}\n${EV.commune}`.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 95), y: mm(25),

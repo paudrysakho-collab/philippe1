@@ -338,7 +338,7 @@ STANDS = {
    L(12, appellation="AOC Pouilly-Vinzelles", couleur="Blanc", millesime="2023")),
   # Scans du 3 octobre : c'est l'Auxey-Duresses BLANC (2023/2024) qui est surligné, pas le rouge
   # du tarif de septembre (QUESTIONS, point 31).
-  ("AOC Auxey-Duresses 2023",
+  ("AOC Auxey-Duresses Blanc 2023",   # « tu précises que c'est blanc » (agence, 3 oct. soir)
    L(12, "au tarif annoté, l'Auxey-Duresses surligné est le blanc ; le tarif de septembre n'a qu'un rouge",
      couleur_annotee="tarif annoté par l'agence, 3 octobre 2026 (scan 4, p.12)",
      appellation="AOC Auxey-Duresses", couleur="Blanc", millesime="2023")),

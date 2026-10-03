@@ -18,6 +18,27 @@ export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/salon-pr
 /** Le mode de prix d'un stand : « paliers » (ceux du tarif du domaine) ou « unique ». */
 export const modePrix = (stand) => stand?.mode_prix || SALON.mode_prix || 'paliers';
 
+/* L'agence, 3 octobre au soir : « Possibilité de panacher » seulement pour les familles (Goichot,
+   Cray et Guignottes ; les quatre domaines Strasser Radziwill ; Exea et ses jus), en nommant les
+   AUTRES membres ; ailleurs, l'en-tête de tableau ne le dit plus. */
+const FAMILLES_SALON = new Set(['goichot-cray-guignottes', 'strasser-radziwill', 'exea']);
+const NOMS_PANACHAGE = { 33: "Famille d'Exea — Jus de cépages" };
+function intituleSalon(d, t) {
+  if (!/panacher/i.test(t.intitule || '')) return t.intitule;
+  const g = general.agence.groupes_panachage.find((x) => x.id === d.panachage_groupe);
+  if (!g || !FAMILLES_SALON.has(g.id)) return '';
+  const noms = g.domaines.filter((n) => n !== d.numero)
+    .map((n) => NOMS_PANACHAGE[n] || general.domaines.find((x) => x.numero === n).nom);
+  return `Possibilité de panacher avec ${noms.length > 1 ? `${noms.slice(0, -1).join(', ')} et ${noms.at(-1)}` : noms[0]}`;
+}
+/** Deux formulations seulement pour la note de prix au salon. */
+function noteUniforme(n) {
+  const t = (n || '').toLowerCase();
+  return t.includes('franco') && !t.includes('départ')
+    ? '* Prix de la bouteille H.T. franco de port.'
+    : '* Prix de la bouteille H.T. hors frais de transport.';
+}
+
 /** Le catalogue de l'édition salon, construit depuis le catalogue général et le fichier du salon. */
 function editionSalon(cat) {
   const parNumero = Object.fromEntries(cat.domaines.map((d) => [d.numero, d]));
@@ -41,7 +62,7 @@ function editionSalon(cat) {
       const paliers = s.paliers_salon?.[`${d.numero}:${ti}`] || s.paliers_salon?.[String(d.numero)]
         || (unique ? ['Prix salon'] : t.paliers);
       return {
-        intitule: t.intitule, ...(t.famille ? { famille: t.famille } : {}), paliers,
+        intitule: intituleSalon(d, t), ...(t.famille ? { famille: t.famille } : {}), paliers,
         lignes: parTableau.get(ti).map((v) => ({
           appellation: v.appellation || '', cuvee: v.cuvee, couleur: v.couleur,
           millesime: v.millesime, contenance: v.contenance,
@@ -61,8 +82,8 @@ function editionSalon(cat) {
     const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
     return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
       offre_salon: s.offre_salon || null,
-      // la note de prix précisée par l'agence pour le salon (Boehler : franco de port)
-      ...(s.note_prix_salon ? { note_prix: s.note_prix_salon } : {}) };
+      // deux formulations seulement (l'agence, 3 octobre au soir) ; Boehler : franco de port
+      note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });
   const presents = new Set(domaines.map((d) => d.numero));
   const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));
@@ -467,7 +488,7 @@ export function ligneHtml(l, t, cle) {
 /** Un tableau, ou une tranche de tableau quand il se poursuit sur la page suivante. */
 export function tableauHtml(t, lignes, { suite = false, cleTableau = '' } = {}) {
   const paliers = t.paliers.map((p) => `<div class="cel-pal">${esc(p)}</div>`).join('');
-  const titre = esc(t.intitule) + (t.famille ? ' · ' + esc(t.famille) : '') + (suite ? ' (suite)' : '');
+  const titre = [t.intitule, t.famille].filter(Boolean).map(esc).join(' · ') + (suite && (t.intitule || t.famille) ? ' (suite)' : '');
   // Quatre paliers : le bloc de prix s'élargit pour que les intitulés tiennent.
   return `<table class="tarif${t.paliers.length > 3 ? ' p4' : ''}" data-tableau="${cleTableau}">
     <colgroup><col style="width:6.5mm"><col><col style="width:17mm"><col style="width:16mm">

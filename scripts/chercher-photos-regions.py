@@ -18,7 +18,7 @@ import urllib.request
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "data/photos-regions-candidats.json"
 VIGNETTES = RACINE / "build/photos-regions"
-UA = "SCIO-catalogue/1.0 (catalogue Agence SCIO ; contact via paudrysakho@gmail.com)"
+UA = "SCIO-catalogue/1.0 (catalogue Agence SCIO)"
 API = "https://commons.wikimedia.org/w/api.php"
 LICENCES = re.compile(r"^(CC0|CC BY(-SA)? [0-9.]+|Public domain|PD)", re.I)
 

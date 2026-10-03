@@ -44,11 +44,13 @@ Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {
 });
 
 // couverture H (choix de l'agence, 3 octobre) : le ciel en photo, les strates droites dessous
-blocs.push({ photo: true, nom: 'couv-ciel', l: 216, h: 117, html:
+// au salon, la bande de strates est plus basse (108 mm) : le ciel descend d'autant
+const SALON_D = BASE.startsWith('salon');
+blocs.push({ photo: true, nom: 'couv-ciel', l: 216, h: SALON_D ? 157 : 117, html:
   `<img src="${photoRegion('Sud-Ouest')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,.12) 40%, rgba(42,57,66,0) 70%),
      linear-gradient(90deg, rgba(42,57,66,.45) 0%, rgba(42,57,66,0) 55%)"></div>` });
-blocs.push({ nom: 'coupe-titree', l: 216, h: 151, html:
+blocs.push({ nom: 'coupe-titree', l: 216, h: SALON_D ? 111 : 151, html:
   `<div style="position:absolute;inset:0">${coupeElegante({ style: 'fine' })}</div>` });
 blocs.push({ nom: 'coupe-nue', l: 176, h: 42, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
