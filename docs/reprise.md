@@ -226,9 +226,8 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
   feuille, cep, lune, soleil, paysage de coteaux).
 
 **À faire ensuite** :
-1. **Recharger la photo de Bourgogne en grand** (aujourd'hui 1280 px : flou à l'impression) :
-   `Bourgogne` dans `data/photos-regions.json`, puis `python3 scripts/preparer-photos-regions.py`,
-   `npm run build`, `npm run salon`.
+1. ~~Recharger la photo de Bourgogne en grand~~ : **fait le 3 octobre au soir** (original
+   3072 × 1461 px, traité en 2400 × 1141 ; les deux catalogues refaits).
 2. **Question restante pour Laurent** (`docs/questions-laurent.md`) : prix du Pinot Noir des
    Guignottes (stand 26), aujourd'hui 8,90 / 8,60 / 8,10 en attendant.
 3. Si l'agence le demande : poser quelques petits dessins de `dessins.mjs` (jamais dans les

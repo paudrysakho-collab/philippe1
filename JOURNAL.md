@@ -909,3 +909,14 @@ page 2 **A** (Spectral, photo du Beaujolais), bas de fiche **A** (photo de régi
 de Wikimedia Commons (licences libres, `credits.md`). Le .pptx dépassait 50 Mo (photos en
 PNG répétées sur chaque fiche) : déco photo exportée en JPEG, 28 Mo. Contrôles au vert :
 52 et 48 pages, 715 et 439 prix retrouvés.
+
+## 3 octobre 2026, soir — la photo de Bourgogne en grand
+
+L'original de Commons (Pommard, 3072 × 1461 px) remplace la vignette de 1280 px, floue à
+l'impression : traité en 2400 × 1141 (`preparer-photos-regions.py`, seule la Bourgogne a son
+original dans le conteneur, les autres gardent leur version déjà traitée). Commons répondait
+429 à l'original : il est passé au 7e essai, une requête toutes les 75 s (la vignette de
+1920 px, elle, passe tout de suite : solution de repli). Comparaison au pixel avec les PDF
+d'avant : seules changent les pages qui portent la photo (catalogue général p.14 à 19 ; salon
+p.13 à 18). Contrôles au vert : 52 et 48 pages, 715 et 439 prix, polices embarquées.
+Aperçus : `epreuves/apercus/bourgogne-hd/`.
