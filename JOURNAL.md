@@ -956,3 +956,5 @@ Affiche A4 portrait (`npm run affiche-qr` → `dist/salon-prive-2026-affiche-qr.
 Sud-Ouest et titre de la couverture, « Le catalogue du Salon Privé », le QR code fourni par
 l'agence (`src/images/qr-catalogue-salon.png`, il mène au PDF du salon sur le Drive), « Scannez
 pour découvrir le catalogue », message sanitaire. QR relu dans le PDF rendu : bon lien.
+- Refaite sobre en encre à la demande de l'agence : plus de photo en haut, fond blanc, logo,
+  « Salon Privé / Vins & Terroirs », « Le catalogue du salon », QR de 120 mm, une ligne.
