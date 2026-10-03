@@ -807,3 +807,13 @@ chaque PDF, et chaque page regardée en image. Trois défauts trouvés et corrig
   comme dans le catalogue (« Jus de cépages »). « Vazart-Coquart » ne se coupe plus au trait
   d'union ; plus de mot isolé.
 - QUESTIONS 26 : le dossier liste deux Premières Fleurs (Blanc et Rouge 2025), pas une.
+
+## 3 octobre 2026 — le sommaire nomme les Vignobles Strasser Radziwill
+
+Demande de l'agence : dans le sommaire, les quatre domaines du groupe (n°16 à 19, stand 7
+au salon) portent « (Vignobles Strasser Radziwill) » en petit. La mention vit dans les
+données (`mention_sommaire` du groupe, `data/agence.json`) et s'écrit sous le nom : sur la
+même ligne, « Domaine Le Prieuré des Papes (Vignobles Strasser Radziwill) » ne tenait pas
+dans la colonne et le nom aurait été tronqué. Ces quatre lignes passent de 5,6 à 8,8 mm ;
+le partage des colonnes en tient compte. Même chose dans les deux .pptx, et dans l'édition
+du salon.

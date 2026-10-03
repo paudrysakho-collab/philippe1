@@ -23,7 +23,8 @@
   "groupes_panachage": [
     { "id": "villebois-divin", "libelle": "Domaine Jean de Villebois et Divin No Low", "domaines": [6, 7] },
     { "id": "goichot-cray-guignottes", "libelle": "Maison André Goichot, Château du Cray et Domaine Les Guignottes", "domaines": [12, 13, 14] },
-    { "id": "strasser-radziwill", "libelle": "Les quatre domaines Strasser Radziwill", "domaines": [16, 17, 18, 19] },
+    { "id": "strasser-radziwill", "libelle": "Les quatre domaines Strasser Radziwill", "domaines": [16, 17, 18, 19],
+      "mention_sommaire": "Vignobles Strasser Radziwill" },
     { "id": "exea", "libelle": "Famille d’Exea : les vins et les jus de cépages", "domaines": [32, 33] }
   ]
 }

@@ -10,7 +10,7 @@ import {
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, emplacementPour, photoDe, creditPhotos,
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
-import { entreesIndex, colonnesSommaire, SOMMAIRE, texteNotePrix, SALON_ED, ED, NB_VINS,
+import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED, ED, NB_VINS,
   numero as numeroAffiche }
   from '../src/gabarits/pages.mjs';
 
@@ -612,6 +612,13 @@ function slideSommaire(s, numero) {
         line: { color: C.violet, width: 0.9 } });
       y += bande + apresBande;
       b.doms.forEach((d) => {
+        // un domaine d'un groupe : la mention en petit sous le nom, comme dans le PDF
+        const mention = mentionSommaire(d);
+        const hl = mention ? SOMMAIRE.ligneMention : ligne;
+        if (mention) {
+          s.addText(`(${mention})`, { x: mm(cx + 8.5), y: mm(y + ligne - 0.6), w: mm(colonne - 18), h: mm(3.2),
+            margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 7.2, color: C.gneiss });
+        }
         s.addText(String(numeroAffiche(d)), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
           align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true, color: C.violet });
         s.addText(d.nom, { x: mm(cx + 8.5), y: mm(y), w: mm(colonne - 18), h: mm(ligne), margin: 0,
@@ -619,9 +626,9 @@ function slideSommaire(s, numero) {
         s.addText(String(pageDe[d.numero]), { x: mm(cx + colonne - 10), y: mm(y), w: mm(9), h: mm(ligne),
           margin: 0, align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true,
           color: C.silex });
-        s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + ligne), w: mm(colonne), h: 0,
+        s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + hl), w: mm(colonne), h: 0,
           line: { color: 'C9CFC9', width: 0.3 } });
-        y += ligne;
+        y += hl;
       });
       y += entreRegions;
     });

@@ -168,13 +168,17 @@ export function pageAgence() {
    avec leur page, sur deux colonnes. Version sobre, demandée par l'agence pour l'impression :
    une seule encre pour le texte, et de la couleur de strate seulement dans une pastille.
    Les hauteurs sont fixes (en mm) : le .pptx les reprend telles quelles. */
-export const SOMMAIRE = { bande: 7.6, ligne: 5.6, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
+export const SOMMAIRE = { bande: 7.6, ligne: 5.6, ligneMention: 8.8, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
+/** La mention du groupe, en petit sous le nom dans le sommaire (l'agence, 3 octobre : les
+    quatre domaines des Vignobles Strasser Radziwill). Elle vit dans data/agence.json. */
+export const mentionSommaire = (d) => groupeDe(d)?.mention_sommaire || null;
+const hauteurLigne = (d) => (mentionSommaire(d) ? SOMMAIRE.ligneMention : SOMMAIRE.ligne);
 
 /** Les régions et leurs domaines, coupés en deux colonnes de hauteurs voisines. */
 export function colonnesSommaire() {
   const blocs = REGIONS.map((nom) => ({ nom, doms: catalogue.domaines.filter((d) => d.region === nom) }))
     .filter((b) => b.doms.length);
-  const h = (b) => SOMMAIRE.bande + SOMMAIRE.apresBande + b.doms.length * SOMMAIRE.ligne;
+  const h = (b) => SOMMAIRE.bande + SOMMAIRE.apresBande + b.doms.reduce((n, d) => n + hauteurLigne(d), 0);
   const total = blocs.reduce((a, b) => a + h(b) + SOMMAIRE.entreRegions, 0);
   let cumul = 0, coupe = blocs.length;
   for (let i = 0; i < blocs.length; i++) {
@@ -209,8 +213,9 @@ export function sommaire(pagesParDomaine) {
     return `<div class="som-region">
       <div class="som-bande ${b.nom === 'Champagne' ? 'claire' : ''}" style="--strate:${s.hex}">
         <i class="som-pastille"></i><span>${esc(b.nom)}</span></div>
-      <ul>${b.doms.map((d) => `<li><a href="#p${pagesParDomaine.get(d.numero)}">
-        <span class="n">${numero(d)}</span><span class="nom">${esc(d.nom)}</span>
+      <ul>${b.doms.map((d) => `<li${mentionSommaire(d) ? ' class="avec-mention"' : ''}><a href="#p${pagesParDomaine.get(d.numero)}">
+        <span class="n">${numero(d)}</span><span class="nom">${esc(d.nom)}${mentionSommaire(d)
+          ? `<small class="som-mention">(${esc(mentionSommaire(d))})</small>` : ''}</span>
         <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul></div>`;
   }).join('');
   const [gauche, droite] = colonnesSommaire();

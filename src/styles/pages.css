@@ -103,6 +103,11 @@
 }
 .sommaire li .nom { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sommaire li .pg { font: 600 9pt var(--technique); color: var(--silex); font-variant-numeric: tabular-nums; }
+/* un domaine d'un groupe : la mention du groupe en petit, entre parenthèses, sous son nom ;
+   le numéro et la page restent sur la ligne du nom */
+.sommaire li.avec-mention a { height: 8.8mm; align-items: baseline; padding-top: .5mm; }
+.sommaire li.avec-mention .nom { line-height: 1.2; }
+.som-mention { display: block; font: 400 7.2pt var(--technique); color: var(--gneiss); letter-spacing: .01em; margin-top: .2mm; }
 .som-legende {
   border-top: .8pt solid var(--violet); padding-top: 2.6mm;
   font: 400 7.4pt var(--technique); color: var(--silex);
