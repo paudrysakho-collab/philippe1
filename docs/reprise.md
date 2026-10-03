@@ -135,8 +135,19 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
 
 ## 7. La suite : ta mission, c'est **mettre les prix**
 
-La prochaine session n'a qu'un rôle (l'agence, 3 octobre) : **remettre les prix**. Rien
-d'autre ne change : ni la mise en page, ni les textes, ni les photos, ni `CLAUDE.md`.
+La mission principale (l'agence, 3 octobre) : **remettre les prix**. Des tâches annexes
+peuvent venir s'y ajouter. Ne touche à rien d'autre de toi-même ; si l'agence le demande :
+- **une retouche de page** : charge d'abord les compétences `da-scio` (et `tableau-tarif`
+  pour un tableau), refais `npm run build` et `npm run salon`, regarde les pages touchées en
+  image (`epreuve-pages`), tiens les 52 pages au plus ;
+- **un texte de domaine ou le haut d'une fiche** change : relance aussi
+  `regler-lettrines.py` (section 3) ;
+- **une photo** : relis d'abord le « piège des photos » (section 3) et `photos-domaines` ;
+- **un fait** (texte, label, vin) : seulement depuis les sources de la section 4, sinon
+  `QUESTIONS.md` ;
+- **`CLAUDE.md`** : la proposition du 2 octobre attend son feu vert (fin de section).
+Chaque décision nouvelle de l'agence va dans `JOURNAL.md` et, si elle dure, dans les
+sections 4 et 5 de ce fichier.
 
 - **Prix du Salon Privé** (cases vides aujourd'hui) : l'agence remplit
   `tableur/prix-salon-prive-2026.xlsx` (une ligne par vin, rangée par stand). Pour chaque
@@ -152,8 +163,9 @@ d'autre ne change : ni la mise en page, ni les textes, ni les photos, ni `CLAUDE
   image aux fiches touchées, commit, push, et envoyer à l'agence les PDF et .pptx refaits.
   Les lettrines ne bougent pas : inutile de relancer `regler-lettrines.py`.
 
-Pour mémoire, en attente de l'agence et hors de cette mission : la mise au point de
-`CLAUDE.md` (proposition faite le 2 octobre) et les questions de la section 6.
+En attente de l'agence : la mise au point de `CLAUDE.md` (garder `CLAUDE.md` court, avec
+l'ordre des sources de la section 4 et les consignes de la section 5 ; ce fichier reste
+« état et reprise ») et les questions de la section 6.
 
 ## 8. Ce qu'on a appris à nos dépens
 
