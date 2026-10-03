@@ -885,3 +885,13 @@ Réponses de l'agence le même jour : Goichot (Chardonnay des Guignottes, Auxey 
 Maison), magnum et bouteille de Brut Réserve, Les Jumelles sans millésime : confirmés ; offre du
 Triton (Haut Marin) **dès 250 cols**, corrigé. Six questions restent pour Laurent
 (`docs/questions-laurent.md`). L'agence : on ne s'occupe que du Salon Privé pour l'instant.
+
+Nouvelles réponses (3 octobre, soir) : **contenance** jamais vide au salon : « 75 cl » quand
+rien n'est précisé, « 1,5 L » pour un magnum (`contenance()`, prix-salon.py) ; **Terroir
+d'Ansouis rouge** ajouté (5,50 / 5,20 / 5,00, offre 5+1) ; **Verchères** : les deux derniers
+prix inversés sur le Mâcon Chardonnay et les Bulles du Puits (6,10 / 5,75 / 5,45 et 6,40 /
+5,75 / 5,45), sur instruction de l'agence ; **Boehler** : « Prix de la bouteille H.T. franco
+de port. » au salon (`note_prix_salon`) ; **jus de cépages d'Exea** : six lignes, 50 cl 2,75 /
+2,39 et 25 cl 1,84 / 1,74, d'après la photo du tarif (`scans-prix/photo-exea-jus-de-cepages.jpg`),
+colonnes « À partir de 144 / 300 bts » comme sur la photo (l'agence a dit 72 et 144 : question
+posée). Falfas confirmé. Salon : 192 lignes avec prix, aucune case vide.

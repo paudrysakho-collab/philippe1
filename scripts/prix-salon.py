@@ -49,7 +49,8 @@ PALIERS = {
     9: P(60, 120, 300), 10: P(42, 120, 300), 11: UNIQUE, 12: P(120, 300, 600, unite="cols"),
     13: UNIQUE, 14: P(120, 240), 15: P(48, 78, 96), 16: UNIQUE, 17: UNIQUE, 18: UNIQUE,
     19: P(120, 180, 600), 20: P(60, 120, 300),
-    21: {32: P(144, 300, unite="cols") + ["1 palette"]},   # les jus (n°33) : pas de prix au salon
+    21: {32: P(144, 300, unite="cols") + ["1 palette"],
+         33: P(144, 300)},   # jus de cépages : photo du tarif envoyée par l'agence, 3 octobre
     22: UNIQUE, 23: P(60, 120, 240), 24: UNIQUE, 25: P(36, 60, 120, 240, unite="cols"),
     26: P(60, 120, 300),
 }
@@ -96,11 +97,12 @@ VINS = {
      ("Cru Mouzillon", eu("7,30"), None, {}), ("Le Prestige de Beaulieu", eu("3,10"), O11, {}),
      ("Cuvée domaine", eu("2,85"), O11, {}), ("Rouge aux lèvres", eu("3,45"), O11, {}),
      ("La Perle", eu("4,60"), None, {})],
- 5: [("AOC Mâcon Chardonnay", eu("6,10", "5,45", "5,75"), None, {}),
+ # l'agence, 3 octobre : « tu inverses les deux derniers prix » (Mâcon Chardonnay, Bulles du Puits)
+ 5: [("AOC Mâcon Chardonnay", eu("6,10", "5,75", "5,45"), None, {}),
      ("AOC Mâcon Mancey Blanc", eu("6,70", "6,50", "6,30"), None, {}),
      ("AOC Mâcon Mancey Rouge", eu("5,75", "5,60", "5,40"), None, {}),
      ("AOC Bourgognes Passe", eu("5,75", "5,60", "5,40"), None, {}),
-     ("Les Bulles du Puits", eu("6,40", "5,45", "5,75"), None, {})],
+     ("Les Bulles du Puits", eu("6,40", "5,75", "5,45"), None, {})],
  6: [("N°1 Littorine", eu("2,68", "2,60", "2,28"), O11, {}),
      ("N°6 Fossiles", eu("2,99", "2,91", "2,56"), O11, {}),
      ("N°3 Gulf Stream", eu("2,99", "2,91", "2,56"), O5, {}),
@@ -210,9 +212,9 @@ VINS = {
       ("Blanc Serame", eu("7,78", "7,16", "6,13"), O11, {}),
       ("Oena", eu("14,00", "14,00", "14,00"), None, {}),
       ("Jardin de Corbières", eu("4,74", "4,36", "4,08"), O11, {}),
-      ("Jus de cépages — Syrah", None, None, {}),
-      ("Jus de cépages — Chardonnay", None, None, {}),
-      ("Jus de cépages — Grenache", None, None, {})],
+      ("Jus de cépages — Syrah", eu("2,75", "2,39"), None, {}),
+      ("Jus de cépages — Chardonnay", eu("2,75", "2,39"), None, {}),
+      ("Jus de cépages — Grenache", eu("2,75", "2,39"), None, {})],
  22: [("Les Silex", eu("4,25"), None, {}), ("Les Gorinières", eu("7,84"), None, {}),
       ("Les Courbes", eu("7,23"), O11, {}), ("Les Amphibol", eu("5,66"), None, {}),
       ("Les Gneiss", eu("5,13"), O11, {}), ("Le Bois Bouquet", eu("6,72"), None, {}),
@@ -247,6 +249,15 @@ VINS = {
 # (stand, après la ligne qui commence par…, champs). `liste_vins` : figure aussi dans la liste
 # des vins dégustés (False pour les magnums, qui ne sont pas sur la carte de Mathéo).
 AJOUTS = [
+ (7, "Terroir d'Ansouis Blanc", dict(fiche=19, tarif={"tableau": 0, "ligne": 4}, appellation="AOC Luberon",
+     cuvee="Terroir d’Ansouis Rouge", couleur="Rouge", millesime="2021", contenance="75 cl",
+     prix_centimes=eu("5,50", "5,20", "5,00"), offre=O5, liste_vins=True,
+     source="l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)")),
+ *[(21, f"Jus de cépages — {c}", dict(fiche=33, appellation=None, cuvee=f"Jus de cépages – {c}",
+     couleur=coul, millesime="—", contenance="25 cl",
+     prix_centimes=eu("1,84", "1,74"), liste_vins=False,
+     source="photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"))
+   for c, coul in (("Syrah", "Rouge"), ("Chardonnay", "Blanc"), ("Grenache", "Rosé"))],
  (1, "Château Balac Rouge", dict(fiche=29, appellation="AOC Haut-Médoc Cru Bourgeois Supérieur",
      cuvee="Château Balac Rouge", couleur="Rouge", millesime="2018", contenance=None,
      prix_centimes=eu("7,25", "7,13", "7,00"), liste_vins=True,
@@ -285,6 +296,20 @@ AJOUTS = [
 ]
 
 
+# La note de prix du salon, quand l'agence l'a précisée (sinon celle de la fiche).
+NOTE = {9: "* Prix de la bouteille H.T. franco de port."}   # l'agence, 3 octobre : « frais de port inclus »
+
+
+def contenance(v):
+    """L'agence, 3 octobre : « soit 75 cl, soit magnum ; quand ce n'est pas précisé, c'est 75 cl ;
+    pour un magnum, 1,5 L ». Pas de trait vide dans la colonne."""
+    c = (v.get("contenance") or "").strip()
+    if not c or c == "—":
+        v["contenance"] = "75 cl"
+    elif c.lower().startswith("magnum"):
+        v["contenance"] = "1,5 L"
+
+
 def norm(t):
     return " ".join(str(t).replace("’", "'").split())
 
@@ -300,6 +325,10 @@ def main():
         par_fiche = pal if isinstance(pal, dict) else {f: pal for f in st["domaines"]}
         st["paliers_salon"] = {str(f): p for f, p in par_fiche.items()}
         st["mode_prix"] = "unique" if all(p == UNIQUE for p in par_fiche.values()) else "paliers"
+        if NOTE.get(n):
+            st["note_prix_salon"] = NOTE[n]
+        else:
+            st.pop("note_prix_salon", None)
         if OFFRE.get(n):
             st["offre_salon"] = OFFRE[n]
         else:
@@ -325,6 +354,7 @@ def main():
             for k, val in autres.items():
                 v[k] = val
             v["prix_source"] = "scans de l'agence, 3 octobre 2026"
+            contenance(v)
             n_prix += prix is not None
             n_vides += prix is None
         # les lignes en plus
@@ -337,6 +367,7 @@ def main():
                 i += 1
             ligne = {"liste": f"(ajout) {champs['cuvee']} {champs['millesime']} {champs['contenance'] or ''}".strip(),
                      "ajout": True, "tarif": None, "note": None, "ecarts": [], **champs}
+            contenance(ligne)
             if ligne.get("offre"):
                 n_offres += 1
             st["vins"].insert(i + 1, ligne)

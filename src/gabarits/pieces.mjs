@@ -59,7 +59,9 @@ function editionSalon(cat) {
     // garde le sien.
     const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
     return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
-      offre_salon: s.offre_salon || null };
+      offre_salon: s.offre_salon || null,
+      // la note de prix précisée par l'agence pour le salon (Boehler : franco de port)
+      ...(s.note_prix_salon ? { note_prix: s.note_prix_salon } : {}) };
   });
   const presents = new Set(domaines.map((d) => d.numero));
   const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));

@@ -46,7 +46,7 @@
      "cuvee": "Château Balac Rouge",
      "couleur": "Rouge",
      "millesime": "2022",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -69,7 +69,7 @@
      "cuvee": "Château Balac Rouge",
      "couleur": "Rouge",
      "millesime": "2018",
-     "contenance": null,
+     "contenance": "75 cl",
      "prix_centimes": [
       725,
       713,
@@ -251,7 +251,7 @@
      "cuvee": "Millésime Expression",
      "couleur": "Blanc effervescent",
      "millesime": "2018",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -338,7 +338,7 @@
      "cuvee": "Terre Rouge",
      "couleur": "Rouge",
      "millesime": "2022/2024",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       1790
      ],
@@ -380,7 +380,7 @@
      "cuvee": "4 saisons",
      "couleur": "Rouge",
      "millesime": "2023/2024",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       1340
      ],
@@ -443,7 +443,7 @@
      "cuvee": "Clos de Cassis",
      "couleur": "Rouge",
      "millesime": "2022/2023",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       2080
      ],
@@ -534,7 +534,7 @@
      "cuvee": "L’Envol",
      "couleur": "Blanc",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -695,8 +695,8 @@
      "ecarts": [],
      "prix_centimes": [
       610,
-      545,
-      575
+      575,
+      545
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
@@ -752,7 +752,7 @@
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2025",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -772,15 +772,15 @@
      "cuvee": "Les Bulles du Puits Rosé Gamay Demi-Sec",
      "couleur": "Rosé effervescent",
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
       640,
-      545,
-      575
+      575,
+      545
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
     }
@@ -967,7 +967,7 @@
      "cuvee": "N°10 Pétillant",
      "couleur": "Pétillant",
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -1102,6 +1102,30 @@
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026",
      "offre": "5+1"
+    },
+    {
+     "liste": "(ajout) Terroir d’Ansouis Rouge 2021 75 cl",
+     "ajout": true,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 4
+     },
+     "note": null,
+     "ecarts": [],
+     "fiche": 19,
+     "appellation": "AOC Luberon",
+     "cuvee": "Terroir d’Ansouis Rouge",
+     "couleur": "Rouge",
+     "millesime": "2021",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      550,
+      520,
+      500
+     ],
+     "offre": "5+1",
+     "liste_vins": true,
+     "source": "l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)"
     },
     {
      "liste": "Le Prieuré Rouge 2024— AOC Côtes du Rhône",
@@ -1787,7 +1811,8 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols."
+   "offre_salon": "Offre 11+1 à partir de 240 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 10,
@@ -2105,7 +2130,7 @@
      "cuvee": "Supernova Extra-Brut Zéro Dosage",
      "couleur": null,
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
@@ -2467,7 +2492,7 @@
      "cuvee": "Juliette Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -2543,7 +2568,7 @@
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -2777,7 +2802,7 @@
      "cuvee": "Brut Réserve Blanc de Blancs",
      "couleur": "Blanc de Blancs",
      "millesime": "—",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       4790,
       4750,
@@ -3307,7 +3332,7 @@
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2024",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -3327,7 +3352,7 @@
      "cuvee": "Les Aigrots",
      "couleur": "Blanc",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -3784,7 +3809,7 @@
      "cuvee": "Koloss Doux",
      "couleur": "Doux",
      "millesime": "2022",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -3830,7 +3855,7 @@
      "cuvee": "Néolitik Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -3921,7 +3946,7 @@
      "cuvee": "Chant de Lune Rouge, disponible en décembre 2026",
      "couleur": "Rouge",
      "millesime": "—",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       1600,
       1472,
@@ -4034,7 +4059,7 @@
      "cuvee": "Jardins de Corbières Rouge, disponible en décembre 2026",
      "couleur": "Rouge",
      "millesime": "—",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       991,
       912,
@@ -4059,8 +4084,30 @@
      "ecarts": [
       "le tarif a la Syrah en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
-     "prix_centimes": null,
+     "prix_centimes": [
+      275,
+      239
+     ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "liste": "(ajout) Jus de cépages – Syrah — 25 cl",
+     "ajout": true,
+     "tarif": null,
+     "note": null,
+     "ecarts": [],
+     "fiche": 33,
+     "appellation": null,
+     "cuvee": "Jus de cépages – Syrah",
+     "couleur": "Rouge",
+     "millesime": "—",
+     "contenance": "25 cl",
+     "prix_centimes": [
+      184,
+      174
+     ],
+     "liste_vins": false,
+     "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
     },
     {
      "liste": "Jus de cépages — Chardonnay",
@@ -4078,8 +4125,30 @@
      "ecarts": [
       "le tarif a le Chardonnay en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
-     "prix_centimes": null,
+     "prix_centimes": [
+      275,
+      239
+     ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "liste": "(ajout) Jus de cépages – Chardonnay — 25 cl",
+     "ajout": true,
+     "tarif": null,
+     "note": null,
+     "ecarts": [],
+     "fiche": 33,
+     "appellation": null,
+     "cuvee": "Jus de cépages – Chardonnay",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "25 cl",
+     "prix_centimes": [
+      184,
+      174
+     ],
+     "liste_vins": false,
+     "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
     },
     {
      "liste": "Jus de cépages — Grenache",
@@ -4097,8 +4166,30 @@
      "ecarts": [
       "le tarif a le Grenache en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
-     "prix_centimes": null,
+     "prix_centimes": [
+      275,
+      239
+     ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "liste": "(ajout) Jus de cépages – Grenache — 25 cl",
+     "ajout": true,
+     "tarif": null,
+     "note": null,
+     "ecarts": [],
+     "fiche": 33,
+     "appellation": null,
+     "cuvee": "Jus de cépages – Grenache",
+     "couleur": "Rosé",
+     "millesime": "—",
+     "contenance": "25 cl",
+     "prix_centimes": [
+      184,
+      174
+     ],
+     "liste_vins": false,
+     "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
     }
    ],
    "doublons_matheo": [],
@@ -4110,6 +4201,10 @@
      "À partir de 144 cols",
      "À partir de 300 cols",
      "1 palette"
+    ],
+    "33": [
+     "À partir de 144 bts",
+     "À partir de 300 bts"
     ]
    },
    "mode_prix": "paliers"
@@ -4147,7 +4242,7 @@
      "cuvee": "Les Silex Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
@@ -4166,7 +4261,7 @@
      "cuvee": "Les Gorinières Blanc",
      "couleur": "Blanc",
      "millesime": "2024",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2024 dans la liste, 2023 au tarif"
@@ -4187,7 +4282,7 @@
      "cuvee": "Les Courbes Blanc",
      "couleur": "Blanc",
      "millesime": "2018",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "« Blanc » dans la liste, « Rouge » au tarif"
@@ -4209,7 +4304,7 @@
      "cuvee": "Les Amphibol Blanc",
      "couleur": "Blanc",
      "millesime": "2025",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "millésime 2025 dans la liste, 2024 au tarif"
@@ -4230,7 +4325,7 @@
      "cuvee": "Les Gneiss Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
@@ -4250,7 +4345,7 @@
      "cuvee": "Le Bois Bouquet",
      "couleur": "Rouge",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
@@ -4269,7 +4364,7 @@
      "cuvee": "L’O Brut",
      "couleur": "Blanc",
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
@@ -4368,7 +4463,7 @@
      "cuvee": "Plénitude de Solemme Extra-Brut",
      "couleur": "Blanc extra brut",
      "millesime": "2022",
-     "contenance": "Magnum 1,5 L",
+     "contenance": "1,5 L",
      "prix_centimes": [
       5800
      ],
@@ -4504,7 +4599,7 @@
      "cuvee": "Château Lafargue Rouge",
      "couleur": "Rouge",
      "millesime": "2020",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4664,7 +4759,7 @@
      "cuvee": "L’Eberluant Chardonnay Méthode ancestrale",
      "couleur": "Blanc pétillant",
      "millesime": "2025",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4751,7 +4846,7 @@
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4772,7 +4867,7 @@
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "tarif annoté par l'agence, 3 octobre 2026 (scan 4, p.12)",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -4794,7 +4889,7 @@
      "cuvee": "Baron Auguste Blanc",
      "couleur": "Blanc effervescent",
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4815,7 +4910,7 @@
      "cuvee": "Baron Auguste Rosé",
      "couleur": "Rosé effervescent",
      "millesime": "—",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4880,7 +4975,7 @@
      "cuvee": "Aux Allots Rouge",
      "couleur": "Rouge",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
@@ -4901,7 +4996,7 @@
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
@@ -4943,7 +5038,7 @@
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2023",
-     "contenance": null,
+     "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
       "absent du tarif de septembre : affiché tel que la liste l'écrit",
