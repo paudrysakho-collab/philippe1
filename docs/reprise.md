@@ -1,4 +1,4 @@
-# Reprise : où en est le projet (3 octobre 2026)
+# Reprise : où en est le projet (3 octobre 2026, soir)
 
 Ce fichier passe le relais d'une conversation à la suivante. **Lis-le en entier avant de
 toucher à quoi que ce soit.** Le brief de `CLAUDE.md` reste la règle ; ce fichier dit ce qui
@@ -91,7 +91,7 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | Livrable | Fichiers | État |
 |---|---|---|
 | **Catalogue général** « Sous nos pieds » | `catalogue-scio-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx`, `-canva-recadrable.pptx` | **52 pages**, 40 domaines, 715 prix, 80 images |
-| **Salon Privé Vins & Terroirs**, lundi 5 octobre 2026, Château de la Rairie | `salon-prive-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **48 pages**, 26 stands, 32 fiches, 179 vins dégustés, **prix posés le 3 octobre** (185 lignes) |
+| **Salon Privé Vins & Terroirs**, lundi 5 octobre 2026, Château de la Rairie | `salon-prive-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **48 pages**, 26 stands, 32 fiches, **prix posés le 3 octobre** (439 prix), nouveau design |
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
@@ -193,45 +193,50 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
   France » (le dossier de Mathéo l'a retiré).
 - Les anomalies du tarif (points 1 à 9, 11 à 14) restent signalées, jamais corrigées seules.
 
-## 7. La suite : ta mission, c'est **mettre les prix**
+## 7. Où on en est (3 octobre, soir) et la suite
 
-La mission principale (l'agence, 3 octobre) : **remettre les prix**. Des tâches annexes
-peuvent venir s'y ajouter. Ne touche à rien d'autre de toi-même ; si l'agence le demande :
-- **une retouche de page** : charge d'abord les compétences `da-scio` (et `tableau-tarif`
-  pour un tableau), refais `npm run build` et `npm run salon`, regarde les pages touchées en
-  image (`epreuve-pages`), tiens les 52 pages au plus ;
-- **un texte de domaine ou le haut d'une fiche** change : relance aussi
-  `regler-lettrines.py` (section 3) ;
-- **une photo** : relis d'abord le « piège des photos » (section 3) et `photos-domaines` ;
-- **un fait** (texte, label, vin) : seulement depuis les sources de la section 4, sinon
-  `QUESTIONS.md` ;
-- **`CLAUDE.md`** : la proposition du 2 octobre attend son feu vert (fin de section).
-Chaque décision nouvelle de l'agence va dans `JOURNAL.md` et, si elle dure, dans les
-sections 4 et 5 de ce fichier.
+**Fait et validé par l'agence aujourd'hui** (tout est poussé, `dist/` à jour) :
+- **Prix du Salon Privé posés** depuis les tarifs annotés (`sources/salon-prive-2026/scans-prix/`,
+  relevé `data/prix-salon-releve.md`) par `scripts/prix-salon.py` : paliers du salon par fiche
+  (`paliers_salon`, clé « fiche » ou « fiche:tableau »), prix, offres « 11+1 / 5+1 » après le nom
+  du vin, offre du stand sous la note de prix (`offre_salon`), note de prix propre au salon
+  (`note_prix_salon`, Boehler franco), magnums et lignes ajoutées (`AJOUTS`), contenance jamais
+  vide (« 75 cl », « 1,5 L »). 439 prix, aucune case vide. Règles : prix **surlignés** ;
+  « À partir de… » ; « cols » pour les offres ; un magnum surligné = une ligne de plus.
+  Retoucher un prix : dans `scripts/prix-salon.py` (rejoué après `npm run transcrire-matheo`),
+  puis `npm run salon`.
+- **Nouveau design, les deux éditions** (choix de l'agence parmi les modèles de
+  `concepts/retouches-oct/`) :
+  - **couverture H** : photo de vignoble (Sud-Ouest) en haut, strates **droites et sobres**
+    dessous (`coupeElegante({ style: 'fine' })`, `pieces.mjs`), titre craie et or, réserve claire
+    sous le logo ; la responsable trouvait les anciennes bandes ondulées « enfantines » ;
+  - **page 2 A** : texte en Spectral 14,5 pt avec filet or (plus de mots en violet), photo du
+    Beaujolais au coucher du soleil (catalogue général ; au salon, l'encart du salon reste) ;
+  - **ouverture de région A** (salon) : la photo de la région en fond, assombrie vers le bas ;
+  - **bas de fiche A** : la photo de la région à la place du dessin de sol ;
+  - page finale : bandeau de strates droites.
+  - Les **tableaux ne bougent pas** (« la partie tableaux, c'est parfait »).
+- **Photos de régions** : une par région, Wikimedia Commons, licences libres
+  (`data/photos-regions.json`, `credits.md`, crédit en dernière page). Originaux dans
+  `src/photos/regions-brut/` (ignoré par git), versions traitées dans `src/photos/regions/`
+  (`scripts/preparer-photos-regions.py`). Recherche : `scripts/chercher-photos-regions.py`
+  (Commons limite fort les téléchargements : 429 → attendre, passer par `iiurlwidth`).
+- **.pptx** : les photos de la déco sont exportées en JPEG (`deco.mjs`), sinon > 50 Mo.
+- Dessins maison disponibles (pas encore posés) : `src/gabarits/dessins.mjs` (bouteilles,
+  feuille, cep, lune, soleil, paysage de coteaux).
 
-- **Prix du Salon Privé : posés le 3 octobre** depuis les tarifs annotés de l'agence
-  (`sources/salon-prive-2026/scans-prix/`, relevé dans `data/prix-salon-releve.md`), par
-  `scripts/prix-salon.py` (paliers du salon par fiche, prix, offres « 11+1 » / « 5+1 » après le
-  nom du vin, offre du stand sous la note de prix, magnums ajoutés). Règles de l'agence : les
-  prix **surlignés** ; « À partir de… » ; « cols » pour les offres ; un magnum surligné fait une
-  ligne de plus. Doutes : QUESTIONS, point 31. Pour retoucher un prix : le corriger dans
-  `scripts/prix-salon.py` (qui est rejoué après `npm run transcrire-matheo`), ou par
-  `tableur/prix-salon-prive-2026.xlsx` (une ligne par vin, rangée par stand ; par ligne,
-  **soit** la colonne « Prix salon », **soit** les colonnes de paliers).
-  Puis `npm run importer-salon -- FICHIER.xlsx --essai` (montre chaque changement), sans
-  `--essai` pour écrire, et `npm run salon`. Détail : README, « Ajouter les prix du salon ».
-- **Un prix du catalogue général** change : `npm run tableur`, l'agence corrige
-  `tableur/tarifs-scio-2026.xlsx`, `npm run importer -- FICHIER.xlsx --essai`, puis sans
-  `--essai`, et `npm run build`.
-- Les prix vivent dans les données, **en centimes**, jamais tapés dans un gabarit. Un prix
-  qui paraît faux ne se corrige pas : il se signale (`QUESTIONS.md`).
-- Après : contrôles au vert (chaque prix donné se retrouve dans le PDF), un coup d'œil en
-  image aux fiches touchées, commit, push, et envoyer à l'agence les PDF et .pptx refaits.
-  Les lettrines ne bougent pas : inutile de relancer `regler-lettrines.py`.
+**À faire ensuite** :
+1. **Recharger la photo de Bourgogne en grand** (aujourd'hui 1280 px : flou à l'impression) :
+   `Bourgogne` dans `data/photos-regions.json`, puis `python3 scripts/preparer-photos-regions.py`,
+   `npm run build`, `npm run salon`.
+2. **Question restante pour Laurent** (`docs/questions-laurent.md`) : prix du Pinot Noir des
+   Guignottes (stand 26), aujourd'hui 8,90 / 8,60 / 8,10 en attendant.
+3. Si l'agence le demande : poser quelques petits dessins de `dessins.mjs` (jamais dans les
+   tableaux), d'autres photos de lieux sur les fiches.
 
-En attente de l'agence : la mise au point de `CLAUDE.md` (garder `CLAUDE.md` court, avec
-l'ordre des sources de la section 4 et les consignes de la section 5 ; ce fichier reste
-« état et reprise ») et les questions de la section 6.
+Règles qui tiennent : charger `da-scio` (et `tableau-tarif` pour un tableau) avant toute
+retouche ; `npm run build` (≤ 52 pages) et `npm run salon` (48) ; regarder les pages touchées
+en image ; un prix ne se corrige jamais seul ; commit et push à chaque étape.
 
 ## 8. Ce qu'on a appris à nos dépens
 

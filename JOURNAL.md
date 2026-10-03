@@ -898,3 +898,14 @@ posée). Falfas confirmé. Salon : 192 lignes avec prix, aucune case vide.
 Jus de cépages, précision de l'agence : **50 cl à partir de 72 / 144 bts, 25 cl à partir de
 144 / 300 bts**. Deux tableaux sur la fiche (les 25 cl rangés dans le 2e tableau du tarif) ;
 `paliers_salon` accepte une clé « fiche:tableau » (« 33:1 »), lue par le gabarit et le tableur.
+
+## 3 octobre 2026, soir — le nouveau design choisi par l'agence
+
+Retours : pas assez de photos, page 2 « un peu gamin », page 1 pas assez rêveuse, puis les
+bandes de la couverture « pas esthétiques, enfantines ». Modèles successifs dans
+`concepts/retouches-oct/` (A–C, D–F, G–I). Choix : couverture **H** (photo + strates droites),
+page 2 **A** (Spectral, photo du Beaujolais), bas de fiche **A** (photo de région), ouverture
+**A** (photo de région en fond). Appliqué aux deux éditions et aux .pptx ; photos de régions
+de Wikimedia Commons (licences libres, `credits.md`). Le .pptx dépassait 50 Mo (photos en
+PNG répétées sur chaque fiche) : déco photo exportée en JPEG, 28 Mo. Contrôles au vert :
+52 et 48 pages, 715 et 439 prix retrouvés.

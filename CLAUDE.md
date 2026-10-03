@@ -3,7 +3,8 @@
 > **État au 3 octobre 2026.** Les trois livrables sont faits et poussés : le catalogue
 > général (52 pages, PDF et .pptx pour Canva), l'édition du **Salon Privé du 5 octobre 2026**
 > (48 pages, prix posés le 3 octobre depuis les tarifs annotés de l'agence) et la liste des
-> vins dégustés.
+> vins dégustés. Le 3 au soir, nouveau design choisi par l'agence (couverture photo + strates
+> droites, photos de régions) : voir `docs/reprise.md`, section 7.
 >
 > **Lis d'abord `docs/reprise.md`** (chargé ci-dessous), à commencer par sa section 0 : tu es
 > la suite de la session précédente, tu agis sans redemander ce qui est décidé. Puis : la branche, les outils, les
