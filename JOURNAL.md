@@ -949,3 +949,10 @@ Aperçus : `epreuves/apercus/bourgogne-hd/`.
 - Stand 16 : « Offre possible à étudier en fonction du volume et de la référence. »
 - Couverture du salon : la date et le lieu en haut à droite sont retirés ; le cartouche de
   validité passe en grand (deux lignes en Young Serif 21 pt, la première en or), PDF et .pptx.
+
+### 3 octobre, soir — affiche du QR code
+
+Affiche A4 portrait (`npm run affiche-qr` → `dist/salon-prive-2026-affiche-qr.pdf`) : photo du
+Sud-Ouest et titre de la couverture, « Le catalogue du Salon Privé », le QR code fourni par
+l'agence (`src/images/qr-catalogue-salon.png`, il mène au PDF du salon sur le Drive), « Scannez
+pour découvrir le catalogue », message sanitaire. QR relu dans le PDF rendu : bon lien.

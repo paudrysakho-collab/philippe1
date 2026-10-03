@@ -27,7 +27,8 @@
     "transcrire-matheo": "python3 scripts/transcrire-matheo.py && python3 scripts/prix-salon.py",
     "tableur-salon": "python3 scripts/tableur.py exporter-salon",
     "importer-salon": "python3 scripts/tableur.py importer-salon",
-    "prix-salon": "python3 scripts/prix-salon.py"
+    "prix-salon": "python3 scripts/prix-salon.py",
+    "affiche-qr": "node scripts/affiche-qr.mjs"
   },
   "dependencies": {
     "playwright": "1.56.1",
