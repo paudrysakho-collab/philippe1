@@ -491,6 +491,7 @@ Ce que j'ai décidé seul, à vérifier :
    la fiche du Cray.
 4. **Stand 26 — Pinot Noir des Guignottes** : rien n'est surligné ; j'ai pris la ligne
    « Bourgogne Pinot Noir — Domaine Les Guignottes 2023 » du même tarif (8,90 / 8,60 / 8,10).
+   **Réglé** : prix confirmé par l'agence le 3 octobre au soir.
 5. **Stand 15, Vazart-Coquart — Brut Réserve** : le surlignage tombe sur la demie et le magnum.
    J'ai mis la bouteille 75 cl (20,80 / 20,60 / 20,30) **et** une ligne magnum (47,90 / 47,50 /
    46,90).

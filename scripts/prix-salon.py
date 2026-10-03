@@ -68,7 +68,7 @@ OFFRE = {
     12: "Offre 11+1 à partir de 300 cols.",
     13: "Offre 11+1 à partir de 180 cols.",
     14: "Offre 11+1 à partir de 240 cols.",
-    16: "Offre à partir de 120 cols, en général 11+1, selon le volume.",
+    16: "Offre possible à étudier en fonction du volume et de la référence.",   # l'agence, 3 oct. soir
     17: "Offre à partir de 120 cols.",
     18: "Offre 11+1 à partir de 120 cols.",
     19: "Offre possible à étudier en fonction du volume et de la référence.",

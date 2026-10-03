@@ -369,12 +369,12 @@
 .couverture-salon .couv-ciel { height: calc(154mm + var(--fp)); }
 .validite-couv {
   position: absolute; z-index: 3; left: calc(var(--marge-int) + var(--fp)); top: calc(110mm + var(--fp));
-  padding: 3mm 5mm 3.2mm; background: var(--violet); border-radius: 1.5mm;
+  padding: 4mm 6mm 4.4mm; background: var(--violet); border-radius: 1.5mm;
   border-left: 1.6mm solid var(--or); color: var(--craie);
   display: flex; flex-direction: column; gap: .8mm;
 }
-.validite-couv span { font: 500 9pt var(--technique); letter-spacing: var(--interlettre); text-transform: uppercase; opacity: .9; }
-.validite-couv strong { font: 400 17pt var(--titre); color: var(--craie); }
+.validite-couv span { font: 400 21pt/1.05 var(--titre); color: var(--or); }
+.validite-couv strong { font: 400 21pt/1.05 var(--titre); color: var(--craie); }
 .couverture-salon .edition-couv {
   background: var(--gneiss); border-radius: 1.5mm; padding: 2.6mm 4mm 2.8mm; top: calc(13mm + var(--fp));
 }

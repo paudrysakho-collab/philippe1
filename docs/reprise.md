@@ -233,8 +233,10 @@ Berteaud sans la colonne 36 ; folios toujours à droite (`JOURNAL.md`).
 **À faire ensuite** :
 1. ~~Recharger la photo de Bourgogne en grand~~ : **fait le 3 octobre au soir** (original
    3072 × 1461 px, traité en 2400 × 1141 ; les deux catalogues refaits).
-2. **Question restante pour Laurent** (`docs/questions-laurent.md`) : prix du Pinot Noir des
-   Guignottes (stand 26), aujourd'hui 8,90 / 8,60 / 8,10 en attendant.
+2. ~~Pinot Noir des Guignottes~~ : 8,90 / 8,60 / 8,10 **confirmé** par l'agence (3 oct. soir).
+   La photo de Bourgogne actuelle convient à l'agence.
+   Couverture du salon : plus de date ni de lieu en haut à droite ; « Tarif et offres valables
+   du 5 octobre au 14 novembre 2026 » en grand (21 pt). Stand 16 : formule « au volume ».
 3. Si l'agence le demande : poser quelques petits dessins de `dessins.mjs` (jamais dans les
    tableaux), d'autres photos de lieux sur les fiches.
 

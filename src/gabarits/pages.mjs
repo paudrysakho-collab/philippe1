@@ -127,11 +127,6 @@ function couvertureSalon() {
       <div class="validite-couv"><span>Tarif et offres valables</span>
         <strong>du 5 octobre au 14 novembre 2026</strong></div>
       ${coupeElegante({ style: 'fine' })}
-      <div class="edition-couv">
-        <span class="date">${esc(EV.date_texte)}</span>
-        <span class="cible">${esc(EV.lieu)}</span>
-        <span class="cible">${esc(EV.commune)}</span>
-      </div>
       <div class="sanitaire sanitaire-couv">${esc(SANITAIRE)}</div>`,
   });
 }

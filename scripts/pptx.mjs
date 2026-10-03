@@ -531,24 +531,17 @@ function slideCouverture(s, numero) {
       fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });
     s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
       fontFace: F.courant, fontSize: 10.5, color: C.craie, lineSpacingMultiple: 1.4 });
-    // la date et le lieu, en haut, en face du logo, sur une pastille gneiss (comme .edition-couv)
-    s.addShape(pres.ShapeType.roundRect, { x: mm(PAGE_L - MARGE.int - 72), y: mm(13), w: mm(76), h: mm(23.5),
-      fill: { color: C.gneiss }, line: { color: C.gneiss, width: 0 }, rectRadius: 0.05 });
-    // la validité du tarif et des offres, bien visible sous le titre (comme .validite-couv)
-    s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int), y: mm(110), w: mm(112), h: mm(17),
-      fill: { color: C.violet }, line: { color: C.violet, width: 0 }, rectRadius: 0.06 });
-    s.addShape(pres.ShapeType.rect, { x: mm(MARGE.int), y: mm(110), w: mm(1.6), h: mm(17),
+    // la validité du tarif et des offres, bien visible sous le titre (comme .validite-couv) ;
+    // la date et le lieu ne sont plus en couverture (l'agence, 3 octobre au soir)
+    s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int), y: mm(110), w: mm(140), h: mm(27),
+      fill: { color: C.violet }, line: { color: C.violet, width: 0 }, rectRadius: 0.05 });
+    s.addShape(pres.ShapeType.rect, { x: mm(MARGE.int), y: mm(110), w: mm(1.6), h: mm(27),
       fill: { color: C.or }, line: { color: C.or, width: 0 } });
     s.addText([
-      { text: 'TARIF ET OFFRES VALABLES', options: { fontFace: F.tech, fontSize: 9, bold: true, charSpacing: 0.3, breakLine: true } },
-      { text: 'du 5 octobre au 14 novembre 2026', options: { fontFace: F.titre, fontSize: 17 } },
-    ], { x: mm(MARGE.int + 5), y: mm(110), w: mm(105), h: mm(17), margin: 0, valign: 'middle',
-      color: C.craie, lineSpacingMultiple: 1.1 });
-    s.addText(EV.date_texte, { x: mm(PAGE_L - MARGE.int - 95), y: mm(16), w: mm(95), h: mm(8.5),
-      margin: 0, align: 'right', valign: 'top', fontFace: F.titre, fontSize: 19, color: C.craie });
-    s.addText(`${EV.lieu}\n${EV.commune}`.toUpperCase(), { x: mm(PAGE_L - MARGE.int - 95), y: mm(25),
-      w: mm(95), h: mm(9), margin: 0, align: 'right', valign: 'top', fontFace: F.tech, fontSize: 9,
-      bold: true, color: C.craie, charSpacing: 0.3, lineSpacingMultiple: 1.2 });
+      { text: 'Tarif et offres valables', options: { color: C.or, breakLine: true } },
+      { text: 'du 5 octobre au 14 novembre 2026', options: { color: C.craie } },
+    ], { x: mm(MARGE.int + 6), y: mm(110), w: mm(132), h: mm(27), margin: 0, valign: 'middle',
+      fontFace: F.titre, fontSize: 21, lineSpacingMultiple: 1.0 });
   } else {
   s.addText([
     { text: 'Sous', options: { breakLine: true } },

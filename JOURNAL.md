@@ -941,3 +941,11 @@ d'avant : seules changent les pages qui portent la photo (catalogue général p.
 p.13 à 18). Refait après fusion avec la relecture du salon : contrôles au vert, 52 et 48
 pages, 715 et 435 prix, polices embarquées.
 Aperçus : `epreuves/apercus/bourgogne-hd/`.
+
+### 3 octobre, soir (suite)
+
+- L'agence confirme le Pinot Noir des Guignottes (8,90 / 8,60 / 8,10) et garde la photo de
+  Bourgogne.
+- Stand 16 : « Offre possible à étudier en fonction du volume et de la référence. »
+- Couverture du salon : la date et le lieu en haut à droite sont retirés ; le cartouche de
+  validité passe en grand (deux lignes en Young Serif 21 pt, la première en or), PDF et .pptx.

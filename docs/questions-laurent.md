@@ -9,9 +9,7 @@ Pré La Lande tels quels ; Falfas 11+1 sur tout sauf le Chevalier 2017.
 Réponses du soir : Terroir d'Ansouis rouge ajouté, Verchères inversé, Boehler franco de port,
 jus de cépages posés, Falfas confirmé, contenances « 75 cl » / « 1,5 L ».
 
-Restent, pour Laurent :
-
-1. **Goichot (stand 26), Bourgogne Pinot Noir des Guignottes 2023** : rien n'est surligné sur
-   le tarif. Quel prix ? *En attendant : 8,90 / 8,60 / 8,10, la ligne du même tarif.*
+Plus rien pour Laurent : le **Pinot Noir des Guignottes** (stand 26) est confirmé par
+l'agence le 3 octobre au soir, 8,90 / 8,60 / 8,10.
 
 (Jus de cépages réglés : 72 / 144 bts pour les 50 cl, 144 / 300 bts pour les 25 cl.)
