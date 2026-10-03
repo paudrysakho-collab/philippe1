@@ -938,5 +938,6 @@ original dans le conteneur, les autres gardent leur version déjà traitée). Co
 429 à l'original : il est passé au 7e essai, une requête toutes les 75 s (la vignette de
 1920 px, elle, passe tout de suite : solution de repli). Comparaison au pixel avec les PDF
 d'avant : seules changent les pages qui portent la photo (catalogue général p.14 à 19 ; salon
-p.13 à 18). Contrôles au vert : 52 et 48 pages, 715 et 439 prix, polices embarquées.
+p.13 à 18). Refait après fusion avec la relecture du salon : contrôles au vert, 52 et 48
+pages, 715 et 435 prix, polices embarquées.
 Aperçus : `epreuves/apercus/bourgogne-hd/`.
