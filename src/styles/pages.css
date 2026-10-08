@@ -422,3 +422,4 @@
 .ed-global .page.verso .sanitaire { right: calc(var(--marge-int) + var(--fp)); }
 .ed-global .ouv-liste .pg, .ed-global .idom-pg, .ed-global .idx-pg { order: -1; min-width: 6.5mm; text-align: left; }
 .ed-global .ouv-liste .n:empty, .ed-global .idom-n:empty, .ed-global .idx-dom:empty { display: none; }
+.fin-droits { margin-top: 2.4mm; font-style: italic; }

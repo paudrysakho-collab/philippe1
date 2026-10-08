@@ -453,10 +453,12 @@
  },
  "26": {
   "rond": {
-   "fichier": "Domaines_et_vignerons/Chateau_La_Gorce/chateau.png",
-   "mode": "couvrir",
-   "sujet": "le château",
-   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
+   "fichier": "web/d26-rond.jpg",
+   "provenance": "site officiel du domaine",
+   "page": "https://www.chateaulagorce.com/",
+   "url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
+   "sujet": "portrait des vignerons",
+   "mode": "couvrir"
   },
   "bouteille": {
    "fichier": "Bouteilles_de_vin/Chateau_La_Gorce/la-bonne-resolution-2020.jpg",
@@ -466,10 +468,10 @@
  },
  "27": {
   "rond": {
-   "fichier": "Domaines_et_vignerons/Chateau_Falfas/Chateau_Falfas_Logo.png",
-   "mode": "contenir",
-   "sujet": "logo du château",
-   "provenance": "dossier de l'agence"
+   "fichier": "Domaines_et_vignerons/Chateau_Falfas/chateau.png",
+   "mode": "couvrir",
+   "sujet": "le château",
+   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
   },
   "bouteille": {
    "fichier": "canva/d27-p30-244.png",

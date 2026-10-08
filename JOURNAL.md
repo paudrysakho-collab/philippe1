@@ -1009,3 +1009,8 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Dekeyne : les six départements. Mentions légales réordonnées (millésimes, stocks, photos, erreurs).
 - La Gorce : photo du château et bouteille La Bonne Résolution 2020 (envoyées par l'agence).
 - Contrôle : mentions obligatoires comparées espaces normalisés (le RCS en insécables).
+- Correction : la photo du château envoyée le 8 octobre est celle de **Falfas** (pas de La Gorce) :
+  posée en rond chez Falfas (les deux catalogues), La Gorce retrouve le portrait de ses vignerons
+  (repris de l'historique git) et garde la bouteille La Bonne Résolution 2020.
+- Page finale du catalogue global : ligne de droits d'auteur (© Agence SCIO, reproduction interdite
+  sans autorisation écrite). « Philippe Audry / page 66 » : une blague, rien à faire.

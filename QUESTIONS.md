@@ -540,7 +540,4 @@ Restent :
 - ~~Départements~~ : réglé (Sardelles 35 · 44 · 49 · 53 · 56 · 85 ; Mas des Restanques 44 · 49 · 53 · 85).
 - Photos des sites des Sardelles et du Mas des Restanques : accord de l'agence (8 octobre).
 
-- **Relecture du 8 octobre au soir** : « supprimer Philippe Audry … rajouter Laurent Sauvêtre » et
-  « page 66 / 64 supprimer » : ni ce nom ni de page 66 dans le catalogue (64 pages) ; rien touché.
-- **Falfas** : le site officiel (chateaufalfas.fr) affiche aujourd'hui un autre site ; pas de photo
-  du château récupérable pour l'instant.
+- Réglé : « Philippe Audry / page 66 » était une blague ; photo du château de Falfas fournie par l'agence.

@@ -657,6 +657,7 @@ export function pageFinale() {
         </div>
         <div><h3>Mentions légales</h3>
           <p class="fin-mentions">${esc((GLOBAL_ED && catalogue.salon.mentions_legales) || AG.mentions_legales)}</p>
+          ${GLOBAL_ED ? `<p class="fin-mentions fin-droits">© ${esc('Agence SCIO Vins & Spirits, 2026. Tous droits réservés. Textes, mise en page, illustrations et photographies de ce catalogue ne peuvent être reproduits, en tout ou en partie, sans l\'autorisation écrite de l\'Agence SCIO.')}</p>` : ''}
         </div>
         <div><h3>Crédits</h3>
           <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme certificateur. ${esc(creditPhotos()).replace('credits.md', '<em>credits.md</em>')}</p>

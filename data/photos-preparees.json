@@ -665,18 +665,18 @@
   "numero": 26,
   "role": "rond",
   "fichier": "src/photos/rond/d26.jpg",
-  "source_url": "src/photos/brut/Domaines_et_vignerons/Chateau_La_Gorce/chateau.png",
-  "page": null,
-  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
-  "source_px": "589x387",
-  "ppi": 246,
-  "sujet": "le château",
+  "source_url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
+  "page": "https://www.chateaulagorce.com/",
+  "provenance": "site officiel du domaine",
+  "source_px": "1000x1500",
+  "ppi": 635,
+  "sujet": "portrait des vignerons",
   "entiere": "src/photos/rond/d26-entiere.jpg",
   "carre": [
-   0.17148,
    0.0,
-   0.65705,
-   1.0
+   0.11067,
+   1.0,
+   0.66667
   ]
  },
  {
@@ -694,12 +694,19 @@
   "numero": 27,
   "role": "rond",
   "fichier": "src/photos/rond/d27.jpg",
-  "source_url": "src/photos/brut/Domaines_et_vignerons/Chateau_Falfas/Chateau_Falfas_Logo.png",
+  "source_url": "src/photos/brut/Domaines_et_vignerons/Chateau_Falfas/chateau.png",
   "page": null,
-  "provenance": "dossier de l'agence",
-  "source_px": "470x311",
-  "ppi": 391,
-  "sujet": "logo du château"
+  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
+  "source_px": "589x387",
+  "ppi": 246,
+  "sujet": "le château",
+  "entiere": "src/photos/rond/d27-entiere.jpg",
+  "carre": [
+   0.17148,
+   0.0,
+   0.65705,
+   1.0
+  ]
  },
  {
   "numero": 27,
