@@ -537,5 +537,5 @@ magnums Nugues 2022 / 2017 / 2021) ; La Gorce bio partout (les deux paires ident
 font plus qu'une) ; Caillasses 14,90 € confirmé.
 
 Restent :
-- **Sardelles** et **Mas des Restanques** : départements de distribution non donnés.
+- ~~Départements~~ : réglé (Sardelles 35 · 44 · 49 · 53 · 56 · 85 ; Mas des Restanques 44 · 49 · 53 · 85).
 - Photos du site des Sardelles : autorisation à demander au domaine.

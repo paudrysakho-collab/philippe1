@@ -78,7 +78,14 @@
    "mentions": [],
    "panachage_groupe": null,
    "note_prix": "* Prix de la bouteille H.T. franco de port.",
-   "departements": [],
+   "departements": [
+    "35",
+    "44",
+    "49",
+    "53",
+    "56",
+    "85"
+   ],
    "tableaux": [
     {
      "intitule": "",
@@ -160,7 +167,12 @@
    "mentions": [],
    "panachage_groupe": null,
    "note_prix": "",
-   "departements": [],
+   "departements": [
+    "44",
+    "49",
+    "53",
+    "85"
+   ],
    "tableaux": [
     {
      "intitule": "",

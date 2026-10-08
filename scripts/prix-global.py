@@ -86,7 +86,7 @@ DOMAINES_AJOUTES = [
      "nom_sommaire": "Domaine des Sardelles", "texte_source": TEXTE_SARDELLES, "texte_tarif": "",
      "texte_catalogue": "", "labels": [{"label": "Bio", "preuve": "logo AB sur le tarif (scan 8 oct., p.5)"}],
      "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
-     "note_prix": FRANCO, "departements": [],
+     "note_prix": FRANCO, "departements": ["35", "44", "49", "53", "56", "85"],   # l'agence, 8 oct.
      "tableaux": [
          {"intitule": "", "paliers": P(72, 144, 288), "lignes": []},
          {"intitule": "IGP Val de Loire — Les Courants", "paliers": P(72, 144, 288), "lignes": []},
@@ -107,7 +107,7 @@ DOMAINES_AJOUTES.append(
      "texte_tarif": "", "texte_catalogue": "",
      "labels": [{"label": "Bio", "preuve": "« Nos vins sont biologiques et certifiés par Ecocert », tarif 2026"}],
      "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
-     "note_prix": "", "departements": [],
+     "note_prix": "", "departements": ["44", "49", "53", "85"],   # tous sauf 35 et 56 (l'agence, 8 oct.)
      "tableaux": [{"intitule": "", "paliers": ["Prix"], "lignes": []}]})
 
 GROUPES_AJOUTES = [
