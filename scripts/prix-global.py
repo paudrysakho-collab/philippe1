@@ -72,7 +72,7 @@ ORDRE = [1, 41, 2, 3, 4, 5, 6,          # Loire : Sardelles entre Reverdy et Bar
          8,                              # Alsace
          9,                              # Beaujolais : Domaine des Nugues
          10, 12, 13, 14, 15, 11,         # Bourgogne : Nadine Ferrand après Verchères
-         16, 17, 18, 19, 20, 21,         # Rhône : Pasquiers entre la Pousterle et Trichon
+         16, 17, 18, 19, 20, 43, 21,     # Rhône : Pasquiers, Mas des Restanques, puis Trichon
          42,                             # Bugey : Domaine Trichon
          22, 23,                         # Sud-Ouest
          27, 28, 29, 30, 26, 25,         # Bordeaux : l'Escarderie, La Gorce, Passion des Terroirs
@@ -98,6 +98,17 @@ DOMAINES_AJOUTES = [
      "note_prix": HORS, "departements": ["35", "44", "49", "53", "56", "85"],
      "tableaux": [{"intitule": "Possibilité de panacher", "paliers": P(120, 300, 600, unite="cols"), "lignes": []}]},
 ]
+
+DOMAINES_AJOUTES.append(
+    {"numero": 43, "page_source": None, "region": "Rhône", "nom": "Mas des Restanques",
+     "nom_sommaire": "Mas des Restanques",
+     # le texte : l'en-tête du tarif, seul document du domaine
+     "texte_source": "Vignoble et vins biologiques, certifiés par Ecocert : Gigondas, Vacqueyras et Côtes du Rhône.",
+     "texte_tarif": "", "texte_catalogue": "",
+     "labels": [{"label": "Bio", "preuve": "« Nos vins sont biologiques et certifiés par Ecocert », tarif 2026"}],
+     "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
+     "note_prix": "", "departements": [],
+     "tableaux": [{"intitule": "", "paliers": ["Prix"], "lignes": []}]})
 
 GROUPES_AJOUTES = [
     {"id": "trichon", "libelle": "Domaine Trichon, Rhône et Bugey", "domaines": [21, 42]},
@@ -129,10 +140,10 @@ NOUVEAUX = {
             V(9, 0, "AOP Beaujolais-Villages Nouveau Sans Soufre", "Nos Vins Primeurs", "Rouge", "2026", eu("5,40", "5,15", "5,10")),
             V(9, 0, "AOP Beaujolais-Lancié", "Les Grands Classiques", "Blanc", "2023", eu("7,45", "7,15", "7,05")),
             V(9, 0, "AOP Beaujolais-Lancié", "Les Grands Classiques", "Rouge", "2023", eu("5,80", "5,55", "5,50")),
-            V(9, 0, "AOP Beaujolais-Lancié", "Les Grands Classiques", "Rouge", "2018/20/21/22", eu("12,45", "11,95", "11,80"), "Magnum 1,5 L"),
-            V(9, 0, "AOP Beaujolais-Villages", "Les Grands Classiques", "Rouge", "2016/17", eu("12,45", "11,95", "11,80"), "Magnum 1,5 L"),
+            V(9, 0, "AOP Beaujolais-Lancié", "Les Grands Classiques", "Rouge", "2022", eu("12,45", "11,95", "11,80"), "Magnum 1,5 L"),
+            V(9, 0, "AOP Beaujolais-Villages", "Les Grands Classiques", "Rouge", "2017", eu("12,45", "11,95", "11,80"), "Magnum 1,5 L"),
             V(9, 0, "AOP Fleurie", "Les Grands Classiques", "Rouge", "2024", eu("8,25", "7,90", "7,85")),
-            V(9, 0, "AOP Fleurie", "Les Grands Classiques", "Rouge", "2018/20/21", eu("18,20", "17,45", "17,25"), "Magnum 1,5 L"),
+            V(9, 0, "AOP Fleurie", "Les Grands Classiques", "Rouge", "2021", eu("18,20", "17,45", "17,25"), "Magnum 1,5 L"),
             V(9, 0, "AOP Moulin-à-Vent", "Les Grands Classiques", "Rouge", "2022", eu("8,50", "8,15", "8,05")),
             V(9, 0, "AOP Moulin-à-Vent", "Les Grands Classiques", "Rouge", "2023", eu("18,70", "17,90", "17,75"), "Magnum 1,5 L"),
             V(9, 0, "AOP Morgon", "Les Grands Classiques", "Rouge", "2023", eu("8,50", "8,15", "8,05")),
@@ -177,8 +188,8 @@ NOUVEAUX = {
              V(25, 0, "AOP Haut-Médoc", "Château Doyac", "Rouge", "2020", eu("9,90"), label="Bio"),
              V(25, 0, "AOP Haut-Médoc", "Esprit de Doyac", "Rouge", "2020", eu("6,10"), label="Bio"),
              V(25, 0, "AOP Médoc", "Ceres de Haut-Bages Libéral, sans soufre ajouté", "Rouge", "2022", eu("14,20"), label="Bio"),
-             V(25, 0, "AOP Médoc", "Château Livran", "Rouge", "2016/2020", eu("7,90")),
-             V(25, 0, "AOP Médoc", "Les Sources de Livran", "Rouge", "2017/2018", eu("4,50")),
+             V(25, 0, "AOP Médoc", "Château Livran", "Rouge", "2020", eu("7,90")),
+             V(25, 0, "AOP Médoc", "Les Sources de Livran", "Rouge", "2018", eu("4,50")),
              V(25, 0, "AOP Margaux", "Les Plantes de Durfort-Vivens", "Rouge", "2019", eu("19,00"), label="Bio"),
              V(25, 0, "AOP Margaux", "Le Plateau de Durfort-Vivens", "Rouge", "2020", eu("22,50"), label="Bio"),
              V(25, 0, "AOP Margaux", "Le Plateau de Durfort-Vivens", "Rouge", "2020", eu("44,50"), "Magnum 1,5 L", label="Bio"),
@@ -206,12 +217,36 @@ NOUVEAUX = {
              V(25, 0, "AOP Pessac-Léognan", "Château Lamothe-Bouscaut", "Blanc", "2021", eu("11,95"), label="HVE"),
              V(25, 0, "AOP Pessac-Léognan", "Petit Valoux", "Blanc", "2023", eu("8,00"), label="HVE"),
              V(25, 0, "AOP Sauternes", "Château du Mayne", "Doux", "2024", eu("10,95"), label="HVE"),
-             V(25, 0, "AOP Barsac", "Cyprès de Climens", "Doux", "2008/2010", eu("16,95"), "50 cl"),
+             V(25, 0, "AOP Barsac", "Cyprès de Climens", "Doux", "2010", eu("16,95"), "50 cl"),
          ]},
 }
 
 
 SCAN8 = "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+SCAN9 = "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+
+# Rhône — Mas des Restanques (sources/catalogue-global-2026/scan-mas-des-restanques.pdf) : les vins
+# surlignés ; « franco à partir de 96 bouteilles » (l'agence). Placé juste avant Trichon.
+NOUVEAUX[43] = {"paliers": {"43": UNIQUE}, "note": "* Prix de la bouteille H.T. franco de port à partir de 96 bts.",
+    "offre": None, "vins": [
+        V(43, 0, "AOC Gigondas", "Gigondas", "Rouge", "2025", eu("12,85"), prix_source=SCAN9),
+        V(43, 0, "AOC Vacqueyras", "Vacqueyras", "Rouge", "2025", eu("10,55"), prix_source=SCAN9),
+        V(43, 0, "AOC Vacqueyras", "Cuvée Tombadou", "Rouge", "2024", eu("9,50"), prix_source=SCAN9),
+        V(43, 0, "AOC Côtes du Rhône", "Côtes du Rhône", "Rouge", "2024", eu("6,50"), prix_source=SCAN9),
+        V(43, 0, "AOC Vacqueyras", "Vacqueyras", "Blanc", "2025", eu("14,90"), prix_source=SCAN9),
+        V(43, 0, "Vin de France", "Waouh !", "Blanc", "—", eu("6,50"), prix_source=SCAN9),
+        V(43, 0, "AOC Gigondas", "Gigondas", "Rouge", "2025", eu("28,30"), "Magnum 1,5 L", prix_source=SCAN9),
+        V(43, 0, "AOC Vacqueyras", "Vacqueyras", "Rouge", "2025", eu("23,20"), "Magnum 1,5 L", prix_source=SCAN9),
+    ]}
+
+# Loire — Domaine du Colombier : les bag-in-box surlignés (photo de l'agence, 8 oct.), dans le
+# tableau BIBS de la fiche (5 L / 10 L). Le Sauvignon IGP est barré.
+BIB_COLOMBIER = [
+    V(3, 1, "AOP Muscadet", None, "Blanc", "—", eu("13,80", "22,70"), "BIB", prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
+    V(3, 1, "IGP Chardonnay", None, "Blanc", "—", eu("12,50", "19,40"), "BIB", prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
+    V(3, 1, "Tous nos rosés", "Cabernet, Abouriou, Gamay, Grolleau Gris", "Rosé", "—", eu("11,50", "18,40"), "BIB",
+      prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
+]
 
 # Languedoc — Domaine Les Lys (sources/catalogue-global-2026/scan-les-lys.pdf) : les cinq vins non
 # raturés, prix unique « à partir de 120 bouteilles » ; l'offre 11+1 vaut à partir de 180 cols.
@@ -231,15 +266,15 @@ NOUVEAUX[35] = {"paliers": {"35": P(120)}, "note": HORS, "offre": "Offre 11+1 à
 NOUVEAUX[26] = {"paliers": {"26": P(90, 120, 300)}, "note": FRANCO,
     "offre": "Offre possible à étudier en fonction du volume et de la référence.",
     "vins": [
+        # « bio partout » (l'agence, 8 oct.) : les lignes 1-2 et 3-4 du tarif, qui ne différaient que
+        # par le logo bio, sont le même vin
         V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("7,05", "7,00", "6,90"), prix_source=SCAN8),
         V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("14,15", "14,10", "14,00"), "Magnum 1,5 L", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("7,05", "7,00", "6,90"), label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("14,15", "14,10", "14,00"), "Magnum 1,5 L", label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc", "Prétexte", "Rouge", "2022", eu("6,60", "6,55", "6,45"), label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc", "Rouge Intense", "Rouge", "2020", eu("6,25", "6,20", "6,10"), label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc", "L'An 022", "Rouge", "2022", eu("9,80", "9,75", "9,65"), label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc", "La Bonne Résolution", "Rouge", "2022", eu("6,35", "6,30", "6,20"), label="Bio", prix_source=SCAN8),
-        V(26, 0, "AOP Médoc", "Château Canteloup", "Rouge", "2020", eu("5,10", "5,05", "4,95"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Prétexte", "Rouge", "2022", eu("6,60", "6,55", "6,45"), prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Rouge Intense", "Rouge", "2020", eu("6,25", "6,20", "6,10"), prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "L'An 022", "Rouge", "2022", eu("9,80", "9,75", "9,65"), prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "La Bonne Résolution", "Rouge", "2022", eu("6,35", "6,30", "6,20"), prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Château Canteloup", "Rouge", "2020", eu("5,10", "5,05", "4,95"), prix_source=SCAN8),
     ]}
 
 # ——— Trichon : rose = Rhône, jaune = Bugey (scan p.28) ———
@@ -260,6 +295,9 @@ def main():
                       "fiche_texte": 42, "region": "Bugey",
                       "paliers_salon": {"42": s["paliers_salon"]["21"]}})
             entrees.append(b)
+        if 3 in (s.get("domaines") or []):     # le Colombier gagne ses bag-in-box
+            s["vins"] = s["vins"] + BIB_COLOMBIER
+            s["paliers_salon"]["3:1"] = ["5 L", "10 L"]
         entrees.append(s)
     for n, x in NOUVEAUX.items():
         entrees.append({"stand": None, "nom_salon": None, "domaines": [n], "vins": x["vins"],
@@ -269,7 +307,7 @@ def main():
                         # un vrai tarif remplace l'ancien « consultez-nous » (Passion des Terroirs)
                         "mentions": []})
     # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne
-    labels = {"25": [], "26": []}
+    labels = {"25": []}
     sortie = {
         "_lisez_moi": "Écrit par scripts/prix-global.py — ne pas modifier à la main.",
         "edition": "Catalogue caviste global 2026",

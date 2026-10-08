@@ -184,9 +184,9 @@
    "provenance": "dossier de l'agence"
   },
   "bouteille": {
-   "fichier": "Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg",
-   "sujet": "bouteille Mâcon Charnay-lès-Mâcon",
-   "provenance": "dossier de l'agence"
+   "fichier": "Bouteilles_de_vin/Domaine_Nadine_Ferrand/nadine-ferrand-macon-charnay-2.jpg",
+   "sujet": "bouteille Mâcon Charnay-lès-Mâcon (nouvelle photo)",
+   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
   }
  },
  "12": {
@@ -732,6 +732,13 @@
     0.865
    ],
    "remplir": true
+  }
+ },
+ "42": {
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Domaine_Trichon_Bugey/trichon-bugey-extra-brut.jpg",
+   "sujet": "bouteille Extra Brut, Bugey",
+   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
   }
  }
 }

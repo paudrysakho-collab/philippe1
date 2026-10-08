@@ -35,6 +35,7 @@
   18,
   19,
   20,
+  43,
   21,
   42,
   22,
@@ -138,6 +139,37 @@
      "lignes": []
     }
    ]
+  },
+  {
+   "numero": 43,
+   "page_source": null,
+   "region": "Rhône",
+   "nom": "Mas des Restanques",
+   "nom_sommaire": "Mas des Restanques",
+   "texte_source": "Vignoble et vins biologiques, certifiés par Ecocert : Gigondas, Vacqueyras et Côtes du Rhône.",
+   "texte_tarif": "",
+   "texte_catalogue": "",
+   "labels": [
+    {
+     "label": "Bio",
+     "preuve": "« Nos vins sont biologiques et certifiés par Ecocert », tarif 2026"
+    }
+   ],
+   "labels_tarif": [],
+   "allocation": false,
+   "mentions": [],
+   "panachage_groupe": null,
+   "note_prix": "",
+   "departements": [],
+   "tableaux": [
+    {
+     "intitule": "",
+     "paliers": [
+      "Prix"
+     ],
+     "lignes": []
+    }
+   ]
   }
  ],
  "groupes_ajoutes": [
@@ -155,8 +187,7 @@
   "42": "Domaine Trichon (Bugey)"
  },
  "labels_entete": {
-  "25": [],
-  "26": []
+  "25": []
  },
  "stands": [
   {
@@ -786,6 +817,54 @@
       460
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "fiche": 3,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Muscadet",
+     "cuvee": null,
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "BIB",
+     "prix_centimes": [
+      1380,
+      2270
+     ],
+     "prix_source": "tarif des BIB annoté par l'agence, 8 octobre 2026"
+    },
+    {
+     "fiche": 3,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "IGP Chardonnay",
+     "cuvee": null,
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "BIB",
+     "prix_centimes": [
+      1250,
+      1940
+     ],
+     "prix_source": "tarif des BIB annoté par l'agence, 8 octobre 2026"
+    },
+    {
+     "fiche": 3,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "Tous nos rosés",
+     "cuvee": "Cabernet, Abouriou, Gamay, Grolleau Gris",
+     "couleur": "Rosé",
+     "millesime": "—",
+     "contenance": "BIB",
+     "prix_centimes": [
+      1150,
+      1840
+     ],
+     "prix_source": "tarif des BIB annoté par l'agence, 8 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -795,6 +874,10 @@
    "paliers_salon": {
     "3": [
      "Prix salon"
+    ],
+    "3:1": [
+     "5 L",
+     "10 L"
     ]
    },
    "mode_prix": "unique",
@@ -5544,7 +5627,7 @@
      "appellation": "AOP Beaujolais-Lancié",
      "cuvee": "Les Grands Classiques",
      "couleur": "Rouge",
-     "millesime": "2018/20/21/22",
+     "millesime": "2022",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
       1245,
@@ -5561,7 +5644,7 @@
      "appellation": "AOP Beaujolais-Villages",
      "cuvee": "Les Grands Classiques",
      "couleur": "Rouge",
-     "millesime": "2016/17",
+     "millesime": "2017",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
       1245,
@@ -5595,7 +5678,7 @@
      "appellation": "AOP Fleurie",
      "cuvee": "Les Grands Classiques",
      "couleur": "Rouge",
-     "millesime": "2018/20/21",
+     "millesime": "2021",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
       1820,
@@ -6110,7 +6193,7 @@
      "appellation": "AOP Médoc",
      "cuvee": "Château Livran",
      "couleur": "Rouge",
-     "millesime": "2016/2020",
+     "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
       790
@@ -6125,7 +6208,7 @@
      "appellation": "AOP Médoc",
      "cuvee": "Les Sources de Livran",
      "couleur": "Rouge",
-     "millesime": "2017/2018",
+     "millesime": "2018",
      "contenance": "75 cl",
      "prix_centimes": [
       450
@@ -6570,7 +6653,7 @@
      "appellation": "AOP Barsac",
      "cuvee": "Cyprès de Climens",
      "couleur": "Doux",
-     "millesime": "2008/2010",
+     "millesime": "2010",
      "contenance": "50 cl",
      "prix_centimes": [
       1695
@@ -6586,6 +6669,146 @@
    "mode_prix": "unique",
    "offre_salon": "Commande minimum : 400 €.",
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
+   "fiche_texte": null,
+   "texte_reference": null,
+   "mentions": []
+  },
+  {
+   "stand": null,
+   "nom_salon": null,
+   "domaines": [
+    43
+   ],
+   "vins": [
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Gigondas",
+     "cuvee": "Gigondas",
+     "couleur": "Rouge",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      1285
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Vacqueyras",
+     "couleur": "Rouge",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      1055
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Cuvée Tombadou",
+     "couleur": "Rouge",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      950
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Côtes du Rhône",
+     "cuvee": "Côtes du Rhône",
+     "couleur": "Rouge",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      650
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Vacqueyras",
+     "couleur": "Blanc",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      1490
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin de France",
+     "cuvee": "Waouh !",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      650
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Gigondas",
+     "cuvee": "Gigondas",
+     "couleur": "Rouge",
+     "millesime": "2025",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      2830
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    },
+    {
+     "fiche": 43,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Vacqueyras",
+     "couleur": "Rouge",
+     "millesime": "2025",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      2320
+     ],
+     "prix_source": "tarif professionnel 2026 du domaine, surligné par l'agence (scan du 8 octobre 2026, 3e envoi)"
+    }
+   ],
+   "paliers_salon": {
+    "43": [
+     "Prix"
+    ]
+   },
+   "mode_prix": "unique",
+   "offre_salon": null,
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port à partir de 96 bts.",
    "fiche_texte": null,
    "texte_reference": null,
    "mentions": []
@@ -6734,42 +6957,6 @@
      "tarif": {
       "tableau": 0
      },
-     "appellation": "AOP Médoc Cru Bourgeois",
-     "cuvee": "Château la Gorce",
-     "couleur": "Rouge",
-     "millesime": "2020",
-     "contenance": "75 cl",
-     "prix_centimes": [
-      705,
-      700,
-      690
-     ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
-    },
-    {
-     "fiche": 26,
-     "tarif": {
-      "tableau": 0
-     },
-     "appellation": "AOP Médoc Cru Bourgeois",
-     "cuvee": "Château la Gorce",
-     "couleur": "Rouge",
-     "millesime": "2020",
-     "contenance": "Magnum 1,5 L",
-     "prix_centimes": [
-      1415,
-      1410,
-      1400
-     ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
-    },
-    {
-     "fiche": 26,
-     "tarif": {
-      "tableau": 0
-     },
      "appellation": "AOP Médoc",
      "cuvee": "Prétexte",
      "couleur": "Rouge",
@@ -6780,8 +6967,7 @@
       655,
       645
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 26,
@@ -6798,8 +6984,7 @@
       620,
       610
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 26,
@@ -6816,8 +7001,7 @@
       975,
       965
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 26,
@@ -6834,8 +7018,7 @@
       630,
       620
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 26,
@@ -6852,8 +7035,7 @@
       505,
       495
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
-     "label": "Bio"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     }
    ],
    "paliers_salon": {

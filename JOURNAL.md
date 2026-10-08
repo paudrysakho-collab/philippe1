@@ -983,3 +983,13 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Sardelles : texte d'après le site du domaine, photos du site (portrait, Sancerre rosé détouré).
 - Les Lys et Château La Gorce depuis leurs tarifs annotés ; La Gorce entre l'Escarderie et Passion.
 - Contrôle : les mentions propres à la couverture globale ; 64 pages, 40 fiches, 579 prix, au vert.
+
+### 8 octobre, soir — catalogue caviste global, 3e passe
+- Réponses de l'agence appliquées : millésime le plus récent en cas de doute ; aucun millésime quand le
+  tarif n'en donne pas ; La Gorce bio en tête de fiche (la paire en double fusionnée) ; Caillasses ok.
+- Mas des Restanques (n°43) ajouté en Rhône juste avant Trichon : vins surlignés de son tarif 2026,
+  « franco de port à partir de 96 bts ». Colombier : bag-in-box 5 L / 10 L (Muscadet, Chardonnay, rosés).
+- Photos : bouteille Extra Brut pour Trichon Bugey, nouvelle bouteille Nadine Ferrand (les deux
+  catalogues refaits).
+- Numéros de page toujours à gauche (bas de page, ouvertures, index), comme au sommaire.
+- 64 pages, 41 fiches, 587 prix ; catalogue général refait (52 pages), tout au vert.

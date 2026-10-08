@@ -297,12 +297,12 @@
   "numero": 11,
   "role": "bouteille",
   "fichier": "src/photos/bouteille/d11.png",
-  "source_url": "src/photos/brut/Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg",
+  "source_url": "src/photos/brut/Bouteilles_de_vin/Domaine_Nadine_Ferrand/nadine-ferrand-macon-charnay-2.jpg",
   "page": null,
-  "provenance": "dossier de l'agence",
-  "source_px": "2266x4032",
-  "ppi": 1112,
-  "sujet": "bouteille Mâcon Charnay-lès-Mâcon"
+  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
+  "source_px": "1493x2000",
+  "ppi": 750,
+  "sujet": "bouteille Mâcon Charnay-lès-Mâcon (nouvelle photo)"
  },
  {
   "numero": 12,
@@ -1082,5 +1082,16 @@
   "source_px": "3911x5867",
   "ppi": 1776,
   "sujet": "bouteille de Sancerre rosé du domaine"
+ },
+ {
+  "numero": 42,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d42.png",
+  "source_url": "src/photos/brut/Bouteilles_de_vin/Domaine_Trichon_Bugey/trichon-bugey-extra-brut.jpg",
+  "page": null,
+  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
+  "source_px": "1493x2000",
+  "ppi": 785,
+  "sujet": "bouteille Extra Brut, Bugey"
  }
 ]

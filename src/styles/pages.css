@@ -387,7 +387,7 @@
 .sommaire-global .som-region { margin-bottom: 3mm; }
 .sommaire-global .som-bande { height: 8mm; margin-bottom: .8mm; }
 .sommaire-global .som-bande span { font-size: 15pt; }
-.sommaire-global li a { height: 6.1mm; font-size: 11pt; gap: 0; padding-left: 0; }
+.sommaire-global li a { height: 5.8mm; font-size: 11pt; gap: 0; padding-left: 0; }
 .sommaire-global li .n { display: none; }
 .sommaire-global li .pg { font-size: 11pt; }
 .sommaire-global li.avec-mention a { height: 9.4mm; }
@@ -414,3 +414,11 @@
 .validite-double strong:last-child { margin-bottom: 0; }
 /* sommaire du catalogue global : la page à gauche, puis le domaine */
 .sommaire-global li .pg-gauche { min-width: 8mm; margin-right: 2.6mm; text-align: left; color: var(--violet); font-weight: 700; }
+/* « toujours à gauche » (l'agence, 8 octobre) : le numéro de page en premier, comme au sommaire —
+   en bas de chaque page, dans les ouvertures de région et dans les index */
+.ed-global .page .folio, .ed-global .page.verso .folio { right: auto; left: calc(var(--marge-int) + var(--fp)); }
+.ed-global .page.verso .folio { left: calc(var(--marge-ext) + var(--carotte-l) + var(--fp)); }
+.ed-global .page .sanitaire, .ed-global .page.verso .sanitaire { left: auto; right: calc(var(--marge-ext) + var(--carotte-l) + var(--fp)); }
+.ed-global .page.verso .sanitaire { right: calc(var(--marge-int) + var(--fp)); }
+.ed-global .ouv-liste .pg, .ed-global .idom-pg, .ed-global .idx-pg { order: -1; min-width: 6.5mm; text-align: left; }
+.ed-global .ouv-liste .n:empty, .ed-global .idom-n:empty, .ed-global .idx-dom:empty { display: none; }

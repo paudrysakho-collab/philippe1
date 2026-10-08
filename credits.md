@@ -73,7 +73,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 
 <!-- images:debut -->
 
-**82 images posées sur 80 emplacements.**
+**83 images posées sur 80 emplacements.**
 
 ### Image par image
 
@@ -100,7 +100,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 10 | Domaine Sébastien Magnien | rond (`src/photos/rond/d10.jpg`) | portrait au chai, recadré au-dessus du verre | Canva de l'agence « Tarif septembre 2026 », page 13 | `canva/d10-p13-088.png` | 1378x845 px → 258 ppi à 40 mm | photothèque de l'agence |
 | 10 | Domaine Sébastien Magnien | bouteille (`src/photos/bouteille/d10.png`) | bouteille Bourgogne Pinot Noir 2023 | dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026 | `gemini/d10-magnien-bourgogne-pinot-noir.jpg` | 528x2013 px → 823 ppi à 24 × 62 mm | photothèque de l'agence |
 | 11 | Domaine Nadine Ferrand | rond (`src/photos/rond/d11.jpg`) | les vigneronnes au chai, noir et blanc | dossier de l'agence | `Domaines_et_vignerons/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Vigneronnes_au_chai.jpg` | 1920x1080 px → 686 ppi à 40 mm | photothèque de l'agence |
-| 11 | Domaine Nadine Ferrand | bouteille (`src/photos/bouteille/d11.png`) | bouteille Mâcon Charnay-lès-Mâcon | dossier de l'agence | `Bouteilles_de_vin/Domaine_Nadine_Ferrand/Domaine_Nadine_Ferrand_Macon-Charnay-les-Macon.jpg` | 2266x4032 px → 1112 ppi à 24 × 62 mm | photothèque de l'agence |
+| 11 | Domaine Nadine Ferrand | bouteille (`src/photos/bouteille/d11.png`) | bouteille Mâcon Charnay-lès-Mâcon (nouvelle photo) | dossier de l'agence, envoyée le 8 octobre 2026 | `Bouteilles_de_vin/Domaine_Nadine_Ferrand/nadine-ferrand-macon-charnay-2.jpg` | 1493x2000 px → 750 ppi à 24 × 62 mm | photothèque de l'agence |
 | 12 | Maison et Domaine André Goichot | rond (`src/photos/rond/d12.jpg`) | deux portraits de la maison, côte à côte | Canva de l'agence « Tarif septembre 2026 », page 15 | `canva/d12-p15-107.png` + `canva/d12-p15-108.png` | 491x510 + 491x510 px → 312 ppi à 40 mm | photothèque de l'agence |
 | 12 | Maison et Domaine André Goichot | bouteille (`src/photos/bouteille/d12.png`) | bouteille Givry Champ la Dame 2023 | dossier de l'agence | `Bouteilles_de_vin/Maison_Andre_Goichot/Maison_Andre_Goichot_Givry_Champ_la_Dame_2023_catalogue.png` | 1600x2000 px → 574 ppi à 24 × 62 mm | photothèque de l'agence |
 | 13 | Château du Cray | rond (`src/photos/rond/d13.jpg`) | le vignoble du Château du Cray (bannière de sa page) | site officiel du domaine | page https://www.maisongoichot.com/fr/content/chateau-du-cray — image <https://www.maisongoichot.com/sites/default/files/styles/banner_md/public/banner-cray_0.jpg?itok=kYMCGWkV> | 1130x663 px → 421 ppi à 40 mm | **autorisation à demander au domaine** |
@@ -161,6 +161,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 40 | Vazart-Coquart & Fils | bouteille (`src/photos/bouteille/d40.png`) | bouteille Special Club | Canva de l'agence « Tarif septembre 2026 », page 43 | `canva/d40-p43-382.png` | 466x640 px → 238 ppi à 24 × 62 mm | photothèque de l'agence |
 | 41 | Domaine des Sardelles | rond (`src/photos/rond/d41.jpg`) | un vigneron du domaine dans les vignes, noir et blanc | site officiel du domaine | page https://www.domaine-des-sardelles.com/equipe — image <https://static.wixstatic.com/media/3a5ead_85120b5d0c594b03be709c2d85a6894c~mv2.jpg> | 3850x4812 px → 2445 ppi à 40 mm | **autorisation à demander au domaine** |
 | 41 | Domaine des Sardelles | bouteille (`src/photos/bouteille/d41.png`) | bouteille de Sancerre rosé du domaine | site officiel du domaine | page https://www.domaine-des-sardelles.com/nos-vins — image <https://static.wixstatic.com/media/3a5ead_dbe252adb1f04ddeb7c1698466241b70~mv2.jpg> | 3911x5867 px → 1776 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
+| 42 | Domaine Trichon (Bugey) | bouteille (`src/photos/bouteille/d42.png`) | bouteille Extra Brut, Bugey | dossier de l'agence, envoyée le 8 octobre 2026 | `Bouteilles_de_vin/Domaine_Trichon_Bugey/trichon-bugey-extra-brut.jpg` | 1493x2000 px → 785 ppi à 24 × 62 mm | photothèque de l'agence |
 
 ### Récapitulatif par domaine
 
@@ -176,7 +177,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 8 | Domaine Boehler | logo du domaine — Canva de l'agence, 447 ppi | bouteille Molse blanc — dossier de l'agence, 1036 ppi |
 | 9 | Domaine des Nugues | portrait des vignerons — site du domaine, 235 ppi | bouteille Moulin-à-Vent 2022 — dossier de l'agence, 574 ppi |
 | 10 | Domaine Sébastien Magnien | portrait au chai, recadré au-dessus du verre — Canva de l'agence, 258 ppi | bouteille Bourgogne Pinot Noir 2023 — dossier de l'agence, 823 ppi |
-| 11 | Domaine Nadine Ferrand | les vigneronnes au chai, noir et blanc — dossier de l'agence, 686 ppi | bouteille Mâcon Charnay-lès-Mâcon — dossier de l'agence, 1112 ppi |
+| 11 | Domaine Nadine Ferrand | les vigneronnes au chai, noir et blanc — dossier de l'agence, 686 ppi | bouteille Mâcon Charnay-lès-Mâcon (nouvelle photo) — dossier de l'agence, 750 ppi |
 | 12 | Maison et Domaine André Goichot | deux portraits de la maison, côte à côte — Canva de l'agence, 312 ppi | bouteille Givry Champ la Dame 2023 — dossier de l'agence, 574 ppi |
 | 13 | Château du Cray | le vignoble du Château du Cray (bannière de sa page) — site du domaine, 421 ppi | bouteille Mercurey blanc Les Doues (cuvée absente du tarif) — dossier de l'agence, 272 ppi |
 | 14 | Domaine Les Guignottes | nom du domaine sur ses vignes — Canva de l'agence, 337 ppi | bouteille Bourgogne Chardonnay 2023 — dossier de l'agence, 574 ppi |
@@ -207,6 +208,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 39 | Champagne Solemme | logo de la maison — site du domaine, 437 ppi | bouteille Nature de Solemme — Canva de l'agence, 307 ppi |
 | 40 | Vazart-Coquart & Fils | la maison de champagne — site du domaine, 603 ppi | bouteille Special Club — Canva de l'agence, 238 ppi |
 | 41 | Domaine des Sardelles | un vigneron du domaine dans les vignes, noir et blanc — site du domaine, 2445 ppi | bouteille de Sancerre rosé du domaine — site du domaine, 1776 ppi |
+| 42 | Domaine Trichon (Bugey) | **vide** (pointillé) | bouteille Extra Brut, Bugey — dossier de l'agence, 785 ppi |
 
 <!-- images:fin -->
 
