@@ -3089,7 +3089,8 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols."
+   "offre_salon": "Offre 11+1 à partir de 240 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 15,

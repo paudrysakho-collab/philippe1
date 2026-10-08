@@ -1014,3 +1014,4 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
   (repris de l'historique git) et garde la bouteille La Bonne Résolution 2020.
 - Page finale du catalogue global : ligne de droits d'auteur (© Agence SCIO, reproduction interdite
   sans autorisation écrite). « Philippe Audry / page 66 » : une blague, rien à faire.
+- Domaine des Noëls : « franco de port » (l'agence, 8 oct.).

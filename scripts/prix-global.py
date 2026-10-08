@@ -57,6 +57,8 @@ CORRECTIONS_VINS = {
 AVEC_CATALOGUE_COMPLET = {12, 13, 14, 25}
 # départements donnés par l'agence pour une fiche venue du salon
 DEPARTEMENTS = {37: ["35", "44", "49", "53", "56", "85"]}       # Champagne Dekeyne
+# notes de prix données par l'agence pour une fiche venue du salon
+NOTES = {4: "* Prix de la bouteille H.T. franco de port."}       # Domaine des Noëls : franco de port (l'agence, 8 oct.)
 # labels de tête retirés (Nadine Ferrand : pas d'« AOP » en haut à gauche)
 SANS_LABELS = {11}
 # Trichon (Rhône) : lignes surlignées de son tarif départ cave (scan du 8 oct., Scan08102026-6),
@@ -345,6 +347,9 @@ def main():
             v.update(CORRECTIONS_VINS.get((v["fiche"], v["cuvee"]), {}))
         if s.get("offre_salon") == ANCIENNE_OFFRE:
             s["offre_salon"] = OFFRE_VOLUME
+        for n in s.get("domaines") or []:
+            if n in NOTES:
+                s["note_prix_salon"] = NOTES[n]
         if set(s.get("domaines") or []) & AVEC_CATALOGUE_COMPLET:
             s["complement"] = CATALOGUE_COMPLET
     # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne ;
