@@ -50,6 +50,9 @@ CATALOGUE_COMPLET = "Possibilité sur demande d'avoir le catalogue complet."
 # relecture du 8 octobre au soir : corrections de vins (fiche, cuvée) → champs
 CORRECTIONS_VINS = {
     (2, "Les Courbes Blanc"): {"cuvee": "Les Courbes Rouge", "couleur": "Rouge"},       # Barbinière : un rouge
+    # Colombier : « IGP Val de Loire » (l'agence, 8 oct. soir)
+    (3, "Le Prestige de Beaulieu"): {"appellation": "IGP Val de Loire Chardonnay"},
+    (3, "Cuvée domaine"): {"appellation": "IGP Val de Loire Sauvignon Gris"},
     (23, "N°8 Grand Pavois Rouge"): {"cuvee": "N°8 Grand Pavois Moelleux", "couleur": "Moelleux"},
     (21, "Mas de Lusanne Vacqueyras Blanc"): {"millesime": "2024"},                    # corrigé sur le tarif
 }
@@ -148,7 +151,7 @@ NOUVEAUX = {
     # Loire — Domaine des Sardelles (tarif HT franco, scan p.5) et sa marque Les Courants (p.6).
     # Colonnes surlignées : 72, 144, 288 bouteilles. « Les Courants Pinot Noir » : ajout manuscrit.
     41: {"paliers": {"41": P(72, 144, 288)}, "note": FRANCO,
-         "offre": "Minimum de commande : 36 bts. Magnum sur demande.",
+         "offre": "Minimum de commande : 36 bouteilles. Magnum sur demande.",
          "vins": [
              V(41, 0, "AOC Sancerre", "Sancerre Blanc", "Blanc", "—", eu("13,20", "12,90", "12,60")),
              V(41, 0, "AOC Sancerre", "Sancerre Blanc « La Cabane »", "Blanc", "—", eu("16,70", "16,40", "16,10")),
@@ -270,8 +273,8 @@ NOUVEAUX[43] = {"paliers": {"43": UNIQUE}, "note": "* Prix de la bouteille H.T. 
 # tableau BIBS de la fiche (5 L / 10 L). Le Sauvignon IGP est barré.
 BIB_COLOMBIER = [
     V(3, 1, "AOP Muscadet", None, "Blanc", "—", eu("13,80", "22,70"), "BIB", prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
-    V(3, 1, "IGP Chardonnay", None, "Blanc", "—", eu("12,50", "19,40"), "BIB", prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
-    V(3, 1, "Tous nos rosés", "Cabernet, Abouriou, Gamay, Grolleau Gris", "Rosé", "—", eu("11,50", "18,40"), "BIB",
+    V(3, 1, "IGP Val de Loire Chardonnay", None, "Blanc", "—", eu("12,50", "19,40"), "BIB", prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
+    V(3, 1, "IGP Val de Loire Cabernet Franc", None, "Rosé", "—", eu("11,50", "18,40"), "BIB",   # l'agence, 8 oct.
       prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
 ]
 

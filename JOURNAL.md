@@ -1015,3 +1015,15 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Page finale du catalogue global : ligne de droits d'auteur (© Agence SCIO, reproduction interdite
   sans autorisation écrite). « Philippe Audry / page 66 » : une blague, rien à faire.
 - Domaine des Noëls : « franco de port » (l'agence, 8 oct.).
+
+### 8 octobre, soir — photos de personnes, dernières retouches du catalogue caviste
+- Banque d'images = l'ancien catalogue « Tarif septembre 2026 » (images seulement,
+  `sources/ancien-catalogue/`) et le Drive. Ronds : Haut Marin, Famille d'Exea, Les Lys, Solemme
+  (visages), Prieuré des Papes (le mas) ; Sardelles : Cyprien ; Barbinière : les deux frères en
+  diptyque. Coyeux et Frézier : pas de personne disponible, image inchangée. `plancher_ppi` par
+  entrée dans `photos-locales.json` pour les images voulues malgré une définition faible.
+- Page 2 : « 32_Vignes_coucher_de_soleil » du Drive (dossier « à identifier »), sans poteau.
+- Couverture « Catalogue caviste » ; plus aucun nombre de références ; page « produits à part »
+  retirée (tout est dans l'index) ; index des domaines sans le compte ; Colombier « IGP Val de
+  Loire » (Chardonnay, Sauvignon Gris, BIB Chardonnay, BIB Cabernet Franc rosé) ; Sardelles
+  « Minimum de commande : 36 bouteilles ».

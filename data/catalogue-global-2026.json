@@ -767,7 +767,7 @@
       "tableau": 0,
       "ligne": 2
      },
-     "appellation": "IGP Chardonnay",
+     "appellation": "IGP Val de Loire Chardonnay",
      "cuvee": "Le Prestige de Beaulieu",
      "couleur": "Blanc",
      "millesime": "2024",
@@ -787,7 +787,7 @@
       "tableau": 0,
       "ligne": 3
      },
-     "appellation": "IGP Sauvignon Gris",
+     "appellation": "IGP Val de Loire Sauvignon Gris",
      "cuvee": "Cuvée domaine",
      "couleur": "Blanc",
      "millesime": "2025",
@@ -862,7 +862,7 @@
      "tarif": {
       "tableau": 1
      },
-     "appellation": "IGP Chardonnay",
+     "appellation": "IGP Val de Loire Chardonnay",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "—",
@@ -878,8 +878,8 @@
      "tarif": {
       "tableau": 1
      },
-     "appellation": "Tous nos rosés",
-     "cuvee": "Cabernet, Abouriou, Gamay, Grolleau Gris",
+     "appellation": "IGP Val de Loire Cabernet Franc",
+     "cuvee": null,
      "couleur": "Rosé",
      "millesime": "—",
      "contenance": "BIB",
@@ -5631,7 +5631,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Minimum de commande : 36 bts. Magnum sur demande.",
+   "offre_salon": "Minimum de commande : 36 bouteilles. Magnum sur demande.",
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,

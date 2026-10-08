@@ -19,7 +19,7 @@ export const SALON_ED = EDITION === 'salon';
     de pages), avec ses pages d'ouverture de région et l'index des domaines. */
 export const GLOBAL_ED = EDITION === 'global';
 const EV = catalogue.salon?.evenement;
-const ENLETTRES = { 9: 'neuf', 10: 'dix', 11: 'onze', 26: 'vingt-six', 31: 'trente et un', 39: 'trente-neuf', 40: 'quarante' };
+const ENLETTRES = { 9: 'neuf', 10: 'dix', 11: 'onze', 41: 'quarante et un', 26: 'vingt-six', 31: 'trente et un', 39: 'trente-neuf', 40: 'quarante' };
 const enLettres = (n) => ENLETTRES[n] || String(n);
 const majuscule = (t) => t.charAt(0).toUpperCase() + t.slice(1);
 export const NB_VINS = catalogue.domaines.reduce((n, d) => n + nbReferences(d), 0);
@@ -134,7 +134,7 @@ function couvertureSalon() {
       ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
-      <h1 class="titre-couv">${GLOBAL_ED ? 'Catalogue' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
+      <h1 class="titre-couv">${GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
       ${GLOBAL_ED
     // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui
@@ -176,11 +176,11 @@ export function pageAgence() {
           <span class="es-date">${esc(EV.date_texte)}</span>
           <span class="es-lieu">${esc(EV.lieu)}, ${esc(EV.commune)}</span>
           <span class="es-orga">Organisé par l'${esc(EV.organisateur)}</span></div>`
-        : `<div class="bandeau-coupe bandeau-photo"><img src="${photoRegion('Beaujolais')}" alt=""></div>`}
+        : `<div class="bandeau-coupe bandeau-photo"><img src="${GLOBAL_ED ? '../src/photos/agence/page2-vignes-coucher-de-soleil.jpg' : photoRegion('Beaujolais')}" alt=""></div>`}
       <div class="chiffres">
         <div><strong>${ED.acteurs}</strong> ${ED.motActeurs}</div>
         <div><strong>${REGIONS.length}</strong> régions</div>
-        <div><strong>${NB_VINS}</strong> ${ED.motVins}</div>
+        ${GLOBAL_ED ? '' : `<div><strong>${NB_VINS}</strong> ${ED.motVins}</div>`}
       </div>
     </div>`,
   });
@@ -280,7 +280,7 @@ export function ouvertureRegion(nom, pagesParDomaine) {
         <p class="ouv-mot">${esc(s.mot)}</p>
         <div class="ouv-chiffres">
           <span><strong>${doms.length}</strong> ${doms.length > 1 ? ED.motActeurs.replace('vignerons', 'domaines') : 'domaine'}</span>
-          <span><strong>${refs}</strong> ${refs > 1 ? ED.motVins : ED.motVin}</span>
+          ${GLOBAL_ED ? '' : `<span><strong>${refs}</strong> ${refs > 1 ? ED.motVins : ED.motVin}</span>`}
         </div>
         <div class="ouv-types">${types}</div>
         <ul class="ouv-liste">${doms.map((d) =>
@@ -301,7 +301,7 @@ export function enteteDomaine(d, suite = false) {
     g ? `<span class="jeton panachage">Panachage entre domaines</span>`
       : `<span class="jeton panachage">Panachage dans le domaine</span>`,
     consulter ? '<span class="jeton consulter">Consultez-nous</span>' : '',
-    `<span class="jeton">${vins(nbReferences(d))}</span>`,
+    GLOBAL_ED ? '' : `<span class="jeton">${vins(nbReferences(d))}</span>`,
   ].filter(Boolean).join('');
   // Au salon, le numéro du stand prend la place du numéro du tarif : c'est lui qu'on
   // cherche sur le plan. Il vient avec sa salle.
@@ -621,9 +621,9 @@ export function indexDomaines(pagesParDomaine) {
           <span class="idom-n">${numero(d)}</span>
           <span class="idom-nom">${esc(d.nom)}</span>
           <span class="idom-reg">${esc(d.region)}</span>
-          <span class="idom-nb">${nbReferences(d)}</span>
+          ${GLOBAL_ED ? '' : `<span class="idom-nb">${nbReferences(d)}</span>`}
           <span class="idom-pg">${pagesParDomaine.get(d.numero)}</span></a>`).join('')}</div>
-      <p class="idom-pied">${ED.piedIndexDomaines}</p>
+      ${GLOBAL_ED ? '' : `<p class="idom-pied">${ED.piedIndexDomaines}</p>`}
     </div>`,
   });
 }

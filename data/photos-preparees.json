@@ -32,19 +32,12 @@
   "numero": 2,
   "role": "rond",
   "fichier": "src/photos/rond/d02.jpg",
-  "source_url": "https://static.wixstatic.com/media/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_2500,h_1666,al_c/42f898_a63b2bbb4dbb4345b3bf6054137906e1~mv2_d_5184_3456_s_4_2.jpg",
-  "page": "https://www.domainedelabarbiniere.com/",
-  "provenance": "site officiel du domaine",
-  "source_px": "2500x1666",
-  "ppi": 1058,
-  "sujet": "vendanges dans les vignes du domaine",
-  "entiere": "src/photos/rond/d02-entiere.jpg",
-  "carre": [
-   0.1668,
-   0.0,
-   0.6664,
-   1.0
-  ]
+  "source_url": "src/photos/brut/Domaines_et_vignerons/Domaine_de_la_Barbiniere/frere-1.png + src/photos/brut/Domaines_et_vignerons/Domaine_de_la_Barbiniere/frere-2.png",
+  "page": null,
+  "provenance": "envoyée par l'agence le 8 octobre 2026",
+  "source_px": "218x237 + 196x246",
+  "ppi": 124,
+  "sujet": "Vincent et Alban Orion"
  },
  {
   "numero": 2,
@@ -410,12 +403,19 @@
   "numero": 16,
   "role": "rond",
   "fichier": "src/photos/rond/d16.jpg",
-  "source_url": "src/photos/brut/canva/d16-p19-133.png",
+  "source_url": "src/photos/brut/ancien-catalogue/i-019-136.png",
   "page": null,
-  "provenance": "Canva de l'agence « Tarif septembre 2026 », page 19",
-  "source_px": "750x500",
-  "ppi": 549,
-  "sujet": "logo du domaine"
+  "provenance": "ancien catalogue « Tarif septembre 2026 » de l'agence (images seulement), renvoyé le 8 octobre 2026",
+  "source_px": "320x254",
+  "ppi": 161,
+  "sujet": "le domaine",
+  "entiere": "src/photos/rond/d16-entiere.jpg",
+  "carre": [
+   0.10312,
+   0.0,
+   0.79375,
+   1.0
+  ]
  },
  {
   "numero": 16,
@@ -585,12 +585,19 @@
   "numero": 23,
   "role": "rond",
   "fichier": "src/photos/rond/d23.jpg",
-  "source_url": "https://www.domaine-hautmarin.com/wp-content/uploads/2025/12/Logo-Haut-Marin.png",
-  "page": "https://www.domaine-hautmarin.com/",
-  "provenance": "site officiel du domaine",
-  "source_px": "1056x594",
-  "ppi": 698,
-  "sujet": "logo du domaine"
+  "source_url": "src/photos/brut/ancien-catalogue/i-026-192.png",
+  "page": null,
+  "provenance": "ancien catalogue « Tarif septembre 2026 » de l'agence (images seulement), renvoyé le 8 octobre 2026",
+  "source_px": "1039x261",
+  "ppi": 166,
+  "sujet": "la vigneronne dans les vignes",
+  "entiere": "src/photos/rond/d23-entiere.jpg",
+  "carre": [
+   0.30414,
+   0.0,
+   0.2512,
+   1.0
+  ]
  },
  {
   "numero": 23,
@@ -832,12 +839,19 @@
   "numero": 32,
   "role": "rond",
   "fichier": "src/photos/rond/d32.jpg",
-  "source_url": "https://www.laboutiquedexea.com/cdn/shop/files/E_uXE_uA_blanc.png?v=1779183522&width=600",
-  "page": "https://www.laboutiquedexea.com/",
-  "provenance": "site officiel du domaine",
-  "source_px": "600x533",
-  "ppi": 468,
-  "sujet": "logo de la maison"
+  "source_url": "src/photos/brut/ancien-catalogue/i-035-288.png",
+  "page": null,
+  "provenance": "ancien catalogue « Tarif septembre 2026 » de l'agence (images seulement), renvoyé le 8 octobre 2026",
+  "source_px": "524x308",
+  "ppi": 196,
+  "sujet": "la vigneronne",
+  "entiere": "src/photos/rond/d32-entiere.jpg",
+  "carre": [
+   0.30534,
+   0.0,
+   0.58779,
+   1.0
+  ]
  },
  {
   "numero": 32,
@@ -912,12 +926,19 @@
   "numero": 35,
   "role": "rond",
   "fichier": "src/photos/rond/d35.jpg",
-  "source_url": "src/photos/brut/canva/d35-p38-321.png",
+  "source_url": "src/photos/brut/ancien-catalogue/i-038-320.png",
   "page": null,
-  "provenance": "Canva de l'agence « Tarif septembre 2026 », page 38",
-  "source_px": "265x245",
-  "ppi": 217,
-  "sujet": "logo du domaine"
+  "provenance": "ancien catalogue « Tarif septembre 2026 » de l'agence (images seulement), renvoyé le 8 octobre 2026",
+  "source_px": "519x350",
+  "ppi": 222,
+  "sujet": "les vignerons au chai",
+  "entiere": "src/photos/rond/d35-entiere.jpg",
+  "carre": [
+   0.16185,
+   0.0,
+   0.67437,
+   1.0
+  ]
  },
  {
   "numero": 35,
@@ -1014,12 +1035,19 @@
   "numero": 39,
   "role": "rond",
   "fichier": "src/photos/rond/d39.jpg",
-  "source_url": "https://www.champagnesolemme.fr/wp-content/uploads/2022/10/champagne-solemme-logo-clair_4D4D4D.png",
-  "page": "https://www.champagnesolemme.com/",
-  "provenance": "site officiel du domaine",
-  "source_px": "530x275",
-  "ppi": 437,
-  "sujet": "logo de la maison"
+  "source_url": "src/photos/brut/ancien-catalogue/i-042-373.png",
+  "page": null,
+  "provenance": "ancien catalogue « Tarif septembre 2026 » de l'agence (images seulement), renvoyé le 8 octobre 2026",
+  "source_px": "511x330",
+  "ppi": 210,
+  "sujet": "Olivier Langlais",
+  "entiere": "src/photos/rond/d39-entiere.jpg",
+  "carre": [
+   0.1272,
+   0.0,
+   0.64579,
+   1.0
+  ]
  },
  {
   "numero": 39,
@@ -1065,18 +1093,18 @@
   "numero": 41,
   "role": "rond",
   "fichier": "src/photos/rond/d41.jpg",
-  "source_url": "https://static.wixstatic.com/media/3a5ead_85120b5d0c594b03be709c2d85a6894c~mv2.jpg",
-  "page": "https://www.domaine-des-sardelles.com/equipe",
-  "provenance": "site officiel du domaine",
-  "source_px": "3850x4812",
-  "ppi": 2445,
-  "sujet": "un vigneron du domaine dans les vignes, noir et blanc",
+  "source_url": "src/photos/brut/Domaines_et_vignerons/Domaine_des_Sardelles/cyprien.jpg",
+  "page": null,
+  "provenance": "envoyée par l'agence le 8 octobre 2026",
+  "source_px": "792x1190",
+  "ppi": 332,
+  "sujet": "Cyprien, troisième génération",
   "entiere": "src/photos/rond/d41-entiere.jpg",
   "carre": [
    0.0,
-   0.0665,
+   0.02194,
    1.0,
-   0.80008
+   0.95612
   ]
  },
  {

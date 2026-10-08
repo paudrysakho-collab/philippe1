@@ -47,6 +47,7 @@ EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".bmp", ".gif",
 MM_ROND = 40
 MM_BOUT_L, MM_BOUT_H = 24, 62
 PPI_CIBLE, PPI_PLANCHER = 300, 200
+PLANCHER_DEFAUT = PPI_PLANCHER
 def px(mm, ppi=PPI_CIBLE):
     return round(mm / 25.4 * ppi)
 PX_ROND = px(MM_ROND)                   # 472 px
@@ -690,6 +691,10 @@ def preparer(seulement=None, roles=("rond", "bouteille")):
             for s in sources:
                 obtenir(s)
             fichiers = " + ".join(s["fichier"] for s in sources)
+            # « plancher_ppi » : une image voulue par l'agence malgré une définition plus faible
+            # (ancien catalogue, photo envoyée) ; elle est signalée dans QUESTIONS.md
+            global PPI_PLANCHER
+            PPI_PLANCHER = e.get("plancher_ppi", PLANCHER_DEFAUT)
             try:
                 sortie, source_px, ppi = faire(n, e)
             except (Ecartee, FileNotFoundError) as raison:
