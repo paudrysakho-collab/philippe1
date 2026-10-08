@@ -732,6 +732,8 @@ def ecrire_credits(posees):
         return
     noms = {d["numero"]: d["nom"] for d in
             json.loads((RACINE / "data/catalogue.json").read_text(encoding="utf-8"))["domaines"]}
+    # les domaines nés dans le catalogue caviste global (8 octobre 2026)
+    noms.setdefault(41, "Domaine des Sardelles")
     taille = {"rond": f"{MM_ROND} mm", "bouteille": f"{MM_BOUT_L} × {MM_BOUT_H} mm"}
 
     def court(p):

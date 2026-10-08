@@ -43,6 +43,7 @@
   28,
   29,
   30,
+  26,
   25,
   31,
   32,
@@ -62,7 +63,7 @@
    "region": "Loire",
    "nom": "Domaine des Sardelles",
    "nom_sommaire": "Domaine des Sardelles",
-   "texte_source": "",
+   "texte_source": "Au nord du vignoble de Sancerre, à Sainte-Gemme-en-Sancerrois, le Domaine des Sardelles est une aventure familiale : Christophe et Guillaume, rejoints en 2021 par leur neveu Cyprien, portent aujourd'hui les deuxième et troisième générations. Approche peu interventionniste à la vigne comme en cave, vendanges entièrement à la main et conversion à l'agriculture biologique pour des Sancerre et des IGP Val de Loire de terroir.",
    "texte_tarif": "",
    "texte_catalogue": "",
    "labels": [
@@ -154,7 +155,8 @@
   "42": "Domaine Trichon (Bugey)"
  },
  "labels_entete": {
-  "25": []
+  "25": [],
+  "26": []
  },
  "stands": [
   {
@@ -6603,27 +6605,13 @@
      "appellation": "IGP Cévennes",
      "cuvee": "Aillargues",
      "couleur": "Blanc",
-     "millesime": "2021",
+     "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
       570
      ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
-    },
-    {
-     "fiche": 35,
-     "tarif": {
-      "tableau": 0
-     },
-     "appellation": "IGP Cévennes",
-     "cuvee": "Saint Anastasie",
-     "couleur": "Blanc",
-     "millesime": "2021",
-     "contenance": "75 cl",
-     "prix_centimes": [
-      890
-     ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "offre": "11+1"
     },
     {
      "fiche": 35,
@@ -6633,12 +6621,13 @@
      "appellation": "IGP Cévennes",
      "cuvee": "La Petite Syrah",
      "couleur": "Rouge",
-     "millesime": "2022",
+     "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
       450
      ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "offre": "11+1"
     },
     {
      "fiche": 35,
@@ -6648,27 +6637,12 @@
      "appellation": "AOP Duché d'Uzès",
      "cuvee": "Duché",
      "couleur": "Rouge",
-     "millesime": "2020",
+     "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
       595
      ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
-    },
-    {
-     "fiche": 35,
-     "tarif": {
-      "tableau": 0
-     },
-     "appellation": "AOP Duché d'Uzès",
-     "cuvee": "Librotte",
-     "couleur": "Rouge",
-     "millesime": "2019",
-     "contenance": "75 cl",
-     "prix_centimes": [
-      890
-     ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 35,
@@ -6678,12 +6652,12 @@
      "appellation": "IGP Cévennes",
      "cuvee": "Caillasses",
      "couleur": "Rouge",
-     "millesime": "2021",
+     "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
       1490
      ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
     },
     {
      "fiche": 35,
@@ -6693,12 +6667,13 @@
      "appellation": "IGP Cévennes",
      "cuvee": "La Soif",
      "couleur": "Rouge",
-     "millesime": "2023",
+     "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
       390
      ],
-     "prix_source": "tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)"
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "offre": "11+1"
     }
    ],
    "paliers_salon": {
@@ -6707,8 +6682,190 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": null,
+   "offre_salon": "Offre 11+1 à partir de 180 cols.",
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
+   "fiche_texte": null,
+   "texte_reference": null,
+   "mentions": []
+  },
+  {
+   "stand": null,
+   "nom_salon": null,
+   "domaines": [
+    26
+   ],
+   "vins": [
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc Cru Bourgeois",
+     "cuvee": "Château la Gorce",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      705,
+      700,
+      690
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc Cru Bourgeois",
+     "cuvee": "Château la Gorce",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      1415,
+      1410,
+      1400
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc Cru Bourgeois",
+     "cuvee": "Château la Gorce",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      705,
+      700,
+      690
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc Cru Bourgeois",
+     "cuvee": "Château la Gorce",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      1415,
+      1410,
+      1400
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc",
+     "cuvee": "Prétexte",
+     "couleur": "Rouge",
+     "millesime": "2022",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      660,
+      655,
+      645
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc",
+     "cuvee": "Rouge Intense",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      625,
+      620,
+      610
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc",
+     "cuvee": "L'An 022",
+     "couleur": "Rouge",
+     "millesime": "2022",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      980,
+      975,
+      965
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc",
+     "cuvee": "La Bonne Résolution",
+     "couleur": "Rouge",
+     "millesime": "2022",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      635,
+      630,
+      620
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    },
+    {
+     "fiche": 26,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOP Médoc",
+     "cuvee": "Château Canteloup",
+     "couleur": "Rouge",
+     "millesime": "2020",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      510,
+      505,
+      495
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "label": "Bio"
+    }
+   ],
+   "paliers_salon": {
+    "26": [
+     "À partir de 90 bts",
+     "À partir de 120 bts",
+     "À partir de 300 bts"
+    ]
+   },
+   "mode_prix": "paliers",
+   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,
    "mentions": []

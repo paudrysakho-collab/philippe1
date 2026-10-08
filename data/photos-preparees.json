@@ -1053,5 +1053,34 @@
   "source_px": "466x640",
   "ppi": 238,
   "sujet": "bouteille Special Club"
+ },
+ {
+  "numero": 41,
+  "role": "rond",
+  "fichier": "src/photos/rond/d41.jpg",
+  "source_url": "https://static.wixstatic.com/media/3a5ead_85120b5d0c594b03be709c2d85a6894c~mv2.jpg",
+  "page": "https://www.domaine-des-sardelles.com/equipe",
+  "provenance": "site officiel du domaine",
+  "source_px": "3850x4812",
+  "ppi": 2445,
+  "sujet": "un vigneron du domaine dans les vignes, noir et blanc",
+  "entiere": "src/photos/rond/d41-entiere.jpg",
+  "carre": [
+   0.0,
+   0.0665,
+   1.0,
+   0.80008
+  ]
+ },
+ {
+  "numero": 41,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d41.png",
+  "source_url": "https://static.wixstatic.com/media/3a5ead_dbe252adb1f04ddeb7c1698466241b70~mv2.jpg",
+  "page": "https://www.domaine-des-sardelles.com/nos-vins",
+  "provenance": "site officiel du domaine",
+  "source_px": "3911x5867",
+  "ppi": 1776,
+  "sujet": "bouteille de Sancerre rosé du domaine"
  }
 ]

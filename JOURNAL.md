@@ -974,3 +974,12 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - photo de région Bugey (Commons, CC0) ; un dessin maison quand un domaine n'a pas de photo ;
 - 64 pages, 39 fiches, 554 prix retrouvés dans le PDF, contrôles au vert, chaque page regardée.
 - Pas encore de .pptx pour cette édition.
+
+### 8 octobre, après-midi — catalogue caviste global, 2e passe
+- Base confirmée : le catalogue du salon (le PDF renvoyé par l'agence est le nôtre, même texte).
+- Couverture = celle du salon, titre « Catalogue / Vins & Terroirs », cartouche « Tarif valable
+  jusqu'au 31 décembre 2026 / Offres valables du 5 octobre au 14 novembre 2026 ».
+- Sommaire : la page à gauche, puis le domaine.
+- Sardelles : texte d'après le site du domaine, photos du site (portrait, Sancerre rosé détouré).
+- Les Lys et Château La Gorce depuis leurs tarifs annotés ; La Gorce entre l'Escarderie et Passion.
+- Contrôle : les mentions propres à la couverture globale ; 64 pages, 40 fiches, 579 prix, au vert.

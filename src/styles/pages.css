@@ -407,3 +407,10 @@
 .ed-global .folio { font: 700 12pt var(--technique); color: var(--violet); opacity: 1; bottom: calc(5.4mm + var(--fp)); }
 .ed-global .entete-dom .region { font-size: 9pt; }
 .ed-global .ouverture .folio, .ed-global .finale-coupe .folio, .ed-global .page.sombre .folio { color: var(--craie); }
+/* couverture du catalogue global : deux lignes de validité dans le cartouche, plus sobres */
+.validite-double { top: calc(106mm + var(--fp)); gap: .2mm; }
+.validite-double span { font-size: 15pt; }
+.validite-double strong { font-size: 18pt; margin-bottom: 1.6mm; }
+.validite-double strong:last-child { margin-bottom: 0; }
+/* sommaire du catalogue global : la page à gauche, puis le domaine */
+.sommaire-global li .pg-gauche { min-width: 8mm; margin-right: 2.6mm; text-align: left; color: var(--violet); font-weight: 700; }

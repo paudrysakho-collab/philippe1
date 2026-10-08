@@ -113,14 +113,18 @@ const obligatoires = [
   ["site", catalogue.agence.contacts.site],
   ["RCS", '843 151 663'],
   ...(SALON ? [["nom du salon", catalogue.salon.evenement.nom], ["date du salon", catalogue.salon.evenement.date_texte],
-    ["lieu du salon", catalogue.salon.evenement.lieu]] : [["cible", 'Vendée (85)']]),
+    ["lieu du salon", catalogue.salon.evenement.lieu]]
+    // catalogue caviste global : la couverture du salon, avec ses dates de validité (8 octobre)
+    : EDITION === 'global' ? [["titre", 'Vins & Terroirs'], ["validité du tarif", "jusqu'au 31 décembre 2026"],
+      ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
+    : [["cible", 'Vendée (85)']]),
 ];
 obligatoires.forEach(([nom, aiguille]) =>
   dire(texte.toUpperCase().includes(aiguille.toUpperCase()), `${nom} présent dans le PDF`));
 
 /* ——— 4 bis. La couche texte n'est-elle pas fragmentée par l'interlettrage ? ——— */
 const motsEntiers = ['BORDEAUX', 'BOURGOGNE', 'LANGUEDOC', 'CHAMPAGNE', 'POSSIBILITÉ DE PANACHER',
-  SALON ? 'Salon Privé' : 'Tarifs cavistes Vendée (85)', 'SUD-OUEST'];
+  SALON ? 'Salon Privé' : EDITION === 'global' ? 'Vins & Terroirs' : 'Tarifs cavistes Vendée (85)', 'SUD-OUEST'];
 // Les capitales sont parfois produites par CSS : on compare en majuscules.
 const hautTexte = texte.toUpperCase();
 const fragmentes = motsEntiers.filter((m) => !hautTexte.includes(m.toUpperCase()));

@@ -73,7 +73,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 
 <!-- images:debut -->
 
-**80 images posées sur 80 emplacements.**
+**82 images posées sur 80 emplacements.**
 
 ### Image par image
 
@@ -159,6 +159,8 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 39 | Champagne Solemme | bouteille (`src/photos/bouteille/d39.png`) | bouteille Nature de Solemme | Canva de l'agence « Tarif septembre 2026 », page 42 | `canva/d39-p42-367.png` | 250x750 px → 307 ppi à 24 × 62 mm | photothèque de l'agence |
 | 40 | Vazart-Coquart & Fils | rond (`src/photos/rond/d40.jpg`) | la maison de champagne | site officiel du domaine | page https://www.champagnevazartcoquart.com/ — image <https://www.champagnevazartcoquart.com/wp-content/uploads/2020/10/maison-champagne-vazart-coquart.jpg> | 1920x950 px → 603 ppi à 40 mm | **autorisation à demander au domaine** |
 | 40 | Vazart-Coquart & Fils | bouteille (`src/photos/bouteille/d40.png`) | bouteille Special Club | Canva de l'agence « Tarif septembre 2026 », page 43 | `canva/d40-p43-382.png` | 466x640 px → 238 ppi à 24 × 62 mm | photothèque de l'agence |
+| 41 | Domaine des Sardelles | rond (`src/photos/rond/d41.jpg`) | un vigneron du domaine dans les vignes, noir et blanc | site officiel du domaine | page https://www.domaine-des-sardelles.com/equipe — image <https://static.wixstatic.com/media/3a5ead_85120b5d0c594b03be709c2d85a6894c~mv2.jpg> | 3850x4812 px → 2445 ppi à 40 mm | **autorisation à demander au domaine** |
+| 41 | Domaine des Sardelles | bouteille (`src/photos/bouteille/d41.png`) | bouteille de Sancerre rosé du domaine | site officiel du domaine | page https://www.domaine-des-sardelles.com/nos-vins — image <https://static.wixstatic.com/media/3a5ead_dbe252adb1f04ddeb7c1698466241b70~mv2.jpg> | 3911x5867 px → 1776 ppi à 24 × 62 mm | **autorisation à demander au domaine** |
 
 ### Récapitulatif par domaine
 
@@ -204,6 +206,7 @@ partir de ces photos, il suffit de retirer leurs deux lignes de `data/photos-loc
 | 38 | Champagne Denis Frézier | le village dans ses vignes — Canva de l'agence, 488 ppi | bouteille Les Trois Crus — dossier de l'agence, 574 ppi |
 | 39 | Champagne Solemme | logo de la maison — site du domaine, 437 ppi | bouteille Nature de Solemme — Canva de l'agence, 307 ppi |
 | 40 | Vazart-Coquart & Fils | la maison de champagne — site du domaine, 603 ppi | bouteille Special Club — Canva de l'agence, 238 ppi |
+| 41 | Domaine des Sardelles | un vigneron du domaine dans les vignes, noir et blanc — site du domaine, 2445 ppi | bouteille de Sancerre rosé du domaine — site du domaine, 1776 ppi |
 
 <!-- images:fin -->
 

@@ -531,15 +531,18 @@ les « oui » raturés de Falfas, les paliers de Verchères (`docs/questions-lau
 
 ## 32. Catalogue caviste global (8 octobre 2026)
 
-- **Domaine des Sardelles** : pas de texte de présentation, pas de photo, pas de départements de
-  distribution sur le tarif. La fiche le dit (« nous consulter ») et porte un dessin à la place de la photo.
-- **Domaine Les Lys** : l'agence a écrit « vérifier millésime » sur la page et doit encore la décrire.
-  En attendant, les prix et millésimes sont ceux du tarif de septembre.
+- **Domaine des Sardelles** : texte écrit d'après le site du domaine (accord de l'agence, 8 oct.) ; photos
+  du site (autorisation à demander). Départements de distribution : toujours inconnus ; millésimes : aucun
+  sur le tarif.
+- **Domaine Les Lys** : réglé (tarif annoté, 2e envoi du 8 oct.). Reste : Caillasses 14,90 € (raturé, « ok »).
+- **Château La Gorce** : lignes 1-2 (2020, sans logo bio) et 3-4 (2020, logo bio) identiques : garder les deux ?
 - **Livran** : 7,90 € vaut pour 2016 et 2020 ; **Sources de Livran** 4,50 € pour 2017 et 2018 ; **Cyprès de
   Climens** 16,95 € pour 2008 et 2010 (50 cl) : millésimes écrits « 2016/2020 », etc. À confirmer.
 - **Pavillon de Glana 2022, Château Livran, Les Sources de Livran, Château Valoux, Cyprès de Climens** : aucun
   logo AB ni HVE sur le tarif, donc pas de label sur la ligne.
 - **Trichon Bugey** : même texte et même portrait que la fiche du Rhône ; une bouteille dessinée en attendant
   une photo de bouteille de Gamay.
-- **Domaines de l'ancien catalogue général absents du sommaire annoté** (Divin No Low, Fabien Castaing,
-  Château La Gorce…) : non repris. À confirmer.
+- Base = le catalogue du salon (confirmé par l'agence) : Divin No Low, Fabien Castaing… n'y sont pas.
+  Château La Gorce ajouté entre l'Escarderie et La Passion des Terroirs.
+- **Nugues** : magnums « 2018/20/21/22 », « 2016/17 », « 2018/20/21 » : un seul millésime chacun ?
+- **Trichon Bugey** : Brut, Extra-Brut, Gamay sans millésime.

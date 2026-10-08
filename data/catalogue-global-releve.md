@@ -44,3 +44,13 @@ Les prix sont transcrits dans `scripts/prix-global.py` (seul endroit où ils viv
   Villegeorge, Château la Tour de Bessan. Doyac, Esprit de Doyac, Ceres de Haut-Bages Libéral, Livran et
   Sources de Livran : dictés par l'agence (page modifiée après le scan). Label de chaque ligne = son logo sur
   le tarif (AB → Bio ; Haute Valeur Environnementale → HVE).
+
+## 2e envoi du 8 octobre (sources/catalogue-global-2026/scan-les-lys.pdf, scan-la-gorce.pdf)
+
+- **Les Lys** (prix unique « à partir de 120 bts », offre 11+1 à partir de 180 cols) : Aillargues blanc
+  2023 5,70 (11+1) ; La Petite Syrah 2023 4,50 (11+1) ; Duché 2023 5,95 ; Caillasses 2025 14,90 (raturé,
+  « ok ») ; La Soif 2025 3,90 (11+1). Barrés : Saint Anastasie, Librotte.
+- **La Gorce** (90 / 120 / 300 bts, franco) : Château la Gorce 2020 75 cl 7,05 / 7,00 / 6,90 et 1,5 L
+  14,15 / 14,10 / 14,00, deux fois (sans puis avec logo bio) ; Prétexte 2022 6,60 / 6,55 / 6,45 ; Rouge
+  Intense 2020 6,25 / 6,20 / 6,10 ; L'An 022 2022 9,80 / 9,75 / 9,65 ; La Bonne Résolution 2022 6,35 /
+  6,30 / 6,20 ; Château Canteloup 2020 5,10 / 5,05 / 4,95. Barrés : Préface, Rosé DADA.

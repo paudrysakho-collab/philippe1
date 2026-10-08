@@ -55,6 +55,16 @@ def V(fiche, tableau, appellation, cuvee, couleur, millesime, prix, contenance="
     return v
 
 
+# Le texte des Sardelles : écrit d'après le site officiel du domaine
+# (https://www.domaine-des-sardelles.com, pages Accueil, Histoire, Équipe), à la demande de
+# l'agence (8 octobre 2026) — le tarif n'en donne pas.
+TEXTE_SARDELLES = (
+    "Au nord du vignoble de Sancerre, à Sainte-Gemme-en-Sancerrois, le Domaine des Sardelles est "
+    "une aventure familiale : Christophe et Guillaume, rejoints en 2021 par leur neveu Cyprien, "
+    "portent aujourd'hui les deuxième et troisième générations. Approche peu interventionniste à la "
+    "vigne comme en cave, vendanges entièrement à la main et conversion à l'agriculture biologique "
+    "pour des Sancerre et des IGP Val de Loire de terroir.")
+
 # ——— l'ordre du catalogue (sommaire annoté) et ses régions ———
 REGIONS = ["Loire", "Alsace", "Beaujolais", "Bourgogne", "Rhône", "Bugey", "Sud-Ouest",
            "Bordeaux", "Provence", "Languedoc", "Champagne"]
@@ -65,7 +75,7 @@ ORDRE = [1, 41, 2, 3, 4, 5, 6,          # Loire : Sardelles entre Reverdy et Bar
          16, 17, 18, 19, 20, 21,         # Rhône : Pasquiers entre la Pousterle et Trichon
          42,                             # Bugey : Domaine Trichon
          22, 23,                         # Sud-Ouest
-         27, 28, 29, 30, 25,             # Bordeaux : Passion des Terroirs après l'Escarderie
+         27, 28, 29, 30, 26, 25,         # Bordeaux : l'Escarderie, La Gorce, Passion des Terroirs
          31,                             # Provence
          32, 33, 34, 36, 35,             # Languedoc : Les Lys après Albas
          37, 38, 39, 40]                 # Champagne
@@ -73,7 +83,7 @@ ORDRE = [1, 41, 2, 3, 4, 5, 6,          # Loire : Sardelles entre Reverdy et Bar
 # ——— les domaines qui n'existaient pas dans les fiches (numéros 41 et 42) ———
 DOMAINES_AJOUTES = [
     {"numero": 41, "page_source": None, "region": "Loire", "nom": "Domaine des Sardelles",
-     "nom_sommaire": "Domaine des Sardelles", "texte_source": "", "texte_tarif": "",
+     "nom_sommaire": "Domaine des Sardelles", "texte_source": TEXTE_SARDELLES, "texte_tarif": "",
      "texte_catalogue": "", "labels": [{"label": "Bio", "preuve": "logo AB sur le tarif (scan 8 oct., p.5)"}],
      "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
      "note_prix": FRANCO, "departements": [],
@@ -201,18 +211,36 @@ NOUVEAUX = {
 }
 
 
-def depuis_fiche(n):
-    """Les Lys (n°35) : le tarif scanné (p.64) reprend les prix de la fiche de septembre ;
-    l'agence doit encore préciser les millésimes (« vérifier millésime »)."""
-    f = json.loads((RACINE / f"data/fiches/{n:02d}.json").read_text(encoding="utf-8"))
-    t = f["tableaux"][0]
-    return {"paliers": {str(n): t["paliers"]}, "note": HORS, "offre": None,
-            "vins": [V(n, 0, l["appellation"], l["cuvee"], l["couleur"], l["millesime"], l["prix_centimes"],
-                       l["contenance"], prix_source="tarif de septembre 2026, repris tel quel sur le scan du 8 oct. (p.64)")
-                     for l in t["lignes"]]}
+SCAN8 = "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
 
+# Languedoc — Domaine Les Lys (sources/catalogue-global-2026/scan-les-lys.pdf) : les cinq vins non
+# raturés, prix unique « à partir de 120 bouteilles » ; l'offre 11+1 vaut à partir de 180 cols.
+# Barrés : Saint Anastasie, Librotte. Caillasses : prix raturé mais « ok » écrit à côté.
+NOUVEAUX[35] = {"paliers": {"35": P(120)}, "note": HORS, "offre": "Offre 11+1 à partir de 180 cols.",
+    "vins": [
+        V(35, 0, "IGP Cévennes", "Aillargues", "Blanc", "2023", eu("5,70"), offre="11+1", prix_source=SCAN8),
+        V(35, 0, "IGP Cévennes", "La Petite Syrah", "Rouge", "2023", eu("4,50"), offre="11+1", prix_source=SCAN8),
+        V(35, 0, "AOP Duché d'Uzès", "Duché", "Rouge", "2023", eu("5,95"), prix_source=SCAN8),
+        V(35, 0, "IGP Cévennes", "Caillasses", "Rouge", "2025", eu("14,90"), prix_source=SCAN8),
+        V(35, 0, "IGP Cévennes", "La Soif", "Rouge", "2025", eu("3,90"), offre="11+1", prix_source=SCAN8),
+    ]}
 
-NOUVEAUX[35] = depuis_fiche(35)
+# Bordeaux — Château La Gorce (sources/catalogue-global-2026/scan-la-gorce.pdf) : les neuf vins non
+# barrés, paliers 90 / 120 / 300 ; « 2019 » corrigé en 2020 sur les deux premières lignes ; les
+# appellations raturées remplacées par « Médoc ». Barrés : Préface, Rosé DADA.
+NOUVEAUX[26] = {"paliers": {"26": P(90, 120, 300)}, "note": FRANCO,
+    "offre": "Offre possible à étudier en fonction du volume et de la référence.",
+    "vins": [
+        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("7,05", "7,00", "6,90"), prix_source=SCAN8),
+        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("14,15", "14,10", "14,00"), "Magnum 1,5 L", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("7,05", "7,00", "6,90"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc Cru Bourgeois", "Château la Gorce", "Rouge", "2020", eu("14,15", "14,10", "14,00"), "Magnum 1,5 L", label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Prétexte", "Rouge", "2022", eu("6,60", "6,55", "6,45"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Rouge Intense", "Rouge", "2020", eu("6,25", "6,20", "6,10"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "L'An 022", "Rouge", "2022", eu("9,80", "9,75", "9,65"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "La Bonne Résolution", "Rouge", "2022", eu("6,35", "6,30", "6,20"), label="Bio", prix_source=SCAN8),
+        V(26, 0, "AOP Médoc", "Château Canteloup", "Rouge", "2020", eu("5,10", "5,05", "4,95"), label="Bio", prix_source=SCAN8),
+    ]}
 
 # ——— Trichon : rose = Rhône, jaune = Bugey (scan p.28) ———
 TRICHON_RHONE = {"Mas de Lusanne Rouge", "Mas de Lusanne Vacqueyras Blanc", "Mas de Lusanne Vacqueyras Rouge"}
@@ -241,7 +269,7 @@ def main():
                         # un vrai tarif remplace l'ancien « consultez-nous » (Passion des Terroirs)
                         "mentions": []})
     # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne
-    labels = {"25": []}
+    labels = {"25": [], "26": []}
     sortie = {
         "_lisez_moi": "Écrit par scripts/prix-global.py — ne pas modifier à la main.",
         "edition": "Catalogue caviste global 2026",

@@ -101,7 +101,7 @@ ${corps}
 /* ——————————————————————————————————————————————— couverture ——— */
 
 export function couverture() {
-  if (SALON_ED) return couvertureSalon();
+  if (SALON_ED || GLOBAL_ED) return couvertureSalon();
   return page({
     classe: 'couverture couv-photo', folio: false, sanitaire: false,
     corps: `
@@ -134,10 +134,15 @@ function couvertureSalon() {
       ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
-      <h1 class="titre-couv">Salon Privé<br><em>Vins &amp; Terroirs</em></h1>
+      <h1 class="titre-couv">${GLOBAL_ED ? 'Catalogue' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
-      <div class="validite-couv"><span>Tarif et offres valables</span>
-        <strong>du 5 octobre au 14 novembre 2026</strong></div>
+      ${GLOBAL_ED
+    // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui
+    ? `<div class="validite-couv validite-double"><span>Tarif valable</span>
+        <strong>jusqu'au 31 décembre 2026</strong>
+        <span>Offres valables</span><strong>du 5 octobre au 14 novembre 2026</strong></div>`
+    : `<div class="validite-couv"><span>Tarif et offres valables</span>
+        <strong>du 5 octobre au 14 novembre 2026</strong></div>`}
       ${coupeElegante({ style: 'fine' })}
       <div class="sanitaire sanitaire-couv">${esc(SANITAIRE)}</div>`,
   });
@@ -233,9 +238,9 @@ export function sommaire(pagesParDomaine) {
       <div class="som-bande ${b.nom === 'Champagne' ? 'claire' : ''}" style="--strate:${s.hex}">
         <i class="som-pastille"></i><span>${esc(b.nom)}</span></div>
       <ul>${b.doms.map((d) => `<li${mentionSommaire(d) ? ' class="avec-mention"' : ''}><a href="#p${pagesParDomaine.get(d.numero)}">
-        <span class="n">${numero(d)}</span><span class="nom">${esc(d.nom)}${mentionSommaire(d)
+        ${GLOBAL_ED ? `<span class="pg pg-gauche">${pagesParDomaine.get(d.numero)}</span>` : `<span class="n">${numero(d)}</span>`}<span class="nom">${esc(d.nom)}${mentionSommaire(d)
           ? `<small class="som-mention">(${esc(mentionSommaire(d))})</small>` : ''}</span>
-        <span class="pg">${pagesParDomaine.get(d.numero)}</span></a></li>`).join('')}</ul></div>`;
+        ${GLOBAL_ED ? '' : `<span class="pg">${pagesParDomaine.get(d.numero)}</span>`}</a></li>`).join('')}</ul></div>`;
   }).join('');
   const [gauche, droite] = colonnesSommaire();
   return [page({
