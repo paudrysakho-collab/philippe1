@@ -102,8 +102,14 @@ DOMAINES_AJOUTES = [
 DOMAINES_AJOUTES.append(
     {"numero": 43, "page_source": None, "region": "Rhône", "nom": "Mas des Restanques",
      "nom_sommaire": "Mas des Restanques",
-     # le texte : l'en-tête du tarif, seul document du domaine
-     "texte_source": "Vignoble et vins biologiques, certifiés par Ecocert : Gigondas, Vacqueyras et Côtes du Rhône.",
+     # le texte : d'après le site officiel du domaine (https://masdesrestanques.com, « Notre
+     # domaine »), à la demande de l'agence (8 octobre 2026)
+     "texte_source": ("Né en 1995 de l'union de deux terroirs familiaux, le Mas des Restanques s'étend sur "
+                      "12 hectares au pied des Dentelles de Montmirail, entre Gigondas et Vacqueyras. La "
+                      "famille a créé sa propre cave en 2007, année de son premier millésime. Le raisin est "
+                      "cueilli à la main et trié à la parcelle ; les vins sont certifiés biologiques par "
+                      "Ecocert depuis 2012. La restanque, en provençal, est un mur de pierres sèches qui "
+                      "retient une terrasse de culture."),
      "texte_tarif": "", "texte_catalogue": "",
      "labels": [{"label": "Bio", "preuve": "« Nos vins sont biologiques et certifiés par Ecocert », tarif 2026"}],
      "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
