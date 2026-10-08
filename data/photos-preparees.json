@@ -665,30 +665,30 @@
   "numero": 26,
   "role": "rond",
   "fichier": "src/photos/rond/d26.jpg",
-  "source_url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
-  "page": "https://www.chateaulagorce.com/",
-  "provenance": "site officiel du domaine",
-  "source_px": "1000x1500",
-  "ppi": 635,
-  "sujet": "portrait des vignerons",
+  "source_url": "src/photos/brut/Domaines_et_vignerons/Chateau_La_Gorce/chateau.png",
+  "page": null,
+  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
+  "source_px": "589x387",
+  "ppi": 246,
+  "sujet": "le château",
   "entiere": "src/photos/rond/d26-entiere.jpg",
   "carre": [
+   0.17148,
    0.0,
-   0.11067,
-   1.0,
-   0.66667
+   0.65705,
+   1.0
   ]
  },
  {
   "numero": 26,
   "role": "bouteille",
   "fichier": "src/photos/bouteille/d26.png",
-  "source_url": "src/photos/brut/Bouteilles_de_vin/Chateau_La_Gorce/Chateau_La_Gorce_Medoc_La_Bonne_Resolution_2022.png",
+  "source_url": "src/photos/brut/Bouteilles_de_vin/Chateau_La_Gorce/la-bonne-resolution-2020.jpg",
   "page": null,
-  "provenance": "dossier de l'agence",
-  "source_px": "1080x1920",
-  "ppi": 671,
-  "sujet": "bouteille La Bonne Résolution 2022"
+  "provenance": "dossier de l'agence, envoyée le 8 octobre 2026",
+  "source_px": "1493x2000",
+  "ppi": 778,
+  "sujet": "bouteille La Bonne Résolution 2020"
  },
  {
   "numero": 27,

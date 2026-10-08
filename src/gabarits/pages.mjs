@@ -459,7 +459,8 @@ export const texteNotePrix = (d) => d.note_prix
 export function noteDomaine(d) {
   // Au salon, l'offre du stand (« Offre 11+1 à partir de 240 cols ») suit la note de prix.
   // l'agence, 3 octobre au soir : l'offre d'abord, la note de prix dessous
-  return `${d.offre_salon ? `<p class="offre-salon">${esc(d.offre_salon)}</p>` : ''}<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>`;
+  return `${d.offre_salon ? `<p class="offre-salon">${esc(d.offre_salon)}</p>` : ''}${d.complement
+    ? `<p class="offre-salon complement">${esc(d.complement)}</p>` : ''}<p class="note-prix${d.note_prix ? '' : ' sans-note'}">${esc(texteNotePrix(d))}</p>`;
 }
 
 /* ——————————————————————————————————————————————— index ——— */
@@ -655,7 +656,7 @@ export function pageFinale() {
             `<dt>${esc(l.sigle)}</dt><dd>${esc(l.definition)}</dd>`).join('')}</dl>
         </div>
         <div><h3>Mentions légales</h3>
-          <p class="fin-mentions">${esc(AG.mentions_legales)}</p>
+          <p class="fin-mentions">${esc((GLOBAL_ED && catalogue.salon.mentions_legales) || AG.mentions_legales)}</p>
         </div>
         <div><h3>Crédits</h3>
           <p class="fin-mentions">Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme certificateur. ${esc(creditPhotos()).replace('credits.md', '<em>credits.md</em>')}</p>

@@ -996,3 +996,16 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Départements donnés par l'agence : Sardelles 35 · 44 · 49 · 53 · 56 · 85 ; Mas des Restanques 44 · 49 · 53 · 85.
 - Photos : bouteille des Sardelles recadrée plus bas (le pied n'est plus coupé) ; Mas des Restanques : le mas et la bouteille de Gigondas, pris sur masdesrestanques.com (accord de l'agence).
 - Mas des Restanques : texte de présentation enrichi d'après masdesrestanques.com (« Notre domaine »), à la demande de l'agence.
+
+### 8 octobre, soir — relecture du catalogue caviste global
+- Barbinière : Les Courbes en rouge ; Nugues : phrase « tranche tarifaire » retirée ; Goichot, Cray,
+  Guignottes et Passion des Terroirs : « Possibilité sur demande d'avoir le catalogue complet. » ;
+  Nadine Ferrand : jeton AOP retiré ; Haut Marin : N°8 Grand Pavois moelleux.
+- Trichon (Rhône) : tarif départ cave surligné (Beaumes de Venise rouge et magnum, Vacqueyras rouge
+  magnum, Muscat de Beaumes de Venise), Vacqueyras blanc 2024.
+- Passion des Terroirs : plus d'offre 5+1 sur Camarsac, plus de « commande minimum 400 € », plus de
+  Lamothe Bouscaut 3 L ; phrase d'offre en bas.
+- Phrase d'offre partout : « Offre possible en fonction du nombre de cols et de la référence. »
+- Dekeyne : les six départements. Mentions légales réordonnées (millésimes, stocks, photos, erreurs).
+- La Gorce : photo du château et bouteille La Bonne Résolution 2020 (envoyées par l'agence).
+- Contrôle : mentions obligatoires comparées espaces normalisés (le RCS en insécables).

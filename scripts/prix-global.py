@@ -43,6 +43,26 @@ def P(*paliers, unite="bts"):
 
 
 UNIQUE = ["Prix"]
+# la phrase d'offre « au volume », partout (l'agence, 8 octobre au soir)
+OFFRE_VOLUME = "Offre possible en fonction du nombre de cols et de la référence."
+ANCIENNE_OFFRE = "Offre possible à étudier en fonction du volume et de la référence."
+CATALOGUE_COMPLET = "Possibilité sur demande d'avoir le catalogue complet."
+# relecture du 8 octobre au soir : corrections de vins (fiche, cuvée) → champs
+CORRECTIONS_VINS = {
+    (2, "Les Courbes Blanc"): {"cuvee": "Les Courbes Rouge", "couleur": "Rouge"},       # Barbinière : un rouge
+    (23, "N°8 Grand Pavois Rouge"): {"cuvee": "N°8 Grand Pavois Moelleux", "couleur": "Moelleux"},
+    (21, "Mas de Lusanne Vacqueyras Blanc"): {"millesime": "2024"},                    # corrigé sur le tarif
+}
+# fiches qui portent « catalogue complet sur demande » (Goichot, Cray, Guignottes, Passion des Terroirs)
+AVEC_CATALOGUE_COMPLET = {12, 13, 14, 25}
+# départements donnés par l'agence pour une fiche venue du salon
+DEPARTEMENTS = {37: ["35", "44", "49", "53", "56", "85"]}       # Champagne Dekeyne
+# labels de tête retirés (Nadine Ferrand : pas d'« AOP » en haut à gauche)
+SANS_LABELS = {11}
+# Trichon (Rhône) : lignes surlignées de son tarif départ cave (scan du 8 oct., Scan08102026-6),
+# colonnes 120 / 300 / 600 cols ; « 2022-23 » → 2023, le plus récent (consigne de l'agence)
+TARIF_TRICHON = "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+
 HORS = "* Prix de la bouteille H.T. hors frais de transport."
 FRANCO = "* Prix de la bouteille H.T. franco de port."
 
@@ -140,7 +160,7 @@ NOUVEAUX = {
     # Beaujolais — Domaine des Nugues (tarifs France HT départ cave 2026, scan p.14).
     # Colonnes surlignées : 120, 240, 360. Lignes : millésime et format surlignés.
     9: {"paliers": {"9": P(120, 240, 360)}, "note": HORS,
-        "offre": "La tranche tarifaire s'applique pour l'ensemble de la commande.",
+        "offre": None,   # « la tranche tarifaire… » retirée (l'agence, 8 oct. soir : ça va de soi)
         "vins": [
             V(9, 0, "AOP Beaujolais-Villages Nouveau", "Nos Vins Primeurs", "Rouge", "2026", eu("5,25", "5,05", "5,00")),
             V(9, 0, "AOP Beaujolais-Villages Nouveau Sans Soufre", "Nos Vins Primeurs", "Rouge", "2026", eu("5,40", "5,15", "5,10")),
@@ -183,10 +203,10 @@ NOUVEAUX = {
     # Bordeaux — La Passion des Terroirs (tarif France départ HT, scan p.37 à 55) : les vins
     # surlignés ; Villegeorge et Château la Tour de Bessan barrés. Le label de chaque ligne est
     # celui de son logo sur le tarif (AB → Bio ; Haute Valeur Environnementale → HVE).
-    25: {"paliers": {"25": UNIQUE}, "note": HORS, "offre": "Commande minimum : 400 €.",
+    25: {"paliers": {"25": UNIQUE}, "note": HORS, "offre": OFFRE_VOLUME,   # « commande minimum 400 € » retirée
          "vins": [
              V(25, 0, "AOP Bordeaux Supérieur", "Château de Camarsac Cuvée Vieilles Vignes", "Rouge", "2020", eu("4,60"),
-               label="HVE", offre="5+1", offre_detail="(3,83 € la bouteille pour 6 achetées)"),
+               label="HVE"),   # offre 5+1 retirée (l'agence, 8 oct. soir)
              V(25, 0, "AOP Bordeaux Supérieur", "Château de Camarsac Cuvée Prestige", "Rouge", "2016", eu("6,75"), label="HVE"),
              V(25, 0, "AOP Bordeaux", "Château Haut-Moulin Vieilles Vignes", "Rouge", "2022", eu("4,00"), label="Bio"),
              V(25, 0, "AOP Haut-Médoc", "L'Étoile de Villegeorge", "Rouge", "2023", eu("5,60"), label="HVE"),
@@ -210,7 +230,6 @@ NOUVEAUX = {
              V(25, 0, "AOP Graves", "Graves de Bouscaut", "Rouge", "2022", eu("6,90"), label="HVE"),
              V(25, 0, "AOP Pessac-Léognan", "Château Lamothe Bouscaut", "Rouge", "2020", eu("11,95"), label="HVE"),
              V(25, 0, "AOP Pessac-Léognan", "Château Lamothe Bouscaut", "Rouge", "2022", eu("25,00"), "Magnum 1,5 L", label="HVE"),
-             V(25, 0, "AOP Pessac-Léognan", "Château Lamothe Bouscaut", "Rouge", "2016", eu("59,00"), "3 L", label="HVE"),
              V(25, 0, "AOP Pessac-Léognan", "Château Valoux", "Rouge", "2021", eu("7,95")),
              V(25, 0, "AOP Montagne-Saint-Émilion", "Château Tour Bel-Air", "Rouge", "2023", eu("5,30"), label="HVE"),
              V(25, 0, "AOP Montagne-Saint-Émilion", "Château Tour Bel-Air", "Rouge", "2022", eu("12,50"), "Magnum 1,5 L", label="HVE"),
@@ -270,7 +289,7 @@ NOUVEAUX[35] = {"paliers": {"35": P(120)}, "note": HORS, "offre": "Offre 11+1 à
 # barrés, paliers 90 / 120 / 300 ; « 2019 » corrigé en 2020 sur les deux premières lignes ; les
 # appellations raturées remplacées par « Médoc ». Barrés : Préface, Rosé DADA.
 NOUVEAUX[26] = {"paliers": {"26": P(90, 120, 300)}, "note": FRANCO,
-    "offre": "Offre possible à étudier en fonction du volume et de la référence.",
+    "offre": OFFRE_VOLUME,
     "vins": [
         # « bio partout » (l'agence, 8 oct.) : les lignes 1-2 et 3-4 du tarif, qui ne différaient que
         # par le logo bio, sont le même vin
@@ -312,14 +331,37 @@ def main():
                         "fiche_texte": None, "texte_reference": None,
                         # un vrai tarif remplace l'ancien « consultez-nous » (Passion des Terroirs)
                         "mentions": []})
-    # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne
-    labels = {"25": []}
+    # Trichon (Rhône) : les vins ajoutés depuis son tarif
+    rhone = next(s for s in entrees if 21 in (s.get("domaines") or []))
+    rhone["vins"] += [
+        V(21, 0, "AOC Beaumes de Venise", "Beaumes de Venise Rouge", "Rouge", "2023", eu("8,21", "7,82", "7,42"), prix_source=TARIF_TRICHON),
+        V(21, 0, "AOC Beaumes de Venise", "Beaumes de Venise Rouge", "Rouge", "2023", eu("16,51", "15,95", "15,39"), "Magnum 1,5 L", prix_source=TARIF_TRICHON),
+        V(21, 0, "AOC Vacqueyras", "Mas de Lusanne Vacqueyras Rouge", "Rouge", "2023", eu("19,32", "19,14", "18,96"), "Magnum 1,5 L", prix_source=TARIF_TRICHON),
+        V(21, 0, "AOC Muscat de Beaumes de Venise", "Muscat de Beaumes de Venise", "Vin doux naturel blanc", "2023", eu("10,29", "9,82", "9,34"), prix_source=TARIF_TRICHON),
+    ]
+    # corrections de la relecture du 8 octobre au soir
+    for s in entrees:
+        for v in s["vins"]:
+            v.update(CORRECTIONS_VINS.get((v["fiche"], v["cuvee"]), {}))
+        if s.get("offre_salon") == ANCIENNE_OFFRE:
+            s["offre_salon"] = OFFRE_VOLUME
+        if set(s.get("domaines") or []) & AVEC_CATALOGUE_COMPLET:
+            s["complement"] = CATALOGUE_COMPLET
+    # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne ;
+    # Nadine Ferrand : pas d'« AOP » en tête
+    labels = {"25": [], **{str(n): [] for n in SANS_LABELS}}
     sortie = {
         "_lisez_moi": "Écrit par scripts/prix-global.py — ne pas modifier à la main.",
         "edition": "Catalogue caviste global 2026",
         "regions": REGIONS, "ordre": ORDRE, "domaines_ajoutes": DOMAINES_AJOUTES,
         "groupes_ajoutes": GROUPES_AJOUTES, "noms_panachage": NOMS_PANACHAGE,
-        "labels_entete": labels, "stands": entrees,
+        "labels_entete": labels, "departements": DEPARTEMENTS, "stands": entrees,
+        # les mentions légales du catalogue global, dans l'ordre voulu par l'agence (8 oct. soir)
+        "mentions_legales": ("Les millésimes peuvent évoluer en fonction de l'avancée de l'année. "
+                             "Vente validée sous réserve des stocks disponibles. Photos non contractuelles, "
+                             "suggestions de présentation. Sauf erreurs typographiques. Prix H.T. Agence SCIO "
+                             "Vins et spirits 843\u00a0151\u00a0663 RCS Nantes. Crédits photos : viticulteurs et Adobe "
+                             "Stock. NE PAS JETER SUR LA VOIE PUBLIQUE."),
     }
     SORTIE.write_text(json.dumps(sortie, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     fiches = {v["fiche"] for s in entrees for v in s["vins"]}

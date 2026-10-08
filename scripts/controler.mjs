@@ -119,8 +119,10 @@ const obligatoires = [
       ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
     : [["cible", 'Vendée (85)']]),
 ];
+// espaces insécables et retours à la ligne comptent comme une espace
+const plat = (t) => t.replace(/\s+/g, ' ').toUpperCase();
 obligatoires.forEach(([nom, aiguille]) =>
-  dire(texte.toUpperCase().includes(aiguille.toUpperCase()), `${nom} présent dans le PDF`));
+  dire(plat(texte).includes(plat(aiguille)), `${nom} présent dans le PDF`));
 
 /* ——— 4 bis. La couche texte n'est-elle pas fragmentée par l'interlettrage ? ——— */
 const motsEntiers = ['BORDEAUX', 'BOURGOGNE', 'LANGUEDOC', 'CHAMPAGNE', 'POSSIBILITÉ DE PANACHER',

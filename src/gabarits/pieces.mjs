@@ -99,6 +99,8 @@ function editionSalon(cat) {
     return { ...parNumero[d.numero], ...texte, ...(lab ? { labels: lab } : {}),
       ...(s.mentions ? { mentions: s.mentions } : {}), tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
       offre_salon: s.offre_salon || null,
+      complement: s.complement || null,
+      ...(SALON.departements?.[String(d.numero)] ? { departements: SALON.departements[String(d.numero)] } : {}),
       // deux formulations seulement (l'agence, 3 octobre au soir) ; Boehler : franco de port
       note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });

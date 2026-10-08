@@ -452,18 +452,16 @@
   }
  },
  "26": {
-  "bouteille": {
-   "fichier": "Bouteilles_de_vin/Chateau_La_Gorce/Chateau_La_Gorce_Medoc_La_Bonne_Resolution_2022.png",
-   "sujet": "bouteille La Bonne Résolution 2022",
-   "provenance": "dossier de l'agence"
-  },
   "rond": {
-   "fichier": "web/d26-rond.jpg",
-   "provenance": "site officiel du domaine",
-   "page": "https://www.chateaulagorce.com/",
-   "url": "https://www.chateaulagorce.com/wp-content/uploads/2023/01/ChateauLaGorce_Portrait_ManaEmmanuel_Jardin.jpg",
-   "sujet": "portrait des vignerons",
-   "mode": "couvrir"
+   "fichier": "Domaines_et_vignerons/Chateau_La_Gorce/chateau.png",
+   "mode": "couvrir",
+   "sujet": "le château",
+   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
+  },
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Chateau_La_Gorce/la-bonne-resolution-2020.jpg",
+   "sujet": "bouteille La Bonne Résolution 2020",
+   "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
   }
  },
  "27": {

@@ -199,7 +199,18 @@
   "42": "Domaine Trichon (Bugey)"
  },
  "labels_entete": {
-  "25": []
+  "25": [],
+  "11": []
+ },
+ "departements": {
+  "37": [
+   "35",
+   "44",
+   "49",
+   "53",
+   "56",
+   "85"
+  ]
  },
  "stands": [
   {
@@ -340,7 +351,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
   },
   {
    "stand": 2,
@@ -1157,8 +1168,8 @@
       "ligne": 5
      },
      "appellation": "IGP Côtes de Gascogne",
-     "cuvee": "N°8 Grand Pavois Rouge",
-     "couleur": "Rouge",
+     "cuvee": "N°8 Grand Pavois Moelleux",
+     "couleur": "Moelleux",
      "millesime": "2025",
      "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
@@ -2637,7 +2648,7 @@
      "appellation": "AOC Vacqueyras",
      "cuvee": "Mas de Lusanne Vacqueyras Blanc",
      "couleur": "Blanc",
-     "millesime": "2025",
+     "millesime": "2024",
      "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [
@@ -2670,6 +2681,74 @@
       850
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "fiche": 21,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Beaumes de Venise",
+     "cuvee": "Beaumes de Venise Rouge",
+     "couleur": "Rouge",
+     "millesime": "2023",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      821,
+      782,
+      742
+     ],
+     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+    },
+    {
+     "fiche": 21,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Beaumes de Venise",
+     "cuvee": "Beaumes de Venise Rouge",
+     "couleur": "Rouge",
+     "millesime": "2023",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      1651,
+      1595,
+      1539
+     ],
+     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+    },
+    {
+     "fiche": 21,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Vacqueyras",
+     "cuvee": "Mas de Lusanne Vacqueyras Rouge",
+     "couleur": "Rouge",
+     "millesime": "2023",
+     "contenance": "Magnum 1,5 L",
+     "prix_centimes": [
+      1932,
+      1914,
+      1896
+     ],
+     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+    },
+    {
+     "fiche": 21,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Muscat de Beaumes de Venise",
+     "cuvee": "Muscat de Beaumes de Venise",
+     "couleur": "Vin doux naturel blanc",
+     "millesime": "2023",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      1029,
+      982,
+      934
+     ],
+     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
     }
    ],
    "doublons_matheo": [],
@@ -3289,7 +3368,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
   },
   {
    "stand": 17,
@@ -3999,7 +4078,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
   },
   {
    "stand": 20,
@@ -4583,8 +4662,8 @@
       "ligne": 4
      },
      "appellation": "AOC Fiefs Vendéens Chantonnay",
-     "cuvee": "Les Courbes Blanc",
-     "couleur": "Blanc",
+     "cuvee": "Les Courbes Rouge",
+     "couleur": "Rouge",
      "millesime": "2018",
      "contenance": "75 cl",
      "couleur_provenance": "liste de Mathéo",
@@ -4962,7 +5041,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence."
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
   },
   {
    "stand": 25,
@@ -5396,7 +5475,8 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 126 cols."
+   "offre_salon": "Offre 11+1 à partir de 126 cols.",
+   "complement": "Possibilité sur demande d'avoir le catalogue complet."
   },
   {
    "stand": null,
@@ -5759,7 +5839,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "La tranche tarifaire s'applique pour l'ensemble de la commande.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
    "fiche_texte": null,
    "texte_reference": null,
@@ -6081,9 +6161,7 @@
       460
      ],
      "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
-     "label": "HVE",
-     "offre": "5+1",
-     "offre_detail": "(3,83 € la bouteille pour 6 achetées)"
+     "label": "HVE"
     },
     {
      "fiche": 25,
@@ -6456,22 +6534,6 @@
       "tableau": 0
      },
      "appellation": "AOP Pessac-Léognan",
-     "cuvee": "Château Lamothe Bouscaut",
-     "couleur": "Rouge",
-     "millesime": "2016",
-     "contenance": "3 L",
-     "prix_centimes": [
-      5900
-     ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
-     "label": "HVE"
-    },
-    {
-     "fiche": 25,
-     "tarif": {
-      "tableau": 0
-     },
-     "appellation": "AOP Pessac-Léognan",
      "cuvee": "Château Valoux",
      "couleur": "Rouge",
      "millesime": "2021",
@@ -6679,11 +6741,12 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Commande minimum : 400 €.",
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
    "fiche_texte": null,
    "texte_reference": null,
-   "mentions": []
+   "mentions": [],
+   "complement": "Possibilité sur demande d'avoir le catalogue complet."
   },
   {
    "stand": null,
@@ -7058,11 +7121,12 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible à étudier en fonction du volume et de la référence.",
+   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,
    "mentions": []
   }
- ]
+ ],
+ "mentions_legales": "Les millésimes peuvent évoluer en fonction de l'avancée de l'année. Vente validée sous réserve des stocks disponibles. Photos non contractuelles, suggestions de présentation. Sauf erreurs typographiques. Prix H.T. Agence SCIO Vins et spirits 843 151 663 RCS Nantes. Crédits photos : viticulteurs et Adobe Stock. NE PAS JETER SUR LA VOIE PUBLIQUE."
 }
