@@ -994,3 +994,4 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Numéros de page toujours à gauche (bas de page, ouvertures, index), comme au sommaire.
 - 64 pages, 41 fiches, 587 prix ; catalogue général refait (52 pages), tout au vert.
 - Départements donnés par l'agence : Sardelles 35 · 44 · 49 · 53 · 56 · 85 ; Mas des Restanques 44 · 49 · 53 · 85.
+- Photos : bouteille des Sardelles recadrée plus bas (le pied n'est plus coupé) ; Mas des Restanques : le mas et la bouteille de Gigondas, pris sur masdesrestanques.com (accord de l'agence).

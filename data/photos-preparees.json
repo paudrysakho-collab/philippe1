@@ -1080,7 +1080,7 @@
   "page": "https://www.domaine-des-sardelles.com/nos-vins",
   "provenance": "site officiel du domaine",
   "source_px": "3911x5867",
-  "ppi": 1776,
+  "ppi": 1807,
   "sujet": "bouteille de Sancerre rosé du domaine"
  },
  {
@@ -1093,5 +1093,34 @@
   "source_px": "1493x2000",
   "ppi": 785,
   "sujet": "bouteille Extra Brut, Bugey"
+ },
+ {
+  "numero": 43,
+  "role": "rond",
+  "fichier": "src/photos/rond/d43.jpg",
+  "source_url": "https://masdesrestanques.com/assets/img/restanques/maison.jpg",
+  "page": "https://masdesrestanques.com/",
+  "provenance": "site officiel du domaine (accord de l'agence, 8 octobre 2026)",
+  "source_px": "4256x2832",
+  "ppi": 1798,
+  "sujet": "le mas sous les arbres",
+  "entiere": "src/photos/rond/d43-entiere.jpg",
+  "carre": [
+   0.16729,
+   0.0,
+   0.66541,
+   1.0
+  ]
+ },
+ {
+  "numero": 43,
+  "role": "bouteille",
+  "fichier": "src/photos/bouteille/d43.png",
+  "source_url": "https://masdesrestanques.com/assets/img/restanques/vins/Gig.png",
+  "page": "https://masdesrestanques.com/",
+  "provenance": "site officiel du domaine (accord de l'agence, 8 octobre 2026)",
+  "source_px": "669x2063",
+  "ppi": 814,
+  "sujet": "bouteille de Gigondas du domaine"
  }
 ]

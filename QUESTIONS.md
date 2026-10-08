@@ -538,4 +538,4 @@ font plus qu'une) ; Caillasses 14,90 € confirmé.
 
 Restent :
 - ~~Départements~~ : réglé (Sardelles 35 · 44 · 49 · 53 · 56 · 85 ; Mas des Restanques 44 · 49 · 53 · 85).
-- Photos du site des Sardelles : autorisation à demander au domaine.
+- Photos des sites des Sardelles et du Mas des Restanques : accord de l'agence (8 octobre).

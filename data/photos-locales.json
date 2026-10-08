@@ -729,7 +729,7 @@
     0.28,
     0.1,
     0.72,
-    0.865
+    0.879
    ],
    "remplir": true
   }
@@ -739,6 +739,23 @@
    "fichier": "Bouteilles_de_vin/Domaine_Trichon_Bugey/trichon-bugey-extra-brut.jpg",
    "sujet": "bouteille Extra Brut, Bugey",
    "provenance": "dossier de l'agence, envoyée le 8 octobre 2026"
+  }
+ },
+ "43": {
+  "rond": {
+   "fichier": "Domaines_et_vignerons/Mas_des_Restanques/maison.jpg",
+   "mode": "couvrir",
+   "sujet": "le mas sous les arbres",
+   "url": "https://masdesrestanques.com/assets/img/restanques/maison.jpg",
+   "page": "https://masdesrestanques.com/",
+   "provenance": "site officiel du domaine (accord de l'agence, 8 octobre 2026)"
+  },
+  "bouteille": {
+   "fichier": "Bouteilles_de_vin/Mas_des_Restanques/gigondas.png",
+   "sujet": "bouteille de Gigondas du domaine",
+   "url": "https://masdesrestanques.com/assets/img/restanques/vins/Gig.png",
+   "page": "https://masdesrestanques.com/",
+   "provenance": "site officiel du domaine (accord de l'agence, 8 octobre 2026)"
   }
  }
 }

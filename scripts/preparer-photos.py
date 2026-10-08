@@ -735,6 +735,7 @@ def ecrire_credits(posees):
     # les domaines nés dans le catalogue caviste global (8 octobre 2026)
     noms.setdefault(41, "Domaine des Sardelles")
     noms.setdefault(42, "Domaine Trichon (Bugey)")
+    noms.setdefault(43, "Mas des Restanques")
     taille = {"rond": f"{MM_ROND} mm", "bouteille": f"{MM_BOUT_L} × {MM_BOUT_H} mm"}
 
     def court(p):
