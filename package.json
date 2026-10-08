@@ -28,7 +28,11 @@
     "tableur-salon": "python3 scripts/tableur.py exporter-salon",
     "importer-salon": "python3 scripts/tableur.py importer-salon",
     "prix-salon": "python3 scripts/prix-salon.py",
-    "affiche-qr": "node scripts/affiche-qr.mjs"
+    "affiche-qr": "node scripts/affiche-qr.mjs",
+    "prix-global": "python3 scripts/prix-global.py",
+    "catalogue-global": "EDITION=global node scripts/construire.mjs",
+    "controle-global": "EDITION=global node scripts/controler.mjs",
+    "global": "npm run donnees && npm run prix-global && npm run catalogue-global && npm run controle-global"
   },
   "dependencies": {
     "playwright": "1.56.1",

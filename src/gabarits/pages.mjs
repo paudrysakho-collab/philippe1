@@ -5,6 +5,7 @@ import {
   NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, emplacementPour, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
   coupeElegante, photoRegion,
 } from './pieces.mjs';
+import { bouteille as bouteilleDessinee, feuille } from './dessins.mjs';
 
 const AG = catalogue.agence;
 const SANITAIRE = AG.message_sanitaire;
@@ -14,8 +15,11 @@ const SANITAIRE = AG.message_sanitaire;
    distingue tient ici : les nombres, les mots, et le numéro qu'on montre sur chaque fiche
    (le numéro du tarif, ou celui du stand, qui sert à retrouver le vigneron sur le plan). */
 export const SALON_ED = EDITION === 'salon';
+/** Le catalogue caviste global (8 octobre) : le design du salon, sans numéros (on ne parle que
+    de pages), avec ses pages d'ouverture de région et l'index des domaines. */
+export const GLOBAL_ED = EDITION === 'global';
 const EV = catalogue.salon?.evenement;
-const ENLETTRES = { 9: 'neuf', 10: 'dix', 26: 'vingt-six', 31: 'trente et un', 40: 'quarante' };
+const ENLETTRES = { 9: 'neuf', 10: 'dix', 11: 'onze', 26: 'vingt-six', 31: 'trente et un', 39: 'trente-neuf', 40: 'quarante' };
 const enLettres = (n) => ENLETTRES[n] || String(n);
 const majuscule = (t) => t.charAt(0).toUpperCase() + t.slice(1);
 export const NB_VINS = catalogue.domaines.reduce((n, d) => n + nbReferences(d), 0);
@@ -45,8 +49,16 @@ export const ED = SALON_ED ? {
   // domaines (le sommaire les donne déjà, par région).
   ouvertures: false, indexDomaines: false,
 };
+if (GLOBAL_ED) {
+  Object.assign(ED, {
+    titreDocument: 'Agence SCIO — Sous nos pieds — Catalogue caviste 2026',
+    titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
+    introIndexVins: 'Le chiffre est la page.',
+    ouvertures: true, indexDomaines: true,
+  });
+}
 /** Le numéro qu'on montre : celui du stand au salon, celui du tarif ailleurs. */
-export const numero = (d) => (SALON_ED ? d.stand : d.numero);
+export const numero = (d) => (SALON_ED ? d.stand : GLOBAL_ED ? '' : d.numero);
 const vins = (n) => `${n} ${n > 1 ? ED.motVins : ED.motVin}`;
 
 /* ——————————————————————————————————————————————— enveloppe ——— */
@@ -80,7 +92,7 @@ export function document({ pages, ecran }) {
 <link rel="stylesheet" href="../src/styles/systeme.css">
 <link rel="stylesheet" href="../src/styles/pages.css">
 <style>:root { --fp: ${ecran ? '0mm' : '3mm'}; }</style>
-</head><body class="${ecran ? 'ecran' : 'imprimeur'}">
+</head><body class="${ecran ? 'ecran' : 'imprimeur'}${GLOBAL_ED ? ' ed-global' : ''}">
 ${defsTrames()}
 ${corps}
 </body></html>`;
@@ -227,7 +239,7 @@ export function sommaire(pagesParDomaine) {
   }).join('');
   const [gauche, droite] = colonnesSommaire();
   return [page({
-    classe: 'sommaire',
+    classe: `sommaire${GLOBAL_ED ? ' sommaire-global' : ''}`,
     corps: `<div class="cadre">
       <h2 class="titre-section">Sommaire${SALON_ED ? '<span>par région ; le premier chiffre est le numéro du stand</span>' : ''}</h2>
       <div class="som-cols"><div class="som-col">${colonne(gauche)}</div>
@@ -254,7 +266,7 @@ export function ouvertureRegion(nom, pagesParDomaine) {
     region: nom, classe: `ouverture ${nom === 'Champagne' ? 'claire' : ''}`,
     corps: `
       <div class="ouv-fond ouv-photo" style="--strate:${s.hex}">
-        <img src="${photoRegion(nom)}" alt="">
+        ${photoRegion(nom) ? `<img src="${photoRegion(nom)}" alt="">` : ''}
       </div>
       <div class="ouv-carotte">${solRegion(nom, REGIONS.indexOf(nom) + 1)}</div>
       <div class="cadre">
@@ -291,8 +303,8 @@ export function enteteDomaine(d, suite = false) {
   const tete = SALON_ED
     ? `<div class="stand-dom"><span class="sd-mot">Stand</span><span class="sd-n">${d.stand}</span>
          <span class="sd-salle">${esc(d.salle)}</span></div>`
-    : `<div class="num">${d.numero}</div>`;
-  return `<div class="entete-dom${SALON_ED ? ' entete-salon' : ''}">
+    : GLOBAL_ED ? '' : `<div class="num">${d.numero}</div>`;
+  return `<div class="entete-dom${SALON_ED ? ' entete-salon' : ''}${GLOBAL_ED ? ' entete-global' : ''}">
       ${tete}
       <h1>${esc(d.nom)}${suite ? ' <span class="suite">(suite)</span>' : ''}</h1>
       <div class="region">${esc(d.region)}</div>
@@ -317,8 +329,15 @@ export function hautDomaine(d, bande = EMPLACEMENT.bouteille.h) {
    Sinon l'emplacement reste RÉSERVÉ, avec son repère pointillé : une case vide, pas un trou. */
 
 /** Le rond : la photo, déjà carrée, masquée en cercle ; ou le logo, déjà posé sur sa réserve. */
+/* Catalogue global : une fiche née de l'édition (Trichon Bugey) reprend le portrait de sa
+   jumelle ; un domaine sans photo reçoit un dessin maison plutôt qu'une case vide. */
+const JUMELLES = { 42: 21 };
 export function rondDomaine(d, e = emplacementPour()) {
-  const ph = photoDe(d, 'rond');
+  const ph = photoDe(d, 'rond') || (GLOBAL_ED && JUMELLES[d.numero] ? photoDe({ numero: JUMELLES[d.numero] }, 'rond') : null);
+  if (!ph && GLOBAL_ED) {
+    return `<div class="photo photo-rond rond-dessin" style="width:${e.rond}mm;height:${e.rond}mm">
+      ${feuille({ classe: 'dessin feuille-rond' })}</div>`;
+  }
   if (!ph) return emplacementRond(e);
   return `<div class="photo photo-rond"
     style="width:${e.rond}mm;height:${e.rond}mm">
@@ -328,6 +347,10 @@ export function rondDomaine(d, e = emplacementPour()) {
 /** La bouteille détourée, contenue dans sa case sans déformation, posée sur le bas. */
 export function bouteilleDomaine(d, e = emplacementPour()) {
   const ph = photoDe(d, 'bouteille');
+  if (!ph && GLOBAL_ED) {
+    return `<div class="photo photo-bouteille bouteille-dessin" style="width:${e.bouteille.l}mm;height:${e.bouteille.h}mm">
+      ${bouteilleDessinee('bourguignonne', { hauteur: '100%' })}</div>`;
+  }
   if (!ph) return emplacementBouteille(e);
   return `<div class="photo photo-bouteille"
     style="width:${e.bouteille.l}mm;height:${e.bouteille.h}mm">
@@ -352,7 +375,9 @@ export function respireSol(d, hauteurMm) {
   const s = STRATES[d.region];
   return `<div class="respire" style="height:${hauteurMm.toFixed(1)}mm">
     <div class="legende-sol">${esc(d.region)} — ${esc(s.mot)}</div>
-    <div class="respire-sol respire-photo"><img src="${photoRegion(d.region)}" alt=""></div></div>`;
+    ${photoRegion(d.region)
+    ? `<div class="respire-sol respire-photo"><img src="${photoRegion(d.region)}" alt=""></div>`
+    : `<div class="respire-sol">${solTeinte(d.region, d.numero)}</div>`}</div>`;
 }
 
 /** Le même sol, mais dans la seule teinte de la région : discret, et différent d'une région à l'autre. */
@@ -411,7 +436,8 @@ export function piedDomaine(d, pagesParDomaine) {
   const parN = Object.fromEntries(catalogue.domaines.map((x) => [x.numero, x]));
   const alliance = g
     ? `<div class="alliance"><strong>Se panache avec</strong> <em>${esc(g.libelle)}</em>${autres.length ? ' —' : ''}
-        ${autres.map((n) => `${SALON_ED ? `${esc(parN[n].nom)}, stand ${parN[n].stand}` : `n°${n}`} p.&nbsp;${pagesParDomaine.get(n)}`).join(' · ')}</div>`
+        ${autres.map((n) => `${SALON_ED ? `${esc(parN[n].nom)}, stand ${parN[n].stand}`
+    : GLOBAL_ED ? esc(catalogue.salon.noms_panachage?.[n] || parN[n].nom) : `n°${n}`} p.&nbsp;${pagesParDomaine.get(n)}`).join(' · ')}</div>`
     : '';
   const dep = d.departements.length
     ? d.departements.join(' · ')
@@ -543,7 +569,7 @@ export function produitsAPart(pagesParDomaine) {
     const litres = /(\d+(?:[.,]\d+)?)\s*L\b/.exec(l.contenance || '');
     const estBib = /bib/i.test(t.intitule) || /bib/i.test(t.famille || '')
       || /bib/i.test(l.contenance || '')
-      || (!!litres && !/magnum/i.test(l.contenance || '')
+      || (!GLOBAL_ED && !!litres && !/magnum/i.test(l.contenance || '')
           && parseFloat(litres[1].replace(',', '.')) >= 3);
     const f = famille(l, t);
     const bac = estBib ? 'bib' : (bacs[f] ? f : null);
@@ -558,7 +584,7 @@ export function produitsAPart(pagesParDomaine) {
         <span>${esc(b.mot)}</span><b>${b.lignes.length}</b></h3>
       <div class="part-lignes">${b.lignes.map(({ l, t, d }) => `
         <a class="part-ligne" href="#p${pagesParDomaine.get(d.numero)}">
-          <span class="pl-dom">${d.numero}</span>
+          ${GLOBAL_ED ? '' : `<span class="pl-dom">${d.numero}</span>`}
           <span class="pl-nom">${esc(l.cuvee || l.appellation)}</span>
           <span class="pl-dom-nom">${esc(d.nom)}</span>
           <span class="pl-fmt">${esc(l.contenance

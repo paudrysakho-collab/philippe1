@@ -528,3 +528,18 @@ surlignés), Villebois et Pré La Lande : confirmés. Restent pour Laurent : le 
 Guignottes, le Terroir d'Ansouis rouge, les jus de cépages d'Exea, la note de prix de Boehler,
 les « oui » raturés de Falfas, les paliers de Verchères (`docs/questions-laurent.md`).
 
+
+## 32. Catalogue caviste global (8 octobre 2026)
+
+- **Domaine des Sardelles** : pas de texte de présentation, pas de photo, pas de départements de
+  distribution sur le tarif. La fiche le dit (« nous consulter ») et porte un dessin à la place de la photo.
+- **Domaine Les Lys** : l'agence a écrit « vérifier millésime » sur la page et doit encore la décrire.
+  En attendant, les prix et millésimes sont ceux du tarif de septembre.
+- **Livran** : 7,90 € vaut pour 2016 et 2020 ; **Sources de Livran** 4,50 € pour 2017 et 2018 ; **Cyprès de
+  Climens** 16,95 € pour 2008 et 2010 (50 cl) : millésimes écrits « 2016/2020 », etc. À confirmer.
+- **Pavillon de Glana 2022, Château Livran, Les Sources de Livran, Château Valoux, Cyprès de Climens** : aucun
+  logo AB ni HVE sur le tarif, donc pas de label sur la ligne.
+- **Trichon Bugey** : même texte et même portrait que la fiche du Rhône ; une bouteille dessinée en attendant
+  une photo de bouteille de Gamay.
+- **Domaines de l'ancien catalogue général absents du sommaire annoté** (Divin No Low, Fabien Castaing,
+  Château La Gorce…) : non repris. À confirmer.

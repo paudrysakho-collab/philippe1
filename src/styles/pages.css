@@ -378,3 +378,32 @@
 .couverture-salon .edition-couv {
   background: var(--gneiss); border-radius: 1.5mm; padding: 2.6mm 4mm 2.8mm; top: calc(13mm + var(--fp));
 }
+
+/* ——— Catalogue caviste global (8 octobre) ——— */
+/* sans numéro : le nom du domaine prend toute la ligne */
+.entete-global h1 { margin-left: 0; }
+/* le sommaire « plus gros » (l'agence) : pas de numéro, des lignes plus hautes et un corps plus fort */
+.sommaire-global .titre-section { margin-bottom: 3mm; }
+.sommaire-global .som-region { margin-bottom: 3mm; }
+.sommaire-global .som-bande { height: 8mm; margin-bottom: .8mm; }
+.sommaire-global .som-bande span { font-size: 15pt; }
+.sommaire-global li a { height: 6.1mm; font-size: 11pt; gap: 0; padding-left: 0; }
+.sommaire-global li .n { display: none; }
+.sommaire-global li .pg { font-size: 11pt; }
+.sommaire-global li.avec-mention a { height: 9.4mm; }
+.sommaire-global .som-mention { font-size: 7.8pt; }
+/* les dessins posés quand un domaine n'a pas de photo */
+.rond-dessin { display: grid; place-items: center; border-radius: 50%; background: var(--craie);
+  box-shadow: inset 0 0 0 .6pt rgba(70,96,110,.25); }
+.rond-dessin .feuille-rond { width: 58%; height: auto; opacity: .85; }
+.bouteille-dessin { display: flex; justify-content: center; align-items: flex-end; }
+.bouteille-dessin svg { height: 100%; width: auto; }
+/* le label d'une ligne (Passion des Terroirs) : un petit jeton après l'appellation */
+.label-ligne { display: inline-flex; align-items: center; gap: .6mm; margin-left: 1.4mm; padding: 0 1.1mm;
+  border-radius: .8mm; box-shadow: inset 0 0 0 .5pt var(--amphibolite);
+  font: 600 6.4pt var(--technique); color: var(--amphibolite); letter-spacing: .02em; vertical-align: .2mm; }
+.label-ligne .picto-ligne { width: 2.6mm; height: 2.6mm; }
+/* les numéros de page « plus gros, on ne voit rien » (l'agence, 8 octobre) */
+.ed-global .folio { font: 700 12pt var(--technique); color: var(--violet); opacity: 1; bottom: calc(5.4mm + var(--fp)); }
+.ed-global .entete-dom .region { font-size: 9pt; }
+.ed-global .ouverture .folio, .ed-global .finale-coupe .folio, .ed-global .page.sombre .folio { color: var(--craie); }

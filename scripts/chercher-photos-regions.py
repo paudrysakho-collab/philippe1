@@ -32,6 +32,7 @@ REQUETES = {
     "Bordeaux": ["Saint-Émilion vignoble", "Médoc vignoble", "Côtes de Bourg vignes"],
     "Provence": ["Provence vineyard", "vignoble Provence", "Côtes de Provence vignes", "Bandol vignoble", "Sainte-Victoire vignes", "Var vineyard landscape"],
     "Languedoc": ["Corbières vignoble", "Minervois vignes", "Languedoc vineyard garrigue", "Saint-Chinian vignoble", "Hérault vignes paysage", "vignoble Aude"],
+    "Bugey": ["Bugey vignoble", "vignes Bugey Cerdon", "Bugey vineyard", "Ain vignoble Bugey"],
     "Champagne": ["vignoble Champagne Hautvillers", "Champagne vineyards Marne", "Côte des Blancs vignes"],
     "_général": ["vineyard rows sunset France", "rangs de vigne automne", "vineyard autumn golden light France", "vignoble coucher de soleil", "vignes automne Bourgogne", "vineyard golden hour"],
 }

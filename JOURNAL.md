@@ -959,3 +959,18 @@ pour découvrir le catalogue », message sanitaire. QR relu dans le PDF rendu : 
 - Refaite sobre en encre à la demande de l'agence : plus de photo en haut, fond blanc, logo,
   « Salon Privé / Vins & Terroirs », « Le catalogue du salon », QR de 120 mm, une ligne.
 - Nouveau QR code fourni par l'agence (l'ancien était une erreur) : il mène à https://drive.google.com/file/d/1MqKTUrDruyCBBxMYoCU3CH6Gh9NiZILF/view ; relu dans le PDF rendu.
+
+## 8 octobre — catalogue caviste global
+
+Le salon est passé : l'agence veut le catalogue caviste global (tous les vins), sur la base du
+catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes vocales appliquées :
+- troisième édition `EDITION=global` (`npm run global`) : données `scripts/prix-global.py` →
+  `data/catalogue-global-2026.json` ; sorties `dist/catalogue-caviste-2026-ecran.pdf` et `-imprimeur.pdf` ;
+- plus de numéros (ni stand ni tarif) : on ne parle que de pages ; sommaire plus gros ; folios
+  plus gros (12 pt gras violet, craie sur les pages sombres) ; ouvertures de région et index gardés ;
+- réintégrés à leur place : Sardelles (+ Les Courants en petit tableau), Beaujolais / Nugues,
+  Nadine Ferrand, Pasquiers, Passion des Terroirs (label sur chaque ligne), Les Lys ;
+- Trichon coupé en deux : Rhône puis nouvelle région Bugey, panachables entre eux ;
+- photo de région Bugey (Commons, CC0) ; un dessin maison quand un domaine n'a pas de photo ;
+- 64 pages, 39 fiches, 554 prix retrouvés dans le PDF, contrôles au vert, chaque page regardée.
+- Pas encore de .pptx pour cette édition.

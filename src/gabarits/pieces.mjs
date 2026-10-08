@@ -12,8 +12,21 @@ const general = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.jso
    les mêmes fiches, mais seulement celles des exposants, et leurs tableaux réduits aux vins
    dégustés (data/salon-prive-2026.json). Les prix du salon y vivent, vides tant que
    l'agence ne les a pas donnés. */
-export const EDITION = process.env.EDITION === 'salon' ? 'salon' : 'general';
-export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/salon-prive-2026.json'), 'utf8'));
+/* `EDITION=global` (8 octobre 2026) fabrique le catalogue caviste global : les fiches du salon,
+   sans numéros de stand, plus les domaines réintégrés depuis leurs tarifs annotés
+   (data/catalogue-global-2026.json, écrit par scripts/prix-global.py). */
+export const EDITION = ['salon', 'global'].includes(process.env.EDITION) ? process.env.EDITION : 'general';
+export const GLOBAL = EDITION === 'global';
+export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE,
+  GLOBAL ? 'data/catalogue-global-2026.json' : 'data/salon-prive-2026.json'), 'utf8'));
+if (GLOBAL) {
+  // les domaines nés pour cette édition (Sardelles, Trichon Bugey) et le panachage des deux Trichon
+  general.domaines.push(...SALON.domaines_ajoutes);
+  general.agence.groupes_panachage.push(...SALON.groupes_ajoutes);
+  SALON.groupes_ajoutes.forEach((g) => g.domaines.forEach((n) => {
+    general.domaines.find((d) => d.numero === n).panachage_groupe = g.id;
+  }));
+}
 
 /** Le mode de prix d'un stand : « paliers » (ceux du tarif du domaine) ou « unique ». */
 export const modePrix = (stand) => stand?.mode_prix || SALON.mode_prix || 'paliers';
@@ -21,8 +34,8 @@ export const modePrix = (stand) => stand?.mode_prix || SALON.mode_prix || 'palie
 /* L'agence, 3 octobre au soir : « Possibilité de panacher » seulement pour les familles (Goichot,
    Cray et Guignottes ; les quatre domaines Strasser Radziwill ; Exea et ses jus), en nommant les
    AUTRES membres ; ailleurs, l'en-tête de tableau ne le dit plus. */
-const FAMILLES_SALON = new Set(['goichot-cray-guignottes', 'strasser-radziwill', 'exea']);
-const NOMS_PANACHAGE = { 33: "Famille d'Exea — Jus de cépages" };
+const FAMILLES_SALON = new Set(['goichot-cray-guignottes', 'strasser-radziwill', 'exea', 'trichon']);
+const NOMS_PANACHAGE = { 33: "Famille d'Exea — Jus de cépages", ...(SALON.noms_panachage || {}) };
 function intituleSalon(d, t) {
   if (!/panacher/i.test(t.intitule || '')) return t.intitule;
   const g = general.agence.groupes_panachage.find((x) => x.id === d.panachage_groupe);
@@ -46,6 +59,7 @@ function editionSalon(cat) {
   SALON.stands.forEach((s) => s.vins.forEach((v) => { standDe[v.fiche] = s; }));
   const domaines = cat.domaines.filter((d) => standDe[d.numero]).map((d) => {
     const s = standDe[d.numero];
+    const lab = SALON.labels_entete?.[String(d.numero)];
     const unique = modePrix(s) === 'unique';
     // Les vins dégustés, rangés dans le tableau du tarif d'où ils viennent (le premier s'ils
     // n'y sont pas) : chacun garde son intitulé et ses paliers.
@@ -59,8 +73,9 @@ function editionSalon(cat) {
       const t = d.tableaux[ti];
       // Les paliers du salon (tarifs annotés par l'agence) quand elle les a donnés, par fiche ;
       // sinon ceux du tarif de septembre.
-      const paliers = s.paliers_salon?.[`${d.numero}:${ti}`] || s.paliers_salon?.[String(d.numero)]
+      let paliers = s.paliers_salon?.[`${d.numero}:${ti}`] || s.paliers_salon?.[String(d.numero)]
         || (unique ? ['Prix salon'] : t.paliers);
+      if (GLOBAL && paliers.length === 1 && paliers[0] === 'Prix salon') paliers = ['Prix'];
       return {
         intitule: intituleSalon(d, t), ...(t.famille ? { famille: t.famille } : {}), paliers,
         lignes: parTableau.get(ti).map((v) => ({
@@ -73,6 +88,7 @@ function editionSalon(cat) {
             ? v.prix_centimes : paliers.map(() => null),
           note: v.note || null, ...(v.famille ? { famille: v.famille } : {}),
           ...(v.offre ? { offre: v.offre, offre_detail: v.offre_detail || null } : {}),
+          ...(v.label ? { label: v.label } : {}),
         })),
       };
     });
@@ -80,13 +96,15 @@ function editionSalon(cat) {
     // Mathéo), tel quel ; une fiche sans carte à elle (Strasser-Radziwill, Cray, Guignottes)
     // garde le sien.
     const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
-    return { ...parNumero[d.numero], ...texte, tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
+    return { ...parNumero[d.numero], ...texte, ...(lab ? { labels: lab } : {}),
+      ...(s.mentions ? { mentions: s.mentions } : {}), tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
       offre_salon: s.offre_salon || null,
       // deux formulations seulement (l'agence, 3 octobre au soir) ; Boehler : franco de port
       note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });
+  if (SALON.ordre) domaines.sort((a, b) => SALON.ordre.indexOf(a.numero) - SALON.ordre.indexOf(b.numero));
   const presents = new Set(domaines.map((d) => d.numero));
-  const regions = cat.agence.regions.filter((r) => domaines.some((d) => d.region === r));
+  const regions = (SALON.regions || cat.agence.regions).filter((r) => domaines.some((d) => d.region === r));
   return {
     ...cat, domaines,
     agence: {
@@ -98,9 +116,9 @@ function editionSalon(cat) {
   };
 }
 
-export const catalogue = EDITION === 'salon' ? editionSalon(general) : general;
+export const catalogue = EDITION === 'general' ? general : editionSalon(general);
 /** Les noms de fichiers d'une édition : dist/<base>-ecran.pdf, build/<base>-plan.json… */
-export const BASE = EDITION === 'salon' ? 'salon-prive-2026' : 'catalogue-scio-2026';
+export const BASE = { salon: 'salon-prive-2026', global: 'catalogue-caviste-2026' }[EDITION] || 'catalogue-scio-2026';
 
 /** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */
 const _photos = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-preparees.json'), 'utf8'));
@@ -130,7 +148,8 @@ export const creditPhotos = () => {
     Elles montrent une région, jamais un domaine précis. */
 export const PHOTOS_REGIONS = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-regions.json'), 'utf8'));
 /** Le chemin d'une photo de région, vu depuis build/ (où vit le HTML). */
-export const photoRegion = (nom) => (PHOTOS_REGIONS[nom] ? `../${PHOTOS_REGIONS[nom].fichier}` : null);
+export const photoRegion = (nom) => (PHOTOS_REGIONS[nom]
+  && fs.existsSync(path.join(RACINE, PHOTOS_REGIONS[nom].fichier)) ? `../${PHOTOS_REGIONS[nom].fichier}` : null);
 export const REGIONS = catalogue.agence.regions;
 
 /* ——————————————————————————————— le corps du texte de présentation ———
@@ -212,6 +231,7 @@ export const STRATES = {
   Beaujolais:  { c: 'var(--gneiss)',      hex: '#A8515F', t: 'grains',    mot: 'le Clos des Nugues' },
   Bourgogne:   { c: 'var(--sables)',      hex: '#D08C3C', t: 'pointille', mot: 'climats et terrasses' },
   'Rhône':     { c: 'var(--amphibolite)', hex: '#3C5B47', t: 'galets',    mot: 'sables, grès et Trias' },
+  Bugey:       { c: 'var(--silex)',       hex: '#46606E', t: 'veines',    mot: 'Altesse, Gamay et Mondeuse' },
   'Sud-Ouest': { c: 'var(--sables)',      hex: '#D08C3C', t: 'grains',    mot: 'sables fauves et fossiles marins' },
   Bordeaux:    { c: 'var(--gneiss)',      hex: '#A8515F', t: 'galets',    mot: 'graves et argilo-calcaire' },
   Provence:    { c: 'var(--silex)',       hex: '#46606E', t: 'pointille', mot: 'la Provence Verte' },
@@ -471,12 +491,14 @@ export function ligneHtml(l, t, cle) {
     ? '<div class="cel-prix vide"></div>'
     : `<div class="cel-prix${seul ? ' seul' : ''}">${euros(p)}<span>€</span></div>`)).join('');
   const etoile = l.note === '*' ? ' <span class="etoile">*</span>' : '';
+  // Le label d'une seule ligne (Passion des Terroirs : tout n'est pas bio), en picto après le nom.
+  const lab = l.label ? `<span class="label-ligne">${pictoLabel(l.label, 'picto picto-ligne')}${esc(l.label)}</span>` : '';
   // L'offre du salon (11+1, 5+1) suit le nom du vin.
   const offre = l.offre ? ` <span class="offre">offre&nbsp;${esc(l.offre)}${l.offre_detail
     ? ' ' + esc(l.offre_detail).replace(/ (\S+)$/, '&nbsp;$1') : ''}</span>` : '';
   return `<tr data-ligne="${cle}">
     <td class="c-picto">${picto(famille(l, t))}</td>
-    <td class="c-vin"><span class="app">${esc(l.appellation)}${etoile}${l.cuvee ? '' : offre}</span>
+    <td class="c-vin"><span class="app">${esc(l.appellation)}${etoile}${lab}${l.cuvee ? '' : offre}</span>
       ${l.cuvee ? `<span class="cuv">${sansVeuve(l.cuvee)}${offre}</span>` : ''}</td>
     <td class="c-detail">${esc(l.millesime || '—')}</td>
     <td class="c-detail">${t.paliers.length > 1

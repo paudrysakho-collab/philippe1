@@ -88,5 +88,14 @@
   "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Blick_von_Ch%C3%A2tillon-sur-Marne_%C3%BCber_die_Weinberge_der_Champagne_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
   "auteur": "JensKunstfreund",
   "licence": "CC BY-SA 4.0"
+ },
+ "Bugey": {
+  "brut": "src/photos/regions-brut/Bugey-04.jpg",
+  "fichier": "src/photos/regions/Bugey.jpg",
+  "titre": "File:Des vignes à Saint-Sorlin-en-Bugey (août 2020).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_(ao%C3%BBt_2020).jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_%28ao%C3%BBt_2020%29.jpg",
+  "auteur": "Benoît Prieur",
+  "licence": "CC0"
  }
 }

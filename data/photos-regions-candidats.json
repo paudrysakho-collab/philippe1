@@ -2780,5 +2780,67 @@
    "requete": "vineyard golden hour",
    "fichier_vignette": "build/photos-regions/_général-17.jpg"
   }
+ ],
+ "Bugey": [
+  {
+   "titre": "File:1852 Levasseur Map of the Department L'Ain, France (Bugey Wine Region) - Geographicus - Ain-levasseur-1852.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:1852_Levasseur_Map_of_the_Department_L%27Ain,_France_(Bugey_Wine_Region)_-_Geographicus_-_Ain-levasseur-1852.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/1852_Levasseur_Map_of_the_Department_L%27Ain%2C_France_%28Bugey_Wine_Region%29_-_Geographicus_-_Ain-levasseur-1852.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "vignette": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/1852_Levasseur_Map_of_the_Department_L%27Ain%2C_France_%28Bugey_Wine_Region%29_-_Geographicus_-_Ain-levasseur-1852.jpg/500px-1852_Levasseur_Map_of_the_Department_L%27Ain%2C_France_%28Bugey_Wine_Region%29_-_Geographicus_-_Ain-levasseur-1852.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "largeur": 3500,
+   "hauteur": 2489,
+   "licence": "Public domain",
+   "auteur": "Victor Jules Levasseur / Frédéric-Guillaume Laguillermie",
+   "requete": "Bugey vignoble",
+   "fichier_vignette": "build/photos-regions/Bugey-00.jpg"
+  },
+  {
+   "titre": "File:Cerdon Ain.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cerdon_Ain.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Cerdon_Ain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "vignette": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cerdon_Ain.jpg/500px-Cerdon_Ain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "largeur": 2304,
+   "hauteur": 1728,
+   "licence": "CC BY-SA 2.5",
+   "auteur": "Stephane8888 (Stephane8888 on the french wiktionary)",
+   "requete": "Bugey vignoble",
+   "fichier_vignette": "build/photos-regions/Bugey-01.jpg"
+  },
+  {
+   "titre": "File:Manicle 01.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Manicle_01.JPG",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Manicle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "vignette": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Manicle_01.JPG/500px-Manicle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "largeur": 2592,
+   "hauteur": 1944,
+   "licence": "CC BY-SA 3.0",
+   "auteur": "Classiccardinal",
+   "requete": "Bugey vignoble",
+   "fichier_vignette": "build/photos-regions/Bugey-02.jpg"
+  },
+  {
+   "titre": "File:Serrières vignoble.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Serri%C3%A8res_vignoble.jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Serri%C3%A8res_vignoble.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "vignette": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Serri%C3%A8res_vignoble.jpg/500px-Serri%C3%A8res_vignoble.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "largeur": 2720,
+   "hauteur": 2048,
+   "licence": "CC BY-SA 3.0",
+   "auteur": "Jejecam",
+   "requete": "Bugey vignoble",
+   "fichier_vignette": "build/photos-regions/Bugey-03.jpg"
+  },
+  {
+   "titre": "File:Des vignes à Saint-Sorlin-en-Bugey (août 2020).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_(ao%C3%BBt_2020).jpg",
+   "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_%28ao%C3%BBt_2020%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "vignette": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_%28ao%C3%BBt_2020%29.jpg/500px-Des_vignes_%C3%A0_Saint-Sorlin-en-Bugey_%28ao%C3%BBt_2020%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "largeur": 4032,
+   "hauteur": 3024,
+   "licence": "CC0",
+   "auteur": "Benoît Prieur",
+   "requete": "Bugey vineyard",
+   "fichier_vignette": "build/photos-regions/Bugey-04.jpg"
+  }
  ]
 }

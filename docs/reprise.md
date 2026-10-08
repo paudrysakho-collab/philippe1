@@ -230,6 +230,11 @@ pas dans le conteneur. Les images préparées (`src/photos/rond/`, `src/photos/b
 deux notes de prix seulement ; « Possibilité de panacher avec… » réservé aux trois familles ;
 Berteaud sans la colonne 36 ; folios toujours à droite (`JOURNAL.md`).
 
+**8 octobre : catalogue caviste global** (`npm run global`, `EDITION=global`) : base salon, sans
+numéros, domaines réintégrés depuis les scans du 8 octobre (`sources/catalogue-global-2026/`,
+`scripts/prix-global.py`, relevé `data/catalogue-global-releve.md`, questions point 32). 64 pages.
+En attente : précisions de l'agence sur Les Lys ; le .pptx de cette édition.
+
 **À faire ensuite** :
 1. ~~Recharger la photo de Bourgogne en grand~~ : **fait le 3 octobre au soir** (original
    3072 × 1461 px, traité en 2400 × 1141 ; les deux catalogues refaits).
