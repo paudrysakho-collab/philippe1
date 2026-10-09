@@ -2,7 +2,7 @@
 import {
   catalogue, REGIONS, STRATES, esc, euros, coupe, carotte, carotteRonde, defsTrames, graine, photoDe, creditPhotos,
   picto, famille, famillesDe, nbReferences, legendeHtml, tableauHtml, groupes, groupeDe,
-  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, emplacementPour, pictoLabel, ORDRE_LABELS, EDITION, poidsStrates,
+  NOM_FAMILLE, effectifs, corpsDomaine, EMPLACEMENT, emplacementPour, pictoLabel, ORDRE_LABELS, EDITION, DPT, poidsStrates,
   coupeElegante, photoRegion,
 } from './pieces.mjs';
 import { bouteille as bouteilleDessinee, feuille } from './dessins.mjs';
@@ -51,9 +51,11 @@ export const ED = SALON_ED ? {
   // domaines (le sommaire les donne déjà, par région).
   ouvertures: false, indexDomaines: false,
 };
+/** Le titre du catalogue caviste : « Catalogue caviste Dpt 85 », « … Dpt 49 »… (10 octobre). */
+export const TITRE_DPT = `Catalogue caviste Dpt ${DPT || '85'}`;
 if (GLOBAL_ED) {
   Object.assign(ED, {
-    titreDocument: `Agence SCIO — Sous nos pieds — Catalogue ${EDITION === 'restaurant' ? 'restaurant' : 'caviste 85'} 2026`,
+    titreDocument: `Agence SCIO — Sous nos pieds — ${EDITION === 'restaurant' ? 'Catalogue restaurant' : TITRE_DPT} 2026`,
     titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
     // « 11 régions » en chiffres sur la couverture (l'agence, 10 octobre)
     sousTitre: `${catalogue.domaines.length} domaines, ${REGIONS.length} régions,`
@@ -142,7 +144,11 @@ function couvertureSalon() {
       ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
-      <h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : GLOBAL_ED ? 'Catalogue caviste 85' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
+      ${GLOBAL_ED && !RESTO_ED
+    // l'agence, 10 octobre : « Vins & Terroirs » d'abord, puis le catalogue et son département,
+    // plus petit (« Dpt », le D seul en capitale)
+    ? `<h1 class="titre-couv titre-couv-dpt"><em>Vins &amp; Terroirs</em><span class="titre-dpt">${esc(TITRE_DPT)}</span></h1>`
+    : `<h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>`}
       <p class="sous-couv">${ED.sousTitre}</p>
       ${GLOBAL_ED
     // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui

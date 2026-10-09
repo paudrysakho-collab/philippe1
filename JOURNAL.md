@@ -1146,3 +1146,21 @@ Le catalogue restaurant attend ; l'agence reprend le caviste.
   rond (`LEGENDES_ROND` de `prix-global.py`, `.legende-rond`, et dans le .pptx). Titre de couverture :
   **« Catalogue caviste 85 »** (PDF, .pptx, titre du document, contrôle).
 - Couverture : « 42 domaines, **11** régions » en chiffres (`sousTitre` de l'édition globale, PDF et .pptx).
+
+### 10 octobre, soir — couverture « Vins & Terroirs / Catalogue caviste Dpt 85 » et six catalogues par département
+
+- **Couverture** : « Vins & Terroirs » d'abord (or), puis « Catalogue caviste Dpt 85 » plus petit
+  (craie, 27 pt ; « Dpt » avec le D seul en capitale). PDF (`.titre-couv-dpt`) et .pptx.
+- **Variantes par département** : `DPT=49` (etc.) avec `EDITION=global` donne le catalogue du 85
+  moins les domaines listés dans `SANS_DEPARTEMENT` (`prix-global.py`) ; `BASE` devient
+  `catalogue-caviste-2026-dptNN`, le 85 garde `catalogue-caviste-2026`. Listes de l'agence,
+  vérifiées contre les lignes « Distribution » des fiches (elles concordent) ; le 56, non dicté, a
+  été proposé d'après les fiches et confirmé par l'agence :
+  - 49 : Villebois, Divin No Low, Nadine Ferrand, Haut Marin ;
+  - 53 : + Mas des Restanques, Passion des Terroirs (et Villebois, Divin, Ferrand, Haut Marin) ;
+  - 35 : Nadine Ferrand, Mas des Restanques, Haut Marin ;
+  - 44 : Passion des Terroirs ;
+  - 56 : Nadine Ferrand, Mas des Restanques, Haut Marin, Passion des Terroirs, Famille d'Exea (vins et jus).
+- `npm run global-dpt` (`scripts/variantes-dpt.sh`) : construction, contrôle (dont « aucun domaine
+  retiré ne reste dans le PDF »), déco, .pptx et son contrôle pour chaque variante. Les lettrines du
+  .pptx valent pour toutes (mêmes textes).

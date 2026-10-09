@@ -5,7 +5,9 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { catalogue, BASE, EDITION } from '../src/gabarits/pieces.mjs';
+import { catalogue, BASE, EDITION, DPT } from '../src/gabarits/pieces.mjs';
+
+const TITRE_DPT = `Catalogue caviste Dpt ${DPT || '85'}`;
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const SALON = EDITION === 'salon';
@@ -116,7 +118,7 @@ const obligatoires = [
     ["lieu du salon", catalogue.salon.evenement.lieu]]
     // catalogue caviste global : la couverture du salon, avec ses dates de validité (8 octobre)
     : EDITION === 'global' || EDITION === 'restaurant'
-      ? [["titre", EDITION === 'restaurant' ? 'Catalogue restaurant' : 'Catalogue caviste 85'],
+      ? [["titre", EDITION === 'restaurant' ? 'Catalogue restaurant' : TITRE_DPT],
         ["validité du tarif", "jusqu'au 31 décembre 2026"],
         ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
     : [["cible", 'Vendée (85)']]),
@@ -138,6 +140,15 @@ fragmentes.forEach((m) => console.log(`         introuvable : « ${m} »`));
 /* ——— 5. Les 40 domaines sont-ils tous imprimés ? ——— */
 const absents = catalogue.domaines.filter((d) => !texte.includes(d.nom.split(' /')[0]));
 dire(absents.length === 0, `les ${catalogue.domaines.length} domaines sont imprimés`);
+if (DPT && DPT !== '85') {
+  // la variante par département : les domaines retirés n'apparaissent nulle part (10 octobre)
+  const retires = catalogue.salon.variantes_departement[DPT];
+  const noms = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.json'), 'utf8')).domaines
+    .concat(catalogue.salon.domaines_ajoutes).filter((d) => retires.includes(d.numero)).map((d) => d.nom);
+  const restes = noms.filter((n) => plat(texte).includes(plat(n)));
+  dire(restes.length === 0, `Dpt ${DPT} : ${noms.length} domaines retirés, aucun ne reste dans le PDF${
+    restes.length ? ` (encore là : ${restes.join(', ')})` : ''}`);
+}
 if (SALON) {
   // chaque stand du plan a sa fiche, et chaque vin dégusté est dans le PDF
   const stands = new Set(catalogue.domaines.map((d) => d.stand));

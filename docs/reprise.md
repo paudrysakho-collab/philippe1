@@ -365,6 +365,14 @@ bande violette, « Ratafia disponible » retiré des textes, « Lucien Lurton »
 Le catalogue restaurant est en pause (« on reviendra vers les restaurants après ») : relevé dans
 `data/catalogue-restaurant-releve.md`, questions au point 35.
 
+### Six catalogues par département (10 octobre, soir)
+Couverture : « **Vins & Terroirs** » (or) puis « **Catalogue caviste Dpt 85** » plus petit. Le
+catalogue se décline : **85** (`npm run global`, fichiers `catalogue-caviste-2026-*`) et **49, 53,
+35, 44, 56** (`npm run global-dpt`, fichiers `catalogue-caviste-2026-dptNN-*`, PDF écran,
+imprimeur et .pptx Canva). Chaque variante = le 85 moins les domaines de `SANS_DEPARTEMENT`
+(`prix-global.py`), seul endroit à retoucher. **Toute retouche du 85 se refait ensuite pour les
+cinq autres** : `npm run global && npm run global-dpt`.
+
 ### La suite possible
 1. Ce que l'agence demandera en relisant (elle relit page par page, souvent par message vocal).
 2. Photos HD pour les ronds signalés.

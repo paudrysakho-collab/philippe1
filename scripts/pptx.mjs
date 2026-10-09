@@ -11,7 +11,7 @@ import {
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED,
-  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche, photoRond, SALON_TAMPON }
+  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche, photoRond, SALON_TAMPON, TITRE_DPT }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -147,7 +147,7 @@ pres.defineLayout({ name: 'SCIO', width: mm(PAGE_L), height: mm(PAGE_H) });
 pres.layout = 'SCIO';
 pres.author = 'Agence SCIO Vins & Spirits';
 pres.title = SALON_ED ? `${EV.nom} — ${EV.date_texte}`
-  : GLOBAL_ED ? 'Catalogue caviste 85 — Vins & Terroirs — 2026'
+  : GLOBAL_ED ? `${TITRE_DPT} — Vins & Terroirs — 2026`
     : 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
 
 /** Marge intérieure d'une page : à droite sur un recto, à gauche sur un verso. */
@@ -593,8 +593,12 @@ function slideCouverture(s, numero) {
     x: mm(MARGE.int), y: mm(17), w: mm(62), h: mm(62 * 251 / 1030) });
   const sousTitre = ED.sousTitre.replace('<br>', '\n');
   if (MAQUETTE_SALON) {
-    s.addText([
-      { text: GLOBAL_ED ? 'Catalogue caviste 85' : 'Salon Privé', options: { breakLine: true } },
+    s.addText(GLOBAL_ED && EDITION !== 'restaurant' ? [
+      // l'agence, 10 octobre : « Vins & Terroirs » d'abord, puis le catalogue et son département
+      { text: 'Vins & Terroirs', options: { color: C.or, breakLine: true } },
+      { text: TITRE_DPT, options: { fontSize: 27 } },
+    ] : [
+      { text: GLOBAL_ED ? 'Catalogue restaurant' : 'Salon Privé', options: { breakLine: true } },
       { text: 'Vins & Terroirs', options: { color: C.or } },
     ], { x: mm(MARGE.int), y: mm(42), w: mm(165), h: mm(34), margin: 0,
       fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });

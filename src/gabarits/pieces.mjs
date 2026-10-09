@@ -22,6 +22,10 @@ const general = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.jso
 export const EDITION = ['salon', 'global', 'restaurant'].includes(process.env.EDITION) ? process.env.EDITION : 'general';
 export const RESTAURANT = EDITION === 'restaurant';
 export const GLOBAL = EDITION === 'global' || RESTAURANT;
+/* Le catalogue caviste se décline par département (l'agence, 10 octobre) : DPT=49 donne le
+   catalogue du 85 sans les domaines qui ne livrent pas le 49 (listes dans scripts/prix-global.py,
+   `SANS_DEPARTEMENT`). Sans DPT, c'est le catalogue du 85. */
+export const DPT = EDITION === 'global' ? String(process.env.DPT || '85') : null;
 export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE,
   RESTAURANT ? 'data/catalogue-restaurant-2026.json'
     : GLOBAL ? 'data/catalogue-global-2026.json' : 'data/salon-prive-2026.json'), 'utf8'));
@@ -120,6 +124,11 @@ function editionSalon(cat) {
       note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });
   if (SALON.ordre) domaines.sort((a, b) => SALON.ordre.indexOf(a.numero) - SALON.ordre.indexOf(b.numero));
+  if (DPT && DPT !== '85') {
+    const retires = SALON.variantes_departement?.[DPT];
+    if (!retires) throw new Error(`DPT=${DPT} : aucune liste dans variantes_departement`);
+    domaines.splice(0, domaines.length, ...domaines.filter((d) => !retires.includes(d.numero)));
+  }
   const presents = new Set(domaines.map((d) => d.numero));
   const regions = (SALON.regions || cat.agence.regions).filter((r) => domaines.some((d) => d.region === r));
   return {
@@ -135,7 +144,8 @@ function editionSalon(cat) {
 
 export const catalogue = EDITION === 'general' ? general : editionSalon(general);
 /** Les noms de fichiers d'une édition : dist/<base>-ecran.pdf, build/<base>-plan.json… */
-export const BASE = { salon: 'salon-prive-2026', global: 'catalogue-caviste-2026',
+export const BASE = { salon: 'salon-prive-2026',
+  global: DPT && DPT !== '85' ? `catalogue-caviste-2026-dpt${DPT}` : 'catalogue-caviste-2026',
   restaurant: 'catalogue-restaurant-2026' }[EDITION] || 'catalogue-scio-2026';
 
 /** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */

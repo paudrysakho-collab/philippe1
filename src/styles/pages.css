@@ -336,6 +336,10 @@
 .couv-photo .titre-couv, .couv-photo .sous-couv, .couv-photo .edition-couv { z-index: 3; }
 .couv-photo .titre-couv { color: var(--craie); }
 .couv-photo .titre-couv em { color: var(--or); }
+/* catalogue caviste (l'agence, 10 octobre) : « Vins & Terroirs » d'abord, le catalogue et son
+   département dessous, plus petit, en craie */
+.titre-couv-dpt em { display: block; }
+.titre-couv-dpt .titre-dpt { display: block; margin-top: 3mm; font-size: 27pt; line-height: 1; }
 .couv-photo .sous-couv { color: var(--craie); opacity: 1; }
 .couv-photo .edition-couv .cible, .couv-photo .edition-couv .annee, .couv-photo .edition-couv .date { color: var(--craie); }
 .couv-reserve { position: absolute; z-index: 3; left: calc(var(--marge-int) - 4mm + var(--fp)); top: calc(13mm + var(--fp));

@@ -38,7 +38,8 @@
     "catalogue-restaurant": "EDITION=restaurant node scripts/construire.mjs",
     "controle-restaurant": "EDITION=restaurant node scripts/controler.mjs",
     "pptx-restaurant": "EDITION=restaurant node scripts/deco.mjs && EDITION=restaurant node scripts/pptx.mjs && python3 scripts/ranger-pptx.py dist/catalogue-restaurant-2026-canva.pptx && EDITION=restaurant node scripts/controler-pptx.mjs",
-    "restaurant": "npm run donnees && npm run prix-global && npm run prix-restaurant && npm run catalogue-restaurant && npm run controle-restaurant"
+    "restaurant": "npm run donnees && npm run prix-global && npm run prix-restaurant && npm run catalogue-restaurant && npm run controle-restaurant",
+    "global-dpt": "sh scripts/variantes-dpt.sh"
   },
   "dependencies": {
     "playwright": "1.56.1",

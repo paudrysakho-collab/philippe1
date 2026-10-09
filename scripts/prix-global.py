@@ -68,6 +68,16 @@ DEPARTEMENTS = {
     14: ["35", "44", "49", "53", "56", "85"],     # Les Guignottes : le 53 ajouté
     31: ["35", "44", "49", "53", "56", "85"],     # Blacailloux : le 53 ajouté
 }
+# Le catalogue caviste se décline par département (l'agence, 10 octobre) : chaque variante est
+# le catalogue du 85 moins les domaines qui ne livrent pas le département. Listes dictées par
+# l'agence, et vérifiées contre les lignes « Distribution » des fiches (elles concordent).
+SANS_DEPARTEMENT = {
+    "49": [6, 7, 11, 23],              # Villebois, Divin No Low, Nadine Ferrand, Haut Marin
+    "53": [6, 7, 11, 43, 23, 25],      # + Mas des Restanques, Passion des Terroirs
+    "35": [11, 43, 23],                # Nadine Ferrand, Mas des Restanques, Haut Marin
+    "44": [25],                        # Passion des Terroirs
+    "56": [11, 43, 23, 25, 32, 33],    # + Famille d'Exea (vins et jus)
+}
 # pas de ligne « Distribution » du tout (l'agence, 10 octobre : « supprimer tous les départements »)
 SANS_DISTRIBUTION = {7}                           # Divin No Low
 
@@ -424,7 +434,8 @@ def main():
         "groupes_ajoutes": GROUPES_AJOUTES, "noms_panachage": NOMS_PANACHAGE,
         "labels_entete": labels, "departements": DEPARTEMENTS,
         "sans_distribution": sorted(SANS_DISTRIBUTION),
-        "legendes_rond": {str(n): x for n, x in LEGENDES_ROND.items()}, "stands": entrees,
+        "legendes_rond": {str(n): x for n, x in LEGENDES_ROND.items()},
+        "variantes_departement": SANS_DEPARTEMENT, "stands": entrees,
         # les mentions légales du catalogue global, dans l'ordre voulu par l'agence (8 oct. soir)
         "mentions_legales": ("Les millésimes peuvent évoluer en fonction de l'avancée de l'année. "
                              "Vente validée sous réserve des stocks disponibles. Photos non contractuelles, "
