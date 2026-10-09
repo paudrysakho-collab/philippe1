@@ -56,7 +56,8 @@ export const TITRE_DPT = `Catalogue caviste Dpt ${DPT || '85'}`;
 if (GLOBAL_ED) {
   Object.assign(ED, {
     titreDocument: `Agence SCIO — Sous nos pieds — ${EDITION === 'restaurant' ? 'Catalogue restaurant' : TITRE_DPT} 2026`,
-    titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
+    // en chiffres, comme « 11 régions » (le nombre change d'un département à l'autre)
+    titreIndexDomaines: `Les ${catalogue.domaines.length} domaines`,
     // « 11 régions » en chiffres sur la couverture (l'agence, 10 octobre)
     sousTitre: `${catalogue.domaines.length} domaines, ${REGIONS.length} régions,`
       + "<br>et la terre qu'ils ont sous les pieds.",
