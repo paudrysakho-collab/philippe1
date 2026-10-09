@@ -247,6 +247,9 @@
  "sans_distribution": [
   7
  ],
+ "legendes_rond": {
+  "25": "Lucien Lurton"
+ },
  "stands": [
   {
    "stand": 1,
@@ -6934,8 +6937,8 @@
    "mode_prix": "unique",
    "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
-   "fiche_texte": 25,
-   "texte_reference": "Une recherche constante de l’excellence et de la meilleure expression des Terroirs. Depuis 3 générations, la famille Lucien Lurton est un des principaux propriétaires de Châteaux de la région de Bordeaux. Personnalité, respect de la terre, exigence, indépendance ; l’essentiel du caractère de la famille, distributrice des vins de toutes les appellations bordelaises.",
+   "fiche_texte": null,
+   "texte_reference": null,
    "mentions": [],
    "complement": "Possibilité sur demande d'avoir le catalogue complet."
   },

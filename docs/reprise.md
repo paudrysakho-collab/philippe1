@@ -360,7 +360,8 @@ et `npm run pptx-salon` si l'agence le demande.
 Départements (Barbinière, Boehler, Guignottes, Mas des Restanques, Blacailloux ; Divin No Low sans
 ligne Distribution), tampon « **A participé au Salon Privé du 5 octobre** », plus de jeton
 « Panachage dans le domaine » (« entre domaines » reste), Villebois et Divin No Low nommés dans la
-bande violette, « Ratafia disponible » retiré des textes, « famille Lucien Lurton » (Passion).
+bande violette, « Ratafia disponible » retiré des textes, « Lucien Lurton » en petit sous sa photo
+(Passion, texte du tarif inchangé), titre de couverture « **Catalogue caviste 85** ».
 Le catalogue restaurant est en pause (« on reviendra vers les restaurants après ») : relevé dans
 `data/catalogue-restaurant-releve.md`, questions au point 35.
 

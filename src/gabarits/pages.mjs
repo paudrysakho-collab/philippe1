@@ -53,7 +53,7 @@ export const ED = SALON_ED ? {
 };
 if (GLOBAL_ED) {
   Object.assign(ED, {
-    titreDocument: `Agence SCIO — Sous nos pieds — Catalogue ${EDITION === 'restaurant' ? 'restaurant' : 'caviste'} 2026`,
+    titreDocument: `Agence SCIO — Sous nos pieds — Catalogue ${EDITION === 'restaurant' ? 'restaurant' : 'caviste 85'} 2026`,
     titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
     introIndexVins: 'Le chiffre est la page.',
     ouvertures: true, indexDomaines: true,
@@ -139,7 +139,7 @@ function couvertureSalon() {
       ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
-      <h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
+      <h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : GLOBAL_ED ? 'Catalogue caviste 85' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
       ${GLOBAL_ED
     // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui
@@ -361,9 +361,13 @@ export function rondDomaine(d, e = emplacementPour()) {
       ${feuille({ classe: 'dessin feuille-rond' })}</div>`;
   }
   if (!ph) return emplacementRond(e);
-  return `<div class="photo photo-rond"
+  const rond = `<div class="photo photo-rond"
     style="width:${e.rond}mm;height:${e.rond}mm">
     <img src="../${esc(ph.fichier)}" alt="${esc(ph.sujet)} — ${esc(d.nom)}"></div>`;
+  // le nom sous le portrait, en petit (Lucien Lurton) : il ne change pas la hauteur de la bande
+  return d.legende_rond
+    ? `<div class="rond-legende">${rond}<div class="legende-rond">${esc(d.legende_rond)}</div></div>`
+    : rond;
 }
 
 /** La bouteille détourée, contenue dans sa case sans déformation, posée sur le bas. */

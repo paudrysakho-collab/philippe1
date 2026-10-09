@@ -71,16 +71,11 @@ DEPARTEMENTS = {
 # pas de ligne « Distribution » du tout (l'agence, 10 octobre : « supprimer tous les départements »)
 SANS_DISTRIBUTION = {7}                           # Divin No Low
 
-# les textes de présentation retouchés pour cette édition
-TEXTES = {
-    # La Passion des Terroirs : le prénom de Lucien Lurton dès la première mention (l'agence,
-    # 10 octobre) ; les mots sont ceux du tarif, rien d'ajouté.
-    25: ("Une recherche constante de l\u2019excellence et de la meilleure expression des Terroirs. "
-         "Depuis 3 générations, la famille Lucien Lurton est un des principaux propriétaires de "
-         "Châteaux de la région de Bordeaux. Personnalité, respect de la terre, exigence, "
-         "indépendance ; l\u2019essentiel du caractère de la famille, distributrice des vins de "
-         "toutes les appellations bordelaises."),
-}
+# les textes de présentation retouchés pour cette édition (aucun pour l'instant : le 10 octobre,
+# l'agence a préféré le nom de Lucien Lurton sous sa photo plutôt que dans le texte)
+TEXTES = {}
+# une légende sous le rond, quand la personne est connue (l'agence, 10 octobre)
+LEGENDES_ROND = {25: "Lucien Lurton"}     # la photo vient de lapassiondesterroirs.com (lucien-lurton-1.png)
 # le ratafia n'est pas proposé : on retire la phrase des textes (l'agence, 10 octobre)
 SANS_RATAFIA = re.compile(r"\s*Ratafia disponible\.")
 # notes de prix données par l'agence pour une fiche venue du salon
@@ -428,7 +423,8 @@ def main():
         "regions": REGIONS, "ordre": ORDRE, "domaines_ajoutes": DOMAINES_AJOUTES,
         "groupes_ajoutes": GROUPES_AJOUTES, "noms_panachage": NOMS_PANACHAGE,
         "labels_entete": labels, "departements": DEPARTEMENTS,
-        "sans_distribution": sorted(SANS_DISTRIBUTION), "stands": entrees,
+        "sans_distribution": sorted(SANS_DISTRIBUTION),
+        "legendes_rond": {str(n): x for n, x in LEGENDES_ROND.items()}, "stands": entrees,
         # les mentions légales du catalogue global, dans l'ordre voulu par l'agence (8 oct. soir)
         "mentions_legales": ("Les millésimes peuvent évoluer en fonction de l'avancée de l'année. "
                              "Vente validée sous réserve des stocks disponibles. Photos non contractuelles, "

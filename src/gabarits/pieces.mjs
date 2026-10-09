@@ -114,6 +114,8 @@ function editionSalon(cat) {
       ...(SALON.departements?.[String(d.numero)] ? { departements: SALON.departements[String(d.numero)] } : {}),
       // pas de ligne « Distribution » (Divin No Low, l'agence, 10 octobre)
       ...(SALON.sans_distribution?.includes(d.numero) ? { sans_distribution: true } : {}),
+      // le nom de la personne sous son portrait, quand elle est connue (Lucien Lurton, 10 octobre)
+      ...(SALON.legendes_rond?.[String(d.numero)] ? { legende_rond: SALON.legendes_rond[String(d.numero)] } : {}),
       // deux formulations seulement (l'agence, 3 octobre au soir) ; Boehler : franco de port
       note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });

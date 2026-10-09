@@ -1140,3 +1140,8 @@ Le catalogue restaurant attend ; l'agence reprend le caviste.
   seconde devient « de la famille » pour ne pas répéter (`TEXTES` de `prix-global.py`).
 - Château du Cray (p.20) : l'agence a vérifié, rien à changer.
 - 64 pages, 607 prix, tout au vert ; pages 7, 11, 12, 14, 21, 25, 30, 43, 47, 49, 55, 56 regardées.
+
+- **Plus tard le 10 octobre** : l'agence voulait le nom **sous la photo**, pas dans le texte. Le texte
+  de la Passion des Terroirs reprend celui du tarif, et « Lucien Lurton » s'écrit en petit sous le
+  rond (`LEGENDES_ROND` de `prix-global.py`, `.legende-rond`, et dans le .pptx). Titre de couverture :
+  **« Catalogue caviste 85 »** (PDF, .pptx, titre du document, contrôle).

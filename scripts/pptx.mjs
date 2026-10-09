@@ -147,7 +147,7 @@ pres.defineLayout({ name: 'SCIO', width: mm(PAGE_L), height: mm(PAGE_H) });
 pres.layout = 'SCIO';
 pres.author = 'Agence SCIO Vins & Spirits';
 pres.title = SALON_ED ? `${EV.nom} — ${EV.date_texte}`
-  : GLOBAL_ED ? 'Catalogue caviste — Vins & Terroirs — 2026'
+  : GLOBAL_ED ? 'Catalogue caviste 85 — Vins & Terroirs — 2026'
     : 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
 
 /** Marge intérieure d'une page : à droite sur un recto, à gauche sur un verso. */
@@ -415,6 +415,11 @@ function slideFiche(s, numero, desc) {
       // déjà masquée en cercle par preparer-photos.py : rien ne dépend de l'import
       s.addImage({ path: path.join(RACINE, phRond.fichier.replace(/\.jpg$/, '-cercle.png')),
         x, y, w: mm(rond), h: mm(rond), altText: `${phRond.sujet} — ${d.nom}` });
+      // le nom sous le portrait (Lucien Lurton, l'agence, 10 octobre), comme .legende-rond du PDF
+      if (d.legende_rond) {
+        s.addText(d.legende_rond, { x, y: y + mm(rond + 1.2), w: mm(rond), h: mm(4), margin: 0,
+          align: 'center', valign: 'top', fontFace: F.tech, fontSize: 8, bold: true, color: C.gneiss });
+      }
     } else {
       s.addShape(pres.ShapeType.ellipse, { x, y, w: mm(rond), h: mm(rond),
         fill: { color: C.tuffeau }, line: { color: C.silex, width: 1, dashType: 'dash' } });
@@ -589,7 +594,7 @@ function slideCouverture(s, numero) {
   const sousTitre = ED.sousTitre.replace('<br>', '\n');
   if (MAQUETTE_SALON) {
     s.addText([
-      { text: GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé', options: { breakLine: true } },
+      { text: GLOBAL_ED ? 'Catalogue caviste 85' : 'Salon Privé', options: { breakLine: true } },
       { text: 'Vins & Terroirs', options: { color: C.or } },
     ], { x: mm(MARGE.int), y: mm(42), w: mm(165), h: mm(34), margin: 0,
       fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });
