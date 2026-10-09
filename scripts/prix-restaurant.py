@@ -48,6 +48,10 @@ PALIERS = {
     17: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
     18: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
     19: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
+    # Domaine du Colombier (scans 8 et 9) : il a son propre « CATALOGUE C.H.R. et TARIF
+    # FRANCO H.T ». Les bag-in-box n'y figurent pas : leur tableau garde ses 5 L / 10 L.
+    "3:0": ["Minimum 60 bts", "Minimum 120 bts", "Minimum 240 bts"],
+    2: P(24, 60, 120),                                   # Domaine de la Barbinière, scans 6 et 7
 }
 
 # ——————————————————————————————————————————————————— les prix du tarif restaurant ———
@@ -96,6 +100,38 @@ PRIX = {
     (19, "Syrah Rouge"): eu("5,50", "5,00", "4,80"),
     (19, "Terroir d\u2019Ansouis Blanc"): eu("6,50", "6,00", "5,50"),
     (19, "Terroir d\u2019Ansouis Rouge"): eu("6,50", "6,00", "5,50"),
+
+    # ——— Domaine du Colombier (scans 8 et 9), tarif C.H.R. : 60 / 120 / 240 bouteilles.
+    # « Rouge aux lèvres », « La Perle » et les bag-in-box n'y figurent pas : cases vides.
+    (3, "Cuvée des deux Colombes"): eu("4,80", "4,60", "4,35"),
+    (3, "L\u2019Envol"): eu("5,90", "5,60", "5,30"),
+    (3, "Cru Mouzillon-Tillières"): eu("10,00", "9,50", "9,10"),
+    (3, "Le Prestige de Beaulieu"): eu("5,00", "4,75", "4,50"),
+    (3, "Cuvée domaine"): eu("4,70", "4,50", "4,20"),
+
+    # ——— Domaine de la Barbinière (scans 6 et 7) : « Tarifs Restauration HT 2026 »,
+    # colonnes ≥ 24, ≥ 60 et ≥ 120, toutes trois surlignées. Les prix sont ceux du 75 cl
+    # (la ligne « Les Courbes » 2017 est barrée, la 2018 surlignée).
+    (2, "Les Silex Rouge"): eu("6,57", "5,72", "5,49"),
+    (2, "Les Gorinières Blanc"): eu("11,37", "10,52", "10,10"),
+    (2, "Les Courbes Rouge"): eu("10,57", "9,72", "9,33"),
+    (2, "Les Amphibol Blanc"): eu("8,46", "7,61", "7,30"),
+    (2, "Les Gneiss Rouge"): eu("7,75", "6,90", "6,62"),
+    (2, "Le Bois Bouquet"): eu("9,87", "9,02", "8,66"),
+    (2, "L\u2019O Brut"): eu("9,29", "8,44", "8,11"),
+
+    # ——— Domaine Nadine Ferrand (scan 23) : « Tarif CHR 2026 », un prix unique.
+    # Une note rouge « supprimer » barre un mot du titre : signalée dans QUESTIONS.md,
+    # rien n'a été retiré sans l'agence.
+    (11, "Lise-Marie"): eu("15,10"),
+    (11, "Lise-Marie, caisse bois"): eu("46,80"),
+    (11, "AOP Viré-Clessé", "Blanc", "2024", "75 cl"): eu("13,10"),
+    (11, "AOP Viré-Clessé", "Blanc", "2024", "Magnum 1,5 L"): eu("24,70"),
+    (11, "AOP Saint-Véran", "Blanc", "2024", "75 cl"): eu("11,90"),
+    (11, "AOP Saint-Véran", "Blanc", "2024", "Magnum 1,5 L"): eu("24,40"),
+    (11, "AOP Mâcon Solutré-Pouilly", "Blanc", "2024", "75 cl"): eu("10,10"),
+    (11, "Signature"): eu("10,80"),
+    (11, "AOP Mâcon", "Blanc", "2024", "75 cl"): eu("8,50"),
 }
 
 # ——————————————————————————————————————————————— les vins retirés du tarif restaurant ———
@@ -118,8 +154,8 @@ def prix_de(v):
     """Le prix restaurant d'un vin. Deux lignes peuvent partager une cuvée (deux millésimes,
     deux contenances) : la clé la plus précise gagne."""
     f, c = cle_vin(v)
-    for cle in ((f, c, v["millesime"], v["contenance"]), (f, c, v["contenance"]),
-                (f, c, v["millesime"]), (f, c)):
+    a, co, m, ct = v["appellation"], v["couleur"], v["millesime"], v["contenance"]
+    for cle in ((f, a, co, m, ct), (f, c, m, ct), (f, c, ct), (f, c, m), (f, c)):
         if cle in PRIX:
             return PRIX[cle]
     return None

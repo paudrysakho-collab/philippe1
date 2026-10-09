@@ -41,6 +41,24 @@ récent ; pas de millésime → aucun. **Un prix ne s'invente ni ne se corrige j
 | 43–48 | **doublons** des scans 6 à 12 | — | Barbinière, Colombier, Noëls, Berteaud, Villebois |
 | 49–51 | à relever | — | fin du dossier |
 
+## Relevé posé (dans `scripts/prix-restaurant.py`)
+
+| Fiche | Domaine | Paliers restaurant | Prix |
+|---|---|---|---|
+| 1 | François Reverdy | Jusqu'à 36 / de 37 à 119 bts | 9 vins (les colonnes 120 et 300 sont rayées) |
+| 2 | Domaine de la Barbinière | ≥ 24 / ≥ 60 / ≥ 120 bts | 7 vins (prix du 75 cl ; « Les Courbes » 2017 barrée, 2018 surlignée) |
+| 3 | Domaine du Colombier | 60 / 120 / 240 bts | 5 vins ; « Rouge aux lèvres », « La Perle » et les BIB ne sont pas au tarif C.H.R. |
+| 11 | Domaine Nadine Ferrand | prix unique | 9 vins |
+| 16 | Le Prieuré des Papes | 36-72 / 78-120 / 126-240 cols | 4 vins |
+| 17 | Domaine de Coyeux | 36-72 / 78-120 / 120-240 cols | 5 vins |
+| 18 | Domaine du Moulin Blanc | 36-72 / 78-120 / 120-240 cols | 1 vin |
+| 19 | Domaine de la Pousterle | 36-72 / 78-120 / 126-240 cols | 4 vins |
+| 41 | Domaine des Sardelles | 36 / 72 / 144 bts | 7 vins ; « Sancerre Rosé » est barré, donc retiré |
+
+Les quatre domaines Strasser Radziwill ont cinq colonnes au tarif (jusqu'à la palette) :
+l'agence a surligné les trois premières et rayé les deux dernières sur le scan 24, on fait
+donc pareil pour les quatre.
+
 ## Ce qui reste à faire
 
 1. Finir la carte (scans 37 à 42 et 49 à 51).

@@ -720,9 +720,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      480,
+      460,
+      435
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "L'Envol 2023 — AOC Muscadet Sèvre et Maine Sur Lie",
@@ -738,9 +740,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null
+      590,
+      560,
+      530
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Cru Mouzillon-Tillières 2022 — AOC Muscadet Sèvre et Maine",
@@ -757,9 +761,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      1000,
+      950,
+      910
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Prestige de Beaulieu 2024 — IGP Chardonnay",
@@ -776,10 +782,12 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      500,
+      475,
+      450
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Cuvée domaine 2025 — IGP Sauvignon Gris",
@@ -798,10 +806,12 @@
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
      "prix_centimes": [
-      null
+      470,
+      450,
+      420
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Rouge aux lèvres — IGP Val de Loire",
@@ -818,6 +828,8 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
+      null,
+      null,
       null
      ],
      "offre": "11+1",
@@ -838,6 +850,8 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
+      null,
+      null,
       null
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
@@ -902,6 +916,11 @@
     "3:1": [
      "5 L",
      "10 L"
+    ],
+    "3:0": [
+     "Minimum 60 bts",
+     "Minimum 120 bts",
+     "Minimum 240 bts"
     ]
    },
    "mode_prix": "unique",
@@ -4638,9 +4657,11 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null
+      657,
+      572,
+      549
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Les Gorinières Blanc 2024 — AOC Fiefs Vendéens Chantonnay",
@@ -4659,9 +4680,11 @@
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": [
-      null
+      1137,
+      1052,
+      1010
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Les Courbes Blanc 2018 — AOC Fiefs Vendéens Chantonnay",
@@ -4680,10 +4703,12 @@
       "« Blanc » dans la liste, « Rouge » au tarif"
      ],
      "prix_centimes": [
-      null
+      1057,
+      972,
+      933
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Les Amphibol Blanc 2025 — AOC Fiefs Vendéens Chantonnay",
@@ -4702,9 +4727,11 @@
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
      "prix_centimes": [
-      null
+      846,
+      761,
+      730
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Les Gneiss Rouge 2023 — AOC Fiefs Vendéens Chantonnay",
@@ -4721,10 +4748,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null
+      775,
+      690,
+      662
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Bois Bouquet 2023 — IGP Val de Loire Pinot Noir",
@@ -4741,9 +4770,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      987,
+      902,
+      866
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "L'O Brut — Méthode traditionnelle",
@@ -4760,9 +4791,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      929,
+      844,
+      811
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -4771,7 +4804,9 @@
    "fiche_texte": 2,
    "paliers_salon": {
     "2": [
-     "Prix salon"
+     "À partir de 24 bts",
+     "À partir de 60 bts",
+     "À partir de 120 bts"
     ]
    },
    "mode_prix": "unique"
@@ -5997,9 +6032,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1510
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6012,9 +6047,9 @@
      "millesime": "2021",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      4680
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6027,9 +6062,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1310
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6042,9 +6077,9 @@
      "millesime": "2024",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      2470
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6057,9 +6092,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1190
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6072,9 +6107,9 @@
      "millesime": "2024",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      2440
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6087,9 +6122,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1010
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6102,9 +6137,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1080
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 11,
@@ -6117,9 +6152,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      850
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "paliers_salon": {
