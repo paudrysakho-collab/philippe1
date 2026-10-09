@@ -304,10 +304,17 @@
    "provenance": "dossier de l'agence"
   },
   "rond": {
-   "fichier": "canva/d17-p20-140.png",
-   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 20",
-   "sujet": "le domaine",
-   "mode": "couvrir"
+   "fichier": "web/d17-vendanges.jpg",
+   "mode": "couvrir",
+   "centre": [
+    0.55,
+    0.5
+   ],
+   "plancher_ppi": 120,
+   "sujet": "l'équipe aux vendanges, devant les Dentelles",
+   "url": "https://static.wixstatic.com/media/c906d7_ddb78273a29d42b9b75d2baadb8fc8eb~mv2.jpg",
+   "page": "https://www.domainedecoyeux.com/",
+   "provenance": "site officiel du domaine"
   }
  },
  "18": {
@@ -699,10 +706,16 @@
    "provenance": "dossier de l'agence"
   },
   "rond": {
-   "fichier": "canva/d38-p41-355.png",
-   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 41",
+   "fichier": "web/d38-denis-frezier.jpg",
    "mode": "couvrir",
-   "sujet": "le village dans ses vignes"
+   "centre": [
+    0.55,
+    0.45
+   ],
+   "sujet": "Denis Frézier au caveau",
+   "url": "https://www.champagne-frezier.com/images/Denis2.jpg",
+   "page": "https://www.champagne-frezier.com/Savoir-Faire",
+   "provenance": "site officiel du domaine"
   }
  },
  "39": {

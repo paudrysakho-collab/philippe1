@@ -543,6 +543,5 @@ Restent :
 - Réglé : « Philippe Audry / page 66 » était une blague ; photo du château de Falfas fournie par l'agence.
 
 - **Photos en basse définition (voulues par l'agence, 8 oct.)** : Barbinière (les deux frères, 124 ppi),
-  Prieuré des Papes (161 ppi), Haut Marin (166 ppi), Famille d'Exea (196 ppi), tirées de l'ancien
+  Prieuré des Papes (161 ppi), Coyeux (178 ppi), Haut Marin (166 ppi), Famille d'Exea (196 ppi), tirées de l'ancien
   catalogue ou envoyées petites : à remplacer par des versions HD avant l'impression si possible.
-- **Loi Évin** : la photo des frères de la Barbinière les montre le nez dans le verre (choix de l'agence).

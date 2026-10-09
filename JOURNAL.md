@@ -1027,3 +1027,6 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
   retirée (tout est dans l'index) ; index des domaines sans le compte ; Colombier « IGP Val de
   Loire » (Chardonnay, Sauvignon Gris, BIB Chardonnay, BIB Cabernet Franc rosé) ; Sardelles
   « Minimum de commande : 36 bouteilles ».
+- Photos cherchées sur internet (8–9 oct.) : Denis Frézier au caveau (champagne-frezier.com),
+  l'équipe aux vendanges pour Coyeux (domainedecoyeux.com, petite). Prieuré des Papes : aucun
+  portrait trouvé (ni site propre ni photo sur le site du groupe), le mas reste.
