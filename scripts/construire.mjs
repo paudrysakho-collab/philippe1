@@ -275,7 +275,7 @@ function construirePages(m) {
   blocsIdx.forEach((b, i) => descripteurs.push({ type: 'index-vins', premiere: i === 0, blocs: b }));
   // Au salon, les produits à part se comptent sur les doigts d'une main : pas de page pour eux.
   // le catalogue caviste global n'a pas de page « produits à part » : tout est dans l'index (8 oct.)
-  if (!SALON && EDITION !== 'global') { pages.push(G.produitsAPart(parDomaine)); descripteurs.push({ type: 'produits' }); }
+  if (!SALON && EDITION === 'general') { pages.push(G.produitsAPart(parDomaine)); descripteurs.push({ type: 'produits' }); }
   if (G.ED.indexDomaines) { pages.push(G.indexDomaines(parDomaine)); descripteurs.push({ type: 'index-domaines' }); }
 
   // Un multiple de 4, en ajoutant des respirations avant la page finale.

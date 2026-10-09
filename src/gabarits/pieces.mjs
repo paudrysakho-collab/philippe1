@@ -15,10 +15,16 @@ const general = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/catalogue.jso
 /* `EDITION=global` (8 octobre 2026) fabrique le catalogue caviste global : les fiches du salon,
    sans numéros de stand, plus les domaines réintégrés depuis leurs tarifs annotés
    (data/catalogue-global-2026.json, écrit par scripts/prix-global.py). */
-export const EDITION = ['salon', 'global'].includes(process.env.EDITION) ? process.env.EDITION : 'general';
-export const GLOBAL = EDITION === 'global';
+/* `EDITION=restaurant` (9 octobre 2026) : le catalogue restaurant. Même contenu que le
+   catalogue caviste — mêmes fiches, mêmes vins, mêmes textes, mêmes photos — mais les
+   paliers de quantité et les prix sont ceux du tarif restaurant
+   (data/catalogue-restaurant-2026.json, écrit par scripts/prix-restaurant.py). */
+export const EDITION = ['salon', 'global', 'restaurant'].includes(process.env.EDITION) ? process.env.EDITION : 'general';
+export const RESTAURANT = EDITION === 'restaurant';
+export const GLOBAL = EDITION === 'global' || RESTAURANT;
 export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE,
-  GLOBAL ? 'data/catalogue-global-2026.json' : 'data/salon-prive-2026.json'), 'utf8'));
+  RESTAURANT ? 'data/catalogue-restaurant-2026.json'
+    : GLOBAL ? 'data/catalogue-global-2026.json' : 'data/salon-prive-2026.json'), 'utf8'));
 if (GLOBAL) {
   // les domaines nés pour cette édition (Sardelles, Trichon Bugey) et le panachage des deux Trichon
   general.domaines.push(...SALON.domaines_ajoutes);
@@ -122,7 +128,8 @@ function editionSalon(cat) {
 
 export const catalogue = EDITION === 'general' ? general : editionSalon(general);
 /** Les noms de fichiers d'une édition : dist/<base>-ecran.pdf, build/<base>-plan.json… */
-export const BASE = { salon: 'salon-prive-2026', global: 'catalogue-caviste-2026' }[EDITION] || 'catalogue-scio-2026';
+export const BASE = { salon: 'salon-prive-2026', global: 'catalogue-caviste-2026',
+  restaurant: 'catalogue-restaurant-2026' }[EDITION] || 'catalogue-scio-2026';
 
 /** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */
 const _photos = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-preparees.json'), 'utf8'));

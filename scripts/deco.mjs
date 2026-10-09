@@ -62,7 +62,7 @@ blocs.push({ nom: 'coupe-nue', l: 170, h: 34, html:
      ${coupeElegante({ largeur: 600, hauteur: 110, style: 'fine', etiquettes: false })}</div>` });
 // page 2 A : la photo du Beaujolais ; dans le catalogue caviste global, les vignes au
 // coucher de soleil du Drive de l'agence, comme dans le PDF
-const PHOTO_PAGE2 = EDITION === 'global'
+const PHOTO_PAGE2 = EDITION === 'global' || EDITION === 'restaurant'
   ? '../src/photos/agence/page2-vignes-coucher-de-soleil.jpg' : photoRegion('Beaujolais');
 blocs.push({ photo: true, nom: 'agence-photo', l: 170, h: 62, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">

@@ -17,7 +17,9 @@ const SANITAIRE = AG.message_sanitaire;
 export const SALON_ED = EDITION === 'salon';
 /** Le catalogue caviste global (8 octobre) : le design du salon, sans numéros (on ne parle que
     de pages), avec ses pages d'ouverture de région et l'index des domaines. */
-export const GLOBAL_ED = EDITION === 'global';
+export const GLOBAL_ED = EDITION === 'global' || EDITION === 'restaurant';
+/** Le catalogue restaurant : le catalogue caviste avec les paliers et les prix restaurant. */
+export const RESTO_ED = EDITION === 'restaurant';
 const EV = catalogue.salon?.evenement;
 const ENLETTRES = { 9: 'neuf', 10: 'dix', 11: 'onze', 41: 'quarante et un', 26: 'vingt-six', 31: 'trente et un', 39: 'trente-neuf', 40: 'quarante' };
 const enLettres = (n) => ENLETTRES[n] || String(n);
@@ -51,7 +53,7 @@ export const ED = SALON_ED ? {
 };
 if (GLOBAL_ED) {
   Object.assign(ED, {
-    titreDocument: 'Agence SCIO — Sous nos pieds — Catalogue caviste 2026',
+    titreDocument: `Agence SCIO — Sous nos pieds — Catalogue ${EDITION === 'restaurant' ? 'restaurant' : 'caviste'} 2026`,
     titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
     introIndexVins: 'Le chiffre est la page.',
     ouvertures: true, indexDomaines: true,
@@ -136,7 +138,7 @@ function couvertureSalon() {
       ${cielCouverture()}
       <img class="logo-couv" src="../src/images/logo-agence-scio-detoure.png"
            alt="Agence SCIO Vins &amp; Spirits">
-      <h1 class="titre-couv">${GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
+      <h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>
       <p class="sous-couv">${ED.sousTitre}</p>
       ${GLOBAL_ED
     // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui

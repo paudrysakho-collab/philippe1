@@ -22,9 +22,10 @@ import json, os, pathlib, shutil, subprocess, sys, tempfile
 import pymupdf
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-EDITION = os.environ.get("EDITION") if os.environ.get("EDITION") in ("salon", "global") else "general"
-BASE = {"salon": "salon-prive-2026", "global": "catalogue-caviste-2026"}.get(EDITION, "catalogue-scio-2026")
-SUFFIXE = {"salon": "-salon", "global": "-global"}.get(EDITION, "")
+EDITION = os.environ.get("EDITION") if os.environ.get("EDITION") in ("salon", "global", "restaurant") else "general"
+BASE = {"salon": "salon-prive-2026", "global": "catalogue-caviste-2026",
+        "restaurant": "catalogue-restaurant-2026"}.get(EDITION, "catalogue-scio-2026")
+SUFFIXE = {"salon": "-salon", "global": "-global", "restaurant": "-restaurant"}.get(EDITION, "")
 SORTIE = RACINE / f"src/gabarits/lettrines-pptx{SUFFIXE}.json"
 PPTX = RACINE / f"dist/{BASE}-canva.pptx"
 BOITES = RACINE / f"build/{BASE}-pptx-textes.json"

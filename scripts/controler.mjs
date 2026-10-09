@@ -115,8 +115,10 @@ const obligatoires = [
   ...(SALON ? [["nom du salon", catalogue.salon.evenement.nom], ["date du salon", catalogue.salon.evenement.date_texte],
     ["lieu du salon", catalogue.salon.evenement.lieu]]
     // catalogue caviste global : la couverture du salon, avec ses dates de validité (8 octobre)
-    : EDITION === 'global' ? [["titre", 'Vins & Terroirs'], ["validité du tarif", "jusqu'au 31 décembre 2026"],
-      ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
+    : EDITION === 'global' || EDITION === 'restaurant'
+      ? [["titre", EDITION === 'restaurant' ? 'Catalogue restaurant' : 'Catalogue caviste'],
+        ["validité du tarif", "jusqu'au 31 décembre 2026"],
+        ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
     : [["cible", 'Vendée (85)']]),
 ];
 // espaces insécables et retours à la ligne comptent comme une espace
@@ -126,7 +128,7 @@ obligatoires.forEach(([nom, aiguille]) =>
 
 /* ——— 4 bis. La couche texte n'est-elle pas fragmentée par l'interlettrage ? ——— */
 const motsEntiers = ['BORDEAUX', 'BOURGOGNE', 'LANGUEDOC', 'CHAMPAGNE', 'POSSIBILITÉ DE PANACHER',
-  SALON ? 'Salon Privé' : EDITION === 'global' ? 'Vins & Terroirs' : 'Tarifs cavistes Vendée (85)', 'SUD-OUEST'];
+  SALON ? 'Salon Privé' : EDITION === 'general' ? 'Tarifs cavistes Vendée (85)' : 'Vins & Terroirs', 'SUD-OUEST'];
 // Les capitales sont parfois produites par CSS : on compare en majuscules.
 const hautTexte = texte.toUpperCase();
 const fragmentes = motsEntiers.filter((m) => !hautTexte.includes(m.toUpperCase()));
