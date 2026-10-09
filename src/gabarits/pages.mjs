@@ -55,6 +55,9 @@ if (GLOBAL_ED) {
   Object.assign(ED, {
     titreDocument: `Agence SCIO — Sous nos pieds — Catalogue ${EDITION === 'restaurant' ? 'restaurant' : 'caviste 85'} 2026`,
     titreIndexDomaines: `Les ${enLettres(catalogue.domaines.length)} domaines`,
+    // « 11 régions » en chiffres sur la couverture (l'agence, 10 octobre)
+    sousTitre: `${catalogue.domaines.length} domaines, ${REGIONS.length} régions,`
+      + "<br>et la terre qu'ils ont sous les pieds.",
     introIndexVins: 'Le chiffre est la page.',
     ouvertures: true, indexDomaines: true,
   });

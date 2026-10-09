@@ -1145,3 +1145,4 @@ Le catalogue restaurant attend ; l'agence reprend le caviste.
   de la Passion des Terroirs reprend celui du tarif, et « Lucien Lurton » s'écrit en petit sous le
   rond (`LEGENDES_ROND` de `prix-global.py`, `.legende-rond`, et dans le .pptx). Titre de couverture :
   **« Catalogue caviste 85 »** (PDF, .pptx, titre du document, contrôle).
+- Couverture : « 42 domaines, **11** régions » en chiffres (`sousTitre` de l'édition globale, PDF et .pptx).
