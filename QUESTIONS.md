@@ -561,3 +561,21 @@ Restent :
 - **Tampon « Salon Privé du 5 octobre »** sur les 33 fiches des domaines qui y étaient. Les
   neuf autres (Sardelles, Divin No Low, Nugues, Nadine Ferrand, Pasquiers, Mas des Restanques,
   La Gorce, Passion des Terroirs, Les Lys) ne le portent pas.
+
+## 34. Catalogue caviste : retouches du 9 octobre (fin de journée)
+
+- **Bouteille de la page 8 (Domaine du Colombier / J.Y Bretaudeau)** : l'agence demande « une
+  bouteille de muscadet » et envoie une photo dont l'étiquette dit **« Jean-Yves Bretaudeau —
+  Sauvignon Blanc — Val de Loire »**, pas un muscadet. C'est bien la photo envoyée qui est posée ;
+  le site du domaine n'existe plus (bretaudeau.fr est un nom de domaine à vendre), donc pas de
+  packshot de muscadet à récupérer. À remplacer si l'agence en a un.
+- **Photo de Domaine Boehler** : les quatre vigneronnes et vignerons tiennent chacun un verre de
+  dégustation. Le rond retenu cadre Aurélie et Julien (ceux que le texte nomme) ; personne ne porte
+  le verre à la bouche. La loi Évin interdit les personnages qui boivent ou trinquent : l'agence a
+  déjà accepté les photos où le vigneron sent ou sert le vin, mais **c'est elle qui tranche** sur
+  celle-ci. Un cadrage sans verre est possible sur demande.
+- **Jean de Villebois** : les trois derniers vins passent d'AOC à **IGP** et un **IGP Chenin Blanc
+  2025 à 4,70 €** est ajouté juste avant (prix donné par l'agence). L'offre devient
+  « Offre 11+1 à partir de 120 cols. ».
+- **Domaine des Sardelles** : le minimum de commande de 36 bouteilles est retiré, « Magnum sur
+  demande. » reste.

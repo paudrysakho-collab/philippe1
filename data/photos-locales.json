@@ -53,10 +53,9 @@
  },
  "3": {
   "bouteille": {
-   "fichier": "gemini/d03-colombier-rouge-aux-levres.jpg",
-   "sujet": "bouteille Rouge au lèvres",
-   "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
-   "page": "https://drive.google.com/file/d/1refNlEOrSEn0jf9dv7HLi3vHUWC_GHii/view",
+   "fichier": "agence-9oct/d03-bretaudeau-bouteille.jpg",
+   "sujet": "bouteille Jean-Yves Bretaudeau",
+   "provenance": "dossier de l'agence, envoyée le 9 octobre 2026",
    "detourage": "modele"
   },
   "rond": {
@@ -143,10 +142,16 @@
    "provenance": "dossier de l'agence"
   },
   "rond": {
-   "fichier": "canva/d08-p11-077.png",
-   "provenance": "Canva de l'agence « Tarif septembre 2026 », page 11",
-   "sujet": "logo du domaine",
-   "mode": "contenir"
+   "fichier": "agence-9oct/d08-boehler-chai.jpg",
+   "mode": "couvrir",
+   "cadre": [
+    0.565,
+    0.11,
+    0.9,
+    0.43
+   ],
+   "sujet": "au chai, devant les foudres",
+   "provenance": "dossier de l'agence, envoyée le 9 octobre 2026"
   }
  },
  "9": {

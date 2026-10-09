@@ -1092,3 +1092,18 @@ catalogue général et le Salon Privé : l'édition globale y est maintenant rec
    l'équilibre des deux colonnes et le .pptx se calculent sur les vraies valeurs.
 - 64 pages, 42 fiches, 606 prix, tout au vert ; lettrines du .pptx refaites ; les 64 pages
   regardées en image, PDF et .pptx comparés page à page.
+
+### 9 octobre, fin de journée — six retouches de l'agence
+
+- **Page 8, Colombier** : nouvelle bouteille (photo de l'agence). Elle demandait « une bouteille
+  de muscadet » ; l'étiquette de la photo envoyée dit « Sauvignon Blanc » et le site du domaine
+  n'existe plus, donc on pose la sienne et on le signale (`QUESTIONS.md`, point 34).
+- **Page 11, Jean de Villebois** : l'offre devient « Offre 11+1 à partir de 120 cols. » (`OFFRES`
+  de `prix-global.py`) ; les trois derniers vins passent d'AOC à **IGP** et un **IGP Chenin Blanc
+  2025 à 4,70 €** (prix donné par l'agence) s'insère juste avant eux.
+- **Page 6, Sardelles** : plus de minimum de commande, « Magnum sur demande. » reste.
+- **Page 14, Boehler** : le logo cède la place à une photo du chai. Le rond cadre Aurélie et
+  Julien, les deux que le texte nomme (`cadre` + `reculer`) ; les verres de dégustation restent
+  visibles, l'agence tranche (`QUESTIONS.md`, point 34).
+- 64 pages, 42 fiches, **607 prix**, tout au vert ; les pages touchées regardées en image, PDF et
+  .pptx comparés. Les photos des fiches 3 et 8 étant partagées, le catalogue général a été refait.

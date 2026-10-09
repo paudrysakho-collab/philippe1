@@ -100,7 +100,7 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
-| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **64 pages**, 42 fiches (Divin No Low réintégré), 11 régions, 606 prix ; .pptx fait le 9 octobre |
+| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **64 pages**, 42 fiches (Divin No Low réintégré), 11 régions, 607 prix ; .pptx fait le 9 octobre |
 | Affiche QR du catalogue du salon | `salon-prive-2026-affiche-qr.pdf` (`npm run affiche-qr`) | A4, sobre en encre |
 
 Le 2 et le 3 octobre, tout a été revérifié : contrôles automatiques au vert, liens de la
@@ -327,7 +327,7 @@ refaire **seulement quand une photo partagée change** (les deux éditions lisen
   (Sardelles, Mas des Restanques) : faits du site seulement, rien d'inventé.
 
 ### État au 9 octobre
-- 64 pages, **42 fiches**, **606 prix**, **tous les contrôles au vert**, chaque page regardée en image,
+- 64 pages, **42 fiches**, **607 prix**, **tous les contrôles au vert**, chaque page regardée en image,
   PDF et .pptx comparés page à page.
 - **Divin No Low** (n°7) est réintégré juste après Villebois : vins désalcoolisés, prix du tarif de
   septembre relus sur la page renvoyée par l'agence le 9 octobre, un seul palier, **pas d'offre ni de
@@ -339,7 +339,11 @@ refaire **seulement quand une photo partagée change** (les deux éditions lisen
   la place du logo ; Coyeux, son chai — l'image envoyée portait un filigrane de banque d'images, on a
   repris le même chai en grand sur le site officiel (`QUESTIONS.md`, point 33). Ces deux ronds sont
   partagés avec le catalogue général, **refait le 9 octobre** (52 pages, au vert).
-- Questions encore ouvertes : `QUESTIONS.md`, point 32 (photos en basse définition à remplacer en HD
+- **Retouches du 9 octobre au soir** : Villebois, offre « 11+1 à partir de 120 cols » (`OFFRES` de
+  `prix-global.py`), ses trois derniers vins en **IGP** et un **IGP Chenin Blanc 2025 à 4,70 €**
+  inséré juste avant (prix donné par l'agence) ; Sardelles, plus de minimum de commande ; Colombier,
+  nouvelle bouteille ; Boehler, une photo du chai (Aurélie et Julien) à la place du logo.
+- Questions encore ouvertes : `QUESTIONS.md`, points 32 et 34 (photos en basse définition à remplacer en HD
   si possible : Barbinière, Prieuré des Papes, Coyeux, Haut Marin, Exea ; Prieuré des Papes sans
   portrait).
 

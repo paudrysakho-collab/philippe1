@@ -3573,13 +3573,28 @@
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
+     "fiche": 6,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "IGP Chenin Blanc",
+     "cuvee": null,
+     "couleur": "Blanc",
+     "millesime": "2025",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      470
+     ],
+     "prix_source": "l'agence, 9 octobre 2026"
+    },
+    {
      "liste": "AOC Sauvignon Blanc 2025",
      "fiche": 6,
      "tarif": {
       "tableau": 0,
       "ligne": 10
      },
-     "appellation": "AOC Sauvignon Blanc",
+     "appellation": "IGP Sauvignon Blanc",
      "cuvee": null,
      "couleur": "Blanc",
      "millesime": "2025",
@@ -3591,7 +3606,7 @@
      "prix_centimes": [
       470
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "l'agence, 9 octobre 2026"
     },
     {
      "liste": "AOC Pinot Noir Rosé 2024/25",
@@ -3600,7 +3615,7 @@
       "tableau": 0,
       "ligne": 12
      },
-     "appellation": "AOC Pinot Noir Rosé",
+     "appellation": "IGP Pinot Noir Rosé",
      "cuvee": null,
      "couleur": "Rosé",
      "millesime": "2024/25",
@@ -3613,7 +3628,7 @@
      "prix_centimes": [
       445
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "l'agence, 9 octobre 2026"
     },
     {
      "liste": "AOC Pinot Noir 2024/25",
@@ -3622,7 +3637,7 @@
       "tableau": 0,
       "ligne": 15
      },
-     "appellation": "AOC Pinot Noir",
+     "appellation": "IGP Pinot Noir",
      "cuvee": null,
      "couleur": "Rouge",
      "millesime": "2024/25",
@@ -3634,7 +3649,7 @@
      "prix_centimes": [
       450
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "l'agence, 9 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -3647,7 +3662,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre à partir de 120 cols."
+   "offre_salon": "Offre 11+1 à partir de 120 cols."
   },
   {
    "stand": 18,
@@ -5772,7 +5787,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Minimum de commande : 36 bouteilles. Magnum sur demande.",
+   "offre_salon": "Magnum sur demande.",
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,

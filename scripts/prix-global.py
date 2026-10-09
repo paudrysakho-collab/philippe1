@@ -62,12 +62,15 @@ AVEC_CATALOGUE_COMPLET = {12, 13, 14, 25}
 DEPARTEMENTS = {37: ["35", "44", "49", "53", "56", "85"]}       # Champagne Dekeyne
 # notes de prix données par l'agence pour une fiche venue du salon
 NOTES = {4: "* Prix de la bouteille H.T. franco de port."}       # Domaine des Noëls : franco de port (l'agence, 8 oct.)
+# offres données par l'agence pour une fiche venue du salon
+OFFRES = {6: "Offre 11+1 à partir de 120 cols."}                 # Jean de Villebois (l'agence, 9 oct.)
 # labels de tête retirés (Nadine Ferrand : pas d'« AOP » en haut à gauche)
 SANS_LABELS = {11}
 # Trichon (Rhône) : lignes surlignées de son tarif départ cave (scan du 8 oct., Scan08102026-6),
 # colonnes 120 / 300 / 600 cols ; « 2022-23 » → 2023, le plus récent (consigne de l'agence)
 TARIF_TRICHON = "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
 TARIF_DIVIN = "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+AGENCE_9OCT = "l'agence, 9 octobre 2026"
 
 HORS = "* Prix de la bouteille H.T. hors frais de transport."
 FRANCO = "* Prix de la bouteille H.T. franco de port."
@@ -168,7 +171,7 @@ NOUVEAUX = {
     # Loire — Domaine des Sardelles (tarif HT franco, scan p.5) et sa marque Les Courants (p.6).
     # Colonnes surlignées : 72, 144, 288 bouteilles. « Les Courants Pinot Noir » : ajout manuscrit.
     41: {"paliers": {"41": P(72, 144, 288)}, "note": FRANCO,
-         "offre": "Minimum de commande : 36 bouteilles. Magnum sur demande.",
+         "offre": "Magnum sur demande.",   # plus de minimum de commande (l'agence, 9 oct.)
          "vins": [
              V(41, 0, "AOC Sancerre", "Sancerre Blanc", "Blanc", "—", eu("13,20", "12,90", "12,60")),
              V(41, 0, "AOC Sancerre", "Sancerre Blanc « La Cabane »", "Blanc", "—", eu("16,70", "16,40", "16,10")),
@@ -353,6 +356,19 @@ def main():
                         "fiche_texte": None, "texte_reference": None,
                         # un vrai tarif remplace l'ancien « consultez-nous » (Passion des Terroirs)
                         "mentions": []})
+    # Jean de Villebois (l'agence, 9 octobre) : les trois derniers vins ne sont pas des AOC
+    # mais des IGP, et un IGP Chenin Blanc 2025 les précède, au prix donné par l'agence.
+    villebois = next(s for s in entrees if 6 in (s.get("domaines") or []))
+    derniers = ["AOC Sauvignon Blanc", "AOC Pinot Noir Rosé", "AOC Pinot Noir"]
+    for v in villebois["vins"]:
+        if v["appellation"] in derniers:
+            v["appellation"] = v["appellation"].replace("AOC ", "IGP ")
+            v["prix_source"] = AGENCE_9OCT
+    premier = min(i for i, v in enumerate(villebois["vins"])
+                  if v["appellation"].startswith("IGP ") and v["appellation"] in
+                  [d.replace("AOC ", "IGP ") for d in derniers])
+    villebois["vins"].insert(premier, V(6, 0, "IGP Chenin Blanc", None, "Blanc", "2025",
+                                        eu("4,70"), prix_source=AGENCE_9OCT))
     # Trichon (Rhône) : les vins ajoutés depuis son tarif
     rhone = next(s for s in entrees if 21 in (s.get("domaines") or []))
     rhone["vins"] += [
@@ -370,6 +386,8 @@ def main():
         for n in s.get("domaines") or []:
             if n in NOTES:
                 s["note_prix_salon"] = NOTES[n]
+            if n in OFFRES:
+                s["offre_salon"] = OFFRES[n]
         if set(s.get("domaines") or []) & AVEC_CATALOGUE_COMPLET:
             s["complement"] = CATALOGUE_COMPLET
     # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne ;

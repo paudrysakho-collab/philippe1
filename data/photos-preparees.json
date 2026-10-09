@@ -72,12 +72,12 @@
   "numero": 3,
   "role": "bouteille",
   "fichier": "src/photos/bouteille/d03.png",
-  "source_url": "src/photos/brut/gemini/d03-colombier-rouge-aux-levres.jpg",
-  "page": "https://drive.google.com/file/d/1refNlEOrSEn0jf9dv7HLi3vHUWC_GHii/view",
-  "provenance": "dossier de l'agence, retouchée par l'agence avec Gemini (fond refait), Drive « photo gemini », 2 octobre 2026",
-  "source_px": "1056x3964",
-  "ppi": 1605,
-  "sujet": "bouteille Rouge au lèvres"
+  "source_url": "src/photos/brut/agence-9oct/d03-bretaudeau-bouteille.jpg",
+  "page": null,
+  "provenance": "dossier de l'agence, envoyée le 9 octobre 2026",
+  "source_px": "896x1024",
+  "ppi": 420,
+  "sujet": "bouteille Jean-Yves Bretaudeau"
  },
  {
   "numero": 4,
@@ -199,12 +199,12 @@
   "numero": 8,
   "role": "rond",
   "fichier": "src/photos/rond/d08.jpg",
-  "source_url": "src/photos/brut/canva/d08-p11-077.png",
+  "source_url": "src/photos/brut/agence-9oct/d08-boehler-chai.jpg",
   "page": null,
-  "provenance": "Canva de l'agence « Tarif septembre 2026 », page 11",
-  "source_px": "447x447",
-  "ppi": 447,
-  "sujet": "logo du domaine"
+  "provenance": "dossier de l'agence, envoyée le 9 octobre 2026",
+  "source_px": "2000x1332",
+  "ppi": 425,
+  "sujet": "au chai, devant les foudres"
  },
  {
   "numero": 8,
