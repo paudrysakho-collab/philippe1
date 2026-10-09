@@ -10,8 +10,8 @@ import {
   groupes, groupeDe, corpsDomaine, EMPLACEMENT, emplacementPour, photoDe, creditPhotos,
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
-import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED, ED, NB_VINS,
-  numero as numeroAffiche }
+import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED,
+  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -41,13 +41,24 @@ const F = { titre: 'Young Serif', courant: 'Spectral', tech: 'IBM Plex Sans' };
    pose le rond déjà découpé, qui ne dépend de rien. */
 const RECADRABLE = process.argv.includes('--recadrable');
 
+/* Le catalogue caviste global (8 octobre) reprend la maquette du salon — couverture photo,
+   ouvertures de région, photo de région en bas de fiche — mais sans aucun numéro : on ne
+   parle que de pages, et le numéro de page se lit à gauche (l'agence, 8 octobre). */
+const MAQUETTE_SALON = SALON_ED || GLOBAL_ED;
+
 /* La taille de la lettrine, domaine par domaine, en multiple du corps du texte, et au besoin
    un interligne un peu resserré : réglés par scripts/regler-lettrines.py, qui rend le .pptx
    et ne réduit que là où le texte déborderait de sa bande. */
 // un réglage par édition : au salon, les textes sont ceux des cartes de stand
-const FICHIER_LETTRINES = path.join(RACINE, `src/gabarits/lettrines-pptx${EDITION === 'salon' ? '-salon' : ''}.json`);
-const LETTRINES = fs.existsSync(FICHIER_LETTRINES)
-  ? JSON.parse(fs.readFileSync(FICHIER_LETTRINES, 'utf8')) : {};
+const SUFFIXE_LETTRINES = { salon: '-salon', global: '-global' }[EDITION] || '';
+const FICHIER_LETTRINES = path.join(RACINE, `src/gabarits/lettrines-pptx${SUFFIXE_LETTRINES}.json`);
+/* Le catalogue global a les textes du salon : tant que son réglage n'est pas fait, celui du
+   salon vaut mieux que celui du catalogue général, dont les textes sont d'autres. */
+const SECOURS_LETTRINES = path.join(RACINE, 'src/gabarits/lettrines-pptx-salon.json');
+const SOURCE_LETTRINES = fs.existsSync(FICHIER_LETTRINES) ? FICHIER_LETTRINES
+  : (GLOBAL_ED && fs.existsSync(SECOURS_LETTRINES) ? SECOURS_LETTRINES : FICHIER_LETTRINES);
+const LETTRINES = fs.existsSync(SOURCE_LETTRINES)
+  ? JSON.parse(fs.readFileSync(SOURCE_LETTRINES, 'utf8')) : {};
 const LETTRINE_DEFAUT = 1.8;
 const BOITES = {};   // n° → place du texte, pour regler-lettrines.py
 
@@ -135,7 +146,9 @@ const pres = new PptxGenJS();
 pres.defineLayout({ name: 'SCIO', width: mm(PAGE_L), height: mm(PAGE_H) });
 pres.layout = 'SCIO';
 pres.author = 'Agence SCIO Vins & Spirits';
-pres.title = SALON_ED ? `${EV.nom} — ${EV.date_texte}` : 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
+pres.title = SALON_ED ? `${EV.nom} — ${EV.date_texte}`
+  : GLOBAL_ED ? 'Catalogue caviste — Vins & Terroirs — 2026'
+    : 'Sous nos pieds — Tarifs cavistes Vendée (85) 2026';
 
 /** Marge intérieure d'une page : à droite sur un recto, à gauche sur un verso. */
 function geo(numero) {
@@ -165,15 +178,33 @@ function poserCarotte(s, numero, region) {
 
 function folio(s, numero, { clair = false } = {}) {
   const { verso } = geo(numero);
+  const xInt = verso ? mm(PAGE_L - MARGE.int - 15) : mm(PAGE_L - MARGE.ext - CAROTTE - 15);
+  const xExt = verso ? mm(MARGE.ext + CAROTTE) : mm(MARGE.int);
+  if (GLOBAL_ED) {
+    // « les numéros de page à gauche, plus gros, on ne voit rien » (l'agence, 8 octobre) :
+    // 12 pt gras violet au bord gauche du cadre, le message sanitaire passant à droite
+    const { gauche } = geo(numero);
+    s.addText(String(numero), {
+      x: mm(gauche), y: mm(PAGE_H - 11.6), w: mm(15), h: mm(6), margin: 0,
+      align: 'left', valign: 'middle', fontFace: F.tech, fontSize: 12, bold: true,
+      color: clair ? C.craie : C.violet,
+    });
+    s.addText(AG.message_sanitaire, {
+      x: mm(gauche + CADRE_L - 95), y: mm(PAGE_H - 11), w: mm(95), h: mm(5), margin: 0,
+      align: 'right', fontFace: F.tech, fontSize: 5.6,
+      color: clair ? C.craie : C.silex, transparency: 45,
+    });
+    return;
+  }
   s.addText(String(numero), {
     // toujours à droite (l'agence, 3 octobre au soir), comme .folio du PDF
-    x: verso ? mm(PAGE_L - MARGE.int - 15) : mm(PAGE_L - MARGE.ext - CAROTTE - 15),
+    x: xInt,
     y: mm(PAGE_H - 11), w: mm(15), h: mm(5), margin: 0,
     align: 'right', fontFace: F.tech, fontSize: 7.5,
     color: clair ? C.craie : C.silex, transparency: 28,
   });
   s.addText(AG.message_sanitaire, {
-    x: verso ? mm(MARGE.ext + CAROTTE) : mm(MARGE.int), y: mm(PAGE_H - 11),
+    x: xExt, y: mm(PAGE_H - 11),
     w: mm(95), h: mm(5), margin: 0, align: 'left',
     fontFace: F.tech, fontSize: 5.6, color: clair ? C.craie : C.silex, transparency: 45,
   });
@@ -223,9 +254,17 @@ function tableauDonnees(t, lignes, hauteurs) {
         fontSize: 10, align: 'center' } },
       { text: [
           { text: l.appellation + (l.note === '*' ? ' *' : ''),
-            // sans cuvée, l'offre reste sur la ligne de l'appellation, comme dans le PDF
-            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: !!l.cuvee || !l.offre, lineSpacingMultiple: 0.9 } },
+            // sans cuvée, l'offre reste sur la ligne de l'appellation, comme dans le PDF ;
+            // le label de la ligne, s'il y en a un, reste collé à l'appellation : c'est lui
+            // qui passe à la ligne ensuite
+            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: !l.label && (!!l.cuvee || !l.offre), lineSpacingMultiple: 0.9 } },
           // comme le PDF : les deux derniers mots de la cuvée restent ensemble (espace insécable)
+          // le label d'une seule ligne (La Passion des Terroirs : tout n'est pas bio),
+          // après l'appellation, comme .label-ligne du PDF
+          // (même interligne que l'appellation : un paragraphe n'a qu'un jeu de propriétés)
+          ...(l.label ? [{ text: `  ${l.label}`, options: { fontFace: F.tech, fontSize: 6.4,
+            bold: true, color: C.amphibolite, breakLine: !!l.cuvee || !l.offre,
+            lineSpacingMultiple: 0.9 } }] : []),
           ...(l.cuvee ? [{ text: l.cuvee.replace(/ (\S+)$/, '\u00a0$1'), options: { fontFace: F.tech, fontSize: 9.6, bold: true, color: C.encre,
             lineSpacingMultiple: 0.9 } }] : []),
           // l'offre du salon (11+1, 5+1), juste après le nom du vin, comme .offre du PDF
@@ -265,8 +304,9 @@ function slideFiche(s, numero, desc) {
   // ——— en-tête. Un nom long réduit le corps du titre plutôt que de passer à la ligne :
   // le filet et les jetons restent où la pagination mesurée les attend.
   const LARGEUR_TITRE = CADRE_L - 34;
-  // au salon, la pastille du stand (19 mm) remplace le numéro du tarif
-  const RETRAIT = SALON_ED ? 23 : largeur(`${d.numero}   `, F.titre, 27);
+  // au salon, la pastille du stand (19 mm) remplace le numéro du tarif ; dans le catalogue
+  // caviste global, il n'y a plus de numéro du tout : le nom prend toute la ligne
+  const RETRAIT = SALON_ED ? 23 : GLOBAL_ED ? 0 : largeur(`${d.numero}   `, F.titre, 27);
   const SUITE = desc.premiere ? 0 : largeur('  (suite)', 'Spectral', 11);
   const dispo = LARGEUR_TITRE - RETRAIT - SUITE;
   const pleine = largeur(d.nom, F.titre, 20);
@@ -291,6 +331,12 @@ function slideFiche(s, numero, desc) {
     s.addText([{ text: d.nom, options: { fontFace: F.titre, fontSize: taille, color: C.silex } }, ...suiteTxt],
       { x: x + mm(RETRAIT), y, w: mm(LARGEUR_TITRE - RETRAIT), h: mm(hEnt), margin: 0, valign: 'middle',
         lineSpacingMultiple: 1.04 });
+  } else if (GLOBAL_ED) {
+    s.addText([
+      { text: d.nom, options: { fontFace: F.titre, fontSize: taille, color: C.silex } },
+      ...suiteTxt,
+    ], { x, y, w: mm(LARGEUR_TITRE), h: mm(hTitre), margin: 0, valign: 'middle',
+      lineSpacingMultiple: 1.04 });
   } else {
   s.addText([
     { text: String(d.numero), options: { fontFace: F.titre, fontSize: 27, color: C.violet } },
@@ -302,7 +348,8 @@ function slideFiche(s, numero, desc) {
   const hRegion = SALON_ED ? (mesures.blocs[`entete-${d.numero}`] ?? 26) - 11.7 : 11;
   s.addText(d.region.toUpperCase(), {
     x: mm(gauche + CADRE_L - 40), y, w: mm(40), h: mm(hRegion), margin: 0,
-    align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8, bold: true,
+    // 9 pt dans l'édition globale (.ed-global .entete-dom .region)
+    align: 'right', valign: 'middle', fontFace: F.tech, fontSize: GLOBAL_ED ? 9 : 8, bold: true,
     color: C.gneiss, charSpacing: 0.3,
   });
   y += SALON_ED ? mm(hRegion + 0.1) : mm(hTitre + 0.1);
@@ -317,7 +364,8 @@ function slideFiche(s, numero, desc) {
     [groupeDe(d) ? 'Panachage entre domaines' : 'Panachage dans le domaine', C.gneiss, null],
     ...(d.mentions.some((m) => m.toLowerCase().includes('consultez-nous'))
       ? [['Consultez-nous', C.sables, C.sables]] : []),
-    [`${nbReferences(d)} ${nbReferences(d) > 1 ? ED.motVins : ED.motVin}`, C.silex, null],
+    // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
+    ...(GLOBAL_ED ? [] : [[`${nbReferences(d)} ${nbReferences(d) > 1 ? ED.motVins : ED.motVin}`, C.silex, null]]),
   ];
   let jx = gauche;
   jetons.forEach(([texte, couleur, fond, pictoLabel]) => {
@@ -445,6 +493,9 @@ function slideFiche(s, numero, desc) {
     // l'offre d'abord, la note de prix dessous (l'agence, 3 octobre au soir)
     s.addText([
       ...(d.offre_salon ? [{ text: d.offre_salon, options: { color: C.violet, bold: true, breakLine: true } }] : []),
+      // « Possibilité sur demande d'avoir le catalogue complet. » (Goichot, Cray, Guignottes,
+      // Passion des Terroirs) : juste sous l'offre, comme .complement du PDF
+      ...(d.complement ? [{ text: d.complement, options: { color: C.violet, bold: true, breakLine: true } }] : []),
       { text: texteNotePrix(d), options: { color: C.encre, italic: !d.note_prix } },
     ], { x: x + mm(3), y: y + mm(2), w: mm(CADRE_L - 3), h: mm(hNote - 2),
       margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 10.5, lineSpacingMultiple: 1.1 });
@@ -475,7 +526,8 @@ function slideFiche(s, numero, desc) {
   if (g) {
     const autres = (g.presents || g.domaines).filter((n) => n !== d.numero)
       .map((n) => (SALON_ED ? `${parNumero[n].nom}, stand ${parNumero[n].stand} p. ${pageDe[n]}`
-        : `n°${n} p. ${pageDe[n]}`)).join(' · ');
+        : GLOBAL_ED ? `${catalogue.salon.noms_panachage?.[n] || parNumero[n].nom} p. ${pageDe[n]}`
+          : `n°${n} p. ${pageDe[n]}`)).join(' · ');
     s.addText([
       { text: 'Se panache avec ', options: { bold: true, color: C.gneiss } },
       { text: `${g.libelle}${autres ? ` — ${autres}` : ''}`, options: { color: C.silex } },
@@ -515,7 +567,9 @@ function titreSection(s, numero, titre, sous) {
 
 function slideCouverture(s, numero) {
   // couverture H : le ciel en photo, les strates droites dessous, une réserve claire sous le logo
-  const HC = SALON_ED ? 108 : 148;   // hauteur de la bande de strates (plus basse au salon)
+  // hauteur de la bande de strates : plus basse au salon, et dans le catalogue global, qui
+  // reprend cette couverture (.couverture-salon)
+  const HC = MAQUETTE_SALON ? 108 : 148;
   s.addImage({ path: img('couv-ciel'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H - HC + 2) });
   s.addImage({ path: img('coupe-titree'), x: 0, y: mm(PAGE_H - HC), w: mm(PAGE_L), h: mm(HC) });
   s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int - 4), y: mm(13), w: mm(70), h: mm(24),
@@ -523,24 +577,33 @@ function slideCouverture(s, numero) {
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
     x: mm(MARGE.int), y: mm(17), w: mm(62), h: mm(62 * 251 / 1030) });
   const sousTitre = ED.sousTitre.replace('<br>', '\n');
-  if (SALON_ED) {
+  if (MAQUETTE_SALON) {
     s.addText([
-      { text: 'Salon Privé', options: { breakLine: true } },
+      { text: GLOBAL_ED ? 'Catalogue caviste' : 'Salon Privé', options: { breakLine: true } },
       { text: 'Vins & Terroirs', options: { color: C.or } },
     ], { x: mm(MARGE.int), y: mm(42), w: mm(165), h: mm(34), margin: 0,
       fontFace: F.titre, fontSize: 44, color: C.craie, lineSpacingMultiple: 0.92 });
     s.addText(sousTitre, { x: mm(MARGE.int), y: mm(89), w: mm(120), h: mm(14), margin: 0,
       fontFace: F.courant, fontSize: 10.5, color: C.craie, lineSpacingMultiple: 1.4 });
     // la validité du tarif et des offres, bien visible sous le titre (comme .validite-couv) ;
-    // la date et le lieu ne sont plus en couverture (l'agence, 3 octobre au soir)
-    s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int), y: mm(110), w: mm(140), h: mm(27),
+    // la date et le lieu ne sont plus en couverture (l'agence, 3 octobre au soir).
+    // Le catalogue caviste global en dit deux : le tarif jusqu'au 31 décembre, les offres
+    // jusqu'au 14 novembre (.validite-double).
+    const yv = GLOBAL_ED ? 106 : 110;
+    const hv = GLOBAL_ED ? 36 : 27;
+    s.addShape(pres.ShapeType.roundRect, { x: mm(MARGE.int), y: mm(yv), w: mm(140), h: mm(hv),
       fill: { color: C.violet }, line: { color: C.violet, width: 0 }, rectRadius: 0.05 });
-    s.addShape(pres.ShapeType.rect, { x: mm(MARGE.int), y: mm(110), w: mm(1.6), h: mm(27),
+    s.addShape(pres.ShapeType.rect, { x: mm(MARGE.int), y: mm(yv), w: mm(1.6), h: mm(hv),
       fill: { color: C.or }, line: { color: C.or, width: 0 } });
-    s.addText([
+    s.addText(GLOBAL_ED ? [
+      { text: 'Tarif valable', options: { color: C.or, fontSize: 15, breakLine: true } },
+      { text: 'jusqu’au 31 décembre 2026', options: { color: C.craie, fontSize: 18, breakLine: true } },
+      { text: 'Offres valables', options: { color: C.or, fontSize: 15, breakLine: true } },
+      { text: 'du 5 octobre au 14 novembre 2026', options: { color: C.craie, fontSize: 18 } },
+    ] : [
       { text: 'Tarif et offres valables', options: { color: C.or, breakLine: true } },
       { text: 'du 5 octobre au 14 novembre 2026', options: { color: C.craie } },
-    ], { x: mm(MARGE.int + 6), y: mm(110), w: mm(132), h: mm(27), margin: 0, valign: 'middle',
+    ], { x: mm(MARGE.int + 6), y: mm(yv), w: mm(132), h: mm(hv), margin: 0, valign: 'middle',
       fontFace: F.titre, fontSize: 21, lineSpacingMultiple: 1.0 });
   } else {
   s.addText([
@@ -606,8 +669,9 @@ function slideAgence(s, numero) {
   const yc = MARGE.haut + 172;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 0.8 } });
+  // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
   [[String(ED.acteurs), ED.motActeurs], [String(REGIONS.length), 'régions'],
-    [String(NB_VINS), ED.motVins]].forEach(([n, l], i) => {
+    ...(GLOBAL_ED ? [] : [[String(NB_VINS), ED.motVins]])].forEach(([n, l], i) => {
     s.addText(n, { x: mm(gauche + i * 42), y: mm(yc + 3), w: mm(40), h: mm(11), margin: 0,
       fontFace: F.titre, fontSize: 26, color: C.violet });
     s.addText(l, { x: mm(gauche + i * 42), y: mm(yc + 14), w: mm(40), h: mm(5), margin: 0,
@@ -621,12 +685,15 @@ function slideSommaire(s, numero) {
   const { gauche } = geo(numero);
   const y0 = SALON_ED
     ? titreSection(s, numero, 'Sommaire', 'par région ; le premier chiffre est le numéro du stand') + 0.5
-    : MARGE.haut + 8.5 + 6;
+    : MARGE.haut + 8.5 + (GLOBAL_ED ? 3 : 6);
   if (!SALON_ED) {
     s.addText('Sommaire', { x: mm(gauche), y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
       fontFace: F.titre, fontSize: 24, color: C.violet, valign: 'top' });
   }
-  const { bande, ligne, apresBande, entreRegions, colonne } = SOMMAIRE;
+  /* Le sommaire du catalogue caviste, « plus gros » (l'agence, 8 octobre) : bandes et lignes
+     plus hautes, corps plus fort, et le numéro de page à gauche du nom (.sommaire-global). */
+  const G_SOM = { bande: 8, ligne: 5.8, ligneMention: 9.4, apresBande: 0.8, entreRegions: 3, colonne: SOMMAIRE.colonne };
+  const { bande, ligne, apresBande, entreRegions, colonne } = GLOBAL_ED ? G_SOM : SOMMAIRE;
   colonnesSommaire().forEach((blocs, c) => {
     const cx = gauche + c * (CADRE_L - colonne);
     let y = y0;
@@ -637,25 +704,34 @@ function slideSommaire(s, numero) {
         fill: { color: st.hex.slice(1) },
         line: { color: b.nom === 'Champagne' ? C.silex : st.hex.slice(1), width: 0.6 } });
       s.addText(b.nom, { x: mm(cx + 5.4), y: mm(y), w: mm(colonne - 6), h: mm(bande), margin: 0,
-        fontFace: F.titre, fontSize: 13, color: C.violet, valign: 'middle' });
+        fontFace: F.titre, fontSize: GLOBAL_ED ? 15 : 13, color: C.violet, valign: 'middle' });
       s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + bande), w: mm(colonne), h: 0,
         line: { color: C.violet, width: 0.9 } });
       y += bande + apresBande;
       b.doms.forEach((d) => {
         // un domaine d'un groupe : la mention en petit sous le nom, comme dans le PDF
         const mention = mentionSommaire(d);
-        const hl = mention ? SOMMAIRE.ligneMention : ligne;
+        const hl = mention ? (GLOBAL_ED ? G_SOM.ligneMention : SOMMAIRE.ligneMention) : ligne;
+        // dans l'édition globale, la page se lit d'abord, puis le nom : rien d'autre
+        const xNom = GLOBAL_ED ? cx + 10.6 : cx + 8.5;
         if (mention) {
-          s.addText(`(${mention})`, { x: mm(cx + 8.5), y: mm(y + ligne - 0.6), w: mm(colonne - 18), h: mm(3.2),
-            margin: 0, valign: 'middle', fontFace: F.tech, fontSize: 7.2, color: C.gneiss });
+          s.addText(`(${mention})`, { x: mm(xNom), y: mm(y + ligne - 0.6), w: mm(colonne - 18), h: mm(3.2),
+            margin: 0, valign: 'middle', fontFace: F.tech, fontSize: GLOBAL_ED ? 7.8 : 7.2, color: C.gneiss });
         }
-        s.addText(String(numeroAffiche(d)), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
-          align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true, color: C.violet });
-        s.addText(d.nom, { x: mm(cx + 8.5), y: mm(y), w: mm(colonne - 18), h: mm(ligne), margin: 0,
-          valign: 'middle', fontFace: F.courant, fontSize: 10, color: C.encre });
-        s.addText(String(pageDe[d.numero]), { x: mm(cx + colonne - 10), y: mm(y), w: mm(9), h: mm(ligne),
-          margin: 0, align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true,
-          color: C.silex });
+        if (GLOBAL_ED) {
+          s.addText(String(pageDe[d.numero]), { x: mm(cx), y: mm(y), w: mm(8), h: mm(ligne), margin: 0,
+            align: 'left', valign: 'middle', fontFace: F.tech, fontSize: 11, bold: true, color: C.violet });
+        } else {
+          s.addText(String(numeroAffiche(d)), { x: mm(cx), y: mm(y), w: mm(6.1), h: mm(ligne), margin: 0,
+            align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true, color: C.violet });
+        }
+        s.addText(d.nom, { x: mm(xNom), y: mm(y), w: mm(colonne - (GLOBAL_ED ? 12 : 18)), h: mm(ligne), margin: 0,
+          valign: 'middle', fontFace: F.courant, fontSize: GLOBAL_ED ? 11 : 10, color: C.encre });
+        if (!GLOBAL_ED) {
+          s.addText(String(pageDe[d.numero]), { x: mm(cx + colonne - 10), y: mm(y), w: mm(9), h: mm(ligne),
+            margin: 0, align: 'right', valign: 'middle', fontFace: F.tech, fontSize: 9, bold: true,
+            color: C.silex });
+        }
         s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + hl), w: mm(colonne), h: 0,
           line: { color: 'C9CFC9', width: 0.3 } });
         y += hl;
@@ -713,13 +789,20 @@ function slideOuverture(s, numero, region) {
     fontFace: F.titre, fontSize: 20, color: encre });
   s.addText(doms.length > 1 ? 'domaines' : 'domaine', { x: mm(gauche), y: mm(185), w: mm(24),
     h: mm(5), margin: 0, fontFace: F.tech, fontSize: 8.5, color: encre });
-  s.addText(String(refs), { x: mm(gauche + 28), y: mm(176), w: mm(24), h: mm(9), margin: 0,
-    fontFace: F.titre, fontSize: 20, color: encre });
-  s.addText(refs > 1 ? ED.motVins : ED.motVin, { x: mm(gauche + 28), y: mm(185), w: mm(45), h: mm(5), margin: 0,
-    fontFace: F.tech, fontSize: 8.5, color: encre });
+  // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
+  if (!GLOBAL_ED) {
+    s.addText(String(refs), { x: mm(gauche + 28), y: mm(176), w: mm(24), h: mm(9), margin: 0,
+      fontFace: F.titre, fontSize: 20, color: encre });
+    s.addText(refs > 1 ? ED.motVins : ED.motVin, { x: mm(gauche + 28), y: mm(185), w: mm(45), h: mm(5), margin: 0,
+      fontFace: F.tech, fontSize: 8.5, color: encre });
+  }
   doms.forEach((d, k) => {
     const col = k % 2, rang = Math.floor(k / 2);
-    s.addText([
+    // dans l'édition globale, le numéro de page passe devant le nom (l'agence, 8 octobre)
+    s.addText(GLOBAL_ED ? [
+      { text: `${pageDe[d.numero]}   `, options: { bold: true } },
+      { text: d.nom },
+    ] : [
       { text: `${numeroAffiche(d)}   `, options: { fontFace: F.titre, fontSize: 11 } },
       { text: d.nom },
       { text: `   ${pageDe[d.numero]}`, options: { bold: true } },
@@ -750,7 +833,11 @@ function slideIndexVins(s, numero, desc) {
         h: mm(3.5), margin: 0, fontFace: F.tech, fontSize: 8, bold: true, color: C.violet,
         charSpacing: 0.3, valign: 'middle' });
     } else {
-      s.addText([
+      // édition globale : plus de numéro de domaine, la page se lit la première
+      s.addText(GLOBAL_ED ? [
+        { text: `${b.e.pg}  `, options: { bold: true, color: C.violet } },
+        { text: b.e.nom + (b.e.prec ? `  ${b.e.prec}` : '') },
+      ] : [
         { text: b.e.nom + (b.e.prec ? `  ${b.e.prec}` : '') },
         { text: `  ${b.e.dom}`, options: { bold: true, color: C.violet } },
         { text: `  ${b.e.pg}` },
@@ -805,7 +892,12 @@ function slideIndexDomaines(s, numero) {
   const parCol = Math.ceil(tries.length / 2);
   tries.forEach((d, i) => {
     const col = Math.floor(i / parCol), rang = i % parCol;
-    s.addText([
+    // édition globale : la page d'abord, ni numéro ni nombre de références
+    s.addText(GLOBAL_ED ? [
+      { text: `${pageDe[d.numero]}   `, options: { bold: true, color: C.violet } },
+      { text: `${d.nom}   `, options: { bold: true } },
+      { text: `${d.region}   `, options: { color: C.gneiss, fontSize: 7 } },
+    ] : [
       { text: `${numeroAffiche(d)}   `, options: { fontFace: F.titre, fontSize: 11, color: C.violet } },
       { text: `${d.nom}   `, options: { bold: true } },
       { text: `${d.region}   `, options: { color: C.gneiss, fontSize: 7 } },
@@ -814,9 +906,11 @@ function slideIndexDomaines(s, numero) {
     ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(y + rang * 8), w: mm(CADRE_L / 2 - 4),
       h: mm(7), margin: 0, fontFace: F.tech, fontSize: 8.4, color: C.silex, valign: 'middle' });
   });
-  s.addText(ED.piedIndexDomaines, {
-    x: mm(gauche), y: mm(PAGE_H - MARGE.bas - 8), w: mm(CADRE_L), h: mm(5), margin: 0,
-    fontFace: F.courant, fontSize: 8, color: C.silex });
+  if (!GLOBAL_ED) {
+    s.addText(ED.piedIndexDomaines, {
+      x: mm(gauche), y: mm(PAGE_H - MARGE.bas - 8), w: mm(CADRE_L), h: mm(5), margin: 0,
+      fontFace: F.courant, fontSize: 8, color: C.silex });
+  }
   folio(s, numero);
 }
 
@@ -829,7 +923,8 @@ function margePlanche() {
 function slidePlanche(s, numero) {
   s.addImage({ path: img('coupe-pleine'), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H) });
   const { gauche } = geo(numero);
-  const n = { 9: 'neuf', 10: 'dix', 26: 'vingt-six', 40: 'quarante' };
+  const n = { 9: 'neuf', 10: 'dix', 11: 'onze', 26: 'vingt-six', 39: 'trente-neuf',
+    40: 'quarante', 41: 'quarante et un' };
   const mot = (k) => n[k] || String(k);
   s.addText(`${mot(REGIONS.length).replace(/^./, (c) => c.toUpperCase())} régions,\n${mot(REGIONS.length)} sols,\n`
     + `${mot(ED.acteurs)} ${ED.motActeurs}.`, {
@@ -882,9 +977,14 @@ function slideFinale(s, numero) {
   const yc = MARGE.haut + 118;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 0.8 } });
+  // le catalogue caviste global a ses propres mentions légales, suivies des droits d'auteur
+  const mentions = (GLOBAL_ED && catalogue.salon.mentions_legales) || AG.mentions_legales;
+  const droits = '© Agence SCIO Vins & Spirits, 2026. Tous droits réservés. Textes, mise en page, '
+    + 'illustrations et photographies de ce catalogue ne peuvent être reproduits, en tout ou en '
+    + "partie, sans l'autorisation écrite de l'Agence SCIO.";
   const colonnes = [
     ['Lexique', AG.lexique.map((l) => `${l.sigle} — ${l.definition}`).join('\n')],
-    ['Mentions légales', AG.mentions_legales],
+    ['Mentions légales', GLOBAL_ED ? `${mentions}\n\n${droits}` : mentions],
     ['Crédits', 'Conception, maquette et illustrations : Agence SCIO. Les pictogrammes de ce '
       + "catalogue sont les nôtres ; ils ne reproduisent aucun logo officiel d'organisme "
       + 'certificateur. ' + creditPhotos()],

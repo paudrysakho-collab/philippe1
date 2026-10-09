@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
-import { REGIONS, STRATES, coupe, coupeElegante, carotte, defsTrames, PICTOS_LABELS, BASE, photoRegion } from '../src/gabarits/pieces.mjs';
+import { REGIONS, STRATES, coupe, coupeElegante, carotte, defsTrames, PICTOS_LABELS, BASE, EDITION, photoRegion } from '../src/gabarits/pieces.mjs';
 import { solTeinte, solRegion } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -44,8 +44,9 @@ Object.entries(PICTOS_LABELS).forEach(([nom, svg]) => {
 });
 
 // couverture H (choix de l'agence, 3 octobre) : le ciel en photo, les strates droites dessous
-// au salon, la bande de strates est plus basse (108 mm) : le ciel descend d'autant
-const SALON_D = BASE.startsWith('salon');
+// au salon, la bande de strates est plus basse (108 mm) : le ciel descend d'autant. Le
+// catalogue caviste global reprend cette couverture (classe .couverture-salon) : même bande.
+const SALON_D = EDITION !== 'general';
 blocs.push({ photo: true, nom: 'couv-ciel', l: 216, h: SALON_D ? 157 : 117, html:
   `<img src="${photoRegion('Sud-Ouest')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(42,57,66,.5) 0%, rgba(42,57,66,.12) 40%, rgba(42,57,66,0) 70%),
@@ -55,10 +56,13 @@ blocs.push({ nom: 'coupe-titree', l: 216, h: SALON_D ? 111 : 151, html:
 blocs.push({ nom: 'coupe-nue', l: 176, h: 42, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
      ${coupeElegante({ largeur: 600, hauteur: 110, style: 'fine', etiquettes: false })}</div>` });
-// page 2 A : la photo du Beaujolais
+// page 2 A : la photo du Beaujolais ; dans le catalogue caviste global, les vignes au
+// coucher de soleil du Drive de l'agence, comme dans le PDF
+const PHOTO_PAGE2 = EDITION === 'global'
+  ? '../src/photos/agence/page2-vignes-coucher-de-soleil.jpg' : photoRegion('Beaujolais');
 blocs.push({ photo: true, nom: 'agence-photo', l: 176, h: 46, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
-     <img src="${photoRegion('Beaujolais')}" style="width:100%;height:100%;object-fit:cover;display:block"></div>` });
+     <img src="${PHOTO_PAGE2}" style="width:100%;height:100%;object-fit:cover;display:block"></div>` });
 blocs.push({ nom: 'coupe-pleine', l: 216, h: 266, html:
   `<div style="position:absolute;inset:0">${coupe({ largeur: 600, hauteur: 430, graineN: 99 })}</div>` });
 

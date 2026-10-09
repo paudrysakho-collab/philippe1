@@ -11,8 +11,9 @@ texte. Ce script fabrique le .pptx, le fait rendre par LibreOffice, et, pour cha
 - si le bloc déborde de la bande, réduit la lettrine, puis resserre l'interligne.
 Il recommence jusqu'à ce que rien ne bouge.
 
-    python3 scripts/regler-lettrines.py                écrit src/gabarits/lettrines-pptx.json
-    EDITION=salon python3 scripts/regler-lettrines.py  écrit src/gabarits/lettrines-pptx-salon.json
+    python3 scripts/regler-lettrines.py                 écrit src/gabarits/lettrines-pptx.json
+    EDITION=salon python3 scripts/regler-lettrines.py   écrit …-pptx-salon.json
+    EDITION=global python3 scripts/regler-lettrines.py  écrit …-pptx-global.json
 
 Demande LibreOffice (soffice) et PyMuPDF (pip install pymupdf). À relancer seulement si les
 textes des domaines changent ; `npm run pptx` se contente de lire le fichier écrit.
@@ -21,9 +22,10 @@ import json, os, pathlib, shutil, subprocess, sys, tempfile
 import pymupdf
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-SALON = os.environ.get("EDITION") == "salon"
-BASE = "salon-prive-2026" if SALON else "catalogue-scio-2026"
-SORTIE = RACINE / f"src/gabarits/lettrines-pptx{'-salon' if SALON else ''}.json"
+EDITION = os.environ.get("EDITION") if os.environ.get("EDITION") in ("salon", "global") else "general"
+BASE = {"salon": "salon-prive-2026", "global": "catalogue-caviste-2026"}.get(EDITION, "catalogue-scio-2026")
+SUFFIXE = {"salon": "-salon", "global": "-global"}.get(EDITION, "")
+SORTIE = RACINE / f"src/gabarits/lettrines-pptx{SUFFIXE}.json"
 PPTX = RACINE / f"dist/{BASE}-canva.pptx"
 BOITES = RACINE / f"build/{BASE}-pptx-textes.json"
 MARGE_BAS = 3.0                      # mm : le tableau commence 4,5 mm sous la bande
