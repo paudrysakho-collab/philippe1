@@ -356,6 +356,14 @@ page à page au PDF (détail des corrections dans `JOURNAL.md`, 9 octobre). Les 
 valent pour les deux autres éditions, dont les .pptx livrés n'ont pas été refaits : `npm run pptx`
 et `npm run pptx-salon` si l'agence le demande.
 
+### Retouches du 10 octobre
+Départements (Barbinière, Boehler, Guignottes, Mas des Restanques, Blacailloux ; Divin No Low sans
+ligne Distribution), tampon « **A participé au Salon Privé du 5 octobre** », plus de jeton
+« Panachage dans le domaine » (« entre domaines » reste), Villebois et Divin No Low nommés dans la
+bande violette, « Ratafia disponible » retiré des textes, « famille Lucien Lurton » (Passion).
+Le catalogue restaurant est en pause (« on reviendra vers les restaurants après ») : relevé dans
+`data/catalogue-restaurant-releve.md`, questions au point 35.
+
 ### La suite possible
 1. Ce que l'agence demandera en relisant (elle relit page par page, souvent par message vocal).
 2. Photos HD pour les ronds signalés.

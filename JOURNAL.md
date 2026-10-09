@@ -1122,3 +1122,21 @@ Reprise du travail de la session précédente (arrêtée en cours de relevé).
 - Nugues : paliers posés, mais le tarif restaurant n'a aucun vin de la fiche → question 35.
 - 64 pages, 42 fiches, **329 prix posés**, 332 cases vides ; tous les contrôles au vert ; les
   pages touchées regardées en image (Villebois tient sur quatre colonnes).
+
+### 10 octobre — catalogue caviste : relecture de l'agence (départements, tampon, panachage)
+
+Le catalogue restaurant attend ; l'agence reprend le caviste.
+- **Départements** (`DEPARTEMENTS` de `prix-global.py`) : Barbinière sans le 16 (p.7) ; Boehler
+  35 · 44 · 49 · 53 · 56 · 85 (p.14) ; Guignottes + 53 (p.21) ; Mas des Restanques sans le 53
+  (p.30) ; Blacailloux + 53 (p.47). Divin No Low (p.12) : plus de ligne « Distribution » du tout
+  (`SANS_DISTRIBUTION`, le filet du pied reste).
+- **Tampon** : « A participé au Salon Privé du 5 octobre » (une vraie phrase, `SALON_TAMPON`).
+- **« Panachage dans le domaine »** retiré partout (jeton du PDF et du .pptx) ; « Panachage entre
+  domaines » reste.
+- **Villebois et Divin No Low** : la bande violette du tableau dit avec qui ils se panachent,
+  comme les autres familles (`FAMILLES_SALON` + « villebois-divin » dans les éditions globales).
+- **Ratafia** : « Ratafia disponible. » retiré des textes de Dekeyne et Frézier (pas proposé).
+- **Passion des Terroirs** (p.43) : « la famille **Lucien** Lurton » dès la première mention ; la
+  seconde devient « de la famille » pour ne pas répéter (`TEXTES` de `prix-global.py`).
+- Château du Cray (p.20) : l'agence a vérifié, rien à changer.
+- 64 pages, 607 prix, tout au vert ; pages 7, 11, 12, 14, 21, 25, 30, 43, 47, 49, 55, 56 regardées.

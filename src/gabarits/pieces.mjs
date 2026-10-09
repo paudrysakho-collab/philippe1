@@ -41,6 +41,9 @@ export const modePrix = (stand) => stand?.mode_prix || SALON.mode_prix || 'palie
    Cray et Guignottes ; les quatre domaines Strasser Radziwill ; Exea et ses jus), en nommant les
    AUTRES membres ; ailleurs, l'en-tête de tableau ne le dit plus. */
 const FAMILLES_SALON = new Set(['goichot-cray-guignottes', 'strasser-radziwill', 'exea', 'trichon']);
+// Catalogue caviste (l'agence, 10 octobre) : Villebois et Divin No Low disent aussi, dans la bande
+// violette, avec qui ils se panachent, « comme pour les autres ».
+if (GLOBAL) FAMILLES_SALON.add('villebois-divin');
 const NOMS_PANACHAGE = { 33: "Famille d'Exea — Jus de cépages", ...(SALON.noms_panachage || {}) };
 function intituleSalon(d, t) {
   if (!/panacher/i.test(t.intitule || '')) return t.intitule;
@@ -109,6 +112,8 @@ function editionSalon(cat) {
       offre_salon: s.offre_salon || null,
       complement: s.complement || null,
       ...(SALON.departements?.[String(d.numero)] ? { departements: SALON.departements[String(d.numero)] } : {}),
+      // pas de ligne « Distribution » (Divin No Low, l'agence, 10 octobre)
+      ...(SALON.sans_distribution?.includes(d.numero) ? { sans_distribution: true } : {}),
       // deux formulations seulement (l'agence, 3 octobre au soir) ; Boehler : franco de port
       note_prix: s.note_prix_salon || noteUniforme(parNumero[d.numero].note_prix) };
   });

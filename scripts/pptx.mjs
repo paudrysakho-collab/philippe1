@@ -365,7 +365,9 @@ function slideFiche(s, numero, desc) {
   const jetons = [
     ...d.labels.map((l) => [l.label, C.amphibolite, null, familleLabel(l.label)]),
     ...(d.allocation ? [['Allocation', C.violet, C.violet]] : []),
-    [groupeDe(d) ? 'Panachage entre domaines' : 'Panachage dans le domaine', C.gneiss, null],
+    // « Panachage dans le domaine » retiré du catalogue caviste (l'agence, 10 octobre)
+    ...(groupeDe(d) ? [['Panachage entre domaines', C.gneiss, null]]
+      : GLOBAL_ED ? [] : [['Panachage dans le domaine', C.gneiss, null]]),
     ...(d.mentions.some((m) => m.toLowerCase().includes('consultez-nous'))
       ? [['Consultez-nous', C.sables, C.sables]] : []),
     // le tampon des domaines présents au Salon Privé : or et violet, comme le logo
@@ -543,7 +545,8 @@ function slideFiche(s, numero, desc) {
   }
   s.addShape(pres.ShapeType.line, { x, y: yPied, w: mm(CADRE_L), h: 0,
     line: { color: C.silex, width: 0.7 } });
-  s.addText([
+  // pas de ligne « Distribution » pour Divin No Low (l'agence, 10 octobre) : le filet reste
+  if (!d.sans_distribution) s.addText([
     { text: 'Distribution ', options: { bold: true, color: C.violet } },
     { text: d.departements.length ? d.departements.join(' · ')
       : 'non précisés par le domaine — nous consulter', options: { color: C.silex } },

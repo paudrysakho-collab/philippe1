@@ -60,7 +60,8 @@ if (GLOBAL_ED) {
   });
 }
 /** Le tampon des domaines qui étaient au Salon Privé du 5 octobre 2026 (l'agence, 9 octobre). */
-export const SALON_TAMPON = 'Salon Privé du 5 octobre';
+// l'agence, 10 octobre : une vraie phrase, « sinon ça veut rien dire »
+export const SALON_TAMPON = 'A participé au Salon Privé du 5 octobre';
 /** Le numéro qu'on montre : celui du stand au salon, celui du tarif ailleurs. */
 export const numero = (d) => (SALON_ED ? d.stand : GLOBAL_ED ? '' : d.numero);
 const vins = (n) => `${n} ${n > 1 ? ED.motVins : ED.motVin}`;
@@ -306,8 +307,10 @@ export function enteteDomaine(d, suite = false) {
   const jetons = [
     ...d.labels.map((l) => `<span class="jeton bio">${pictoLabel(l.label)}${esc(l.label)}</span>`),
     d.allocation ? '<span class="jeton alloc">Allocation</span>' : '',
+    // « Panachage dans le domaine » ne s'affiche plus dans le catalogue caviste (l'agence,
+    // 10 octobre) ; « Panachage entre domaines » reste.
     g ? `<span class="jeton panachage">Panachage entre domaines</span>`
-      : `<span class="jeton panachage">Panachage dans le domaine</span>`,
+      : GLOBAL_ED ? '' : `<span class="jeton panachage">Panachage dans le domaine</span>`,
     consulter ? '<span class="jeton consulter">Consultez-nous</span>' : '',
     // le tampon des domaines présents au Salon Privé (l'agence, 9 octobre)
     GLOBAL_ED && d.au_salon ? `<span class="jeton salon">${esc(SALON_TAMPON)}</span>` : '',
@@ -462,7 +465,7 @@ export function piedDomaine(d, pagesParDomaine) {
     ? d.departements.join(' · ')
     : 'non précisés par le domaine — nous consulter';
   return `${alliance}
-    <div class="pied-dom"><div><strong>Distribution</strong> ${dep}</div></div>
+    <div class="pied-dom"><div>${d.sans_distribution ? '&nbsp;' : `<strong>Distribution</strong> ${dep}`}</div></div>
     ${legendeHtml(famillesDe(d))}`;
 }
 

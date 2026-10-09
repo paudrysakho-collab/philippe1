@@ -22,6 +22,7 @@ Usage : python3 scripts/prix-global.py, puis npm run global.
 import copy
 import json
 import pathlib
+import re
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 SALON = json.loads((RACINE / "data/salon-prive-2026.json").read_text(encoding="utf-8"))
@@ -59,7 +60,29 @@ CORRECTIONS_VINS = {
 # fiches qui portent « catalogue complet sur demande » (Goichot, Cray, Guignottes, Passion des Terroirs)
 AVEC_CATALOGUE_COMPLET = {12, 13, 14, 25}
 # départements donnés par l'agence pour une fiche venue du salon
-DEPARTEMENTS = {37: ["35", "44", "49", "53", "56", "85"]}       # Champagne Dekeyne
+DEPARTEMENTS = {
+    37: ["35", "44", "49", "53", "56", "85"],     # Champagne Dekeyne
+    # l'agence, 10 octobre
+    2: ["35", "44", "49", "53", "56", "85"],      # Barbinière : le 16 retiré
+    8: ["35", "44", "49", "53", "56", "85"],      # Boehler : départements ajoutés
+    14: ["35", "44", "49", "53", "56", "85"],     # Les Guignottes : le 53 ajouté
+    31: ["35", "44", "49", "53", "56", "85"],     # Blacailloux : le 53 ajouté
+}
+# pas de ligne « Distribution » du tout (l'agence, 10 octobre : « supprimer tous les départements »)
+SANS_DISTRIBUTION = {7}                           # Divin No Low
+
+# les textes de présentation retouchés pour cette édition
+TEXTES = {
+    # La Passion des Terroirs : le prénom de Lucien Lurton dès la première mention (l'agence,
+    # 10 octobre) ; les mots sont ceux du tarif, rien d'ajouté.
+    25: ("Une recherche constante de l\u2019excellence et de la meilleure expression des Terroirs. "
+         "Depuis 3 générations, la famille Lucien Lurton est un des principaux propriétaires de "
+         "Châteaux de la région de Bordeaux. Personnalité, respect de la terre, exigence, "
+         "indépendance ; l\u2019essentiel du caractère de la famille, distributrice des vins de "
+         "toutes les appellations bordelaises."),
+}
+# le ratafia n'est pas proposé : on retire la phrase des textes (l'agence, 10 octobre)
+SANS_RATAFIA = re.compile(r"\s*Ratafia disponible\.")
 # notes de prix données par l'agence pour une fiche venue du salon
 NOTES = {4: "* Prix de la bouteille H.T. franco de port."}       # Domaine des Noëls : franco de port (l'agence, 8 oct.)
 # offres données par l'agence pour une fiche venue du salon
@@ -142,7 +165,8 @@ DOMAINES_AJOUTES.append(
      "texte_tarif": "", "texte_catalogue": "",
      "labels": [{"label": "Bio", "preuve": "« Nos vins sont biologiques et certifiés par Ecocert », tarif 2026"}],
      "labels_tarif": [], "allocation": False, "mentions": [], "panachage_groupe": None,
-     "note_prix": "", "departements": ["44", "49", "53", "85"],   # tous sauf 35 et 56 (l'agence, 8 oct.)
+     # tous sauf 35 et 56 (l'agence, 8 oct.), et plus le 53 (10 oct.)
+     "note_prix": "", "departements": ["44", "49", "85"],
      "tableaux": [{"intitule": "", "paliers": ["Prix"], "lignes": []}]})
 
 GROUPES_AJOUTES = [
@@ -388,6 +412,11 @@ def main():
                 s["note_prix_salon"] = NOTES[n]
             if n in OFFRES:
                 s["offre_salon"] = OFFRES[n]
+        if s.get("texte_reference"):
+            s["texte_reference"] = SANS_RATAFIA.sub("", s["texte_reference"])
+        for n in s.get("domaines") or []:
+            if n in TEXTES:
+                s["texte_reference"], s["fiche_texte"] = TEXTES[n], n
         if set(s.get("domaines") or []) & AVEC_CATALOGUE_COMPLET:
             s["complement"] = CATALOGUE_COMPLET
     # la Passion des Terroirs : pas de label en tête de fiche, il est sur chaque ligne ;
@@ -398,7 +427,8 @@ def main():
         "edition": "Catalogue caviste global 2026",
         "regions": REGIONS, "ordre": ORDRE, "domaines_ajoutes": DOMAINES_AJOUTES,
         "groupes_ajoutes": GROUPES_AJOUTES, "noms_panachage": NOMS_PANACHAGE,
-        "labels_entete": labels, "departements": DEPARTEMENTS, "stands": entrees,
+        "labels_entete": labels, "departements": DEPARTEMENTS,
+        "sans_distribution": sorted(SANS_DISTRIBUTION), "stands": entrees,
         # les mentions légales du catalogue global, dans l'ordre voulu par l'agence (8 oct. soir)
         "mentions_legales": ("Les millésimes peuvent évoluer en fonction de l'avancée de l'année. "
                              "Vente validée sous réserve des stocks disponibles. Photos non contractuelles, "
