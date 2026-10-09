@@ -100,7 +100,7 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
-| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf` | **64 pages**, 41 fiches, 11 régions (Beaujolais et Bugey en plus), 598 prix ; pas encore de .pptx |
+| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **64 pages**, 41 fiches, 11 régions (Beaujolais et Bugey en plus), 598 prix ; .pptx fait le 9 octobre |
 | Affiche QR du catalogue du salon | `salon-prive-2026-affiche-qr.pdf` (`npm run affiche-qr`) | A4, sobre en encre |
 
 Le 2 et le 3 octobre, tout a été revérifié : contrôles automatiques au vert, liens de la
@@ -116,7 +116,7 @@ npm run tableur        # tarifs → xlsx ; npm run importer -- fichier.xlsx [--e
 npm run tableur-salon  # prix du salon → xlsx ; npm run importer-salon -- fichier.xlsx [--essai]
 npm run transcrire-matheo            # refait les vins du salon depuis scripts/transcrire-matheo.py
 python3 scripts/textes-matheo.py     # reporte textes et labels du dossier de Mathéo sur les fiches
-python3 scripts/regler-lettrines.py  # lettrines du .pptx ; EDITION=salon pour le salon
+python3 scripts/regler-lettrines.py  # lettrines du .pptx ; EDITION=salon ou EDITION=global
 ```
 
 - **Les données** : `data/fiches/NN.json` (prix en centimes) → `data/catalogue.json`
@@ -240,7 +240,7 @@ Berteaud sans la colonne 36 ; folios toujours à droite (`JOURNAL.md`).
 **8 octobre : catalogue caviste global** (`npm run global`, `EDITION=global`) : base salon, sans
 numéros, domaines réintégrés depuis les scans du 8 octobre (`sources/catalogue-global-2026/`,
 `scripts/prix-global.py`, relevé `data/catalogue-global-releve.md`, questions point 32). 64 pages.
-En attente : précisions de l'agence sur Les Lys ; le .pptx de cette édition.
+En attente : précisions de l'agence sur Les Lys. Le .pptx est fait (9 octobre, voir plus bas).
 
 **À faire ensuite** :
 1. ~~Recharger la photo de Bourgogne en grand~~ : **fait le 3 octobre au soir** (original
@@ -332,8 +332,15 @@ refaire **seulement quand une photo partagée change** (les deux éditions lisen
   si possible : Barbinière, Prieuré des Papes, Coyeux, Haut Marin, Exea ; Prieuré des Papes sans
   portrait).
 
+### Le .pptx pour Canva (fait le 9 octobre)
+`npm run pptx-global` (compris dans `npm run global`) → `dist/catalogue-caviste-2026-canva.pptx`,
+64 diapositives, 38,4 Mo. Lettrines dans `src/gabarits/lettrines-pptx-global.json`
+(`EDITION=global python3 scripts/regler-lettrines.py`, ~25 min, à relancer seulement si les
+textes des domaines changent). Les 64 diapositives ont été rendues par LibreOffice et comparées
+page à page au PDF (détail des corrections dans `JOURNAL.md`, 9 octobre). Les mêmes corrections
+valent pour les deux autres éditions, dont les .pptx livrés n'ont pas été refaits : `npm run pptx`
+et `npm run pptx-salon` si l'agence le demande.
+
 ### La suite possible
 1. Ce que l'agence demandera en relisant (elle relit page par page, souvent par message vocal).
-2. Le **.pptx pour Canva** de cette édition (pas encore fait : `scripts/pptx.mjs` ne connaît que
-   général et salon ; il faudra `EDITION=global`, les lettrines, la couverture du global).
-3. Photos HD pour les ronds signalés.
+2. Photos HD pour les ronds signalés.

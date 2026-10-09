@@ -11,7 +11,7 @@ import {
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED,
-  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche }
+  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche, photoRond }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -176,7 +176,7 @@ function poserCarotte(s, numero, region) {
   });
 }
 
-function folio(s, numero, { clair = false } = {}) {
+function folio(s, numero, { clair = false, sanitaire = true } = {}) {
   const { verso } = geo(numero);
   const xInt = verso ? mm(PAGE_L - MARGE.int - 15) : mm(PAGE_L - MARGE.ext - CAROTTE - 15);
   const xExt = verso ? mm(MARGE.ext + CAROTTE) : mm(MARGE.int);
@@ -189,6 +189,7 @@ function folio(s, numero, { clair = false } = {}) {
       align: 'left', valign: 'middle', fontFace: F.tech, fontSize: 12, bold: true,
       color: clair ? C.craie : C.violet,
     });
+    if (!sanitaire) return;
     s.addText(AG.message_sanitaire, {
       x: mm(gauche + CADRE_L - 95), y: mm(PAGE_H - 11), w: mm(95), h: mm(5), margin: 0,
       align: 'right', fontFace: F.tech, fontSize: 5.6,
@@ -203,6 +204,7 @@ function folio(s, numero, { clair = false } = {}) {
     align: 'right', fontFace: F.tech, fontSize: 7.5,
     color: clair ? C.craie : C.silex, transparency: 28,
   });
+  if (!sanitaire) return;
   s.addText(AG.message_sanitaire, {
     x: xExt, y: mm(PAGE_H - 11),
     w: mm(95), h: mm(5), margin: 0, align: 'left',
@@ -253,11 +255,13 @@ function tableauDonnees(t, lignes, hauteurs) {
       { text: '●', options: { ...commun, color: remplissage === 'FFFFFF' ? C.silex : remplissage,
         fontSize: 10, align: 'center' } },
       { text: [
-          { text: l.appellation + (l.note === '*' ? ' *' : ''),
+          // une ligne sans appellation (Boehler, les jus d'Exea) n'en laisse pas la place :
+          // sans ce garde-fou, le .pptx ouvrait sur une ligne vide et le tableau grandissait
+          ...(l.appellation || l.note === '*' ? [{ text: l.appellation + (l.note === '*' ? ' *' : ''),
             // sans cuvée, l'offre reste sur la ligne de l'appellation, comme dans le PDF ;
             // le label de la ligne, s'il y en a un, reste collé à l'appellation : c'est lui
             // qui passe à la ligne ensuite
-            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: !l.label && (!!l.cuvee || !l.offre), lineSpacingMultiple: 0.9 } },
+            options: { fontFace: F.tech, fontSize: 8, color: C.gneiss, breakLine: !l.label && (!!l.cuvee || !l.offre), lineSpacingMultiple: 0.9 } }] : []),
           // comme le PDF : les deux derniers mots de la cuvée restent ensemble (espace insécable)
           // le label d'une seule ligne (La Passion des Terroirs : tout n'est pas bio),
           // après l'appellation, comme .label-ligne du PDF
@@ -394,7 +398,7 @@ function slideFiche(s, numero, desc) {
     const hBande = desc.bande ?? EMPLACEMENT.bouteille.h;
     const { rond, bouteille, ecart, colonne } = emplacementPour(hBande);
     const bande = (mesures.blocs[`haut-${d.numero}-${hBande}`] ?? 65.6) - 3.6;
-    const phRond = photoDe(d, 'rond');
+    const phRond = photoRond(d);
     if (phRond && RECADRABLE && phRond.entiere) {
       // l'image entière, à l'échelle du rond ; le carré choisi est un recadrage, le cercle
       // un masque : on peut faire glisser l'image dans son rond
@@ -476,7 +480,8 @@ function slideFiche(s, numero, desc) {
     const hEntete = mesures.blocs[`thead-${d.numero}-${mo.tableau}`] ?? 8.8;
     const hLignes = mo.lignes.map((i) => mesures.lignes[`${d.numero}-${mo.tableau}-${i}`] ?? 10.7);
     const { rows, largeurs, bordure, hauteurs } = tableauDonnees(
-      { ...t, intitule: t.intitule + (mo.suite ? ' (suite)' : '') }, lignes,
+      // comme tableauHtml() : un tableau sans intitulé n'affiche pas « (suite) »
+      { ...t, intitule: t.intitule + (mo.suite && (t.intitule || t.famille) ? ' (suite)' : '') }, lignes,
       [hEntete, ...hLignes]);
     s.addTable(rows, { x, y, w: mm(CADRE_L), colW: largeurs, border: bordure,
       rowH: hauteurs.map(mm), autoPage: false, fontFace: F.tech });
@@ -649,24 +654,27 @@ function slideAgence(s, numero) {
   s.addText(`${AG.contacts.adresse}\n${AG.contacts.email}\n${AG.contacts.site}`, {
     x, y: mm(MARGE.haut + 94), w: mm(120), h: mm(20), margin: 0,
     fontFace: F.courant, fontSize: 10, color: C.silex, lineSpacingMultiple: 1.6 });
+  /* Mesuré dans le PDF : le bloc du bas est poussé en bas de page (.coordonnees a
+     margin-bottom:auto). Le bandeau photo fait 62 mm (.bandeau-photo) et son filet de
+     chiffres tombe à 207,2 mm ; au salon, l'encart le remplace et le filet remonte. */
+  const yBandeau = 138.1, hBandeau = 62;
   if (SALON_ED) {
     // l'encart du salon prend la place de la coupe : nom, date, lieu, organisateur
-    const ye = MARGE.haut + 122;
-    s.addShape(pres.ShapeType.rect, { x, y: mm(ye), w: mm(CADRE_L), h: mm(36),
+    const ye = yBandeau;
+    s.addShape(pres.ShapeType.rect, { x, y: mm(ye), w: mm(CADRE_L), h: mm(36.9),
       fill: { color: C.craie }, line: { color: C.craie, width: 0 } });
-    s.addShape(pres.ShapeType.line, { x, y: mm(ye), w: 0, h: mm(36), line: { color: C.or, width: 2 } });
+    s.addShape(pres.ShapeType.line, { x, y: mm(ye), w: 0, h: mm(36.9), line: { color: C.or, width: 2 } });
     s.addText([
       { text: EV.nom, options: { fontFace: F.titre, fontSize: 18, color: C.violet, breakLine: true } },
       { text: EV.date_texte, options: { fontFace: F.titre, fontSize: 13, color: C.silex, breakLine: true } },
       { text: `${EV.lieu}, ${EV.commune}`, options: { fontFace: F.courant, fontSize: 10, color: C.silex, breakLine: true } },
       { text: `Organisé par l'${EV.organisateur}`, options: { fontFace: F.tech, fontSize: 8, color: C.gneiss } },
-    ], { x: x + mm(6), y: mm(ye), w: mm(CADRE_L - 12), h: mm(36), margin: 0, valign: 'middle',
+    ], { x: x + mm(6), y: mm(ye), w: mm(CADRE_L - 12), h: mm(36.9), margin: 0, valign: 'middle',
       lineSpacingMultiple: 1.25 });
   } else {
-    s.addImage({ path: img('agence-photo'), x, y: mm(MARGE.haut + 118), w: mm(CADRE_L),
-      h: mm(CADRE_L * 46 / 176) });
+    s.addImage({ path: img('agence-photo'), x, y: mm(yBandeau), w: mm(CADRE_L), h: mm(hBandeau) });
   }
-  const yc = MARGE.haut + 172;
+  const yc = SALON_ED ? 182 : 207.2;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 0.8 } });
   // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
@@ -772,32 +780,83 @@ function slideSommaire(s, numero) {
 
 function slideOuverture(s, numero, region) {
   s.addImage({ path: img(`ouverture-${cle(region)}`), x: 0, y: 0, w: mm(PAGE_L), h: mm(PAGE_H) });
-  poserCarotte(s, numero, region);
-  const { gauche } = geo(numero);
-  const clair = false;   // ouverture A : la photo assombrie porte toujours un texte clair
-  const encre = C.craie;
+  // la bande de tranche existe aussi dans le PDF, mais la photo pleine page la recouvre :
+  // on ne la pose donc pas ici
+  const { gauche, verso } = geo(numero);
+  // la capsule de sol : côté extérieur, donc à gauche sur une page paire (.ouv-carotte)
+  s.addImage({ path: img(`capsule-${cle(region)}`),
+    x: mm((verso ? MARGE.ext : PAGE_L - MARGE.ext - 46) - 1), y: mm(MARGE.haut - 1),
+    w: mm(48), h: mm(120) });
+  const encre = C.craie;   // ouverture A : la photo assombrie porte toujours un texte clair
   const doms = catalogue.domaines.filter((d) => d.region === region);
   const refs = doms.reduce((n, d) => n + nbReferences(d), 0);
-  s.addText(`${REGIONS.indexOf(region) + 1} / ${REGIONS.length}`, { x: mm(gauche), y: mm(MARGE.haut),
-    w: mm(22), h: mm(6), margin: 0, align: 'center', valign: 'middle',
-    fontFace: F.tech, fontSize: 8, bold: true, color: encre });
-  s.addText(region, { x: mm(gauche), y: mm(142), w: mm(140), h: mm(22), margin: 0,
-    fontFace: F.titre, fontSize: 46, color: encre });
-  s.addText(STRATES[region].mot, { x: mm(gauche), y: mm(166), w: mm(120), h: mm(7), margin: 0,
-    fontFace: F.courant, fontSize: 12, italic: true, color: encre });
-  s.addText(String(doms.length), { x: mm(gauche), y: mm(176), w: mm(24), h: mm(9), margin: 0,
-    fontFace: F.titre, fontSize: 20, color: encre });
-  s.addText(doms.length > 1 ? 'domaines' : 'domaine', { x: mm(gauche), y: mm(185), w: mm(24),
-    h: mm(5), margin: 0, fontFace: F.tech, fontSize: 8.5, color: encre });
-  // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
-  if (!GLOBAL_ED) {
-    s.addText(String(refs), { x: mm(gauche + 28), y: mm(176), w: mm(24), h: mm(9), margin: 0,
-      fontFace: F.titre, fontSize: 20, color: encre });
-    s.addText(refs > 1 ? ED.motVins : ED.motVin, { x: mm(gauche + 28), y: mm(185), w: mm(45), h: mm(5), margin: 0,
-      fontFace: F.tech, fontSize: 8.5, color: encre });
+
+  /* Le CSS empile ce bloc depuis le bas de la page (.ouv-haut a margin-bottom:auto) : on fait
+     pareil, avec les hauteurs mesurées dans Chromium, pour que le .pptx tombe comme le PDF. */
+  const hLigne = mesures.blocs['ouv-liste'] ?? 6.45;
+  const hTypes = mesures.blocs['ouv-types'] ?? 4.34;
+  const hChiffres = mesures.blocs['ouv-chiffres'] ?? 16.29;
+  const hMot = mesures.blocs['ouv-mot'] ?? 6.14;
+  const hNom = mesures.blocs['ouv-nom'] ?? 15.41;
+  const rangs = Math.ceil(doms.length / 2);
+  const yListe = PAGE_H - MARGE.bas - rangs * hLigne;
+  const yTypes = yListe - 6 - hTypes;
+  const yFilet = yTypes - 5;
+  const yChiffres = yFilet - hChiffres;
+  const yMot = yChiffres - 7 - hMot;
+  const yNom = yMot - 2 - hNom;
+
+  // le rang de la région, dans sa pastille bordée : du côté opposé à la carotte
+  const rang = `${REGIONS.indexOf(region) + 1} / ${REGIONS.length}`;
+  const lRang = largeur(rang, 'IBM Plex Sans Bold', 8) + 6.4;
+  const xRang = verso ? gauche + CADRE_L - lRang : gauche;
+  s.addShape(pres.ShapeType.roundRect, { x: mm(xRang), y: mm(MARGE.haut), w: mm(lRang), h: mm(5.6),
+    fill: { type: 'none' }, line: { color: encre, width: 0.8, transparency: 20 }, rectRadius: 0.5 });
+  s.addText(rang, { x: mm(xRang), y: mm(MARGE.haut), w: mm(lRang), h: mm(5.6), margin: 0,
+    align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 8, bold: true,
+    color: encre, charSpacing: 0.3, transparency: 20 });
+
+  // le nom de la région et son mot de terroir, posés sur leur ligne de base (boîtes calées en bas)
+  s.addText(region, { x: mm(gauche), y: mm(yNom - 6), w: mm(140), h: mm(hNom + 6), margin: 0,
+    valign: 'bottom', fontFace: F.titre, fontSize: 46, color: encre, lineSpacingMultiple: 0.95 });
+  s.addText(STRATES[region].mot, { x: mm(gauche), y: mm(yMot), w: mm(120), h: mm(hMot), margin: 0,
+    valign: 'bottom', fontFace: F.courant, fontSize: 12, italic: true, color: encre });
+
+  // les chiffres : le nombre de domaines (jamais de nombre de références dans le global)
+  const chiffres = [[String(doms.length), doms.length > 1 ? 'domaines' : 'domaine'],
+    ...(GLOBAL_ED ? [] : [[String(refs), refs > 1 ? ED.motVins : ED.motVin]])];
+  chiffres.forEach(([n, l], i) => {
+    s.addText(n, { x: mm(gauche + i * 34), y: mm(yChiffres), w: mm(30), h: mm(7.2), margin: 0,
+      valign: 'top', fontFace: F.titre, fontSize: 20, color: encre });
+    s.addText(l, { x: mm(gauche + i * 34), y: mm(yChiffres + 7.4), w: mm(32), h: mm(4.2), margin: 0,
+      valign: 'top', fontFace: F.tech, fontSize: 8.5, color: encre });
+  });
+  s.addShape(pres.ShapeType.line, { x: mm(gauche), y: mm(yFilet), w: mm(CADRE_L), h: 0,
+    line: { color: encre, width: 0.8 } });
+
+  // les types de vin de la région, avec leurs pastilles, comme .ouv-types du PDF
+  const parType = {};
+  doms.forEach((d) => d.tableaux.forEach((t) => t.lignes.forEach((l) => {
+    const fa = famille(l, t); parType[fa] = (parType[fa] || 0) + 1;
+  })));
+  const ordre = ['bulles', 'blanc', 'rose', 'rouge', 'doux', 'sansalcool', 'jus', 'biere', 'spiritueux', 'autre'];
+  const types = ordre.filter((fa) => parType[fa]).flatMap((fa) => {
+    const [remplissage] = PICTO[fa] || PICTO.autre;
+    return [{ text: '\u25cf', options: { color: remplissage === 'FFFFFF' ? encre : remplissage } },
+      { text: `\u00a0${parType[fa]} `, options: { bold: true } },
+      { text: `${NOM_FAMILLE[fa].toLowerCase()}     ` }];
+  });
+  if (types.length) {
+    s.addText(types, { x: mm(gauche), y: mm(yTypes), w: mm(CADRE_L), h: mm(hTypes), margin: 0,
+      valign: 'middle', fontFace: F.tech, fontSize: 8, color: encre });
   }
+
+  // la liste des domaines, en deux colonnes lues de haut en bas (columns:2 du CSS)
+  const colonne = (CADRE_L - 8) / 2;
   doms.forEach((d, k) => {
-    const col = k % 2, rang = Math.floor(k / 2);
+    const col = Math.floor(k / rangs), rangK = k % rangs;
+    const cx = gauche + col * (colonne + 8);
+    const y = yListe + rangK * hLigne;
     // dans l'édition globale, le numéro de page passe devant le nom (l'agence, 8 octobre)
     s.addText(GLOBAL_ED ? [
       { text: `${pageDe[d.numero]}   `, options: { bold: true } },
@@ -806,10 +865,12 @@ function slideOuverture(s, numero, region) {
       { text: `${numeroAffiche(d)}   `, options: { fontFace: F.titre, fontSize: 11 } },
       { text: d.nom },
       { text: `   ${pageDe[d.numero]}`, options: { bold: true } },
-    ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(198 + rang * 7), w: mm(CADRE_L / 2 - 4),
-      h: mm(6), margin: 0, fontFace: F.tech, fontSize: 8.6, color: encre, valign: 'middle' });
+    ], { x: mm(cx), y: mm(y), w: mm(colonne), h: mm(hLigne), margin: 0,
+      fontFace: F.tech, fontSize: 8.6, color: encre, valign: 'middle' });
+    s.addShape(pres.ShapeType.line, { x: mm(cx), y: mm(y + hLigne), w: mm(colonne), h: 0,
+      line: { color: encre, width: 0.3, transparency: 74 } });
   });
-  folio(s, numero, { clair: !clair });
+  folio(s, numero, { clair: true });
 }
 
 function slideIndexVins(s, numero, desc) {
@@ -822,28 +883,50 @@ function slideIndexVins(s, numero, desc) {
       fontFace: F.courant, fontSize: 8.6, color: C.silex });
     y += 7;
   }
+  /* Le flux à trois colonnes du PDF, à la hauteur de ligne mesurée : un titre de famille
+     vaut trois lignes, comme dans la pagination (construire.mjs). */
+  const hLigne = mesures.blocs['idx-ligne'] ?? 4.43;
+  const hTitre = (mesures.blocs['idx-titre'] ?? 4.97) + 5;
+  const poidsTitre = Math.ceil(hTitre / hLigne);
   const lc = CADRE_L / 3;
-  const parCol = Math.ceil(desc.blocs.length / 3);
-  desc.blocs.forEach((b, k) => {
-    const col = Math.floor(k / parCol), rang = k % parCol;
-    const bx = gauche + col * lc, by = y + rang * 3.5;
-    if (by > PAGE_H - MARGE.bas - 4) return;
+  const unites = Math.max(1, Math.floor((PAGE_H - MARGE.bas - y) / hLigne));
+  // CSS `columns: 3` équilibre les colonnes : on répartit de même, sans dépasser la page
+  const total = desc.blocs.reduce((n, b) => n + (b.type === 'titre' ? poidsTitre : 1), 0);
+  const budget = Math.max(1, Math.min(unites, Math.ceil(total / 3)));
+  let col = 0, u = 0;
+  desc.blocs.forEach((b) => {
+    const poids = b.type === 'titre' ? poidsTitre : 1;
+    if (u + poids > budget && col < 2) { col += 1; u = 0; }
+    const bx = gauche + col * lc, by = y + u * hLigne;
     if (b.type === 'titre') {
-      s.addText(NOM_FAMILLE[b.famille].toUpperCase(), { x: mm(bx), y: mm(by), w: mm(lc - 3),
-        h: mm(3.5), margin: 0, fontFace: F.tech, fontSize: 8, bold: true, color: C.violet,
-        charSpacing: 0.3, valign: 'middle' });
+      const [remplissage] = PICTO[b.famille] || PICTO.autre;
+      s.addText([
+        { text: '\u25cf', options: { color: remplissage === 'FFFFFF' ? C.silex : remplissage } },
+        { text: `\u00a0${NOM_FAMILLE[b.famille].toUpperCase()}`, options: { color: C.violet } },
+      ], { x: mm(bx), y: mm(by + 4), w: mm(lc - 3), h: mm(hTitre - 5), margin: 0,
+        fontFace: F.tech, fontSize: 8, bold: true, charSpacing: 0.3, valign: 'middle' });
+      s.addShape(pres.ShapeType.line, { x: mm(bx), y: mm(by + poids * hLigne - 0.8),
+        w: mm(lc - 3), h: 0, line: { color: C.violet, width: 0.7 } });
     } else {
-      // édition globale : plus de numéro de domaine, la page se lit la première
+      // comme le PDF, un nom trop long est coupé plutôt que de passer à la ligne
+      const suite = b.e.prec ? `  ${b.e.prec}` : '';
+      const place = lc - 3 - 7 - largeur(suite, 'IBM Plex Sans', 6.9);
+      let nom = b.e.nom;
+      if (largeur(nom, 'IBM Plex Sans', 6.9) > place) {
+        while (nom.length > 4 && largeur(`${nom}…`, 'IBM Plex Sans', 6.9) > place) nom = nom.slice(0, -1);
+        nom += '…';
+      }
       s.addText(GLOBAL_ED ? [
         { text: `${b.e.pg}  `, options: { bold: true, color: C.violet } },
-        { text: b.e.nom + (b.e.prec ? `  ${b.e.prec}` : '') },
+        { text: nom + suite },
       ] : [
-        { text: b.e.nom + (b.e.prec ? `  ${b.e.prec}` : '') },
+        { text: nom + suite },
         { text: `  ${b.e.dom}`, options: { bold: true, color: C.violet } },
         { text: `  ${b.e.pg}` },
-      ], { x: mm(bx), y: mm(by), w: mm(lc - 3), h: mm(3.5), margin: 0,
+      ], { x: mm(bx), y: mm(by), w: mm(lc - 3), h: mm(hLigne), margin: 0,
         fontFace: F.tech, fontSize: 6.9, color: C.silex, valign: 'middle' });
     }
+    u += poids;
   });
   folio(s, numero);
 }
@@ -903,8 +986,9 @@ function slideIndexDomaines(s, numero) {
       { text: `${d.region}   `, options: { color: C.gneiss, fontSize: 7 } },
       { text: `${nbReferences(d)}   `, options: { fontSize: 7, color: C.silex } },
       { text: String(pageDe[d.numero]), options: { bold: true } },
-    ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(y + rang * 8), w: mm(CADRE_L / 2 - 4),
-      h: mm(7), margin: 0, fontFace: F.tech, fontSize: 8.4, color: C.silex, valign: 'middle' });
+      // 7 mm d'écart, comme .idom-ligne du PDF (relevé page 61)
+    ], { x: mm(gauche + col * (CADRE_L / 2)), y: mm(y + rang * 7), w: mm(CADRE_L / 2 - 4),
+      h: mm(6.6), margin: 0, fontFace: F.tech, fontSize: 8.4, color: C.silex, valign: 'middle' });
   });
   if (!GLOBAL_ED) {
     s.addText(ED.piedIndexDomaines, {
@@ -930,7 +1014,7 @@ function slidePlanche(s, numero) {
     + `${mot(ED.acteurs)} ${ED.motActeurs}.`, {
     x: mm(gauche), y: mm(PAGE_H - MARGE.bas - margePlanche() - 42), w: mm(120), h: mm(42), margin: 0,
     fontFace: F.titre, fontSize: 26, color: C.craie, lineSpacingMultiple: 1.12 });
-  folio(s, numero, { clair: true });
+  folio(s, numero, { clair: !GLOBAL_ED });
 }
 
 /** Page réglée : le caviste note ses quantités en lisant les tarifs. */
@@ -955,11 +1039,11 @@ function slideFinale(s, numero) {
   s.addImage({ path: path.join(RACINE, 'src/images/logo-agence-scio-detoure.png'),
     x, y: mm(MARGE.haut), w: mm(70), h: mm(70 * 251 / 1030) });
   [['Laurent', AG.contacts.laurent], ['Carline', AG.contacts.carline]].forEach(([p, t], i) => {
-    const cx = gauche + i * 55;
-    s.addText(p.toUpperCase(), { x: mm(cx), y: mm(MARGE.haut + 28), w: mm(50), h: mm(5),
+    const cx = gauche + i * 49.5;
+    s.addText(p.toUpperCase(), { x: mm(cx), y: mm(MARGE.haut + 26), w: mm(46), h: mm(5),
       margin: 0, fontFace: F.tech, fontSize: 8, bold: true, color: C.gneiss, charSpacing: 0.3 });
-    s.addText(t, { x: mm(cx), y: mm(MARGE.haut + 33), w: mm(50), h: mm(9), margin: 0,
-      fontFace: F.titre, fontSize: 17, color: C.violet });
+    s.addText(t, { x: mm(cx), y: mm(MARGE.haut + 31), w: mm(46), h: mm(9), margin: 0,
+      fontFace: F.titre, fontSize: 15, color: C.violet });
   });
   if (SALON_ED) {
     s.addText(`${EV.nom}\n${EV.date_texte}, ${EV.lieu}, ${EV.commune}`, {
@@ -967,14 +1051,14 @@ function slideFinale(s, numero) {
       fontFace: F.titre, fontSize: 12, color: C.violet, lineSpacingMultiple: 1.2 });
   }
   s.addText(`${AG.contacts.adresse}\n${AG.contacts.email} · ${AG.contacts.site}`, {
-    x, y: mm(MARGE.haut + (SALON_ED ? 59 : 46)), w: mm(130), h: mm(14), margin: 0,
+    x, y: mm(MARGE.haut + (SALON_ED ? 47.5 : 43.5)), w: mm(130), h: mm(14), margin: 0,
     fontFace: F.courant, fontSize: 10, color: C.silex, lineSpacingMultiple: 1.5 });
-  // au salon, la ligne du salon décale l'adresse : la coupe descend d'autant et s'aplatit
-  const dy = SALON_ED ? 14 : 0;
-  s.addImage({ path: img('coupe-nue'), x, y: mm(MARGE.haut + 66 + dy), w: mm(CADRE_L),
-    h: mm(CADRE_L * 42 / 176 - dy) });
+  /* Relevé dans le PDF : la bande de coupe fait 34 mm (.bandeau-fin) ; au salon, la ligne du
+     salon décale tout le bas de 3,9 mm. */
+  const dy = SALON_ED ? 3.9 : 0;
+  s.addImage({ path: img('coupe-nue'), x, y: mm(100.8 + dy), w: mm(CADRE_L), h: mm(34.2) });
 
-  const yc = MARGE.haut + 118;
+  const yc = 140.8 + dy;
   s.addShape(pres.ShapeType.line, { x, y: mm(yc), w: mm(CADRE_L), h: 0,
     line: { color: C.violet, width: 0.8 } });
   // le catalogue caviste global a ses propres mentions légales, suivies des droits d'auteur
@@ -990,17 +1074,22 @@ function slideFinale(s, numero) {
       + 'certificateur. ' + creditPhotos()],
   ];
   colonnes.forEach(([t, p], i) => {
-    const cx = gauche + i * (CADRE_L / 3);
-    s.addText(t.toUpperCase(), { x: mm(cx), y: mm(yc + 4), w: mm(CADRE_L / 3 - 5), h: mm(5),
+    const cx = gauche + i * 59;
+    s.addText(t.toUpperCase(), { x: mm(cx), y: mm(yc + 4.5), w: mm(52), h: mm(5),
       margin: 0, fontFace: F.tech, fontSize: 7.6, bold: true, color: C.gneiss, charSpacing: 0.3 });
-    s.addText(p, { x: mm(cx), y: mm(yc + 10), w: mm(CADRE_L / 3 - 5), h: mm(48), margin: 0,
-      fontFace: F.courant, fontSize: 7.8, color: C.silex, lineSpacingMultiple: 1.3 });
+    // la colonne descend jusqu'au bandeau sanitaire : le texte ne mord plus sur sa voisine
+    // 0,95 : l'interligne de PowerPoint se compte sur la hauteur naturelle de Spectral
+    // (≈ 1,42 em), pas sur le corps — c'est le line-height 1,3 du PDF
+    s.addText(p, { x: mm(cx), y: mm(yc + 11), w: mm(52), h: mm(84), margin: 0, valign: 'top',
+      fontFace: F.courant, fontSize: 7.8, color: C.silex, lineSpacingMultiple: 0.95 });
   });
-  s.addShape(pres.ShapeType.roundRect, { x, y: mm(PAGE_H - MARGE.bas - 14), w: mm(CADRE_L),
+  s.addShape(pres.ShapeType.roundRect, { x, y: mm(237.1), w: mm(CADRE_L),
     h: mm(10), fill: { color: C.violet }, line: { color: C.violet, width: 0 }, rectRadius: 0.02 });
-  s.addText(AG.message_sanitaire, { x, y: mm(PAGE_H - MARGE.bas - 14), w: mm(CADRE_L), h: mm(10),
+  s.addText(AG.message_sanitaire, { x, y: mm(237.1), w: mm(CADRE_L), h: mm(10),
     margin: 0, align: 'center', valign: 'middle', fontFace: F.tech, fontSize: 8.5, bold: true,
     color: C.craie });
+  // le message sanitaire est déjà dans le bandeau violet : le folio ne le redit pas
+  folio(s, numero, { sanitaire: false });
 }
 
 /* ———————————————————————————————————————— montage ——— */

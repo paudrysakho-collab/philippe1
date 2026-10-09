@@ -21,11 +21,15 @@ const blocs = [];
 REGIONS.forEach((r) => {
   const s = STRATES[r];
   // ouverture A (choix de l'agence, 3 octobre) : la photo de la région, assombrie vers le bas
+  // le fond seul : la capsule de sol est exportée à part, car elle change de côté selon
+  // que la page est à droite ou à gauche (.page.verso .ouv-carotte)
   blocs.push({ photo: true, nom: `ouverture-${cle(r)}`, l: 216, h: 266, html:
     `<div style="position:absolute;inset:0;background:#2E3F48"></div>
      <img src="${photoRegion(r)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(70,96,110,0) 0%, rgba(70,96,110,.25) 45%, rgba(46,63,72,.88) 66%, rgba(46,63,72,.95) 100%)"></div>
-     <div style="position:absolute;top:18mm;right:17mm;width:46mm;height:118mm;
+     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(70,96,110,0) 0%, rgba(70,96,110,.25) 45%, rgba(46,63,72,.88) 66%, rgba(46,63,72,.95) 100%)"></div>` });
+  // la capsule, avec 1 mm d'air tout autour pour que son liseré tienne dans l'image
+  blocs.push({ nom: `capsule-${cle(r)}`, l: 48, h: 120, html:
+    `<div style="position:absolute;top:1mm;left:1mm;width:46mm;height:118mm;
        border-radius:23mm;overflow:hidden;
        box-shadow:0 0 0 .7mm rgba(${r === 'Champagne' ? '70,96,110,.38' : '251,248,241,.35'})">
        ${solRegion(r, REGIONS.indexOf(r) + 1)}</div>` });
@@ -53,14 +57,14 @@ blocs.push({ photo: true, nom: 'couv-ciel', l: 216, h: SALON_D ? 157 : 117, html
      linear-gradient(90deg, rgba(42,57,66,.45) 0%, rgba(42,57,66,0) 55%)"></div>` });
 blocs.push({ nom: 'coupe-titree', l: 216, h: SALON_D ? 111 : 151, html:
   `<div style="position:absolute;inset:0">${coupeElegante({ style: 'fine' })}</div>` });
-blocs.push({ nom: 'coupe-nue', l: 176, h: 42, html:
+blocs.push({ nom: 'coupe-nue', l: 170, h: 34, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
      ${coupeElegante({ largeur: 600, hauteur: 110, style: 'fine', etiquettes: false })}</div>` });
 // page 2 A : la photo du Beaujolais ; dans le catalogue caviste global, les vignes au
 // coucher de soleil du Drive de l'agence, comme dans le PDF
 const PHOTO_PAGE2 = EDITION === 'global'
   ? '../src/photos/agence/page2-vignes-coucher-de-soleil.jpg' : photoRegion('Beaujolais');
-blocs.push({ photo: true, nom: 'agence-photo', l: 176, h: 46, html:
+blocs.push({ photo: true, nom: 'agence-photo', l: 170, h: 62, html:
   `<div style="position:absolute;inset:0;border-radius:1.5mm;overflow:hidden">
      <img src="${PHOTO_PAGE2}" style="width:100%;height:100%;object-fit:cover;display:block"></div>` });
 blocs.push({ nom: 'coupe-pleine', l: 216, h: 266, html:

@@ -25,6 +25,9 @@ catalogue, page par page »). **Les 80 sont posées.** Provenance et droits, ima
 | **Salon Privé, fichier Canva** | `dist/salon-prive-2026-canva.pptx` |
 | **Salon Privé, liste des vins dégustés** (3 pages A4) | `dist/salon-prive-2026-liste-des-vins.pdf` |
 | **Salon Privé, les prix à remplir** | `tableur/prix-salon-prive-2026.xlsx` |
+| **Catalogue caviste — Vins & Terroirs** (édition globale, 64 pages), version écran | `dist/catalogue-caviste-2026-ecran.pdf` |
+| **Catalogue caviste, version imprimeur** | `dist/catalogue-caviste-2026-imprimeur.pdf` |
+| **Catalogue caviste, fichier Canva** (64 diapositives) | `dist/catalogue-caviste-2026-canva.pptx` |
 | Aperçus PNG des pages | `epreuves/apercus/` |
 | **Catalogue, version écran** (navigation cliquable, liens `tel:`, `mailto:`, site) | `dist/catalogue-scio-2026-ecran.pdf` |
 | Données des 40 domaines, vérifiées | `data/catalogue.json` |

@@ -337,8 +337,12 @@ export function hautDomaine(d, bande = EMPLACEMENT.bouteille.h) {
 /* Catalogue global : une fiche née de l'édition (Trichon Bugey) reprend le portrait de sa
    jumelle ; un domaine sans photo reçoit un dessin maison plutôt qu'une case vide. */
 const JUMELLES = { 42: 21 };
+/** La photo ronde d'un domaine, celle de sa jumelle à défaut : le .pptx et son contrôle
+    posent exactement la même image que le PDF. */
+export const photoRond = (d) => photoDe(d, 'rond')
+  || (GLOBAL_ED && JUMELLES[d.numero] ? photoDe({ numero: JUMELLES[d.numero] }, 'rond') : null);
 export function rondDomaine(d, e = emplacementPour()) {
-  const ph = photoDe(d, 'rond') || (GLOBAL_ED && JUMELLES[d.numero] ? photoDe({ numero: JUMELLES[d.numero] }, 'rond') : null);
+  const ph = photoRond(d);
   if (!ph && GLOBAL_ED) {
     return `<div class="photo photo-rond rond-dessin" style="width:${e.rond}mm;height:${e.rond}mm">
       ${feuille({ classe: 'dessin feuille-rond' })}</div>`;

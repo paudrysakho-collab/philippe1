@@ -1030,3 +1030,43 @@ catalogue du salon. Scans relus (`data/catalogue-global-releve.md`), consignes v
 - Photos cherchées sur internet (8–9 oct.) : Denis Frézier au caveau (champagne-frezier.com),
   l'équipe aux vendanges pour Coyeux (domainedecoyeux.com, petite). Prieuré des Papes : aucun
   portrait trouvé (ni site propre ni photo sur le site du groupe), le mas reste.
+
+## 9 octobre — le .pptx du catalogue caviste global
+
+L'agence : « tu vas me le faire version PPTX aussi ». `scripts/pptx.mjs` ne connaissait que le
+catalogue général et le Salon Privé : l'édition globale y est maintenant reconnue partout
+(`npm run pptx-global`, enchaîné par `npm run global`).
+
+- Couverture « Catalogue caviste / Vins & Terroirs », cartouche à deux validités, bande de
+  strates basse (108 mm) comme au salon ; page 2 sans nombre de références, avec la photo des
+  vignes au coucher de soleil ; sommaire plus gros, page à gauche ; fiches sans numéro ;
+  jetons sans compte de références ; picto de label sur la ligne (Passion des Terroirs) ;
+  « Possibilité sur demande d'avoir le catalogue complet. » sous l'offre ; panachage nommé ;
+  index et ouvertures avec la page devant ; folios à gauche en 12 pt violet ; mentions légales
+  et droits d'auteur du global.
+- **Lettrines** : `regler-lettrines.py` accepte `EDITION=global`
+  (`src/gabarits/lettrines-pptx-global.json`, cinq tours, zéro débord).
+- **Contrôle visuel** : les 64 diapositives rendues par LibreOffice, comparées page à page au
+  PDF. Corrigé ce que la comparaison a montré :
+  - une ligne sans appellation (Boehler, Verchères, les jus d'Exea, Trichon Bugey) ouvrait sur
+    une ligne vide : la rangée grandissait et le tableau mordait sur la note de prix ;
+  - un tableau « suite » sans intitulé affichait « (SUITE) » tout seul ;
+  - la page 2 et la page finale suivaient une géométrie périmée : bandeau photo de 62 mm
+    (`.bandeau-photo`), bande de coupe à 100,8 mm, filet des chiffres à 140,8 mm, colonnes de
+    59 mm, le tout relevé dans le PDF ; les trois colonnes de la page finale se chevauchaient ;
+  - les ouvertures de région : la bande de tranche ne doit pas se voir (la photo la couvre dans
+    le PDF), la ligne des types manquait, la liste se lisait en ligne au lieu de colonne, et le
+    bloc du bas est maintenant empilé depuis le bas de la page avec les hauteurs mesurées
+    (nouveaux témoins `ouv-*` dans `construire.mjs`) ;
+  - la capsule de sol de l'ouverture était figée à droite dans l'image de fond : elle est
+    exportée à part (`capsule-<région>`) et posée du côté extérieur de la page ;
+  - l'index des vins reprend la hauteur de ligne mesurée (4,43 mm), équilibre ses trois
+    colonnes comme `columns:3` et coupe les noms trop longs ; l'index des domaines passe à 7 mm ;
+  - Trichon (Bugey) reprend le portrait de sa jumelle du Rhône, comme dans le PDF
+    (`photoRond()`, partagé par le .pptx et son contrôle) ;
+  - le folio de la planche redevient violet, et la page finale ne répète plus le message
+    sanitaire sous son bandeau.
+- 64 diapositives, 598 prix, 41 domaines, 82 images, 38,4 Mo : tous les contrôles au vert.
+- Ces corrections valent aussi pour le catalogue général et le Salon Privé (le code est commun),
+  mais leurs .pptx livrés n'ont pas été refaits : ils sont validés par l'agence. Une commande
+  suffit si elle le demande (`npm run pptx`, `npm run pptx-salon`).

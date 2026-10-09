@@ -5,7 +5,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { pathToFileURL } from 'node:url';
 import {
-  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe, EDITION, BASE, BANDES,
+  catalogue, REGIONS, esc, defsTrames, nbReferences, famillesDe, EDITION, BASE, BANDES, picto,
 } from '../src/gabarits/pieces.mjs';
 import * as G from '../src/gabarits/pages.mjs';
 
@@ -39,6 +39,16 @@ function documentMesure() {
       <div data-m="pied-${d.numero}">${G.piedDomaine(d, new Map(catalogue.domaines.map((x) => [x.numero, 99])))}</div>
     </div>`;
   }).join('');
+  /* Témoins de l'ouverture de région : le .pptx empile ces blocs depuis le bas de la page,
+     comme le fait le CSS, au lieu d'estimer leurs hauteurs. */
+  const temoinsOuverture = `<div class="mesure-bloc">
+    <h2 class="ouv-nom" data-m="ouv-nom">Témoin</h2>
+    <p class="ouv-mot" data-m="ouv-mot">témoin de calibrage</p>
+    <div class="ouv-chiffres" data-m="ouv-chiffres"><span><strong>7</strong> domaines</span></div>
+    <div class="ouv-types" data-m="ouv-types"><span>${picto('blanc')} <b>31</b> blanc</span></div>
+    <ul class="ouv-liste" style="columns:1" data-m="ouv-liste"><li><a><span class="n">${EDITION === 'global' ? '' : '7'}</span>
+      <span class="nom">Témoin de calibrage</span><span class="pg">44</span></a></li></ul>
+  </div>`;
   // Deux témoins pour calibrer l'index : une ligne et un titre de famille.
   const temoinsIndex = `<div class="mesure-bloc"><div class="idx-flux" style="columns:1">
     <h3 class="idx-titre" data-m="idx-titre">Témoin</h3>
@@ -51,7 +61,7 @@ function documentMesure() {
   .mesure-bloc{width:170mm;margin:0 auto 40mm}
   /* flow-root : sans lui les marges des enfants sortent de la boîte et la mesure ment */
   .mesure-bloc > [data-m]{display:flow-root}</style>
-</head><body>${defsTrames()}${blocs}${temoinsIndex}</body></html>`;
+</head><body>${defsTrames()}${blocs}${temoinsIndex}${temoinsOuverture}</body></html>`;
 }
 
 /* Le même tableau que dans les pages, mais avec un identifiant de thead pour la mesure. */

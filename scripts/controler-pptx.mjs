@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { catalogue, euros, photoDe, BASE } from '../src/gabarits/pieces.mjs';
+import { photoRond } from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const FICHIER = path.join(RACINE, process.argv[2] || `dist/${BASE}-canva.pptx`);
@@ -59,7 +60,8 @@ plan.descripteurs.forEach((desc, i) => {
   const descr = [...xml.matchAll(/<p:cNvPr [^>]*descr="([^"]*)"/g)].map((m) => m[1]);
   [['rond', 'ROND', (t) => t.endsWith(` — ${nom}`)],
     ['bouteille', 'BOUTEILLE', (t) => t === `Une bouteille du domaine ${nom}`]].forEach(([role, mot, estLaSienne]) => {
-    const attendue = !!photoDe(d, role);
+    // le rond peut être celui de la jumelle (Trichon Bugey), comme dans le PDF
+    const attendue = role === 'rond' ? !!photoRond(d) : !!photoDe(d, role);
     const image = descr.some(estLaSienne);
     const reserve = xml.includes(`<a:t>${mot}</a:t>`);
     if (image) posees += 1;
