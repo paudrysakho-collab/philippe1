@@ -36,12 +36,73 @@ def P(*quantites, unite="bts"):
 
 
 # ——————————————————————————————————————————————— les paliers du tarif restaurant ———
-# Clé : « fiche » (tous ses tableaux) ou « fiche:tableau ». Relevés sur les tarifs annotés.
-PALIERS = {}
+# Clé : « fiche » (tous ses tableaux) ou « fiche:tableau ». Relevés sur les tarifs annotés
+# (scan indiqué en commentaire ; les scans 37 à 51 du dossier sont des doublons des 1 à 15).
+PALIERS = {
+    1: ["Jusqu'à 36 bts", "De 37 à 119 bts"],            # François Reverdy, scan 3
+    41: P(36, 72, 144),                                  # Domaine des Sardelles, scans 4 et 5
+    # Les quatre domaines Strasser Radziwill (scans 24 à 28) : le tarif restaurant a cinq
+    # colonnes (36-72, 78-120, 120-240, ≥ 240 cols, 1 palette). On garde les trois premières,
+    # les plus petits volumes, comme partout ailleurs dans le catalogue.
+    16: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
+    17: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
+    18: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
+    19: ["De 36 à 72 cols", "De 78 à 120 cols", "De 120 à 240 cols"],
+}
 
 # ——————————————————————————————————————————————————— les prix du tarif restaurant ———
 # Clé : (fiche, cuvée ou appellation si le vin n'a pas de cuvée) → un prix par palier.
-PRIX = {}
+PRIX = {
+    # ——— François Reverdy (scan 3) : colonnes « jusqu'à 36 » et « de 37 à 119 » ;
+    # les colonnes 120 et 300 sont rayées.
+    (1, "AOC Anjou Blanc"): eu("14,75", "13,25"),
+    (1, "La Grange Jaumain Blanc"): eu("10,00", "9,50"),
+    (1, "AOC Saumur Blanc"): eu("16,00", "14,50"),
+    (1, "AOC Quincy"): eu("19,95", "17,85"),
+    (1, "Les Villaudes"): eu("19,00", "18,00"),
+    (1, "La Grange Jaumain Rouge – Grolleau Noir"): eu("10,60", "10,60"),
+    (1, "Franc Rouge"): eu("14,75", "13,75"),
+    (1, "Cravant Rouge"): eu("18,00", "17,00"),
+    (1, "La Grange Jaumain Les Soudannes Rouge"): eu("10,00", "9,50"),
+
+    # ——— Domaine des Sardelles (scans 4 et 5) : 36 / 72 / 144 ; la colonne 288 est rayée.
+    (41, "Sancerre Blanc"): eu("13,50", "13,20", "12,90"),
+    (41, "Sancerre Blanc « La Cabane »"): eu("17,00", "16,70", "16,40"),
+    (41, "Sancerre Rouge"): eu("13,50", "13,20", "12,90"),
+    (41, "Pouilly-Fumé"): eu("12,10", "11,80", "11,50"),
+    (41, "Les Courants Sauvignon Blanc"): eu("5,80", "5,50", "5,20"),
+    (41, "Les Courants Rouge Gamay"): eu("5,80", "5,50", "5,20"),
+    (41, "Les Courants Pinot Noir"): eu("5,80", "5,50", "5,20"),
+
+    # ——— Domaine de Coyeux (scan 26)
+    (17, "Premières Fleurs Blanc"): eu("6,50", "6,00", "5,50"),
+    (17, "Premières Fleurs Rouge"): eu("6,50", "6,00", "5,50"),
+    (17, "Or des Dentelles Blanc Moelleux", "75 cl"): eu("8,90", "8,40", "7,90"),
+    (17, "Or des Dentelles Blanc Moelleux", "37,5 cl"): eu("5,30", "5,00", "4,70"),
+    (17, "Les Jumelles Rouge"): eu("7,50", "7,00", "6,50"),
+
+    # ——— Domaine Le Prieuré des Papes (scan 24) : les colonnes 36-72, 78-120 et 126-240 sont
+    # surlignées, les deux dernières (246 cols et palette) rayées. Les deux lignes « Vieilles
+    # Vignes » du tarif portent le même prix.
+    (16, "Le Prieuré Rouge"): eu("6,70", "6,20", "5,70"),
+    (16, "Vieilles Vignes Rouge"): eu("19,00", "18,50", "18,00"),
+    (16, "Le Couchant Rouge"): eu("28,00", "27,50", "27,00"),
+
+    # ——— Domaine du Moulin Blanc (scan 27)
+    (18, "Côtes du Rhône Rouge"): eu("6,70", "6,20", "5,70"),
+
+    # ——— Domaine de la Pousterle (scan 28)
+    (19, "Chardonnay-Viognier Blanc"): eu("5,50", "5,00", "4,80"),
+    (19, "Syrah Rouge"): eu("5,50", "5,00", "4,80"),
+    (19, "Terroir d\u2019Ansouis Blanc"): eu("6,50", "6,00", "5,50"),
+    (19, "Terroir d\u2019Ansouis Rouge"): eu("6,50", "6,00", "5,50"),
+}
+
+# ——————————————————————————————————————————————— les vins retirés du tarif restaurant ———
+# Une ligne barrée sur le tarif annoté : le domaine ne la propose pas aux restaurants.
+RETIRES = {
+    (41, "Sancerre Rosé"),      # barré sur le tarif (scan 5)
+}
 
 # ——————————————————————————————————————————————————————————————— les offres ———
 # L'agence les reprend une par une (« je changerai les offres, page 1, page 2… ») :
@@ -53,9 +114,22 @@ def cle_vin(v):
     return (v["fiche"], v["cuvee"] or v["appellation"])
 
 
+def prix_de(v):
+    """Le prix restaurant d'un vin. Deux lignes peuvent partager une cuvée (deux millésimes,
+    deux contenances) : la clé la plus précise gagne."""
+    f, c = cle_vin(v)
+    for cle in ((f, c, v["millesime"], v["contenance"]), (f, c, v["contenance"]),
+                (f, c, v["millesime"]), (f, c)):
+        if cle in PRIX:
+            return PRIX[cle]
+    return None
+
+
 def main():
     cat = json.loads(SOURCE.read_text(encoding="utf-8"))
     cat["edition"] = "Catalogue restaurant 2026"
+    for s in cat["stands"]:
+        s["vins"] = [v for v in s["vins"] if cle_vin(v) not in RETIRES]
     vides = 0
     poses = 0
     for s in cat["stands"]:
@@ -74,7 +148,7 @@ def main():
             ti = (v.get("tarif") or {}).get("tableau", 0)
             p = paliers.get(f"{v['fiche']}:{ti}") or paliers.get(str(v["fiche"]))
             n = len(p) if p else len(v.get("prix_centimes") or [1])
-            prix = PRIX.get(cle_vin(v))
+            prix = prix_de(v)
             if prix is None:
                 v["prix_centimes"] = [None] * n       # case vide, à remplir par l'agence
                 vides += n

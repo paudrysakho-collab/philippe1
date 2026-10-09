@@ -1300,12 +1300,12 @@
       "peut-être « La Pousterle » blanc, Vin de France 2022, au tarif ; le nom et le millésime diffèrent"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      550,
+      500,
+      480
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Syrah Rouge 2022 — VDF",
@@ -1323,12 +1323,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      550,
+      500,
+      480
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Terroir d'Ansouis Blanc 2021 — AOC Luberon",
@@ -1346,12 +1346,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      650,
+      600,
+      550
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Terroir d’Ansouis Rouge 2021 75 cl",
@@ -1369,13 +1369,14 @@
      "millesime": "2021",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      650,
+      600,
+      550
      ],
      "offre": "5+1",
      "liste_vins": true,
-     "source": "l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)"
+     "source": "l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Prieuré Rouge 2024— AOC Côtes du Rhône",
@@ -1395,12 +1396,12 @@
       "millésime 2024 dans la liste, 2022/2023 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      670,
+      620,
+      570
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Vieilles Vignes Rouge 2022— AOC Châteauneuf-du-Pape",
@@ -1420,12 +1421,12 @@
       "millésime 2022 dans la liste, 2021 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1900,
+      1850,
+      1800
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Vieilles Vignes Rouge 2023 — AOC Châteauneuf-du-Pape",
@@ -1445,12 +1446,12 @@
       "millésime 2023 dans la liste, 2021 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1900,
+      1850,
+      1800
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Couchant Rouge 2020 — AOC Châteauneuf-du-Pape",
@@ -1467,12 +1468,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2800,
+      2750,
+      2700
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Premières Fleurs Blanc — IGP Méditérranée",
@@ -1490,12 +1491,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      650,
+      600,
+      550
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Premières Fleurs Rouge 2025 — IGP Méditérranée",
@@ -1513,12 +1514,12 @@
       "au tarif, « Première Fleur » est un blanc sans millésime, et le seul rouge IGP Méditerranée (2022) n'a pas de nom de cuvée ; l'agence avait donné « blanc » le 2 octobre, le dossier de référence de Mathéo écrit « Rouge »"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      650,
+      600,
+      550
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Or des Dentelles Blanc Moelleux 2023 — AOC Muscat BDV",
@@ -1535,12 +1536,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      890,
+      840,
+      790
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Or des Dentelles Blanc Moelleux 2022 — AOC Muscat BDV",
@@ -1557,12 +1558,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      530,
+      500,
+      470
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Les Jumelles Rouge — 75 cl",
@@ -1580,13 +1581,14 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      750,
+      700,
+      650
      ],
      "offre": "11+1",
      "liste_vins": true,
-     "source": "carte du stand 7 annotée « Rajouter Beaumes de Venise » (scan 1, p.10) ; tarif juillet 2026 de Coyeux, millésime 2023 barré (scan 1, p.19)"
+     "source": "carte du stand 7 annotée « Rajouter Beaumes de Venise » (scan 1, p.10) ; tarif juillet 2026 de Coyeux, millésime 2023 barré (scan 1, p.19)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Côtes du Rhône Rouge 2023 — AOC Côtes du Rhône",
@@ -1604,12 +1606,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      670,
+      620,
+      570
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [
@@ -1620,24 +1622,24 @@
    "fiche_texte": null,
    "paliers_salon": {
     "16": [
-     "À partir de 126 cols",
-     "À partir de 246 cols",
-     "À partir de 540 cols"
+     "De 36 à 72 cols",
+     "De 78 à 120 cols",
+     "De 120 à 240 cols"
     ],
     "17": [
-     "À partir de 126 cols",
-     "À partir de 246 cols",
-     "À partir de 540 cols"
+     "De 36 à 72 cols",
+     "De 78 à 120 cols",
+     "De 120 à 240 cols"
     ],
     "18": [
-     "À partir de 126 cols",
-     "À partir de 246 cols",
-     "À partir de 540 cols"
+     "De 36 à 72 cols",
+     "De 78 à 120 cols",
+     "De 120 à 240 cols"
     ],
     "19": [
-     "À partir de 126 cols",
-     "À partir de 246 cols",
-     "À partir de 540 cols"
+     "De 36 à 72 cols",
+     "De 78 à 120 cols",
+     "De 120 à 240 cols"
     ]
    },
    "mode_prix": "paliers",
@@ -2101,11 +2103,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1475,
+      1325
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "La Grange Jaumain Blanc 2025 — IGP Val de Loire",
@@ -2122,11 +2123,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1000,
+      950
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "AOC Saumur Blanc 2024",
@@ -2143,11 +2143,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1600,
+      1450
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "AOC Quincy 2023",
@@ -2164,11 +2163,10 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1995,
+      1785
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Les Villaudes — AOC Sancerre Blanc 2025",
@@ -2185,11 +2183,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1900,
+      1800
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "La Grange Jaumain Rouge 2024 — Grolleau Noir",
@@ -2206,11 +2203,10 @@
       "le tarif a « François Reverdy – Grolleau Noir » (Vin de France rouge 2024) et « La Grange Jaumain – Les Soudannes » (IGP Val de Loire rouge) ; la liste mêle les deux noms"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1060,
+      1060
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Franc Rouge 2021 — AOC Chinon",
@@ -2227,11 +2223,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1475,
+      1375
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Cravant Rouge 2024 — AOC Chinon",
@@ -2248,11 +2243,10 @@
       "peut-être le 2024 de « Franc / Graves » (AOP Chinon, 2021/2024) au tarif ; « Cravant » n'y figure pas"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1800,
+      1700
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "La Grange Jaumain Les Soudannes Rouge 2025 — IGP Val De Loire",
@@ -2269,11 +2263,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1000,
+      950
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2282,9 +2275,8 @@
    "fiche_texte": 1,
    "paliers_salon": {
     "1": [
-     "À partir de 42 bts",
-     "À partir de 120 bts",
-     "À partir de 300 bts"
+     "Jusqu'à 36 bts",
+     "De 37 à 119 bts"
     ]
    },
    "mode_prix": "paliers"
@@ -5655,11 +5647,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1350,
+      1320,
+      1290
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5672,28 +5664,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1700,
+      1670,
+      1640
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
-    },
-    {
-     "fiche": 41,
-     "tarif": {
-      "tableau": 0
-     },
-     "appellation": "AOC Sancerre",
-     "cuvee": "Sancerre Rosé",
-     "couleur": "Rosé",
-     "millesime": "—",
-     "contenance": "75 cl",
-     "prix_centimes": [
-      null,
-      null,
-      null
-     ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5706,11 +5681,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1350,
+      1320,
+      1290
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5723,11 +5698,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1210,
+      1180,
+      1150
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5740,11 +5715,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      580,
+      550,
+      520
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5757,11 +5732,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      580,
+      550,
+      520
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,
@@ -5774,18 +5749,18 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      580,
+      550,
+      520
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "paliers_salon": {
     "41": [
+     "À partir de 36 bts",
      "À partir de 72 bts",
-     "À partir de 144 bts",
-     "À partir de 288 bts"
+     "À partir de 144 bts"
     ]
    },
    "mode_prix": "paliers",
