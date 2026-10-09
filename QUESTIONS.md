@@ -545,3 +545,19 @@ Restent :
 - **Photos en basse définition (voulues par l'agence, 8 oct.)** : Barbinière (les deux frères, 124 ppi),
   Prieuré des Papes (161 ppi), Coyeux (178 ppi), Haut Marin (166 ppi), Famille d'Exea (196 ppi), tirées de l'ancien
   catalogue ou envoyées petites : à remplacer par des versions HD avant l'impression si possible.
+
+## 33. Catalogue caviste : photos et ajouts du 9 octobre 2026
+
+- **La photo du chai de Coyeux envoyée le 9 octobre porte un filigrane** de banque d'images
+  (« abcSALES », en travers du bâtiment) et ne fait que 276 × 193 px : elle ne peut pas être
+  imprimée telle quelle. Le **même chai** a été repris en grand (5272 × 2962 px) sur le site
+  officiel du domaine (domainedecoyeux.com), de jour. Si l'agence a la photo de nuit sans
+  filigrane, elle remplace celle-ci en une commande.
+- **Stratéus** : le portrait dans les vignes (devant la 4L) envoyé par l'agence remplace le
+  logo du domaine dans le rond. 1122 × 563 px, 285 ppi au cadrage retenu : bon pour l'impression.
+- **Divin No Low** réintégré après Villebois : prix du tarif de septembre 2026, relus sur la
+  page que l'agence a renvoyée le 9 octobre (8,40 € / 4,80 € / 5,40 €). Pas d'offre, pas de
+  minimum de commande, panachage avec Villebois.
+- **Tampon « Salon Privé du 5 octobre »** sur les 33 fiches des domaines qui y étaient. Les
+  neuf autres (Sardelles, Divin No Low, Nugues, Nadine Ferrand, Pasquiers, Mas des Restanques,
+  La Gorce, Passion des Terroirs, Les Lys) ne le portent pas.

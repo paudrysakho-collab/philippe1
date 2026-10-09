@@ -384,7 +384,7 @@
 .entete-global h1 { margin-left: 0; }
 /* le sommaire « plus gros » (l'agence) : pas de numéro, des lignes plus hautes et un corps plus fort */
 .sommaire-global .titre-section { margin-bottom: 3mm; }
-.sommaire-global .som-region { margin-bottom: 3mm; }
+.sommaire-global .som-region { margin-bottom: 2mm; }
 .sommaire-global .som-bande { height: 8mm; margin-bottom: .8mm; }
 .sommaire-global .som-bande span { font-size: 15pt; }
 .sommaire-global li a { height: 5.8mm; font-size: 11pt; gap: 0; padding-left: 0; }

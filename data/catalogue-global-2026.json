@@ -22,6 +22,7 @@
   4,
   5,
   6,
+  7,
   8,
   9,
   10,
@@ -5478,6 +5479,146 @@
    "mode_prix": "paliers",
    "offre_salon": "Offre 11+1 à partir de 126 cols.",
    "complement": "Possibilité sur demande d'avoir le catalogue complet."
+  },
+  {
+   "stand": null,
+   "nom_salon": null,
+   "domaines": [
+    7
+   ],
+   "vins": [
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool 0,5 %",
+     "cuvee": "Pinot Noir",
+     "couleur": "Rouge",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      840
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool 0,5 %",
+     "cuvee": "Sauvignon Blanc",
+     "couleur": "Blanc",
+     "millesime": "2024",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      840
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool",
+     "cuvee": "Sauvignon",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      480
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool",
+     "cuvee": "Chenin Blanc",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      480
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool",
+     "cuvee": "Rosé",
+     "couleur": "Rosé",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      480
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool",
+     "cuvee": "Pinot Noir",
+     "couleur": "Rouge",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      480
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool pétillant",
+     "cuvee": "Sauvignon Blanc",
+     "couleur": "Blanc pétillant",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      540
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    },
+    {
+     "fiche": 7,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "Vin sans alcool pétillant",
+     "cuvee": "Sauvignon Blanc Blush",
+     "couleur": "Rosé pétillant",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      540
+     ],
+     "prix_source": "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
+    }
+   ],
+   "paliers_salon": {
+    "7": [
+     "Prix"
+    ]
+   },
+   "mode_prix": "unique",
+   "offre_salon": null,
+   "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
+   "fiche_texte": null,
+   "texte_reference": null,
+   "mentions": []
   },
   {
    "stand": null,

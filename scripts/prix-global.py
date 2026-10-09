@@ -67,6 +67,7 @@ SANS_LABELS = {11}
 # Trichon (Rhône) : lignes surlignées de son tarif départ cave (scan du 8 oct., Scan08102026-6),
 # colonnes 120 / 300 / 600 cols ; « 2022-23 » → 2023, le plus récent (consigne de l'agence)
 TARIF_TRICHON = "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+TARIF_DIVIN = "tarif de septembre 2026, page Divin No Low renvoyée par l'agence le 9 octobre 2026"
 
 HORS = "* Prix de la bouteille H.T. hors frais de transport."
 FRANCO = "* Prix de la bouteille H.T. franco de port."
@@ -93,7 +94,7 @@ TEXTE_SARDELLES = (
 # ——— l'ordre du catalogue (sommaire annoté) et ses régions ———
 REGIONS = ["Loire", "Alsace", "Beaujolais", "Bourgogne", "Rhône", "Bugey", "Sud-Ouest",
            "Bordeaux", "Provence", "Languedoc", "Champagne"]
-ORDRE = [1, 41, 2, 3, 4, 5, 6,          # Loire : Sardelles entre Reverdy et Barbinière
+ORDRE = [1, 41, 2, 3, 4, 5, 6, 7,       # Loire : Sardelles après Reverdy, Divin No Low après Villebois
          8,                              # Alsace
          9,                              # Beaujolais : Domaine des Nugues
          10, 12, 13, 14, 15, 11,         # Bourgogne : Nadine Ferrand après Verchères
@@ -147,7 +148,23 @@ GROUPES_AJOUTES = [
 NOMS_PANACHAGE = {"21": "Domaine Trichon (Rhône)", "42": "Domaine Trichon (Bugey)"}
 
 # ——— les domaines réintégrés : vins surlignés, prix des colonnes surlignées ———
+# Divin No Low (n°7), remis après Villebois à la demande de l'agence (9 octobre) : vins
+# désalcoolisés, prix du tarif de septembre relus sur la page qu'elle a renvoyée ce jour-là.
+# Pas d'offre, pas de minimum de commande ; le panachage avec Villebois vient du groupe
+# « villebois-divin » de data/agence.json.
+DIVIN = [
+    V(7, 0, "Vin sans alcool 0,5 %", "Pinot Noir", "Rouge", "2024", eu("8,40"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool 0,5 %", "Sauvignon Blanc", "Blanc", "2024", eu("8,40"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool", "Sauvignon", "Blanc", "—", eu("4,80"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool", "Chenin Blanc", "Blanc", "—", eu("4,80"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool", "Rosé", "Rosé", "—", eu("4,80"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool", "Pinot Noir", "Rouge", "—", eu("4,80"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool pétillant", "Sauvignon Blanc", "Blanc pétillant", "—", eu("5,40"), prix_source=TARIF_DIVIN),
+    V(7, 0, "Vin sans alcool pétillant", "Sauvignon Blanc Blush", "Rosé pétillant", "—", eu("5,40"), prix_source=TARIF_DIVIN),
+]
+
 NOUVEAUX = {
+    7: {"paliers": {"7": UNIQUE}, "note": HORS, "offre": None, "vins": DIVIN},
     # Loire — Domaine des Sardelles (tarif HT franco, scan p.5) et sa marque Les Courants (p.6).
     # Colonnes surlignées : 72, 144, 288 bouteilles. « Les Courants Pinot Noir » : ajout manuscrit.
     41: {"paliers": {"41": P(72, 144, 288)}, "note": FRANCO,

@@ -98,6 +98,8 @@ function editionSalon(cat) {
     const texte = s.fiche_texte === d.numero && s.texte_reference ? { texte_source: s.texte_reference } : {};
     return { ...parNumero[d.numero], ...texte, ...(lab ? { labels: lab } : {}),
       ...(s.mentions ? { mentions: s.mentions } : {}), tableaux, stand: s.stand, salle: s.salle, nom_stand: s.nom_salon,
+      // le domaine était-il au Salon Privé du 5 octobre ? (les fiches réintégrées, non)
+      au_salon: s.stand != null,
       offre_salon: s.offre_salon || null,
       complement: s.complement || null,
       ...(SALON.departements?.[String(d.numero)] ? { departements: SALON.departements[String(d.numero)] } : {}),

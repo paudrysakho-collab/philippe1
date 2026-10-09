@@ -1070,3 +1070,25 @@ catalogue général et le Salon Privé : l'édition globale y est maintenant rec
 - Ces corrections valent aussi pour le catalogue général et le Salon Privé (le code est commun),
   mais leurs .pptx livrés n'ont pas été refaits : ils sont validés par l'agence. Une commande
   suffit si elle le demande (`npm run pptx`, `npm run pptx-salon`).
+
+### 9 octobre, après-midi — trois demandes de l'agence
+
+1. **Photos.** Stratéus : le portrait dans les vignes, devant la 4L (envoyé par l'agence),
+   remplace le logo dans le rond — 285 ppi. Coyeux : l'agence voulait son chai ; l'image
+   qu'elle a envoyée porte le filigrane d'une banque d'images en travers du bâtiment et ne
+   fait que 276 × 193 px. On a donc repris **le même chai**, en 5272 × 2962 px, sur le site
+   officiel du domaine (`QUESTIONS.md`, point 33). Les deux ronds sont partagés avec le
+   catalogue général : il a été refait.
+2. **Tampon « Salon Privé du 5 octobre »** sur les fiches des 33 domaines qui y étaient : un
+   jeton or à texte violet, les couleurs du logo, en bout de la rangée de jetons
+   (`.jeton.salon`, `au_salon` posé par `editionSalon()`). Il n'existe que dans l'édition
+   globale. Les neuf fiches réintégrées ne le portent pas.
+3. **Divin No Low** remis après Villebois (`ORDRE`, `NOUVEAUX[7]` de `prix-global.py`) :
+   huit vins désalcoolisés, prix du tarif de septembre relus sur la page renvoyée par
+   l'agence (8,40 / 4,80 / 5,40 €), un seul palier, pas d'offre ni de minimum de commande,
+   panachage avec Villebois par le groupe « villebois-divin » de `data/agence.json`.
+   Le sommaire gagnait une ligne et sa légende débordait de 2,5 mm : l'écart entre régions
+   passe à 2 mm et `SOMMAIRE` porte désormais les hauteurs de l'édition, si bien que
+   l'équilibre des deux colonnes et le .pptx se calculent sur les vraies valeurs.
+- 64 pages, 42 fiches, 606 prix, tout au vert ; lettrines du .pptx refaites ; les 64 pages
+  regardées en image, PDF et .pptx comparés page à page.

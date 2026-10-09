@@ -304,17 +304,18 @@
    "provenance": "dossier de l'agence"
   },
   "rond": {
-   "fichier": "web/d17-vendanges.jpg",
+   "fichier": "web/d17-chai.jpg",
    "mode": "couvrir",
-   "centre": [
-    0.55,
-    0.5
+   "zone": [
+    0.09,
+    0.0,
+    0.65,
+    1.0
    ],
-   "plancher_ppi": 120,
-   "sujet": "l'équipe aux vendanges, devant les Dentelles",
-   "url": "https://static.wixstatic.com/media/c906d7_ddb78273a29d42b9b75d2baadb8fc8eb~mv2.jpg",
+   "sujet": "le chai, devant les vignes",
+   "provenance": "site officiel du domaine",
    "page": "https://www.domainedecoyeux.com/",
-   "provenance": "site officiel du domaine"
+   "url": "https://static.wixstatic.com/media/c906d7_2b6c42aba7ff400c8bdd51e003e9bf5c~mv2.jpg"
   }
  },
  "18": {
@@ -415,13 +416,16 @@
    "remplir": true
   },
   "rond": {
-   "fichier": "d22/005.png",
-   "provenance": "site officiel du domaine",
-   "page": "https://www.strateus-madiran.com/",
-   "url": "https://static.wixstatic.com/media/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png/v1/fill/w_586,h_586,al_c/17aeb1_919520f3e4f949aa8782d0b6d0056cd9~mv2.png",
-   "sujet": "logo du domaine",
-   "mode": "contenir",
-   "forme": "rond"
+   "fichier": "agence-9oct/d22-strateus-vigne.jpg",
+   "mode": "couvrir",
+   "zone": [
+    0.22,
+    0.0,
+    0.62,
+    1.0
+   ],
+   "sujet": "dans les vignes, devant la 4L",
+   "provenance": "dossier de l'agence, envoyée le 9 octobre 2026"
   }
  },
  "23": {

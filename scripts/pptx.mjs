@@ -11,7 +11,7 @@ import {
   largeurTexte, lignesTexte, familleLabel, ORDRE_LABELS, BASE, EDITION, poidsStrates,
 } from '../src/gabarits/pieces.mjs';
 import { entreesIndex, colonnesSommaire, SOMMAIRE, mentionSommaire, texteNotePrix, SALON_ED,
-  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche, photoRond }
+  GLOBAL_ED, ED, NB_VINS, numero as numeroAffiche, photoRond, SALON_TAMPON }
   from '../src/gabarits/pages.mjs';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
@@ -368,11 +368,13 @@ function slideFiche(s, numero, desc) {
     [groupeDe(d) ? 'Panachage entre domaines' : 'Panachage dans le domaine', C.gneiss, null],
     ...(d.mentions.some((m) => m.toLowerCase().includes('consultez-nous'))
       ? [['Consultez-nous', C.sables, C.sables]] : []),
+    // le tampon des domaines présents au Salon Privé : or et violet, comme le logo
+    ...(GLOBAL_ED && d.au_salon ? [[SALON_TAMPON, C.or, C.or, null, C.violet]] : []),
     // jamais de nombre de références dans le catalogue caviste global (l'agence, 8 octobre)
     ...(GLOBAL_ED ? [] : [[`${nbReferences(d)} ${nbReferences(d) > 1 ? ED.motVins : ED.motVin}`, C.silex, null]]),
   ];
   let jx = gauche;
-  jetons.forEach(([texte, couleur, fond, pictoLabel]) => {
+  jetons.forEach(([texte, couleur, fond, pictoLabel, encre]) => {
     // le picto de label (une feuille maison) se pose dans le jeton, avant le mot
     const p = pictoLabel ? 4.1 : 0;
     const l = largeur(texte, 'IBM Plex Sans Bold', 7.2) + 5.6 + p;
@@ -384,7 +386,7 @@ function slideFiche(s, numero, desc) {
     }
     s.addText(texte, { x: mm(jx + p), y, w: mm(l - p), h: mm(5), margin: 0, align: 'center',
       valign: 'middle', fontFace: F.tech, fontSize: 7.2, bold: true,
-      color: fond ? C.craie : couleur });
+      color: encre || (fond ? C.craie : couleur) });
     jx += l + 2.2;
   });
   y += mm(8.0);
@@ -698,10 +700,8 @@ function slideSommaire(s, numero) {
     s.addText('Sommaire', { x: mm(gauche), y: mm(MARGE.haut), w: mm(CADRE_L), h: mm(9), margin: 0,
       fontFace: F.titre, fontSize: 24, color: C.violet, valign: 'top' });
   }
-  /* Le sommaire du catalogue caviste, « plus gros » (l'agence, 8 octobre) : bandes et lignes
-     plus hautes, corps plus fort, et le numéro de page à gauche du nom (.sommaire-global). */
-  const G_SOM = { bande: 8, ligne: 5.8, ligneMention: 9.4, apresBande: 0.8, entreRegions: 3, colonne: SOMMAIRE.colonne };
-  const { bande, ligne, apresBande, entreRegions, colonne } = GLOBAL_ED ? G_SOM : SOMMAIRE;
+  // SOMMAIRE porte déjà les hauteurs de l'édition (plus grosses dans le catalogue caviste)
+  const { bande, ligne, apresBande, entreRegions, colonne } = SOMMAIRE;
   colonnesSommaire().forEach((blocs, c) => {
     const cx = gauche + c * (CADRE_L - colonne);
     let y = y0;
@@ -719,7 +719,7 @@ function slideSommaire(s, numero) {
       b.doms.forEach((d) => {
         // un domaine d'un groupe : la mention en petit sous le nom, comme dans le PDF
         const mention = mentionSommaire(d);
-        const hl = mention ? (GLOBAL_ED ? G_SOM.ligneMention : SOMMAIRE.ligneMention) : ligne;
+        const hl = mention ? SOMMAIRE.ligneMention : ligne;
         // dans l'édition globale, la page se lit d'abord, puis le nom : rien d'autre
         const xNom = GLOBAL_ED ? cx + 10.6 : cx + 8.5;
         if (mention) {

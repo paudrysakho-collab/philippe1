@@ -100,7 +100,7 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
-| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **64 pages**, 41 fiches, 11 régions (Beaujolais et Bugey en plus), 598 prix ; .pptx fait le 9 octobre |
+| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf`, `-canva.pptx` | **64 pages**, 42 fiches (Divin No Low réintégré), 11 régions, 606 prix ; .pptx fait le 9 octobre |
 | Affiche QR du catalogue du salon | `salon-prive-2026-affiche-qr.pdf` (`npm run affiche-qr`) | A4, sobre en encre |
 
 Le 2 et le 3 octobre, tout a été revérifié : contrôles automatiques au vert, liens de la
@@ -327,7 +327,18 @@ refaire **seulement quand une photo partagée change** (les deux éditions lisen
   (Sardelles, Mas des Restanques) : faits du site seulement, rien d'inventé.
 
 ### État au 9 octobre
-- 64 pages, 41 fiches, 598 prix, **tous les contrôles au vert**, chaque page regardée en image.
+- 64 pages, **42 fiches**, **606 prix**, **tous les contrôles au vert**, chaque page regardée en image,
+  PDF et .pptx comparés page à page.
+- **Divin No Low** (n°7) est réintégré juste après Villebois : vins désalcoolisés, prix du tarif de
+  septembre relus sur la page renvoyée par l'agence le 9 octobre, un seul palier, **pas d'offre ni de
+  minimum de commande**, panachage avec Villebois (groupe « villebois-divin » de `data/agence.json`).
+- **Tampon « Salon Privé du 5 octobre »** (jeton or à texte violet, `.jeton.salon`) sur les 33 fiches
+  des domaines qui y étaient ; `au_salon` est posé par `editionSalon()` d'après la présence d'un stand.
+  Les neuf fiches réintégrées ne le portent pas.
+- **Photos du 9 octobre** : Stratéus, le portrait dans les vignes devant la 4L (envoyé par l'agence) à
+  la place du logo ; Coyeux, son chai — l'image envoyée portait un filigrane de banque d'images, on a
+  repris le même chai en grand sur le site officiel (`QUESTIONS.md`, point 33). Ces deux ronds sont
+  partagés avec le catalogue général, **refait le 9 octobre** (52 pages, au vert).
 - Questions encore ouvertes : `QUESTIONS.md`, point 32 (photos en basse définition à remplacer en HD
   si possible : Barbinière, Prieuré des Papes, Coyeux, Haut Marin, Exea ; Prieuré des Papes sans
   portrait).

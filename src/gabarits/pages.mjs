@@ -57,6 +57,8 @@ if (GLOBAL_ED) {
     ouvertures: true, indexDomaines: true,
   });
 }
+/** Le tampon des domaines qui étaient au Salon Privé du 5 octobre 2026 (l'agence, 9 octobre). */
+export const SALON_TAMPON = 'Salon Privé du 5 octobre';
 /** Le numéro qu'on montre : celui du stand au salon, celui du tarif ailleurs. */
 export const numero = (d) => (SALON_ED ? d.stand : GLOBAL_ED ? '' : d.numero);
 const vins = (n) => `${n} ${n > 1 ? ED.motVins : ED.motVin}`;
@@ -192,7 +194,11 @@ export function pageAgence() {
    avec leur page, sur deux colonnes. Version sobre, demandée par l'agence pour l'impression :
    une seule encre pour le texte, et de la couleur de strate seulement dans une pastille.
    Les hauteurs sont fixes (en mm) : le .pptx les reprend telles quelles. */
-export const SOMMAIRE = { bande: 7.6, ligne: 5.6, ligneMention: 8.8, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
+/* Le catalogue caviste a un sommaire « plus gros » (l'agence, 8 octobre) : ses hauteurs sont
+   celles de .sommaire-global, pour que l'équilibre des deux colonnes et le .pptx tombent juste. */
+export const SOMMAIRE = GLOBAL_ED
+  ? { bande: 8, ligne: 5.8, ligneMention: 9.4, apresBande: 0.8, entreRegions: 2, colonne: 82 }
+  : { bande: 7.6, ligne: 5.6, ligneMention: 8.8, apresBande: 1.4, entreRegions: 4.2, colonne: 82 };
 /** La mention du groupe, en petit sous le nom dans le sommaire (l'agence, 3 octobre : les
     quatre domaines des Vignobles Strasser Radziwill). Elle vit dans data/agence.json. */
 export const mentionSommaire = (d) => groupeDe(d)?.mention_sommaire || null;
@@ -301,6 +307,8 @@ export function enteteDomaine(d, suite = false) {
     g ? `<span class="jeton panachage">Panachage entre domaines</span>`
       : `<span class="jeton panachage">Panachage dans le domaine</span>`,
     consulter ? '<span class="jeton consulter">Consultez-nous</span>' : '',
+    // le tampon des domaines présents au Salon Privé (l'agence, 9 octobre)
+    GLOBAL_ED && d.au_salon ? `<span class="jeton salon">${esc(SALON_TAMPON)}</span>` : '',
     GLOBAL_ED ? '' : `<span class="jeton">${vins(nbReferences(d))}</span>`,
   ].filter(Boolean).join('');
   // Au salon, le numéro du stand prend la place du numéro du tarif : c'est lui qu'on
