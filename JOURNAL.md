@@ -1107,3 +1107,18 @@ catalogue général et le Salon Privé : l'édition globale y est maintenant rec
   visibles, l'agence tranche (`QUESTIONS.md`, point 34).
 - 64 pages, 42 fiches, **607 prix**, tout au vert ; les pages touchées regardées en image, PDF et
   .pptx comparés. Les photos des fiches 3 et 8 étant partagées, le catalogue général a été refait.
+
+### 9 octobre, soir — catalogue restaurant : suite du relevé
+
+Reprise du travail de la session précédente (arrêtée en cours de relevé).
+- **Carte du dossier finie** : les scans 37 à 51 sont des doublons des scans 1 à 15 (vérifié par
+  comparaison d'images). Corrigé dans le relevé : Verchères est la fiche 15, Les Guignottes (14)
+  est dans le portfolio Goichot.
+- **Relevés posés** (`scripts/prix-restaurant.py`) : Solemme, Noëls, Berteaud Manceau, Villebois
+  (quatre paliers), Boehler, Magnien, Goichot / Cray / Guignottes, Verchères, Passion des Terroirs
+  (blancs et liquoreux), Blacailloux, Exea (Oena). Seconde passe sur recadrages zoomés.
+- `RETIRES` accepte aussi (fiche, cuvée, contenance) : le magnum de Plénitude (Solemme) est rayé.
+- Offre de Berteaud Manceau : « Offre 11+1 à partir de 60 cols. » (écrit sur le scan).
+- Nugues : paliers posés, mais le tarif restaurant n'a aucun vin de la fiche → question 35.
+- 64 pages, 42 fiches, **329 prix posés**, 332 cases vides ; tous les contrôles au vert ; les
+  pages touchées regardées en image (Villebois tient sur quatre colonnes).

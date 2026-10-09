@@ -579,3 +579,34 @@ Restent :
   « Offre 11+1 à partir de 120 cols. ».
 - **Domaine des Sardelles** : le minimum de commande de 36 bouteilles est retiré, « Magnum sur
   demande. » reste.
+
+## 35. Catalogue restaurant : relevé du dossier du 9 octobre 2026
+
+Relevé complet dans `data/catalogue-restaurant-releve.md`. Rien n'a été inventé : ce qui manque
+reste en case vide.
+
+- **Domaine des Nugues** (scan 15, « Restaurants ») : le tarif ne donne que les BIB (5 L, 10 L) et
+  « Nos sélections » (Brouilly, Crémant de Bourgogne, Mâcon-Villages, Bourgogne Chardonnay, Crème
+  de Cassis), aucun des vins de la fiche (Beaujolais-Lancié, Fleurie, Moulin-à-Vent, Morgon…).
+  Les paliers 36 / 60 / 120 sont posés, les prix attendent : faut-il les vins de la fiche à ces
+  paliers, ou remplacer la fiche par la sélection restaurant ?
+- **La Passion des Terroirs** : le dossier n'a que les pages des blancs et des liquoreux ; les
+  31 rouges restent vides. Château du Mayne est en **2023** au tarif restaurant (11,85 €), 2024
+  dans le catalogue caviste : quel millésime afficher ?
+- **Champagne Solemme** : le gribouillis rouge raye les colonnes 240 et 360 **et** les magnums ;
+  le magnum de Plénitude 2022 est donc retiré du catalogue restaurant. À confirmer.
+- **Jean de Villebois** : quatre paliers (36 / 66 / 126 / 246 cols, écrits par l'agence). Les
+  trois parcellaires (Beltins, Rouline, Tréleau) n'ont pas de prix au-delà de 120 cols au tarif
+  (« – ») ; le Menetou-Salon rouge et l'IGP Chenin Blanc n'y figurent pas.
+- **Goichot** : le Pouilly-Vinzelles n'est pas dans le portfolio restaurant.
+- **Magnien** : la phrase « Offre 11+1 pour toute commande de 72 bouteilles » est raturée au bleu ;
+  l'offre de la fiche reste celle du catalogue caviste en attendant les offres de l'agence.
+- **Nadine Ferrand** (scan 23) : un mot sous « Tarif CHR 2026 » est barré avec « SUPPRIMER » en
+  rouge, et deux traits rouges traversent le tableau sans rayer clairement une ligne. Rien n'a été
+  retiré.
+- **Sans tarif restaurant dans le dossier** (20 fiches) : Divin No Low, Nugues, Pasquiers,
+  Trichon (Rhône et Bugey), Stratéus, Haut Marin, La Gorce, Falfas, Pré la Lande, Balac,
+  Escarderie, Exea jus, Gragnos, Les Lys, Albas, Dekeyne, Frézier, Vazart-Coquart, Mas des
+  Restanques.
+- Les **offres** des lignes (« offre 11+1 ») et des fiches sont encore celles du catalogue
+  caviste, sauf Berteaud (« Offre 11+1 à partir de 60 cols », écrit sur le scan 11).
