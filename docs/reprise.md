@@ -1,4 +1,4 @@
-# Reprise : où en est le projet (3 octobre 2026, soir)
+# Reprise : où en est le projet (9 octobre 2026)
 
 Ce fichier passe le relais d'une conversation à la suivante. **Lis-le en entier avant de
 toucher à quoi que ce soit.** Le brief de `CLAUDE.md` reste la règle ; ce fichier dit ce qui
@@ -53,6 +53,11 @@ sans en parler, lis ce fichier, puis traite la demande.
 | « mets en parenthèse au niveau du sommaire en petit » | Mention discrète sous le nom, sans tronquer le nom |
 | « le plus facile à imprimer, celui qui coûte le moins de couleurs » | Version sobre en encre (pastille de couleur au lieu de bandes pleines) |
 | « vas-y, tu continues » / « tu gères » | Feu vert : enchaîner sans redemander |
+| « prends que les images, le reste est nul » (ancien catalogue) | Banque d'images = ses images seulement ; jamais ses textes ni sa mise en page |
+| « les photos que t'as pas trouvées, cherche-les sur internet » | Sites officiels des domaines (puis Commons) ; noter l'URL dans `photos-locales.json` |
+| « tu mets le millésime le plus récent quand tu as un doute » | Règle générale pour « 2022-23 », « 2016/2020 »… |
+| « mets les pages à gauche » | Numéros de page à gauche partout (édition globale) |
+| Messages vocaux transcrits, longs, avec du bruit (téléphone, blagues : « Philippe Audry ») | Ne garder que les consignes ; demander une seule fois ce qui reste obscur |
 
 ## 1. Avant tout : la branche et les outils
 
@@ -95,6 +100,8 @@ au réglage des lettrines du .pptx (LibreOffice) ; sans elles, `regler-lettrines
 | **Liste des vins dégustés** | `salon-prive-2026-liste-des-vins.pdf` | 3 pages A4 |
 | Tableurs (aller-retour des prix) | `tableur/tarifs-scio-2026.xlsx`, `tableur/prix-salon-prive-2026.xlsx` | à jour |
 | Aperçus PNG | `epreuves/apercus/` (planches et pages détaillées des trois livrables) | à jour |
+| **Catalogue caviste global** « Catalogue caviste — Vins & Terroirs » (**travail en cours**, section 9) | `catalogue-caviste-2026-ecran.pdf`, `-imprimeur.pdf` | **64 pages**, 41 fiches, 11 régions (Beaujolais et Bugey en plus), 598 prix ; pas encore de .pptx |
+| Affiche QR du catalogue du salon | `salon-prive-2026-affiche-qr.pdf` (`npm run affiche-qr`) | A4, sobre en encre |
 
 Le 2 et le 3 octobre, tout a été revérifié : contrôles automatiques au vert, liens de la
 version écran, polices, et **chaque page regardée en image**.
@@ -261,3 +268,72 @@ en image ; un prix ne se corrige jamais seul ; commit et push à chaque étape.
 - **Le pptx suit le PDF par la géométrie mesurée** : toute retouche d'espacement dans
   `systeme.css` (fiche, tableau, pied) se reporte à la main dans `scripts/pptx.mjs`, puis se
   vérifie en rendant le .pptx dans LibreOffice à côté du PDF.
+
+
+## 9. Le catalogue caviste global (8–9 octobre) : ce qu'il faut savoir
+
+C'est **le travail en cours**. Commande : `npm run global` (= `prix-global.py`, construction,
+contrôle) ; sorties `dist/catalogue-caviste-2026-ecran.pdf` et `-imprimeur.pdf` ; aperçus dans
+`epreuves/apercus/global/`. Le catalogue général « Sous nos pieds » (`npm run build`) reste à
+refaire **seulement quand une photo partagée change** (les deux éditions lisent les mêmes photos).
+
+### D'où viennent les données
+- **Base = le catalogue du Salon Privé** (l'agence l'a confirmé en renvoyant le PDF) : mêmes fiches,
+  vins, prix et offres que `data/salon-prive-2026.json`, **plus** les domaines que l'agence a
+  ajoutés. Les domaines de l'ancien catalogue général absents du salon (Divin No Low, Fabien
+  Castaing…) **ne sont pas repris**.
+- **Tout passe par `scripts/prix-global.py`** → `data/catalogue-global-2026.json` (lu par
+  `editionSalon()` de `src/gabarits/pieces.mjs` quand `EDITION=global`). C'est **le seul endroit**
+  où vivent les prix ajoutés, l'ordre des fiches (`ORDRE`), les régions (`REGIONS`), les domaines
+  créés pour cette édition (`DOMAINES_AJOUTES` : n°41 Sardelles, n°42 Trichon Bugey, n°43 Mas des
+  Restanques), les corrections de vins (`CORRECTIONS_VINS`), les notes de prix (`NOTES`), les
+  départements (`DEPARTEMENTS`), les labels de tête retirés (`SANS_LABELS`), la phrase d'offre
+  (`OFFRE_VOLUME`), la mention « catalogue complet » (`AVEC_CATALOGUE_COMPLET`) et les mentions
+  légales du global. Pour retoucher : modifier ce script, puis `npm run global`.
+- Sources rangées dans `sources/catalogue-global-2026/` : le gros scan (pages JPEG), le sommaire
+  annoté, les tarifs annotés (Les Lys, La Gorce, Mas des Restanques, Trichon départ cave, BIB du
+  Colombier). Relevé ligne à ligne : `data/catalogue-global-releve.md`.
+- **Règles de lecture des tarifs annotés** : surligné = on prend ; barré = on retire ; une colonne
+  non surlignée disparaît ; un millésime douteux (« 2022-23 ») → **le plus récent** ; pas de
+  millésime sur le tarif → **aucun** (« — ») ; le prix d'un vin raturé mais marqué « ok » est bon.
+
+### Ce que l'agence a décidé (à tenir)
+- **Ordre = celui du sommaire.** Loire : Reverdy, **Sardelles**, Barbinière… ; **Beaujolais**
+  (Nugues) entre Alsace et Bourgogne ; Bourgogne finit par **Nadine Ferrand** ; Rhône finit par
+  Pasquiers, **Mas des Restanques**, **Trichon** ; puis **Bugey** (Trichon, vins surlignés en jaune,
+  panachable avec Trichon Rhône) ; Bordeaux finit par l'Escarderie, **Château La Gorce**, **La
+  Passion des Terroirs** ; Languedoc finit par **Les Lys**.
+- **Plus de numéros** (ni stand, ni n° de tarif) : on ne parle que de pages. **Numéros de page à
+  gauche partout** (bas de page, sommaire, index, ouvertures), gros et violets.
+- **Couverture** = celle du salon, titre « **Catalogue caviste** / Vins & Terroirs », cartouche :
+  « Tarif valable jusqu'au 31 décembre 2026 » / « Offres valables du 5 octobre au 14 novembre 2026 ».
+- **Jamais de nombre de références** (page 2, ouvertures, fiches, index).
+- **Pas de page « produits à part »** : BIB, jus, etc. sont dans l'index des vins.
+- **Offre au volume** : toujours « Offre possible en fonction du nombre de cols et de la
+  référence. » L'offre vient **avant** la note de prix. Deux notes de prix seulement (« hors frais
+  de transport » / « franco de port »), sauf Mas des Restanques (« franco de port à partir de 96 bts »).
+- **« Possibilité sur demande d'avoir le catalogue complet. »** : Goichot, Cray, Guignottes, Passion
+  des Terroirs.
+- **La Passion des Terroirs** : le picto Bio / HVE **sur chaque ligne** (pas en tête de fiche).
+- **Mentions légales** (dernière page), dans cet ordre : millésimes qui évoluent, vente sous réserve
+  des stocks, photos non contractuelles, sauf erreurs typographiques, puis le reste ; ensuite une
+  ligne **© Agence SCIO, reproduction interdite**.
+- **Photos** : des **visages** plutôt que des logos. Banque d'images : **l'ancien catalogue
+  « Tarif septembre 2026 »** (`sources/ancien-catalogue/`, on n'en prend **que les images**), le
+  **Drive** de l'agence, puis **les sites officiels** des domaines. Une photo petite mais voulue
+  passe avec `plancher_ppi` dans `data/photos-locales.json` (signalée dans `QUESTIONS.md`). Les
+  photos où le vigneron sent ou sert le vin sont acceptées par l'agence (« c'est un catalogue de vin »).
+- Textes des nouveaux domaines écrits d'après leur site officiel, avec l'accord de l'agence
+  (Sardelles, Mas des Restanques) : faits du site seulement, rien d'inventé.
+
+### État au 9 octobre
+- 64 pages, 41 fiches, 598 prix, **tous les contrôles au vert**, chaque page regardée en image.
+- Questions encore ouvertes : `QUESTIONS.md`, point 32 (photos en basse définition à remplacer en HD
+  si possible : Barbinière, Prieuré des Papes, Coyeux, Haut Marin, Exea ; Prieuré des Papes sans
+  portrait).
+
+### La suite possible
+1. Ce que l'agence demandera en relisant (elle relit page par page, souvent par message vocal).
+2. Le **.pptx pour Canva** de cette édition (pas encore fait : `scripts/pptx.mjs` ne connaît que
+   général et salon ; il faudra `EDITION=global`, les lettrines, la couverture du global).
+3. Photos HD pour les ronds signalés.

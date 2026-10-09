@@ -1,18 +1,17 @@
 # Catalogue Agence SCIO 2026 : le brief
 
-> **État au 3 octobre 2026.** Les trois livrables sont faits et poussés : le catalogue
-> général (52 pages, PDF et .pptx pour Canva), l'édition du **Salon Privé du 5 octobre 2026**
-> (48 pages, prix posés le 3 octobre depuis les tarifs annotés de l'agence) et la liste des
-> vins dégustés. Le 3 au soir, nouveau design choisi par l'agence (couverture photo + strates
-> droites, photos de régions) : voir `docs/reprise.md`, section 7.
+> **État au 9 octobre 2026.** Le travail en cours est le **catalogue caviste global**
+> (« Catalogue caviste — Vins & Terroirs », 64 pages, `npm run global`, édition `EDITION=global`) :
+> la base est le catalogue du Salon Privé (passé le 5 octobre), sans numéros de stand, avec les
+> domaines réintégrés depuis les tarifs annotés de l'agence. Les autres livrables (catalogue général
+> « Sous nos pieds », Salon Privé, liste des vins, affiche QR) sont faits et poussés.
 >
-> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous), à commencer par sa section 0 : tu es
-> la suite de la session précédente, tu agis sans redemander ce qui est décidé. Puis : la branche, les outils, les
-> commandes, le piège des photos, **ce qui fait foi** depuis les décisions de l'agence (le
-> dossier de Mathéo pour les textes, les labels et les vins du salon), ses consignes (52 pages
-> au plus, tableaux, note de prix, sommaire), les questions ouvertes et la suite. Le brief qui
-> suit reste la règle ; là où l'agence a décidé autrement, `docs/reprise.md` le dit. Les prix
-> ne viennent que du tarif.
+> **Lis d'abord `docs/reprise.md`** (chargé ci-dessous) **en entier**, à commencer par sa section 0
+> (comment l'agence travaille, ce qu'elle attend) puis la **section 9** (le catalogue caviste
+> global : ce qui fait foi, les règles, l'état, la suite). Tu es la suite des sessions précédentes :
+> tu agis sans redemander ce qui est décidé. Le brief qui suit reste la règle de fond ; là où
+> l'agence a décidé autrement, `docs/reprise.md` le dit. **Un prix ne s'invente ni ne se corrige
+> jamais seul** : il vient d'un tarif (annoté par l'agence) ou de l'agence elle-même.
 
 @docs/reprise.md
 
