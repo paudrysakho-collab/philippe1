@@ -610,3 +610,14 @@ reste en case vide.
   Restanques.
 - Les **offres** des lignes (« offre 11+1 ») et des fiches sont encore celles du catalogue
   caviste, sauf Berteaud (« Offre 11+1 à partir de 60 cols », écrit sur le scan 11).
+- **Le nouveau dossier du 10 octobre (`Scan09102026-2.pdf`) est illisible.** Le lien Drive
+  s'ouvre, Google annonce bien le fichier et sa taille (45 736 426 octets), mais le
+  téléchargement rend **0 octet** sur tous les points d'entrée (`drive.google.com/uc`,
+  `docs.google.com/uc`, `drive.usercontent.google.com/download`, avec et sans `confirm=t`) ;
+  une requête partielle répond **416** (ressource de longueur nulle) et la miniature **404**.
+  Témoin le même jour : l'ancien dossier (`1R1Ec…`) se télécharge toujours, 31 820 675 octets.
+  Ce n'est donc ni le réseau ni le proxy. Deux causes possibles : le fichier n'a pas fini de se
+  téléverser sur Drive, ou l'option « Les lecteurs peuvent télécharger, imprimer et copier »
+  est décochée dans les paramètres de partage. Le plus sûr reste de **joindre le PDF
+  directement dans la conversation** (c'est ainsi que le dossier de Mathéo et la fiche
+  Divin No Low sont arrivés).
