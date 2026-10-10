@@ -360,11 +360,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      750,
+      690,
+      680
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "L'inopiné de Balac 2021 — VDF",
@@ -381,11 +381,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      690,
+      630,
+      620
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Syrah de Balac 2022 —VDF",
@@ -402,11 +402,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      890,
+      850,
+      840
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -415,9 +415,9 @@
    "fiche_texte": 29,
    "paliers_salon": {
     "29": [
+     "Carton",
      "À partir de 120 bts",
-     "À partir de 180 bts",
-     "À partir de 300 bts"
+     "À partir de 180 bts"
     ]
    },
    "mode_prix": "paliers",
@@ -462,11 +462,11 @@
       "le tarif a aussi une demi-bouteille (37,5 cl) ; la ligne retenue est la 75 cl"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1692,
+      1576,
+      1545
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Terroir Blanc Blanc de Blancs Brut — AOC Champagne",
@@ -483,11 +483,11 @@
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1972,
+      1754,
+      1720
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Le Terroir Meunier Blanc de Meuniers Extra-Brut — AOC Champagne",
@@ -504,11 +504,11 @@
      "couleur_provenance": "l'agence, 2 octobre 2026",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1972,
+      1754,
+      1720
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Millésime Expression 2018 — AOC Champagne",
@@ -524,11 +524,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2034,
+      1914,
+      1877
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -540,12 +540,13 @@
    ],
    "paliers_salon": {
     "38": [
+     "À partir de 36 bts",
      "À partir de 66 bts",
-     "À partir de 126 bts",
-     "À partir de 186 bts"
+     "À partir de 126 bts"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 3,
@@ -586,10 +587,10 @@
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
      "prix_centimes": [
-      null
+      860
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Terre Rouge 2022/2024 Magnum 1,5 L",
@@ -629,9 +630,9 @@
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
      "prix_centimes": [
-      null
+      720
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) 4 saisons 2023/2024 Magnum 1,5 L",
@@ -671,9 +672,9 @@
       "« La Poion » dans la liste, « La Potion » au tarif"
      ],
      "prix_centimes": [
-      null
+      410
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Clos de Cassis 2023 — AOC Corbières",
@@ -692,9 +693,9 @@
       "le tarif a aussi un magnum ; la ligne retenue est la 75 cl"
      ],
      "prix_centimes": [
-      null
+      960
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Clos de Cassis 2022/2023 Magnum 1,5 L",
@@ -734,10 +735,10 @@
       "millésime 2025 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": [
-      null
+      560
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -750,7 +751,8 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 180 cols."
+   "offre_salon": "Offre 11+1 à partir de 180 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 4,
@@ -1175,12 +1177,10 @@
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      435
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°6 Fossiles Blanc 2025 — IGP Côtes de Gascogne",
@@ -1197,12 +1197,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      470
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°3 Gulf Stream Rosé 2025 — IGP Côtes de Gascogne",
@@ -1219,12 +1217,10 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      470
      ],
      "offre": "5+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°4 Triton Rouge 2024 — IGP Côtes de Gascogne",
@@ -1241,13 +1237,11 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      470
      ],
      "offre": "5+1",
      "offre_detail": "dès 250 cols",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°8 Grand Pavois Rouge 2025 — IGP Côtes de Gascogne",
@@ -1266,11 +1260,9 @@
       "« Rouge » dans la liste, « Doux » au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      580
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°7 Vénus Blanc Moelleux 2025 — IGP Côtes de Gascogne",
@@ -1290,12 +1282,10 @@
       "couleur « Blanc moelleux » dans la liste, « Doux » au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      525
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "N°10 Pétillant — IGP Côtes de Gascogne",
@@ -1312,8 +1302,6 @@
       "le tarif a deux N°10, en Vin de France : Bulle/Blanc et Bulle/Rosé ; la liste ne dit pas lequel, et écrit IGP Côtes de Gascogne"
      ],
      "prix_centimes": [
-      null,
-      null,
       null
      ],
      "offre": "5+1",
@@ -1327,13 +1315,12 @@
    "fiche_texte": 23,
    "paliers_salon": {
     "23": [
-     "À partir de 72 cols",
-     "À partir de 300 cols",
-     "À partir de 600 cols"
+     "À partir de 60 bts"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre à partir de 300 cols."
+   "offre_salon": "Offre à partir de 300 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 7,
@@ -1770,10 +1757,10 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      950
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas 2020 — AOC Côtes de Bourg",
@@ -1792,10 +1779,10 @@
       "millésime 2020 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null
+      1230
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas 2021 — AOC Côtes de Bourg",
@@ -1814,10 +1801,10 @@
       "millésime 2021 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null
+      1230
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas 2022 — AOC Côtes de Bourg",
@@ -1834,10 +1821,10 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      1240
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas Chevalier 2017— AOC Côtes de Bourg",
@@ -1856,9 +1843,9 @@
       "millésime 2017 dans la liste, 2021 au tarif"
      ],
      "prix_centimes": [
-      null
+      2420
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas Chevalier 2019— AOC Côtes de Bourg",
@@ -1877,10 +1864,10 @@
       "millésime 2019 dans la liste, 2021 au tarif"
      ],
      "prix_centimes": [
-      null
+      2390
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Château Falfas 2023— AOC Côtes de Bourg",
@@ -1899,10 +1886,10 @@
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null
+      2010
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2408,9 +2395,9 @@
       "« Brut » dans la liste, « Blanc extra brut » au tarif"
      ],
      "prix_centimes": [
-      null
+      1996
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Nature Brut - AOC Champagne",
@@ -2429,9 +2416,9 @@
       "« Nature Brut » dans la liste, « Nature », blanc extra brut, au tarif"
      ],
      "prix_centimes": [
-      null
+      2541
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Chardonnay Extra-Brut — AOC Champagne",
@@ -2448,9 +2435,9 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      2648
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Supernova Extra-Brut Zéro Dosage— AOC Champagne",
@@ -2465,9 +2452,9 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null
+      3683
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2479,7 +2466,8 @@
      "Prix salon"
     ]
    },
-   "mode_prix": "unique"
+   "mode_prix": "unique",
+   "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport."
   },
   {
    "stand": 12,
@@ -2519,11 +2507,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      913,
+      881,
+      849
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Extra-Brut Blanc — AOC Bugey",
@@ -2541,11 +2529,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      913,
+      881,
+      849
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Mondeuse Rouge  2023— AOC Bugey",
@@ -2563,11 +2551,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      908,
+      873,
+      838
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Pinot Noir Rouge 2023 — AOC Bugey",
@@ -2585,11 +2573,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      869,
+      817,
+      799
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Gamay Rouge — AOC Bugey",
@@ -2607,12 +2595,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      755,
+      709,
+      685
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Chardonnay Blanc 2020 — AOC Bugey",
@@ -2630,12 +2618,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      895,
+      874,
+      824
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Pétillant de Jus de Raisin 0 %",
@@ -2653,11 +2641,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      678,
+      643,
+      608
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2666,13 +2654,14 @@
    "fiche_texte": 42,
    "paliers_salon": {
     "42": [
-     "À partir de 120 cols",
-     "À partir de 300 cols",
-     "À partir de 600 cols"
+     "À partir de 36 cols",
+     "À partir de 48 cols",
+     "À partir de 96 cols"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 300 cols."
+   "offre_salon": "Offre 11+1 à partir de 300 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 12,
@@ -2713,11 +2702,11 @@
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      724,
+      674,
+      624
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Vacqueyras Blanc 2025 — AOC Vacqueyras",
@@ -2736,11 +2725,11 @@
       "millésime 2025 dans la liste, 2024 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1164,
+      1114,
+      1064
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Mas de Lusanne Vacqueyras Rouge 2023 — AOC Vacqueyras",
@@ -2757,11 +2746,11 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1143,
+      1093,
+      1043
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 21,
@@ -2774,11 +2763,11 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1026,
+      976,
+      926
      ],
-     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 21,
@@ -2793,9 +2782,9 @@
      "prix_centimes": [
       null,
       null,
-      null
+      1846
      ],
-     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 21,
@@ -2810,9 +2799,9 @@
      "prix_centimes": [
       null,
       null,
-      null
+      2284
      ],
-     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 21,
@@ -2825,11 +2814,11 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1197,
+      1147,
+      1097
      ],
-     "prix_source": "tarif départ cave de Trichon surligné par l'agence (scan du 8 octobre 2026, 6e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2838,13 +2827,14 @@
    "fiche_texte": 21,
    "paliers_salon": {
     "21": [
-     "À partir de 120 cols",
-     "À partir de 300 cols",
-     "À partir de 600 cols"
+     "À partir de 36 cols",
+     "À partir de 48 cols",
+     "À partir de 96 cols"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 300 cols."
+   "offre_salon": "Offre 11+1 à partir de 300 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 13,
@@ -2885,10 +2875,12 @@
       "millésime 2024 dans la liste, 2023 au tarif"
      ],
      "prix_centimes": [
-      null
+      595,
+      565,
+      535
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Lou Daro Rouge 2023 — AOC Saint-Chinian",
@@ -2907,10 +2899,12 @@
       "millésime 2023 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null
+      780,
+      750,
+      720
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Henri Rouge 2024 — AOC Saint-Chinian",
@@ -2929,10 +2923,12 @@
       "millésime 2024 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null
+      595,
+      565,
+      535
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Juliette Blanc 2025 — AOC Saint-Chinian",
@@ -2948,10 +2944,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null
+      595,
+      565,
+      535
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Grain de Blanc  2025 - IGP Pays D'Hérault Monts de la Grage",
@@ -2970,10 +2968,12 @@
       "« IGP Pays d'Hérault Monts de la Grage » dans la liste, « AOP Saint Chinian » au tarif"
      ],
      "prix_centimes": [
-      null
+      780,
+      550,
+      720
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -2982,11 +2982,14 @@
    "fiche_texte": 34,
    "paliers_salon": {
     "34": [
-     "Prix salon"
+     "À partir de 36 bts",
+     "À partir de 60 bts",
+     "À partir de 120 bts"
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 180 cols."
+   "offre_salon": "Offre 11+1 à partir de 180 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 14,
@@ -3212,11 +3215,11 @@
       "« Extra-Brut Blanc de Blancs » dans la liste, « Blanc brut » au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2040,
+      2010,
+      1990
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Brut Réserve Blanc de Blancs— Grand Cru Chouilly",
@@ -3233,11 +3236,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2110,
+      2080,
+      2060
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Brut Réserve Blanc de Blancs — Magnum 1,5 L",
@@ -3255,12 +3258,13 @@
      "millesime": "—",
      "contenance": "1,5 L",
      "prix_centimes": [
-      null,
-      null,
-      null
+      4850,
+      4790,
+      4750
      ],
      "liste_vins": false,
-     "source": "tarif 2026 annoté (scan 2, p.13)"
+     "source": "tarif 2026 annoté (scan 2, p.13)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Rosé Brut — Grand Cru Chouilly",
@@ -3276,11 +3280,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2320,
+      2290,
+      2270
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Spécial Club 2017 Blanc de Blancs Extra-Brut — Grand Cru Chouilly",
@@ -3297,11 +3301,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      4140,
+      4110,
+      4090
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Extra Brut — Grand Cru Chouilly",
@@ -3318,11 +3322,11 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      2530,
+      2500,
+      2480
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "82/18 Blanc de Blancs Zéro Dosage— Grand Cru Chouilly",
@@ -3338,11 +3342,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      5210,
+      5180,
+      5160
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -3351,12 +3355,13 @@
    "fiche_texte": 40,
    "paliers_salon": {
     "40": [
-     "À partir de 48 bts",
-     "À partir de 78 bts",
-     "À partir de 96 bts"
+     "Par 24",
+     "Par 48",
+     "Par 78"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 16,
@@ -3397,9 +3402,9 @@
       "millésime 2016 dans la liste, 2020 au tarif"
      ],
      "prix_centimes": [
-      null
+      990
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Cuvée TerraCotta 2021 — AOC Sainte-Foy Côtes de Bordeaux",
@@ -3416,9 +3421,9 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      890
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Cuvée des Fontenelles 2025 — AOC Sainte-Foy Côtes de Bordeaux",
@@ -3435,9 +3440,9 @@
      "couleur_provenance": "tarif (la liste ne la donne pas)",
      "ecarts": [],
      "prix_centimes": [
-      null
+      750
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -4258,12 +4263,12 @@
       "millésime 2021 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1320,
+      1250,
+      1170
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Néolithik Rouge 2022 — AOC Madiran",
@@ -4280,12 +4285,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1670,
+      1520,
+      1320
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Koloss Rouge 2022 — AOC Madiran",
@@ -4302,12 +4307,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
+      720,
       null,
-      null,
-      null
+      670
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Koloss Doux 2022 — VDF",
@@ -4324,12 +4329,12 @@
       "au tarif, le Koloss Vin de France est un rosé 2025, et le doux Vin de France s'appelle Strateus (2025)"
      ],
      "prix_centimes": [
+      720,
       null,
-      null,
-      null
+      670
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Stratéus Blanc 2025 — AOC Pacherenc du Vic-Bilh sec",
@@ -4348,12 +4353,12 @@
       "millésime 2025 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1320,
+      1250,
+      1170
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Néolithik Blanc 2025 — AOC Pacherenc du Vic-Bilh sec",
@@ -4369,12 +4374,12 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      1670,
+      1520,
+      1320
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -4383,13 +4388,14 @@
    "fiche_texte": 22,
    "paliers_salon": {
     "22": [
-     "À partir de 60 bts",
-     "À partir de 120 bts",
-     "À partir de 300 bts"
+     "À partir de 24 bts",
+     "À partir de 48 bts",
+     "À partir de 120 bts"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 120 cols."
+   "offre_salon": "Offre 11+1 à partir de 120 cols.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
    "stand": 21,
@@ -4433,12 +4439,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      895,
+      778,
+      716
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Chant de Lune Rouge, disponible en décembre 2026 — Magnum 1,5 L",
@@ -4478,12 +4484,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      895,
+      778,
+      716
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Blanc Serame — AOC Corbières",
@@ -4500,12 +4506,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      895,
+      778,
+      716
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Oena Rouge 2022 — AOC Corbières",
@@ -4546,12 +4552,12 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null,
-      null,
-      null
+      545,
+      474,
+      436
      ],
      "offre": "11+1",
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Jardins de Corbières Rouge, disponible en décembre 2026 — Magnum 1,5 L",
@@ -4569,12 +4575,13 @@
      "millesime": "—",
      "contenance": "1,5 L",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1140,
+      991,
+      912
      ],
      "liste_vins": false,
-     "source": "tarif « Salon Vins & Terroirs 05 octobre 2026 » (scan 4, p.2)"
+     "source": "tarif « Salon Vins & Terroirs 05 octobre 2026 » (scan 4, p.2)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Jus de cépages — Syrah",
@@ -5122,9 +5129,9 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null
+      690
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Amphora Rouge 2021 — AOC Fronsac",
@@ -5141,9 +5148,9 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null
+      1010
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "La Confiance Rouge 2023 — VDF",
@@ -5160,9 +5167,9 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      null
+      845
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "doublons_matheo": [],
@@ -6275,9 +6282,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      340
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6290,9 +6297,9 @@
      "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      380
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6305,9 +6312,9 @@
      "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      420
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6320,9 +6327,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      450
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6335,9 +6342,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      620
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6350,9 +6357,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      620
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6365,9 +6372,9 @@
      "millesime": "2024",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      750
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 20,
@@ -6380,9 +6387,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1290
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "paliers_salon": {
@@ -6415,9 +6422,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      550
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6431,9 +6438,9 @@
      "millesime": "2016",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      765
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6447,9 +6454,9 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      490
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6463,9 +6470,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      650
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6479,9 +6486,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      770
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6495,9 +6502,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1080
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6511,9 +6518,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      700
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6527,9 +6534,9 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1510
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6543,9 +6550,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      880
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 25,
@@ -6558,9 +6565,9 @@
      "millesime": "2018",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      540
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 25,
@@ -6573,9 +6580,9 @@
      "millesime": "2019",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1990
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6589,9 +6596,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      2340
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6605,9 +6612,9 @@
      "millesime": "2020",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      4630
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6621,9 +6628,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      2340
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6637,9 +6644,9 @@
      "millesime": "2020",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      4630
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6653,9 +6660,9 @@
      "millesime": "2021",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1185
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6669,9 +6676,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1640
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6685,9 +6692,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1480
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6701,9 +6708,9 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1585
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 25,
@@ -6716,9 +6723,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1790
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6732,9 +6739,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      600
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6748,9 +6755,9 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      780
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6764,9 +6771,9 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1285
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6780,9 +6787,9 @@
      "millesime": "2022",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      2590
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6796,9 +6803,9 @@
      "millesime": "2021",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      885
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 25,
@@ -6811,9 +6818,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      620
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6827,9 +6834,9 @@
      "millesime": "2022",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      1430
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6843,9 +6850,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      750
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6859,9 +6866,9 @@
      "millesime": "2022",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null
+      1725
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "HVE"
     },
     {
@@ -6875,9 +6882,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1420
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6891,9 +6898,9 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      570
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "label": "Bio"
     },
     {
@@ -6999,7 +7006,7 @@
    },
    "mode_prix": "unique",
    "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
-   "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,
    "mentions": [],
@@ -7163,9 +7170,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      755
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "offre": "11+1"
     },
     {
@@ -7179,9 +7186,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      595
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "offre": "11+1"
     },
     {
@@ -7195,9 +7202,9 @@
      "millesime": "2023",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      790
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 35,
@@ -7210,9 +7217,9 @@
      "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      1990
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 35,
@@ -7225,15 +7232,15 @@
      "millesime": "2025",
      "contenance": "75 cl",
      "prix_centimes": [
-      null
+      495
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
      "offre": "11+1"
     }
    ],
    "paliers_salon": {
     "35": [
-     "À partir de 120 bts"
+     "Prix"
     ]
    },
    "mode_prix": "paliers",
@@ -7261,11 +7268,11 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      760,
+      725,
+      715
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7278,11 +7285,11 @@
      "millesime": "2020",
      "contenance": "Magnum 1,5 L",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1490,
+      1455,
+      1445
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7295,11 +7302,11 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      710,
+      675,
+      665
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7312,11 +7319,11 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      675,
+      640,
+      630
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7329,11 +7336,11 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1040,
+      1005,
+      995
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7346,11 +7353,11 @@
      "millesime": "2022",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      690,
+      655,
+      645
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 26,
@@ -7363,18 +7370,18 @@
      "millesime": "2020",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      560,
+      525,
+      515
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026 (2e envoi)"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "paliers_salon": {
     "26": [
-     "À partir de 90 bts",
-     "À partir de 120 bts",
-     "À partir de 300 bts"
+     "À partir de 36 bts",
+     "À partir de 72 bts",
+     "À partir de 120 bts"
     ]
    },
    "mode_prix": "paliers",

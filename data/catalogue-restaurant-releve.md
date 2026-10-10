@@ -70,9 +70,40 @@ Pasquiers (20), Trichon Rhône et Bugey (21, 42), Stratéus (22), Haut Marin (23
 Falfas (27), Pré la Lande (28), Balac (29), Escarderie (30), Exea jus (33), Gragnos (34), Les Lys
 (35), Albas (36), Dekeyne (37), Frézier (38), Vazart-Coquart (40), Mas des Restanques (43).
 
+## Le dossier complet du 10 octobre (73 pages)
+
+`sources/catalogue-restaurant-2026/tarifs-restaurant-annotes-2.pdf`, envoyé par l'agence le
+10 octobre. Ses **pages 1 à 35 reprennent le dossier du 9 octobre** (sans son sommaire annoté,
+vérifié par comparaison d'images) ; **les pages 36 à 73 sont nouvelles** et comblent presque
+tous les trous.
+
+| Page | Domaine (fiche) | Paliers du tarif restaurant | Remarques |
+|---|---|---|---|
+| 36–37, 40–41 | Famille d'Exea (32) | 72 / 144 / 300 cols | Sérame, Château d'Argens, Jardin de Corbières ; « Les Résistants », « Les N°9 Low Alcool » et « Petit Jardin » ne sont pas au catalogue |
+| 42 | Château de Gragnos (34) | **36 / 60 / 120** (écrits à la main) | Cosmos, BDM, Syrah nature et Dolmen barrés ; « Rajouter Juliette blanc 2025 » ; « Franco » |
+| 43 | Prieuré Sainte-Marie d'Albas (36) | prix unique | « TARIF PROFESSIONNEL RESTAURATION 2026 » ; « Franco » écrit sur « départ cave » ; pas de magnums |
+| 44 | Les Lys (35) | prix unique | « TARIF CHR », départ cave ; « La Soif rouge 4,95 € » ajoutée à la main |
+| 45 | Champagne Dekeyne (37) | prix unique | courriel du domaine, HT départ cave |
+| 46 | Champagne Denis Frézier (38) | **36 / 66 / 126** | colonnes 186 et 240 rayées ; la première colonne est **réécrite à la main (+ 1 €)** |
+| 47 | Vazart-Coquart & Fils (40) | **Par 24 / Par 48 / Par 78** (surlignés) | colonnes « TARIFS FRANCO » ; « par 96 » et « TARIFS DÉPART » non retenues |
+| 48 | Domaine Trichon — Rhône (21) | 36 / 48 / 96 cols | « Tarifs HT franco de port » ; magnums et 37,5 cl seulement à 96 cols |
+| 49 | Domaine Trichon — Bugey (42) | 36 / 48 / 96 cols (surlignés) | franco de port |
+| 50 | Domaine des Pasquiers (20) | prix unique | « TARIF HORS TAXES - DEPART CAVE au 01/01/2026 – SCIO Restaurant » |
+| 51 | Domaine Stratéus (22) | grille 24 à 300 bts | « **Rajouter 0,70 cts sur toute la gamme** » ; trois gammes (Stratéus, Koloss, Néolithik) |
+| 52 | Domaine Haut Marin (23) | **À partir de 60 bts** | une seule colonne ; franco de port |
+| 53 | Château Pré La Lande (28) | prix unique | annoté « **Idem** » : les prix du catalogue caviste |
+| 54 | Château Falfas (27) | prix unique | annoté « **Idem** » |
+| 55 | Château Balac (29) | **Carton / 120 / 180** | 300 et 600 rayées ; prix du carton réécrits à la main ; « Rajouter Balac » (le Château Balac lui-même n'est pas dans le courriel) |
+| 56 | Château l'Escarderie (30) | prix unique | annoté « **Idem** » |
+| 57 | Château La Gorce (26) | **36 / 72 / 120** (surlignés) | colonne 48 rayée ; « Préface » barré ; millésime 2019 corrigé en 2020 ; franco de port |
+| 58–73 | La Passion des Terroirs (25) | prix à l'unité | catalogue complet « Tarif France Franco HT », commande minimum 400 € : les 31 rouges enfin tarifés |
+
+**Posé le 10 octobre** : 548 prix relevés, 97 cases encore vides.
+
 ## Ce qui reste à faire
 
-1. Les tarifs restaurant des domaines ci-dessus, et les pages manquantes (Nugues, rouges de la
-   Passion des Terroirs).
+1. Les quatre fiches sans aucun tarif restaurant : **Divin No Low (7)**, **Domaine des Nugues
+   (9)**, **les jus de cépages de la Famille d'Exea (33)** et **le Mas des Restanques (43)**.
+   Quelques lignes isolées aussi (voir `QUESTIONS.md`, point 35).
 2. Les offres : l'agence les reprend une par une (« je changerai les offres, page 1, page 2… ») ;
    les fiches gardent pour l'instant celles du catalogue caviste (sauf Berteaud).

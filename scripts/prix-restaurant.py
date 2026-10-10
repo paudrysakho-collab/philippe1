@@ -68,6 +68,19 @@ PALIERS = {
     15: P(36, 60, 120),          # Domaine des Verchères, scan 22 : 36, 60 et 120 surlignés
     31: P(60, 120, 180),         # Bastide de Blacailloux, scan 34 : colonne « franco 36 » rayée
     32: P(72, 144, 300, unite="cols"),   # Famille d'Exea — Sérame, scan 35
+
+    # ——————————————— dossier complet du 10 octobre (tarifs-restaurant-annotes-2.pdf) ———
+    21: P(36, 48, 96, unite="cols"),   # Domaine Trichon, Rhône (p.48) : « Tarifs HT franco de port »
+    42: P(36, 48, 96, unite="cols"),   # Domaine Trichon, Bugey (p.49) : 36, 48 et 96 surlignés
+    # Stratéus (p.51) : la grille va de 24 à 300 bouteilles ; on garde les plus petits volumes.
+    22: P(24, 48, 120),
+    23: ["À partir de 60 bts"],        # Domaine Haut Marin (p.52) : une seule colonne
+    26: P(36, 72, 120),                # Château La Gorce (p.57) : 36, 72 et 120 surlignés, 48 rayée
+    29: ["Carton", "À partir de 120 bts", "À partir de 180 bts"],   # Balac (p.55) : 300 et 600 rayées
+    34: P(36, 60, 120),                # Château de Gragnos (p.42) : « À partir de 36 / 60 / 120 »
+    35: ["Prix"],                      # Les Lys (p.44) : tarif CHR, un seul prix
+    38: P(36, 66, 126),                # Denis Frézier (p.46) : 186 et 240 rayées
+    40: ["Par 24", "Par 48", "Par 78"],   # Vazart-Coquart (p.47) : tarifs franco surlignés
 }
 
 # ——————————————————————————————————————————————————— les prix du tarif restaurant ———
@@ -250,8 +263,171 @@ PRIX = {
     (31, "Aquino Rouge"): eu("17,25", "16,30", "16,00"),
     (31, "Aquino Blanc"): eu("17,25", "16,30", "16,00"),
 
-    # ——— Famille d'Exea — Sérame (scan 35) : seul « Oena » est au tarif du dossier.
+    # ——— Famille d'Exea (scan 35 et dossier du 10 octobre, p.34, 37 et 40) : 72 / 144 / 300 cols.
     (32, "Oena Rouge"): eu("14,00", "14,00", "14,00"),
+    (32, "Chant de Lune Rouge"): eu("8,95", "7,78", "7,16"),          # Château d'Argens, p.37
+    (32, "Rouge Sérame"): eu("8,95", "7,78", "7,16"),                 # p.36
+    (32, "Blanc Sérame"): eu("8,95", "7,78", "7,16"),                 # p.36
+    (32, "Jardins de Corbières Rouge", "75 cl"): eu("5,45", "4,74", "4,36"),       # p.40
+    (32, "Jardins de Corbières Rouge, disponible en décembre 2026"): eu("11,40", "9,91", "9,12"),
+
+    # ————————————————————————— dossier complet du 10 octobre ——————————————————————————
+    # ——— Domaine des Pasquiers (p.50) : « TARIF HORS TAXES - DEPART CAVE », un seul prix.
+    (20, "IGP Vaucluse", "Rouge", "2024", "75 cl"): eu("3,40"),
+    (20, "IGP Vaucluse", "Rosé", "2025", "75 cl"): eu("3,80"),
+    (20, "IGP Vaucluse", "Blanc", "2025", "75 cl"): eu("4,20"),
+    (20, "Côtes du Rhône"): eu("4,50"),
+    (20, "Plan de Dieu"): eu("6,20"),
+    (20, "Sablet", "2023"): eu("6,20"),
+    (20, "Sablet", "2024"): eu("7,50"),
+    (20, "Gigondas"): eu("12,90"),
+
+    # ——— Domaine Trichon, Rhône (p.48) : 36 / 48 / 96 cols, franco de port.
+    (21, "Mas de Lusanne Rouge"): eu("7,24", "6,74", "6,24"),
+    (21, "Mas de Lusanne Vacqueyras Blanc"): eu("11,64", "11,14", "10,64"),
+    (21, "Mas de Lusanne Vacqueyras Rouge", "75 cl"): eu("11,43", "10,93", "10,43"),
+    (21, "Mas de Lusanne Vacqueyras Rouge", "Magnum 1,5 L"): eu(None, None, "22,84"),
+    (21, "Beaumes de Venise Rouge", "75 cl"): eu("10,26", "9,76", "9,26"),
+    (21, "Beaumes de Venise Rouge", "Magnum 1,5 L"): eu(None, None, "18,46"),
+    (21, "Muscat de Beaumes de Venise"): eu("11,97", "11,47", "10,97"),
+
+    # ——— Domaine Trichon, Bugey (p.49) : 36 / 48 / 96 cols, franco de port.
+    (42, "Mas de Lusanne Brut Blanc"): eu("9,13", "8,81", "8,49"),
+    (42, "Mas de Lusanne Extra-Brut Blanc"): eu("9,13", "8,81", "8,49"),
+    (42, "Mas de Lusanne Mondeuse Rouge"): eu("9,08", "8,73", "8,38"),
+    (42, "Mas de Lusanne Pinot Noir Rouge"): eu("8,69", "8,17", "7,99"),
+    (42, "Mas de Lusanne Gamay Rouge"): eu("7,55", "7,09", "6,85"),
+    (42, "Mas de Lusanne Chardonnay Blanc"): eu("8,95", "8,74", "8,24"),
+    (42, "Mas de Lusanne Pétillant de Jus de Raisin 0 %"): eu("6,78", "6,43", "6,08"),
+
+    # ——— Domaine Stratéus (p.51) : grille 2026 + « Rajouter 0,70 cts sur toute la gamme »
+    # (écrit par l'agence). Gamme Stratéus, gamme Koloss (pas de prix à 48 bts) et gamme Néolithik.
+    (22, "Stratéus Rouge"): eu("13,20", "12,50", "11,70"),
+    (22, "Stratéus Blanc"): eu("13,20", "12,50", "11,70"),
+    (22, "Néolitik Rouge"): eu("16,70", "15,20", "13,20"),
+    (22, "Néolitik Blanc"): eu("16,70", "15,20", "13,20"),
+    (22, "Koloss Rouge"): eu("7,20", None, "6,70"),
+    (22, "Koloss Doux"): eu("7,20", None, "6,70"),
+
+    # ——— Domaine Haut Marin (p.52) : une colonne « À partir de 60 bts », franco de port.
+    (23, "N°1 Littorine Blanc"): eu("4,35"),
+    (23, "N°6 Fossiles Blanc"): eu("4,70"),
+    (23, "N°3 Gulf Stream Rosé"): eu("4,70"),
+    (23, "N°4 Triton Rouge"): eu("4,70"),
+    (23, "N°8 Grand Pavois Moelleux"): eu("5,80"),
+    (23, "N°7 Vénus Blanc Moelleux"): eu("5,25"),
+
+    # ——— Château La Gorce (p.57) : « TARIFS CHR », franco de port, 36 / 72 / 120 bts.
+    (26, "Château la Gorce", "75 cl"): eu("7,60", "7,25", "7,15"),
+    (26, "Château la Gorce", "Magnum 1,5 L"): eu("14,90", "14,55", "14,45"),
+    (26, "Prétexte"): eu("7,10", "6,75", "6,65"),
+    (26, "Rouge Intense"): eu("6,75", "6,40", "6,30"),
+    (26, "L'An 022"): eu("10,40", "10,05", "9,95"),
+    (26, "La Bonne Résolution"): eu("6,90", "6,55", "6,45"),
+    (26, "Château Canteloup"): eu("5,60", "5,25", "5,15"),
+
+    # ——— Château Falfas (p.54), annoté « Idem » : les prix du catalogue caviste.
+    (27, "Les Demoiselles de Falfas"): eu("9,50"),
+    (27, "Château Falfas", "2020"): eu("12,30"),
+    (27, "Château Falfas", "2021"): eu("12,30"),
+    (27, "Château Falfas", "2022"): eu("12,40"),
+    (27, "Château Falfas", "2023"): eu("20,10"),
+    (27, "Château Falfas Chevalier", "2017"): eu("24,20"),
+    (27, "Château Falfas Chevalier", "2019"): eu("23,90"),
+
+    # ——— Château Pré La Lande (p.53), annoté « Idem ».
+    (28, "Cuvée Diane Rouge"): eu("9,90"),
+    (28, "Cuvée TerraCotta"): eu("8,90"),
+    (28, "Cuvée des Fontenelles"): eu("7,50"),
+
+    # ——— Château Balac (p.55) : colonnes Carton / 120 / 180 (300 et 600 rayées).
+    # Le Château Balac lui-même n'est pas dans le courriel (« Rajouter Balac ») : cases vides.
+    (29, "Balac sans sulfites"): eu("7,50", "6,90", "6,80"),
+    (29, "L’inopiné de Balac"): eu("6,90", "6,30", "6,20"),
+    (29, "Syrah de Balac"): eu("8,90", "8,50", "8,40"),
+
+    # ——— Château l'Escarderie (p.56), annoté « Idem ».
+    (30, "Château Lafargue Rouge"): eu("6,90"),
+    (30, "Amphora Rouge"): eu("10,10"),
+    (30, "La Confiance Rouge"): eu("8,45"),
+
+    # ——— Château de Gragnos (p.42) : « À partir de 36 / 60 / 120 », franco.
+    # Cosmos, BDM, Syrah nature et Dolmen sont barrés ; « Rajouter Juliette blanc 2025 ».
+    (34, "Léon Rouge"): eu("5,95", "5,65", "5,35"),
+    (34, "Henri Rouge"): eu("5,95", "5,65", "5,35"),
+    (34, "Juliette Blanc"): eu("5,95", "5,65", "5,35"),
+    (34, "Lou Daro Rouge"): eu("7,80", "7,50", "7,20"),
+    (34, "Grain de Blanc"): eu("7,80", "5,50", "7,20"),   # 5,50 au palier 60 : relevé tel quel
+
+    # ——— Les Lys (p.44) : « TARIF CHR », prix HT départ cave ; « La Soif » ajoutée à la main.
+    (35, "Aillargues"): eu("7,55"),
+    (35, "La Petite Syrah"): eu("5,95"),
+    (35, "Duché"): eu("7,90"),
+    (35, "Caillasses"): eu("19,90"),
+    (35, "La Soif"): eu("4,95"),
+
+    # ——— Prieuré Sainte-Marie d'Albas (p.43) : « TARIF PROFESSIONNEL RESTAURATION 2026 ».
+    # Les magnums n'y figurent pas : cases vides.
+    (36, "Terre Rouge", "75 cl"): eu("8,60"),
+    (36, "4 saisons", "75 cl"): eu("7,20"),
+    (36, "La Potion"): eu("4,10"),
+    (36, "Clos de Cassis", "75 cl"): eu("9,60"),
+    (36, "Albas"): eu("5,60"),
+
+    # ——— Champagne Dekeyne (p.45, courriel du domaine) : HT départ cave.
+    (37, "Voglonniers Brut"): eu("19,96"),
+    (37, "Nature Brut"): eu("25,41"),
+    (37, "Chardonnay Extra-Brut"): eu("26,48"),
+    (37, "Supernova Extra-Brut Zéro Dosage"): eu("36,83"),
+
+    # ——— Champagne Denis Frézier (p.46) : colonnes 1-60, 66-120 et 126-180 (186 et 240 rayées),
+    # « Tarif Franco ». La première colonne est réécrite à la main par l'agence (« + 1 € »).
+    (38, "Trois Crus Brut"): eu("16,92", "15,76", "15,45"),
+    (38, "Le Terroir Blanc Blanc de Blancs Brut"): eu("19,72", "17,54", "17,20"),
+    (38, "Le Terroir Meunier Blanc de Meuniers Extra-Brut"): eu("19,72", "17,54", "17,20"),
+    (38, "Millésime Expression"): eu("20,34", "19,14", "18,77"),
+
+    # ——— Champagne Vazart-Coquart (p.47) : tarifs franco « Par 24 / 48 / 78 » (surlignés).
+    (40, "Cuvée Camille Extra-Brut Blanc de Blancs"): eu("20,40", "20,10", "19,90"),
+    (40, "Brut Réserve Blanc de Blancs", "75 cl"): eu("21,10", "20,80", "20,60"),
+    (40, "Brut Réserve Blanc de Blancs", "1,5 L"): eu("48,50", "47,90", "47,50"),
+    (40, "Rosé Brut"): eu("23,20", "22,90", "22,70"),
+    (40, "Spécial Club Blanc de Blancs Extra-Brut"): eu("41,40", "41,10", "40,90"),
+    (40, "Extra Brut"): eu("25,30", "25,00", "24,80"),
+    (40, "82/18 Blanc de Blancs Zéro Dosage"): eu("52,10", "51,80", "51,60"),
+
+    # ——— La Passion des Terroirs (p.58 à 73) : « Tarif France Franco HT », prix à l'unité.
+    (25, "Château de Camarsac Cuvée Vieilles Vignes"): eu("5,50"),
+    (25, "Château de Camarsac Cuvée Prestige"): eu("7,65"),
+    (25, "Château Haut-Moulin Vieilles Vignes"): eu("4,90"),
+    (25, "Château Haut-Moulin Cuvée Vieilles Vignes"): eu("5,70"),
+    (25, "L'Étoile de Villegeorge"): eu("6,50"),
+    (25, "N°2 de Fourcas Dupré"): eu("7,70"),
+    (25, "Château Doyac"): eu("10,80"),
+    (25, "Esprit de Doyac"): eu("7,00"),
+    (25, "Ceres de Haut-Bages Libéral, sans soufre ajouté"): eu("15,10"),
+    (25, "Château Livran"): eu("8,80"),
+    (25, "Les Sources de Livran"): eu("5,40"),
+    (25, "Les Plantes de Durfort-Vivens"): eu("19,90"),
+    (25, "Le Plateau de Durfort-Vivens", "75 cl"): eu("23,40"),
+    (25, "Le Plateau de Durfort-Vivens", "Magnum 1,5 L"): eu("46,30"),
+    (25, "Le Hameau de Durfort-Vivens", "75 cl"): eu("23,40"),
+    (25, "Le Hameau de Durfort-Vivens", "Magnum 1,5 L"): eu("46,30"),
+    (25, "La Petite Tour de Bessan"): eu("11,85"),
+    (25, "Initial de Desmirail"): eu("16,40"),
+    (25, "L'Oratoire de Chasse-Spleen"): eu("14,80"),     # millésime 2020
+    (25, "Pavillon de Glana"): eu("15,85"),               # millésime 2022
+    (25, "La Fleur de Haut-Bages Libéral"): eu("17,90"),
+    (25, "Château Pontey Lamartine Cuvée Les Parcelles", "2020"): eu("6,00"),
+    (25, "Graves de Bouscaut"): eu("7,80"),
+    (25, "Château Lamothe Bouscaut", "75 cl"): eu("12,85"),
+    (25, "Château Lamothe Bouscaut", "Magnum 1,5 L"): eu("25,90"),
+    (25, "Château Valoux"): eu("8,85"),
+    (25, "Château Tour Bel-Air", "75 cl"): eu("6,20"),
+    (25, "Château Tour Bel-Air", "Magnum 1,5 L"): eu("14,30"),
+    (25, "Château Macquin", "75 cl"): eu("7,50"),
+    (25, "Château Macquin", "Magnum 1,5 L"): eu("17,25"),
+    (25, "Les Parcelles de François Despagne"): eu("14,20"),
 }
 
 # ——————————————————————————————————————————————— les vins retirés du tarif restaurant ———
@@ -266,6 +442,27 @@ RETIRES = {
 # tant qu'elle ne les a pas données, la fiche garde l'offre du catalogue caviste.
 OFFRES = {
     5: "Offre 11+1 à partir de 60 cols.",   # écrit à la main sur le scan 11 (Berteaud Manceau)
+}
+
+# ————————————————————————————————————————————— les notes de prix du tarif restaurant ———
+# Deux formulations seulement, comme dans les autres éditions : franco de port, ou hors frais
+# de transport (le tarif dit « départ cave » ou « départ chai »).
+HORS = "* Prix de la bouteille H.T. hors frais de transport."
+FRANCO = "* Prix de la bouteille H.T. franco de port."
+NOTES = {
+    20: HORS,      # Pasquiers : « TARIF HORS TAXES - DEPART CAVE »
+    21: FRANCO,    # Trichon Rhône : « Tarifs HT franco de port »
+    22: FRANCO,    # Stratéus : « Franco de port 48 bouteilles »
+    23: FRANCO,    # Haut Marin : « Prix de la bouteille H.T. Franco de port. »
+    26: FRANCO,    # La Gorce : « Prix Franco de port par bouteille »
+    34: FRANCO,    # Gragnos : « Franco », écrit par l'agence
+    35: HORS,      # Les Lys : « départ cave », écrit par l'agence
+    36: FRANCO,    # Albas : « Franco », écrit par l'agence sous « départ cave »
+    37: HORS,      # Dekeyne : « HT départ cave »
+    38: FRANCO,    # Frézier : « Tarif Franco », écrit par l'agence
+    40: FRANCO,    # Vazart-Coquart : colonnes « TARIFS FRANCO »
+    42: FRANCO,    # Trichon Bugey : « Tarifs HT franco de port »
+    25: FRANCO,    # La Passion des Terroirs : « Tarif France Franco HT »
 }
 
 
@@ -296,6 +493,8 @@ def main():
         for n in s.get("domaines") or []:
             if n in OFFRES:
                 s["offre_salon"] = OFFRES[n]
+            if n in NOTES:
+                s["note_prix_salon"] = NOTES[n]
         # les paliers : ceux du tarif restaurant quand on les a relevés
         paliers = dict(s.get("paliers_salon") or {})
         for cle, p in PALIERS.items():

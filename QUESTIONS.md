@@ -621,3 +621,41 @@ reste en case vide.
   est décochée dans les paramètres de partage. Le plus sûr reste de **joindre le PDF
   directement dans la conversation** (c'est ainsi que le dossier de Mathéo et la fiche
   Divin No Low sont arrivés).
+
+### Point 36 — le dossier restaurant complet du 10 octobre (73 pages)
+
+Le dossier est arrivé et a été dépouillé : **548 prix posés, 97 cases encore vides**. Ce qui
+demande ton avis :
+
+- **Stratéus** : la grille porte « **Rajouter 0,70 cts sur toute la gamme** ». J'ai donc posé le
+  prix du tarif **plus 0,70 €** : gamme Stratéus 13,20 / 12,50 / 11,70 ; gamme Koloss 7,20 / — /
+  6,70 ; gamme Néolithik 16,70 / 15,20 / 13,20. La grille va de 24 à 300 bouteilles et personne
+  n'a dit lesquelles garder : j'ai pris les plus petits volumes, **24 / 48 / 120 bts**. La gamme
+  Koloss n'a pas de prix à 48 bts (le tarif met « / ») : la case reste vide. À confirmer.
+- **Denis Frézier** : la première colonne est réécrite à la main, un euro au-dessus du prix
+  imprimé. Relevé : Trois Crus 16,92 (15,92 imprimé), Terroir 19,72 (18,72), Millésime
+  Expression 20,34 (19,34 barré, « 20,34 » écrit). Paliers 36 / 66 / 126, franco.
+- **Château de Gragnos**, Grain de Blanc : **7,80 / 5,50 / 7,20**. Le palier 60 bts est moins
+  cher que le palier 120. Relevé tel quel, rien corrigé.
+- **Château Balac** : « Rajouter Balac » est écrit sur le courriel, mais le **Château Balac
+  rouge (2022 et 2018) n'y a aucun prix** : ses deux lignes restent vides. Les trois autres
+  cuvées sont posées (Carton / 120 / 180 bts).
+- **Vazart-Coquart** : colonnes « Par 24 / Par 48 / Par 78 » (surlignées). Je les ai gardées
+  telles quelles comme intitulés ; dis-moi si tu préfères « À partir de… ».
+- **Sans aucun tarif restaurant** (cases vides) : **Divin No Low**, **Domaine des Nugues**,
+  **les jus de cépages de la Famille d'Exea**, **le Mas des Restanques**.
+- **Lignes isolées sans prix** : le Pouilly-Vinzelles de Goichot ; le Menetou-Salon rouge et
+  l'IGP Chenin Blanc de Villebois ; « Rouge aux lèvres », « La Perle » et les trois BIB du
+  Colombier ; le N°10 Pétillant de Haut Marin ; les magnums d'Albas (Terre Rouge, 4 saisons,
+  Clos de Cassis) ; le magnum de Chant de Lune (Exea).
+- **Millésimes qui diffèrent entre le tarif restaurant et le catalogue** : Les Lys (2020 et
+  2019 au tarif, 2023 et 2025 au catalogue), La Gorce (2019 corrigé en 2020 à la main),
+  Trichon Bugey (Pinot Noir 2022 au tarif, 2023 au catalogue). Le catalogue garde ses
+  millésimes ; dis-moi si tu veux ceux du tarif restaurant.
+- **La Passion des Terroirs** : le tarif porte « **Commande minimum : 400 €** ». Faut-il
+  l'afficher sur la fiche ?
+- Des vins figurent au tarif restaurant **sans être au catalogue** (je n'en ai ajouté aucun) :
+  chez Exea, « Les Résistants » (Muscaris, Souvignier Gris), « Les N°9 Low Alcool », « Petit
+  Jardin », Lullula et Carduelis ; chez Albas, Tempo, Sonate, Arlequin, Pinot 100 %, Grenache
+  Gris et le BIB 3 L ; chez La Gorce, Rose DADA ; chez Pasquiers, La Singulière et Cuvée M.
+  Dis-moi si tu veux en ouvrir certains.
