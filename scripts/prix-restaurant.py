@@ -431,11 +431,12 @@ PRIX = {
 }
 
 # ——————————————————————————————————————————————— les vins retirés du tarif restaurant ———
-# Une ligne barrée sur le tarif annoté : le domaine ne la propose pas aux restaurants.
-RETIRES = {
-    (41, "Sancerre Rosé"),      # barré sur le tarif (scan 5)
-    (39, "Plénitude de Solemme Extra-Brut", "1,5 L"),   # magnums rayés (scan 2)
-}
+# Aucun : « par rapport aux catalogues cavistes, tout est bon et tout est à prendre ; la seule
+# différence, c'est les minimums de commande, les colonnes et les prix » (l'agence, 10 octobre).
+# Le catalogue restaurant a donc exactement les mêmes vins que le catalogue caviste. Deux lignes
+# sont barrées sur les tarifs restaurant — le « Sancerre Rosé » des Sardelles (scan 5) et le
+# magnum de Plénitude de Solemme (scan 2) : elles restent au catalogue, sans prix.
+RETIRES = set()
 
 # ——————————————————————————————————————————————————————————————— les offres ———
 # L'agence les reprend une par une (« je changerai les offres, page 1, page 2… ») :

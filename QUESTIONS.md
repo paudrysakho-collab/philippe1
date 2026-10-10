@@ -659,3 +659,14 @@ demande ton avis :
   Jardin », Lullula et Carduelis ; chez Albas, Tempo, Sonate, Arlequin, Pinot 100 %, Grenache
   Gris et le BIB 3 L ; chez La Gorce, Rose DADA ; chez Pasquiers, La Singulière et Cuvée M.
   Dis-moi si tu veux en ouvrir certains.
+
+**Règle donnée par l'agence le 10 octobre** : « par rapport aux catalogues cavistes, tout est
+bon et tout est à prendre ; la seule différence, c'est les minimums de commande, les colonnes
+et les prix ». Le catalogue restaurant a donc désormais **exactement les mêmes vins que le
+catalogue caviste** (vérifié ligne à ligne) : les deux lignes barrées sur les tarifs restaurant
+— le « Sancerre Rosé » des Sardelles et le magnum de Plénitude de Solemme — sont remises, sans
+prix. Les millésimes, cuvées, appellations, textes, labels et départements restent ceux du
+caviste. Deux choses s'écartent encore, parce qu'elles viennent des tarifs restaurant eux-mêmes :
+les **notes de prix** (franco de port ou départ cave, selon ce que dit chaque tarif restaurant)
+et, chez **Chai Berteaud Manceau**, l'offre « 11+1 à partir de 60 cols » écrite à la main sur le
+scan. Dis-moi si tu préfères qu'elles reprennent celles du caviste.

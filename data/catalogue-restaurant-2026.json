@@ -4995,6 +4995,29 @@
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
+     "liste": "(ajout) Plénitude de Solemme Extra-Brut 2022 Magnum 1,5 L",
+     "ajout": true,
+     "tarif": {
+      "tableau": 0,
+      "ligne": 1
+     },
+     "note": null,
+     "ecarts": [],
+     "fiche": 39,
+     "appellation": "Premier Cru Champagne",
+     "cuvee": "Plénitude de Solemme Extra-Brut",
+     "couleur": "Blanc extra brut",
+     "millesime": "2022",
+     "contenance": "1,5 L",
+     "prix_centimes": [
+      null,
+      null,
+      null
+     ],
+     "liste_vins": false,
+     "source": "tarif annoté (scan 4, p.4) : un seul prix pour le magnum"
+    },
+    {
      "liste": "Esprit de Solemme Brut Nature— Premier Cru Champagne",
      "fiche": 39,
      "tarif": {
@@ -5799,6 +5822,23 @@
       1640
      ],
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
+    },
+    {
+     "fiche": 41,
+     "tarif": {
+      "tableau": 0
+     },
+     "appellation": "AOC Sancerre",
+     "cuvee": "Sancerre Rosé",
+     "couleur": "Rosé",
+     "millesime": "—",
+     "contenance": "75 cl",
+     "prix_centimes": [
+      null,
+      null,
+      null
+     ],
+     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
     },
     {
      "fiche": 41,
