@@ -106,6 +106,9 @@ PRIX = {
     (41, "Les Courants Sauvignon Blanc"): eu("5,80", "5,50", "5,20"),
     (41, "Les Courants Rouge Gamay"): eu("5,80", "5,50", "5,20"),
     (41, "Les Courants Pinot Noir"): eu("5,80", "5,50", "5,20"),
+    # Le Sancerre Rosé est barré sur le tarif, mais ses prix y sont écrits : l'agence les a
+    # confirmés le 10 octobre (« 36, 72 et 144 : 10,60 €, 10,30 € et 10 € »).
+    (41, "Sancerre Rosé"): eu("10,60", "10,30", "10,00"),
 
     # ——— Domaine de Coyeux (scan 26)
     (17, "Premières Fleurs Blanc"): eu("6,50", "6,00", "5,50"),

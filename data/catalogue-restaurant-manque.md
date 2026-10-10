@@ -5,7 +5,7 @@
 **seuls les minimums de commande (les colonnes) et les prix changent**. Sur les tarifs
 annotés, on prend **le prix qui est écrit**, surligné ou non (l'agence, 10 octobre).
 
-**État : 549 prix posés, 112 cases encore vides.**
+**État : 552 prix posés, 109 cases encore vides.**
 
 ## 1. Les quatre fiches sans aucun prix restaurant
 
@@ -20,7 +20,6 @@ annotés, on prend **le prix qui est écrit**, surligné ou non (l'agence, 10 oc
 
 | Page | Domaine | Ligne | Pourquoi |
 |---|---|---|---|
-| p.6 | Domaine des Sardelles | Sancerre Rosé (AOC Sancerre · Rosé · 75 cl) | ligne **barrée en rouge** sur le tarif, mais ses prix y sont écrits (10,60 / 10,30 / 10,00) — à trancher |
 | p.8 | Domaine du Colombier / J.Y Bretaudeau | Rouge aux lèvres (IGP Val de Loire · Rouge · 75 cl) | le catalogue C.H.R. du domaine n'a été scanné que sur deux pages |
 | p.8 | Domaine du Colombier / J.Y Bretaudeau | La Perle (Méthode traditionnelle · Blanc · 75 cl) | le catalogue C.H.R. du domaine n'a été scanné que sur deux pages |
 | p.8 | Domaine du Colombier / J.Y Bretaudeau | AOP Muscadet (AOP Muscadet · Blanc · BIB) | le catalogue C.H.R. du domaine n'a été scanné que sur deux pages |

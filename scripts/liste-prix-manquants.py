@@ -20,6 +20,19 @@ DOSSIER = {
     23: "52", 28: "53", 27: "54", 29: "55", 30: "56", 26: "57", 25: "30–32, 58–73",
 }
 
+# Lignes pour lesquelles l'agence a cherché et n'a pas de prix restaurant (10 octobre) :
+# elles restent vides, ce n'est plus à chercher.
+CONFIRMES = {
+    (3, "Rouge aux lèvres"), (3, "La Perle"), (3, "AOP Muscadet"),
+    (3, "IGP Val de Loire Chardonnay"), (3, "IGP Val de Loire Cabernet Franc"),
+    (6, "AOC Menetou-Salon Rouge"), (6, "IGP Chenin Blanc"),
+    (12, "AOC Pouilly-Vinzelles Blanc"),
+    (23, "N°10 Pétillant"),
+}
+# Domaines entiers pour lesquels l'agence n'a aucun tarif restaurant (10 octobre).
+DOMAINES_CONFIRMES = {7, 43}
+
+
 
 def lire(nom):
     return json.loads((RACINE / nom).read_text(encoding="utf-8"))
@@ -54,6 +67,7 @@ def main():
                 or next((p for k, p in st["paliers_salon"].items() if k.split(":")[0] == str(n)), []))
 
     L = []
+    classes = []
     w = L.append
     w("# Catalogue restaurant : les prix qui manquent, domaine par domaine")
     w("")
@@ -71,6 +85,11 @@ def main():
         manque = [v for v in vins if all(x is None for x in v["prix_centimes"])]
         if not manque:
             continue
+        clos = n in DOMAINES_CONFIRMES or all(
+            (n, v["cuvee"] or v["appellation"]) in CONFIRMES for v in manque)
+        if clos:
+            classes.append((n, st, manque))
+            continue
         total += len(manque)
         pal = [p.replace("Prix salon", "Prix") for p in paliers(st, n)]
         w(f"## {noms[n]} — {len(manque)} vin{'s' if len(manque) > 1 else ''}")
@@ -85,6 +104,15 @@ def main():
             w(f"- {etiquette(v)}")
         w("")
     w(f"**{total} vins en tout.**")
+    w("")
+    w("## Déjà cherchés par l'agence : aucun prix restaurant")
+    w("")
+    w("Ces lignes restent sans prix, ce n'est plus à chercher (l'agence, 10 octobre).")
+    w("")
+    for n, st, manque in classes:
+        d = DOSSIER.get(n)
+        ref = f"catalogue p.{plan[str(n)]}, dossier p.{d}" if d else f"catalogue p.{plan[str(n)]}, pas de page au dossier"
+        w(f"- **{noms[n]}** ({ref}) : " + " · ".join(etiquette(v) for v in manque))
     w("")
     w("## Et quelques colonnes isolées")
     w("")

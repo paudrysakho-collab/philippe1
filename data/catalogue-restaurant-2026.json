@@ -5833,11 +5833,11 @@
      "millesime": "—",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1060,
+      1030,
+      1000
      ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 41,

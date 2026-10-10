@@ -5,50 +5,6 @@ et dans le restaurant, les deux ont exactement la même pagination), **sa page d
 dossier de tarifs** envoyé le 10 octobre (`tarifs-restaurant-annotes-2.pdf`, 73 pages),
 ses colonnes, puis les vins dont le prix restaurant n'est pas relevé.
 
-## Domaine des Sardelles — 1 vin
-
-- Catalogue (caviste 85 et restaurant) : **page 6**
-- Dossier de tarifs : **page 3–4**
-- Colonnes : À partir de 36 bts / À partir de 72 bts / À partir de 144 bts
-
-- Sancerre Rosé — AOC Sancerre (Rosé)
-
-## Domaine du Colombier / J.Y Bretaudeau — 5 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 8**
-- Dossier de tarifs : **page 7–8**
-- Colonnes : Prix
-
-- Rouge aux lèvres — IGP Val de Loire (Rouge)
-- La Perle — Méthode traditionnelle (Blanc)
-- AOP Muscadet (Blanc, BIB)
-- IGP Val de Loire Chardonnay (Blanc, BIB)
-- IGP Val de Loire Cabernet Franc (Rosé, BIB)
-
-## Domaine Jean de Villebois — 2 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 11**
-- Dossier de tarifs : **page 11–12**
-- Colonnes : À partir de 36 cols / À partir de 66 cols / À partir de 126 cols / À partir de 246 cols
-
-- AOC Menetou-Salon Rouge (Rouge)
-- IGP Chenin Blanc (Blanc, 2025)
-
-## Divin No Low — 8 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 12**
-- Dossier de tarifs : **aucune page** — c'est tout le tarif restaurant qui manque
-- Colonnes : Prix
-
-- Pinot Noir — Vin sans alcool 0,5 % (Rouge, 2024)
-- Sauvignon Blanc — Vin sans alcool 0,5 % (Blanc, 2024)
-- Sauvignon — Vin sans alcool (Blanc)
-- Chenin Blanc — Vin sans alcool (Blanc)
-- Rosé — Vin sans alcool (Rosé)
-- Pinot Noir — Vin sans alcool (Rouge)
-- Sauvignon Blanc — Vin sans alcool pétillant (Blanc pétillant)
-- Sauvignon Blanc Blush — Vin sans alcool pétillant (Rosé pétillant)
-
 ## Domaine des Nugues — 11 vins
 
 - Catalogue (caviste 85 et restaurant) : **page 16**
@@ -66,37 +22,6 @@ ses colonnes, puis les vins dont le prix restaurant n'est pas relevé.
 - Les Grands Classiques — AOP Moulin-à-Vent (Rouge, 2022)
 - Les Grands Classiques — AOP Moulin-à-Vent (Rouge, 2023, Magnum 1,5 L)
 - Les Grands Classiques — AOP Morgon (Rouge, 2023)
-
-## Maison et Domaine André Goichot — 1 vin
-
-- Catalogue (caviste 85 et restaurant) : **page 19**
-- Dossier de tarifs : **page 16–20**
-- Colonnes : À partir de 42 bts / À partir de 72 bts / À partir de 126 bts
-
-- AOC Pouilly-Vinzelles Blanc (Blanc, 2023)
-
-## Mas des Restanques — 8 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 30**
-- Dossier de tarifs : **aucune page** — c'est tout le tarif restaurant qui manque
-- Colonnes : Prix
-
-- Gigondas — AOC Gigondas (Rouge, 2025)
-- Vacqueyras — AOC Vacqueyras (Rouge, 2025)
-- Cuvée Tombadou — AOC Vacqueyras (Rouge, 2024)
-- Côtes du Rhône — AOC Côtes du Rhône (Rouge, 2024)
-- Vacqueyras — AOC Vacqueyras (Blanc, 2025)
-- Waouh ! — Vin de France (Blanc)
-- Gigondas — AOC Gigondas (Rouge, 2025, Magnum 1,5 L)
-- Vacqueyras — AOC Vacqueyras (Rouge, 2025, Magnum 1,5 L)
-
-## Domaine Haut Marin — 1 vin
-
-- Catalogue (caviste 85 et restaurant) : **page 36**
-- Dossier de tarifs : **page 52**
-- Colonnes : À partir de 60 bts
-
-- N°10 Pétillant — IGP Côtes de Gascogne (Pétillant)
 
 ## Château Balac — 2 vins
 
@@ -138,7 +63,18 @@ ses colonnes, puis les vins dont le prix restaurant n'est pas relevé.
 - 4 saisons — AOC Corbières (Rouge, 2023/2024, 1,5 L)
 - Clos de Cassis — AOC Corbières (Rouge, 2022/2023, 1,5 L)
 
-**49 vins en tout.**
+**23 vins en tout.**
+
+## Déjà cherchés par l'agence : aucun prix restaurant
+
+Ces lignes restent sans prix, ce n'est plus à chercher (l'agence, 10 octobre).
+
+- **Domaine du Colombier / J.Y Bretaudeau** (catalogue p.8, dossier p.7–8) : Rouge aux lèvres — IGP Val de Loire (Rouge) · La Perle — Méthode traditionnelle (Blanc) · AOP Muscadet (Blanc, BIB) · IGP Val de Loire Chardonnay (Blanc, BIB) · IGP Val de Loire Cabernet Franc (Rosé, BIB)
+- **Domaine Jean de Villebois** (catalogue p.11, dossier p.11–12) : AOC Menetou-Salon Rouge (Rouge) · IGP Chenin Blanc (Blanc, 2025)
+- **Divin No Low** (catalogue p.12, pas de page au dossier) : Pinot Noir — Vin sans alcool 0,5 % (Rouge, 2024) · Sauvignon Blanc — Vin sans alcool 0,5 % (Blanc, 2024) · Sauvignon — Vin sans alcool (Blanc) · Chenin Blanc — Vin sans alcool (Blanc) · Rosé — Vin sans alcool (Rosé) · Pinot Noir — Vin sans alcool (Rouge) · Sauvignon Blanc — Vin sans alcool pétillant (Blanc pétillant) · Sauvignon Blanc Blush — Vin sans alcool pétillant (Rosé pétillant)
+- **Maison et Domaine André Goichot** (catalogue p.19, dossier p.16–20) : AOC Pouilly-Vinzelles Blanc (Blanc, 2023)
+- **Mas des Restanques** (catalogue p.30, pas de page au dossier) : Gigondas — AOC Gigondas (Rouge, 2025) · Vacqueyras — AOC Vacqueyras (Rouge, 2025) · Cuvée Tombadou — AOC Vacqueyras (Rouge, 2024) · Côtes du Rhône — AOC Côtes du Rhône (Rouge, 2024) · Vacqueyras — AOC Vacqueyras (Blanc, 2025) · Waouh ! — Vin de France (Blanc) · Gigondas — AOC Gigondas (Rouge, 2025, Magnum 1,5 L) · Vacqueyras — AOC Vacqueyras (Rouge, 2025, Magnum 1,5 L)
+- **Domaine Haut Marin** (catalogue p.36, dossier p.52) : N°10 Pétillant — IGP Côtes de Gascogne (Pétillant)
 
 ## Et quelques colonnes isolées
 
