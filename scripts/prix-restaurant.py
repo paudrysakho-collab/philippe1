@@ -166,6 +166,9 @@ PRIX = {
     # 36 / 60 / 120 à la main ; les colonnes 240 et 360 et les magnums sont rayés.
     (39, "Terre de Solemme Brut"): eu("21,70", "21,20", "20,50"),
     (39, "Plénitude de Solemme Extra-Brut", "75 cl"): eu("22,70", "22,10", "21,60"),
+    # le magnum est vendu à l'unité : un seul prix, imprimé sur le tarif (le trait rouge barre
+    # les colonnes 240 et 360+, il ne barre pas la ligne). Même prix qu'au catalogue caviste.
+    (39, "Plénitude de Solemme Extra-Brut", "1,5 L"): eu("58,00"),
     (39, "Esprit de Solemme Brut Nature"): eu("26,50", "25,80", "25,10"),
     (39, "Nature de Solemme Blanc de Blancs Brut Nature"): eu("32,80", "32,00", "31,20"),
     (39, "Ambre de Solemme Blanc de Noirs Brut Nature"): eu("34,30", "33,50", "32,60"),

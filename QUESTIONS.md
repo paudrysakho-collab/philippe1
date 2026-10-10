@@ -670,3 +670,17 @@ caviste. Deux choses s'écartent encore, parce qu'elles viennent des tarifs rest
 les **notes de prix** (franco de port ou départ cave, selon ce que dit chaque tarif restaurant)
 et, chez **Chai Berteaud Manceau**, l'offre « 11+1 à partir de 60 cols » écrite à la main sur le
 scan. Dis-moi si tu préfères qu'elles reprennent celles du caviste.
+
+**Relecture du 10 octobre, « on prend le prix qui est écrit, surligné ou non »** : chaque ligne
+restée vide a été reprise sur son scan. Une seule a été comblée : le **magnum de Plénitude de
+Solemme**, dont le prix (58,00 €) est bien imprimé — le trait rouge barre les colonnes 240 et
+360+, pas la ligne ; c'est le même prix qu'au catalogue caviste. Toutes les autres n'ont
+réellement aucun prix écrit sur le scan : soit le vin n'y figure pas (Menetou-Salon rouge et
+IGP Chenin de Villebois, Pouilly-Vinzelles de Goichot, N°10 Pétillant de Haut Marin, magnums
+d'Albas et d'Exea, Château Balac), soit le tarif met « – » dans la colonne (parcellaires de
+Villebois au-delà de 120 cols, magnums de Trichon, Koloss à 48 bts), soit seules deux pages du
+tarif ont été scannées (Domaine du Colombier : il manque la page des rouges, du pétillant et
+des BIB ; Domaine des Nugues : il manque la page de ses vins).
+**Une seule ligne reste à trancher** : le **Sancerre Rosé des Sardelles**. Son nom et ses trois
+prix (10,60 / 10,30 / 10,00) sont barrés d'un trait rouge, mais les prix sont lisibles. Je les
+ai laissés vides : barré veut-il dire « pas pour les restaurants », ou faut-il les poser ?
