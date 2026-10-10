@@ -171,7 +171,6 @@
    "departements": [
     "44",
     "49",
-    "53",
     "85"
    ],
    "tableaux": [
@@ -211,6 +210,76 @@
    "53",
    "56",
    "85"
+  ],
+  "2": [
+   "35",
+   "44",
+   "49",
+   "53",
+   "56",
+   "85"
+  ],
+  "8": [
+   "35",
+   "44",
+   "49",
+   "53",
+   "56",
+   "85"
+  ],
+  "14": [
+   "35",
+   "44",
+   "49",
+   "53",
+   "56",
+   "85"
+  ],
+  "31": [
+   "35",
+   "44",
+   "49",
+   "53",
+   "56",
+   "85"
+  ]
+ },
+ "sans_distribution": [
+  7
+ ],
+ "legendes_rond": {
+  "25": "Lucien Lurton"
+ },
+ "variantes_departement": {
+  "49": [
+   6,
+   7,
+   11,
+   23
+  ],
+  "53": [
+   6,
+   7,
+   11,
+   43,
+   23,
+   25
+  ],
+  "35": [
+   11,
+   43,
+   23
+  ],
+  "44": [
+   25
+  ],
+  "56": [
+   11,
+   43,
+   23,
+   25,
+   32,
+   33
   ]
  },
  "stands": [
@@ -464,7 +533,7 @@
    ],
    "doublons_matheo": [],
    "salle": "Salle Blanche",
-   "texte_reference": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées : Trois Crus, Terroir Noir et Terroir Blanc. Ratafia disponible. Vins sous allocation.",
+   "texte_reference": "Enracinée depuis 7 générations à Monthelon, entre Côte des Blancs et Vallée de la Marne, la Maison Denis Frézier conjugue mémoire et durabilité. Certifiée HVE et VDC, engagée en conversion biologique, elle sculpte les cuvées : Trois Crus, Terroir Noir et Terroir Blanc. Vins sous allocation.",
    "fiche_texte": 38,
    "retires_agence": [
     "Brut Nature — AOC Champagne"
@@ -2403,7 +2472,7 @@
    ],
    "doublons_matheo": [],
    "salle": "Salle Noire",
-   "texte_reference": "Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan à la vibrante énergie de sol. Ratafia disponible. Vins sous allocation.",
+   "texte_reference": "Fidèle à la ferme de La Voglonière depuis 1919, la famille Dekeyne cultive une relation intime avec la terre champenoise. Engagé en conversion biologique, ce domaine de quatre générations élabore des champagnes d’artisan à la vibrante énergie de sol. Vins sous allocation.",
    "fiche_texte": 37,
    "paliers_salon": {
     "37": [
