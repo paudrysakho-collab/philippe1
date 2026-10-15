@@ -684,3 +684,21 @@ des BIB ; Domaine des Nugues : il manque la page de ses vins).
 **Une seule ligne reste à trancher** : le **Sancerre Rosé des Sardelles**. Son nom et ses trois
 prix (10,60 / 10,30 / 10,00) sont barrés d'un trait rouge, mais les prix sont lisibles. Je les
 ai laissés vides : barré veut-il dire « pas pour les restaurants », ou faut-il les poser ?
+
+### Point 37 — relecture du 15 octobre (catalogue caviste et restaurant)
+
+- **Domaine Haut Marin** : ses **Armagnacs** et ses **bag-in-box** manquaient dans l'édition
+  globale ; ils sont posés d'après le tarif « HAUT MARIN -2026- Départ » envoyé le 15 octobre
+  (`sources/catalogue-global-2026/scan-haut-marin-2026.pdf`, « Rajouter » en rouge sur les deux
+  tableaux). **18 Armagnacs** (Blanche, Réserve, V.S.O.P., X.O., Hors d'Age, puis treize
+  millésimés de 2003 à 1973, 22,00 € à 106,00 €) et **3 BIB** (3 L 7,75 €, 5 L 11,40 €,
+  10 L 20,25 €). La fiche tient désormais sur deux pages (36 et 37), le catalogue reste à
+  64 pages. Côté restaurant, sa page du dossier (p.52) ne donne que sept Armagnacs
+  (28,00 / 32,00 / 34,00 / 37,00 / 42,00 / 48,00 pour 2000 / 60,00 pour 1990) et les trois BIB
+  (13,30 / 20,25 / 36,00) : **les treize millésimés y restent sans prix.**
+- **Domaine des Sardelles** : « Les Courants Pinot Noir » est retiré et « Les Courants Rouge
+  Gamay » devient **« Les Courants Rouge Gamay et Pinot Noir »** (l'agence, 15 octobre) ; le prix
+  ne change pas.
+- **Domaine Stratéus — les modalités de transport, à vérifier.** Son tarif ne porte ni « franco »
+  ni « départ cave » ; seule mention trouvée : « Franco de port 48 bouteilles ». La fiche affiche
+  donc « franco de port ». Est-ce bien franco, et à partir de quelle quantité ?

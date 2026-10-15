@@ -208,8 +208,10 @@ NOUVEAUX = {
              V(41, 0, "AOC Sancerre", "Sancerre Rouge", "Rouge", "—", eu("13,20", "12,90", "12,60")),
              V(41, 0, "AOC Pouilly-Fumé", "Pouilly-Fumé", "Blanc", "—", eu("11,80", "11,50", "11,20")),
              V(41, 1, "IGP Val de Loire", "Les Courants Sauvignon Blanc", "Blanc", "—", eu("5,50", "5,20", "4,90")),
-             V(41, 1, "IGP Val de Loire", "Les Courants Rouge Gamay", "Rouge", "—", eu("5,50", "5,20", "4,90")),
-             V(41, 1, "IGP Val de Loire", "Les Courants Pinot Noir", "Rouge", "—", eu("5,50", "5,20", "4,90")),
+             # les deux rouges n'en font qu'un (l'agence, 15 octobre) : le Pinot Noir est retiré
+             # et le Gamay prend les deux noms, au même prix
+             V(41, 1, "IGP Val de Loire", "Les Courants Rouge Gamay et Pinot Noir", "Rouge", "—",
+               eu("5,50", "5,20", "4,90")),
          ]},
     # Beaujolais — Domaine des Nugues (tarifs France HT départ cave 2026, scan p.14).
     # Colonnes surlignées : 120, 240, 360. Lignes : millésime et format surlignés.
@@ -327,6 +329,33 @@ BIB_COLOMBIER = [
       prix_source="tarif des BIB annoté par l'agence, 8 octobre 2026"),
 ]
 
+# Sud-Ouest — Domaine Haut Marin : ses Armagnacs et ses bag-in-box, oubliés dans l'édition
+# globale (l'agence, 15 octobre). Prix relevés sur son tarif « HAUT MARIN -2026- Départ »
+# (sources/catalogue-global-2026/scan-haut-marin-2026.pdf, deux pages, « Rajouter » en rouge) :
+# les sept premiers Armagnacs et les trois BIB avaient déjà ces prix au tarif de septembre,
+# les treize millésimés sont nouveaux.
+TARIF_HM = "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+ARMAGNAC = "AOP Bas-Armagnac"
+ARMAGNACS_HAUT_MARIN = [
+    V(23, 1, ARMAGNAC, "Blanche Armagnac", "Blanc", "—", eu("22,00"), "70 cl", prix_source=TARIF_HM),
+    V(23, 1, ARMAGNAC, "Réserve", "Blanc", "—", eu("25,00"), "70 cl", prix_source=TARIF_HM),
+    V(23, 1, ARMAGNAC, "V.S.O.P.", "Blanc", "—", eu("28,00"), "70 cl", prix_source=TARIF_HM),
+    V(23, 1, ARMAGNAC, "X.O.", "Blanc", "—", eu("30,00"), "70 cl", prix_source=TARIF_HM),
+    V(23, 1, ARMAGNAC, "Hors d'Age", "Blanc", "—", eu("33,00"), "70 cl", prix_source=TARIF_HM),
+] + [
+    V(23, 1, ARMAGNAC, "Millésimés", "Blanc", m, eu(prix), "70 cl", prix_source=TARIF_HM)
+    for m, prix in [("2003", "37,00"), ("2000", "39,00"), ("1998", "42,00"), ("1993", "46,00"),
+                    ("1992", "47,00"), ("1990", "49,00"), ("1986", "54,00"), ("1983", "59,00"),
+                    ("1981", "65,00"), ("1980", "69,00"), ("1979", "77,00"), ("1978", "87,00"),
+                    ("1973", "106,00")]
+]
+GASCOGNE = "IGP Côtes-de-Gascogne"
+BIB_HAUT_MARIN = [
+    V(23, 2, GASCOGNE, "Amande", "Blanc, Rosé, Rouge", "—", eu("7,75"), "3 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Gulf Stream", "Blanc, Rosé, Rouge", "—", eu("11,40"), "5 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Triton", "Blanc, Rouge", "—", eu("20,25"), "10 L", prix_source=TARIF_HM),
+]
+
 # Languedoc — Domaine Les Lys (sources/catalogue-global-2026/scan-les-lys.pdf) : les cinq vins non
 # raturés, prix unique « à partir de 120 bouteilles » ; l'offre 11+1 vaut à partir de 180 cols.
 # Barrés : Saint Anastasie, Librotte. Caillasses : prix raturé mais « ok » écrit à côté.
@@ -377,6 +406,10 @@ def main():
         if 3 in (s.get("domaines") or []):     # le Colombier gagne ses bag-in-box
             s["vins"] = s["vins"] + BIB_COLOMBIER
             s["paliers_salon"]["3:1"] = ["5 L", "10 L"]
+        if 23 in (s.get("domaines") or []):    # Haut Marin gagne ses Armagnacs et ses BIB
+            s["vins"] = s["vins"] + ARMAGNACS_HAUT_MARIN + BIB_HAUT_MARIN
+            s["paliers_salon"]["23:1"] = ["Tarif"]
+            s["paliers_salon"]["23:2"] = ["Tarif"]
         entrees.append(s)
     for n, x in NOUVEAUX.items():
         entrees.append({"stand": None, "nom_salon": None, "domaines": [n], "vins": x["vins"],

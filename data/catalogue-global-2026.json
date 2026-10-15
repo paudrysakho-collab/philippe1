@@ -1300,6 +1300,321 @@
      "offre": "5+1",
      "offre_detail": "dès 250 cols",
      "prix_source": "scans de l'agence, 3 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Blanche Armagnac",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      2200
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Réserve",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      2500
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "V.S.O.P.",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      2800
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "X.O.",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      3000
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Hors d'Age",
+     "couleur": "Blanc",
+     "millesime": "—",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      3300
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "2003",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      3700
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "2000",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      3900
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1998",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      4200
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1993",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      4600
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1992",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      4700
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1990",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      4900
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1986",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      5400
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1983",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      5900
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1981",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      6500
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1980",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      6900
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1979",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      7700
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1978",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      8700
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 1
+     },
+     "appellation": "AOP Bas-Armagnac",
+     "cuvee": "Millésimés",
+     "couleur": "Blanc",
+     "millesime": "1973",
+     "contenance": "70 cl",
+     "prix_centimes": [
+      10600
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 2
+     },
+     "appellation": "IGP Côtes-de-Gascogne",
+     "cuvee": "Amande",
+     "couleur": "Blanc, Rosé, Rouge",
+     "millesime": "—",
+     "contenance": "3 L",
+     "prix_centimes": [
+      775
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 2
+     },
+     "appellation": "IGP Côtes-de-Gascogne",
+     "cuvee": "Gulf Stream",
+     "couleur": "Blanc, Rosé, Rouge",
+     "millesime": "—",
+     "contenance": "5 L",
+     "prix_centimes": [
+      1140
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
+    },
+    {
+     "fiche": 23,
+     "tarif": {
+      "tableau": 2
+     },
+     "appellation": "IGP Côtes-de-Gascogne",
+     "cuvee": "Triton",
+     "couleur": "Blanc, Rouge",
+     "millesime": "—",
+     "contenance": "10 L",
+     "prix_centimes": [
+      2025
+     ],
+     "prix_source": "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
     }
    ],
    "doublons_matheo": [],
@@ -1311,6 +1626,12 @@
      "À partir de 72 cols",
      "À partir de 300 cols",
      "À partir de 600 cols"
+    ],
+    "23:1": [
+     "Tarif"
+    ],
+    "23:2": [
+     "Tarif"
     ]
    },
    "mode_prix": "paliers",
@@ -5819,24 +6140,7 @@
       "tableau": 1
      },
      "appellation": "IGP Val de Loire",
-     "cuvee": "Les Courants Rouge Gamay",
-     "couleur": "Rouge",
-     "millesime": "—",
-     "contenance": "75 cl",
-     "prix_centimes": [
-      550,
-      520,
-      490
-     ],
-     "prix_source": "tarif annoté par l'agence, scan du 8 octobre 2026"
-    },
-    {
-     "fiche": 41,
-     "tarif": {
-      "tableau": 1
-     },
-     "appellation": "IGP Val de Loire",
-     "cuvee": "Les Courants Pinot Noir",
+     "cuvee": "Les Courants Rouge Gamay et Pinot Noir",
      "couleur": "Rouge",
      "millesime": "—",
      "contenance": "75 cl",

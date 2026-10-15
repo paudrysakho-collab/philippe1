@@ -104,8 +104,7 @@ PRIX = {
     (41, "Sancerre Rouge"): eu("13,50", "13,20", "12,90"),
     (41, "Pouilly-Fumé"): eu("12,10", "11,80", "11,50"),
     (41, "Les Courants Sauvignon Blanc"): eu("5,80", "5,50", "5,20"),
-    (41, "Les Courants Rouge Gamay"): eu("5,80", "5,50", "5,20"),
-    (41, "Les Courants Pinot Noir"): eu("5,80", "5,50", "5,20"),
+    (41, "Les Courants Rouge Gamay et Pinot Noir"): eu("5,80", "5,50", "5,20"),
     # Le Sancerre Rosé est barré sur le tarif, mais ses prix y sont écrits : l'agence les a
     # confirmés le 10 octobre (« 36, 72 et 144 : 10,60 €, 10,30 € et 10 € »).
     (41, "Sancerre Rosé"): eu("10,60", "10,30", "10,00"),
@@ -314,6 +313,19 @@ PRIX = {
     (22, "Néolitik Blanc"): eu("16,70", "15,20", "13,20"),
     (22, "Koloss Rouge"): eu("7,20", None, "6,70"),
     (22, "Koloss Doux"): eu("7,20", None, "6,70"),
+
+    # ——— Domaine Haut Marin (p.52), Armagnacs et bag-in-box : tarif unique, franco de port.
+    # Les treize millésimés du tarif départ ne sont pas sur la page restaurant : cases vides.
+    (23, "Blanche Armagnac"): eu("28,00"),
+    (23, "Réserve"): eu("32,00"),
+    (23, "V.S.O.P."): eu("34,00"),
+    (23, "X.O."): eu("37,00"),
+    (23, "Hors d'Age"): eu("42,00"),
+    (23, "Millésimés", "2000"): eu("48,00"),
+    (23, "Millésimés", "1990"): eu("60,00"),
+    (23, "Amande", "3 L"): eu("13,30"),
+    (23, "Gulf Stream", "5 L"): eu("20,25"),
+    (23, "Triton", "10 L"): eu("36,00"),
 
     # ——— Domaine Haut Marin (p.52) : une colonne « À partir de 60 bts », franco de port.
     (23, "N°1 Littorine Blanc"): eu("4,35"),
