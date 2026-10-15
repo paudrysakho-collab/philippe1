@@ -337,7 +337,9 @@ BIB_COLOMBIER = [
 TARIF_HM = "tarif « HAUT MARIN -2026- Départ », scan de l'agence du 15 octobre 2026"
 ARMAGNAC = "AOP Bas-Armagnac"
 ARMAGNACS_HAUT_MARIN = [
-    V(23, 1, ARMAGNAC, "Blanche Armagnac", "Blanc", "—", eu("22,00"), "70 cl", prix_source=TARIF_HM),
+    # la Blanche a son appellation à elle sur le tarif : la colonne AOC dit « Blanche Armagnac »,
+    # « Bas Armagnac » ne vaut que pour les assemblages et les millésimés (l'agence, 15 octobre)
+    V(23, 1, "AOP Blanche Armagnac", "Blanche Armagnac", "Blanc", "—", eu("22,00"), "70 cl", prix_source=TARIF_HM),
     V(23, 1, ARMAGNAC, "Réserve", "Blanc", "—", eu("25,00"), "70 cl", prix_source=TARIF_HM),
     V(23, 1, ARMAGNAC, "V.S.O.P.", "Blanc", "—", eu("28,00"), "70 cl", prix_source=TARIF_HM),
     V(23, 1, ARMAGNAC, "X.O.", "Blanc", "—", eu("30,00"), "70 cl", prix_source=TARIF_HM),
@@ -349,12 +351,12 @@ ARMAGNACS_HAUT_MARIN = [
                     ("1981", "65,00"), ("1980", "69,00"), ("1979", "77,00"), ("1978", "87,00"),
                     ("1973", "106,00")]
 ]
-GASCOGNE = "IGP Côtes-de-Gascogne"
+GASCOGNE = "IGP Côtes de Gascogne"      # comme le tableau des vins de la fiche
 # Le tarif 2026 ne nomme pas les bag-in-box : il donne la contenance et les couleurs
 # disponibles (l'agence, 15 octobre). Les noms de cuvée de l'ancien tarif sont retirés.
 BIB_HAUT_MARIN = [
-    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rosé, Rouge", "—", eu("7,75"), "3 L", prix_source=TARIF_HM),
-    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rosé, Rouge", "—", eu("11,40"), "5 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rouge, Rosé", "—", eu("7,75"), "3 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rouge, Rosé", "—", eu("11,40"), "5 L", prix_source=TARIF_HM),
     V(23, 2, GASCOGNE, "Blanc, Rouge", "Blanc, Rouge", "—", eu("20,25"), "10 L", prix_source=TARIF_HM),
 ]
 

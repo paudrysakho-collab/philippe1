@@ -705,3 +705,15 @@ ai laissés vides : barré veut-il dire « pas pour les restaurants », ou faut-
 - **Domaine Stratéus — les modalités de transport, à vérifier.** Son tarif ne porte ni « franco »
   ni « départ cave » ; seule mention trouvée : « Franco de port 48 bouteilles ». La fiche affiche
   donc « franco de port ». Est-ce bien franco, et à partir de quelle quantité ?
+
+**Contrôle total de la fiche Haut Marin (15 octobre)** : `epreuves/verifications/haut-marin-controle.md`
+compare ligne à ligne le tarif 2026 et le catalogue. Les 7 vins, les 18 Armagnacs et les 3 BIB
+sont exacts. Deux corrections ont été faites après la relecture de l'agence :
+l'appellation de la **Blanche Armagnac** (le tarif écrit « Blanche Armagnac » dans la colonne AOC,
+« Bas Armagnac » ne vaut que pour les assemblages et les millésimés) et les BIB, qui n'ont pas de
+nom de cuvée sur le tarif 2026. Un contrôle des données montre que **rien d'autre n'a bougé** :
+seules les fiches 23 (21 lignes ajoutées, aucune retirée) et 41 (deux Courants fusionnés) ont
+changé depuis le 14 octobre.
+Restent à trancher : **N°2 Amande**, **Cuvée Denise** et **Cuvée Philippe** sont au tarif mais
+pas au catalogue (ils n'y ont jamais été) ; et le tarif sépare **N°10 Blanc** et **N°10 Rosé**,
+au même prix, là où le catalogue n'a qu'une ligne « N°10 Pétillant ».

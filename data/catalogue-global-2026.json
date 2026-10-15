@@ -1306,7 +1306,7 @@
      "tarif": {
       "tableau": 1
      },
-     "appellation": "AOP Bas-Armagnac",
+     "appellation": "AOP Blanche Armagnac",
      "cuvee": "Blanche Armagnac",
      "couleur": "Blanc",
      "millesime": "—",
@@ -1576,9 +1576,9 @@
      "tarif": {
       "tableau": 2
      },
-     "appellation": "IGP Côtes-de-Gascogne",
+     "appellation": "IGP Côtes de Gascogne",
      "cuvee": "Blanc, Rouge, Rosé",
-     "couleur": "Blanc, Rosé, Rouge",
+     "couleur": "Blanc, Rouge, Rosé",
      "millesime": "—",
      "contenance": "3 L",
      "prix_centimes": [
@@ -1591,9 +1591,9 @@
      "tarif": {
       "tableau": 2
      },
-     "appellation": "IGP Côtes-de-Gascogne",
+     "appellation": "IGP Côtes de Gascogne",
      "cuvee": "Blanc, Rouge, Rosé",
-     "couleur": "Blanc, Rosé, Rouge",
+     "couleur": "Blanc, Rouge, Rosé",
      "millesime": "—",
      "contenance": "5 L",
      "prix_centimes": [
@@ -1606,7 +1606,7 @@
      "tarif": {
       "tableau": 2
      },
-     "appellation": "IGP Côtes-de-Gascogne",
+     "appellation": "IGP Côtes de Gascogne",
      "cuvee": "Blanc, Rouge",
      "couleur": "Blanc, Rouge",
      "millesime": "—",
