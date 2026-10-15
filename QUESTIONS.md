@@ -725,4 +725,9 @@ oubliés en cours de route, ils n'y ont jamais été. Le catalogue caviste est m
 salon, plus ceux que les tarifs annotés d'octobre ont ajoutés. Haut Marin a présenté 7 vins au
 salon sur les 9 de son tarif ; N°2 Amande, Cuvée Denise et Cuvée Philippe sont donc restés dehors.
 Le relevé complet est dans `epreuves/verifications/lignes-du-tarif-absentes.md` :
-**103 vins, sur 28 domaines**. À décider : on les ajoute (pour Haut Marin seul, ou partout) ?
+**103 vins, sur 28 domaines**. **Tranché le 15 octobre : on ne les ajoute pas.** Le relevé reste
+là pour mémoire, à ne rouvrir que si l'agence le demande.
+
+**Ce qui a été ajouté au catalogue le 15 octobre, et rien d'autre : les bag-in-box et les
+Armagnacs de Haut Marin.** Les Sardelles n'ont rien gagné — « Les Courants Pinot Noir » a été
+retiré et fondu dans la ligne du Gamay, à la demande de l'agence.
