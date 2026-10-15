@@ -471,7 +471,9 @@ FRANCO = "* Prix de la bouteille H.T. franco de port."
 NOTES = {
     20: HORS,      # Pasquiers : « TARIF HORS TAXES - DEPART CAVE »
     21: FRANCO,    # Trichon Rhône : « Tarifs HT franco de port »
-    22: FRANCO,    # Stratéus : « Franco de port 48 bouteilles »
+    # Stratéus : sa grille 2026 écrit « Franco de port 48 bouteilles » en bas de page
+    # (vérifié à l'image le 15 octobre, epreuves/verifications/strateus-conditions-transport.png)
+    22: "* Prix de la bouteille H.T. franco de port à partir de 48 bts.",
     23: FRANCO,    # Haut Marin : « Prix de la bouteille H.T. Franco de port. »
     26: FRANCO,    # La Gorce : « Prix Franco de port par bouteille »
     34: FRANCO,    # Gragnos : « Franco », écrit par l'agence

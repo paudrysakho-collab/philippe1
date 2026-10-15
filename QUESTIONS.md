@@ -702,9 +702,14 @@ ai laissés vides : barré veut-il dire « pas pour les restaurants », ou faut-
 - **Domaine des Sardelles** : « Les Courants Pinot Noir » est retiré et « Les Courants Rouge
   Gamay » devient **« Les Courants Rouge Gamay et Pinot Noir »** (l'agence, 15 octobre) ; le prix
   ne change pas.
-- **Domaine Stratéus — les modalités de transport, à vérifier.** Son tarif ne porte ni « franco »
-  ni « départ cave » ; seule mention trouvée : « Franco de port 48 bouteilles ». La fiche affiche
-  donc « franco de port ». Est-ce bien franco, et à partir de quelle quantité ?
+- **Domaine Stratéus — les modalités de transport : vérifié le 15 octobre.** Le bas de sa
+  « GRILLE TARIFAIRE LES VINS STRATÉUS 2026 » porte, en toutes lettres : « Nos tarifs sont
+  affichés en hors taxe / … / **Franco de port 48 bouteilles** / Panachage possible »
+  (image : `epreuves/verifications/strateus-conditions-transport.png`). Le tarif de septembre
+  disait déjà « Prix de la bouteille H.T. Franco de port », sans seuil. Le catalogue restaurant
+  affiche donc **« franco de port à partir de 48 bts »**, et le catalogue caviste garde
+  « franco de port » tout court, comme son tarif. Sa grille mentionne aussi une colonne
+  **Magnum**, « Indisponible » : aucun magnum n'est au catalogue.
 
 **Contrôle total de la fiche Haut Marin (15 octobre)** : `epreuves/verifications/haut-marin-controle.md`
 compare ligne à ligne le tarif 2026 et le catalogue. Les 7 vins, les 18 Armagnacs et les 3 BIB
