@@ -692,7 +692,10 @@ ai laissés vides : barré veut-il dire « pas pour les restaurants », ou faut-
   (`sources/catalogue-global-2026/scan-haut-marin-2026.pdf`, « Rajouter » en rouge sur les deux
   tableaux). **18 Armagnacs** (Blanche, Réserve, V.S.O.P., X.O., Hors d'Age, puis treize
   millésimés de 2003 à 1973, 22,00 € à 106,00 €) et **3 BIB** (3 L 7,75 €, 5 L 11,40 €,
-  10 L 20,25 €). La fiche tient désormais sur deux pages (36 et 37), le catalogue reste à
+  10 L 20,25 €). Les BIB n'ont **pas de nom de cuvée** : le tarif 2026 donne la contenance et
+  les couleurs (« Blanc, Rouge, Rosé » en 3 L et 5 L, « Blanc, Rouge » en 10 L). Les noms
+  Amande, Gulf Stream et Triton venaient de l'ancien tarif de septembre : ils sont retirés
+  (l'agence, 15 octobre). La fiche tient désormais sur deux pages (36 et 37), le catalogue reste à
   64 pages. Côté restaurant, sa page du dossier (p.52) ne donne que sept Armagnacs
   (28,00 / 32,00 / 34,00 / 37,00 / 42,00 / 48,00 pour 2000 / 60,00 pour 1990) et les trois BIB
   (13,30 / 20,25 / 36,00) : **les treize millésimés y restent sans prix.**

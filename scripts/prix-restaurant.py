@@ -323,9 +323,9 @@ PRIX = {
     (23, "Hors d'Age"): eu("42,00"),
     (23, "Millésimés", "2000"): eu("48,00"),
     (23, "Millésimés", "1990"): eu("60,00"),
-    (23, "Amande", "3 L"): eu("13,30"),
-    (23, "Gulf Stream", "5 L"): eu("20,25"),
-    (23, "Triton", "10 L"): eu("36,00"),
+    (23, "Blanc, Rouge, Rosé", "3 L"): eu("13,30"),
+    (23, "Blanc, Rouge, Rosé", "5 L"): eu("20,25"),
+    (23, "Blanc, Rouge", "10 L"): eu("36,00"),
 
     # ——— Domaine Haut Marin (p.52) : une colonne « À partir de 60 bts », franco de port.
     (23, "N°1 Littorine Blanc"): eu("4,35"),

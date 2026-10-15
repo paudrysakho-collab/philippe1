@@ -350,10 +350,12 @@ ARMAGNACS_HAUT_MARIN = [
                     ("1973", "106,00")]
 ]
 GASCOGNE = "IGP Côtes-de-Gascogne"
+# Le tarif 2026 ne nomme pas les bag-in-box : il donne la contenance et les couleurs
+# disponibles (l'agence, 15 octobre). Les noms de cuvée de l'ancien tarif sont retirés.
 BIB_HAUT_MARIN = [
-    V(23, 2, GASCOGNE, "Amande", "Blanc, Rosé, Rouge", "—", eu("7,75"), "3 L", prix_source=TARIF_HM),
-    V(23, 2, GASCOGNE, "Gulf Stream", "Blanc, Rosé, Rouge", "—", eu("11,40"), "5 L", prix_source=TARIF_HM),
-    V(23, 2, GASCOGNE, "Triton", "Blanc, Rouge", "—", eu("20,25"), "10 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rosé, Rouge", "—", eu("7,75"), "3 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Blanc, Rouge, Rosé", "Blanc, Rosé, Rouge", "—", eu("11,40"), "5 L", prix_source=TARIF_HM),
+    V(23, 2, GASCOGNE, "Blanc, Rouge", "Blanc, Rouge", "—", eu("20,25"), "10 L", prix_source=TARIF_HM),
 ]
 
 # Languedoc — Domaine Les Lys (sources/catalogue-global-2026/scan-les-lys.pdf) : les cinq vins non
