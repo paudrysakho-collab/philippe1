@@ -717,3 +717,12 @@ changé depuis le 14 octobre.
 Restent à trancher : **N°2 Amande**, **Cuvée Denise** et **Cuvée Philippe** sont au tarif mais
 pas au catalogue (ils n'y ont jamais été) ; et le tarif sépare **N°10 Blanc** et **N°10 Rosé**,
 au même prix, là où le catalogue n'a qu'une ligne « N°10 Pétillant ».
+
+**Point 38 — les vins du tarif de septembre absents du catalogue caviste.** À la question de
+l'agence (« comment ça se fait qu'ils ne soient pas dans le catalogue ? ») : ils n'ont pas été
+oubliés en cours de route, ils n'y ont jamais été. Le catalogue caviste est monté sur la base du
+**catalogue du Salon Privé** (décision du 8 octobre) : chaque fiche porte les vins de la liste du
+salon, plus ceux que les tarifs annotés d'octobre ont ajoutés. Haut Marin a présenté 7 vins au
+salon sur les 9 de son tarif ; N°2 Amande, Cuvée Denise et Cuvée Philippe sont donc restés dehors.
+Le relevé complet est dans `epreuves/verifications/lignes-du-tarif-absentes.md` :
+**103 vins, sur 28 domaines**. À décider : on les ajoute (pour Haut Marin seul, ou partout) ?
