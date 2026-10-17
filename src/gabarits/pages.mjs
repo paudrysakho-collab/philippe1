@@ -53,9 +53,11 @@ export const ED = SALON_ED ? {
 };
 /** Le titre du catalogue caviste : « Catalogue caviste Dpt 85 », « … Dpt 49 »… (10 octobre). */
 export const TITRE_DPT = `Catalogue caviste Dpt ${DPT || '85'}`;
+// le catalogue restaurant se décline lui aussi par département (l'agence, 17 octobre)
+export const TITRE_RESTO = `Catalogue restaurant ${DPT || '85'}`;
 if (GLOBAL_ED) {
   Object.assign(ED, {
-    titreDocument: `Agence SCIO — Sous nos pieds — ${EDITION === 'restaurant' ? 'Catalogue restaurant' : TITRE_DPT} 2026`,
+    titreDocument: `Agence SCIO — Sous nos pieds — ${EDITION === 'restaurant' ? TITRE_RESTO : TITRE_DPT} 2026`,
     // en chiffres, comme « 11 régions » (le nombre change d'un département à l'autre)
     titreIndexDomaines: `Les ${catalogue.domaines.length} domaines`,
     // « 11 régions » en chiffres sur la couverture (l'agence, 10 octobre)
@@ -150,7 +152,7 @@ function couvertureSalon() {
     // plus petit (« Dpt », le D seul en capitale)
     ? `<h1 class="titre-couv titre-couv-dpt"><em>Vins &amp; Terroirs</em><span class="titre-dpt">${esc(TITRE_DPT)}</span></h1>`
     // l'agence, 17 octobre : « Catalogue restaurant 85 », comme le caviste
-    : `<h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant 85' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>`}
+    : `<h1 class="titre-couv">${RESTO_ED ? esc(TITRE_RESTO) : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>`}
       <p class="sous-couv">${ED.sousTitre}</p>
       ${RESTO_ED
     // le catalogue restaurant n'a plus d'offres (l'agence, 17 octobre) : plus de date d'offres

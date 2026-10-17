@@ -779,3 +779,14 @@ liste des seize questions, cochée et commentée. Tout est appliqué.
 - **Château Balac** : le prix à 180 bts du millésime 2022 se lit **7,80 €**, le même qu'à
   120 bts. C'est le seul chiffre dont la lecture ne soit pas certaine (7,80 ou 7,60) : à
   confirmer.
+
+**Relecture à l'oral du 17 octobre** : tout est confirmé, avec une correction et deux demandes.
+- **Château Balac 2018** : le troisième prix est **7,13 €**, pas 7,15 (relu à l'image : le chiffre
+  est bien un 3). Le 2022 est confirmé à **8,20 / 7,80 / 7,80** — la question du 7,80/7,60 est
+  donc close.
+- **Le catalogue restaurant se décline par département**, comme le caviste : 85, 49, 53, 35, 44
+  et 56 (`npm run restaurant` puis `npm run restaurant-dpt`). La couverture porte le numéro :
+  « Catalogue restaurant 49 ».
+- **Une feuille des prix à remplir** est produite pour les responsables :
+  `epreuves/catalogue-restaurant-prix-a-remplir.pdf` (`npm run feuille-prix`) — par domaine, sa
+  page dans le catalogue, ses colonnes, et une case vide par prix manquant (88 cases).

@@ -298,7 +298,7 @@ PRIX = {
     (22, "Koloss Doux"): eu("6,90", "6,50"),
     # Château Balac : les deux Château Balac rouges, écrits à la main sur la page 40.
     (29, "Château Balac Rouge", "2022"): eu("8,20", "7,80", "7,80"),
-    (29, "Château Balac Rouge", "2018"): eu("7,90", "7,30", "7,15"),
+    (29, "Château Balac Rouge", "2018"): eu("7,90", "7,30", "7,13"),
     # Famille d'Exea : le magnum de Chant de Lune, millésime 2024.
     (32, "Chant de Lune Rouge, disponible en décembre 2026"): eu("19,80", "17,80", "16,30"),
     # Château de Gragnos : le prix à 60 bts du Grain de Blanc (5,50 corrigé en 7,50).

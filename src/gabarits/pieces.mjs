@@ -25,7 +25,7 @@ export const GLOBAL = EDITION === 'global' || RESTAURANT;
 /* Le catalogue caviste se décline par département (l'agence, 10 octobre) : DPT=49 donne le
    catalogue du 85 sans les domaines qui ne livrent pas le 49 (listes dans scripts/prix-global.py,
    `SANS_DEPARTEMENT`). Sans DPT, c'est le catalogue du 85. */
-export const DPT = EDITION === 'global' ? String(process.env.DPT || '85') : null;
+export const DPT = GLOBAL ? String(process.env.DPT || '85') : null;   // caviste et restaurant
 export const SALON = JSON.parse(fs.readFileSync(path.join(RACINE,
   RESTAURANT ? 'data/catalogue-restaurant-2026.json'
     : GLOBAL ? 'data/catalogue-global-2026.json' : 'data/salon-prive-2026.json'), 'utf8'));
@@ -146,7 +146,8 @@ export const catalogue = EDITION === 'general' ? general : editionSalon(general)
 /** Les noms de fichiers d'une édition : dist/<base>-ecran.pdf, build/<base>-plan.json… */
 export const BASE = { salon: 'salon-prive-2026',
   global: DPT && DPT !== '85' ? `catalogue-caviste-2026-dpt${DPT}` : 'catalogue-caviste-2026',
-  restaurant: 'catalogue-restaurant-2026' }[EDITION] || 'catalogue-scio-2026';
+  restaurant: DPT && DPT !== '85' ? `catalogue-restaurant-2026-dpt${DPT}` : 'catalogue-restaurant-2026',
+}[EDITION] || 'catalogue-scio-2026';
 
 /** Les photos retenues, par domaine. Un domaine sans photo garde son dessin de sol. */
 const _photos = JSON.parse(fs.readFileSync(path.join(RACINE, 'data/photos-preparees.json'), 'utf8'));
