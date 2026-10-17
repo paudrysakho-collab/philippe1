@@ -5,7 +5,7 @@
 **seuls les minimums de commande (les colonnes) et les prix changent**. Sur les tarifs
 annotés, on prend **le prix qui est écrit**, surligné ou non (l'agence, 10 octobre).
 
-**État : 552 prix posés, 109 cases encore vides.**
+**État : 582 prix posés, 88 cases encore vides.**
 
 ## 1. Les quatre fiches sans aucun prix restaurant
 
@@ -14,7 +14,7 @@ annotés, on prend **le prix qui est écrit**, surligné ou non (l'agence, 10 oc
 | p.12 | **Divin No Low** | 8 / 8 | les minimums de commande **et** les prix : aucune page scannée |
 | p.16 | **Domaine des Nugues** | 11 / 11 | les prix : le tarif scanné ne donne que les BIB et une « sélection restaurant » (Brouilly, Crémant, Mâcon-Villages…), aucun vin de la fiche |
 | p.30 | **Mas des Restanques** | 8 / 8 | les minimums de commande **et** les prix : aucune page scannée |
-| p.50 | **Famille d’Exea — Jus de Cépages** | 6 / 6 | les minimums de commande **et** les prix : aucune page scannée |
+| p.51 | **Famille d’Exea — Jus de Cépages** | 0 / 6 | les minimums de commande **et** les prix : aucune page scannée |
 
 ## 2. Les lignes isolées sans prix
 
@@ -29,24 +29,24 @@ annotés, on prend **le prix qui est écrit**, surligné ou non (l'agence, 10 oc
 | p.11 | Domaine Jean de Villebois | IGP Chenin Blanc (IGP Chenin Blanc · Blanc · 2025 · 75 cl) | absent du tarif restaurant (ajouté au caviste le 9 octobre) |
 | p.19 | Maison et Domaine André Goichot | AOC Pouilly-Vinzelles Blanc (AOC Pouilly-Vinzelles Blanc · Blanc · 2023 · 75 cl) | absent du portfolio restaurant (il a le Pouilly-Fuissé, pas le Vinzelles) |
 | p.36 | Domaine Haut Marin | N°10 Pétillant (IGP Côtes de Gascogne · Pétillant · 75 cl) | absent de la page restaurant |
-| p.40 | Château Balac | Château Balac Rouge (AOC Haut-Médoc Cru Bourgeois Supérieur · Rouge · 2022 · 75 cl) | « Rajouter Balac » est écrit, mais le courriel ne donne pas ses prix |
-| p.40 | Château Balac | Château Balac Rouge (AOC Haut-Médoc Cru Bourgeois Supérieur · Rouge · 2018 · 75 cl) | « Rajouter Balac » est écrit, mais le courriel ne donne pas ses prix |
-| p.49 | Famille d’Exea | Chant de Lune Rouge, disponible en décembre 2026 (AOC Minervois · Rouge · 1,5 L) | le tarif n'a pas de ligne magnum |
-| p.52 | Prieuré Sainte-Marie d’Albas | Terre Rouge (AOC Corbières · Rouge · 2022/2024 · 1,5 L) | le tarif restaurant n'a pas de ligne magnum |
-| p.52 | Prieuré Sainte-Marie d’Albas | 4 saisons (AOC Corbières · Rouge · 2023/2024 · 1,5 L) | le tarif restaurant n'a pas de ligne magnum |
-| p.52 | Prieuré Sainte-Marie d’Albas | Clos de Cassis (AOC Corbières · Rouge · 2022/2023 · 1,5 L) | le tarif restaurant n'a pas de ligne magnum |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 2003 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1998 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1993 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1992 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1986 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1983 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1981 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1980 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1979 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1978 · 70 cl) | absente du tarif restaurant |
+| p.36 | Domaine Haut Marin | Millésimés (AOP Bas-Armagnac · Blanc · 1973 · 70 cl) | absente du tarif restaurant |
 
 ## 3. Les colonnes incomplètes (la ligne a un prix, mais pas partout)
 
 | Page | Domaine | Ligne | Colonnes manquantes | Pourquoi |
 |---|---|---|---|---|
-| p.11 | Domaine Jean de Villebois | Les Beltins Blanc (AOC Sancerre · Blanc · 2022 · 75 cl) | À partir de 126 cols, À partir de 246 cols | le tarif met « – » dans ces colonnes |
-| p.11 | Domaine Jean de Villebois | Chêne à la Rouline Blanc (AOC Sancerre · Blanc · 2022 · 75 cl) | À partir de 126 cols, À partir de 246 cols | le tarif met « – » dans ces colonnes |
-| p.11 | Domaine Jean de Villebois | Vignes de Tréleau Blanc (AOC Pouilly-Fumé · Blanc · 2023 · 75 cl) | À partir de 126 cols, À partir de 246 cols | le tarif met « – » dans ces colonnes |
 | p.31 | Domaine Trichon | Beaumes de Venise Rouge (AOC Beaumes de Venise · Rouge · 2023 · Magnum 1,5 L) | À partir de 36 cols, À partir de 48 cols | le tarif met « – » dans ces colonnes |
 | p.31 | Domaine Trichon | Mas de Lusanne Vacqueyras Rouge (AOC Vacqueyras · Rouge · 2023 · Magnum 1,5 L) | À partir de 36 cols, À partir de 48 cols | le tarif met « – » dans ces colonnes |
-| p.35 | Domaine Stratéus | Koloss Rouge (AOC Madiran · Rouge · 2022 · 75 cl) | À partir de 48 bts | le tarif met « – » dans ces colonnes |
-| p.35 | Domaine Stratéus | Koloss Doux (VDF · Doux · 2025 · 75 cl) | À partir de 48 bts | le tarif met « – » dans ces colonnes |
 
 ## 4. Les minimums de commande (colonnes)
 

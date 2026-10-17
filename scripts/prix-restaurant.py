@@ -72,15 +72,15 @@ PALIERS = {
     # ——————————————— dossier complet du 10 octobre (tarifs-restaurant-annotes-2.pdf) ———
     21: P(36, 48, 96, unite="cols"),   # Domaine Trichon, Rhône (p.48) : « Tarifs HT franco de port »
     42: P(36, 48, 96, unite="cols"),   # Domaine Trichon, Bugey (p.49) : 36, 48 et 96 surlignés
-    # Stratéus (p.51) : la grille va de 24 à 300 bouteilles ; on garde les plus petits volumes.
-    22: P(24, 48, 120),
+    # Stratéus : la colonne 24 bts est supprimée (l'agence, 17 octobre).
+    22: P(48, 120),
     23: ["À partir de 60 bts"],        # Domaine Haut Marin (p.52) : une seule colonne
     26: P(36, 72, 120),                # Château La Gorce (p.57) : 36, 72 et 120 surlignés, 48 rayée
-    29: ["Carton", "À partir de 120 bts", "À partir de 180 bts"],   # Balac (p.55) : 300 et 600 rayées
+    29: P(60, 120, 180),               # Balac : « Carton » devient « à partir de 60 » (17 octobre)
     34: P(36, 60, 120),                # Château de Gragnos (p.42) : « À partir de 36 / 60 / 120 »
     35: ["Prix"],                      # Les Lys (p.44) : tarif CHR, un seul prix
     38: P(36, 66, 126),                # Denis Frézier (p.46) : 186 et 240 rayées
-    40: ["Par 24", "Par 48", "Par 78"],   # Vazart-Coquart (p.47) : tarifs franco surlignés
+    40: P(24, 48, 78),                 # Vazart-Coquart : « À partir de » (l'agence, 17 octobre)
 }
 
 # ——————————————————————————————————————————————————— les prix du tarif restaurant ———
@@ -196,9 +196,6 @@ PRIX = {
     # Le Menetou-Salon rouge et le Chenin IGP ne sont pas au tarif : cases vides.
     (6, "AOC Menetou-Salon Blanc"): eu("11,65", "10,55", "10,35", "10,05"),
     (6, "AOC Quincy"): eu("11,60", "10,50", "10,25", "9,95"),
-    (6, "Les Beltins Blanc"): eu("28,00", "26,90", None, None),
-    (6, "Chêne à la Rouline Blanc"): eu("28,00", "26,90", None, None),
-    (6, "Vignes de Tréleau Blanc"): eu("28,00", "26,90", None, None),
     (6, "La Louisonne Rouge"): eu("28,00", "26,90", "26,55", "26,30"),
     (6, "AOC Pouilly-Fumé"): eu("13,90", "12,80", "12,55", "12,25"),
     (6, "AOC Touraine Chenonceaux"): eu("8,55", "7,45", "7,25", "6,95"),
@@ -287,6 +284,26 @@ PRIX = {
     (20, "Sablet", "2024"): eu("7,50"),
     (20, "Gigondas"): eu("12,90"),
 
+    # ————————————————————— relecture de l'agence, 17 octobre 2026 —————————————————————
+    # Villebois : les trois parcellaires prennent les prix de La Louisonne au-delà de 120 cols.
+    (6, "Les Beltins Blanc"): eu("28,00", "26,90", "26,55", "26,30"),
+    (6, "Chêne à la Rouline Blanc"): eu("28,00", "26,90", "26,55", "26,30"),
+    (6, "Vignes de Tréleau Blanc"): eu("28,00", "26,90", "26,55", "26,30"),
+    # Stratéus : la colonne 24 bts disparaît ; le Koloss reçoit ses deux prix.
+    (22, "Stratéus Rouge"): eu("12,50", "11,70"),
+    (22, "Stratéus Blanc"): eu("12,50", "11,70"),
+    (22, "Néolitik Rouge"): eu("15,20", "13,20"),
+    (22, "Néolitik Blanc"): eu("15,20", "13,20"),
+    (22, "Koloss Rouge"): eu("6,90", "6,50"),
+    (22, "Koloss Doux"): eu("6,90", "6,50"),
+    # Château Balac : les deux Château Balac rouges, écrits à la main sur la page 40.
+    (29, "Château Balac Rouge", "2022"): eu("8,20", "7,80", "7,80"),
+    (29, "Château Balac Rouge", "2018"): eu("7,90", "7,30", "7,15"),
+    # Famille d'Exea : le magnum de Chant de Lune, millésime 2024.
+    (32, "Chant de Lune Rouge, disponible en décembre 2026"): eu("19,80", "17,80", "16,30"),
+    # Château de Gragnos : le prix à 60 bts du Grain de Blanc (5,50 corrigé en 7,50).
+    (34, "Grain de Blanc"): eu("7,80", "7,50", "7,20"),
+
     # ——— Domaine Trichon, Rhône (p.48) : 36 / 48 / 96 cols, franco de port.
     (21, "Mas de Lusanne Rouge"): eu("7,24", "6,74", "6,24"),
     (21, "Mas de Lusanne Vacqueyras Blanc"): eu("11,64", "11,14", "10,64"),
@@ -307,12 +324,6 @@ PRIX = {
 
     # ——— Domaine Stratéus (p.51) : grille 2026 + « Rajouter 0,70 cts sur toute la gamme »
     # (écrit par l'agence). Gamme Stratéus, gamme Koloss (pas de prix à 48 bts) et gamme Néolithik.
-    (22, "Stratéus Rouge"): eu("13,20", "12,50", "11,70"),
-    (22, "Stratéus Blanc"): eu("13,20", "12,50", "11,70"),
-    (22, "Néolitik Rouge"): eu("16,70", "15,20", "13,20"),
-    (22, "Néolitik Blanc"): eu("16,70", "15,20", "13,20"),
-    (22, "Koloss Rouge"): eu("7,20", None, "6,70"),
-    (22, "Koloss Doux"): eu("7,20", None, "6,70"),
 
     # ——— Domaine Haut Marin (p.52), Armagnacs et bag-in-box : tarif unique, franco de port.
     # Les treize millésimés du tarif départ ne sont pas sur la page restaurant : cases vides.
@@ -375,7 +386,6 @@ PRIX = {
     (34, "Henri Rouge"): eu("5,95", "5,65", "5,35"),
     (34, "Juliette Blanc"): eu("5,95", "5,65", "5,35"),
     (34, "Lou Daro Rouge"): eu("7,80", "7,50", "7,20"),
-    (34, "Grain de Blanc"): eu("7,80", "5,50", "7,20"),   # 5,50 au palier 60 : relevé tel quel
 
     # ——— Les Lys (p.44) : « TARIF CHR », prix HT départ cave ; « La Soif » ajoutée à la main.
     (35, "Aillargues"): eu("7,55"),
@@ -454,7 +464,12 @@ PRIX = {
 # Le catalogue restaurant a donc exactement les mêmes vins que le catalogue caviste. Deux lignes
 # sont barrées sur les tarifs restaurant — le « Sancerre Rosé » des Sardelles (scan 5) et le
 # magnum de Plénitude de Solemme (scan 2) : elles restent au catalogue, sans prix.
-RETIRES = set()
+RETIRES = {
+    # « Supprimer les magnums » (l'agence, 17 octobre) : le tarif restaurant n'en a pas.
+    (36, "Terre Rouge", "1,5 L"),
+    (36, "4 saisons", "1,5 L"),
+    (36, "Clos de Cassis", "1,5 L"),
+}
 
 # ——————————————————————————————————————————————————————————————— les offres ———
 # L'agence les reprend une par une (« je changerai les offres, page 1, page 2… ») :
@@ -487,6 +502,16 @@ NOTES = {
 }
 
 
+# ——————————————————————————————————————— relecture de l'agence, 17 octobre 2026 ———
+# « Et supprimer toutes les offres. » : plus aucune offre dans le catalogue restaurant,
+# ni en bas de fiche, ni en pastille sur les lignes.
+SANS_OFFRES = True
+# « Mettre tarifs du caviste » (page 50) : les jus de cépages gardent les prix du caviste.
+GARDE_CAVISTE = {33}
+# Le millésime du magnum de Chant de Lune, écrit à la main sur la page 49.
+MILLESIMES = {(32, "Chant de Lune Rouge, disponible en décembre 2026"): "2024"}
+
+
 def cle_vin(v):
     return (v["fiche"], v["cuvee"] or v["appellation"])
 
@@ -516,6 +541,11 @@ def main():
                 s["offre_salon"] = OFFRES[n]
             if n in NOTES:
                 s["note_prix_salon"] = NOTES[n]
+        if SANS_OFFRES:
+            s["offre_salon"] = None
+            for v in s["vins"]:
+                v.pop("offre", None)
+                v.pop("offre_detail", None)
         # les paliers : ceux du tarif restaurant quand on les a relevés
         paliers = dict(s.get("paliers_salon") or {})
         for cle, p in PALIERS.items():
@@ -528,7 +558,11 @@ def main():
             ti = (v.get("tarif") or {}).get("tableau", 0)
             p = paliers.get(f"{v['fiche']}:{ti}") or paliers.get(str(v["fiche"]))
             n = len(p) if p else len(v.get("prix_centimes") or [1])
+            v["millesime"] = MILLESIMES.get(cle_vin(v), v["millesime"])
             prix = prix_de(v)
+            if prix is None and v["fiche"] in GARDE_CAVISTE:
+                poses += len([x for x in (v.get("prix_centimes") or []) if x is not None])
+                continue                               # les prix du caviste, tels quels
             if prix is None:
                 v["prix_centimes"] = [None] * n       # case vide, à remplir par l'agence
                 vides += n

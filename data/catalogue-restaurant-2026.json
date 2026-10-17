@@ -319,11 +319,11 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      null,
-      null,
-      null
+      820,
+      780,
+      780
      ],
-     "prix_source": "scans de l'agence, 3 octobre 2026"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "(ajout) Château Balac Rouge 2018",
@@ -338,12 +338,13 @@
      "millesime": "2018",
      "contenance": "75 cl",
      "prix_centimes": [
-      null,
-      null,
-      null
+      790,
+      730,
+      715
      ],
      "liste_vins": true,
-     "source": "mail d'Amélie Touchais du 3 octobre (scan 1, p.3) : 2018 et 2022 surlignés"
+     "source": "mail d'Amélie Touchais du 3 octobre (scan 1, p.3) : 2018 et 2022 surlignés",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Balac sans sulfites 2022 — VDF",
@@ -415,13 +416,13 @@
    "fiche_texte": 29,
    "paliers_salon": {
     "29": [
-     "Carton",
+     "À partir de 60 bts",
      "À partir de 120 bts",
      "À partir de 180 bts"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
+   "offre_salon": null
   },
   {
    "stand": 2,
@@ -546,7 +547,8 @@
     ]
    },
    "mode_prix": "paliers",
-   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
+   "offre_salon": null
   },
   {
    "stand": 3,
@@ -589,29 +591,7 @@
      "prix_centimes": [
       860
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
-    },
-    {
-     "liste": "(ajout) Terre Rouge 2022/2024 Magnum 1,5 L",
-     "ajout": true,
-     "tarif": {
-      "tableau": 0,
-      "ligne": 4
-     },
-     "note": null,
-     "ecarts": [],
-     "fiche": 36,
-     "appellation": "AOC Corbières",
-     "cuvee": "Terre Rouge",
-     "couleur": "Rouge",
-     "millesime": "2022/2024",
-     "contenance": "1,5 L",
-     "prix_centimes": [
-      null
-     ],
-     "liste_vins": false,
-     "source": "tarif 2026 annoté (scan 1, p.5)"
     },
     {
      "liste": "4 saisons 2024 — AOC Corbières",
@@ -633,27 +613,6 @@
       720
      ],
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
-    },
-    {
-     "liste": "(ajout) 4 saisons 2023/2024 Magnum 1,5 L",
-     "ajout": true,
-     "tarif": {
-      "tableau": 0,
-      "ligne": 6
-     },
-     "note": null,
-     "ecarts": [],
-     "fiche": 36,
-     "appellation": "AOC Corbières",
-     "cuvee": "4 saisons",
-     "couleur": "Rouge",
-     "millesime": "2023/2024",
-     "contenance": "1,5 L",
-     "prix_centimes": [
-      null
-     ],
-     "liste_vins": false,
-     "source": "tarif 2026 annoté (scan 1, p.5)"
     },
     {
      "liste": "La Poion 2024 — AOC Corbières",
@@ -698,27 +657,6 @@
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
-     "liste": "(ajout) Clos de Cassis 2022/2023 Magnum 1,5 L",
-     "ajout": true,
-     "tarif": {
-      "tableau": 0,
-      "ligne": 1
-     },
-     "note": null,
-     "ecarts": [],
-     "fiche": 36,
-     "appellation": "AOC Corbières",
-     "cuvee": "Clos de Cassis",
-     "couleur": "Rouge",
-     "millesime": "2022/2023",
-     "contenance": "1,5 L",
-     "prix_centimes": [
-      null
-     ],
-     "liste_vins": false,
-     "source": "tarif 2026 annoté (scan 1, p.5)"
-    },
-    {
      "liste": "Albas 2025— IGP Pays D'Oc",
      "fiche": 36,
      "tarif": {
@@ -737,7 +675,6 @@
      "prix_centimes": [
       560
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -751,7 +688,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 180 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -857,7 +794,6 @@
       475,
       450
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -881,7 +817,6 @@
       450,
       420
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -903,7 +838,6 @@
       null,
       null
      ],
-     "offre": "11+1",
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
@@ -995,7 +929,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 300 cols."
+   "offre_salon": null
   },
   {
    "stand": 5,
@@ -1136,7 +1070,8 @@
      "À partir de 120 bts"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "offre_salon": null
   },
   {
    "stand": 6,
@@ -1179,7 +1114,6 @@
      "prix_centimes": [
       435
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1199,7 +1133,6 @@
      "prix_centimes": [
       470
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1219,7 +1152,6 @@
      "prix_centimes": [
       470
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1239,8 +1171,6 @@
      "prix_centimes": [
       470
      ],
-     "offre": "5+1",
-     "offre_detail": "dès 250 cols",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1284,7 +1214,6 @@
      "prix_centimes": [
       525
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1304,8 +1233,6 @@
      "prix_centimes": [
       null
      ],
-     "offre": "5+1",
-     "offre_detail": "dès 250 cols",
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
@@ -1640,7 +1567,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre à partir de 300 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -1700,7 +1627,6 @@
       500,
       480
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1723,7 +1649,6 @@
       500,
       480
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1746,7 +1671,6 @@
       600,
       550
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1769,7 +1693,6 @@
       600,
       550
      ],
-     "offre": "5+1",
      "liste_vins": true,
      "source": "l'agence, 3 octobre : « il faut ajouter le rouge aussi » ; tarif juillet 2026 (scan 1, p.16)",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
@@ -1796,7 +1719,6 @@
       620,
       570
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1821,7 +1743,6 @@
       1850,
       1800
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1846,7 +1767,6 @@
       1850,
       1800
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1868,7 +1788,6 @@
       2750,
       2700
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1891,7 +1810,6 @@
       600,
       550
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1914,7 +1832,6 @@
       600,
       550
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1936,7 +1853,6 @@
       840,
       790
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1958,7 +1874,6 @@
       500,
       470
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -1981,7 +1896,6 @@
       700,
       650
      ],
-     "offre": "11+1",
      "liste_vins": true,
      "source": "carte du stand 7 annotée « Rajouter Beaumes de Venise » (scan 1, p.10) ; tarif juillet 2026 de Coyeux, millésime 2023 barré (scan 1, p.19)",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
@@ -2006,7 +1920,6 @@
       620,
       570
      ],
-     "offre": "5+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -2039,7 +1952,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols ; offre 5+1 à partir de 540 cols."
+   "offre_salon": null
   },
   {
    "stand": 8,
@@ -2080,7 +1993,6 @@
      "prix_centimes": [
       950
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2102,7 +2014,6 @@
      "prix_centimes": [
       1230
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2124,7 +2035,6 @@
      "prix_centimes": [
       1230
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2144,7 +2054,6 @@
      "prix_centimes": [
       1240
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2187,7 +2096,6 @@
      "prix_centimes": [
       2390
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2209,7 +2117,6 @@
      "prix_centimes": [
       2010
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -2223,7 +2130,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 120 cols."
+   "offre_salon": null
   },
   {
    "stand": 9,
@@ -2310,7 +2217,6 @@
       840,
       780
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2355,7 +2261,6 @@
       870,
       830
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2421,7 +2326,6 @@
       1880,
       1820
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2443,7 +2347,6 @@
       1030,
       990
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -2459,7 +2362,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -2675,7 +2578,8 @@
      "De 37 à 119 bts"
     ]
    },
-   "mode_prix": "paliers"
+   "mode_prix": "paliers",
+   "offre_salon": null
   },
   {
    "stand": 11,
@@ -2788,7 +2692,8 @@
     ]
    },
    "mode_prix": "unique",
-   "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport."
+   "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
+   "offre_salon": null
   },
   {
    "stand": 12,
@@ -2920,7 +2825,6 @@
       709,
       685
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2943,7 +2847,6 @@
       874,
       824
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -2981,7 +2884,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 300 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -3154,7 +3057,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 300 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -3200,7 +3103,6 @@
       565,
       535
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3224,7 +3126,6 @@
       750,
       720
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3248,7 +3149,6 @@
       565,
       535
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3269,7 +3169,6 @@
       565,
       535
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3290,10 +3189,9 @@
      ],
      "prix_centimes": [
       780,
-      550,
+      750,
       720
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -3309,7 +3207,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 180 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -3372,7 +3270,6 @@
       590,
       570
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3395,7 +3292,6 @@
       400,
       360
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3416,7 +3312,6 @@
       590,
       570
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3459,7 +3354,6 @@
       580,
       560
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -3494,7 +3388,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
   },
   {
@@ -3676,13 +3570,14 @@
    "fiche_texte": 40,
    "paliers_salon": {
     "40": [
-     "Par 24",
-     "Par 48",
-     "Par 78"
+     "À partir de 24 bts",
+     "À partir de 48 bts",
+     "À partir de 78 bts"
     ]
    },
    "mode_prix": "paliers",
-   "note_prix_salon": "* Prix de la bouteille H.T. franco de port."
+   "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
+   "offre_salon": null
   },
   {
    "stand": 16,
@@ -3776,7 +3671,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
+   "offre_salon": null
   },
   {
    "stand": 17,
@@ -3890,8 +3785,8 @@
      "prix_centimes": [
       2800,
       2690,
-      null,
-      null
+      2655,
+      2630
      ],
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
@@ -3912,8 +3807,8 @@
      "prix_centimes": [
       2800,
       2690,
-      null,
-      null
+      2655,
+      2630
      ],
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
@@ -3934,8 +3829,8 @@
      "prix_centimes": [
       2800,
       2690,
-      null,
-      null
+      2655,
+      2630
      ],
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
@@ -4110,7 +4005,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 120 cols."
+   "offre_salon": null
   },
   {
    "stand": 18,
@@ -4154,7 +4049,6 @@
      "prix_centimes": [
       1350
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4215,7 +4109,6 @@
      "prix_centimes": [
       1450
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4236,7 +4129,6 @@
      "prix_centimes": [
       1800
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4259,7 +4151,6 @@
      "prix_centimes": [
       2200
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4282,7 +4173,6 @@
      "prix_centimes": [
       2400
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -4296,7 +4186,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre 11+1 à partir de 120 cols."
+   "offre_salon": null
   },
   {
    "stand": 19,
@@ -4543,7 +4433,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
+   "offre_salon": null
   },
   {
    "stand": 20,
@@ -4584,11 +4474,9 @@
       "millésime 2021 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      1320,
       1250,
       1170
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4606,11 +4494,9 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      1670,
       1520,
       1320
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4628,11 +4514,9 @@
      "couleur_provenance": "liste de Mathéo",
      "ecarts": [],
      "prix_centimes": [
-      720,
-      null,
-      670
+      690,
+      650
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4650,11 +4534,9 @@
       "au tarif, le Koloss Vin de France est un rosé 2025, et le doux Vin de France s'appelle Strateus (2025)"
      ],
      "prix_centimes": [
-      720,
-      null,
-      670
+      690,
+      650
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4674,11 +4556,9 @@
       "millésime 2025 dans la liste, 2022 au tarif"
      ],
      "prix_centimes": [
-      1320,
       1250,
       1170
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4695,11 +4575,9 @@
       "absent du tarif de septembre : affiché tel que la liste l'écrit"
      ],
      "prix_centimes": [
-      1670,
       1520,
       1320
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
@@ -4709,13 +4587,12 @@
    "fiche_texte": 22,
    "paliers_salon": {
     "22": [
-     "À partir de 24 bts",
      "À partir de 48 bts",
      "À partir de 120 bts"
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 120 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port à partir de 48 bts."
   },
   {
@@ -4764,7 +4641,6 @@
       778,
       716
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4780,15 +4656,16 @@
      "appellation": "AOC Minervois",
      "cuvee": "Chant de Lune Rouge, disponible en décembre 2026",
      "couleur": "Rouge",
-     "millesime": "—",
+     "millesime": "2024",
      "contenance": "1,5 L",
      "prix_centimes": [
-      null,
-      null,
-      null
+      1980,
+      1780,
+      1630
      ],
      "liste_vins": false,
-     "source": "tarif « Salon Vins & Terroirs 05 octobre 2026 » (scan 4, p.2)"
+     "source": "tarif « Salon Vins & Terroirs 05 octobre 2026 » (scan 4, p.2)",
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "liste": "Rouge Serame 2023 — AOC Corbières",
@@ -4809,7 +4686,6 @@
       778,
       716
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4831,7 +4707,6 @@
       778,
       716
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4877,7 +4752,6 @@
       474,
       436
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -4921,8 +4795,8 @@
       "le tarif a la Syrah en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
      "prix_centimes": [
-      null,
-      null
+      275,
+      239
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
@@ -4942,8 +4816,8 @@
      "millesime": "—",
      "contenance": "25 cl",
      "prix_centimes": [
-      null,
-      null
+      184,
+      174
      ],
      "liste_vins": false,
      "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
@@ -4965,8 +4839,8 @@
       "le tarif a le Chardonnay en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
      "prix_centimes": [
-      null,
-      null
+      275,
+      239
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
@@ -4986,8 +4860,8 @@
      "millesime": "—",
      "contenance": "25 cl",
      "prix_centimes": [
-      null,
-      null
+      184,
+      174
      ],
      "liste_vins": false,
      "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
@@ -5009,8 +4883,8 @@
       "le tarif a le Grenache en 50 cl et en 25 cl ; la ligne retenue est la 50 cl"
      ],
      "prix_centimes": [
-      null,
-      null
+      275,
+      239
      ],
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
@@ -5030,8 +4904,8 @@
      "millesime": "—",
      "contenance": "25 cl",
      "prix_centimes": [
-      null,
-      null
+      184,
+      174
      ],
      "liste_vins": false,
      "source": "photo du tarif envoyée par l'agence, 3 octobre (25 cl : 1,84 / 1,74)"
@@ -5057,7 +4931,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 240 cols."
+   "offre_salon": null
   },
   {
    "stand": 22,
@@ -5146,7 +5020,6 @@
       972,
       933
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5191,7 +5064,6 @@
       690,
       662
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5248,7 +5120,8 @@
      "À partir de 120 bts"
     ]
    },
-   "mode_prix": "unique"
+   "mode_prix": "unique",
+   "offre_salon": null
   },
   {
    "stand": 23,
@@ -5312,7 +5185,6 @@
       2210,
       2160
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5434,7 +5306,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 120 cols."
+   "offre_salon": null
   },
   {
    "stand": 24,
@@ -5525,7 +5397,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence."
+   "offre_salon": null
   },
   {
    "stand": 25,
@@ -5568,7 +5440,6 @@
       645,
       595
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5590,7 +5461,6 @@
       545,
       495
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5612,7 +5482,6 @@
       645,
       595
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5648,7 +5517,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 60 cols."
+   "offre_salon": null
   },
   {
    "stand": 26,
@@ -5697,7 +5566,6 @@
       860,
       830
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5718,7 +5586,6 @@
       null,
       null
      ],
-     "offre": "11+1",
      "prix_source": "scans de l'agence, 3 octobre 2026"
     },
     {
@@ -5740,7 +5607,6 @@
       2220,
       2190
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5761,7 +5627,6 @@
       900,
       870
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5782,7 +5647,6 @@
       900,
       870
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5804,7 +5668,6 @@
       860,
       830
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5826,7 +5689,6 @@
       2360,
       2330
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5847,7 +5709,6 @@
       3360,
       3330
      ],
-     "offre": "11+1",
      "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
@@ -5959,7 +5820,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 126 cols.",
+   "offre_salon": null,
    "complement": "Possibilité sur demande d'avoir le catalogue complet."
   },
   {
@@ -6237,7 +6098,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Magnum sur demande.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,
@@ -7348,7 +7209,7 @@
     ]
    },
    "mode_prix": "unique",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,
@@ -7515,8 +7376,7 @@
      "prix_centimes": [
       755
      ],
-     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
-     "offre": "11+1"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 35,
@@ -7531,8 +7391,7 @@
      "prix_centimes": [
       595
      ],
-     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
-     "offre": "11+1"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     },
     {
      "fiche": 35,
@@ -7577,8 +7436,7 @@
      "prix_centimes": [
       495
      ],
-     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)",
-     "offre": "11+1"
+     "prix_source": "tarif restaurant annoté par l'agence (dossier du 9 octobre 2026)"
     }
    ],
    "paliers_salon": {
@@ -7587,7 +7445,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre 11+1 à partir de 180 cols.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. hors frais de transport.",
    "fiche_texte": null,
    "texte_reference": null,
@@ -7728,7 +7586,7 @@
     ]
    },
    "mode_prix": "paliers",
-   "offre_salon": "Offre possible en fonction du nombre de cols et de la référence.",
+   "offre_salon": null,
    "note_prix_salon": "* Prix de la bouteille H.T. franco de port.",
    "fiche_texte": null,
    "texte_reference": null,

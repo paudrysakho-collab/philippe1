@@ -118,9 +118,11 @@ const obligatoires = [
     ["lieu du salon", catalogue.salon.evenement.lieu]]
     // catalogue caviste global : la couverture du salon, avec ses dates de validité (8 octobre)
     : EDITION === 'global' || EDITION === 'restaurant'
-      ? [["titre", EDITION === 'restaurant' ? 'Catalogue restaurant' : TITRE_DPT],
+      ? [["titre", EDITION === 'restaurant' ? 'Catalogue restaurant 85' : TITRE_DPT],
         ["validité du tarif", "jusqu'au 31 décembre 2026"],
-        ["validité des offres", 'du 5 octobre au 14 novembre 2026']]
+        // le catalogue restaurant n'a plus d'offres (l'agence, 17 octobre)
+        ...(EDITION === 'restaurant' ? []
+          : [["validité des offres", 'du 5 octobre au 14 novembre 2026']])]
     : [["cible", 'Vendée (85)']]),
 ];
 // espaces insécables et retours à la ligne comptent comme une espace

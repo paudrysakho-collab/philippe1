@@ -736,3 +736,46 @@ là pour mémoire, à ne rouvrir que si l'agence le demande.
 **Ce qui a été ajouté au catalogue le 15 octobre, et rien d'autre : les bag-in-box et les
 Armagnacs de Haut Marin.** Les Sardelles n'ont rien gagné — « Les Courants Pinot Noir » a été
 retiré et fondu dans la ligne du Gamay, à la demande de l'agence.
+
+### Point 39 — la relecture de l'agence du 17 octobre (catalogue restaurant)
+
+Deux dossiers reçus : le catalogue restaurant imprimé et annoté à la main (pages 1 à 63), et la
+liste des seize questions, cochée et commentée. Tout est appliqué.
+
+**Consignes générales**
+- « **Et supprimer toutes les offres.** » (écrit en gros, souligné) : plus aucune offre dans le
+  catalogue restaurant — ni la ligne en bas de fiche, ni les pastilles « offre 11+1 » sur les
+  lignes, ni l'offre au volume. La couverture perd du même coup la mention « Offres valables du
+  5 octobre au 14 novembre » et ne garde que « Tarif valable jusqu'au 31 décembre 2026 ».
+- Couverture : le titre devient « **Catalogue restaurant 85** » (« 85 » écrit en rouge).
+- La Passion des Terroirs : la commande minimum de 400 € est barrée, « Supprimer » : elle ne
+  s'affiche pas.
+
+**Prix et colonnes**
+- **Jean de Villebois** (p.11) : les trois parcellaires reçoivent **26,55 €** (126 cols) et
+  **26,30 €** (246 cols), écrits à la main — les mêmes que La Louisonne.
+- **Stratéus** (p.35) : la colonne **24 bts est supprimée** (paliers 48 / 120) ; le **Koloss
+  Rouge et le Koloss Doux** passent à **6,90 €** et **6,50 €**.
+- **Château Balac** (p.41) : la colonne « Carton » devient « **À partir de 60 bts** » ; Château
+  Balac Rouge **2022 : 8,20 / 7,80 / 7,80** et **2018 : 7,90 / 7,30 / 7,15**.
+- **Famille d'Exea** (p.50) : le magnum de Chant de Lune prend le millésime **2024** et les prix
+  **19,80 / 17,80 / 16,30**.
+- **Jus de cépages** (p.51) : « Mettre tarifs du caviste » — les prix du catalogue caviste sont
+  repris tels quels.
+- **Château de Gragnos** (p.52) : le Grain de Blanc à 60 bts passe de 5,50 à **7,50 €**
+  (le 5,50 est entouré, 7,50 écrit dessous) : l'anomalie est levée.
+- **Prieuré Sainte-Marie d'Albas** (p.53) : « Supprimer les magnums » — les trois lignes 1,5 L
+  sont retirées.
+- **Vazart-Coquart** (p.59) : les colonnes deviennent « **À partir de** 24 / 48 / 78 ».
+- **Denis Frézier** : « ok » — la lecture de la colonne réécrite à la main est validée.
+- Les notes de prix ne sont pas commentées : elles restent telles quelles.
+
+**Encore en attente**
+- **Domaine des Nugues** (p.16) : post-it « Voir si tarif restaurant » — ses 11 vins restent sans
+  prix.
+- **Domaine Trichon** (p.31) : « Voir si maman trouve un tarif ; si pas trouvé, **supprimer les
+  2 lignes** » — les deux magnums (Beaumes de Venise et Vacqueyras) gardent leur prix à 96 cols
+  en attendant.
+- **Château Balac** : le prix à 180 bts du millésime 2022 se lit **7,80 €**, le même qu'à
+  120 bts. C'est le seul chiffre dont la lecture ne soit pas certaine (7,80 ou 7,60) : à
+  confirmer.

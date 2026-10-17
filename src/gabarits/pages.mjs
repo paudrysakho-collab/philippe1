@@ -149,9 +149,14 @@ function couvertureSalon() {
     // l'agence, 10 octobre : « Vins & Terroirs » d'abord, puis le catalogue et son département,
     // plus petit (« Dpt », le D seul en capitale)
     ? `<h1 class="titre-couv titre-couv-dpt"><em>Vins &amp; Terroirs</em><span class="titre-dpt">${esc(TITRE_DPT)}</span></h1>`
-    : `<h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>`}
+    // l'agence, 17 octobre : « Catalogue restaurant 85 », comme le caviste
+    : `<h1 class="titre-couv">${RESTO_ED ? 'Catalogue restaurant 85' : 'Salon Privé'}<br><em>Vins &amp; Terroirs</em></h1>`}
       <p class="sous-couv">${ED.sousTitre}</p>
-      ${GLOBAL_ED
+      ${RESTO_ED
+    // le catalogue restaurant n'a plus d'offres (l'agence, 17 octobre) : plus de date d'offres
+    ? `<div class="validite-couv"><span>Tarif valable</span>
+        <strong>jusqu'au 31 décembre 2026</strong></div>`
+    : GLOBAL_ED
     // le catalogue caviste global (l'agence, 8 octobre) : la couverture du salon, son titre à lui
     ? `<div class="validite-couv validite-double"><span>Tarif valable</span>
         <strong>jusqu'au 31 décembre 2026</strong>

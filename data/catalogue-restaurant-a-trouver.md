@@ -23,45 +23,24 @@ ses colonnes, puis les vins dont le prix restaurant n'est pas relevé.
 - Les Grands Classiques — AOP Moulin-à-Vent (Rouge, 2023, Magnum 1,5 L)
 - Les Grands Classiques — AOP Morgon (Rouge, 2023)
 
-## Château Balac — 2 vins
+## Domaine Haut Marin — 12 vins
 
-- Catalogue (caviste 85 et restaurant) : **page 40**
-- Dossier de tarifs : **page 55**
-- Colonnes : Carton / À partir de 120 bts / À partir de 180 bts
+- Catalogue (caviste 85 et restaurant) : **page 36**
+- Dossier de tarifs : **page 52**
+- Colonnes : À partir de 60 bts
 
-- Château Balac Rouge — AOC Haut-Médoc Cru Bourgeois Supérieur (Rouge, 2022)
-- Château Balac Rouge — AOC Haut-Médoc Cru Bourgeois Supérieur (Rouge, 2018)
-
-## Famille d’Exea — 1 vin
-
-- Catalogue (caviste 85 et restaurant) : **page 49**
-- Dossier de tarifs : **page 34–41**
-- Colonnes : À partir de 72 cols / À partir de 144 cols / À partir de 300 cols
-
-- Chant de Lune Rouge, disponible en décembre 2026 — AOC Minervois (Rouge, 1,5 L)
-
-## Famille d’Exea — Jus de Cépages — 6 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 50**
-- Dossier de tarifs : **aucune page** — c'est tout le tarif restaurant qui manque
-- Colonnes : À partir de 72 bts / À partir de 144 bts
-
-- Jus de cépages – Syrah (Rouge, 50 cl)
-- Jus de cépages – Syrah (Rouge, 25 cl)
-- Jus de cépages – Chardonnay (Blanc, 50 cl)
-- Jus de cépages – Chardonnay (Blanc, 25 cl)
-- Jus de cépages – Grenache (Rosé, 50 cl)
-- Jus de cépages – Grenache (Rosé, 25 cl)
-
-## Prieuré Sainte-Marie d’Albas — 3 vins
-
-- Catalogue (caviste 85 et restaurant) : **page 52**
-- Dossier de tarifs : **page 43**
-- Colonnes : Prix
-
-- Terre Rouge — AOC Corbières (Rouge, 2022/2024, 1,5 L)
-- 4 saisons — AOC Corbières (Rouge, 2023/2024, 1,5 L)
-- Clos de Cassis — AOC Corbières (Rouge, 2022/2023, 1,5 L)
+- N°10 Pétillant — IGP Côtes de Gascogne (Pétillant)
+- Millésimés — AOP Bas-Armagnac (Blanc, 2003, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1998, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1993, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1992, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1986, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1983, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1981, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1980, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1979, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1978, 70 cl)
+- Millésimés — AOP Bas-Armagnac (Blanc, 1973, 70 cl)
 
 **23 vins en tout.**
 
@@ -74,16 +53,10 @@ Ces lignes restent sans prix, ce n'est plus à chercher (l'agence, 10 octobre).
 - **Divin No Low** (catalogue p.12, pas de page au dossier) : Pinot Noir — Vin sans alcool 0,5 % (Rouge, 2024) · Sauvignon Blanc — Vin sans alcool 0,5 % (Blanc, 2024) · Sauvignon — Vin sans alcool (Blanc) · Chenin Blanc — Vin sans alcool (Blanc) · Rosé — Vin sans alcool (Rosé) · Pinot Noir — Vin sans alcool (Rouge) · Sauvignon Blanc — Vin sans alcool pétillant (Blanc pétillant) · Sauvignon Blanc Blush — Vin sans alcool pétillant (Rosé pétillant)
 - **Maison et Domaine André Goichot** (catalogue p.19, dossier p.16–20) : AOC Pouilly-Vinzelles Blanc (Blanc, 2023)
 - **Mas des Restanques** (catalogue p.30, pas de page au dossier) : Gigondas — AOC Gigondas (Rouge, 2025) · Vacqueyras — AOC Vacqueyras (Rouge, 2025) · Cuvée Tombadou — AOC Vacqueyras (Rouge, 2024) · Côtes du Rhône — AOC Côtes du Rhône (Rouge, 2024) · Vacqueyras — AOC Vacqueyras (Blanc, 2025) · Waouh ! — Vin de France (Blanc) · Gigondas — AOC Gigondas (Rouge, 2025, Magnum 1,5 L) · Vacqueyras — AOC Vacqueyras (Rouge, 2025, Magnum 1,5 L)
-- **Domaine Haut Marin** (catalogue p.36, dossier p.52) : N°10 Pétillant — IGP Côtes de Gascogne (Pétillant)
 
 ## Et quelques colonnes isolées
 
 Ces lignes ont déjà un prix, mais pas dans toutes les colonnes (le tarif met « – »).
 
-- **Domaine Jean de Villebois** (catalogue p.11, dossier p.11–12) — Les Beltins Blanc — AOC Sancerre (Blanc, 2022) : il manque **À partir de 126 cols, À partir de 246 cols**
-- **Domaine Jean de Villebois** (catalogue p.11, dossier p.11–12) — Chêne à la Rouline Blanc — AOC Sancerre (Blanc, 2022) : il manque **À partir de 126 cols, À partir de 246 cols**
-- **Domaine Jean de Villebois** (catalogue p.11, dossier p.11–12) — Vignes de Tréleau Blanc — AOC Pouilly-Fumé (Blanc, 2023) : il manque **À partir de 126 cols, À partir de 246 cols**
 - **Domaine Trichon** (catalogue p.31, dossier p.48) — Beaumes de Venise Rouge — AOC Beaumes de Venise (Rouge, 2023, Magnum 1,5 L) : il manque **À partir de 36 cols, À partir de 48 cols**
 - **Domaine Trichon** (catalogue p.31, dossier p.48) — Mas de Lusanne Vacqueyras Rouge — AOC Vacqueyras (Rouge, 2023, Magnum 1,5 L) : il manque **À partir de 36 cols, À partir de 48 cols**
-- **Domaine Stratéus** (catalogue p.35, dossier p.51) — Koloss Rouge — AOC Madiran (Rouge, 2022) : il manque **À partir de 48 bts**
-- **Domaine Stratéus** (catalogue p.35, dossier p.51) — Koloss Doux — VDF (Doux, 2025) : il manque **À partir de 48 bts**
