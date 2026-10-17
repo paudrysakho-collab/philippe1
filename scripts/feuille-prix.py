@@ -13,6 +13,16 @@ RACINE = pathlib.Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "build/feuille-prix.html"
 POLICES = RACINE / "src/fonts"
 
+# Les lignes que l'agence a déjà cherchées le 10 octobre : le domaine n'a pas de prix
+# restaurant pour elles. Elles passent en fin de feuille, pour mémoire.
+DEJA_CHERCHE = {
+    (3, "Rouge aux lèvres"), (3, "La Perle"), (3, "AOP Muscadet"),
+    (3, "IGP Val de Loire Chardonnay"), (3, "IGP Val de Loire Cabernet Franc"),
+    (6, "AOC Menetou-Salon Rouge"), (6, "IGP Chenin Blanc"),
+    (12, "AOC Pouilly-Vinzelles Blanc"), (23, "N\u00b010 P\u00e9tillant"),
+}
+DOMAINES_SANS_TARIF = {7, 43}
+
 
 def lire(nom):
     return json.loads((RACINE / nom).read_text(encoding="utf-8"))
@@ -32,7 +42,7 @@ def main():
     r = lire("data/catalogue-restaurant-2026.json")
     plan = lire("build/catalogue-restaurant-2026-plan.json")["domaines"]
 
-    L, total = [], 0
+    L, M, total, memoire = [], [], 0, 0
     w = L.append
     for n in glob["ordre"]:
         st = next((s for s in r["stands"] if any(v["fiche"] == n for v in s["vins"])), None)
@@ -47,14 +57,22 @@ def main():
             par_tableau.setdefault(ti, []).append(v)
         if not par_tableau:
             continue
-        w(f'<section><h2><span class="page">page {plan[str(n)]}</span> {html.escape(noms[n])}</h2>')
+        clos = n in DOMAINES_SANS_TARIF or all(
+            (n, v["cuvee"] or v["appellation"]) in DEJA_CHERCHE
+            for vs in par_tableau.values() for v in vs)
+        w = M.append if clos else L.append
+        w(f'<section{" class=clos" if clos else ""}><h2><span class="page">page {plan[str(n)]}</span> {html.escape(noms[n])}</h2>')
         for ti, vins in sorted(par_tableau.items()):
             pal = (st["paliers_salon"].get(f"{n}:{ti}") or st["paliers_salon"].get(str(n)) or ["Prix"])
             pal = [p.replace("Prix salon", "Prix") for p in pal]
             w("<table><thead><tr><th>Vin</th><th>Millésime</th><th>Format</th>"
               + "".join(f"<th class=p>{html.escape(x)}</th>" for x in pal) + "</tr></thead><tbody>")
             for v in vins:
-                total += len([x for x in v["prix_centimes"] if x is None])
+                manque = len([x for x in v["prix_centimes"] if x is None])
+                if clos:
+                    memoire += manque
+                else:
+                    total += manque
                 nom = v["cuvee"] or v["appellation"]
                 sous = v["appellation"] if v["cuvee"] and v["appellation"] not in v["cuvee"] else ""
                 w(f'<tr><td><b>{html.escape(nom)}</b>'
@@ -95,6 +113,9 @@ def main():
     td.c{text-align:center;font:400 9pt Archivo,sans-serif;white-space:nowrap}
     td.case{border:.8pt solid #9a93a2;background:#fcfbfd;height:7mm}
     .app{font:400 8pt Archivo,sans-serif;color:#6b6472}
+    h1.suite{margin-top:10mm;break-before:page}
+    section.clos h2{color:#6b6472;border-top-color:#d9d4de}
+    section.clos .page{background:#6b6472}
     </style>""")
     H.append("<h1>Catalogue restaurant 2026 — les prix à remplir</h1>")
     H.append(f'<p class=chapeau>Il reste <b>{total} prix</b> à donner. Pour chaque domaine : '
@@ -102,6 +123,12 @@ def main():
              "Il suffit d'écrire le prix dans la case. Les prix déjà connus sont rappelés en clair "
              "sur la même ligne.</p>")
     H += L
+    if M:
+        H.append("<h1 class=suite>Pour mémoire — déjà cherché le 10 octobre</h1>")
+        H.append(f'<p class=chapeau>Ces <b>{memoire} prix</b> ont déjà été cherchés : le domaine '
+                 "n'a pas de tarif restaurant pour ces lignes, qui restent vides au catalogue. "
+                 "À remplir seulement si un prix est retrouvé.</p>")
+        H += M
     H.append("</html>")
     SORTIE.parent.mkdir(exist_ok=True)
     SORTIE.write_text("\n".join(H), encoding="utf-8")
